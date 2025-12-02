@@ -1,6 +1,6 @@
 # Story 001 – RW Agent Execution & Docs
 
-**Status:** TODO  
+**Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  

@@ -13,7 +13,7 @@
 
 ## Story Checklist
 
-- [ ] **E3:S01 – Dev Kit Alignment with Versioning Framework** - TODO
+- [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
 - [ ] **E3:S02 – Versioning Cookbook & Examples** - TODO
 - [ ] **E3:S03 – Versioning Integration with Kanban & RW** - TODO
 
@@ -53,7 +53,7 @@ It ensures the dev kit:
 
 ### Story 1: Dev Kit Alignment with Versioning Framework
 
-**Status:** TODO
+**Status:** COMPLETE
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Last updated:** 2025-12-02 (v0.3.1.6+1 – Task 6 complete: Cursorrules abstracted (removed hardcoded version numbers))
@@ -62,16 +62,12 @@ It ensures the dev kit:
 Make sure the dev kit's own versioning policy, version file, and docs align cleanly with the generic versioning framework. Establish `vibe-dev-kit` as the canonical SoT for versioning policies and strategies.
 
 **Tasks:**
-- [ ] E3:S01:T001 – Review dev-kit versioning policy vs framework policy
 - [x] E3:S01:T001 – Review dev-kit versioning policy vs framework policy ✅ COMPLETE (v0.3.1.1+2)
 - [x] E3:S01:T002 – Ingest versioning findings from fynd.deals Epic 15 work ✅ COMPLETE (v0.3.1.2+1)
 - [x] E3:S01:T003 – Update dev-kit versioning policy as canonical SoT ✅ COMPLETE (v0.3.1.3+1)
 - [x] E3:S01:T004 – Align dev-kit version.py and CHANGELOG with framework ✅ COMPLETE (v0.3.1.4+1)
 - [x] E3:S01:T005 – Document consumption pattern for other projects ✅ COMPLETE (v0.3.1.5+1)
 - [x] E3:S01:T006 – Make .cursorrules abstract (remove hardcoded version numbers) ✅ COMPLETE (v0.3.1.6+1)
-- [ ] E3:S01:T004 – Align dev-kit version.py and CHANGELOG with framework
-- [ ] E3:S01:T005 – Document consumption pattern for other projects
-- [ ] E3:S01:T006 – Make .cursorrules abstract (remove hardcoded version numbers)
 
 > Full story: [`epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md)
 

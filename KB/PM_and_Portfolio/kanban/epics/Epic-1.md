@@ -13,7 +13,7 @@
 
 ## Story Checklist
 
-- [ ] **E1:S01 – Dev Kit Versioning & RW Behaviour** - TODO  
+- [x] **E1:S01 – Dev Kit Versioning & RW Behaviour** - COMPLETE ✅ (v0.1.1.1+1, E2:S01:T002, E2:S01:T003)  
 - [ ] **E1:S02 – Package & Repo Architecture** - TODO  
 - [ ] **E1:S03 – Core KB Structure for Dev Kit** - TODO  
 
@@ -55,12 +55,12 @@ Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW
 **Tasks:**
 - [x] E1:S01:T001 – Create `dev-kit-versioning-policy.md` ✅ COMPLETE (v0.1.1.1+1)  
 - [x] E1:S01:T002 – Align `version.py` and CHANGELOG with dev-kit policy ✅ COMPLETE (v0.1.1.1+1)  
-- [ ] E1:S01:T003 – Update RW docs to distinguish dev-kit vs external examples  
+- [x] E1:S01:T003 – Update RW docs to distinguish dev-kit vs external examples ✅ COMPLETE (completed in E2:S01:T002 and E2:S01:T003)  
 
 **Acceptance Criteria:**
-- [ ] Dev-kit versioning policy exists and is referenced by other docs  
-- [ ] `version.py` encodes a real dev-kit Epic/Story/Task, not legacy external IDs  
-- [ ] RW docs clarify dev-kit vs Confidentia/fynd.deals examples
+- [x] Dev-kit versioning policy exists and is referenced by other docs ✅  
+- [x] `version.py` encodes a real dev-kit Epic/Story/Task, not legacy external IDs ✅  
+- [x] RW docs clarify dev-kit vs Confidentia/fynd.deals examples ✅
 
 > Full story: `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md` (and follow-up stories to be created under Epic 1).
 

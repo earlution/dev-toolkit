@@ -1,6 +1,6 @@
 # Story 001 – Dev Kit Alignment with Versioning Framework
 
-**Status:** TODO
+**Status:** COMPLETE
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Created:** 2025-12-02
@@ -266,11 +266,11 @@ Make sure the dev kit's versioning implementation demonstrates best practices an
 
 ## Acceptance Criteria
 
-- [ ] Dev-kit versioning policy is the canonical SoT
-- [ ] Policies capture complete version schema and validation rules
-- [ ] Dev-kit version.py and CHANGELOG align with framework
-- [ ] Consumption pattern is clearly documented
-- [ ] Framework and project implementations are clearly distinguished
+- [x] Dev-kit versioning policy is the canonical SoT ✅
+- [x] Policies capture complete version schema and validation rules ✅
+- [x] Dev-kit version.py and CHANGELOG align with framework ✅
+- [x] Consumption pattern is clearly documented ✅
+- [x] Framework and project implementations are clearly distinguished ✅
 
 ---
 

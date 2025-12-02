@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.1.1+6 – Task 5 complete: Document consumption pattern for other projects - Story 1 COMPLETE)  
+**Last updated:** 2025-12-02 (v0.4.2.1+1 – Task 1 complete: Analyze current FR/BR intake process and requirements)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -14,7 +14,8 @@
 ## Story Checklist
 
 - [x] **E4:S01 – Dev Kit Kanban Implementation** - COMPLETE ✅ (v0.4.1.1+6)  
-- [ ] **E4:S02 – FR/BR Intake to Tasks** - TODO  
+- [ ] **E4:S02 – FR/BR Intake to Tasks** - IN PROGRESS
+  - Story: [`epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md`](epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md)  
 - [ ] **E4:S03 – Kanban + Versioning + RW Integration** - TODO  
 
 ---
@@ -58,7 +59,7 @@ It ensures that:
 **Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.4.1.1+6 – Task 5 complete: Document consumption pattern for other projects - Story 1 COMPLETE)  
+**Last updated:** 2025-12-02 (v0.4.2.1+1 – Task 1 complete: Analyze current FR/BR intake process and requirements)  
 
 **Goal:**  
 Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `vibe-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.
