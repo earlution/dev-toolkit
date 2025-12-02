@@ -1,7 +1,7 @@
 VERSION_RC = 0        # Release candidate (0 = development)
-VERSION_EPIC = 4      # Epic number (Epic 4: Kanban Framework)
-VERSION_STORY = 1     # Story number (Story 1: Dev Kit Kanban Implementation)
-VERSION_TASK = 1      # Task number (Task 1: Review existing dev-kit Kanban policies and templates)
+VERSION_EPIC = 3      # Epic number (Epic 3: Numbering & Versioning Framework)
+VERSION_STORY = 1     # Story number (Story 1: Dev Kit Alignment with Versioning Framework)
+VERSION_TASK = 2      # Task number (Task 2: Ingest versioning findings from fynd.deals Epic 15 work)
 VERSION_BUILD = 1     # Build number (bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema

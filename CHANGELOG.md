@@ -17,6 +17,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.1.2+1] - 02-12-25
+
+📚 Documentation: Task 2 complete - Ingested versioning findings from fynd.deals Epic 15 work
+
+### Added
+
+- Created **findings document** analyzing 12 reusable versioning patterns from fynd.deals Epic 15 work
+- Documented versioning patterns: schema, validation, CHANGELOG structure, traceability, immutability rules
+- Identified that framework package already contains fynd.deals Epic 15 findings
+
+### Changed
+
+- Updated Story 001 to mark Task 2 as complete with findings reference
+
+### Notes
+
+- Findings document: `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework/T002-fynd-deals-epic15-findings.md`
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.1.2+1.md` for full details
+
+---
+
 ## [0.4.1.1+1] - 02-12-25
 
 📚 Documentation: Epic 4 structure and Story 1 definition for Kanban Framework

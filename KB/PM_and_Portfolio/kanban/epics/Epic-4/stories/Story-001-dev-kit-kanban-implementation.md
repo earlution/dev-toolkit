@@ -212,5 +212,5 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ---
 
-_Last updated: 2025-12-02 (to be released as v0.4.1.1+1)_
+_Last updated: 2025-12-02 (v0.4.1.1+1)_
 

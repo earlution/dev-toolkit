@@ -65,7 +65,7 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 
 **Status:** TODO  
 **Priority:** HIGH  
-**Last Updated:** (to be released as v0.4.1.1+1)
+**Last Updated:** v0.4.1.1+1
 
 **Stories:**
 - [ ] **E4:S01 – Dev Kit Kanban Implementation** - TODO
