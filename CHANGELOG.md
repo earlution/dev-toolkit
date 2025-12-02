@@ -17,6 +17,28 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.1.2.4+1] - 02-12-25
+
+📚 Documentation: Task 4 complete - Consumption patterns documented
+
+### Added
+
+- Created comprehensive consumption patterns document
+- Standalone usage guides for all three packages (step-by-step)
+- Combined usage patterns (4 scenarios with integration guides)
+- Incremental adoption patterns (4 patterns)
+- Customization examples (schema, branch naming, structure)
+- Migration patterns (from manual to automated)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.1.2.4+1.md` for full details
+- Decision tree and package selection matrix included
+- Practical examples with project structure templates
+- Foundation for README updates (T005)
+
+---
+
 ## [0.1.2.3+1] - 02-12-25
 
 📊 Analysis: Task 3 complete - Package dependency matrix created
