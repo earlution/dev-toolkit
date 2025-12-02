@@ -14,7 +14,8 @@
 ## Story Checklist
 
 - [x] **E1:S01 – Dev Kit Versioning & RW Behaviour** - COMPLETE ✅ (v0.1.1.1+1, E2:S01:T002, E2:S01:T003)  
-- [ ] **E1:S02 – Package & Repo Architecture** - TODO
+- [ ] **E1:S02 – Package & Repo Architecture** - IN PROGRESS (v0.1.2.4+1)
+  - Tasks: T001 ✅ (v0.1.2.1+1), T002 ✅ (v0.1.2.2+1), T003 ✅ (v0.1.2.3+1), T004 ✅ (v0.1.2.4+1)
   - Story: [`epics/Epic-1/stories/Story-002-package-and-repo-architecture.md`](epics/Epic-1/stories/Story-002-package-and-repo-architecture.md)  
 - [ ] **E1:S03 – Core KB Structure for Dev Kit** - TODO  
 
