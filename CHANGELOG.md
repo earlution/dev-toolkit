@@ -17,6 +17,23 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.1.1+3] - 02-12-25
+
+📚 Documentation: Task 2 complete - Ingest findings from fynd.deals Epic 15 Kanban work
+
+### Added
+
+- Created **findings document** extracting 7 reusable Kanban patterns from framework packages
+- Identified patterns already in framework vs. missing from policy
+- Provided 9 high-priority recommendations for updating Kanban governance policy
+
+### Notes
+
+- Findings document: `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation/T002-fynd-deals-epic15-kanban-findings.md`
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.1.1+3.md` for full details
+
+---
+
 ## [0.4.1.1+2] - 02-12-25
 
 📚 Documentation: Task 1 complete - Gap analysis of dev-kit Kanban policies and templates
