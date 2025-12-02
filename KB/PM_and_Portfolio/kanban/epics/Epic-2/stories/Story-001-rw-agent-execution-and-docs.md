@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.2.1.1+1 – initial story definition)  
-**Version:** v0.2.1.1+1  
+**Last updated:** 2025-12-02 (v0.2.1.1+2 – Task 4 complete: Update RW changelog step to require verification)
+**Version:** v0.2.1.1+2  
 **Code:** E2S01
 
 ---
@@ -27,7 +27,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - [ ] **E2:S01:T001 – Audit `release-workflow-agent-execution.md` for project-specific assumptions**
 - [ ] **E2:S01:T002 – Tag Confidentia/fynd.deals examples and add dev-kit examples**
 - [ ] **E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy**
-- [ ] **E2:S01:T004 – Update RW changelog step to require verification before marking fixes as "fixed"**
+- [x] **E2:S01:T004 – Update RW changelog step to require verification before marking fixes as "fixed"** ✅ COMPLETE (v0.2.1.1+2)
 
 ---
 
@@ -134,10 +134,10 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 - [ ] RW documentation is fully portable and template-ready
 - [ ] Examples are clearly tagged as dev-kit vs external
-- [ ] Changelog step requires verification before marking fixes as "Fixed"
-- [ ] Unverified fixes are logged as "Attempted fix" until verified
-- [ ] Verification methods (test suite, manual testing) are documented
-- [ ] Validation checks enforce verification requirements
+- [x] Changelog step requires verification before marking fixes as "Fixed" ✅
+- [x] Unverified fixes are logged as "Attempted fix" until verified ✅
+- [x] Verification methods (test suite, manual testing) are documented ✅
+- [x] Validation checks enforce verification requirements ✅
 
 ---
 
@@ -157,5 +157,5 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 ---
 
-_Last updated: 2025-12-02 (v0.2.1.1+1)_
+_Last updated: 2025-12-02 (v0.2.1.1+2 – Task 4 complete: Update RW changelog step to require verification)_
 

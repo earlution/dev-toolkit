@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.2.1.1+1 – initial epic definition)  
+**Last updated:** 2025-12-02 (v0.2.1.1+2 – Task 4 complete: Update RW changelog step to require verification)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -61,8 +61,8 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 **Tasks:**
 - [ ] E2:S01:T001 – Audit `release-workflow-agent-execution.md` for project-specific assumptions  
 - [ ] E2:S01:T002 – Tag Confidentia/fynd.deals examples and add dev-kit examples  
-- [ ] E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy
-- [ ] E2:S01:T004 – Update RW changelog step to require verification before marking fixes as "fixed"
+- [ ] E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy  
+- [x] E2:S01:T004 – Update RW changelog step to require verification before marking fixes as "fixed" ✅ COMPLETE (v0.2.1.1+2)
 
 > Full story: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)  
 

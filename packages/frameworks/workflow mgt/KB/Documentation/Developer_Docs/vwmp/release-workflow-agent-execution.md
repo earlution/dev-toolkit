@@ -92,6 +92,59 @@ For each step, the agent follows this pattern:
 
 ---
 
+## 🔒 Critical Requirement: Fix Verification
+
+**CRITICAL:** Before marking any bug fix as "Fixed" in changelogs, the fix MUST be verified through testing.
+
+### Verification Requirements
+
+**For Bug Fixes:**
+- **Verified Fixes:** Must have evidence of successful testing:
+  - Test suite execution (automated tests pass)
+  - Manual testing (documented test results)
+- **Unverified Fixes:** Must be logged as "Attempted Fix (Pending Verification)" until verification is complete
+- **DO NOT** claim a fix is "Fixed" until verification evidence exists
+
+### Verification Methods
+
+1. **Test Suite Execution:**
+   - Automated test suite must pass
+   - Test results must be documented
+   - Evidence: Test output, CI/CD results, test logs
+
+2. **Manual Testing:**
+   - Manual test steps must be documented
+   - Test results must be recorded
+   - Evidence: Test documentation, screenshots, test logs
+
+### Changelog Format for Fixes
+
+**Verified Fixes:**
+```markdown
+### Fixed
+- Fixed issue description
+  - **Verification Status:** Verified
+  - **Verification Method:** Test Suite / Manual Testing
+  - **Verification Evidence:** [Link to test results or documentation]
+```
+
+**Unverified Fixes:**
+```markdown
+### Attempted Fixes (Pending Verification)
+- Attempted fix for issue description
+  - **Verification Status:** Attempted Fix (Pending Verification)
+  - **Verification Method:** [To be determined]
+  - **Next Steps:** Run test suite / Perform manual testing
+```
+
+### Enforcement
+
+- **Step 3 (Create Detailed Changelog):** Must check verification status before creating changelog
+- **Step 4 (Update Main Changelog):** Must check verification status before updating main changelog
+- **Validation:** If any fix is marked as "Fixed" without verification evidence, workflow MUST STOP
+
+---
+
 ## 📋 Step-by-Step Agent Execution
 
 ### Step 1: Branch Safety Check
@@ -262,18 +315,32 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 3. **EXECUTE:**
    - Generate timestamp using system command
+   - **CRITICAL - Verification Check for Fixes:**
+     - If this release includes bug fixes, check verification status:
+       - **Verified fixes:** Must have evidence of testing (test suite pass or documented manual test results)
+       - **Unverified fixes:** Must be logged as "Attempted Fix (Pending Verification)" until verified
+     - **DO NOT** mark fixes as "Fixed" in changelog until verification is complete
    - Create changelog file with proper format:
      - Release Date (full timestamp)
      - Epic and Story information
      - Type (with emoji)
      - Summary
-     - Changes section
+     - Changes section:
+       - **Fixed** section: Only verified fixes (with verification evidence)
+       - **Attempted Fixes** section: Unverified fixes (pending verification)
+       - Verification Status field for each fix entry
      - Related Tasks section
 
 4. **VALIDATE:**
    - Verify file was created
    - Check timestamp format is correct (`YYYY-MM-DD HH:MM:SS UTC`)
    - Verify all required fields are present
+   - **CRITICAL - Verification Validation:**
+     - If changelog contains "Fixed" entries, verify each has:
+       - Verification status: `Verified` or `Attempted Fix (Pending Verification)`
+       - Verification method: `Test Suite` or `Manual Testing`
+       - Verification evidence: Test results or manual test documentation
+     - If any fix is marked as "Fixed" without verification evidence, **STOP** and require verification
    - Check file is readable
 
 5. **PROCEED:**
@@ -314,6 +381,11 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Insert new entry at top of Recent Releases section
    - Format: `### [0.4.3.2+9] - 01-12-25`
    - Include summary with emoji
+   - **CRITICAL - Verification Check for Fixes:**
+     - If this release includes bug fixes, check verification status from detailed changelog:
+       - **Verified fixes:** Include in "Fixed" subsection
+       - **Unverified fixes:** Include in "Attempted Fixes" subsection (not in "Fixed")
+     - **DO NOT** list unverified fixes under "Fixed" section
    - Add link to detailed changelog file
 
 4. **VALIDATE:**
@@ -321,6 +393,10 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Check date format is `DD-MM-YY`
    - Verify link to detailed changelog is correct
    - Ensure entry is at top of Recent Releases
+   - **CRITICAL - Verification Validation:**
+     - If entry includes "Fixed" subsection, verify all listed fixes have verification evidence in detailed changelog
+     - If any fix in "Fixed" section lacks verification evidence, **STOP** and require verification
+     - Verify "Attempted Fixes" section exists if there are unverified fixes
 
 5. **PROCEED:**
    - Document: "Updated main changelog with summary entry"

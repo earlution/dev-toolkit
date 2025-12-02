@@ -17,6 +17,31 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.1.1+2] - 02-12-25
+
+📚 Documentation: Task 4 complete - Update RW changelog step to require verification before marking fixes as "fixed"
+
+### Added
+
+- Added **"Critical Requirement: Fix Verification"** section to Release Workflow documentation
+- Added verification requirements to Step 3 (Create Detailed Changelog)
+- Added verification requirements to Step 4 (Update Main Changelog)
+- Added changelog format guidelines for verified vs unverified fixes
+
+### Changed
+
+- Updated Step 3 to require verification before marking fixes as "Fixed"
+- Updated Step 4 to require verification before marking fixes as "Fixed"
+- Workflow now stops if fixes are marked as "Fixed" without verification evidence
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.1+2.md` for full details
+- Verification methods: Test suite execution or manual testing
+- Unverified fixes must be logged as "Attempted Fix (Pending Verification)"
+
+---
+
 ## [0.4.1.1+6] - 02-12-25
 
 📚 Documentation: Task 5 complete - Document consumption pattern for other projects
