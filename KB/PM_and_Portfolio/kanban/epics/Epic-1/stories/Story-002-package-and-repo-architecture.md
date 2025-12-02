@@ -1,11 +1,11 @@
 # Story 002 – Package & Repo Architecture
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE ✅  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.1.2.4+1 – Task 4 complete: Consumption patterns documented)  
-**Version:** v0.1.2.4+1  
+**Last updated:** 2025-12-02 (v0.1.2.5+1 – Task 5 complete: Package READMEs updated with modularity information)  
+**Version:** v0.1.2.5+1  
 **Code:** E1S02
 
 ---
@@ -233,5 +233,5 @@ Make it easy for users to consume **individual frameworks** (workflow mgt, versi
 
 ---
 
-_Last updated: 2025-12-02_
+_Last updated: 2025-12-02 (v0.1.2.5+1 – Task 5 complete: Package READMEs updated with modularity information)_
 
