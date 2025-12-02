@@ -49,7 +49,7 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 
 **Status:** TODO  
 **Priority:** HIGH  
-**Last Updated:** v0.3.1.1+1
+**Last Updated:** v0.3.1.2+1
 
 **Stories:**
 - [ ] **E3:S01 – Dev Kit Alignment with Versioning Framework** - TODO
