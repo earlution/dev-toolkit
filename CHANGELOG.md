@@ -17,6 +17,29 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.1.1+4] - 02-12-25
+
+📚 Documentation: Task 2 complete - Tag Confidentia/fynd.deals examples and add dev-kit examples
+
+### Added
+
+- Added overview note explaining example tagging system
+- Tagged all Confidentia/fynd.deals examples with `[Example: Confidentia]` labels
+- Added dev-kit examples with `[Example: vibe-dev-kit]` labels throughout all 11 steps
+- 73 example tags added across the document
+
+### Changed
+
+- Updated all 11 Release Workflow steps with tagged examples
+- Examples now clearly distinguish between Confidentia/fynd.deals and dev-kit projects
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.1+4.md` for full details
+- Examples tagged: version file paths, handler names, version numbers, branch names, Kanban paths
+
+---
+
 ## [0.2.1.1+3] - 02-12-25
 
 📚 Documentation: Task 1 complete - Audit RW documentation for project-specific assumptions

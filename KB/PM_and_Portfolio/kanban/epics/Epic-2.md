@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.2.1.1+3 – Task 1 complete: Audit RW documentation for project-specific assumptions)  
+**Last updated:** 2025-12-02 (v0.2.1.1+4 – Task 2 complete: Tag Confidentia/fynd.deals examples and add dev-kit examples)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -60,7 +60,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 **Tasks:**
 - [x] E2:S01:T001 – Audit `release-workflow-agent-execution.md` for project-specific assumptions ✅ COMPLETE (v0.2.1.1+3)
-- [ ] E2:S01:T002 – Tag Confidentia/fynd.deals examples and add dev-kit examples  
+- [x] E2:S01:T002 – Tag Confidentia/fynd.deals examples and add dev-kit examples ✅ COMPLETE (v0.2.1.1+4)
 - [ ] E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy  
 - [x] E2:S01:T004 – Update RW changelog step to require verification before marking fixes as "fixed" ✅ COMPLETE (v0.2.1.1+2)
 
