@@ -1,6 +1,6 @@
 # Story 002 – FR/BR Intake to Tasks
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
