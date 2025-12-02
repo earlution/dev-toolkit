@@ -1,8 +1,39 @@
 # Implementation Guide: Numbering & Versioning Strategies
 
-**Purpose:** This guide explains how to implement Confidentia's numbering and versioning strategies in a different project.
+**Purpose:** This guide explains how to implement the vibe-dev-kit numbering and versioning strategies in a different project.
 
 **Target Audience:** Project maintainers, engineering leads, and developers setting up versioning and numbering systems.
+
+**Source:** Originally developed for Confidentia, refined in fynd.deals (Epic 15), now maintained in `vibe-dev-kit` as canonical SoT.
+
+---
+
+## ⚠️ CRITICAL: Copy, Don't Reference
+
+**Projects MUST copy versioning policies from `vibe-dev-kit`, not link to them.**
+
+**Why Copy?**
+- Projects need to customize Epic/Story/Task ranges, file paths, and terminology
+- Projects evolve independently and may need project-specific adaptations
+- Copying ensures projects have full control over their versioning policies
+- Prevents breaking changes in `vibe-dev-kit` from affecting consuming projects
+
+**What to Copy:**
+1. Core policy documents (`versioning-policy.md`, `versioning-strategy.md`)
+2. Implementation guide (this file)
+3. Templates (`EPIC_TEMPLATE.md`, `STORY_TEMPLATE.md`)
+4. Validation scripts (if using workflow package)
+
+**Customization Boundaries:**
+- ✅ **CAN customize:** Epic ranges, file paths, project names, terminology
+- ❌ **MUST keep:** Schema format, validation rules, core principles, date formats
+
+**Single Source of Truth:**
+- `vibe-dev-kit` is the canonical SoT for versioning schema and principles
+- Your copied policies are adaptations for your specific context
+- Reference framework as source of truth in your documentation
+
+See [Consumption Pattern](#consumption-pattern-for-other-projects) section below for complete details.
 
 ---
 
@@ -630,5 +661,180 @@ Use this checklist to ensure you've customized everything for your project:
 
 ---
 
-**Last Updated:** 2025-12-01
-**Based on:** Confidentia Project Versioning & Numbering Policies
+---
+
+## Consumption Pattern for Other Projects
+
+### Copy vs Reference Pattern
+
+**CRITICAL RULE: Projects MUST copy framework files, not reference them.**
+
+**Copy Pattern (✅ Correct):**
+```bash
+# Copy framework files to your project
+cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-policy.md your-project/docs/versioning/
+cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-strategy.md your-project/docs/versioning/
+```
+
+**Reference Pattern (❌ Incorrect):**
+```markdown
+# DON'T do this:
+See: https://github.com/earlution/vibe-dev-kit/blob/main/packages/frameworks/numbering%20%26%20versioning/versioning-policy.md
+```
+
+### Why Copy?
+
+1. **Independence:** Your project needs to evolve independently
+2. **Customization:** You need to customize Epic ranges, paths, terminology
+3. **Control:** You need full control over your versioning policies
+4. **Stability:** Prevents breaking changes in framework from affecting your project
+
+### What to Copy
+
+**Required Files:**
+- `versioning-policy.md` - Core schema definition
+- `versioning-strategy.md` - Complete strategy with traceability
+- `IMPLEMENTATION_GUIDE.md` - This guide
+
+**Optional Files:**
+- `EPIC_TEMPLATE.md` - Epic document template
+- `STORY_TEMPLATE.md` - Story document template
+- Validation scripts (from workflow package, if using)
+
+### Customization Process
+
+1. **Copy Files:**
+   ```bash
+   mkdir -p your-project/docs/versioning
+   cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/*.md your-project/docs/versioning/
+   ```
+
+2. **Customize Epic Ranges:**
+   - Update Epic ranges in `versioning-policy.md`
+   - Example: "Epic 1+ uses new format" (no legacy range)
+   - Or: "Epic 1-5 legacy, Epic 6+ new format"
+
+3. **Customize File Paths:**
+   - Update version file location: `src/{your-project}/version.py`
+   - Update changelog paths: `CHANGELOG.md`, `CHANGELOG_ARCHIVE/`
+   - Update validation script paths
+
+4. **Customize Terminology:**
+   - Update project names in examples
+   - Update work item terminology (if different from Epic/Story/Task)
+   - Update branch naming conventions
+
+5. **Document Customizations:**
+   ```markdown
+   # Your Project Versioning Policy
+
+   **Based on:** vibe-dev-kit versioning framework  
+   **Last Synced:** 2025-12-02  
+   **Customizations:**
+   - Epic 1+ uses new format (no legacy range)
+   - Version file: `src/yourproject/version.py`
+   - Changelog archive: `CHANGELOG_ARCHIVE/`
+   ```
+
+### Staying Aligned with Framework Updates
+
+**Update Workflow:**
+
+1. **Monitor Framework:**
+   - Watch `vibe-dev-kit` repository for updates
+   - Review changelog for versioning framework changes
+   - Check for new patterns or best practices
+
+2. **Review Changes:**
+   ```bash
+   # Compare updated framework with your copied policies
+   diff -u your-project/docs/versioning/versioning-policy.md \
+            vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-policy.md
+   ```
+
+3. **Selectively Adopt:**
+   - Review each change for relevance to your project
+   - Copy new sections that are relevant
+   - Adapt new patterns to your project context
+   - Preserve your customizations
+
+4. **Update Documentation:**
+   - Update "Last Synced" date in your policy
+   - Document what you adopted and what you didn't
+   - Note any new patterns you're following
+
+### Example: Complete Setup
+
+**Scenario:** Setting up versioning for "myapp" project
+
+```bash
+# 1. Copy framework files
+mkdir -p myapp/docs/versioning
+cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/*.md myapp/docs/versioning/
+
+# 2. Customize versioning-policy.md
+# - Change Epic ranges: "Epic 1+ uses new format"
+# - Change file paths: `src/myapp/version.py`
+# - Change examples: Use `0.1.1.1+1` instead of `0.9.21.3+1`
+
+# 3. Create version file
+mkdir -p myapp/src/myapp
+cat > myapp/src/myapp/version.py << 'EOF'
+VERSION_RC = 0
+VERSION_EPIC = 1
+VERSION_STORY = 1
+VERSION_TASK = 1
+VERSION_BUILD = 1
+VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{VERSION_BUILD}"
+EOF
+
+# 4. Set up changelog structure
+mkdir -p myapp/CHANGELOG_ARCHIVE
+touch myapp/CHANGELOG.md
+
+# 5. Document customizations
+cat >> myapp/docs/versioning/versioning-policy.md << 'EOF'
+
+---
+
+## Customizations
+
+**Based on:** vibe-dev-kit versioning framework  
+**Last Synced:** 2025-12-02  
+**Customizations:**
+- Epic 1+ uses new format (no legacy range)
+- Version file: `src/myapp/version.py`
+- Changelog archive: `CHANGELOG_ARCHIVE/`
+EOF
+```
+
+### Framework as Single Source of Truth
+
+**`vibe-dev-kit` is the canonical SoT for:**
+- Versioning schema definition (`RC.EPIC.STORY.TASK+BUILD`)
+- Core versioning principles (canonical ordering, immutability, traceability)
+- Best practices and patterns
+- Validation requirements
+
+**Your project's copied policies:**
+- Are **adaptations** of the framework for your specific context
+- Are **customized** with your Epic ranges, paths, and terminology
+- Are **independent** - can evolve separately from framework
+- Should **reference** framework as source of truth
+
+**Documentation Pattern:**
+```markdown
+# MyApp Versioning Policy
+
+**Based on:** vibe-dev-kit `packages/frameworks/numbering & versioning/versioning-policy.md`  
+**Last Synced:** 2025-12-02  
+**Customizations:** Epic 1+ new format, custom file paths
+
+[Your customized content here]
+```
+
+---
+
+**Last Updated:** 2025-12-02  
+**Based on:** Confidentia Project → fynd.deals (Epic 15) → vibe-dev-kit (canonical SoT)  
+**Canonical Source:** `vibe-dev-kit` - Projects should copy and customize, not reference

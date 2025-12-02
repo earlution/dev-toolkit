@@ -17,6 +17,31 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.1.5+1] - 02-12-25
+
+📚 Documentation: Task 5 complete - Consumption pattern documented for other projects
+
+### Added
+
+- Added **consumption pattern documentation** to README and IMPLEMENTATION_GUIDE
+- Documented copy vs reference pattern (CRITICAL: copy, don't reference)
+- Explained customization boundaries and update process
+- Added example setup workflows
+
+### Changed
+
+- Enhanced README with comprehensive consumption section
+- Enhanced IMPLEMENTATION_GUIDE with consumption pattern section
+- Clarified framework as single source of truth
+
+### Notes
+
+- Projects MUST copy framework files (not reference them) for independence and customization
+- Framework remains canonical SoT while projects adapt for their context
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.1.5+1.md` for full details
+
+---
+
 ## [0.3.1.4+1] - 02-12-25
 
 📚 Documentation: Task 4 complete - Version file and CHANGELOG aligned with framework

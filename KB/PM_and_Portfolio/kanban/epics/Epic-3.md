@@ -4,7 +4,7 @@
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Created:** 2025-12-02
-**Last updated:** 2025-12-02 (v0.3.1.4+1 – Task 4 complete: Version file and CHANGELOG aligned with framework)
+**Last updated:** 2025-12-02 (v0.3.1.5+1 – Task 5 complete: Consumption pattern documented for other projects)
 **Branch:** `epic/3-numbering-and-versioning-framework`
 **Version Schema:** `0.3.S.T+B`
 **Production URL:** [N/A for this repo]
@@ -56,7 +56,7 @@ It ensures the dev kit:
 **Status:** TODO
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
-**Last updated:** 2025-12-02 (v0.3.1.4+1 – Task 4 complete: Version file and CHANGELOG aligned with framework)
+**Last updated:** 2025-12-02 (v0.3.1.5+1 – Task 5 complete: Consumption pattern documented for other projects)
 
 **Goal:**
 Make sure the dev kit's own versioning policy, version file, and docs align cleanly with the generic versioning framework. Establish `vibe-dev-kit` as the canonical SoT for versioning policies and strategies.
@@ -67,6 +67,7 @@ Make sure the dev kit's own versioning policy, version file, and docs align clea
 - [x] E3:S01:T002 – Ingest versioning findings from fynd.deals Epic 15 work ✅ COMPLETE (v0.3.1.2+1)
 - [x] E3:S01:T003 – Update dev-kit versioning policy as canonical SoT ✅ COMPLETE (v0.3.1.3+1)
 - [x] E3:S01:T004 – Align dev-kit version.py and CHANGELOG with framework ✅ COMPLETE (v0.3.1.4+1)
+- [x] E3:S01:T005 – Document consumption pattern for other projects ✅ COMPLETE (v0.3.1.5+1)
 - [ ] E3:S01:T004 – Align dev-kit version.py and CHANGELOG with framework
 - [ ] E3:S01:T005 – Document consumption pattern for other projects
 - [ ] E3:S01:T006 – Make .cursorrules abstract (remove hardcoded version numbers)

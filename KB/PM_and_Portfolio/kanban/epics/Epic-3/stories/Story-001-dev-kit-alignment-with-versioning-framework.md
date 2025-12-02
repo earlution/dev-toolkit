@@ -4,8 +4,8 @@
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Created:** 2025-12-02
-**Last updated:** 2025-12-02 (v0.3.1.4+1 – Task 4 complete: Version file and CHANGELOG aligned with framework)
-**Version:** v0.3.1.4+1
+**Last updated:** 2025-12-02 (v0.3.1.5+1 – Task 5 complete: Consumption pattern documented for other projects)
+**Version:** v0.3.1.5+1
 **Code:** E3S01
 
 ---
@@ -28,7 +28,7 @@ Make sure the dev kit's versioning implementation demonstrates best practices an
 - [x] **E3:S01:T002 – Ingest versioning findings from fynd.deals Epic 15 work** ✅ COMPLETE (v0.3.1.2+1)
 - [x] **E3:S01:T003 – Update dev-kit versioning policy as canonical SoT** ✅ COMPLETE (v0.3.1.3+1)
 - [x] **E3:S01:T004 – Align dev-kit version.py and CHANGELOG with framework** ✅ COMPLETE (v0.3.1.4+1)
-- [ ] **E3:S01:T005 – Document consumption pattern for other projects**
+- [x] **E3:S01:T005 – Document consumption pattern for other projects** ✅ COMPLETE (v0.3.1.5+1)
 - [ ] **E3:S01:T006 – Make .cursorrules abstract (remove hardcoded version numbers)**
 
 ---
@@ -177,34 +177,42 @@ Make sure the dev kit's versioning implementation demonstrates best practices an
 
 ---
 
-### E3:S01:T005 – Document consumption pattern for other projects
+### E3:S01:T005 – Document consumption pattern for other projects ✅ COMPLETE
 
-**Input:** Updated policies and version file from T003-T004
-**Deliverable:** Consumption documentation
-**Dependencies:** E3:S01:T003, E3:S01:T004
+**Input:** Updated policies and version file from T003-T004  
+**Deliverable:** Consumption documentation ✅ **DELIVERED**  
+**Dependencies:** E3:S01:T003, E3:S01:T004  
 **Blocker:** None
 
-**Approach:**
-1. Update `packages/frameworks/numbering & versioning/README.md` to document:
-   - Projects MUST **copy** versioning policies from `vibe-dev-kit`
-   - They then customize Epic/Story/Task ranges, but keep the **schema and validation rules** intact
-   - `vibe-dev-kit` remains the single point of truth for future updates
-2. Create/update implementation guides showing:
-   - How to copy versioning framework into a new project
-   - How to set up `version.py` with project-specific Epic/Story/Task ranges
-   - How to configure validation scripts
-   - How to stay aligned with framework updates
-3. Document the relationship between framework (SoT) and project implementations
+**Status:** ✅ **COMPLETE** - Consumption pattern documented in README and IMPLEMENTATION_GUIDE
 
-**Files to Update/Create:**
-- `packages/frameworks/numbering & versioning/README.md` (add consumption section)
-- `packages/frameworks/numbering & versioning/IMPLEMENTATION_GUIDE.md` (update or create)
+**Approach:**
+1. ✅ Enhanced `packages/frameworks/numbering & versioning/README.md`:
+   - Added comprehensive "Consumption Pattern for Other Projects" section
+   - Documented copy vs reference pattern (CRITICAL: copy, don't reference)
+   - Explained customization boundaries (what can be customized vs what must stay)
+   - Documented update process (how to stay aligned with framework updates)
+   - Added example setup workflow
+   - Clarified SoT relationship (vibe-dev-kit is canonical source)
+
+2. ✅ Enhanced `packages/frameworks/numbering & versioning/IMPLEMENTATION_GUIDE.md`:
+   - Added "CRITICAL: Copy, Don't Reference" section at top
+   - Added comprehensive "Consumption Pattern for Other Projects" section
+   - Documented copy vs reference pattern with examples
+   - Explained why copying is required (independence, customization, control, stability)
+   - Documented customization process step-by-step
+   - Added example complete setup workflow
+   - Clarified framework as single source of truth
 
 **Key Documentation Points:**
-- Copy, don't reference: Projects must copy files, not link to `vibe-dev-kit`
-- Customization boundaries: What can be customized (Epic ranges, paths) vs what must stay (schema, validation)
-- Update process: How to pull framework updates into projects
-- SoT relationship: `vibe-dev-kit` is the canonical source
+- ✅ **Copy, don't reference:** Projects must copy files, not link to `vibe-dev-kit`
+- ✅ **Customization boundaries:** What can be customized (Epic ranges, paths) vs what must stay (schema, validation)
+- ✅ **Update process:** How to pull framework updates into projects (monitor, review, selectively adopt)
+- ✅ **SoT relationship:** `vibe-dev-kit` is the canonical source, projects adapt for their context
+
+**Files Updated:**
+- ✅ `packages/frameworks/numbering & versioning/README.md` - Added consumption section
+- ✅ `packages/frameworks/numbering & versioning/IMPLEMENTATION_GUIDE.md` - Enhanced with consumption pattern
 
 ---
 
