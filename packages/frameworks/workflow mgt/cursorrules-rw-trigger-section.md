@@ -4,9 +4,9 @@
 
 **Location in `.cursorrules`:** Add this section in the "Version Control and Release Process" section (or equivalent).
 
-**Last Updated:** 2025-12-02  
+**Last Updated:** 2025-01-02  
 **Source Project:** fynd.deals (Epic 15, Story 1)  
-**Version:** 2.0.0 (includes "ALL sections" requirement, atomicity, blocked protocol)
+**Version:** 2.1.0 (includes "ALL sections" requirement, atomicity, blocked protocol, branch safety check)
 
 ---
 
@@ -17,27 +17,29 @@
 1. **DO NOT** run the deterministic script `scripts/release_workflow.py`
 2. **DO** execute the Release Workflow using the **intelligent agent-driven execution pattern**
 3. **Follow** the step-by-step guide below
-4. **Execute all 10 steps** using the ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern
-5. **Document** each step's analysis, actions, and results
-6. **MUST USE Cursor TODOs:** Create and maintain a TODO list tracking all 10 steps (see below)
+4. **Start with Step 1: Branch Safety Check** - Analyze work and ensure it aligns with current branch before proceeding
+5. **Execute all 11 steps** using the ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern
+6. **Document** each step's analysis, actions, and results
+7. **MUST USE Cursor TODOs:** Create and maintain a TODO list tracking all 11 steps (see below)
 
 **🚨 MANDATORY: Progress Tracking with Cursor TODOs**
 
-**REQUIRED:** Agents **MUST** use `todo_write` to create and maintain a TODO list for all 10 Release Workflow steps:
+**REQUIRED:** Agents **MUST** use `todo_write` to create and maintain a TODO list for all 11 Release Workflow steps:
 
-1. **At Workflow Start:** Create TODO list with all 10 steps as `pending`
+1. **At Workflow Start:** Create TODO list with all 11 steps as `pending`
    ```python
    todo_write(merge=False, todos=[
-       {'id': 'rw-step-1', 'status': 'pending', 'content': 'Step 1: Bump Version - Analyze current version and determine next version'},
-       {'id': 'rw-step-2', 'status': 'pending', 'content': 'Step 2: Update CHANGELOG - Add new release entry'},
-       {'id': 'rw-step-3', 'status': 'pending', 'content': 'Step 3: Update Kanban Board - Add release note'},
-       {'id': 'rw-step-4', 'status': 'pending', 'content': 'Step 4: Update KB Epic Docs - Update epic documentation with version'},
-       {'id': 'rw-step-5', 'status': 'pending', 'content': 'Step 5: Update README - Update version references if present'},
-       {'id': 'rw-step-6', 'status': 'pending', 'content': 'Step 6: Stage Files - Stage all modified files'},
-       {'id': 'rw-step-7', 'status': 'pending', 'content': 'Step 7: Run Validators - Execute branch context and changelog format validators'},
-       {'id': 'rw-step-8', 'status': 'pending', 'content': 'Step 8: Commit Changes - Create git commit with versioned message'},
-       {'id': 'rw-step-9', 'status': 'pending', 'content': 'Step 9: Create Git Tag - Create annotated tag'},
-       {'id': 'rw-step-10', 'status': 'pending', 'content': 'Step 10: Push to Remote - Push branch and tags'},
+       {'id': 'rw-step-1', 'status': 'pending', 'content': 'Step 1: Branch Safety Check - Analyze work and ensure it aligns with current branch'},
+       {'id': 'rw-step-2', 'status': 'pending', 'content': 'Step 2: Bump Version - Analyze current version and determine next version'},
+       {'id': 'rw-step-3', 'status': 'pending', 'content': 'Step 3: Create Detailed Changelog - Generate CHANGELOG with full timestamp'},
+       {'id': 'rw-step-4', 'status': 'pending', 'content': 'Step 4: Update Main Changelog - Add summary entry'},
+       {'id': 'rw-step-5', 'status': 'pending', 'content': 'Step 5: Update README - Update version badge and latest release'},
+       {'id': 'rw-step-6', 'status': 'pending', 'content': 'Step 6: Auto-update Kanban Docs - Update Epic/Story docs with version markers'},
+       {'id': 'rw-step-7', 'status': 'pending', 'content': 'Step 7: Stage Files - Stage all modified files'},
+       {'id': 'rw-step-8', 'status': 'pending', 'content': 'Step 8: Run Validators - Execute branch context and changelog format validators'},
+       {'id': 'rw-step-9', 'status': 'pending', 'content': 'Step 9: Commit Changes - Create git commit with versioned message'},
+       {'id': 'rw-step-10', 'status': 'pending', 'content': 'Step 10: Create Git Tag - Create annotated tag'},
+       {'id': 'rw-step-11', 'status': 'pending', 'content': 'Step 11: Push to Remote - Push branch and tags'},
    ])
    ```
 
@@ -59,9 +61,9 @@
 5. **Atomicity & Blocking Behaviour (Accessibility-Critical):**
 
    - When the user types **`RW`**, the agent MUST either:
-     - Run **all 10 steps (1–10)** to completion for the target version, OR
+     - Run **all 11 steps (1–11)** to completion for the target version, OR
      - Stop at a **specific step** and clearly state:
-       - The **step number and name** (e.g. "Step 7: Run Validators")
+       - The **step number and name** (e.g. "Step 1: Branch Safety Check" or "Step 8: Run Validators")
        - The **reason** it is blocked (e.g. wrong branch, missing tool, sandbox limitation)
        - The **exact action/commands** the user must run to unblock it
        - That **RW is NOT complete** until those actions are taken and the agent resumes
@@ -83,12 +85,14 @@ For each step, follow this pattern:
 4. **VALIDATE** - Verify execution succeeded
 5. **PROCEED** - Document and move to next step
 
-**The 10 Steps:**
+**The 11 Steps:**
 
-1. **Bump Version** - Read `src/fynd_deals/version.py`, determine next version (increment BUILD for same task, or set new TASK+BUILD=1), update file. Use new format: `RC.EPIC.STORY.TASK+BUILD`
-2. **Update CHANGELOG** - Add new entry at top: `## [version] - DD-MM-YY` (new format) or `## [version] - YYYY-MM-DD` (old format) with release description. For new format, also create detailed changelog in `CHANGELOG_ARCHIVE/CHANGELOG_v{version}.md` with full timestamp.
-3. **Update Kanban Board** - Add release note to `knowledge/fynd_deals/Kanban/Kanban Board.md`
-4. **Update KB Epic Docs** - Update epic documentation at `knowledge/fynd_deals/Kanban/Epic-{epic}/Epic-{epic}.md` with version marker. **CRITICAL: "ALL" means ALL sections:**
+1. **Branch Safety Check** - Analyze work done and ensure it aligns with current branch. Check modified files, version alignment, and changelog alignment. If work does not align with branch (e.g., on `epic/4` but work references Epic 5), STOP workflow with clear warning. This prevents cross-epic contamination before any modifications.
+2. **Bump Version** - Read `src/fynd_deals/version.py`, determine next version (increment BUILD for same task, or set new TASK+BUILD=1), update file. Use new format: `RC.EPIC.STORY.TASK+BUILD`
+3. **Create Detailed Changelog** - Create detailed changelog in `CHANGELOG_ARCHIVE/CHANGELOG_v{version}.md` with full timestamp (`YYYY-MM-DD HH:MM:SS UTC`)
+4. **Update Main Changelog** - Add new entry at top: `### [version] - DD-MM-YY` (new format) or `## [version] - YYYY-MM-DD` (old format) with release description and link to detailed changelog
+5. **Update README** - Update version badge and latest release callout if present (optional)
+6. **Auto-update Kanban Docs** - Update epic documentation at `knowledge/fynd_deals/Kanban/Epic-{epic}/Epic-{epic}.md` with version marker. **CRITICAL: "ALL" means ALL sections:**
    - Header metadata (Last updated, Version)
    - Story Checklist at top (status, task counts, version)
    - **Detailed Story sections** (Status, Last updated, task checkboxes with forensic markers)
@@ -99,21 +103,21 @@ For each step, follow this pattern:
      3. Find ALL sections referencing the story/task (grep/search the file)
      4. Update ALL of them to match the Story file's state
      5. Validate consistency: header, checklist, and detailed sections must all match
-5. **Update README** - Update version references if present (optional)
-6. **Stage Files** - Run `git add -A` to stage all modified files
-7. **Run Validators** - Execute `scripts/validation/validate_branch_context.py --strict` and `scripts/validation/validate_changelog_format.py --strict`
+7. **Stage Files** - Run `git add -A` to stage all modified files
+8. **Run Validators** - Execute `scripts/validation/validate_branch_context.py --strict` and `scripts/validation/validate_changelog_format.py --strict`
    - **IMPORTANT:** Validators should confirm you're on an epic branch, not `main`
    - If on `main`, warn user and suggest switching to epic branch
-8. **Commit Changes** - Create commit with message: `Release {version}`
-9. **Create Git Tag** - Create annotated tag: `v{version}` with message: `Release {version}`
-10. **Push to Remote** - Push epic branch and tag to origin (DO NOT push to main unless ready to deploy)
+9. **Commit Changes** - Create commit with message: `{version} - {summary}`
+10. **Create Git Tag** - Create annotated tag: `v{version}` with message: `Release {version}: {summary}`
+11. **Push to Remote** - Push epic branch and tag to origin (DO NOT push to main unless ready to deploy)
 
 **Key Principles:**
 - ✅ **Intelligent Analysis:** Understand each step's requirements before executing
 - ✅ **Context-Aware:** Use branch context, version schema, and project state to make decisions
 - ✅ **Validation:** Verify each step succeeded before proceeding
 - ✅ **Documentation:** Document decisions and actions at each step
-- ✅ **Progress Tracking:** MUST use Cursor TODOs to track all 10 steps
+- ✅ **Progress Tracking:** MUST use Cursor TODOs to track all 11 steps
+- ✅ **Branch Safety First:** Step 1 validates branch alignment before any modifications
 - ❌ **Never Blind Execution:** Don't just run scripts without understanding what they do
 - ❌ **Never Leave RW Ambiguous:** Always end in either **RW COMPLETE** or **RW ABORTED (with reason)** state
 

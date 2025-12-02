@@ -38,6 +38,29 @@ This directory contains a complete, portable set of policies for implementing nu
 
 ---
 
+## 🧩 Modularity & Dependencies
+
+This package is designed to be **fully modular**. You can:
+
+- Use **only this package** in your project, without copying any other part of `vibe-dev-kit`
+- Combine it with other packages (for example, the **Workflow Management** package) when you want automation built on top of these policies
+
+**Package dependencies:**
+
+- **Standalone:** ✅ Yes — this package can be used on its own as a pure policy + templates module
+- **Hard runtime dependencies:** ✅ None — it does not require the workflow package or any scripts to be useful
+- **Soft / optional companions:**
+  - `packages/frameworks/workflow mgt/` — uses this schema in an automated Release Workflow
+
+You can:
+
+- Adopt the **schema and policy documents only**, and ignore any references to workflows, or
+- Start from this package as **conceptual reference** and derive your own policies, keeping your runtime stack completely separate
+
+The goal is **maximum flexibility**: treat this as a self-contained module that can be dropped into any project and adapted as needed.
+
+---
+
 ## Quick Start
 
 1. **Read:** `README.md` for overview

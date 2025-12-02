@@ -34,6 +34,29 @@ This package contains all essential files needed to implement the Release Workfl
 
 ---
 
+## 🧩 Modularity & Dependencies
+
+This package is designed to be **fully modular**. You can:
+
+- Use **only this package** in your project, without copying any other part of `vibe-dev-kit`
+- Mix and match it with other packages (for example, the **Numbering & Versioning** package) when you want more of the ecosystem
+
+**Package dependencies:**
+
+- **Standalone:** ✅ Yes — this package can be used on its own
+- **Hard runtime dependencies:** ✅ None outside of standard tools (Git, Python for validators, your AI assistant)
+- **Soft / optional companions:**
+  - `packages/frameworks/numbering & versioning/` — provides a portable policy set for the version schema that this package uses
+
+If you prefer a different versioning strategy, you can:
+
+- Keep this package and **swap in your own versioning policy docs**, or
+- Use this package only for the **workflow pattern** and ignore the included policy documents
+
+The goal is **maximum flexibility**: treat this as a drop‑in module, not a monolith.
+
+---
+
 ## 🚀 Quick Start
 
 ### Step 1: Copy Files to Your Project

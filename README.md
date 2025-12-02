@@ -93,6 +93,42 @@ cat README.md
 
 ---
 
+## 🧩 Modular Use
+
+This repo is designed to be **modular**. You can:
+
+- Use **a single package** (for example, just the Release Workflow package) without copying anything else
+- Use **multiple packages together** when you want deeper integration (for example, Release Workflow + Numbering & Versioning)
+- Treat each package as a **drop‑in module** that you adapt to your own project structure
+
+### Common usage patterns
+
+- **Just the Release Workflow (RW) framework:**
+  ```bash
+  # Copy only the workflow package
+  cp -r packages/frameworks/workflow\ mgt/ /path/to/your/project/
+  ```
+
+- **Just the Numbering & Versioning policies:**
+  ```bash
+  # Copy only the numbering & versioning package
+  cp -r "packages/frameworks/numbering & versioning" /path/to/your/project/numbering-and-versioning
+  ```
+
+- **Both together (tightly integrated):**
+  ```bash
+  cp -r packages/frameworks/workflow\ mgt/ /path/to/your/project/
+  cp -r "packages/frameworks/numbering & versioning" /path/to/your/project/numbering-and-versioning
+  ```
+
+Each package documents its own **modularity and dependencies** in its README / overview, so users can see at a glance:
+
+- Whether it is **standalone**
+- Any **hard dependencies** (usually none)
+- Any **optional companion packages** that work well with it
+
+---
+
 ## 📁 Repository Structure
 
 ```
@@ -130,6 +166,9 @@ Complete package for implementing the Release Workflow (RW) trigger and agent-dr
 **Last Updated:** 2025-12-02  
 **Source:** fynd.deals (Epic 15, Story 1)
 
+**Latest Release (this repo):**  
+**v0.1.1.1+1** – 🏗️ Foundation: First proper release with Epic 1-4 structure, dev-kit versioning policy, and Kanban FR/BR → Task flow. See `CHANGELOG.md` for details.
+
 ---
 
 #### 2. Numbering & Versioning (`packages/frameworks/numbering & versioning/`)
@@ -158,7 +197,7 @@ When packages are updated:
 3. Update summaries are included in package directories
 4. Projects can pull updates as needed
 
-**Current Repository Version:** 1.0.0 (2025-12-02)
+**Current Repository Version:** v0.1.1.1+1 (2025-12-02)
 
 ---
 

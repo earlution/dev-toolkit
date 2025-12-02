@@ -10,7 +10,7 @@
 
 This document provides a **step-by-step agent execution guide** for the Release Workflow. The Release Workflow serves as the **canonical example** of intelligent agent-driven workflow execution.
 
-**This guide shows exactly how an AI agent should analyze, determine, execute, validate, and proceed through each of the 10 Release Workflow steps.**
+**This guide shows exactly how an AI agent should analyze, determine, execute, validate, and proceed through each of the 11 Release Workflow steps.**
 
 ---
 
@@ -20,7 +20,7 @@ This document provides a **step-by-step agent execution guide** for the Release 
 
 **Workflow:** Release Workflow
 **Type:** `release`
-**Steps:** 10 steps organized into 2 phases
+**Steps:** 11 steps organized into 2 phases
 **Canonical Example:** Yes - this workflow demonstrates the agent-driven execution pattern
 
 ### Agent Execution Pattern
@@ -34,11 +34,11 @@ For each step, the agent follows this pattern:
 
 ### 🚨 MANDATORY: Progress Tracking with Cursor TODOs
 
-**REQUIRED:** Agents **MUST** use `todo_write` to create and maintain a TODO list tracking all 10 Release Workflow steps. This is **NOT OPTIONAL** - it is a mandatory requirement for Release Workflow execution.
+**REQUIRED:** Agents **MUST** use `todo_write` to create and maintain a TODO list tracking all 11 Release Workflow steps. This is **NOT OPTIONAL** - it is a mandatory requirement for Release Workflow execution.
 
 **Why TODOs are Required:**
-- ✅ **User Visibility:** User can see real-time progress through all 10 steps
-- ✅ **Agent Organization:** Helps agent stay organized across 10 sequential steps
+- ✅ **User Visibility:** User can see real-time progress through all 11 steps
+- ✅ **Agent Organization:** Helps agent stay organized across 11 sequential steps
 - ✅ **Error Recovery:** Clear visibility into where execution stopped if interrupted
 - ✅ **User Transparency:** User can verify all steps completed successfully
 - ✅ **Status Management:** Automatic status updates provide clear execution state
@@ -46,19 +46,20 @@ For each step, the agent follows this pattern:
 
 **Required Implementation Pattern:**
 
-1. **At Workflow Start (MANDATORY):** Create TODO list with all 10 steps as `pending`
+1. **At Workflow Start (MANDATORY):** Create TODO list with all 11 steps as `pending`
    ```python
    todo_write(merge=False, todos=[
-       {'id': 'rw-step-1', 'status': 'pending', 'content': 'Step 1: Bump Version - Analyze current version and determine next version'},
-       {'id': 'rw-step-2', 'status': 'pending', 'content': 'Step 2: Create Detailed Changelog - Generate CHANGELOG with full timestamp'},
-       {'id': 'rw-step-3', 'status': 'pending', 'content': 'Step 3: Update Main Changelog - Add summary entry'},
-       {'id': 'rw-step-4', 'status': 'pending', 'content': 'Step 4: Update README - Update version badge and latest release'},
-       {'id': 'rw-step-5', 'status': 'pending', 'content': 'Step 5: Auto-update Kanban Docs - Update Epic/Story docs with version markers'},
-       {'id': 'rw-step-6', 'status': 'pending', 'content': 'Step 6: Stage Files - Stage all modified files'},
-       {'id': 'rw-step-7', 'status': 'pending', 'content': 'Step 7: Run Validators - Execute branch context and changelog format validators'},
-       {'id': 'rw-step-8', 'status': 'pending', 'content': 'Step 8: Commit Changes - Create git commit with versioned message'},
-       {'id': 'rw-step-9', 'status': 'pending', 'content': 'Step 9: Create Git Tag - Create annotated tag'},
-       {'id': 'rw-step-10', 'status': 'pending', 'content': 'Step 10: Push to Remote - Push branch and tags'},
+       {'id': 'rw-step-1', 'status': 'pending', 'content': 'Step 1: Branch Safety Check - Analyze work and ensure it aligns with current branch'},
+       {'id': 'rw-step-2', 'status': 'pending', 'content': 'Step 2: Bump Version - Analyze current version and determine next version'},
+       {'id': 'rw-step-3', 'status': 'pending', 'content': 'Step 3: Create Detailed Changelog - Generate CHANGELOG with full timestamp'},
+       {'id': 'rw-step-4', 'status': 'pending', 'content': 'Step 4: Update Main Changelog - Add summary entry'},
+       {'id': 'rw-step-5', 'status': 'pending', 'content': 'Step 5: Update README - Update version badge and latest release'},
+       {'id': 'rw-step-6', 'status': 'pending', 'content': 'Step 6: Auto-update Kanban Docs - Update Epic/Story docs with version markers'},
+       {'id': 'rw-step-7', 'status': 'pending', 'content': 'Step 7: Stage Files - Stage all modified files'},
+       {'id': 'rw-step-8', 'status': 'pending', 'content': 'Step 8: Run Validators - Execute branch context and changelog format validators'},
+       {'id': 'rw-step-9', 'status': 'pending', 'content': 'Step 9: Commit Changes - Create git commit with versioned message'},
+       {'id': 'rw-step-10', 'status': 'pending', 'content': 'Step 10: Create Git Tag - Create annotated tag'},
+       {'id': 'rw-step-11', 'status': 'pending', 'content': 'Step 11: Push to Remote - Push branch and tags'},
    ])
    ```
 
@@ -77,7 +78,7 @@ For each step, the agent follows this pattern:
 
 4. **On Completion (MANDATORY):** All steps marked as `completed`
    ```python
-   todo_write(merge=True, todos=[{'id': 'rw-step-10', 'status': 'completed'}])
+   todo_write(merge=True, todos=[{'id': 'rw-step-11', 'status': 'completed'}])
    ```
 
 **Enforcement:**
@@ -93,13 +94,107 @@ For each step, the agent follows this pattern:
 
 ## 📋 Step-by-Step Agent Execution
 
-### Step 1: Bump Version
+### Step 1: Branch Safety Check
 
 **Step Definition:**
 ```yaml
 - id: step-1
+  name: Branch Safety Check
+  handler: release.branch_safety_check
+  dependencies: []
+  config:
+    check_modified_files: true
+    check_version_alignment: true
+    check_changelog_alignment: true
+```
+
+**Agent Execution:**
+
+1. **ANALYZE:**
+   - Get current Git branch name (e.g., `epic/4`, `main`)
+   - Check if branch matches expected pattern (e.g., `epic/{n}` for epic branches)
+   - Analyze modified files in working directory (`git status`, `git diff`)
+   - Check if version file exists and read current version (if file is modified)
+   - Check if changelog entries exist (if CHANGELOG.md is modified)
+   - Extract expected epic number from branch name (e.g., `epic/4` → Epic 4)
+   - Check modified file paths for epic-specific patterns (e.g., `Epic-4/`, `epic/4/`)
+
+2. **DETERMINE:**
+   - Determine if work aligns with current branch:
+     - If on `epic/4`, modified files should relate to Epic 4
+     - If version file modified, version epic should match branch epic
+     - If changelog modified, changelog entries should match branch epic
+     - Modified file paths should align with branch context
+   - Identify any mismatches or cross-epic contamination
+   - Determine if RW should proceed or stop
+
+3. **EXECUTE:**
+   - Run branch context analysis:
+     - Check `git status` for modified files
+     - Check `git diff` for changes to version file
+     - Check `git diff` for changes to CHANGELOG.md
+     - Analyze file paths for epic alignment
+   - Compare branch epic with work epic (from files/version/changelog)
+
+4. **VALIDATE:**
+   - Verify branch and work alignment:
+     - ✅ **PASS**: Work aligns with branch (e.g., on `epic/4`, all work is Epic 4 related)
+     - ❌ **FAIL**: Work does not align with branch (e.g., on `epic/4`, but work references Epic 5)
+   - If mismatch detected, workflow must stop immediately
+
+5. **PROCEED:**
+   - **If aligned**: Document "Branch safety check passed - work aligns with current branch", move to Step 2
+   - **If misaligned**: 
+     - Document: "🚨 RW BLOCKED: Branch Safety Check Failed"
+     - Output clear warning message:
+       ```
+       🚨 RELEASE WORKFLOW BLOCKED
+       
+       Step 1: Branch Safety Check - FAILED
+       
+       Reason: Current branch '{branch}' does not align with the work being released.
+       
+       Details:
+       - Current branch: {branch}
+       - Expected epic: {expected_epic}
+       - Detected issues: {list_of_issues}
+       
+       Action Required:
+       1. Switch to the correct branch: git checkout epic/{correct_epic}
+       2. Or review your changes to ensure they align with the current branch
+       3. Then run RW again
+       
+       RW is NOT complete. Workflow stopped at Step 1.
+       ```
+     - Mark Step 1 TODO as `cancelled`
+     - Mark all remaining steps as `cancelled`
+     - **DO NOT PROCEED** to Step 2
+
+**Example Alignment Checks:**
+
+- **On `epic/4` branch:**
+  - ✅ Version file shows `0.4.x.x+x` → PASS
+  - ✅ Modified files in `Epic-4/` directory → PASS
+  - ✅ Changelog entry references Epic 4 → PASS
+  - ❌ Version file shows `0.5.x.x+x` → FAIL (mismatch)
+  - ❌ Modified files in `Epic-5/` directory → FAIL (mismatch)
+
+- **On `main` branch:**
+  - ✅ Any epic number allowed (main can have any epic)
+  - ⚠️ Warning: Consider if RW should run on main (usually run on epic branch first)
+
+WARNING: This step prevents accidental cross-epic contamination and ensures version numbers match branch context. If this check fails, DO NOT proceed with the workflow. Fix the branch alignment first.
+
+---
+
+### Step 2: Bump Version
+
+**Step Definition:**
+```yaml
+- id: step-2
   name: Bump Version
   handler: release.version_bump
+  dependencies: [step-1]
   config:
     version_file: src/confidentia/version.py
     increment_type: patch
@@ -110,9 +205,9 @@ For each step, the agent follows this pattern:
 1. **ANALYZE:**
    - Read current version from `src/confidentia/version.py`
    - Understand version schema: `RC.EPIC.STORY.TASK+BUILD`
-   - Check current Git branch to determine Epic number
+   - Check current Git branch to determine Epic number (already validated in Step 1)
    - Understand increment type: `patch` means increment BUILD number
-   - Check if version matches branch schema (e.g., `epic/4` → `0.4.x.x+x`)
+   - Verify version matches branch schema (already checked in Step 1, but double-check)
 
 2. **DETERMINE:**
    - Calculate next version: If current is `0.4.3.2+8`, next is `0.4.3.2+9`
@@ -130,19 +225,19 @@ For each step, the agent follows this pattern:
 
 5. **PROCEED:**
    - Document: "Version bumped: 0.4.3.2+8 → 0.4.3.2+9"
-   - Pass `new_version: "0.4.3.2+9"` to Step 2
-   - Move to Step 2
+   - Pass `new_version: "0.4.3.2+9"` to Step 3
+   - Move to Step 3
 
 ---
 
-### Step 2: Create Detailed Changelog
+### Step 3: Create Detailed Changelog
 
 **Step Definition:**
 ```yaml
-- id: step-2
+- id: step-3
   name: Create Detailed Changelog
   handler: release.changelog_create
-  dependencies: [step-1]
+  dependencies: [step-2]
   config:
     changelog_dir: KB/Changelog_and_Release_Notes/Changelog_Archive
     format: full_timestamp
@@ -151,7 +246,7 @@ For each step, the agent follows this pattern:
 **Agent Execution:**
 
 1. **ANALYZE:**
-   - Get `new_version` from Step 1 output: `"0.4.3.2+9"`
+   - Get `new_version` from Step 2 output: `"0.4.3.2+9"`
    - Get release summary from workflow parameters
    - Get change type from workflow parameters
    - Extract Epic/Story from Git branch name (e.g., `epic/4` → Epic 4)
@@ -183,19 +278,19 @@ For each step, the agent follows this pattern:
 
 5. **PROCEED:**
    - Document: "Created detailed changelog: CHANGELOG_v0.4.3.2+9.md"
-   - Pass `changelog_file` path to Step 3
-   - Move to Step 3
+   - Pass `changelog_file` path to Step 4
+   - Move to Step 4
 
 ---
 
-### Step 3: Update Main Changelog
+### Step 4: Update Main Changelog
 
 **Step Definition:**
 ```yaml
-- id: step-3
+- id: step-4
   name: Update Main Changelog
   handler: release.changelog_update
-  dependencies: [step-2]
+  dependencies: [step-3]
   config:
     main_changelog: CHANGELOG.md
     date_format: DD-MM-YY
@@ -204,7 +299,7 @@ For each step, the agent follows this pattern:
 **Agent Execution:**
 
 1. **ANALYZE:**
-   - Get `new_version` from Step 1: `"0.4.3.2+9"`
+   - Get `new_version` from Step 2: `"0.4.3.2+9"`
    - Get summary and change type from parameters
    - Read current `CHANGELOG.md` to find "## Recent Releases" section
    - Understand date format: `DD-MM-YY` (e.g., `01-12-25`)
@@ -229,18 +324,18 @@ For each step, the agent follows this pattern:
 
 5. **PROCEED:**
    - Document: "Updated main changelog with summary entry"
-   - Move to Step 4 (can run in parallel with Steps 4-5)
+   - Move to Step 5 (can run in parallel with Steps 5-6)
 
 ---
 
-### Step 4: Update README
+### Step 5: Update README
 
 **Step Definition:**
 ```yaml
-- id: step-4
+- id: step-5
   name: Update README
   handler: release.readme_update
-  dependencies: [step-1]
+  dependencies: [step-2]
   config:
     readme_file: README.md
     update_badge: true
@@ -250,7 +345,7 @@ For each step, the agent follows this pattern:
 **Agent Execution:**
 
 1. **ANALYZE:**
-   - Get `new_version` from Step 1: `"0.4.3.2+9"`
+   - Get `new_version` from Step 2: `"0.4.3.2+9"`
    - Get summary and change type from parameters
    - Read `README.md` to find version badge and latest release callout
    - Understand badge format: `[![Version](...badge/version-{version}-blue)...]`
@@ -272,18 +367,18 @@ For each step, the agent follows this pattern:
 
 5. **PROCEED:**
    - Document: "Updated README version badge and latest release"
-   - Move to Step 5 (can run in parallel with Steps 3-5)
+   - Move to Step 6 (can run in parallel with Steps 4-6)
 
 ---
 
-### Step 5: Auto-update Kanban Docs
+### Step 6: Auto-update Kanban Docs
 
 **Step Definition:**
 ```yaml
-- id: step-5
+- id: step-6
   name: Auto-update Kanban Docs
   handler: confidentia.kanban_update
-  dependencies: [step-1]
+  dependencies: [step-2]
   config:
     epic_doc_pattern: KB/PM_and_Portfolio/epics/overview/Epic {epic}/Epic-{epic}.md
     kanban_board: KB/PM_and_Portfolio/epics/overview/_index.md
@@ -292,8 +387,8 @@ For each step, the agent follows this pattern:
 **Agent Execution:**
 
 1. **ANALYZE:**
-   - Get `new_version` from Step 1: `"0.4.3.2+9"`
-   - Extract Epic number from branch: `epic/4` → Epic 4
+   - Get `new_version` from Step 2: `"0.4.3.2+9"`
+   - Extract Epic number from branch: `epic/4` → Epic 4 (already validated in Step 1)
    - Extract Story number from version: `0.4.3.2+9` → Story 3
    - Find Epic doc: `KB/PM_and_Portfolio/epics/overview/Epic 4/Epic-4.md`
    - Find Story doc: `KB/PM_and_Portfolio/kanban/Epic 4/Story-3-*.md`
@@ -318,18 +413,18 @@ For each step, the agent follows this pattern:
 
 5. **PROCEED:**
    - Document: "Updated Kanban docs with version markers"
-   - Move to Step 6 (waits for Steps 1-5 to complete)
+   - Move to Step 7 (waits for Steps 2-6 to complete)
 
 ---
 
-### Step 6: Stage Files
+### Step 7: Stage Files
 
 **Step Definition:**
 ```yaml
-- id: step-6
+- id: step-7
   name: Stage Files
   handler: git.stage_all
-  dependencies: [step-1, step-2, step-3, step-4, step-5]
+  dependencies: [step-2, step-3, step-4, step-5, step-6]
   config:
     paths: ["*"]
 ```
@@ -337,7 +432,7 @@ For each step, the agent follows this pattern:
 **Agent Execution:**
 
 1. **ANALYZE:**
-   - Understand all files modified in Steps 1-5:
+   - Understand all files modified in Steps 2-6:
      - Version file
      - Detailed changelog (new file)
      - Main changelog
@@ -360,18 +455,18 @@ For each step, the agent follows this pattern:
 
 5. **PROCEED:**
    - Document: "Staged all modified files"
-   - Move to Step 7
+   - Move to Step 8
 
 ---
 
-### Step 7: Run Validators
+### Step 8: Run Validators
 
 **Step Definition:**
 ```yaml
-- id: step-7
+- id: step-8
   name: Run Validators
   handler: confidentia.run_validators
-  dependencies: [step-6]
+  dependencies: [step-7]
   config:
     validators:
       - scripts/validation/validate_branch_context.py
@@ -404,19 +499,19 @@ For each step, the agent follows this pattern:
    - Analyze error messages if validators fail
 
 5. **PROCEED:**
-   - If validators pass: Document "Validators passed", move to Step 8
+   - If validators pass: Document "Validators passed", move to Step 9
    - If validators fail: Abort workflow, report errors, do not proceed
 
 ---
 
-### Step 8: Commit Changes
+### Step 9: Commit Changes
 
 **Step Definition:**
 ```yaml
-- id: step-8
+- id: step-9
   name: Commit Changes
   handler: git.commit
-  dependencies: [step-7]
+  dependencies: [step-8]
   config:
     message_template: "{version} - {summary}"
 ```
@@ -424,7 +519,7 @@ For each step, the agent follows this pattern:
 **Agent Execution:**
 
 1. **ANALYZE:**
-   - Get `new_version` from Step 1: `"0.4.3.2+9"`
+   - Get `new_version` from Step 2: `"0.4.3.2+9"`
    - Get summary from parameters
    - Understand commit message template: `"{version} - {summary}"`
    - Verify files are still staged
@@ -444,19 +539,19 @@ For each step, the agent follows this pattern:
 
 5. **PROCEED:**
    - Document: "Created commit {hash} with message: {message}"
-   - Pass commit hash to Step 9 (if needed)
-   - Move to Step 9
+   - Pass commit hash to Step 10 (if needed)
+   - Move to Step 10
 
 ---
 
-### Step 9: Create Git Tag
+### Step 10: Create Git Tag
 
 **Step Definition:**
 ```yaml
-- id: step-9
+- id: step-10
   name: Create Git Tag
   handler: git.create_tag
-  dependencies: [step-8]
+  dependencies: [step-9]
   config:
     tag_template: v{version}
     message_template: "Release {tag}: {summary}"
@@ -466,7 +561,7 @@ For each step, the agent follows this pattern:
 **Agent Execution:**
 
 1. **ANALYZE:**
-   - Get `new_version` from Step 1: `"0.4.3.2+9"`
+   - Get `new_version` from Step 2: `"0.4.3.2+9"`
    - Get summary from parameters
    - Understand tag template: `v{version}` → `v0.4.3.2+9`
    - Understand message template: `"Release {tag}: {summary}"`
@@ -488,18 +583,18 @@ For each step, the agent follows this pattern:
 
 5. **PROCEED:**
    - Document: "Created annotated tag v0.4.3.2+9"
-   - Move to Step 10 (waits for Step 8 to complete)
+   - Move to Step 11 (waits for Step 9 to complete)
 
 ---
 
-### Step 10: Push to Remote
+### Step 11: Push to Remote
 
 **Step Definition:**
 ```yaml
-- id: step-10
+- id: step-11
   name: Push to Remote
   handler: git.push
-  dependencies: [step-8, step-9]
+  dependencies: [step-9, step-10]
   config:
     push_tags: true
     remote: origin
@@ -508,8 +603,8 @@ For each step, the agent follows this pattern:
 **Agent Execution:**
 
 1. **ANALYZE:**
-   - Get current branch name: `epic/4`
-   - Get tag name from Step 9: `v0.4.3.2+9`
+   - Get current branch name: `epic/4` (already validated in Step 1)
+   - Get tag name from Step 10: `v0.4.3.2+9`
    - Understand remote: `origin`
    - Check network access and Git credentials
 
@@ -541,24 +636,25 @@ For each step, the agent follows this pattern:
 When executing Release Workflow as an agent, ensure:
 
 ### Pre-Execution
-- [ ] **MANDATORY:** Created TODO list with all 10 steps (using `todo_write`)
+- [ ] **MANDATORY:** Created TODO list with all 11 steps (using `todo_write`)
 - [ ] Loaded workflow definition from YAML
-- [ ] Parsed all 10 steps and dependencies
+- [ ] Parsed all 11 steps and dependencies
 - [ ] Gathered workflow parameters (summary, change_type, etc.)
 - [ ] Checked current Git branch
 - [ ] Verified workspace context
 
 ### Step Execution
-- [ ] **Step 1:** Analyzed version, determined next version, updated file, validated
-- [ ] **Step 2:** Analyzed requirements, generated timestamp, created changelog, validated
-- [ ] **Step 3:** Analyzed format, determined date, updated CHANGELOG.md, validated
-- [ ] **Step 4:** Analyzed README, updated badge and callout, validated
-- [ ] **Step 5:** Analyzed Kanban docs, updated Epic/Story docs, validated
-- [ ] **Step 6:** Analyzed modified files, staged all files, validated
-- [ ] **Step 7:** Analyzed validators, ran both validators, validated results
-- [ ] **Step 8:** Analyzed template, built message, created commit, validated
-- [ ] **Step 9:** Analyzed tag format, created annotated tag, validated
-- [ ] **Step 10:** Analyzed remote, pushed branch and tag, validated
+- [ ] **Step 1:** Analyzed work and branch alignment, validated branch safety
+- [ ] **Step 2:** Analyzed version, determined next version, updated file, validated
+- [ ] **Step 3:** Analyzed requirements, generated timestamp, created changelog, validated
+- [ ] **Step 4:** Analyzed format, determined date, updated CHANGELOG.md, validated
+- [ ] **Step 5:** Analyzed README, updated badge and callout, validated
+- [ ] **Step 6:** Analyzed Kanban docs, updated Epic/Story docs, validated
+- [ ] **Step 7:** Analyzed modified files, staged all files, validated
+- [ ] **Step 8:** Analyzed validators, ran both validators, validated results
+- [ ] **Step 9:** Analyzed template, built message, created commit, validated
+- [ ] **Step 10:** Analyzed tag format, created annotated tag, validated
+- [ ] **Step 11:** Analyzed remote, pushed branch and tag, validated
 
 ### Post-Execution
 - [ ] **MANDATORY:** All steps marked as completed in TODO list
@@ -587,8 +683,9 @@ run_terminal_cmd("python scripts/automation/release_workflow.py --auto-go")
 **Good:**
 ```python
 # Agent analyzes and executes each step intelligently
-# Step 1: Analyze version, determine next version, update file
-# Step 2: Analyze changelog requirements, create file
+# Step 1: Analyze work and branch alignment, validate branch safety
+# Step 2: Analyze version, determine next version, update file
+# Step 3: Analyze changelog requirements, create file
 # etc.
 ```
 
@@ -600,6 +697,7 @@ run_terminal_cmd("python scripts/automation/release_workflow.py --auto-go")
 - Agent commits without validating
 
 **Good:**
+- Agent checks branch safety before any modifications (Step 1)
 - Agent analyzes branch context before version bump
 - Agent understands changelog format requirements
 - Agent validates before committing
@@ -612,8 +710,9 @@ run_terminal_cmd("python scripts/automation/release_workflow.py --auto-go")
 - Agent tries to push before commit exists
 
 **Good:**
-- Agent waits for Step 1 to complete before Step 2
-- Agent waits for Step 6 to complete before Step 7
+- Agent completes Step 1 (branch safety) before any modifications
+- Agent waits for Step 2 to complete before Step 3
+- Agent waits for Step 7 to complete before Step 8
 - Agent respects dependency order
 
 ---
@@ -642,8 +741,9 @@ The `.cursorrules` file defines a **case-insensitive "RW" trigger** that mandate
 1. **DO NOT** run `scripts/automation/release_workflow.py` (deterministic script)
 2. **DO** execute Release Workflow using intelligent agent-driven execution
 3. **Follow** this guide (`release-workflow-agent-execution.md`) step-by-step
-4. **Use** ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern for each step
-5. **Document** analysis, actions, and results at each step
+4. **Start with Step 1: Branch Safety Check** - Analyze work and ensure it aligns with current branch before proceeding
+5. **Use** ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern for each step
+6. **Document** analysis, actions, and results at each step
 
 **Cursor Rules Enforcement:**
 - ✅ **Explicit Pattern:** Rules mandate agent-driven execution for "RW" trigger
@@ -663,5 +763,5 @@ The `.cursorrules` file defines a **case-insensitive "RW" trigger** that mandate
 
 ---
 
-**Last Updated:** 2025-12-01
-**Document Version:** 1.0.0
+**Last Updated:** 2025-01-02
+**Document Version:** 1.1.0

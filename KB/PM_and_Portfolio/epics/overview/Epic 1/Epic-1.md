@@ -1,0 +1,109 @@
+# Epic 1: Vibe Dev Kit Core
+
+**Status:** IN PROGRESS  
+**Priority:** HIGH  
+**Estimated Effort:** [TBD]  
+**Created:** 2025-12-02  
+**Last updated:** 2025-12-02 (v0.1.1.1+1 – Epic 1-4 structure and dev-kit versioning policy established)  
+**Branch:** `epic/1-vibe-dev-kit-core`  
+**Version Schema:** `0.1.S.T+B` (dev-kit RC.EPIC.STORY.TASK+BUILD)  
+**Production URL:** [N/A for this repo]
+
+---
+
+## Story Checklist
+
+- [ ] **E1:S01 – Dev Kit Versioning & RW Behaviour** - TODO  
+- [ ] **E1:S02 – Package & Repo Architecture** - TODO  
+- [ ] **E1:S03 – Core KB Structure for Dev Kit** - TODO  
+
+---
+
+## Overview
+
+Epic 1 establishes the **core infrastructure and conventions** for the Vibe Dev Kit repository.  
+It defines how the repo is structured, how versioning works for the dev kit itself, and how Release Workflow (RW) should behave when run *inside this repo* rather than inside an application project.
+
+---
+
+## Goals
+
+1. **Define dev-kit versioning policy**  
+   - Document how `RC.EPIC.STORY.TASK+BUILD` applies to dev-kit Epics, Stories, and Tasks.  
+   - Ensure `version.py`, CHANGELOG, and RW docs all reflect this policy.
+
+2. **Clarify modular architecture**  
+   - Make it easy for users to consume **individual frameworks** (workflow mgt, versioning, kanban) without pulling in the whole repo.  
+
+3. **Provide a solid KB foundation**  
+   - Establish core KB locations for architecture, PM & portfolio, and dev-kit governance.
+
+---
+
+## Stories
+
+### Story 1: Dev Kit Versioning & RW Behaviour
+
+**Status:** IN PROGRESS  
+**Priority:** HIGH  
+**Estimated Effort:** [TBD]  
+**Last updated:** 2025-12-02 (v0.1.1.1+1 – Epic 1-4 docs and dev-kit versioning policy created)  
+
+**Goal:**  
+Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW interprets versions and tasks when run in this repo.
+
+**Tasks:**
+- [x] E1:S01:T001 – Create `dev-kit-versioning-policy.md` ✅ COMPLETE (v0.1.1.1+1)  
+- [x] E1:S01:T002 – Align `version.py` and CHANGELOG with dev-kit policy ✅ COMPLETE (v0.1.1.1+1)  
+- [ ] E1:S01:T003 – Update RW docs to distinguish dev-kit vs external examples  
+
+**Acceptance Criteria:**
+- [ ] Dev-kit versioning policy exists and is referenced by other docs  
+- [ ] `version.py` encodes a real dev-kit Epic/Story/Task, not legacy external IDs  
+- [ ] RW docs clarify dev-kit vs Confidentia/fynd.deals examples
+
+> Full story: `KB/PM_and_Portfolio/kanban/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md` (and follow-up stories to be created under Epic 1).
+
+---
+
+## Dependencies
+
+**Blocks:**
+- Clear versioning for future epics (2–4 and beyond)  
+- Accurate forensic markers in dev-kit-specific examples  
+
+**Blocked By:**
+- None at initial creation.
+
+**Coordinates With:**
+- Epic 2: Workflow Management Framework  
+- Epic 3: Numbering & Versioning Framework  
+- Epic 4: Kanban Framework  
+
+---
+
+## Risks & Mitigations
+
+- Risk: Confusion between dev-kit versions and external-project versions.  
+  - Mitigation: Always label external examples as such; centralise dev-kit policy.
+
+- Risk: Over-complexity for early adopters of the dev kit.  
+  - Mitigation: Provide clear, minimal “start here” examples and keep advanced details in separate docs.
+
+---
+
+## References
+
+- `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md`  
+- `packages/frameworks/workflow mgt/README.md`  
+- `packages/frameworks/numbering & versioning/README.md`  
+- `packages/frameworks/kanban/README.md`  
+
+---
+
+## Maintenance Cadence
+
+- **Quarterly:** Review dev-kit versioning policy and RW behaviour.  
+- **As Needed:** Update epic stories and tasks as new core capabilities are added.
+
+
