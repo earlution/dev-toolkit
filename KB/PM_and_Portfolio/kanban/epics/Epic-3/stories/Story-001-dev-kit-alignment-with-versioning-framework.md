@@ -4,8 +4,8 @@
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Created:** 2025-12-02
-**Last updated:** 2025-12-02 (v0.3.1.5+1 – Task 5 complete: Consumption pattern documented for other projects)
-**Version:** v0.3.1.5+1
+**Last updated:** 2025-12-02 (v0.3.1.6+1 – Task 6 complete: Cursorrules abstracted (removed hardcoded version numbers))
+**Version:** v0.3.1.6+1
 **Code:** E3S01
 
 ---
@@ -29,7 +29,7 @@ Make sure the dev kit's versioning implementation demonstrates best practices an
 - [x] **E3:S01:T003 – Update dev-kit versioning policy as canonical SoT** ✅ COMPLETE (v0.3.1.3+1)
 - [x] **E3:S01:T004 – Align dev-kit version.py and CHANGELOG with framework** ✅ COMPLETE (v0.3.1.4+1)
 - [x] **E3:S01:T005 – Document consumption pattern for other projects** ✅ COMPLETE (v0.3.1.5+1)
-- [ ] **E3:S01:T006 – Make .cursorrules abstract (remove hardcoded version numbers)**
+- [x] **E3:S01:T006 – Make .cursorrules abstract (remove hardcoded version numbers)** ✅ COMPLETE (v0.3.1.6+1)
 
 ---
 
@@ -216,50 +216,51 @@ Make sure the dev kit's versioning implementation demonstrates best practices an
 
 ---
 
-### E3:S01:T006 – Make .cursorrules abstract (remove hardcoded version numbers)
+### E3:S01:T006 – Make .cursorrules abstract (remove hardcoded version numbers) ✅ COMPLETE
 
-**Input:** Findings from T002 (versioning pattern analysis)
-**Deliverable:** Updated `.cursorrules` template without hardcoded versions
-**Dependencies:** E3:S01:T002
+**Input:** Findings from T002 (versioning pattern analysis)  
+**Deliverable:** Updated `.cursorrules` template without hardcoded versions ✅ **DELIVERED**  
+**Dependencies:** E3:S01:T002  
 **Blocker:** None
 
+**Status:** ✅ **COMPLETE** - Cursorrules RW trigger section abstracted with template placeholders
+
 **Approach:**
-1. Analyze current `.cursorrules` implementations across projects (confidentia/12, fynd.deals)
-2. Identify areas where specific version numbers are hardcoded (e.g., "Epic 12 = 0.4.7.x")
-3. Replace hardcoded version examples with:
-   - Generic schema explanations (`RC.EPIC.STORY.TASK+BUILD`)
-   - Template-style examples (e.g., "Epic 12, Story 4, Task 1 → `0.12.4.1+1`")
-   - References to canonical policy documents instead of duplicating schema details
-4. Update branch mapping sections to explain the **pattern** rather than list specific branches
-5. Ensure `.cursorrules` teaches the **schema** without listing stale/project-specific instances
+1. ✅ Analyzed `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md`
+2. ✅ Identified hardcoded version numbers and project-specific paths:
+   - Hardcoded paths: `src/fynd_deals/version.py`, `knowledge/fynd_deals/Kanban/`
+   - Hardcoded examples: `0.15.1.4+2`, `epic/15`, `epic/10-fastapi-migration`
+3. ✅ Replaced with abstract templates:
+   - File paths: `src/{project}/version.py`, `{kanban_path}/epics/Epic-{epic}.md`
+   - Generic examples: `0.{epic}.{story}.{task}+{build}`, `epic/{n}`
+   - Schema calculation examples showing pattern (Epic N → `0.N.S.T+1`)
+4. ✅ Added version calculation examples section
+5. ✅ Added reference documentation section pointing to canonical policies
+6. ✅ Updated README.md with abstracted examples
 
 **Problem Solved:**
-- Hardcoded version numbers in `.cursorrules` become stale as work progresses
-- Creates confusion when examples don't match current state
-- Violates "single source of truth" principle (schema is already in KB docs)
-- Increases maintenance burden (must update `.cursorrules` for each epic/story)
+- ✅ Hardcoded version numbers removed (replaced with schema calculation examples)
+- ✅ Project-specific paths replaced with template placeholders
+- ✅ Examples now teach the pattern rather than listing stale instances
+- ✅ References canonical policy documents instead of duplicating schema
 
-**Files to Review/Update:**
-- `.cursorrules` (template for dev kit)
-- Example `.cursorrules` from confidentia/12 project (reference implementation)
-- `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md` (if applicable)
+**Files Updated:**
+- ✅ `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md` - Abstracted all hardcoded references
+- ✅ `packages/frameworks/workflow mgt/README.md` - Updated with abstracted examples
 
 **Key Changes:**
-- Replace "BRANCH MAPPING" with "BRANCH NAMING AND VERSIONING" that explains schema
-- Remove specific branch → version mappings
-- Add generic examples showing schema calculation (Epic N → 0.N.x.x+x)
-- Reference `KB/Architecture/Standards_and_ADRs/versioning-policy.md` as canonical source
-- Update MANDATORY COMMIT CHECKLIST to use generic schema reference
+- ✅ File paths use template placeholders (`{project}`, `{kanban_path}`, `{scripts_path}`)
+- ✅ Version examples use generic schema calculation (`0.{epic}.{story}.{task}+{build}`)
+- ✅ Branch examples use generic patterns (`epic/{n}`, `epic/{n}-{description}`)
+- ✅ Added version calculation examples showing pattern (Epic N → `0.N.S.T+1`)
+- ✅ References canonical policy documents (`KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md`)
+- ✅ Added customization instructions for projects copying the template
 
 **Validation:**
-- `.cursorrules` should not contain any project-specific version numbers
-- Examples should be generic and teach the pattern
-- Schema explanations should match canonical policy documents
-- File should remain useful without requiring updates as work progresses
-
-**Source Reference:**
-- Work completed in confidentia/12 project (2025-12-02)
-- Changes made to lines 7, 35-46 of `.cursorrules`
+- ✅ No project-specific version numbers remain (verified with grep)
+- ✅ Examples are generic and teach the pattern
+- ✅ Schema explanations reference canonical policy documents
+- ✅ File remains useful without requiring updates as work progresses
 
 ---
 

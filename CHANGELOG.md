@@ -17,6 +17,26 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.1.6+1] - 02-12-25
+
+📚 Documentation: Task 6 complete - Cursorrules abstracted (removed hardcoded version numbers)
+
+### Changed
+
+- Abstracted **cursorrules-rw-trigger-section.md** to use template placeholders instead of hardcoded paths and versions
+- Replaced hardcoded version examples with generic schema calculation examples
+- Replaced project-specific paths with template placeholders (`{project}`, `{kanban_path}`, `{scripts_path}`)
+- Added version calculation examples and customization instructions
+
+### Notes
+
+- Cursorrules template is now fully abstract and reusable across projects
+- All examples teach the pattern rather than listing stale instances
+- References canonical policy documents instead of duplicating schema details
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.1.6+1.md` for full details
+
+---
+
 ## [0.3.1.5+1] - 02-12-25
 
 📚 Documentation: Task 5 complete - Consumption pattern documented for other projects

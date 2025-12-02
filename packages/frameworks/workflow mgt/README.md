@@ -226,22 +226,32 @@ This ensures the workflow adapts to your project's specific context and handles 
 
 **Quick Find/Replace:**
 ```bash
-# Find all occurrences
-grep -r "src/fynd_deals/version.py" .
-grep -r "CHANGELOG_ARCHIVE" .
-grep -r "knowledge/fynd_deals/Kanban" .
+# Find all occurrences (customize these paths for your project)
+grep -r "src/{project}/version.py" .  # Replace {project} with your project name
+grep -r "{changelog_archive_path}" .  # Replace with your changelog archive path
+grep -r "{kanban_path}" .              # Replace with your Kanban documentation path
+grep -r "{scripts_path}" .            # Replace with your scripts directory path
 ```
+
+**Note:** The `cursorrules-rw-trigger-section.md` file has been abstracted to use template placeholders (`{project}`, `{changelog_archive_path}`, etc.) instead of hardcoded paths. Update these placeholders when copying to your project.
 
 ### Version Schema
 
 The default schema `RC.EPIC.STORY.TASK+BUILD` is designed to be universal, but you can customize:
 
-**Example:** `0.15.1.4+2`
-- `0` = Release Candidate (0 = development)
-- `15` = Epic number
-- `1` = Story number
-- `4` = Task number
-- `2` = Build number (increments per release within task)
+**Example:** `0.{epic}.{story}.{task}+{build}` (e.g., `0.3.1.5+1`)
+- `0` = Release Candidate (0 = development, 1+ = release candidate)
+- `{epic}` = Epic number (e.g., 3)
+- `{story}` = Story number within epic (e.g., 1)
+- `{task}` = Task number within story (e.g., 5)
+- `{build}` = Build number (increments per release within task, e.g., 1)
+
+**Schema Calculation:**
+- Epic N, Story S, Task T → Version: `0.N.S.T+1` (first build)
+- Same Task: Increment BUILD → `0.N.S.T+{B+1}`
+- New Task: Reset BUILD → `0.N.S.{T+1}+1`
+- New Story: Reset TASK and BUILD → `0.N.{S+1}.1+1`
+- New Epic: Reset STORY, TASK, BUILD → `0.{N+1}.1.1+1`
 
 **To Customize:**
 1. Update `versioning-policy.md` with your schema
@@ -250,19 +260,22 @@ The default schema `RC.EPIC.STORY.TASK+BUILD` is designed to be universal, but y
 
 ### Branch Mapping
 
-If using different branch naming (e.g., `feature/epic-4` instead of `epic/4`):
+If using different branch naming (e.g., `feature/epic-{n}` instead of `epic/{n}`):
 
 1. Update `validate_branch_context.py`:
    ```python
    def parse_branch_epic(branch: str) -> Optional[int]:
        # Match your pattern (e.g., feature/epic-4 -> 4)
-       match = re.match(r"^feature/epic-(\d+)", branch)
+       # Current default pattern: epic/{n} or epic/{n}-{description}
+       match = re.match(r"^epic/(\d+)", branch)  # Default pattern
+       # Or customize: match = re.match(r"^feature/epic-(\d+)", branch)
        if match:
            return int(match.group(1))
        return None
    ```
 
-2. Update `.cursorrules` branch mapping section
+2. Update `.cursorrules` branch mapping section to reflect your naming convention
+3. Update branch examples in documentation to use generic patterns
 
 ### Optional Steps
 
