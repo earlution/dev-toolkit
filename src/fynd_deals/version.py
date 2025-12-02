@@ -18,10 +18,10 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 """
 
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
-VERSION_EPIC = 3      # Epic number (Epic 3: Numbering & Versioning Framework)
-VERSION_STORY = 1     # Story number (Story 1: Dev Kit Alignment with Versioning Framework)
-VERSION_TASK = 6      # Task number (Task 6: Make .cursorrules abstract (remove hardcoded version numbers))
-VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
+VERSION_EPIC = 4      # Epic number (Epic 4: Kanban Framework)
+VERSION_STORY = 1     # Story number (Story 1: Dev Kit Kanban Implementation)
+VERSION_TASK = 1      # Task number (Task 1: Review existing dev-kit Kanban policies and templates)
+VERSION_BUILD = 2     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
 # Format: RC.EPIC.STORY.TASK+BUILD

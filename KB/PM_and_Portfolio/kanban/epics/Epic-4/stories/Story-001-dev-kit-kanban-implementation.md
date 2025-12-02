@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.1.1+1 – initial story definition)  
-**Version:** v0.4.1.1+1  
+**Last updated:** 2025-12-02 (v0.4.1.1+2 – Task 1 complete: Gap analysis of dev-kit Kanban policies and templates)
+**Version:** v0.4.1.1+2  
 **Code:** E4S01
 
 ---
@@ -24,7 +24,7 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ## Task Checklist
 
-- [ ] **E4:S01:T001 – Review existing dev-kit Kanban policies and templates**
+- [x] **E4:S01:T001 – Review existing dev-kit Kanban policies and templates** ✅ COMPLETE
 - [ ] **E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit**
 - [ ] **E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT**
 - [ ] **E4:S01:T004 – Align dev-kit Kanban templates with updated governance**
@@ -34,26 +34,38 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ## Tasks
 
-### E4:S01:T001 – Review existing dev-kit Kanban policies and templates
+### E4:S01:T001 – Review existing dev-kit Kanban policies and templates ✅ COMPLETE
 
 **Input:** Current dev-kit Kanban framework files  
-**Deliverable:** Gap analysis report  
+**Deliverable:** Gap analysis report ✅ **DELIVERED**  
 **Dependencies:** None  
 **Blocker:** None
 
-**Approach:**
-1. Review `packages/frameworks/kanban/policies/kanban-governance-policy.md`
-2. Review `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`
-3. Review `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md`
-4. Review `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
-5. Document gaps and inconsistencies
+**Status:** ✅ **COMPLETE** - Gap analysis documented in `T001-gap-analysis-report.md`
 
-**Files to Review:**
-- `packages/frameworks/kanban/policies/kanban-governance-policy.md`
-- `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`
-- `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md`
-- `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
-- `packages/frameworks/kanban/README.md`
+**Approach:**
+1. ✅ Reviewed `packages/frameworks/kanban/policies/kanban-governance-policy.md`
+2. ✅ Reviewed `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`
+3. ✅ Reviewed `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md`
+4. ✅ Reviewed `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
+5. ✅ Reviewed `packages/frameworks/kanban/README.md`
+6. ✅ Compared framework policy with dev-kit policy
+7. ✅ Compared framework templates with dev-kit usage
+8. ✅ Documented gaps and inconsistencies
+
+**Key Findings:**
+- **7 critical gaps identified:** Atomic RW behaviour, "ALL sections" update requirement, accessibility constraints, forensic marker format standardization, consistency requirements, review schedules, escalation procedures
+- **Template gaps:** Missing "ALL sections" update requirement notes, forensic marker format standardization notes, consistency check reminders
+- **Dev-kit policy gaps:** Missing framework principles (Harmonious Cycle, detailed FR/BR flow, Task-Level Requirements, Release Workflow documentation)
+
+**Deliverable:** See [`T001-gap-analysis-report.md`](T001-gap-analysis-report.md) for complete gap analysis report.
+
+**Files Reviewed:**
+- ✅ `packages/frameworks/kanban/policies/kanban-governance-policy.md`
+- ✅ `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`
+- ✅ `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md`
+- ✅ `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
+- ✅ `packages/frameworks/kanban/README.md`
 
 ---
 
@@ -212,5 +224,5 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ---
 
-_Last updated: 2025-12-02 (v0.4.1.1+1)_
+_Last updated: 2025-12-02 (v0.4.1.1+2 – Task 1 complete)_
 

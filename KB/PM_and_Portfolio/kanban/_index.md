@@ -21,11 +21,13 @@ Quick reference board for all Kanban work. For detailed views, see [`kanban-boar
 | Epic | Story ID | Title                                      | Status      | Owner | Notes                           |
 |------|---------:|--------------------------------------------|-------------|-------|---------------------------------|
 | 1    | 001      | Set up Kanban + versioning for dev kit     | In Progress | RMS   | Epic 1, Story 1                |
+| 2    | 001      | RW Agent Execution & Docs                   | TODO        | RMS   | Epic 2, Story 1                |
 | 3    | 001      | Dev Kit Alignment with Versioning Framework | TODO        | RMS   | Epic 3, Story 1                |
 | 4    | 001      | Dev Kit Kanban Implementation               | TODO        | RMS   | Epic 4, Story 1                |
 
 **Story Locations:**
 - Epic 1: [`epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md`](epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md)
+- Epic 2: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)
 - Epic 3: [`epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md)
 - Epic 4: [`epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md)
 
@@ -36,7 +38,7 @@ Quick reference board for all Kanban work. For detailed views, see [`kanban-boar
 | Epic | Title                              | Status      | Stories |
 |------|------------------------------------|-------------|---------|
 | 1    | Vibe Dev Kit Core                 | IN PROGRESS | 1       |
-| 2    | Workflow Management Framework      | TODO        | 0       |
+| 2    | Workflow Management Framework      | TODO        | 1       |
 | 3    | Numbering & Versioning Framework   | TODO        | 1       |
 | 4    | Kanban Framework                   | TODO        | 1       |
 

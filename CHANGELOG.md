@@ -17,6 +17,23 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.1.1+2] - 02-12-25
+
+📚 Documentation: Task 1 complete - Gap analysis of dev-kit Kanban policies and templates
+
+### Added
+
+- Created **gap analysis report** comparing dev-kit Kanban policies and templates with framework
+- Identified 7 critical gaps (atomic RW behaviour, "ALL sections" requirement, accessibility constraints, etc.)
+- Identified template gaps and dev-kit policy gaps
+
+### Notes
+
+- Gap analysis: `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation/T001-gap-analysis-report.md`
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.1.1+2.md` for full details
+
+---
+
 ## [0.3.1.6+1] - 02-12-25
 
 📚 Documentation: Task 6 complete - Cursorrules abstracted (removed hardcoded version numbers)

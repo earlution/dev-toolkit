@@ -39,7 +39,9 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 **Status:** TODO  
 **Priority:** HIGH
 
-**Stories:** (To be added)
+**Stories:**
+- [ ] **E2:S01 – RW Agent Execution & Docs** - TODO
+  - Story: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)
 
 **Epic Doc:** [`epics/Epic-2.md`](epics/Epic-2.md)
 

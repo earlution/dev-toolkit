@@ -14,6 +14,7 @@
 ## Story Checklist
 
 - [ ] **E2:S01 – RW Agent Execution & Docs** - TODO  
+  - Story: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)  
 - [ ] **E2:S02 – Additional Workflows & Examples** - TODO  
 - [ ] **E2:S03 – RW Behaviour When Used as a Template** - TODO  
 
@@ -57,10 +58,13 @@ It defines how Release Workflow (RW) and other workflows are:
 **Goal:**  
 Make RW agent execution documentation fully portable, clearly distinguishing dev-kit behaviour from external examples.
 
-**Tasks (examples):**
+**Tasks:**
 - [ ] E2:S01:T001 – Audit `release-workflow-agent-execution.md` for project-specific assumptions  
 - [ ] E2:S01:T002 – Tag Confidentia/fynd.deals examples and add dev-kit examples  
-- [ ] E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy  
+- [ ] E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy
+- [ ] E2:S01:T004 – Update RW changelog step to require verification before marking fixes as "fixed"
+
+> Full story: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)  
 
 ---
 
