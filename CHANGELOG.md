@@ -17,6 +17,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.3.1+1] - 02-12-25
+
+📚 Documentation: Task 1 complete - Review existing integration documentation (Story 3 started)
+
+### Added
+
+- Created integration documentation review report analyzing framework integration docs
+- Identified gaps between framework docs and dev-kit implementation
+- Documented recommendations for dev-kit alignment (path references, step numbering, version examples)
+- Reviewed Numbering & Versioning integration and Workflow Management integration
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.1+1.md` for full details
+- Story 3: Kanban + Versioning + RW Integration started
+- Review identified step numbering discrepancy (framework docs reference Step 4, but RW uses Step 6)
+- Path references need updating for dev-kit's consolidated `kanban/` structure
+- Three-way integration needs end-to-end flow documentation
+
+---
+
 ## [0.4.2.5+1] - 02-12-25
 
 📚 Documentation: Task 5 complete - Create intake workflow guide for agents/users (Story 2 complete)

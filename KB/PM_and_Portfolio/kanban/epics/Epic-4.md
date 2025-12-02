@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.2.5+1 – Task 5 complete: Create intake workflow guide for agents/users)  
+**Last updated:** 2025-12-02 (v0.4.3.1+1 – Task 1 complete: Review existing integration documentation)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -16,7 +16,8 @@
 - [x] **E4:S01 – Dev Kit Kanban Implementation** - COMPLETE ✅ (v0.4.1.1+6)  
 - [x] **E4:S02 – FR/BR Intake to Tasks** - COMPLETE ✅ (v0.4.2.5+1)
   - Story: [`epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md`](epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md)  
-- [ ] **E4:S03 – Kanban + Versioning + RW Integration** - TODO  
+- [ ] **E4:S03 – Kanban + Versioning + RW Integration** - IN PROGRESS
+  - Story: [`epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`](epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md)  
 
 ---
 
@@ -59,7 +60,7 @@ It ensures that:
 **Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.4.2.5+1 – Task 5 complete: Create intake workflow guide for agents/users)  
+**Last updated:** 2025-12-02 (v0.4.3.1+1 – Task 1 complete: Review existing integration documentation)  
 
 **Goal:**  
 Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `vibe-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.
@@ -72,6 +73,49 @@ Fully align the dev-kit Kanban board, stories, and governance policy with the Ka
 - [x] E4:S01:T005 – Document consumption pattern for other projects ✅ COMPLETE (v0.4.1.1+6)
 
 > Full story: [`epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md)  
+
+---
+
+### Story 2: FR/BR Intake to Tasks
+
+**Status:** COMPLETE  
+**Priority:** HIGH  
+**Estimated Effort:** [TBD]  
+**Last updated:** 2025-12-02 (v0.4.2.5+1 – Task 5 complete: Create intake workflow guide for agents/users - Story 2 COMPLETE)
+
+**Goal:**  
+Design and implement a clear, actionable flow for converting incoming Feature Requests (FRs) and Bug Reports (BRs) into Kanban Tasks. This story ensures that all work entering the dev-kit is properly structured, tracked, and aligned with the Kanban → Versioning → Release Workflow system.
+
+**Tasks:**
+- [x] E4:S02:T001 – Analyze current FR/BR intake process and requirements ✅ COMPLETE (v0.4.2.1+1)
+- [x] E4:S02:T002 – Design FR/BR → Task → Story → Epic decision flow ✅ COMPLETE (v0.4.2.2+1)
+- [x] E4:S02:T003 – Create FR/BR intake templates and forms ✅ COMPLETE (v0.4.2.3+1)
+- [x] E4:S02:T004 – Document the intake process with examples ✅ COMPLETE (v0.4.2.4+1)
+- [x] E4:S02:T005 – Create intake workflow guide for agents/users ✅ COMPLETE (v0.4.2.5+1)
+
+> Full story: [`epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md`](epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md)  
+
+---
+
+### Story 3: Kanban + Versioning + RW Integration
+
+**Status:** IN PROGRESS  
+**Priority:** HIGH  
+**Estimated Effort:** [TBD]  
+**Last updated:** 2025-12-02 (v0.4.3.1+1 – Task 1 complete: Review existing integration documentation)
+
+**Goal:**  
+Ensure seamless integration between Kanban, Versioning, and Release Workflow (RW) systems within the dev-kit. This story validates that the three frameworks work together cohesively, providing end-to-end traceability from Feature Requests/Bug Reports through Kanban Tasks to versioned releases.
+
+**Tasks:**
+- [x] E4:S03:T001 – Review existing integration documentation ✅ COMPLETE (v0.4.3.1+1)
+- [ ] E4:S03:T002 – Validate Kanban → Versioning integration in dev-kit
+- [ ] E4:S03:T003 – Validate Versioning → RW integration in dev-kit
+- [ ] E4:S03:T004 – Validate RW → Kanban integration in dev-kit
+- [ ] E4:S03:T005 – Create dev-kit integration guide
+- [ ] E4:S03:T006 – Document integration examples and edge cases
+
+> Full story: [`epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`](epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md)  
 
 ---
 
