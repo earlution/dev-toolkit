@@ -17,6 +17,26 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.3.6+1] - 02-12-25
+
+📚 Documentation: Task 6 complete - Document integration examples and edge cases
+
+### Added
+
+- Created comprehensive integration examples and edge cases document
+- Documented 4 worked examples: FR → Task → Version → RW → Kanban update, Multiple Tasks, Story completion, Epic progression
+- Documented 6 edge cases: Parallel Epic development, Task/Story renumbering, Version conflicts, Skipped Task numbers, Multiple Builds
+- Added troubleshooting section with 4 common issues and solutions
+- Added best practices summary
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.6+1.md` for full details
+- Examples and edge cases document complements integration guide (T005)
+- All Tasks in Story 3 are now complete
+
+---
+
 ## [0.4.3.5+1] - 02-12-25
 
 📚 Documentation: Task 5 complete - Create dev-kit integration guide
