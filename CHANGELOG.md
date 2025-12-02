@@ -17,6 +17,30 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.3.2+1] - 02-12-25
+
+📚 Documentation: Task 2 complete - Validate Kanban → Versioning integration in dev-kit
+
+### Added
+
+- Created Kanban → Versioning integration validation report
+- Validated Epic/Story number mapping to version components (✅ PASS)
+- Validated Task number mapping to version TASK component (❌ FAIL - critical issue identified)
+- Documented root cause analysis and recommendations
+
+### Fixed
+
+- **CRITICAL ISSUE IDENTIFIED:** Task numbers are not correctly mapping to version TASK component. All Tasks within a Story are using TASK=1, with BUILD incrementing across Tasks. This violates versioning schema rules and breaks forensic traceability.
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.2+1.md` for full details
+- Validation report identifies critical inconsistency requiring immediate attention
+- Root cause: VERSION_TASK not automatically updated when moving to new Tasks
+- Recommendations provided for immediate fixes, process improvements, and long-term solutions
+
+---
+
 ## [0.4.3.1+1] - 02-12-25
 
 📚 Documentation: Task 1 complete - Review existing integration documentation (Story 3 started)
