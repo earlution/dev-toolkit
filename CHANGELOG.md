@@ -17,6 +17,30 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.2.2+1] - 02-12-25
+
+📚 Documentation: Task 2 complete - Design FR/BR → Task → Story → Epic decision flow
+
+### Added
+
+- Created comprehensive decision flow design document
+- Defined Story matching criteria (scope, Epic alignment, status)
+- Defined Epic matching criteria (domain, status, conceptual fit)
+- Epic creation guidelines (broad, abstract, examples)
+- Edge case handling (5 scenarios: complex FR, ambiguous scope, multi-component BR, cross-Epic FR, duplicates)
+- Versioning integration rules
+- Kanban board integration rules
+- Visual decision flow diagrams (text-based flowcharts)
+- Worked examples (4 scenarios)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.2.2+1.md` for full details
+- Decision flow provides foundation for templates and guides in next tasks
+- Flow designed for both AI agents (systematic) and human users (intuitive)
+
+---
+
 ## [0.4.2.1+1] - 02-12-25
 
 📚 Documentation: Task 1 complete - Analyze current FR/BR intake process and requirements

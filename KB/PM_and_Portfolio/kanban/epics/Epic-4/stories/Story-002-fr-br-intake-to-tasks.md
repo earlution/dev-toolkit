@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.2.1+1 – Task 1 complete: Analyze current FR/BR intake process and requirements)
-**Version:** v0.4.2.1+1
+**Last updated:** 2025-12-02 (v0.4.2.2+1 – Task 2 complete: Design FR/BR → Task → Story → Epic decision flow)
+**Version:** v0.4.2.2+1
 **Code:** E4S02
 
 ---
@@ -30,7 +30,7 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 ## Task Checklist
 
 - [x] **E4:S02:T001 – Analyze current FR/BR intake process and requirements** ✅ COMPLETE
-- [ ] **E4:S02:T002 – Design FR/BR → Task → Story → Epic decision flow**
+- [x] **E4:S02:T002 – Design FR/BR → Task → Story → Epic decision flow** ✅ COMPLETE
 - [ ] **E4:S02:T003 – Create FR/BR intake templates and forms**
 - [ ] **E4:S02:T004 – Document the intake process with examples**
 - [ ] **E4:S02:T005 – Create intake workflow guide for agents/users**
@@ -67,22 +67,37 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-### E4:S02:T002 – Design FR/BR → Task → Story → Epic decision flow
+### E4:S02:T002 – Design FR/BR → Task → Story → Epic decision flow ✅ COMPLETE
 
 **Input:** Analysis report from T001  
-**Deliverable:** Decision flow diagram and process documentation  
+**Deliverable:** Decision flow diagram and process documentation ✅ **DELIVERED**  
 **Dependencies:** E4:S02:T001  
 **Blocker:** None
 
-**Approach:**
-1. Design decision tree/flowchart for FR/BR intake
-2. Define criteria for Story matching
-3. Define criteria for Epic matching/creation
-4. Document edge cases and exceptions
+**Status:** ✅ **COMPLETE** - Comprehensive decision flow design created
 
-**Files to Create:**
-- Decision flow documentation
-- Decision criteria definitions
+**Approach:**
+1. ✅ Designed decision tree/flowchart for FR/BR intake
+2. ✅ Defined criteria for Story matching (scope, Epic alignment, status)
+3. ✅ Defined criteria for Epic matching/creation (domain, status, conceptual fit)
+4. ✅ Documented edge cases and exceptions (complex FR, ambiguous scope, duplicates, etc.)
+
+**Key Deliverables:**
+- ✅ Text-based decision flow diagram (high-level and detailed)
+- ✅ Story matching criteria (primary and secondary)
+- ✅ Epic matching criteria (primary and secondary)
+- ✅ Epic creation guidelines (broad, abstract, examples)
+- ✅ Edge case handling (complex FR, ambiguous scope, BR affecting multiple components, etc.)
+- ✅ Versioning integration rules
+- ✅ Kanban board integration rules
+- ✅ Visual decision flow diagram (text-based flowchart)
+- ✅ Decision criteria summary table
+- ✅ Worked examples (4 scenarios)
+
+**Files Created:**
+- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks/T002-decision-flow-design.md` (comprehensive design)
+
+**Deliverable:** See [`T002-decision-flow-design.md`](T002-decision-flow-design.md) for complete decision flow, criteria, edge cases, and examples.
 
 ---
 
@@ -180,5 +195,5 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-_Last updated: 2025-12-02 (v0.4.2.1+1 – Task 1 complete: Analyze current FR/BR intake process and requirements)_
+_Last updated: 2025-12-02 (v0.4.2.2+1 – Task 2 complete: Design FR/BR → Task → Story → Epic decision flow)_
 
