@@ -17,6 +17,29 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.1.1+5] - 02-12-25
+
+📚 Documentation: Task 4 complete - Align dev-kit Kanban templates with updated governance
+
+### Added
+
+- Enhanced **EPIC_TEMPLATE.md** with governance alignment notes:
+  - "ALL sections" update requirement reminders
+  - Forensic marker format notes (`✅ COMPLETE (vRC.E.S.T+B)`)
+  - Consistency check reminders
+  - Story Checklist as SINGLE SOURCE OF TRUTH emphasis
+- Enhanced **STORY_TEMPLATE.md** with governance alignment notes:
+  - "ALL sections" update requirement reminders
+  - Forensic marker format notes
+  - Consistency check reminders
+
+### Notes
+
+- Templates: `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md` and `STORY_TEMPLATE.md`
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.1.1+5.md` for full details
+
+---
+
 ## [0.4.1.1+4] - 02-12-25
 
 📚 Documentation: Task 3 complete - Update dev-kit Kanban governance policy as canonical SoT

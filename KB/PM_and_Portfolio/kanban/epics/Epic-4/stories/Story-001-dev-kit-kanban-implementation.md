@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.1.1+4 – Task 3 complete: Update dev-kit Kanban governance policy as canonical SoT)
-**Version:** v0.4.1.1+4  
+**Last updated:** 2025-12-02 (v0.4.1.1+5 – Task 4 complete: Align dev-kit Kanban templates with updated governance)
+**Version:** v0.4.1.1+5  
 **Code:** E4S01
 
 ---
@@ -27,7 +27,7 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 - [x] **E4:S01:T001 – Review existing dev-kit Kanban policies and templates** ✅ COMPLETE (v0.4.1.1+2)
 - [x] **E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit** ✅ COMPLETE (v0.4.1.1+3)
 - [x] **E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT** ✅ COMPLETE (v0.4.1.1+4)
-- [ ] **E4:S01:T004 – Align dev-kit Kanban templates with updated governance**
+- [x] **E4:S01:T004 – Align dev-kit Kanban templates with updated governance** ✅ COMPLETE (v0.4.1.1+5)
 - [ ] **E4:S01:T005 – Document consumption pattern for other projects**
 
 ---
@@ -150,28 +150,44 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ---
 
-### E4:S01:T004 – Align dev-kit Kanban templates with updated governance
+### E4:S01:T004 – Align dev-kit Kanban templates with updated governance ✅ COMPLETE
 
 **Input:** Updated governance policy from T003  
-**Deliverable:** Updated Kanban templates  
+**Deliverable:** Updated Kanban templates ✅ **DELIVERED**  
 **Dependencies:** E4:S01:T003  
 **Blocker:** None
 
-**Approach:**
-1. Update `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md` to encode:
-   - Required metadata (status, priority, dates, version, branch)
-   - Story Checklist with version markers
-   - Explicit "ALL sections" update requirements for RW
-   - Forensic marker format requirements
-2. Update `packages/frameworks/kanban/templates/STORY_TEMPLATE.md` to encode:
-   - Required metadata (status, priority, dates, version, code)
-   - Task Checklist with forensic markers
-   - Explicit forensic marker format: `✅ COMPLETE (vRC.E.S.T+B)`
-   - "ALL sections" update requirements
-3. Ensure templates align with governance principles
+**Status:** ✅ **COMPLETE** - Both templates updated with governance alignment notes
 
-**Files to Update:**
-- `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md`
+**Approach:**
+1. ✅ Updated `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md`:
+   - Added notes about "ALL sections" update requirement for RW Step 4
+   - Added forensic marker format notes (`✅ COMPLETE (vRC.E.S.T+B)`)
+   - Added consistency check reminders
+   - Emphasized Story Checklist as SINGLE SOURCE OF TRUTH
+2. ✅ Updated `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`:
+   - Added notes about "ALL sections" update requirement for RW Step 4
+   - Added forensic marker format notes (`✅ COMPLETE (vRC.E.S.T+B)`)
+   - Added consistency check reminders
+3. ✅ Ensured templates align with governance principles from T003
+
+**Key Changes:**
+- **EPIC_TEMPLATE.md:**
+  - Added critical note in Story Checklist section about SoT and forensic marker format
+  - Added "ALL sections" update requirement reminder
+  - Added consistency check reminder
+  - Added forensic marker format note in detailed story sections
+- **STORY_TEMPLATE.md:**
+  - Added comprehensive notes in Task Checklist section
+  - Added "ALL sections" update requirement reminder
+  - Added consistency check reminder
+  - Added forensic marker format note
+
+**Files Updated:**
+- ✅ `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md` (enhanced with governance notes)
+- ✅ `packages/frameworks/kanban/templates/STORY_TEMPLATE.md` (enhanced with governance notes)
+
+**Deliverable:** Templates now include explicit reminders about "ALL sections" requirement, forensic marker format, and consistency checks, aligning with the updated governance policy.
 - `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
 
 **Template Enhancements:**

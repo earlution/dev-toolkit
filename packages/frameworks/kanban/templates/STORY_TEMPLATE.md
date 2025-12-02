@@ -18,7 +18,15 @@
 - [ ] **EXX:SYY:T002 – [Task Title]**
 - [ ] **EXX:SYY:T003 – [Task Title]**
 
-> **Format:** `Exx:Sxx:Txxx` (Epic, Story, Task with zero padding)
+> **Format:** `Exx:Sxx:Txxx` (Epic, Story, Task with zero padding)  
+> **Forensic Marker Format:** `✅ COMPLETE (vRC.E.S.T+B)` (e.g., `✅ COMPLETE (v0.4.1.3+1)`)  
+> **Release Workflow Requirement:** When Release Workflow (RW) Step 4 updates Epic documentation, it MUST update **ALL sections**:
+> - Epic header `Last updated` field
+> - Epic Story Checklist (status and version markers)
+> - Epic detailed story sections (Status, Last updated, task checkboxes)
+> - Any other references to this story/task
+> 
+> **Consistency Check:** After each RW, verify that Story file, Epic header, Epic Story Checklist, and Epic detailed sections all match.
 
 ---
 
