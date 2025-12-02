@@ -1,22 +1,69 @@
-## Recent Releases
+# Changelog
 
-### [0.1.1.1+1] - 02-12-25
-🏗️ Foundation: First proper release with Epic 1-4 structure, dev-kit versioning policy, and Kanban FR/BR → Task flow
+All notable changes to this project will be documented in this file.
 
-**What's New:**
-- Created Epic 1-4 docs (Core, Workflow, Numbering & Versioning, Kanban)
-- Established dev-kit versioning policy (`RC.EPIC.STORY.TASK+BUILD` starting at Epic 1)
-- Updated Kanban policies with FR/BR → Task → Story → Epic flow requirement
-
-See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.1.1.1+1.md` for full details.
+The format is inspired by **Keep a Changelog** ([`https://github.com/olivierlacan/keep-a-changelog`](https://github.com/olivierlacan/keep-a-changelog))  
+and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme described in the dev-kit versioning policy.
 
 ---
 
-### [0.9.21.3+2] - 2025-12-02
+## [Unreleased]
+
+### Planned
+
+- Additional framework packages (architecture, testing, documentation)  
+- More examples and templates for adopting the dev kit in real projects  
+- Further integration between Kanban, Versioning, and Workflow frameworks
+
+---
+
+## [0.1.1.1+2] - 02-12-25
+
+📚 Documentation: Restructured CHANGELOG and README to follow industry-standard templates
+
+### Changed
+
+- **CHANGELOG.md** restructured to follow [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog) format with proper sections and organization
+- **README.md** restructured using [Best-README-Template](https://github.com/othneildrew/Best-README-Template) layout with [Shields.io](https://shields.io/) badges
+- Added **Roadmap** section to README summarizing Epics 1-4 with links to Kanban board
+
+### Notes
+
+- All existing content preserved; only structure and presentation improved
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.1.1.1+2.md` for full details
+
+---
+
+## [0.1.1.1+1] - 02-12-25
+
+🏗️ Foundation: First proper release with Epic 1–4 structure, dev-kit versioning policy, and Kanban FR/BR → Task flow
+
+### Added
+
+- Created **Epic 1–4 docs** (Core, Workflow, Numbering & Versioning, Kanban) to structure dev-kit work
+- Introduced **dev-kit versioning policy** using `RC.EPIC.STORY.TASK+BUILD` starting at Epic 1
+- Updated **Kanban framework policy** with explicit **FR/BR → Task → Story → Epic** flow
+- Updated **dev-kit Kanban policy** to adopt full versioning strategy and task-driven work
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.1.1.1+1.md` for full details.
+
+---
+
+## [0.9.21.3+2] - 02-12-25
+
 📚 Documentation: Branch safety Step 1 and modularity docs for workflow & numbering packages
 
-**Note:** This version referenced Confidentia Epic 9. Starting with v0.1.1.1+1, all releases use dev-kit-specific Epic numbers.
+### Changed
 
-See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.9.21.3+2.md` for full details.
+- Added **Branch Safety Check** as Step 1 in the Release Workflow agent guide  
+- Updated RW and `.cursorrules` docs for an 11-step workflow with branch safety  
+- Clarified modularity and package dependencies in workflow and numbering/versioning packages
 
+### Notes
+
+- This version referenced **Confidentia Epic 9** and predates dev-kit-specific epics.  
+- Starting with `v0.1.1.1+1`, all releases use **dev-kit-specific Epic numbers**.
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.9.21.3+2.md` for full details.
 

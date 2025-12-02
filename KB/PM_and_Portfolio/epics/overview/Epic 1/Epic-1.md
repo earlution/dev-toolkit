@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.1.1.1+1 – Epic 1-4 structure and dev-kit versioning policy established)  
+**Last updated:** 2025-12-02 (v0.1.1.1+2 – Documentation restructured to follow Keep a Changelog and Best-README-Template)  
 **Branch:** `epic/1-vibe-dev-kit-core`  
 **Version Schema:** `0.1.S.T+B` (dev-kit RC.EPIC.STORY.TASK+BUILD)  
 **Production URL:** [N/A for this repo]
@@ -47,7 +47,7 @@ It defines how the repo is structured, how versioning works for the dev kit itse
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.1.1.1+1 – Epic 1-4 docs and dev-kit versioning policy created)  
+**Last updated:** 2025-12-02 (v0.1.1.1+2 – Documentation restructured to industry-standard templates)  
 
 **Goal:**  
 Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW interprets versions and tasks when run in this repo.
