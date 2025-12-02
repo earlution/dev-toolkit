@@ -81,8 +81,6 @@ Clarify the modular architecture of the `vibe-dev-kit` repository, ensuring that
 - [x] E1:S02:T001 – Analyze current package structure and dependencies ✅ COMPLETE (v0.1.2.1+1)
 - [x] E1:S02:T002 – Document modularity principles and boundaries ✅ COMPLETE (v0.1.2.2+1)
 - [x] E1:S02:T003 – Create package dependency matrix ✅ COMPLETE (v0.1.2.3+1)
-- [ ] E1:S02:T002 – Document modularity principles and boundaries
-- [ ] E1:S02:T003 – Create package dependency matrix
 - [ ] E1:S02:T004 – Document consumption patterns for each framework
 - [ ] E1:S02:T005 – Update package READMEs with modularity information
 
