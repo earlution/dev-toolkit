@@ -89,7 +89,7 @@ See: `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`.
 
 Dev-kit version information lives in:
 
-- `src/fynd_deals/version.py` (temporary path; may be renamed to a dev-kit–specific module later)
+- `src/fynd_deals/version.py` (legacy path from fynd.deals; acceptable for now, may be renamed to `src/vibe_dev_kit/version.py` in future)
 
 The file should expose:
 

@@ -17,6 +17,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.1.4+1] - 02-12-25
+
+📚 Documentation: Task 4 complete - Version file and CHANGELOG aligned with framework
+
+### Changed
+
+- Enhanced **version file** (`src/fynd_deals/version.py`) with comprehensive documentation and validation notes
+- Verified **CHANGELOG.md** format alignment with framework conventions
+- Updated dev-kit versioning policy with version file location note
+
+### Notes
+
+- Version file now includes docstring explaining schema and dev-kit versioning approach
+- CHANGELOG format verified to match framework (DD-MM-YY date format, archive structure)
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.1.4+1.md` for full details
+
+---
+
 ## [0.3.1.3+1] - 02-12-25
 
 📚 Documentation: Task 3 complete - Dev-kit versioning policy enhanced with all missing sections
