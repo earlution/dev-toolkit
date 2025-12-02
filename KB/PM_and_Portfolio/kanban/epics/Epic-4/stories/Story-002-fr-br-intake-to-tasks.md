@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.2.2+1 – Task 2 complete: Design FR/BR → Task → Story → Epic decision flow)
-**Version:** v0.4.2.2+1
+**Last updated:** 2025-12-02 (v0.4.2.3+1 – Task 3 complete: Create FR/BR intake templates and forms)
+**Version:** v0.4.2.3+1
 **Code:** E4S02
 
 ---
@@ -31,7 +31,7 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 - [x] **E4:S02:T001 – Analyze current FR/BR intake process and requirements** ✅ COMPLETE
 - [x] **E4:S02:T002 – Design FR/BR → Task → Story → Epic decision flow** ✅ COMPLETE
-- [ ] **E4:S02:T003 – Create FR/BR intake templates and forms**
+- [x] **E4:S02:T003 – Create FR/BR intake templates and forms** ✅ COMPLETE
 - [ ] **E4:S02:T004 – Document the intake process with examples**
 - [ ] **E4:S02:T005 – Create intake workflow guide for agents/users**
 
@@ -101,24 +101,58 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-### E4:S02:T003 – Create FR/BR intake templates and forms
+### E4:S02:T003 – Create FR/BR intake templates and forms ✅ COMPLETE
 
 **Input:** Decision flow from T002  
-**Deliverable:** Templates and forms for FR/BR intake  
+**Deliverable:** Templates and forms for FR/BR intake ✅ **DELIVERED**  
 **Dependencies:** E4:S02:T002  
 **Blocker:** None
 
-**Approach:**
-1. Create FR template/form
-2. Create BR template/form
-3. Create Story creation template (for new stories)
-4. Create Epic creation template (for new epics)
-5. Ensure templates align with Kanban templates
+**Status:** ✅ **COMPLETE** - FR and BR templates created
 
-**Files to Create:**
-- `packages/frameworks/kanban/templates/FR_TEMPLATE.md`
-- `packages/frameworks/kanban/templates/BR_TEMPLATE.md`
-- Intake form templates (if applicable)
+**Approach:**
+1. ✅ Created FR template/form (`FR_TEMPLATE.md`)
+2. ✅ Created BR template/form (`BR_TEMPLATE.md`)
+3. ✅ Aligned templates with Kanban templates (EPIC_TEMPLATE, STORY_TEMPLATE)
+4. ✅ Included intake decision tracking section
+5. ✅ Added versioning and Kanban integration fields
+
+**Key Features:**
+
+**FR Template:**
+- Summary and description sections
+- Requirements (functional and non-functional)
+- Scope analysis (problem domain, affected areas, complexity)
+- Use cases
+- Acceptance criteria
+- Dependencies and related work
+- **Intake Decision section** (tracks FR → Task → Story → Epic conversion)
+- Kanban links for traceability
+
+**BR Template:**
+- Summary and description sections
+- Affected component identification
+- Steps to reproduce
+- Environment details
+- Impact assessment (user and business)
+- Workaround documentation
+- Acceptance criteria (fix requirements)
+- **Fix verification status** (aligned with RW verification requirements)
+- **Intake Decision section** (tracks BR → Task → Story → Epic conversion)
+- Kanban links for traceability
+
+**Template Alignment:**
+- Both templates align with EPIC_TEMPLATE and STORY_TEMPLATE structure
+- Include intake decision tracking for FR/BR → Task → Story → Epic flow
+- Support versioning integration (`RC.EPIC.STORY.TASK+BUILD`)
+- Include Kanban links for traceability
+- BR template includes fix verification status (aligned with RW requirements)
+
+**Files Created:**
+- ✅ `packages/frameworks/kanban/templates/FR_TEMPLATE.md` (Feature Request template)
+- ✅ `packages/frameworks/kanban/templates/BR_TEMPLATE.md` (Bug Report template)
+
+**Deliverable:** FR and BR templates are ready for use. Templates include all necessary fields for intake processing and align with the decision flow design from T002.
 
 ---
 
@@ -195,5 +229,5 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-_Last updated: 2025-12-02 (v0.4.2.2+1 – Task 2 complete: Design FR/BR → Task → Story → Epic decision flow)_
+_Last updated: 2025-12-02 (v0.4.2.3+1 – Task 3 complete: Create FR/BR intake templates and forms)_
 

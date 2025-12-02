@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.2.2+1 – Task 2 complete: Design FR/BR → Task → Story → Epic decision flow)  
+**Last updated:** 2025-12-02 (v0.4.2.3+1 – Task 3 complete: Create FR/BR intake templates and forms)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -59,7 +59,7 @@ It ensures that:
 **Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.4.2.2+1 – Task 2 complete: Design FR/BR → Task → Story → Epic decision flow)  
+**Last updated:** 2025-12-02 (v0.4.2.3+1 – Task 3 complete: Create FR/BR intake templates and forms)  
 
 **Goal:**  
 Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `vibe-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.

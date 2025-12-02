@@ -17,6 +17,26 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.2.3+1] - 02-12-25
+
+📚 Documentation: Task 3 complete - Create FR/BR intake templates and forms
+
+### Added
+
+- Created FR template (`FR_TEMPLATE.md`) with structured format for Feature Requests
+- Created BR template (`BR_TEMPLATE.md`) with structured format for Bug Reports
+- Intake Decision sections in both templates for tracking FR/BR → Task → Story → Epic conversion
+- Fix verification status in BR template (aligned with RW requirements)
+- Kanban links and versioning integration fields in both templates
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.2.3+1.md` for full details
+- Templates align with EPIC_TEMPLATE and STORY_TEMPLATE structure
+- Templates support decision flow from T002 and will be used in T004 examples
+
+---
+
 ## [0.4.2.2+1] - 02-12-25
 
 📚 Documentation: Task 2 complete - Design FR/BR → Task → Story → Epic decision flow
