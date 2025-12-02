@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.1.1+3 – Task 2 complete: Ingest findings from fynd.deals Epic 15 Kanban work)
-**Version:** v0.4.1.1+3  
+**Last updated:** 2025-12-02 (v0.4.1.1+4 – Task 3 complete: Update dev-kit Kanban governance policy as canonical SoT)
+**Version:** v0.4.1.1+4  
 **Code:** E4S01
 
 ---
@@ -26,7 +26,7 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 - [x] **E4:S01:T001 – Review existing dev-kit Kanban policies and templates** ✅ COMPLETE (v0.4.1.1+2)
 - [x] **E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit** ✅ COMPLETE (v0.4.1.1+3)
-- [ ] **E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT**
+- [x] **E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT** ✅ COMPLETE (v0.4.1.1+4)
 - [ ] **E4:S01:T004 – Align dev-kit Kanban templates with updated governance**
 - [ ] **E4:S01:T005 – Document consumption pattern for other projects**
 
@@ -114,34 +114,39 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ---
 
-### E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT
+### E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT ✅ COMPLETE
 
 **Input:** Findings from T001 and T002  
-**Deliverable:** Updated canonical Kanban governance policy  
+**Deliverable:** Updated canonical Kanban governance policy ✅ **DELIVERED**  
 **Dependencies:** E4:S01:T001, E4:S01:T002  
 **Blocker:** None
 
+**Status:** ✅ **COMPLETE** - Framework policy updated with all 9 operational principles sections
+
 **Approach:**
-1. Refine `packages/frameworks/kanban/policies/kanban-governance-policy.md` to embed:
-   - Atomic RW behaviour and no-partial-updates rule
-   - Accessibility/agent-behaviour requirements
-   - Epic/Story/Task + forensic marker integration
-   - Review schedules and maintenance responsibilities
-   - Escalation procedures
-2. Ensure `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` clearly points at the framework policy as the SoT
-3. Document the relationship between framework policy (SoT) and project-specific adaptations
+1. ✅ Added 9 Operational Principles sections to `packages/frameworks/kanban/policies/kanban-governance-policy.md`:
+   - Atomic Release Workflow Behaviour
+   - "ALL Sections" Update Requirement
+   - Accessibility Constraints
+   - Forensic Marker Standardization
+   - Consistency Requirements
+   - Review Schedules
+   - Maintenance Responsibilities
+   - Escalation Procedures
+   - Mandatory TODO Tracking
+2. ✅ Updated `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` to clearly reference framework policy as CANONICAL SOURCE OF TRUTH
+3. ✅ Documented relationship between framework policy (SoT) and project-specific adaptations
 
-**Files to Update:**
-- `packages/frameworks/kanban/policies/kanban-governance-policy.md` (primary SoT)
-- `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (dev-kit local policy, references framework)
+**Key Changes:**
+- **Framework Policy:** Added comprehensive "Operational Principles" section with all 9 subsections
+- **Dev-Kit Policy:** Enhanced "Relationship to Framework Package" section to explicitly state framework is canonical SoT
+- **Change History:** Updated to reflect new sections added
 
-**Key Sections to Add/Enhance:**
-- Governance principles (single source of truth, forensic traceability, atomic updates, consistency first)
-- Atomic RW behaviour (complete all steps or explicit BLOCKED state)
-- "ALL sections" update requirement (header, checklist, detailed sections)
-- Accessibility constraints (no partial updates, clear actionable messages)
-- Review schedules (weekly, monthly, quarterly)
-- Escalation procedures (Level 1-3)
+**Files Updated:**
+- ✅ `packages/frameworks/kanban/policies/kanban-governance-policy.md` (primary SoT - major update)
+- ✅ `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (dev-kit local policy - enhanced SoT reference)
+
+**Deliverable:** Framework policy now serves as comprehensive canonical SoT with all operational principles explicitly documented.
 
 ---
 

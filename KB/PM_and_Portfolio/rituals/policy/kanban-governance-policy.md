@@ -3,7 +3,7 @@
 **Owner:** Vibe Dev Kit / Book Project Lead  
 **Last Updated:** 2025-12-02  
 **Applies To:** All work tracked in the `vibe-dev-kit` repo  
-**Based On:** `packages/frameworks/kanban/policies/kanban-governance-policy.md` (project-agnostic framework)
+**Based On:** `packages/frameworks/kanban/policies/kanban-governance-policy.md` (project-agnostic framework - **CANONICAL SOURCE OF TRUTH**)
 
 ---
 
@@ -155,22 +155,52 @@ This ensures that all work flowing into the dev kit is **Task / FR-driven** and 
 
 ## 5. Relationship to the Kanban Framework Package
 
-This repo **intends to use the full Kanban + Versioning + Workflow stack**, but is rolling it out in stages:
+**CRITICAL:** The framework policy (`packages/frameworks/kanban/policies/kanban-governance-policy.md`) is the **CANONICAL SOURCE OF TRUTH** for all Kanban governance principles, operational patterns, and requirements.
 
-- We **do use now**:
-  - Story + Task checklists as the primary work items
-  - A canonical board in `KB/PM_and_Portfolio/kanban/_index.md`
-  - The principle that all substantive work is Task/FR-driven
+This dev-kit policy is a **project-specific adaptation** that:
+- References the framework policy as the authoritative source
+- Documents dev-kit-specific structure and paths
+- Clarifies how the framework applies to this repo
 
-- We **will add next**:
-  - Epics for major areas of the dev kit
-  - `E{epic}S{story}T{task}` numbering for Tasks
-  - Full `RC.EPIC.STORY.TASK+BUILD` alignment between Kanban and versioning
+**Framework Policy Sections (Canonical SoT):**
+- The Harmonious Cycle (Task → Version → RW → Kanban Update)
+- FR/BR → Task → Story → Epic flow
+- Board Structure
+- Work Items (Epics, Stories, Tasks)
+- Versioning (RC.EPIC.STORY.TASK+BUILD schema)
+- Task-Level Requirements
+- Release Workflow
+- **Operational Principles** (NEW - added in v0.4.1.1+3):
+  - Atomic Release Workflow Behaviour
+  - "ALL Sections" Update Requirement
+  - Accessibility Constraints
+  - Forensic Marker Standardization
+  - Consistency Requirements
+  - Review Schedules
+  - Maintenance Responsibilities
+  - Escalation Procedures
+  - Mandatory TODO Tracking
+- Documentation requirements
+- Rules (traceability, SoT, gate conditions, numbering, WIP)
+- Templates & References
 
-The underlying framework details are defined in:
+**This Repo's Implementation:**
+- Uses **full Kanban + Versioning + Workflow stack**
+- Story + Task checklists as primary work items
+- Canonical board in `KB/PM_and_Portfolio/kanban/_index.md`
+- All substantive work is Task/FR-driven
+- Epics for major areas of the dev kit
+- `E{epic}S{story}T{task}` numbering for Tasks
+- Full `RC.EPIC.STORY.TASK+BUILD` alignment between Kanban and versioning
 
-- `packages/frameworks/kanban/policies/kanban-governance-policy.md`
-- `packages/frameworks/kanban/integration/numbering-versioning-integration.md`
+**Framework References:**
+- **Canonical Policy:** `packages/frameworks/kanban/policies/kanban-governance-policy.md` ⭐
+- **Integration Guides:**
+  - `packages/frameworks/kanban/integration/numbering-versioning-integration.md`
+  - `packages/frameworks/kanban/integration/workflow-management-integration.md`
+- **Templates:**
+  - `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md`
+  - `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
 
 ---
 

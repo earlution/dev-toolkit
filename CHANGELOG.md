@@ -17,6 +17,31 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.1.1+4] - 02-12-25
+
+📚 Documentation: Task 3 complete - Update dev-kit Kanban governance policy as canonical SoT
+
+### Added
+
+- Added **9 Operational Principles sections** to framework Kanban governance policy:
+  - Atomic Release Workflow Behaviour
+  - "ALL Sections" Update Requirement
+  - Accessibility Constraints
+  - Forensic Marker Standardization
+  - Consistency Requirements
+  - Review Schedules
+  - Maintenance Responsibilities
+  - Escalation Procedures
+  - Mandatory TODO Tracking
+- Enhanced dev-kit local policy to explicitly reference framework as canonical SoT
+
+### Notes
+
+- Framework policy: `packages/frameworks/kanban/policies/kanban-governance-policy.md` (now comprehensive canonical SoT)
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.1.1+4.md` for full details
+
+---
+
 ## [0.4.1.1+3] - 02-12-25
 
 📚 Documentation: Task 2 complete - Ingest findings from fynd.deals Epic 15 Kanban work

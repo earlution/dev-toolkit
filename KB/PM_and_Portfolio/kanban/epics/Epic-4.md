@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.1.1+3 – Task 2 complete: Ingest findings from fynd.deals Epic 15 Kanban work)  
+**Last updated:** 2025-12-02 (v0.4.1.1+4 – Task 3 complete: Update dev-kit Kanban governance policy as canonical SoT)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -58,14 +58,15 @@ It ensures that:
 **Status:** TODO  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.4.1.1+3 – Task 2 complete: Ingest findings from fynd.deals Epic 15 Kanban work)  
+**Last updated:** 2025-12-02 (v0.4.1.1+4 – Task 3 complete: Update dev-kit Kanban governance policy as canonical SoT)  
 
 **Goal:**  
 Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `vibe-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.
 
 **Tasks:**
 - [x] E4:S01:T001 – Review existing dev-kit Kanban policies and templates ✅ COMPLETE (v0.4.1.1+2)
-- [x] E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit ✅ COMPLETE (v0.4.1.1+3)  
+- [x] E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit ✅ COMPLETE (v0.4.1.1+3)
+- [x] E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT ✅ COMPLETE (v0.4.1.1+4)  
 - [ ] E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit  
 - [ ] E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT  
 - [ ] E4:S01:T004 – Align dev-kit Kanban templates with updated governance  
