@@ -14,7 +14,8 @@
 ## Story Checklist
 
 - [x] **E1:S01 – Dev Kit Versioning & RW Behaviour** - COMPLETE ✅ (v0.1.1.1+1, E2:S01:T002, E2:S01:T003)  
-- [ ] **E1:S02 – Package & Repo Architecture** - TODO  
+- [ ] **E1:S02 – Package & Repo Architecture** - TODO
+  - Story: [`epics/Epic-1/stories/Story-002-package-and-repo-architecture.md`](epics/Epic-1/stories/Story-002-package-and-repo-architecture.md)  
 - [ ] **E1:S03 – Core KB Structure for Dev Kit** - TODO  
 
 ---
@@ -44,7 +45,7 @@ It defines how the repo is structured, how versioning works for the dev kit itse
 
 ### Story 1: Dev Kit Versioning & RW Behaviour
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Last updated:** 2025-12-02 (v0.1.1.1+2 – Documentation restructured to industry-standard templates)  
@@ -62,7 +63,28 @@ Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW
 - [x] `version.py` encodes a real dev-kit Epic/Story/Task, not legacy external IDs ✅  
 - [x] RW docs clarify dev-kit vs Confidentia/fynd.deals examples ✅
 
-> Full story: `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md` (and follow-up stories to be created under Epic 1).
+> Full story: `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md`
+
+---
+
+### Story 2: Package & Repo Architecture
+
+**Status:** TODO  
+**Priority:** HIGH  
+**Estimated Effort:** [TBD]  
+**Last updated:** 2025-12-02
+
+**Goal:**  
+Clarify the modular architecture of the `vibe-dev-kit` repository, ensuring that users can easily consume individual frameworks (workflow mgt, versioning, kanban) without pulling in the entire repository.
+
+**Tasks:**
+- [ ] E1:S02:T001 – Analyze current package structure and dependencies
+- [ ] E1:S02:T002 – Document modularity principles and boundaries
+- [ ] E1:S02:T003 – Create package dependency matrix
+- [ ] E1:S02:T004 – Document consumption patterns for each framework
+- [ ] E1:S02:T005 – Update package READMEs with modularity information
+
+> Full story: [`epics/Epic-1/stories/Story-002-package-and-repo-architecture.md`](epics/Epic-1/stories/Story-002-package-and-repo-architecture.md)
 
 ---
 

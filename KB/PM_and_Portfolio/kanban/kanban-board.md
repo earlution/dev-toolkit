@@ -25,9 +25,10 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 **Last Updated:** v0.1.1.1+2
 
 **Stories:**
-- [ ] **E1:S01 – Dev Kit Versioning & RW Behaviour** - IN PROGRESS
+- [x] **E1:S01 – Dev Kit Versioning & RW Behaviour** - COMPLETE ✅ (v0.1.1.1+2)
   - Story: [`epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md`](epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md)
 - [ ] **E1:S02 – Package & Repo Architecture** - TODO
+  - Story: [`epics/Epic-1/stories/Story-002-package-and-repo-architecture.md`](epics/Epic-1/stories/Story-002-package-and-repo-architecture.md)
 - [ ] **E1:S03 – Core KB Structure for Dev Kit** - TODO
 
 **Epic Doc:** [`epics/Epic-1.md`](epics/Epic-1.md)

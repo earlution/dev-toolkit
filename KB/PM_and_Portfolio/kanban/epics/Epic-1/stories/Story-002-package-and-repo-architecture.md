@@ -1,0 +1,195 @@
+# Story 002 – Package & Repo Architecture
+
+**Status:** TODO  
+**Priority:** HIGH  
+**Estimated Effort:** [TBD]  
+**Created:** 2025-12-02  
+**Last updated:** 2025-12-02  
+**Version:** TBD  
+**Code:** E1S02
+
+---
+
+## Overview
+
+This story clarifies the **modular architecture** of the `vibe-dev-kit` repository, ensuring that users can easily consume individual frameworks (workflow mgt, versioning, kanban) without pulling in the entire repository. It establishes clear boundaries, dependencies, and consumption patterns for each package.
+
+---
+
+## Goal
+
+Make it easy for users to consume **individual frameworks** (workflow mgt, versioning, kanban) without pulling in the whole repo. Establish clear modularity principles, dependency documentation, and consumption patterns.
+
+---
+
+## Task Checklist
+
+- [ ] **E1:S02:T001 – Analyze current package structure and dependencies**
+- [ ] **E1:S02:T002 – Document modularity principles and boundaries**
+- [ ] **E1:S02:T003 – Create package dependency matrix**
+- [ ] **E1:S02:T004 – Document consumption patterns for each framework**
+- [ ] **E1:S02:T005 – Update package READMEs with modularity information**
+
+---
+
+## Tasks
+
+### E1:S02:T001 – Analyze current package structure and dependencies
+
+**Input:** Current repository structure, package READMEs, and framework documentation  
+**Deliverable:** Package structure analysis report  
+**Dependencies:** None  
+**Blocker:** None
+
+**Status:** ⏳ TODO
+
+**Approach:**
+1. Review current `packages/frameworks/` structure
+2. Identify dependencies between packages
+3. Document current modularity gaps
+4. Identify what makes packages independent vs interdependent
+
+**Acceptance Criteria:**
+- [ ] Complete analysis of current package structure
+- [ ] Dependencies between packages documented
+- [ ] Modularity gaps identified
+- [ ] Report created with findings
+
+---
+
+### E1:S02:T002 – Document modularity principles and boundaries
+
+**Input:** Analysis from T001  
+**Deliverable:** Modularity principles document  
+**Dependencies:** T001  
+**Blocker:** None
+
+**Status:** ⏳ TODO
+
+**Approach:**
+1. Define what "modular" means for this dev-kit
+2. Establish boundaries between packages
+3. Document copy vs reference patterns
+4. Define dependency rules
+
+**Acceptance Criteria:**
+- [ ] Modularity principles clearly defined
+- [ ] Package boundaries documented
+- [ ] Copy vs reference patterns established
+- [ ] Dependency rules documented
+
+---
+
+### E1:S02:T003 – Create package dependency matrix
+
+**Input:** Analysis from T001, principles from T002  
+**Deliverable:** Dependency matrix document  
+**Dependencies:** T001, T002  
+**Blocker:** None
+
+**Status:** ⏳ TODO
+
+**Approach:**
+1. Create visual dependency matrix
+2. Document optional vs required dependencies
+3. Identify circular dependencies (if any)
+4. Document how to break dependencies if needed
+
+**Acceptance Criteria:**
+- [ ] Dependency matrix created
+- [ ] Optional vs required dependencies clear
+- [ ] Circular dependencies identified and resolved
+- [ ] Breaking dependencies documented
+
+---
+
+### E1:S02:T004 – Document consumption patterns for each framework
+
+**Input:** Principles from T002, dependency matrix from T003  
+**Deliverable:** Consumption pattern guides for each framework  
+**Dependencies:** T002, T003  
+**Blocker:** None
+
+**Status:** ⏳ TODO
+
+**Approach:**
+1. Create consumption guide for Workflow Management framework
+2. Create consumption guide for Numbering & Versioning framework
+3. Create consumption guide for Kanban framework
+4. Include examples of standalone vs combined usage
+
+**Acceptance Criteria:**
+- [ ] Consumption guide for each framework created
+- [ ] Standalone usage documented
+- [ ] Combined usage documented
+- [ ] Examples provided
+
+---
+
+### E1:S02:T005 – Update package READMEs with modularity information
+
+**Input:** Consumption patterns from T004  
+**Deliverable:** Updated package READMEs  
+**Dependencies:** T004  
+**Blocker:** None
+
+**Status:** ⏳ TODO
+
+**Approach:**
+1. Update `packages/frameworks/workflow mgt/README.md`
+2. Update `packages/frameworks/numbering & versioning/README.md`
+3. Update `packages/frameworks/kanban/README.md`
+4. Ensure all READMEs include modularity section
+
+**Acceptance Criteria:**
+- [ ] All package READMEs updated
+- [ ] Modularity section in each README
+- [ ] Dependencies clearly documented
+- [ ] Consumption patterns referenced
+
+---
+
+## Acceptance Criteria
+
+- [ ] Package structure analyzed and documented
+- [ ] Modularity principles established
+- [ ] Dependency matrix created
+- [ ] Consumption patterns documented for all frameworks
+- [ ] All package READMEs updated with modularity information
+- [ ] Users can easily understand how to use individual packages independently
+
+---
+
+## Dependencies
+
+**Blocks:**
+- Clear understanding of how to consume individual frameworks
+- Confidence in package independence
+
+**Blocked By:**
+- None (can proceed independently)
+
+**Coordinates With:**
+- Epic 2: Workflow Management Framework
+- Epic 3: Numbering & Versioning Framework
+- Epic 4: Kanban Framework
+
+---
+
+## References
+
+- `packages/frameworks/workflow mgt/README.md`
+- `packages/frameworks/numbering & versioning/README.md`
+- `packages/frameworks/kanban/README.md`
+- `README.md` (root)
+
+---
+
+## Next Actions
+
+- [ ] Start Task 1: Analyze current package structure and dependencies
+
+---
+
+_Last updated: 2025-12-02_
+
