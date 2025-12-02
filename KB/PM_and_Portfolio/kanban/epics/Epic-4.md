@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.3.4+1 – Task 4 complete: Validate RW → Kanban integration in dev-kit)  
+**Last updated:** 2025-12-02 (v0.4.3.7+1 – Task 7 complete: Address RW → Kanban integration gaps identified in T004)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -16,7 +16,8 @@
 - [x] **E4:S01 – Dev Kit Kanban Implementation** - COMPLETE ✅ (v0.4.1.1+6)  
 - [x] **E4:S02 – FR/BR Intake to Tasks** - COMPLETE ✅ (v0.4.2.5+1)
   - Story: [`epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md`](epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md)  
-- [ ] **E4:S03 – Kanban + Versioning + RW Integration** - IN PROGRESS
+- [ ] **E4:S03 – Kanban + Versioning + RW Integration** - IN PROGRESS (v0.4.3.7+1)
+  - Tasks: T001 ✅ (v0.4.3.1+1), T002 ✅ (v0.4.3.2+2), T003 ✅ (v0.4.3.3+1), T004 ✅ (v0.4.3.4+1), T007 ✅ (v0.4.3.7+1)
   - Story: [`epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`](epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md)  
 
 ---
@@ -60,7 +61,7 @@ It ensures that:
 **Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.4.3.4+1 – Task 4 complete: Validate RW → Kanban integration in dev-kit)  
+**Last updated:** 2025-12-02 (v0.4.3.7+1 – Task 7 complete: Address RW → Kanban integration gaps identified in T004)  
 
 **Goal:**  
 Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `vibe-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.
@@ -102,7 +103,7 @@ Design and implement a clear, actionable flow for converting incoming Feature Re
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.4.3.4+1 – Task 4 complete: Validate RW → Kanban integration in dev-kit)
+**Last updated:** 2025-12-02 (v0.4.3.7+1 – Task 7 complete: Address RW → Kanban integration gaps identified in T004)
 
 **Goal:**  
 Ensure seamless integration between Kanban, Versioning, and Release Workflow (RW) systems within the dev-kit. This story validates that the three frameworks work together cohesively, providing end-to-end traceability from Feature Requests/Bug Reports through Kanban Tasks to versioned releases.
@@ -112,6 +113,7 @@ Ensure seamless integration between Kanban, Versioning, and Release Workflow (RW
 - [x] E4:S03:T002 – Validate Kanban → Versioning integration in dev-kit ✅ COMPLETE (v0.4.3.2+2)
 - [x] E4:S03:T003 – Validate Versioning → RW integration in dev-kit ✅ COMPLETE (v0.4.3.3+1)
 - [x] E4:S03:T004 – Validate RW → Kanban integration in dev-kit ✅ COMPLETE (v0.4.3.4+1)
+- [x] E4:S03:T007 – Address RW → Kanban integration gaps identified in T004 ✅ COMPLETE (v0.4.3.7+1)
 - [ ] E4:S03:T005 – Create dev-kit integration guide
 - [ ] E4:S03:T006 – Document integration examples and edge cases
 

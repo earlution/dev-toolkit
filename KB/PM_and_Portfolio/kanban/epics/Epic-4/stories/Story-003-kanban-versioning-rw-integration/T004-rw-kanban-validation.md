@@ -3,7 +3,8 @@
 **Task:** E4:S03:T004 – Validate RW → Kanban integration in dev-kit  
 **Date:** 2025-12-02  
 **Author:** AI Agent (Auto)  
-**Status:** ✅ COMPLETE
+**Status:** ✅ COMPLETE (v0.4.3.4+1)  
+**Gaps Addressed:** E4:S03:T007 (in progress)
 
 ---
 
@@ -409,6 +410,37 @@ The RW → Kanban integration is **partially implemented** with **good foundatio
 - `packages/frameworks/kanban/integration/workflow-management-integration.md` (integration guide)
 - `KB/PM_and_Portfolio/kanban/epics/Epic-4.md` (Epic document)
 - `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md` (Story document)
+
+---
+
+## 8. Fix Status (E4:S03:T007)
+
+**Task:** E4:S03:T007 – Address RW → Kanban integration gaps identified in T004  
+**Status:** 🔄 IN PROGRESS
+
+### Fixes Applied
+
+**✅ RW Step 6 Documentation Updated:**
+- Enhanced Step 6 DETERMINE section with explicit "ALL Sections" requirement
+- Added systematic process steps (read full file, find all references, update all)
+- Added explicit Epic Story Checklist update requirement
+- Added forensic marker format specification: `✅ COMPLETE (v{version})`
+- Enhanced VALIDATE section with consistency checks
+
+**✅ Epic Story Checklist Fixed:**
+- Updated Epic-4.md Story Checklist to include Task-level version markers
+- Format: `- [ ] **E4:S03 – Story Name** - IN PROGRESS (v{version})`
+- Added Task completion list: `Tasks: T001 ✅ (v0.4.3.1+1), T002 ✅ (v0.4.3.2+2), ...`
+
+**✅ Story Document Forensic Markers Standardized:**
+- Updated all Task status fields to include version markers
+- Format: `**Status:** ✅ **COMPLETE** (v{version}) - [description]`
+- Applied to T001, T002, T003, T004
+
+**🔄 Remaining Work:**
+- [ ] Update templates with explicit forensic marker requirements (already have notes, may need enhancement)
+- [ ] Test fixes with actual RW execution
+- [ ] Update validation report with final fix status
 
 ---
 

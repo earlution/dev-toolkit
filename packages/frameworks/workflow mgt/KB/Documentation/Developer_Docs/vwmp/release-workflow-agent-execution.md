@@ -604,21 +604,43 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Understand "Last updated" field format
 
 2. **DETERMINE:**
-   - Update Epic doc "Last updated" field with version and summary
-   - Update Story doc "Last updated" field with version and summary
-   - Format: `**Last updated:** YYYY-MM-DD (v{version} – {summary})`
+   - **CRITICAL: "ALL Sections" Requirement** - Must update ALL sections referencing the story/task:
+     - Epic doc header "Last updated" field
+     - Epic doc Story Checklist (status and version marker)
+     - Epic doc detailed Story sections (Status, Last updated, Task checkboxes with forensic markers)
+     - Story doc header "Last updated" and "Version" fields
+     - Story doc Task Checklist (with forensic markers)
+     - Story doc detailed Task sections (Status, version markers)
+     - Any other references to the story/task
+   - Format for "Last updated": `**Last updated:** YYYY-MM-DD (v{version} – {summary})`
+   - Format for forensic markers: `✅ COMPLETE (v{version})` (canonical format)
    - Determine if tasks should be marked complete (if applicable)
+   - **Systematic Process:**
+     1. Read the FULL Epic document file
+     2. Read the authoritative Story document file to get correct state
+     3. Use grep/search to find ALL sections referencing the story/task
+     4. Update ALL of them to match the Story file's state
 
 3. **EXECUTE:**
-   - Update Epic doc "Last updated" field
-   - Update Story doc "Last updated" field
-   - If tasks completed, mark them with version numbers
+   - Update Epic doc header "Last updated" field
+   - Update Epic doc Story Checklist with version marker (format: `- [ ] **E4:S03 – Story Name** - IN PROGRESS (v{version})`)
+   - Update Epic doc detailed Story sections (Status, Last updated, Task checkboxes with forensic markers)
+   - Update Story doc header "Last updated" and "Version" fields
+   - Update Story doc Task Checklist with forensic markers (format: `✅ COMPLETE (v{version})`)
+   - Update Story doc detailed Task sections with forensic markers
+   - Search for and update any other references to the story/task
 
 4. **VALIDATE:**
-   - Verify Epic doc was updated
-   - Verify Story doc was updated
+   - Verify Epic doc header was updated
+   - Verify Epic doc Story Checklist was updated with version marker
+   - Verify Epic doc detailed Story sections were updated
+   - Verify Story doc header was updated
+   - Verify Story doc Task Checklist was updated with forensic markers
+   - Verify Story doc detailed Task sections were updated
    - Check date format is correct
    - Verify version numbers are correct
+   - Verify forensic marker format is canonical: `✅ COMPLETE (v{version})`
+   - **Consistency Check:** Verify Epic header matches Story Checklist, Story Checklist matches detailed sections
 
 5. **PROCEED:**
    - Document: "Updated Kanban docs with version markers"

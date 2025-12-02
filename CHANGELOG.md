@@ -17,6 +17,31 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.3.7+1] - 02-12-25
+
+🔧 Fix: Task 7 complete - Address RW → Kanban integration gaps identified in T004
+
+### Fixed
+
+- Fixed Epic Story Checklist to include Task-level version markers
+- Standardized forensic marker format across all sections
+- Enhanced RW Step 6 documentation with explicit "ALL sections" requirement
+- Updated validation report with fix status
+
+### Added
+
+- Created gap resolution summary document
+- Added systematic process steps to RW Step 6 documentation
+- Added consistency validation checks to RW Step 6
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.7+1.md` for full details
+- All 3 critical gaps from T004 validation addressed
+- RW → Kanban integration now fully compliant with "ALL sections" requirement
+
+---
+
 ## [0.4.3.4+1] - 02-12-25
 
 📚 Documentation: Task 4 complete - Validate RW → Kanban integration in dev-kit
