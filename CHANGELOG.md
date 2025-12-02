@@ -17,6 +17,32 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.1.1+5] - 02-12-25
+
+📚 Documentation: Task 3 complete - Align .cursorrules RW trigger section with dev-kit policy
+
+### Added
+
+- Added dev-kit-specific examples for all file paths (version file, changelog, Kanban, validators)
+- Added dev-kit epic ranges information (Epic 1-4+, no legacy range)
+- Added canonical ordering, forensic traceability, and immutability principles
+- Added "For vibe-dev-kit Usage" subsection with dev-kit-specific paths and policy references
+- Added Kanban governance policy reference
+
+### Changed
+
+- Enhanced version schema section with new story/epic progression rules
+- Enhanced changelog steps with immutability notes
+- Updated version calculation examples with dev-kit-specific scenarios
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.1+5.md` for full details
+- Cursorrules section now fully aligned with dev-kit versioning policy
+- Template remains ready for other projects while including dev-kit examples
+
+---
+
 ## [0.2.1.1+4] - 02-12-25
 
 📚 Documentation: Task 2 complete - Tag Confidentia/fynd.deals examples and add dev-kit examples

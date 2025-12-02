@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.2.1.1+4 – Task 2 complete: Tag Confidentia/fynd.deals examples and add dev-kit examples)
-**Version:** v0.2.1.1+4  
+**Last updated:** 2025-12-02 (v0.2.1.1+5 – Task 3 complete: Align .cursorrules RW trigger section with dev-kit policy)
+**Version:** v0.2.1.1+5  
 **Code:** E2S01
 
 ---
@@ -26,7 +26,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 - [x] **E2:S01:T001 – Audit `release-workflow-agent-execution.md` for project-specific assumptions** ✅ COMPLETE (v0.2.1.1+3)
 - [x] **E2:S01:T002 – Tag Confidentia/fynd.deals examples and add dev-kit examples** ✅ COMPLETE (v0.2.1.1+4)
-- [ ] **E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy**
+- [x] **E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy** ✅ COMPLETE (v0.2.1.1+5)
 - [x] **E2:S01:T004 – Update RW changelog step to require verification before marking fixes as "fixed"** ✅ COMPLETE (v0.2.1.1+2)
 
 ---
@@ -106,20 +106,42 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 ---
 
-### E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy
+### E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy ✅ COMPLETE
 
 **Input:** Updated RW documentation from T002  
-**Deliverable:** Updated `.cursorrules` RW trigger section  
+**Deliverable:** Updated `.cursorrules` RW trigger section ✅ **DELIVERED**  
 **Dependencies:** E2:S01:T002  
 **Blocker:** None
 
-**Approach:**
-1. Review `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md`
-2. Ensure alignment with dev-kit versioning and Kanban policies
-3. Update any inconsistencies
+**Status:** ✅ **COMPLETE** - Cursorrules RW trigger section aligned with dev-kit policy
 
-**Files to Update:**
-- `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md`
+**Approach:**
+1. ✅ Reviewed `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md`
+2. ✅ Reviewed `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md`
+3. ✅ Added dev-kit-specific examples throughout the section
+4. ✅ Enhanced version schema section with new story/epic progression rules
+5. ✅ Added dev-kit file path examples
+6. ✅ Added dev-kit epic ranges information
+7. ✅ Added canonical ordering, forensic traceability, and immutability principles
+8. ✅ Added "For vibe-dev-kit Usage" section with dev-kit-specific paths
+9. ✅ Enhanced changelog format notes with immutability requirements
+
+**Key Changes:**
+- **File Paths Section:** Added dev-kit examples for all paths (version file, changelog, Kanban, validators)
+- **Version Schema Section:** 
+  - Added new story/epic progression rules
+  - Added dev-kit epic ranges (Epic 1-4+)
+  - Clarified no legacy range in dev-kit
+- **Version Calculation Examples:** Added dev-kit-specific examples for all progression scenarios
+- **Key Principles:** Added canonical ordering, forensic traceability, and immutability principles
+- **Changelog Steps:** Enhanced with immutability notes (detailed changelog timestamps are immutable)
+- **Reference Documentation:** Added Kanban governance policy reference
+- **Customization Section:** Added "For vibe-dev-kit Usage" subsection with dev-kit-specific paths and policy references
+
+**Files Updated:**
+- ✅ `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md` (aligned with dev-kit policy)
+
+**Deliverable:** Cursorrules RW trigger section now includes dev-kit-specific examples and aligns with dev-kit versioning policy, making it clear how to use the template in the dev-kit repository itself.
 
 ---
 
@@ -171,7 +193,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 ## Acceptance Criteria
 
-- [ ] RW documentation is fully portable and template-ready
+- [x] RW documentation is fully portable and template-ready ✅
 - [x] Examples are clearly tagged as dev-kit vs external ✅
 - [x] Changelog step requires verification before marking fixes as "Fixed" ✅
 - [x] Unverified fixes are logged as "Attempted fix" until verified ✅
@@ -196,5 +218,5 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 ---
 
-_Last updated: 2025-12-02 (v0.2.1.1+4 – Task 2 complete: Tag Confidentia/fynd.deals examples and add dev-kit examples)_
+_Last updated: 2025-12-02 (v0.2.1.1+5 – Task 3 complete: Align .cursorrules RW trigger section with dev-kit policy)_
 

@@ -94,8 +94,9 @@ For each step, follow this pattern:
    - **New Story:** Set new STORY, TASK=1, BUILD=1 (e.g., `0.E.S.T+B` → `0.E.{S+1}.1+1`)
    - **New Epic:** Set new EPIC, STORY=1, TASK=1, BUILD=1 (e.g., `0.E.S.T+B` → `0.{E+1}.1.1+1`)
    - Use format: `RC.EPIC.STORY.TASK+BUILD`
-3. **Create Detailed Changelog** - Create detailed changelog in changelog archive directory (typically `{changelog_archive_path}/CHANGELOG_v{version}.md`) with full timestamp (`YYYY-MM-DD HH:MM:SS UTC`)
-4. **Update Main Changelog** - Add new entry at top: `## [version] - DD-MM-YY` (new format) with release description and link to detailed changelog. Follow [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog) format.
+3. **Create Detailed Changelog** - Create detailed changelog in changelog archive directory (typically `{changelog_archive_path}/CHANGELOG_v{version}.md`) with full timestamp (`YYYY-MM-DD HH:MM:SS UTC`). **CRITICAL:** Timestamp is IMMUTABLE once written - never edit the `**Release Date:**` field.
+   - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md`
+4. **Update Main Changelog** - Add new entry at top: `## [version] - DD-MM-YY` (short date format for merge-to-main) with release description and link to detailed changelog. Follow [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog) format. **Note:** Main changelog date can be updated if merge date changes, but detailed changelog timestamp is immutable.
 5. **Update README** - Update version badge and latest release callout if present (optional)
 6. **Auto-update Kanban Docs** - Update epic documentation at `{kanban_path}/epics/Epic-{epic}.md` and story documentation at `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` with version markers. **CRITICAL: "ALL" means ALL sections:**
    - Header metadata (Last updated, Version)
@@ -124,24 +125,38 @@ For each step, follow this pattern:
 - ✅ **Documentation:** Document decisions and actions at each step
 - ✅ **Progress Tracking:** MUST use Cursor TODOs to track all 11 steps
 - ✅ **Branch Safety First:** Step 1 validates branch alignment before any modifications
+- ✅ **Canonical Ordering:** Version numbers (not timestamps) determine changelog ordering - versions are the canonical ordering metric
+- ✅ **Forensic Traceability:** Maintain complete traceability grid (version ↔ epic/story/task ↔ changelogs ↔ kanban ↔ git)
+- ✅ **Immutability:** Detailed changelog timestamps are immutable once written - never edit `**Release Date:**` field
 - ❌ **Never Blind Execution:** Don't just run scripts without understanding what they do
 - ❌ **Never Leave RW Ambiguous:** Always end in either **RW COMPLETE** or **RW ABORTED (with reason)** state
 
 **File Paths (Customize for Your Project):**
 - Version file: `src/{project}/version.py` (e.g., `src/myproject/version.py`)
+  - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (legacy path, acceptable for now)
 - Changelog: `CHANGELOG.md`
-- Changelog Archive: `{changelog_archive_path}/CHANGELOG_v{version}.md` (e.g., `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md`)
+- Changelog Archive: `{changelog_archive_path}/CHANGELOG_v{version}.md`
+  - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md`
 - Kanban Board: `{kanban_path}/kanban-board.md` or `{kanban_path}/_index.md` (customize path)
+  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/_index.md` or `KB/PM_and_Portfolio/kanban/kanban-board.md`
 - Epic Docs: `{kanban_path}/epics/Epic-{epic}.md` (customize path)
+  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}.md`
 - Story Docs: `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` (customize path)
+  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md`
 - Validators: `{scripts_path}/validation/validate_branch_context.py`, `{scripts_path}/validation/validate_changelog_format.py`
+  - [Example: vibe-dev-kit] `packages/frameworks/workflow mgt/scripts/validation/validate_branch_context.py`, `packages/frameworks/workflow mgt/scripts/validation/validate_changelog_format.py`
 
 **Version Schema:**
 - Format: `RC.EPIC.STORY.TASK+BUILD` (e.g., `0.{epic}.{story}.{task}+{build}`)
 - **Schema Calculation:** Epic N, Story S, Task T → Version: `0.N.S.T+1` (first build)
 - **Build Increment:** Same Epic/Story/Task → Increment BUILD (e.g., `0.N.S.T+1` → `0.N.S.T+2`)
 - **New Task:** Different Task → Reset BUILD to 1 (e.g., `0.N.S.T+5` → `0.N.S.{T+1}+1`)
+- **New Story:** Different Story → Reset TASK to 1, BUILD to 1 (e.g., `0.N.S.T+B` → `0.N.{S+1}.1+1`)
+- **New Epic:** Different Epic → Reset STORY to 1, TASK to 1, BUILD to 1 (e.g., `0.N.S.T+B` → `0.{N+1}.1.1+1`)
 - **Epic Alignment:** Epic number should match current branch (if on `epic/{n}`, version should be `0.{n}.S.T+B`)
+- **Epic Ranges:**
+  - [Example: vibe-dev-kit] Epic 1-4+ (Epic 1: Vibe Dev Kit Core, Epic 2: Workflow Management Framework, Epic 3: Numbering & Versioning Framework, Epic 4: Kanban Framework)
+  - No legacy range in dev-kit - starts from Epic 1 with full schema
 - **Reference:** See `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` (or your project's versioning policy) for complete schema definition
 
 **Branch Mapping (Customize for Your Project):**
@@ -158,14 +173,21 @@ For each step, follow this pattern:
 
 **Version Calculation Examples:**
 - Working on Epic 1, Story 1, Task 1: `0.1.1.1+1` (first build) → `0.1.1.1+2` (second build)
+  - [Example: vibe-dev-kit] Epic 1 (Vibe Dev Kit Core), Story 1, Task 1: `0.1.1.1+1` → `0.1.1.1+2`
 - Moving to Task 2 in same Story: `0.1.1.2+1` (new task, BUILD resets to 1)
+  - [Example: vibe-dev-kit] Epic 2 (Workflow Management Framework), Story 1, Task 2: `0.2.1.2+1`
 - Moving to Story 2 in same Epic: `0.1.2.1+1` (new story, TASK and BUILD reset)
+  - [Example: vibe-dev-kit] Epic 3 (Numbering & Versioning Framework), Story 2: `0.3.2.1+1`
 - Moving to Epic 2: `0.2.1.1+1` (new epic, STORY, TASK, and BUILD reset)
+  - [Example: vibe-dev-kit] Epic 4 (Kanban Framework), Story 1, Task 1: `0.4.1.1+1`
 
 **Reference Documentation:**
 - Versioning Policy: `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` (or your project's equivalent)
+  - [Example: vibe-dev-kit] `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` (canonical SoT for dev-kit)
 - Versioning Strategy: `packages/frameworks/numbering & versioning/versioning-strategy.md` (framework reference)
 - Release Workflow Guide: `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`
+- Kanban Governance: `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (or your project's equivalent)
+  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (references framework as SoT)
 
 ---
 
@@ -174,7 +196,21 @@ For each step, follow this pattern:
 After copying this section to your `.cursorrules`, you MUST:
 1. **Update all file paths** to match your project structure
 2. **Update version file location** (currently shows `src/{project}/version.py` as template)
+   - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (legacy path, acceptable for now)
 3. **Update Kanban paths** (currently shows `{kanban_path}/...` as templates)
+   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}.md`
 4. **Update validator script paths** (currently shows `{scripts_path}/...` as templates)
+   - [Example: vibe-dev-kit] `packages/frameworks/workflow mgt/scripts/validation/...`
 5. **Reference your project's versioning policy** instead of dev-kit policy
+   - [Example: vibe-dev-kit] Uses `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` as canonical SoT
 6. **Customize branch naming** if your project uses different conventions (e.g., `feature/epic-{n}` instead of `epic/{n}`)
+7. **Customize epic ranges** if your project uses different epic numbering (e.g., legacy range 1-9, new range 10+)
+   - [Example: vibe-dev-kit] Epic 1-4+ (no legacy range, starts from Epic 1 with full schema)
+
+**For vibe-dev-kit Usage:**
+When using this section in the vibe-dev-kit repository itself:
+- Version file: `src/fynd_deals/version.py`
+- Changelog Archive: `KB/Changelog_and_Release_Notes/Changelog_Archive/`
+- Kanban: `KB/PM_and_Portfolio/kanban/`
+- Validators: `packages/frameworks/workflow mgt/scripts/validation/`
+- Versioning Policy: `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` (canonical SoT)
