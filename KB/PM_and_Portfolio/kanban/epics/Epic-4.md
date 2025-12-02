@@ -58,7 +58,7 @@ It ensures that:
 **Status:** TODO  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (to be released as v0.4.1.1+1 – Story defined with tasks to ingest fynd.deals Epic 15 findings)  
+**Last updated:** 2025-12-02 (v0.4.1.1+1 – Epic 4 structure and Story 1 definition)  
 
 **Goal:**  
 Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `vibe-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.

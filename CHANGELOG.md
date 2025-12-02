@@ -17,6 +17,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.1.1+1] - 02-12-25
+
+📚 Documentation: Epic 4 structure and Story 1 definition for Kanban Framework
+
+### Added
+
+- Created **Epic 4: Kanban Framework** (`KB/PM_and_Portfolio/kanban/epics/Epic-4.md`)
+- Created **Story 1: Dev Kit Kanban Implementation** with 5 initial tasks
+- Updated Kanban board views with Epic 4 Story 1 references
+
+### Notes
+
+- Epic 4 owns the `packages/frameworks/kanban/` package
+- Story 1 tasks focus on establishing dev-kit as canonical SoT for Kanban policies and templates
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.1.1+1.md` for full details
+
+---
+
 ## [0.3.1.1+1] - 02-12-25
 
 📚 Documentation: Epic 3 structure and Story 1 definition for Numbering & Versioning Framework

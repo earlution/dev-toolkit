@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (to be released as v0.4.1.1+1 – initial story definition)  
-**Version:** (to be released as v0.4.1.1+1)  
+**Last updated:** 2025-12-02 (v0.4.1.1+1 – initial story definition)  
+**Version:** v0.4.1.1+1  
 **Code:** E4S01
 
 ---
