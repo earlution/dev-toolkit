@@ -65,15 +65,17 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 
 ### Epic 4: Kanban Framework
 
-**Status:** TODO  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
-**Last Updated:** v0.4.1.1+1
+**Last Updated:** v0.4.3.7+1
 
 **Stories:**
-- [ ] **E4:S01 – Dev Kit Kanban Implementation** - TODO
+- [x] **E4:S01 – Dev Kit Kanban Implementation** - COMPLETE ✅ (v0.4.1.1+6)
   - Story: [`epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md)
-- [ ] **E4:S02 – FR/BR Intake to Tasks** - TODO
-- [ ] **E4:S03 – Kanban + Versioning + RW Integration** - TODO
+- [x] **E4:S02 – FR/BR Intake to Tasks** - COMPLETE ✅ (v0.4.2.5+1)
+  - Story: [`epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md`](epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md)
+- [x] **E4:S03 – Kanban + Versioning + RW Integration** - COMPLETE ✅ (v0.4.3.7+1)
+  - Story: [`epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`](epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md)
 
 **Epic Doc:** [`epics/Epic-4.md`](epics/Epic-4.md)
 
