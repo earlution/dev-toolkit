@@ -1,11 +1,11 @@
 # Story 001 – Dev Kit Kanban Implementation
 
-**Status:** TODO  
+**Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.1.1+5 – Task 4 complete: Align dev-kit Kanban templates with updated governance)
-**Version:** v0.4.1.1+5  
+**Last updated:** 2025-12-02 (v0.4.1.1+6 – Task 5 complete: Document consumption pattern for other projects - Story COMPLETE)
+**Version:** v0.4.1.1+6  
 **Code:** E4S01
 
 ---
@@ -28,7 +28,7 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 - [x] **E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit** ✅ COMPLETE (v0.4.1.1+3)
 - [x] **E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT** ✅ COMPLETE (v0.4.1.1+4)
 - [x] **E4:S01:T004 – Align dev-kit Kanban templates with updated governance** ✅ COMPLETE (v0.4.1.1+5)
-- [ ] **E4:S01:T005 – Document consumption pattern for other projects**
+- [x] **E4:S01:T005 – Document consumption pattern for other projects** ✅ COMPLETE (v0.4.1.1+6)
 
 ---
 
@@ -198,33 +198,40 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ---
 
-### E4:S01:T005 – Document consumption pattern for other projects
+### E4:S01:T005 – Document consumption pattern for other projects ✅ COMPLETE
 
 **Input:** Updated policies and templates from T003-T004  
-**Deliverable:** Consumption documentation  
+**Deliverable:** Consumption documentation ✅ **DELIVERED**  
 **Dependencies:** E4:S01:T003, E4:S01:T004  
 **Blocker:** None
 
+**Status:** ✅ **COMPLETE** - Comprehensive consumption pattern documented in README
+
 **Approach:**
-1. Update `packages/frameworks/kanban/README.md` to document:
-   - Projects MUST **copy** policies/templates from `vibe-dev-kit`
-   - They then customize paths/names, but keep the **governance + atomicity rules** intact
-   - `vibe-dev-kit` remains the single point of truth for future updates
-2. Create/update integration guides showing:
-   - How to copy Kanban framework into a new project
-   - What can be customized vs what must remain unchanged
-   - How to stay aligned with framework updates
-3. Document the relationship between framework (SoT) and project implementations
+1. ✅ Updated `packages/frameworks/kanban/README.md` with comprehensive "Consumption Pattern for Other Projects" section:
+   - Why copy, don't reference (independence, customization, ownership)
+   - What to copy (required vs optional files)
+   - Customization boundaries (what can vs must not customize)
+   - Update process (when and how to sync with framework)
+   - Single Source of Truth relationship
+   - Implementation steps (step-by-step guide)
+   - Example: New project setup
+   - Key principles summary
+2. ✅ Documented relationship between framework (SoT) and project implementations
+3. ✅ Provided clear guidance on customization boundaries and update process
 
-**Files to Update/Create:**
-- `packages/frameworks/kanban/README.md` (add consumption section)
-- `packages/frameworks/kanban/guides/` (create consumption guide if needed)
+**Key Documentation:**
+- **Copy, Don't Reference:** Projects must copy files, not link to `vibe-dev-kit`
+- **Customization Boundaries:** 
+  - ✅ CAN customize: File paths, project names, terminology, Epic ranges, branch conventions, board structure
+  - ❌ MUST NOT customize: Operational principles, forensic marker format, Story Checklist as SoT, governance rules, version schema structure
+- **Update Process:** Step-by-step workflow for syncing with framework updates
+- **SoT Relationship:** `vibe-dev-kit` is canonical source, projects are adaptations
 
-**Key Documentation Points:**
-- Copy, don't reference: Projects must copy files, not link to `vibe-dev-kit`
-- Customization boundaries: What can be customized (paths, names) vs what must stay (governance rules, atomicity)
-- Update process: How to pull framework updates into projects
-- SoT relationship: `vibe-dev-kit` is the canonical source
+**Files Updated:**
+- ✅ `packages/frameworks/kanban/README.md` (added comprehensive consumption pattern section)
+
+**Deliverable:** README now includes complete consumption pattern documentation, enabling other projects to properly adopt and maintain the Kanban framework.
 
 ---
 

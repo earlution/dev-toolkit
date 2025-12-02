@@ -17,6 +17,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.1.1+6] - 02-12-25
+
+📚 Documentation: Task 5 complete - Document consumption pattern for other projects
+
+### Added
+
+- Added comprehensive **"Consumption Pattern for Other Projects"** section to Kanban framework README:
+  - Copy, don't reference pattern
+  - Customization boundaries (what can vs must not customize)
+  - Update process for syncing with framework
+  - Single Source of Truth relationship
+  - Implementation steps and example setup
+
+### Notes
+
+- Framework README: `packages/frameworks/kanban/README.md`
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.1.1+6.md` for full details
+- **Story 1 for Epic 4 is now COMPLETE** - all 5 tasks completed
+
+---
+
 ## [0.4.1.1+5] - 02-12-25
 
 📚 Documentation: Task 4 complete - Align dev-kit Kanban templates with updated governance

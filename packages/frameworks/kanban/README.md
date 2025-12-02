@@ -1043,6 +1043,268 @@ solution:
 
 ---
 
+## 🔄 Consumption Pattern for Other Projects
+
+**CRITICAL:** This framework follows a **copy, don't reference** pattern. Projects must copy the framework files into their own repository and customize them, rather than referencing or linking to `vibe-dev-kit`.
+
+### Why Copy, Don't Reference?
+
+```yaml
+reasons:
+  independence:
+    - "Your project needs its own version of policies and templates"
+    - "You can customize paths, names, and project-specific details"
+    - "You're not dependent on vibe-dev-kit repository structure"
+  
+  customization:
+    - "Each project has different KB structures and paths"
+    - "Epic/Story/Task numbering may differ"
+    - "Terminology may vary (Epic vs Theme, etc.)"
+  
+  ownership:
+    - "Your project owns its Kanban implementation"
+    - "You can evolve it independently"
+    - "You maintain control over your documentation"
+```
+
+### What to Copy
+
+**Required Files:**
+```bash
+# Core policy (MUST copy)
+policies/kanban-governance-policy.md
+
+# Templates (MUST copy)
+templates/EPIC_TEMPLATE.md
+templates/STORY_TEMPLATE.md
+
+# Integration guides (RECOMMENDED)
+integration/numbering-versioning-integration.md
+integration/workflow-management-integration.md
+```
+
+**Optional Files:**
+```bash
+# Examples (helpful for reference)
+examples/Epic-4-Example.md
+examples/Story-33-Example.md
+
+# Guides (helpful for alignment)
+guides/portfolio-kanban-alignment-playbook.md
+```
+
+### Customization Boundaries
+
+**✅ CAN Customize:**
+- **File paths:** Update all path references to match your KB structure
+  - Example: `KB/PM_and_Portfolio/kanban/epics/Epic-X.md` → `docs/projects/epics/Epic-X.md`
+- **Project names:** Replace "Confidentia", "vibe-dev-kit", etc. with your project name
+- **Terminology:** Adjust work item names (Epic/Story/Task vs Theme/Epic/Story)
+- **Epic ranges:** Define your own Epic numbering strategy
+- **Branch conventions:** Use your own branch naming (e.g., `epic/X-slug` vs `feature/X`)
+- **Board structure:** Adapt columns and workflow to your needs
+
+**❌ MUST NOT Customize:**
+- **Operational Principles:** All 9 principles must remain intact:
+  - Atomic Release Workflow Behaviour
+  - "ALL Sections" Update Requirement
+  - Accessibility Constraints
+  - Forensic Marker Standardization
+  - Consistency Requirements
+  - Review Schedules
+  - Maintenance Responsibilities
+  - Escalation Procedures
+  - Mandatory TODO Tracking
+- **Forensic Marker Format:** Must use `✅ COMPLETE (vRC.E.S.T+B)` format
+- **Story Checklist as SoT:** Story Checklist must remain single source of truth
+- **Governance Rules:** Core governance rules (traceability, gate conditions, numbering discipline)
+- **Version Schema:** If using `RC.EPIC.STORY.TASK+BUILD`, schema structure must match
+
+### Update Process
+
+**When to Update:**
+- Framework adds new operational principles
+- Framework enhances governance policy
+- Framework updates templates with new requirements
+- Framework fixes critical issues
+
+**How to Update:**
+
+```yaml
+update_workflow:
+  step_1:
+    action: "Review changes in vibe-dev-kit"
+    command: |
+      git clone https://github.com/earlution/vibe-dev-kit.git
+      cd vibe-dev-kit
+      git log --oneline packages/frameworks/kanban/
+  
+  step_2:
+    action: "Compare with your copied policies"
+    command: |
+      diff -u your-project/docs/kanban/policies/kanban-governance-policy.md \
+               vibe-dev-kit/packages/frameworks/kanban/policies/kanban-governance-policy.md
+  
+  step_3:
+    action: "Selectively merge relevant changes"
+    notes:
+      - "Review each change carefully"
+      - "Preserve your customizations (paths, names, Epic ranges)"
+      - "Merge new operational principles"
+      - "Update templates if framework templates changed"
+      - "Document what you merged and why"
+  
+  step_4:
+    action: "Test your updated implementation"
+    checks:
+      - "Verify templates still work with your structure"
+      - "Verify integration guides still apply"
+      - "Verify governance principles are intact"
+```
+
+**Manual Merge Process:**
+1. Read the framework change carefully
+2. Identify if it's a customization (paths, names) or a principle (governance, operational rules)
+3. If it's a principle, merge it into your policy
+4. If it's a customization, adapt it to your project structure
+5. Document the merge in your policy's change history
+
+### Single Source of Truth Relationship
+
+**`vibe-dev-kit` is the canonical source of truth (SoT) for:**
+- Kanban governance policy (all 9 operational principles)
+- Epic and Story templates (structure and requirements)
+- Integration patterns (with versioning and workflows)
+- Best practices and patterns
+- Operational principles (atomicity, "ALL sections", accessibility, etc.)
+
+**Your project's copied policies are:**
+- **Adaptations** of the framework for your specific context
+- **Customized** with your paths, names, Epic ranges, and terminology
+- **Independent** - can evolve separately from framework
+- **Aligned** - should reference framework as source of truth
+
+**Documentation Pattern:**
+```markdown
+# Your Project Kanban Governance Policy
+
+**Based on:** vibe-dev-kit `packages/frameworks/kanban/policies/kanban-governance-policy.md`  
+**Last Synced:** 2025-12-02  
+**Customizations:** 
+  - Epic paths: `docs/projects/epics/` (vs `KB/PM_and_Portfolio/kanban/epics/`)
+  - Epic numbering: Starts at Epic 1 (no legacy range)
+  - Branch convention: `feature/epic-X` (vs `epic/X-slug`)
+
+[Your customized content here]
+```
+
+### Implementation Steps
+
+1. **Copy Framework Files:**
+   ```bash
+   # Create your Kanban directory
+   mkdir -p your-project/docs/kanban/{policies,templates,integration}
+   
+   # Copy core files
+   cp vibe-dev-kit/packages/frameworks/kanban/policies/kanban-governance-policy.md \
+      your-project/docs/kanban/policies/
+   cp vibe-dev-kit/packages/frameworks/kanban/templates/*.md \
+      your-project/docs/kanban/templates/
+   cp vibe-dev-kit/packages/frameworks/kanban/integration/*.md \
+      your-project/docs/kanban/integration/
+   ```
+
+2. **Customize for Your Project:**
+   - Update all file paths in `kanban-governance-policy.md`
+   - Update project names and terminology
+   - Update Epic/Story/Task numbering examples
+   - Update branch conventions
+   - Update board structure if different
+
+3. **Create Your First Epic:**
+   - Use `templates/EPIC_TEMPLATE.md` as starting point
+   - Follow your project's naming convention
+   - Place in your KB structure
+
+4. **Create Your First Story:**
+   - Use `templates/STORY_TEMPLATE.md` as starting point
+   - Follow your project's naming convention
+   - Link to Epic document
+
+5. **Integrate with Versioning (if using):**
+   - Follow `integration/numbering-versioning-integration.md`
+   - Ensure version schema matches your project
+   - Set up forensic markers
+
+6. **Integrate with Workflow Management (if using):**
+   - Follow `integration/workflow-management-integration.md`
+   - Configure Release Workflow Step 4 paths
+   - Test automatic Kanban updates
+
+7. **Document Your Customizations:**
+   - Create a "Customizations" section in your policy
+   - Document what you changed and why
+   - Reference framework as source of truth
+   - Include last sync date
+
+### Example: New Project Setup
+
+**Scenario:** Setting up Kanban for a new project called "myapp"
+
+1. **Copy framework:**
+   ```bash
+   mkdir -p myapp/docs/kanban/{policies,templates,integration}
+   cp -r vibe-dev-kit/packages/frameworks/kanban/* myapp/docs/kanban/
+   ```
+
+2. **Customize `kanban-governance-policy.md`:**
+   - Change paths: `KB/PM_and_Portfolio/kanban/` → `docs/kanban/`
+   - Change Epic paths: `epics/Epic-X.md` → `epics/Epic-X.md` (if same structure)
+   - Change branch convention: `epic/X-slug` → `feature/epic-X`
+   - Change examples: Use `E1:S1:T1` instead of `E20:S11:T015`
+
+3. **Customize templates:**
+   - Update path references in template notes
+   - Update examples to match your structure
+   - Keep all operational principle reminders intact
+
+4. **Create first Epic:**
+   ```bash
+   cp myapp/docs/kanban/templates/EPIC_TEMPLATE.md \
+      myapp/docs/kanban/epics/Epic-1.md
+   # Edit Epic-1.md with your project details
+   ```
+
+5. **Create first Story:**
+   ```bash
+   mkdir -p myapp/docs/kanban/epics/Epic-1/stories
+   cp myapp/docs/kanban/templates/STORY_TEMPLATE.md \
+      myapp/docs/kanban/epics/Epic-1/stories/Story-001.md
+   # Edit Story-001.md with your project details
+   ```
+
+6. **Document customizations:**
+   ```markdown
+   # MyApp Kanban Governance Policy
+   
+   **Based on:** vibe-dev-kit `packages/frameworks/kanban/policies/kanban-governance-policy.md`  
+   **Last Synced:** 2025-12-02  
+   **Customizations:**
+     - Paths: `docs/kanban/` (vs `KB/PM_and_Portfolio/kanban/`)
+     - Branch: `feature/epic-X` (vs `epic/X-slug`)
+     - Epic numbering: Starts at Epic 1
+   ```
+
+### Key Principles
+
+1. **Copy, Don't Reference:** Always copy files into your project, never link to `vibe-dev-kit`
+2. **Preserve Principles:** Keep all operational principles intact, customize only paths/names
+3. **Document Customizations:** Always document what you changed and why
+4. **Reference SoT:** Always reference `vibe-dev-kit` as the canonical source of truth
+5. **Regular Sync:** Periodically review framework updates and merge relevant changes
+
+---
+
 ## 📞 Support and Resources
 
 ### Documentation

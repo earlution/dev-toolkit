@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.1.1+5 – Task 4 complete: Align dev-kit Kanban templates with updated governance)  
+**Last updated:** 2025-12-02 (v0.4.1.1+6 – Task 5 complete: Document consumption pattern for other projects - Story 1 COMPLETE)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -13,7 +13,7 @@
 
 ## Story Checklist
 
-- [ ] **E4:S01 – Dev Kit Kanban Implementation** - TODO  
+- [x] **E4:S01 – Dev Kit Kanban Implementation** - COMPLETE ✅ (v0.4.1.1+6)  
 - [ ] **E4:S02 – FR/BR Intake to Tasks** - TODO  
 - [ ] **E4:S03 – Kanban + Versioning + RW Integration** - TODO  
 
@@ -55,10 +55,10 @@ It ensures that:
 
 ### Story 1: Dev Kit Kanban Implementation
 
-**Status:** TODO  
+**Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.4.1.1+5 – Task 4 complete: Align dev-kit Kanban templates with updated governance)  
+**Last updated:** 2025-12-02 (v0.4.1.1+6 – Task 5 complete: Document consumption pattern for other projects - Story 1 COMPLETE)  
 
 **Goal:**  
 Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `vibe-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.
@@ -67,11 +67,8 @@ Fully align the dev-kit Kanban board, stories, and governance policy with the Ka
 - [x] E4:S01:T001 – Review existing dev-kit Kanban policies and templates ✅ COMPLETE (v0.4.1.1+2)
 - [x] E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit ✅ COMPLETE (v0.4.1.1+3)
 - [x] E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT ✅ COMPLETE (v0.4.1.1+4)
-- [x] E4:S01:T004 – Align dev-kit Kanban templates with updated governance ✅ COMPLETE (v0.4.1.1+5)  
-- [ ] E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit  
-- [ ] E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT  
-- [ ] E4:S01:T004 – Align dev-kit Kanban templates with updated governance  
-- [ ] E4:S01:T005 – Document consumption pattern for other projects
+- [x] E4:S01:T004 – Align dev-kit Kanban templates with updated governance ✅ COMPLETE (v0.4.1.1+5)
+- [x] E4:S01:T005 – Document consumption pattern for other projects ✅ COMPLETE (v0.4.1.1+6)
 
 > Full story: [`epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md)  
 
