@@ -18,9 +18,9 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 """
 
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
-VERSION_EPIC = 4      # Epic number (Epic 4: Kanban Framework)
-VERSION_STORY = 3     # Story number (Story 3: Kanban + Versioning + RW Integration)
-VERSION_TASK = 6      # Task number (Task 6: Document integration examples and edge cases)
+VERSION_EPIC = 1      # Epic number (Epic 1: Vibe Dev Kit Core)
+VERSION_STORY = 2     # Story number (Story 2: Package & Repo Architecture)
+VERSION_TASK = 1      # Task number (Task 1: Analyze current package structure and dependencies)
 VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
