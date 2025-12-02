@@ -36,7 +36,7 @@ KB/
 This structure is:
 
 - **Local:** It belongs only to `vibe-dev-kit`.
-- **Story-first:** Stories live in `kanban/stories/` with simple numeric IDs.
+- **Epic-centric:** Stories live in `kanban/epics/Epic-X/stories/` with simple numeric IDs.
 - **Flexible:** You can introduce epics or other groupings later without changing the base layout.
 
 ---
@@ -52,7 +52,7 @@ This structure is:
 
 ### Task 2 – Create Story 001 File
 
-- [x] Create `KB/PM_and_Portfolio/kanban/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md` (this file).
+- [x] Create `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md` (this file).
 - [x] Include:
   - Status, Owner, Repo, and placeholder Version.
   - Overview of the Kanban and versioning goals.

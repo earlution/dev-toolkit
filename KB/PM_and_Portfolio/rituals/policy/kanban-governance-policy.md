@@ -31,8 +31,18 @@ The implementation in this repo starts simple:
 
 ### 2.1 Location
 
-- Board file: `KB/PM_and_Portfolio/kanban/_index.md`
-- Story files: `KB/PM_and_Portfolio/kanban/stories/Story-XXX-*.md`
+**Single Kanban Directory:** All Kanban documentation lives under `KB/PM_and_Portfolio/kanban/`:
+
+- **Board files:**
+  - `KB/PM_and_Portfolio/kanban/_index.md` (quick board view)
+  - `KB/PM_and_Portfolio/kanban/kanban-board.md` (detailed board view)
+  - `KB/PM_and_Portfolio/kanban/README.md` (structure overview)
+
+- **Epic files:**
+  - `KB/PM_and_Portfolio/kanban/epics/Epic-X.md` (Epic overview document)
+
+- **Story files:**
+  - `KB/PM_and_Portfolio/kanban/epics/Epic-X/stories/Story-XXX-*.md` (Story documents and associated files)
 
 ### 2.2 Columns (Conceptual)
 
@@ -51,25 +61,39 @@ You can represent these as:
 
 ## 3. Work Items (This Repo)
 
-### 3.1 Epics (to be introduced)
+### 3.1 Epics
 
 Epics represent broad, conceptual areas of work (for example, “Kanban Framework”, “Workflow Framework”, “Book Manuscript”).
 
-- Epics are not yet formalised in this repo’s KB structure, but **every Story must conceptually belong to an Epic**.
-- As the repo evolves, Epics should be added under a structure such as:
-  - `KB/PM_and_Portfolio/epics/overview/Epic XX/Epic-XX.md`
-  - Using the Epic template from `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md`
+- **Location:** `KB/PM_and_Portfolio/kanban/epics/Epic-X.md` (Epic overview document)
+- **Directory:** `KB/PM_and_Portfolio/kanban/epics/Epic-X/` (contains Stories subdirectory)
+- **Template:** Use `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md` as starting point
 
-Until those files exist, you can still think in terms of “which Epic would this Story belong to?” and retroactively create Epics when patterns emerge.
+**Structure:**
+```
+kanban/epics/
+├── Epic-1.md              # Epic 1 overview
+├── Epic-1/                # Epic 1 directory
+│   └── stories/           # Stories for Epic 1
+│       ├── Story-001-*.md
+│       └── [other story files]
+├── Epic-2.md
+└── Epic-2/
+    └── stories/
+        └── Story-XXX-*.md
+```
+
+**Every Story must belong to an Epic.** When creating a new Story, ensure its Epic exists (create Epic doc and directory if needed).
 
 ### 3.2 Stories
 
 Stories are the **primary unit of planning** in this repo.
 
-- **Location:** `KB/PM_and_Portfolio/kanban/stories/Story-XXX-short-slug.md`
+- **Location:** `KB/PM_and_Portfolio/kanban/epics/Epic-X/stories/Story-XXX-short-slug.md`
 - **ID:** `XXX` (numeric string, e.g. `001`, `002`)
+- **Directory:** Each Story lives in its Epic's `stories/` subdirectory, allowing for associated files (diagrams, notes, etc.)
 - **Examples:**
-  - `Story-001-vibe-dev-kit-kanban-and-versioning.md`
+  - `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md`
 
 **Each Story file should include:**
 
@@ -101,22 +125,26 @@ This ensures that all work flowing into the dev kit is **Task / FR-driven** and 
 ## 4. Board Usage Rules
 
 1. **Single Source of Truth:**  
-   - The board at `KB/PM_and_Portfolio/kanban/_index.md` is the **canonical view** of active stories for this repo.
-   - Each row in the board must map to exactly one Story file in `kanban/stories/`.
+   - The board at `KB/PM_and_Portfolio/kanban/_index.md` is the **canonical quick view** of active stories for this repo.
+   - The detailed board at `KB/PM_and_Portfolio/kanban/kanban-board.md` provides full context.
+   - Each row in the board must map to exactly one Story file in `kanban/epics/Epic-X/stories/`.
 
 2. **Status Field:**  
    - Use `TODO`, `In Progress`, or `Done` in the board’s `Status` column.
    - Keep the Story file’s internal `Status` field in sync with the board.
 
 3. **Story Creation Flow:**
-   1. Create a new Story file:  
-      - `KB/PM_and_Portfolio/kanban/stories/Story-XXX-short-slug.md`
-   2. Add a row to `_index.md` with:
-      - Story ID
-      - Title
-      - Status
-      - Owner
-      - Notes (optional)
+   1. **Ensure Epic exists:**
+      - If Epic doesn't exist, create `KB/PM_and_Portfolio/kanban/epics/Epic-X.md` and `Epic-X/` directory
+      - Create `Epic-X/stories/` subdirectory
+   2. **Create Story file:**
+      - `KB/PM_and_Portfolio/kanban/epics/Epic-X/stories/Story-XXX-short-slug.md`
+      - Story directory allows for associated files (diagrams, notes, etc.) as needed
+   3. **Update Epic doc:**
+      - Add Story reference to Epic's Story Checklist
+   4. **Update board views:**
+      - Add row to `_index.md` (quick view)
+      - Update `kanban-board.md` (detailed view) with Story details
 
 4. **Updates:**
    - When you change a Story’s status or owner, update **both**:

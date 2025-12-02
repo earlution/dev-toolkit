@@ -64,7 +64,7 @@ Future epics (5+) can be introduced as needed (for example, “Book Manuscript�
 This repo’s Kanban is defined under:
 
 - `KB/PM_and_Portfolio/kanban/_index.md`
-- `KB/PM_and_Portfolio/kanban/stories/Story-XXX-*.md`
+- `KB/PM_and_Portfolio/kanban/epics/Epic-X/stories/Story-XXX-*.md`
 
 Mapping rules:
 
@@ -155,7 +155,7 @@ The dev-kit policy:
    - Set `VERSION_EPIC`, `VERSION_STORY`, `VERSION_TASK`, `VERSION_BUILD` accordingly.
 
 2. **Introduce Epic docs**:
-   - Create Epic 1–4 docs under `KB/PM_and_Portfolio/epics/overview/Epic {n}/Epic-{n}.md`.
+   - Create Epic 1–4 docs under `KB/PM_and_Portfolio/kanban/epics/Epic-{n}.md`.
 
 3. **Update RW docs** to:
    - Clarify that dev-kit RW runs use **dev-kit epics** (1–4+).

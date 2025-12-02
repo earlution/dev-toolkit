@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.3.1.1+1 – initial epic definition)  
+**Last updated:** 2025-12-02 (v0.3.1.1+1 – Epic 3 structure and Story 1 definition)  
 **Branch:** `epic/3-numbering-and-versioning-framework`  
 **Version Schema:** `0.3.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -56,15 +56,19 @@ It ensures the dev kit:
 **Status:** TODO  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** [YYYY-MM-DD] (v0.3.1.1+1 – [summary])  
+**Last updated:** 2025-12-02 (v0.3.1.1+1 – Story defined with tasks to ingest fynd.deals Epic 15 findings)  
 
 **Goal:**  
-Make sure the dev kit’s own versioning policy, version file, and docs align cleanly with the generic versioning framework.
+Make sure the dev kit's own versioning policy, version file, and docs align cleanly with the generic versioning framework. Establish `vibe-dev-kit` as the canonical SoT for versioning policies and strategies.
 
-**Tasks (examples):**
-- [ ] E3:S01:T001 – Review `dev-kit-versioning-policy.md` vs `versioning-policy.md`  
-- [ ] E3:S01:T002 – Adjust examples to avoid legacy/conflicting epics  
-- [ ] E3:S01:T003 – Document “dev-kit as framework consumer” pattern  
+**Tasks:**
+- [ ] E3:S01:T001 – Review dev-kit versioning policy vs framework policy  
+- [ ] E3:S01:T002 – Ingest versioning findings from fynd.deals Epic 15 work  
+- [ ] E3:S01:T003 – Update dev-kit versioning policy as canonical SoT  
+- [ ] E3:S01:T004 – Align dev-kit version.py and CHANGELOG with framework  
+- [ ] E3:S01:T005 – Document consumption pattern for other projects
+
+> Full story: [`epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md)  
 
 ---
 

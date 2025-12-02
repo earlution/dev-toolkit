@@ -62,7 +62,7 @@ Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW
 - [ ] `version.py` encodes a real dev-kit Epic/Story/Task, not legacy external IDs  
 - [ ] RW docs clarify dev-kit vs Confidentia/fynd.deals examples
 
-> Full story: `KB/PM_and_Portfolio/kanban/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md` (and follow-up stories to be created under Epic 1).
+> Full story: `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md` (and follow-up stories to be created under Epic 1).
 
 ---
 
@@ -98,6 +98,7 @@ Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW
 - `packages/frameworks/workflow mgt/README.md`  
 - `packages/frameworks/numbering & versioning/README.md`  
 - `packages/frameworks/kanban/README.md`  
+- `KB/PM_and_Portfolio/kanban/README.md` (Kanban structure)  
 
 ---
 

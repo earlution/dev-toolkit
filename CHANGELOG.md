@@ -17,6 +17,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.1.1+1] - 02-12-25
+
+📚 Documentation: Epic 3 structure and Story 1 definition for Numbering & Versioning Framework
+
+### Added
+
+- Created **Epic 3: Numbering & Versioning Framework** (`KB/PM_and_Portfolio/kanban/epics/Epic-3.md`)
+- Created **Story 1: Dev Kit Alignment with Versioning Framework** with 5 initial tasks
+- Updated Kanban board views with Epic 3 Story 1 references
+
+### Notes
+
+- Epic 3 owns the `packages/frameworks/numbering & versioning/` package
+- Story 1 tasks focus on establishing dev-kit as canonical SoT for versioning policies
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.1.1+1.md` for full details
+
+---
+
 ## [0.1.1.1+2] - 02-12-25
 
 📚 Documentation: Restructured CHANGELOG and README to follow industry-standard templates

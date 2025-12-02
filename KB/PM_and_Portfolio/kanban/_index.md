@@ -1,34 +1,66 @@
-# Vibe Dev Kit – Kanban Board
+# Vibe Dev Kit – Kanban Board (Quick View)
 
-This directory contains the **Kanban view** for work on the `vibe-dev-kit` repo and the **Vibe Coding For Dummies** book project.
-
-The structure is intentionally simple and modular:
-
-- This Kanban is **local to this repo** (not shared with any other project).
-- Stories live under `KB/PM_and_Portfolio/kanban/stories/`.
-- You can add epics, swimlanes, or additional metadata later without breaking the structure.
+**Last Updated:** 2025-12-02  
+**Version:** v0.1.1.1+2
 
 ---
 
-## Board (Stories)
+## Overview
 
-| Story ID | Title                                      | Status  | Owner | Notes                           |
-|---------:|--------------------------------------------|---------|-------|---------------------------------|
-| 001      | Set up Kanban + versioning for dev kit     | In Progress | RMS   | Local Kanban + version schema  |
+Quick reference board for all Kanban work. For detailed views, see [`kanban-board.md`](kanban-board.md).
 
-Each row in this table should map to a corresponding Story file in `stories/`, for example:
-
-- `stories/Story-001-vibe-dev-kit-kanban-and-versioning.md`
-
-You can extend this board with additional columns (e.g., Epic, Priority, Target Release) as the project grows.
+**Structure:** All Kanban docs live under `KB/PM_and_Portfolio/kanban/`:
+- Epic overviews: `epics/Epic-X.md`
+- Story documents: `epics/Epic-X/stories/Story-XXX-*.md`
+- Board views: This file (quick) and `kanban-board.md` (detailed)
 
 ---
 
-## How to Add a New Story
+## Active Stories
 
-1. **Create a story file** under `KB/PM_and_Portfolio/kanban/stories/`, following the naming pattern:
-   - `Story-XXX-short-slug.md` (e.g., `Story-002-vibe-dev-kit-testing.md`)
-2. **Update this board** (`_index.md`) with a new row pointing to that story.
-3. **Keep everything local** to this repo unless you explicitly decide to link to external projects.
+| Epic | Story ID | Title                                      | Status      | Owner | Notes                           |
+|------|---------:|--------------------------------------------|-------------|-------|---------------------------------|
+| 1    | 001      | Set up Kanban + versioning for dev kit     | In Progress | RMS   | Epic 1, Story 1                |
+| 3    | 001      | Dev Kit Alignment with Versioning Framework | TODO        | RMS   | Epic 3, Story 1                |
+| 4    | 001      | Dev Kit Kanban Implementation               | TODO        | RMS   | Epic 4, Story 1                |
+
+**Story Locations:**
+- Epic 1: [`epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md`](epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md)
+- Epic 3: [`epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md)
+- Epic 4: [`epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md)
+
+---
+
+## Epics Summary
+
+| Epic | Title                              | Status      | Stories |
+|------|------------------------------------|-------------|---------|
+| 1    | Vibe Dev Kit Core                 | IN PROGRESS | 1       |
+| 2    | Workflow Management Framework      | TODO        | 0       |
+| 3    | Numbering & Versioning Framework   | TODO        | 1       |
+| 4    | Kanban Framework                   | TODO        | 1       |
+
+**Epic Docs:** [`epics/Epic-1.md`](epics/Epic-1.md), [`epics/Epic-2.md`](epics/Epic-2.md), [`epics/Epic-3.md`](epics/Epic-3.md), [`epics/Epic-4.md`](epics/Epic-4.md)
+
+---
+
+## How to Add Work
+
+1. **Create Epic** (if needed):
+   - Add `epics/Epic-X.md` (Epic overview)
+   - Create `epics/Epic-X/` directory
+   - Create `epics/Epic-X/stories/` subdirectory
+
+2. **Create Story**:
+   - Add `epics/Epic-X/stories/Story-XXX-short-slug.md`
+   - Update Epic doc (`epics/Epic-X.md`) with Story reference
+   - Update this board (`_index.md`) and `kanban-board.md`
+
+3. **Track Progress**:
+   - Update Story status in Story doc
+   - Update Epic doc with version markers as work completes
+   - Update board views as needed
+
+See [`README.md`](README.md) for full structure details and `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` for governance.
 
 

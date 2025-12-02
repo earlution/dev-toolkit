@@ -86,20 +86,29 @@ Five columns, left to right:
 
 Governing artifact for a feature set or maintenance theme.
 
-- **Location (example):** `KB/PM_and_Portfolio/epics/overview/Epic XX/Epic-XX.md`  
+- **Location (example patterns):**
+  - **Separate directories:** `KB/PM_and_Portfolio/epics/overview/Epic XX/Epic-XX.md`  
+  - **Consolidated Kanban:** `KB/PM_and_Portfolio/kanban/epics/Epic-XX.md` (all Kanban docs in one place)
   - Replace with your KB path for epic overview docs.
 - **Branch (example convention):** `epic/<number>-<slug>`  
   - Adjust to your branching strategy if different.
 - **Version (when using RC.EPIC.STORY.TASK+BUILD):** `RC.EPIC.STORY.TASK+BUILD` (where EPIC = epic number)
-- **Template (example):** `KB/PM_and_Portfolio/epics/templates/EPIC_TEMPLATE.md`
+- **Template (example):** `KB/PM_and_Portfolio/epics/templates/EPIC_TEMPLATE.md` or `KB/PM_and_Portfolio/kanban/epics/templates/EPIC_TEMPLATE.md`
+
+**Consolidated Structure Pattern:**
+If using a single `kanban/` directory, Epics live at `kanban/epics/Epic-X.md` with Stories under `kanban/epics/Epic-X/stories/`. This keeps all Kanban docs discoverable in one location.
 
 ### Stories
 
 Decompose epic scope into releasable slices.
 
-- **Location (example):** `KB/PM_and_Portfolio/stories/overview/Epic XX/Story-N-Title.md`
+- **Location (example patterns):**
+  - **Separate directories:** `KB/PM_and_Portfolio/stories/overview/Epic XX/Story-N-Title.md`
+  - **Consolidated Kanban:** `KB/PM_and_Portfolio/kanban/epics/Epic-X/stories/Story-N-Title.md`
 - **Numbering (example):** `E<epic>S<story>` (e.g., `E20S7`)
-- **Template (example):** `KB/PM_and_Portfolio/stories/templates/STORY_TEMPLATE.md`
+- **Template (example):** `KB/PM_and_Portfolio/stories/templates/STORY_TEMPLATE.md` or `KB/PM_and_Portfolio/kanban/epics/templates/STORY_TEMPLATE.md`
+
+**Story Directories:** In consolidated structures, Stories live in `Epic-X/stories/` directories, allowing for associated files (diagrams, notes, etc.) alongside the Story document.
 
 ### Tasks
 

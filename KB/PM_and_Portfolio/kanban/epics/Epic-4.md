@@ -24,7 +24,7 @@
 Epic 4 owns the **Kanban framework** (`packages/frameworks/kanban/`) and its concrete application inside this repo:
 
 - Kanban board under `KB/PM_and_Portfolio/kanban/_index.md`
-- Story files under `KB/PM_and_Portfolio/kanban/stories/`
+- Story files under `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/`
 - Kanban governance policy for this repo
 
 It ensures that:
@@ -58,15 +58,19 @@ It ensures that:
 **Status:** TODO  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** [YYYY-MM-DD] (v0.4.1.1+1 – [summary])  
+**Last updated:** 2025-12-02 (to be released as v0.4.1.1+1 – Story defined with tasks to ingest fynd.deals Epic 15 findings)  
 
 **Goal:**  
-Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package.
+Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `vibe-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.
 
-**Tasks (examples):**
-- [ ] E4:S01:T001 – Review dev-kit Kanban policy vs framework policy  
-- [ ] E4:S01:T002 – Introduce E/S/T numbering for Tasks where appropriate  
-- [ ] E4:S01:T003 – Document how to add new dev-kit Stories and Tasks consistently  
+**Tasks:**
+- [ ] E4:S01:T001 – Review existing dev-kit Kanban policies and templates  
+- [ ] E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit  
+- [ ] E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT  
+- [ ] E4:S01:T004 – Align dev-kit Kanban templates with updated governance  
+- [ ] E4:S01:T005 – Document consumption pattern for other projects
+
+> Full story: [`epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md)  
 
 ---
 

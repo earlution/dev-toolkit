@@ -252,7 +252,7 @@ This roadmap is intentionally high-level and mirrors the internal Epics:
 
 For finer-grained work, see:
 
-- `KB/PM_and_Portfolio/epics/overview/`  
+- `KB/PM_and_Portfolio/kanban/epics/`  
 - `KB/PM_and_Portfolio/kanban/` (board and stories)
 
 ---
