@@ -17,6 +17,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.1.1+2] - 02-12-25
+
+📚 Documentation: Task 1 complete - Gap analysis comparing dev-kit versioning policy with framework
+
+### Added
+
+- Created **gap analysis report** comparing dev-kit versioning policy with framework policies
+- Identified 6 critical gaps (missing sections) and provided prioritized recommendations
+- Documented alignment strengths and areas for improvement
+
+### Changed
+
+- Updated Story 001 to mark Task 1 as complete with gap analysis reference
+
+### Notes
+
+- Gap analysis: `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework/T001-gap-analysis-report.md`
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.1.1+2.md` for full details
+
+---
+
 ## [0.3.1.2+1] - 02-12-25
 
 📚 Documentation: Task 2 complete - Ingested versioning findings from fynd.deals Epic 15 work
