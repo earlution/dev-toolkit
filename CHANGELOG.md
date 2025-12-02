@@ -17,6 +17,26 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.3.5+1] - 02-12-25
+
+📚 Documentation: Task 5 complete - Create dev-kit integration guide
+
+### Added
+
+- Created comprehensive dev-kit integration guide
+- Documented three-way integration architecture (Kanban ↔ Versioning ↔ Release Workflow)
+- Added end-to-end integration flow with complete 13-step workflow example
+- Added troubleshooting section with 5 common issues and solutions
+- Added best practices and related documentation references
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.5+1.md` for full details
+- Integration guide serves as canonical reference for dev-kit integration
+- All three integration points documented with dev-kit specific examples
+
+---
+
 ## [0.4.3.7+1] - 02-12-25
 
 🔧 Fix: Task 7 complete - Address RW → Kanban integration gaps identified in T004
