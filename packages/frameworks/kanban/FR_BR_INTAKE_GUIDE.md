@@ -254,11 +254,26 @@ FR/BR Arrives
 - BUILD: Build number (starts at 1, incremented by Release Workflow)
 
 **Update Version File:**
-- Update `src/[project]/version.py` (or project-specific version file)
-- Set VERSION_EPIC, VERSION_STORY, VERSION_TASK, VERSION_BUILD
-- VERSION_BUILD starts at 1 for new Tasks
+- **CRITICAL:** Update `src/[project]/version.py` (or project-specific version file)
+- Set `VERSION_EPIC` to match assigned Epic number
+- Set `VERSION_STORY` to match assigned Story number
+- **CRITICAL:** Set `VERSION_TASK` to match assigned Task number
+- **CRITICAL:** Set `VERSION_BUILD = 1` (new Tasks always start at BUILD 1)
+- **Validation:** Verify `VERSION_TASK` matches the Task number you just created
 
-**Note:** Version numbers are assigned at Task creation. The Release Workflow (RW) increments BUILD when work is completed and released.
+**Example Update:**
+```python
+# Creating Task 2 in Epic 4, Story 3
+VERSION_EPIC = 4
+VERSION_STORY = 3
+VERSION_TASK = 2  # ← Must match new Task number
+VERSION_BUILD = 1  # ← Always 1 for new Tasks
+```
+
+**Note:** Version numbers are assigned at Task creation. The Release Workflow (RW) will:
+- Validate that `VERSION_TASK` matches the active Task number (Step 1)
+- Automatically detect Task transitions and update `VERSION_TASK` if needed (Step 2)
+- Increment `VERSION_BUILD` when work is completed and released (Step 2, same Task only)
 
 ---
 

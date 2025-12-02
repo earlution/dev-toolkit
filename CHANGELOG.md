@@ -17,6 +17,45 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.3.2+2] - 02-12-25
+
+📚 Documentation: Task 2 complete - Critical issue resolution: Task → version TASK component mapping fix
+
+### Added
+
+- Root cause analysis document identifying 4 primary root causes and 8 documentation gaps
+- Documentation updates summary covering all 8 files updated
+- Release Workflow Step 1: Task/version alignment validation
+- Release Workflow Step 2: Task transition detection and automatic updates
+- Versioning Policy: Explicit Task transition rules and examples
+- Intake Guides: Mandatory version.py update requirements
+- Kanban Governance: Task transition requirements and common mistakes
+
+### Fixed
+
+- **CRITICAL ISSUE RESOLVED:** Task numbers not correctly mapping to version TASK component
+- Release Workflow now automatically detects Task transitions and updates VERSION_TASK
+- Release Workflow Step 1 validates Task/version alignment before proceeding
+- Intake process now requires updating version.py when creating Tasks
+- All documentation updated with explicit requirements to prevent recurrence
+
+### Changed
+
+- Enhanced Release Workflow Step 1 with Task/version validation
+- Enhanced Release Workflow Step 2 with Task transition detection
+- Enhanced Versioning Policy with Task transition section
+- Enhanced Intake Guides with mandatory version file updates
+- Enhanced Kanban Governance with Task transition requirements
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.2+2.md` for full details
+- Root cause analysis and documentation updates summary provide complete understanding of issue and resolution
+- All 8 documentation files updated to prevent recurrence
+- Multiple layers of protection now in place: validation, automatic detection, explicit requirements
+
+---
+
 ## [0.4.3.2+1] - 02-12-25
 
 📚 Documentation: Task 2 complete - Validate Kanban → Versioning integration in dev-kit

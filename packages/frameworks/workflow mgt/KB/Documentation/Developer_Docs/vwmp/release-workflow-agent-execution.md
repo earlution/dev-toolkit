@@ -249,6 +249,53 @@ For each step, the agent follows this pattern:
   - ✅ Any epic number allowed (main can have any epic)
   - ⚠️ Warning: Consider if RW should run on main (usually run on epic branch first)
 
+**CRITICAL: Task/Version Alignment Check**
+
+**MANDATORY:** Before proceeding, verify that `VERSION_TASK` in the version file matches the active Task number from the Story document.
+
+**Process:**
+1. **Identify Active Task:**
+   - Read the Story document to identify which Task is being completed
+   - Extract Task number (e.g., `E4:S03:T002` → Task 2)
+   - Note: This is the Task that was just completed and is being released
+
+2. **Check Version File:**
+   - Read `VERSION_TASK` from version file
+   - Compare with active Task number from Story document
+
+3. **Validation:**
+   - ✅ If `VERSION_TASK` matches active Task number → PASS
+   - ❌ If `VERSION_TASK` does NOT match active Task number → FAIL
+
+**If Validation Fails:**
+```
+❌ TASK/VERSION MISMATCH DETECTED
+
+Current VERSION_TASK: {current_task}
+Active Task from Story: {active_task}
+
+Action Required:
+1. Update version.py: Set VERSION_TASK = {active_task}
+2. If this is a new Task, also reset VERSION_BUILD = 1
+3. Then run RW again
+
+RW is NOT complete. Workflow stopped at Step 1.
+```
+- Mark Step 1 TODO as `cancelled`
+- Mark all remaining steps as `cancelled`
+- **DO NOT PROCEED** to Step 2
+
+**Example Task Alignment Checks:**
+
+- **Completing Task 2 in Story 3:**
+  - ✅ `VERSION_TASK = 2` → PASS
+  - ❌ `VERSION_TASK = 1` → FAIL (should be 2)
+  - ❌ `VERSION_TASK = 3` → FAIL (should be 2)
+
+- **Completing Task 1 in Story 1:**
+  - ✅ `VERSION_TASK = 1` → PASS
+  - ❌ `VERSION_TASK = 2` → FAIL (should be 1)
+
 WARNING: This step prevents accidental cross-epic contamination and ensures version numbers match branch context. If this check fails, DO NOT proceed with the workflow. Fix the branch alignment first.
 
 ---
@@ -275,33 +322,64 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - [Example: vibe-dev-kit] `src/fynd_deals/version.py`
    - Understand version schema: `RC.EPIC.STORY.TASK+BUILD`
    - Check current Git branch to determine Epic number (already validated in Step 1)
-   - Understand increment type: `patch` means increment BUILD number
+   - **CRITICAL:** Identify the active Task being completed:
+     - Read Story document to find the Task that was just completed
+     - Extract Task number (e.g., `E4:S03:T002` → Task 2)
+   - Understand increment type: `patch` means increment BUILD number (for same Task)
    - Verify version matches branch schema (already checked in Step 1, but double-check)
+   - **CRITICAL:** Check if this is a Task transition:
+     - Compare `VERSION_TASK` in version file with active Task number from Story
+     - If different → This is a Task transition (new Task)
+     - If same → This is a BUILD increment (same Task)
 
 2. **DETERMINE:**
-   - Calculate next version:
-     - [Example: Confidentia] If current is `0.4.3.2+8`, next is `0.4.3.2+9`
-     - [Example: vibe-dev-kit] If current is `0.2.1.1+2`, next is `0.2.1.1+3`
+   - **If Task Transition (New Task):**
+     - **CRITICAL:** Update `VERSION_TASK` to match active Task number
+     - **CRITICAL:** Reset `VERSION_BUILD` to 1 (new Task always starts at BUILD 1)
+     - Calculate next version:
+       - [Example: vibe-dev-kit] If completing Task 2, and `VERSION_TASK = 1`:
+         - Update: `VERSION_TASK = 2`, `VERSION_BUILD = 1`
+         - Next version: `0.4.3.2+1` (Task 2, Build 1)
+   - **If Same Task (BUILD Increment):**
+     - Keep `VERSION_TASK` unchanged
+     - Increment `VERSION_BUILD` by 1
+     - Calculate next version:
+       - [Example: Confidentia] If current is `0.4.3.2+8`, next is `0.4.3.2+9`
+       - [Example: vibe-dev-kit] If current is `0.2.1.1+2`, next is `0.2.1.1+3`
    - Validate version matches branch:
      - [Example: Confidentia] Epic 4 = `0.4.x.x+x`
      - [Example: vibe-dev-kit] Epic 2 = `0.2.x.x+x`
-   - Determine if this is a task transition (would reset BUILD to 1)
 
 3. **EXECUTE:**
-   - Update version file with new version:
-     - [Example: Confidentia] `src/confidentia/version.py`
-     - [Example: vibe-dev-kit] `src/fynd_deals/version.py`
-   - Use `search_replace` tool to update version string
+   - **If Task Transition:**
+     - Update `VERSION_TASK` to match active Task number
+     - Update `VERSION_BUILD` to 1
+     - Update version file:
+       - [Example: vibe-dev-kit] `src/fynd_deals/version.py`
+       - Use `search_replace` tool to update both `VERSION_TASK` and `VERSION_BUILD`
+   - **If Same Task:**
+     - Update `VERSION_BUILD` only (increment by 1)
+     - Update version file:
+       - [Example: Confidentia] `src/confidentia/version.py`
+       - [Example: vibe-dev-kit] `src/fynd_deals/version.py`
+       - Use `search_replace` tool to update `VERSION_BUILD`
+   - Update version string comment if needed
 
 4. **VALIDATE:**
    - Read version file to confirm update
    - Verify version format is valid
    - Check version matches branch schema
+   - **CRITICAL:** Verify `VERSION_TASK` matches active Task number from Story
+   - **CRITICAL:** If Task transition, verify `VERSION_BUILD = 1`
+   - **CRITICAL:** If same Task, verify `VERSION_BUILD` incremented correctly
 
 5. **PROCEED:**
    - Document version bump:
-     - [Example: Confidentia] "Version bumped: 0.4.3.2+8 → 0.4.3.2+9"
-     - [Example: vibe-dev-kit] "Version bumped: 0.2.1.1+2 → 0.2.1.1+3"
+     - **If Task Transition:**
+       - [Example: vibe-dev-kit] "Version bumped: Task transition detected. Updated VERSION_TASK: 1 → 2, VERSION_BUILD reset to 1. New version: 0.4.3.2+1"
+     - **If Same Task:**
+       - [Example: Confidentia] "Version bumped: 0.4.3.2+8 → 0.4.3.2+9"
+       - [Example: vibe-dev-kit] "Version bumped: 0.2.1.1+2 → 0.2.1.1+3"
    - Pass `new_version` to Step 3
    - Move to Step 3
 

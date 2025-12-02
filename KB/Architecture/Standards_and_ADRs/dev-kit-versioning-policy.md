@@ -128,6 +128,58 @@ Rules:
 4. **RC increments**:
    - When promoting a dev snapshot to a release candidate for a given Task.
 
+### 6.1 Task Transitions
+
+**CRITICAL:** When moving to a new Task, the version file (`src/fynd_deals/version.py`) MUST be updated:
+
+1. **Update `VERSION_TASK`:**
+   - Set `VERSION_TASK` to match the new Task number
+   - Example: Moving from Task 1 to Task 2 → `VERSION_TASK = 2`
+
+2. **Reset `VERSION_BUILD`:**
+   - Set `VERSION_BUILD = 1` (new Task always starts at BUILD 1)
+   - Example: Moving from Task 1 to Task 2 → `VERSION_BUILD = 1`
+
+3. **When to Update:**
+   - **Option 1:** Update `version.py` when creating the new Task (recommended)
+   - **Option 2:** Update `version.py` during Release Workflow Step 2 (automatic detection)
+   - **CRITICAL:** Must be updated before running Release Workflow for the new Task
+
+4. **Validation:**
+   - Release Workflow Step 1 validates that `VERSION_TASK` matches the active Task number
+   - If mismatch detected, workflow stops with error message
+   - Release Workflow Step 2 automatically detects Task transitions and updates `VERSION_TASK` if needed
+
+**Example Task Transition:**
+
+**Before (Completing Task 1):**
+```python
+VERSION_EPIC = 4
+VERSION_STORY = 3
+VERSION_TASK = 1
+VERSION_BUILD = 2
+# Version: 0.4.3.1+2
+```
+
+**After (Starting Task 2):**
+```python
+VERSION_EPIC = 4
+VERSION_STORY = 3
+VERSION_TASK = 2  # ← Updated to match new Task
+VERSION_BUILD = 1  # ← Reset to 1 for new Task
+# Version: 0.4.3.2+1
+```
+
+**Common Mistakes to Avoid:**
+
+- ❌ **DON'T:** Keep `VERSION_TASK = 1` and increment `VERSION_BUILD` when moving to Task 2
+  - Wrong: `0.4.3.1+3` for Task 2
+  - Correct: `0.4.3.2+1` for Task 2
+
+- ❌ **DON'T:** Forget to reset `VERSION_BUILD` when moving to a new Task
+  - Wrong: `0.4.3.2+3` for first release of Task 2
+  - Correct: `0.4.3.2+1` for first release of Task 2
+
 ---
 
 ## 7. CHANGELOG Format

@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.3.2+1 – Task 2 complete: Validate Kanban → Versioning integration in dev-kit)  
+**Last updated:** 2025-12-02 (v0.4.3.2+2 – Task 2 complete: Critical issue resolution - Task → version TASK component mapping fix)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -60,7 +60,7 @@ It ensures that:
 **Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.4.3.2+1 – Task 2 complete: Validate Kanban → Versioning integration in dev-kit)  
+**Last updated:** 2025-12-02 (v0.4.3.2+2 – Task 2 complete: Critical issue resolution - Task → version TASK component mapping fix)  
 
 **Goal:**  
 Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `vibe-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.
@@ -102,14 +102,14 @@ Design and implement a clear, actionable flow for converting incoming Feature Re
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.4.3.2+1 – Task 2 complete: Validate Kanban → Versioning integration in dev-kit)
+**Last updated:** 2025-12-02 (v0.4.3.2+2 – Task 2 complete: Critical issue resolution - Task → version TASK component mapping fix)
 
 **Goal:**  
 Ensure seamless integration between Kanban, Versioning, and Release Workflow (RW) systems within the dev-kit. This story validates that the three frameworks work together cohesively, providing end-to-end traceability from Feature Requests/Bug Reports through Kanban Tasks to versioned releases.
 
 **Tasks:**
 - [x] E4:S03:T001 – Review existing integration documentation ✅ COMPLETE (v0.4.3.1+1)
-- [x] E4:S03:T002 – Validate Kanban → Versioning integration in dev-kit ✅ COMPLETE (v0.4.3.2+1)
+- [x] E4:S03:T002 – Validate Kanban → Versioning integration in dev-kit ✅ COMPLETE (v0.4.3.2+2)
 - [ ] E4:S03:T003 – Validate Versioning → RW integration in dev-kit
 - [ ] E4:S03:T004 – Validate RW → Kanban integration in dev-kit
 - [ ] E4:S03:T005 – Create dev-kit integration guide

@@ -150,18 +150,37 @@ Atomic units inside a story.
    - Working on `E20:S11:T016` → version `0.20.11.16+B`
    - TASK component aligns with Kanban task
 
-2. Task transitions use `--task` parameter
-   - New task: `--task N` in release workflow
-   - Resets BUILD to 1, sets TASK to N
+2. **CRITICAL: Task Transitions and Version File Updates**
+   - **When creating a new Task:**
+     - Update `version.py` with `VERSION_TASK = <new_task_number>`
+     - Set `VERSION_BUILD = 1` (new Tasks always start at BUILD 1)
+     - Example: Moving from Task 1 to Task 2:
+       - Update: `VERSION_TASK = 2`, `VERSION_BUILD = 1`
+       - Version: `0.4.3.2+1` (not `0.4.3.1+2`)
+   - **During Release Workflow:**
+     - Step 1: Validates that `VERSION_TASK` matches active Task number
+     - Step 2: Automatically detects Task transitions and updates `VERSION_TASK` if needed
+     - Step 2: If Task transition detected, resets `VERSION_BUILD` to 1
+     - Step 2: If same Task, increments `VERSION_BUILD` by 1
 
 3. BUILD resets to 1 with new task
    - BUILD increments within same task
    - BUILD does NOT carry over between tasks
+   - **CRITICAL:** When moving to a new Task, `VERSION_BUILD` MUST be reset to 1
 
 4. Validation enforces alignment
-   - Release workflow validates task exists
+   - Release workflow Step 1 validates task/version alignment
+   - Release workflow Step 2 validates task/version alignment after update
    - Validators check task/version alignment
-   - Pre-commit hooks enforce alignment
+   - Pre-commit hooks enforce alignment (if implemented)
+
+**Common Mistakes to Avoid:**
+- ❌ **DON'T:** Keep `VERSION_TASK = 1` and increment `VERSION_BUILD` when moving to Task 2
+  - Wrong: `0.4.3.1+3` for Task 2
+  - Correct: `0.4.3.2+1` for Task 2
+- ❌ **DON'T:** Forget to reset `VERSION_BUILD` when moving to a new Task
+  - Wrong: `0.4.3.2+3` for first release of Task 2
+  - Correct: `0.4.3.2+1` for first release of Task 2
 
 See: **your own canonical story docs** that define guardrails and versioning rules.  
 (*Original example:* `KB/PM_and_Portfolio/stories/overview/Epic 20/Story-11-GUARDRAILS-PLAN.md` in the Confidentia project.)
