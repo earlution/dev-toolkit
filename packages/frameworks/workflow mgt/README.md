@@ -36,24 +36,94 @@ This package contains all essential files needed to implement the Release Workfl
 
 ## 🧩 Modularity & Dependencies
 
-This package is designed to be **fully modular**. You can:
+This package is designed to be **fully modular** with maximum flexibility. You can use it standalone or combine it with other packages based on your needs.
 
-- Use **only this package** in your project, without copying any other part of `vibe-dev-kit`
-- Mix and match it with other packages (for example, the **Numbering & Versioning** package) when you want more of the ecosystem
+### Standalone Usage
 
-**Package dependencies:**
+✅ **This package can be used completely independently** without requiring any other `vibe-dev-kit` packages.
 
-- **Standalone:** ✅ Yes — this package can be used on its own
-- **Hard runtime dependencies:** ✅ None outside of standard tools (Git, Python for validators, your AI assistant)
-- **Soft / optional companions:**
-  - `packages/frameworks/numbering & versioning/` — provides a portable policy set for the version schema that this package uses
+**What you get standalone:**
+- Complete Release Workflow (RW) trigger and execution methodology
+- Agent-driven workflow execution patterns
+- Workflow validation scripts
+- Cursor rules integration
+- Versioning policy documents (included for RW to work)
 
-If you prefer a different versioning strategy, you can:
+**Hard dependencies (required):**
+- Git (for version control)
+- Python 3 (for validation scripts)
+- AI Assistant (for agent-driven execution)
 
-- Keep this package and **swap in your own versioning policy docs**, or
-- Use this package only for the **workflow pattern** and ignore the included policy documents
+**Independence score:** 9/10 — Can be used standalone with minimal external dependencies.
 
-The goal is **maximum flexibility**: treat this as a drop‑in module, not a monolith.
+### Combined Usage
+
+**With Numbering & Versioning Package:**
+- RW uses the version schema from Numbering & Versioning
+- Optional: Can swap in your own versioning policy if preferred
+- Integration: RW reads version file and follows versioning schema
+
+**With Kanban Package:**
+- RW automatically updates Kanban documentation (Step 4)
+- Integration: RW adds forensic markers to Kanban Story Checklist
+- Optional: Can use RW without Kanban (skip Step 4)
+
+**With Both Packages:**
+- Complete three-way integration (Kanban ↔ Versioning ↔ RW)
+- Automated Kanban updates with version markers
+- Full forensic traceability
+
+### Dependency Matrix
+
+| Dependency Type | Package | Required? | Purpose |
+|----------------|---------|-----------|---------|
+| Hard | Git | ✅ Yes | Version control operations |
+| Hard | Python 3 | ✅ Yes | Validation scripts |
+| Hard | AI Assistant | ✅ Yes | Agent-driven execution |
+| Soft | Numbering & Versioning | ❌ No | Version schema (can swap) |
+| Soft | Kanban | ❌ No | Documentation updates (optional) |
+
+### Copy vs Reference Pattern
+
+**⚠️ CRITICAL: Copy, Don't Reference**
+
+Projects must **copy** this package into their repository, not link to it.
+
+**Why copy?**
+- Projects need to customize file paths, project names, and terminology
+- Projects evolve independently and may need project-specific adaptations
+- Copying ensures projects have full control over their workflow implementation
+- Prevents breaking changes in `vibe-dev-kit` from affecting consuming projects
+
+**What to copy:**
+1. All files in `packages/frameworks/workflow mgt/`
+2. Maintain directory structure
+3. Customize all file paths in documentation
+4. Update `.cursorrules` section with your project paths
+
+**Customization boundaries:**
+- ✅ **CAN customize:** File paths, project names, branch naming conventions, version file location
+- ❌ **MUST keep:** Workflow steps (1-11), validation logic, agent execution pattern, atomicity requirements
+
+### Usage Scenarios
+
+**Scenario 1: Standalone Workflow Management**
+- Copy only this package
+- Use RW for automated releases
+- Swap in your own versioning policy if needed
+- Skip Kanban integration (manual updates)
+
+**Scenario 2: Workflow + Versioning**
+- Copy this package and Numbering & Versioning package
+- RW uses versioning schema automatically
+- Full versioning integration
+
+**Scenario 3: Complete Integration**
+- Copy all three packages (Workflow, Versioning, Kanban)
+- Full three-way integration
+- Automated Kanban updates with version markers
+
+See `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-002-package-and-repo-architecture/T004-consumption-patterns.md` for detailed step-by-step guides for each scenario.
 
 ---
 

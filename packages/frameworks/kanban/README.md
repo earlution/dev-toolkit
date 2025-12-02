@@ -20,6 +20,80 @@ package:
 
 ---
 
+## 🧩 Modularity & Dependencies
+
+This package is designed to be **fully modular** with maximum flexibility. You can use it standalone or combine it with other packages based on your needs.
+
+### Standalone Usage
+
+✅ **This package can be used completely independently** without requiring any other `vibe-dev-kit` packages.
+
+**What you get standalone:**
+- Complete Kanban governance policy
+- Epic and Story templates
+- Work item hierarchy (Epic → Story → Task)
+- Forensic traceability patterns
+- KB (Knowledge Base) documentation structure
+- All operational principles and best practices
+
+**Hard dependencies (required):**
+- Git (for version control)
+- Markdown (for documentation)
+
+**Independence score:** 9/10 — Can be used standalone with minimal external dependencies.
+
+### Combined Usage
+
+**With Numbering & Versioning Package:**
+- Kanban uses version markers from versioning schema
+- Integration: Story Checklist includes version markers (`vRC.E.S.T+B`)
+- Optional: Can use Kanban without versioning (manual markers)
+
+**With Workflow Management Package:**
+- RW automatically updates Kanban documentation (Step 4)
+- Integration: RW adds forensic markers to Story Checklist
+- Optional: Can use Kanban without RW (manual updates)
+
+**With Both Packages:**
+- Complete three-way integration (Kanban ↔ Versioning ↔ RW)
+- Automated Kanban updates with version markers
+- Full forensic traceability
+
+### Dependency Matrix
+
+| Dependency Type | Package | Required? | Purpose |
+|----------------|---------|-----------|---------|
+| Hard | Git | ✅ Yes | Version control for documentation |
+| Hard | Markdown | ✅ Yes | Documentation format |
+| Soft | Numbering & Versioning | ❌ No | Version markers (optional) |
+| Soft | Workflow Management | ❌ No | Automated updates (optional) |
+
+### Copy vs Reference Pattern
+
+**⚠️ CRITICAL: Copy, Don't Reference**
+
+Projects must **copy** this package into their repository, not link to it.
+
+**Why copy?**
+- Projects need to customize file paths, KB structure, and terminology
+- Projects evolve independently and may need project-specific adaptations
+- Copying ensures projects have full control over their Kanban implementation
+- Prevents breaking changes in `vibe-dev-kit` from affecting consuming projects
+
+**What to copy:**
+1. All files in `packages/frameworks/kanban/`
+2. Maintain directory structure
+3. Customize all file paths in policy and templates
+4. Update Epic/Story numbering examples
+
+**Customization boundaries:**
+- ✅ **CAN customize:** File paths, KB structure, project names, Epic ranges, branch conventions, terminology
+- ❌ **MUST keep:** Operational principles (all 9), forensic marker format, Story Checklist as SoT, governance rules
+
+See the "Consumption Pattern for Other Projects" section below for detailed implementation steps.
+
+---
+
 ## 📋 Package Overview
 
 ```yaml

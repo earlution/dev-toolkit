@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.1.2.4+1 – Task 4 complete: Consumption patterns documented)  
+**Last updated:** 2025-12-02 (v0.1.2.5+1 – Task 5 complete: Package READMEs updated with modularity information)  
 **Branch:** `epic/1-vibe-dev-kit-core`  
 **Version Schema:** `0.1.S.T+B` (dev-kit RC.EPIC.STORY.TASK+BUILD)  
 **Production URL:** [N/A for this repo]
@@ -14,8 +14,8 @@
 ## Story Checklist
 
 - [x] **E1:S01 – Dev Kit Versioning & RW Behaviour** - COMPLETE ✅ (v0.1.1.1+1, E2:S01:T002, E2:S01:T003)  
-- [ ] **E1:S02 – Package & Repo Architecture** - IN PROGRESS (v0.1.2.4+1)
-  - Tasks: T001 ✅ (v0.1.2.1+1), T002 ✅ (v0.1.2.2+1), T003 ✅ (v0.1.2.3+1), T004 ✅ (v0.1.2.4+1)
+- [x] **E1:S02 – Package & Repo Architecture** - COMPLETE ✅ (v0.1.2.5+1)
+  - Tasks: T001 ✅ (v0.1.2.1+1), T002 ✅ (v0.1.2.2+1), T003 ✅ (v0.1.2.3+1), T004 ✅ (v0.1.2.4+1), T005 ✅ (v0.1.2.5+1)
   - Story: [`epics/Epic-1/stories/Story-002-package-and-repo-architecture.md`](epics/Epic-1/stories/Story-002-package-and-repo-architecture.md)  
 - [ ] **E1:S03 – Core KB Structure for Dev Kit** - TODO  
 
@@ -73,7 +73,7 @@ Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.1.2.4+1 – Task 4 complete: Consumption patterns documented)
+**Last updated:** 2025-12-02 (v0.1.2.5+1 – Task 5 complete: Package READMEs updated with modularity information)
 
 **Goal:**  
 Clarify the modular architecture of the `vibe-dev-kit` repository, ensuring that users can easily consume individual frameworks (workflow mgt, versioning, kanban) without pulling in the entire repository.

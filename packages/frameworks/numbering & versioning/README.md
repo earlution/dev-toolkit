@@ -10,7 +10,52 @@
 
 This directory contains all policy documents relating to numbering and versioning strategies.
 
-## Package Structure
+## 🧩 Modularity & Dependencies
+
+This package is designed to be **fully modular** with maximum independence. It can be used standalone or combined with other packages.
+
+### Standalone Usage
+
+✅ **This package can be used completely independently** without requiring any other `vibe-dev-kit` packages.
+
+**What you get standalone:**
+- Complete versioning policy and strategy documents
+- Version schema definition (`RC.EPIC.STORY.TASK+BUILD`)
+- Implementation guides and templates
+- Epic and Story templates
+- All versioning principles and best practices
+
+**Hard dependencies (required):**
+- None — this is a pure documentation package
+
+**Independence score:** 10/10 — Pure documentation, no runtime dependencies.
+
+### Combined Usage
+
+**With Workflow Management Package:**
+- RW uses versioning schema from this package
+- Integration: RW reads version file and follows versioning policy
+- Optional: RW can work with custom versioning policies
+
+**With Kanban Package:**
+- Kanban uses version markers from this package
+- Integration: Kanban Story Checklist includes version markers
+- Optional: Kanban can work without versioning (manual markers)
+
+**With Both Packages:**
+- Complete three-way integration (Kanban ↔ Versioning ↔ RW)
+- Automated version marker updates
+- Full forensic traceability
+
+### Dependency Matrix
+
+| Dependency Type | Package | Required? | Purpose |
+|----------------|---------|-----------|---------|
+| Hard | None | — | Pure documentation package |
+| Soft | Workflow Management | ❌ No | Version schema usage (optional) |
+| Soft | Kanban | ❌ No | Version markers (optional) |
+
+### Package Structure
 
 This package is designed to be **portable and customizable** for use in other projects. All documents include:
 - Portable package headers
