@@ -17,6 +17,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.2.5+1] - 02-12-25
+
+📚 Documentation: Task 5 complete - Create intake workflow guide for agents/users (Story 2 complete)
+
+### Added
+
+- Created agent-friendly guide (`FR_BR_INTAKE_AGENT_GUIDE.md`) with structured, executable workflow for AI assistants
+- Created user-friendly guide (`FR_BR_INTAKE_USER_GUIDE.md`) with conversational, accessible instructions for human users
+- Created quick reference (`FR_BR_INTAKE_QUICK_REFERENCE.md`) with at-a-glance information for both audiences
+- Added troubleshooting sections to all guides
+- Added validation checklists and error handling guidelines
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.2.5+1.md` for full details
+- Story 2: FR/BR Intake to Tasks is now COMPLETE (all 5 tasks finished)
+- Guides provide audience-specific instructions: agent guide for programmatic execution, user guide for human users
+- Quick reference provides decision flow, version format, templates, and validation checklist
+
+---
+
 ## [0.4.2.4+1] - 02-12-25
 
 📚 Documentation: Task 4 complete - Document the intake process with examples
