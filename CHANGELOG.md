@@ -17,6 +17,32 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.2.4+1] - 02-12-25
+
+📚 Documentation: Task 4 complete - Document the intake process with examples
+
+### Added
+
+- Created comprehensive intake process guide (`FR_BR_INTAKE_GUIDE.md`) with step-by-step instructions
+- Added 6 worked examples covering all common FR/BR intake scenarios:
+  - FR matching existing Story
+  - FR requiring new Story (existing Epic)
+  - FR requiring new Epic
+  - BR matching existing Story
+  - BR requiring new Story
+  - Complex FR requiring multiple Tasks
+- Added integration documentation (Kanban, Versioning, Release Workflow)
+- Added troubleshooting guide and quick reference sections
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.2.4+1.md` for full details
+- Guide provides complete intake process from FR/BR receipt to Task creation
+- Examples demonstrate decision flow, version assignment, and Kanban integration
+- Will be used in T005 to create agent/user-friendly guides
+
+---
+
 ## [0.4.2.3+1] - 02-12-25
 
 📚 Documentation: Task 3 complete - Create FR/BR intake templates and forms

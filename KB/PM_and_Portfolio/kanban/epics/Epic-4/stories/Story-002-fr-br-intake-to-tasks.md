@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.2.3+1 – Task 3 complete: Create FR/BR intake templates and forms)
-**Version:** v0.4.2.3+1
+**Last updated:** 2025-12-02 (v0.4.2.4+1 – Task 4 complete: Document the intake process with examples)
+**Version:** v0.4.2.4+1
 **Code:** E4S02
 
 ---
@@ -32,7 +32,7 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 - [x] **E4:S02:T001 – Analyze current FR/BR intake process and requirements** ✅ COMPLETE
 - [x] **E4:S02:T002 – Design FR/BR → Task → Story → Epic decision flow** ✅ COMPLETE
 - [x] **E4:S02:T003 – Create FR/BR intake templates and forms** ✅ COMPLETE
-- [ ] **E4:S02:T004 – Document the intake process with examples**
+- [x] **E4:S02:T004 – Document the intake process with examples** ✅ COMPLETE
 - [ ] **E4:S02:T005 – Create intake workflow guide for agents/users**
 
 ---
@@ -156,27 +156,59 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-### E4:S02:T004 – Document the intake process with examples
+### E4:S02:T004 – Document the intake process with examples ✅ COMPLETE
 
 **Input:** Templates from T003, decision flow from T002  
-**Deliverable:** Complete intake process documentation with worked examples  
+**Deliverable:** Complete intake process documentation with worked examples ✅ **DELIVERED**  
 **Dependencies:** E4:S02:T003  
 **Blocker:** None
 
-**Approach:**
-1. Write step-by-step intake process guide
-2. Create worked examples for common scenarios:
-   - FR that fits existing Story
-   - FR that needs new Story (existing Epic)
-   - FR that needs new Epic
-   - BR that fits existing Story
-   - BR that needs new Story
-   - Complex FR requiring multiple Tasks
-3. Document integration with versioning and RW
+**Status:** ✅ **COMPLETE** - Comprehensive intake process guide with 6 worked examples created
 
-**Files to Create:**
-- `packages/frameworks/kanban/FR_BR_INTAKE_GUIDE.md`
-- Example scenarios documentation
+**Approach:**
+1. ✅ Wrote step-by-step intake process guide
+2. ✅ Created worked examples for common scenarios:
+   - ✅ FR that fits existing Story (Example 1)
+   - ✅ FR that needs new Story (existing Epic) (Example 2)
+   - ✅ FR that needs new Epic (Example 3)
+   - ✅ BR that fits existing Story (Example 4)
+   - ✅ BR that needs new Story (Example 5)
+   - ✅ Complex FR requiring multiple Tasks (Example 6)
+3. ✅ Documented integration with versioning and RW
+
+**Key Features:**
+
+**Intake Process Guide:**
+- Step-by-step process (8 steps)
+- High-level flow diagram
+- Detailed instructions for each step
+- Decision criteria for Story/Epic matching
+- Version assignment rules
+- Kanban board update procedures
+- FR/BR to Task linking procedures
+
+**Worked Examples:**
+- **Example 1:** FR matching existing Story (dark mode toggle)
+- **Example 2:** FR requiring new Story under existing Epic (user profile picture upload)
+- **Example 3:** FR requiring new Epic (real-time collaboration)
+- **Example 4:** BR matching existing Story (dark mode persistence bug)
+- **Example 5:** BR requiring new Story (profile picture upload bug)
+- **Example 6:** Complex FR requiring multiple Tasks (OAuth authentication)
+
+**Integration Documentation:**
+- Kanban integration (templates, board updates, status synchronization)
+- Versioning integration (schema, assignment, canonical ordering)
+- Release Workflow integration (Task completion, changelog updates, fix verification)
+
+**Additional Sections:**
+- Troubleshooting guide (common issues and solutions)
+- Quick reference (decision flow, version numbers, templates, key documents)
+- Next steps after intake completion
+
+**Files Created:**
+- ✅ `packages/frameworks/kanban/FR_BR_INTAKE_GUIDE.md` (comprehensive intake process guide with 6 worked examples)
+
+**Deliverable:** Complete intake process documentation with step-by-step instructions and 6 detailed worked examples covering all common scenarios. The guide includes integration points, troubleshooting, and quick reference sections.
 
 ---
 
@@ -229,5 +261,5 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-_Last updated: 2025-12-02 (v0.4.2.3+1 – Task 3 complete: Create FR/BR intake templates and forms)_
+_Last updated: 2025-12-02 (v0.4.2.4+1 – Task 4 complete: Document the intake process with examples)_
 
