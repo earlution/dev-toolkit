@@ -16,7 +16,7 @@ Update the Release Workflow YAML and all related documentation to reflect the co
 
 ## Input
 
-- All previous task deliverables (T001-T005)
+- All previous task deliverables (T01-T05)
 - Current RW workflow YAML: `packages/frameworks/workflow mgt/workflows/release-workflow.yaml`
 - Current RW documentation
 - PDCA integration plan: `KB/Architecture/Standards_and_ADRs/rw-pdca-integration-plan.md`
@@ -90,11 +90,11 @@ Update the Release Workflow YAML and all related documentation to reflect the co
 
 ## Related Tasks
 
-- E2:S02:T001 – Add CHECK Phase (provides Step 12 content)
-- E2:S02:T002 – Add ACT Phase (provides Step 13 content)
-- E2:S02:T003 – Enhance PLAN Phase (provides PLAN enhancements)
-- E2:S02:T004 – Enhance DO Phase (provides DO enhancements)
-- E2:S02:T005 – Create PDCA templates and examples (provides templates)
+- E2:S02:T01 – Add CHECK Phase (provides Step 12 content)
+- E2:S02:T02 – Add ACT Phase (provides Step 13 content)
+- E2:S02:T03 – Enhance PLAN Phase (provides PLAN enhancements)
+- E2:S02:T04 – Enhance DO Phase (provides DO enhancements)
+- E2:S02:T05 – Create PDCA templates and examples (provides templates)
 
 ---
 

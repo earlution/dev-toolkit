@@ -16,7 +16,7 @@ Create comprehensive PDCA templates and examples for each phase of the cycle. Th
 
 ## Input
 
-- All previous task deliverables (T001-T004)
+- All previous task deliverables (T01-T04)
 - PDCA integration plan: `KB/Architecture/Standards_and_ADRs/rw-pdca-integration-plan.md`
 - Current RW examples and templates
 
@@ -89,11 +89,11 @@ Create comprehensive PDCA templates and examples for each phase of the cycle. Th
 
 ## Related Tasks
 
-- E2:S02:T001 – Add CHECK Phase (provides CHECK template content)
-- E2:S02:T002 – Add ACT Phase (provides ACT template content)
-- E2:S02:T003 – Enhance PLAN Phase (provides PLAN template content)
-- E2:S02:T004 – Enhance DO Phase (provides DO template content)
-- E2:S02:T006 – Update RW workflow YAML and documentation (includes template integration)
+- E2:S02:T01 – Add CHECK Phase (provides CHECK template content)
+- E2:S02:T02 – Add ACT Phase (provides ACT template content)
+- E2:S02:T03 – Enhance PLAN Phase (provides PLAN template content)
+- E2:S02:T04 – Enhance DO Phase (provides DO template content)
+- E2:S02:T06 – Update RW workflow YAML and documentation (includes template integration)
 
 ---
 

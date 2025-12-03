@@ -17,6 +17,28 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.2.8+1] - 03-12-25
+
+🧰 Tooling: Task 8 complete - Updated all Kanban documentation to Txx standard
+
+### Changed
+
+- Updated task references in KB documentation to Txx format (T001-T008 → T01-T08)
+- Updated task range references in documentation
+- Updated FR/BR Intake Guide examples
+
+### Added
+
+- Task 08 deliverable document
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.8+1.md` for full details
+- Existing task files remain unchanged (backward compatible)
+- New task files should use Txx format
+
+---
+
 ## [0.2.2.7+2] - 03-12-25
 
 🧰 Tooling: Task 7 complete - Implemented Task naming change from Txxx to Txx format

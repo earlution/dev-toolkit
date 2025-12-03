@@ -16,7 +16,7 @@ Add Step 13 (Act on Verification Results) to the Release Workflow to implement t
 
 ## Input
 
-- Step 12 (CHECK phase) implementation from T001
+- Step 12 (CHECK phase) implementation from T01
 - PDCA integration plan: `KB/Architecture/Standards_and_ADRs/rw-pdca-integration-plan.md`
 - Current changelog format
 
@@ -84,9 +84,9 @@ Add Step 13 (Act on Verification Results) to the Release Workflow to implement t
 
 ## Related Tasks
 
-- E2:S02:T001 – Add CHECK Phase (prerequisite)
-- E2:S02:T003 – Enhance PLAN Phase (coordinates with this task)
-- E2:S02:T006 – Update RW workflow YAML and documentation (includes this task)
+- E2:S02:T01 – Add CHECK Phase (prerequisite)
+- E2:S02:T03 – Enhance PLAN Phase (coordinates with this task)
+- E2:S02:T06 – Update RW workflow YAML and documentation (includes this task)
 
 ---
 

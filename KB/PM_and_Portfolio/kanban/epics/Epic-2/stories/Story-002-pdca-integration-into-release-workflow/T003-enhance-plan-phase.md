@@ -81,9 +81,9 @@ Enhance the PLAN phase of the Release Workflow by adding objectives, expected ou
 
 ## Related Tasks
 
-- E2:S02:T001 – Add CHECK Phase (coordinates with verification plan)
-- E2:S02:T002 – Add ACT Phase (coordinates with expected outcomes)
-- E2:S02:T005 – Create PDCA templates and examples (includes PLAN templates)
+- E2:S02:T01 – Add CHECK Phase (coordinates with verification plan)
+- E2:S02:T02 – Add ACT Phase (coordinates with expected outcomes)
+- E2:S02:T05 – Create PDCA templates and examples (includes PLAN templates)
 
 ---
 

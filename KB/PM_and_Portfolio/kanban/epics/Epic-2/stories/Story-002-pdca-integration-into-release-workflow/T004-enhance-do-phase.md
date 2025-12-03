@@ -82,9 +82,9 @@ Enhance the DO phase of the Release Workflow by improving commit message guidanc
 
 ## Related Tasks
 
-- E2:S02:T001 – Add CHECK Phase (coordinates with verification status)
-- E2:S02:T003 – Enhance PLAN Phase (coordinates with changelog intent)
-- E2:S02:T005 – Create PDCA templates and examples (includes DO templates)
+- E2:S02:T01 – Add CHECK Phase (coordinates with verification status)
+- E2:S02:T03 – Enhance PLAN Phase (coordinates with changelog intent)
+- E2:S02:T05 – Create PDCA templates and examples (includes DO templates)
 
 ---
 

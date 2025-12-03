@@ -107,18 +107,18 @@ This document provides worked examples and edge case documentation for the three
 **Epic Story Checklist Format:**
 ```markdown
 - [ ] **E4:S03 – Kanban + Versioning + RW Integration** - IN PROGRESS (v0.4.3.8+1)
-  - Tasks: T001 ✅ (v0.4.3.1+1), T002 ✅ (v0.4.3.2+1), T003 ✅ (v0.4.3.3+1), T004 ✅ (v0.4.3.4+1), T005 ✅ (v0.4.3.5+1), T007 ✅ (v0.4.3.7+1), T008 ✅ (v0.4.3.8+1)
+  - Tasks: T01 ✅ (v0.4.3.1+1), T02 ✅ (v0.4.3.2+1), T03 ✅ (v0.4.3.3+1), T04 ✅ (v0.4.3.4+1), T05 ✅ (v0.4.3.5+1), T07 ✅ (v0.4.3.7+1), T08 ✅ (v0.4.3.8+1)
 ```
 
 ---
 
 ### Example 3: Story Completion Across Multiple Tasks
 
-**Scenario:** Story 3 completes after Task 8, with all Tasks (T001-T008) completed.
+**Scenario:** Story 3 completes after Task 8, with all Tasks (T01-T08) completed.
 
 **Before Story Completion:**
 - Story status: IN PROGRESS
-- Tasks: T001-T008 all complete
+- Tasks: T01-T08 all complete
 - Latest version: `v0.4.3.8+1`
 
 **Story Completion Process:**
@@ -146,17 +146,17 @@ This document provides worked examples and edge case documentation for the three
 
 **Story Sequence:**
 1. Story 1: Dev Kit Kanban Implementation
-   - Tasks: T001-T005
+   - Tasks: T01-T05
    - Versions: `v0.4.1.1+1` through `v0.4.1.5+1`
    - Status: COMPLETE ✅ (v0.4.1.5+1)
 
 2. Story 2: FR/BR Intake to Tasks
-   - Tasks: T001-T005
+   - Tasks: T01-T05
    - Versions: `v0.4.2.1+1` through `v0.4.2.5+1`
    - Status: COMPLETE ✅ (v0.4.2.5+1)
 
 3. Story 3: Kanban + Versioning + RW Integration
-   - Tasks: T001-T008 (in progress)
+   - Tasks: T01-T08 (in progress)
    - Versions: `v0.4.3.1+1` through `v0.4.3.8+1`
    - Status: IN PROGRESS (v0.4.3.8+1)
 

@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-03  
-**Last updated:** 2025-12-03 (v0.2.2.7+2 – T07 complete)  
-**Version:** v0.2.2.7+2  
+**Last updated:** 2025-12-03 (v0.2.2.8+1 – T08 complete)  
+**Version:** v0.2.2.8+1  
 **Code:** E2S02
 
 ---
@@ -36,7 +36,7 @@ Integrate PDCA cycle into Release Workflow to:
 - [ ] **E2:S02:T05 – Create PDCA templates and examples**
 - [ ] **E2:S02:T06 – Update RW workflow YAML and documentation**
 - [x] **E2:S02:T07 – Implement Task naming change (Txxx → Txx)** ✅ COMPLETE (v0.2.2.7+2)
-- [ ] **E2:S02:T08 – Update Kanban docs to Txx standard**
+- [x] **E2:S02:T08 – Update Kanban docs to Txx standard** ✅ COMPLETE (v0.2.2.8+1)
 
 ---
 
