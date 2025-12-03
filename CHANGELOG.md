@@ -17,6 +17,23 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.3.2+1] - 03-12-25
+
+🚀 Feature: Task 2 complete - Created Refactor Workflow example with YAML and execution guide
+
+### Added
+
+- Refactor Workflow YAML (13-step workflow for systematic code refactoring)
+- Refactor Workflow Agent Execution Guide (step-by-step guide with examples)
+- 4 phases: Analysis & Planning, Execution, Validation, Documentation & Git Operations
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.3.2+1.md` for full details
+- Refactor Workflow demonstrates agent-driven execution for code quality workflows
+
+---
+
 ## [0.2.3.1+2] - 03-12-25
 
 📚 Documentation: Task 1 complete - Created workflow taxonomy and analyzed workflow types
