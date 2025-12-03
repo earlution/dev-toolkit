@@ -17,6 +17,23 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.3.5+1] - 03-12-25
+
+🚀 Feature: Task 5 complete - Created workflow template generator with script, documentation, and examples
+
+### Added
+
+- Workflow Template Generator Script (Python script for generating workflow YAML files)
+- Generator Documentation (complete usage guide with examples)
+- Usage Examples (8 practical examples covering common use cases)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.3.5+1.md` for full details
+- Generator enables rapid creation of new workflows following agent-driven execution pattern
+
+---
+
 ## [0.2.3.4+1] - 03-12-25
 
 🚀 Feature: Task 4 complete - Created Testing Workflow example with YAML and execution guide
