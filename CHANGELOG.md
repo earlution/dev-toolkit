@@ -17,6 +17,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.3.4+1] - 03-12-25
+
+🚀 Feature: Task 4 complete - Created Testing Workflow example with YAML and execution guide
+
+### Added
+
+- Testing Workflow YAML (15-step workflow for systematic testing)
+- Testing Workflow Agent Execution Guide (step-by-step guide with examples)
+- 5 phases: Analysis & Planning, Execution, Validation, Documentation & Git Operations, Verification & Results
+- Support for multiple test types (unit, integration, e2e, performance, regression)
+- Coverage tracking and quality validation
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.3.4+1.md` for full details
+- Testing Workflow demonstrates agent-driven execution for testing workflows
+
+---
+
 ## [0.2.3.3+2] - 03-12-25
 
 🔧 Improvement: Strengthened RW Step 2 (Bump Version) with explicit mandatory procedure to prevent BUILD-increment anti-pattern
