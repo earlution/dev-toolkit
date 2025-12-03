@@ -18,10 +18,10 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 """
 
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
-VERSION_EPIC = 1      # Epic number (Epic 1: Vibe Dev Kit Core)
-VERSION_STORY = 3     # Story number (Story 3: Core KB Structure for Dev Kit)
-VERSION_TASK = 5      # Task number (Task 5: Create KB structure documentation)
-VERSION_BUILD = 2     # Build number (increments per release within task, bumped by RW)
+VERSION_EPIC = 3      # Epic number (Epic 3: Numbering & Versioning Framework)
+VERSION_STORY = 2     # Story number (Story 2: Versioning Cookbook & Examples)
+VERSION_TASK = 1      # Task number (Task 1: Define core versioning scenarios for the cookbook)
+VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
 # Format: RC.EPIC.STORY.TASK+BUILD

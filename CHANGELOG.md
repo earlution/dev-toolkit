@@ -17,6 +17,26 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.1+1] - 03-12-25
+
+📚 Documentation: Task 1 complete - Core versioning scenarios defined for cookbook
+
+### Added
+
+- Created comprehensive core versioning scenarios document (T001)
+- Defined 8 core scenarios: New Epic, New Story, New Task, Bugfix/Hotfix, Parallel Epics/Stories, Task Transitions, Story Completion, Epic Completion
+- Documented expected version behaviour for each scenario
+- Documented Kanban/RW interactions for each scenario
+- Created scenario summary table for quick reference
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.1+1.md` for full details
+- Scenarios validated against framework policy, dev-kit policy, and integration docs
+- Foundation for T002 cookbook document with worked examples
+
+---
+
 ## [0.1.3.5+2] - 03-12-25
 
 ✅ Story Completion: Story 3 (Core KB Structure for Dev Kit) marked as COMPLETE
