@@ -429,6 +429,20 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 3. **EXECUTE:**
    - Generate timestamp using system command
+   - **PLAN Phase - Create PLAN Section:**
+     - **Objectives:** Document what this release aims to achieve
+       - List specific objectives for this release
+       - Be clear and measurable
+       - Example: "Add Step 12 to Release Workflow", "Fix changelog verification issue"
+     - **Expected Outcomes:** Document what success looks like
+       - Describe what should be achieved
+       - Define success criteria
+       - Example: "Step 12 added and documented", "Changelog verification working"
+     - **Verification Plan:** Document how success will be verified
+       - Define verification methods (test suite, manual testing, observation)
+       - Specify what evidence will be collected
+       - Link to Step 12 (CHECK phase) verification
+       - Example: "Run test suite", "Manual testing of Step 12", "Review documentation"
    - **CRITICAL - Verification Check for Fixes:**
      - If this release includes bug fixes, check verification status:
        - **Verified fixes:** Must have evidence of testing (test suite pass or documented manual test results)
@@ -439,6 +453,10 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - Epic and Story information
      - Type (with emoji)
      - Summary
+     - **PLAN Phase section (NEW):**
+       - Objectives
+       - Expected Outcomes
+       - Verification Plan
      - Changes section:
        - **Fixed** section: Only verified fixes (with verification evidence)
        - **Attempted Fixes** section: Unverified fixes (pending verification)
