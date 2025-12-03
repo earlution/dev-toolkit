@@ -4,8 +4,8 @@
 **Priority:** MEDIUM  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-03  
-**Last updated:** 2025-12-03 (v0.2.3.3+1 – T03 complete)  
-**Version:** v0.2.3.3+1  
+**Last updated:** 2025-12-03 (v0.2.3.3+2 – Strengthened RW Step 2 with explicit mandatory procedure)  
+**Version:** v0.2.3.3+2  
 **Code:** E2S03
 
 ---
@@ -30,7 +30,7 @@ Provide additional workflow examples that:
 
 - [x] **E2:S03:T01 – Analyze workflow types and create workflow taxonomy** ✅ COMPLETE (v0.2.3.1+2)
 - [x] **E2:S03:T02 – Create Refactor Workflow example** ✅ COMPLETE (v0.2.3.2+1)
-- [x] **E2:S03:T03 – Create Migration Workflow example** ✅ COMPLETE (v0.2.3.3+1)
+- [x] **E2:S03:T03 – Create Migration Workflow example** ✅ COMPLETE (v0.2.3.3+2)
 - [ ] **E2:S03:T04 – Create Testing Workflow example**
 - [ ] **E2:S03:T05 – Create workflow template generator**
 - [ ] **E2:S03:T06 – Document workflow customization patterns**

@@ -17,6 +17,26 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.3.3+2] - 03-12-25
+
+🔧 Improvement: Strengthened RW Step 2 (Bump Version) with explicit mandatory procedure to prevent BUILD-increment anti-pattern
+
+### Added
+
+- Versioning Error Reference Guide (comprehensive reference for BUILD-increment anti-pattern prevention)
+
+### Changed
+
+- RW Step 2 in cursorrules-rw-trigger-section.md (explicit 6-step procedure A-F with mandatory Story file read)
+- RW Step 2 in release-workflow-agent-execution.md (enhanced validation and error handling)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.3.3+2.md` for full details
+- This improvement prevents versioning errors where BUILD is incremented instead of TASK
+
+---
+
 ## [0.2.3.3+1] - 03-12-25
 
 🚀 Feature: Task 3 complete - Created Migration Workflow example with YAML and execution guide

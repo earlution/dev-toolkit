@@ -30,7 +30,7 @@
    ```python
    todo_write(merge=False, todos=[
        {'id': 'rw-step-1', 'status': 'pending', 'content': 'Step 1: Branch Safety Check - Analyze work and ensure it aligns with current branch'},
-       {'id': 'rw-step-2', 'status': 'pending', 'content': 'Step 2: Bump Version - Analyze current version and determine next version'},
+       {'id': 'rw-step-2', 'status': 'pending', 'content': 'Step 2: Bump Version - Read Story file, identify completed task number, compare to current VERSION_TASK, determine if new task or same task, update version file, validate'},
        {'id': 'rw-step-3', 'status': 'pending', 'content': 'Step 3: Create Detailed Changelog - Generate CHANGELOG with full timestamp'},
        {'id': 'rw-step-4', 'status': 'pending', 'content': 'Step 4: Update Main Changelog - Add summary entry'},
        {'id': 'rw-step-5', 'status': 'pending', 'content': 'Step 5: Update README - Update version badge and latest release'},
@@ -88,12 +88,59 @@ For each step, follow this pattern:
 **The 11 Steps:**
 
 1. **Branch Safety Check** - Analyze work done and ensure it aligns with current branch. Check modified files, version alignment, and changelog alignment. If work does not align with branch (e.g., on `epic/4` but work references Epic 5), STOP workflow with clear warning. This prevents cross-epic contamination before any modifications.
-2. **Bump Version** - Read version file (typically `src/{project}/version.py`), determine next version using schema calculation:
-   - **Same Task:** Increment BUILD (e.g., `0.E.S.T+B` → `0.E.S.T+{B+1}`)
-   - **New Task:** Set new TASK and BUILD=1 (e.g., `0.E.S.T+B` → `0.E.S.{T+1}+1`)
-   - **New Story:** Set new STORY, TASK=1, BUILD=1 (e.g., `0.E.S.T+B` → `0.E.{S+1}.1+1`)
-   - **New Epic:** Set new EPIC, STORY=1, TASK=1, BUILD=1 (e.g., `0.E.S.T+B` → `0.{E+1}.1.1+1`)
-   - Use format: `RC.EPIC.STORY.TASK+BUILD`
+2. **Bump Version** - **MANDATORY STEP-BY-STEP PROCESS (DO NOT SKIP ANY STEP):**
+
+   **A. READ CURRENT VERSION:**
+   - Read `src/{project}/version.py` to get current `VERSION_EPIC`, `VERSION_STORY`, `VERSION_TASK`, `VERSION_BUILD`
+   - Document current version: `RC.EPIC.STORY.TASK+BUILD`
+   - [Example: vibe-dev-kit] Read `src/fynd_deals/version.py`
+
+   **B. IDENTIFY COMPLETED TASK (MANDATORY):**
+   - Read the Story file: `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md`
+   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md`
+   - Find the MOST RECENTLY COMPLETED task in the Task Checklist (marked `✅ COMPLETE`)
+   - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T008` → task number is `8`)
+   - **CRITICAL:** If no task is marked complete, or you cannot identify which task was just completed, **STOP** and ask the user which task was completed
+
+   **C. DETERMINE VERSION BUMP (MANDATORY LOGIC):**
+   - Compare completed task number to current `VERSION_TASK`:
+     - **IF completed task number > current VERSION_TASK:** This is a NEW TASK
+       - Set `VERSION_TASK` = completed task number
+       - Set `VERSION_BUILD` = 1 (reset to 1 for new task)
+       - Example: Current `0.2.2.3+5`, completed T008 → New version: `0.2.2.8+1`
+     - **IF completed task number == current VERSION_TASK:** This is SAME TASK, new build
+       - Keep `VERSION_TASK` unchanged
+       - Increment `VERSION_BUILD` by 1
+       - Example: Current `0.2.2.3+1`, completed T003 → New version: `0.2.2.3+2`
+     - **IF completed task number < current VERSION_TASK:** This is an ERROR
+       - **STOP** and report error: "Completed task number ({completed}) is less than current VERSION_TASK ({current}). This indicates a versioning error. Please verify which task was actually completed."
+
+   **D. VALIDATE BEFORE UPDATING:**
+   - Verify: New `VERSION_TASK` matches completed task number
+   - Verify: If new task, `VERSION_BUILD` = 1; if same task, `VERSION_BUILD` = current + 1
+   - Document decision: "Task {completed_task} completed. Current TASK={current_task}, BUILD={current_build}. Decision: {new_task/new_build} → TASK={new_task}, BUILD={new_build}"
+
+   **E. UPDATE VERSION FILE:**
+   - Update `VERSION_TASK` and `VERSION_BUILD` in `src/{project}/version.py`
+   - Update `VERSION_STRING` to reflect new version
+   - Update `VERSION_INFO["description"]` if present
+   - [Example: vibe-dev-kit] Update `src/fynd_deals/version.py`
+
+   **F. VALIDATE AFTER UPDATING:**
+   - Re-read `version.py` and verify the new version matches your decision
+   - Confirm: `VERSION_TASK` = completed task number
+   - Confirm: `VERSION_BUILD` = 1 (if new task) or current+1 (if same task)
+
+   **Use format:** `RC.EPIC.STORY.TASK+BUILD`
+
+   **🚨 CRITICAL: Step 2 Version Bump Requirements:**
+   - **MUST** read Story file to identify completed task number
+   - **MUST** compare completed task number to current VERSION_TASK
+   - **MUST** validate TASK number matches completed task before updating
+   - **MUST** validate TASK number matches completed task after updating
+   - **MUST** document decision: "Task {N} completed. Current TASK={X}, BUILD={Y}. Decision: {new_task/new_build} → TASK={Z}, BUILD={W}"
+   - See `KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md` for error prevention reference
+   - See `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` Step 2 for complete procedure
 3. **Create Detailed Changelog** - Create detailed changelog in changelog archive directory (typically `{changelog_archive_path}/CHANGELOG_v{version}.md`) with full timestamp (`YYYY-MM-DD HH:MM:SS UTC`). **CRITICAL:** Timestamp is IMMUTABLE once written - never edit the `**Release Date:**` field.
    - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md`
 4. **Update Main Changelog** - Add new entry at top: `## [version] - DD-MM-YY` (short date format for merge-to-main) with release description and link to detailed changelog. Follow [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog) format. **Note:** Main changelog date can be updated if merge date changes, but detailed changelog timestamp is immutable.
@@ -128,8 +175,12 @@ For each step, follow this pattern:
 - ✅ **Canonical Ordering:** Version numbers (not timestamps) determine changelog ordering - versions are the canonical ordering metric
 - ✅ **Forensic Traceability:** Maintain complete traceability grid (version ↔ epic/story/task ↔ changelogs ↔ kanban ↔ git)
 - ✅ **Immutability:** Detailed changelog timestamps are immutable once written - never edit `**Release Date:**` field
+- ✅ **Mandatory Task Identification:** Step 2 MUST read Story file to identify completed task number
+- ✅ **Version Validation:** Step 2 MUST validate TASK number matches completed task before and after updating
 - ❌ **Never Blind Execution:** Don't just run scripts without understanding what they do
 - ❌ **Never Leave RW Ambiguous:** Always end in either **RW COMPLETE** or **RW ABORTED (with reason)** state
+- ❌ **Never Skip Task Identification:** Always read Story file to find completed task number
+- ❌ **Never Assume Same Task:** Always compare completed task number to current VERSION_TASK
 
 **File Paths (Customize for Your Project):**
 - Version file: `src/{project}/version.py` (e.g., `src/myproject/version.py`)

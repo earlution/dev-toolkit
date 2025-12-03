@@ -318,72 +318,100 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 **Agent Execution:**
 
+**🚨 MANDATORY: Follow this 6-step procedure (A-F) exactly. Do not skip any step.**
+
+**A. READ CURRENT VERSION:**
 1. **ANALYZE:**
    - Read current version from version file:
      - [Example: Confidentia] `src/confidentia/version.py`
      - [Example: vibe-dev-kit] `src/fynd_deals/version.py`
+   - Extract current `VERSION_EPIC`, `VERSION_STORY`, `VERSION_TASK`, `VERSION_BUILD`
+   - Document current version: `RC.EPIC.STORY.TASK+BUILD`
    - Understand version schema: `RC.EPIC.STORY.TASK+BUILD`
    - Check current Git branch to determine Epic number (already validated in Step 1)
-   - **CRITICAL:** Identify the active Task being completed:
-     - Read Story document to find the Task that was just completed
-     - Extract Task number (e.g., `E4:S03:T02` → Task 2)
-   - Understand increment type: `patch` means increment BUILD number (for same Task)
    - Verify version matches branch schema (already checked in Step 1, but double-check)
-   - **CRITICAL:** Check if this is a Task transition:
-     - Compare `VERSION_TASK` in version file with active Task number from Story
-     - If different → This is a Task transition (new Task)
-     - If same → This is a BUILD increment (same Task)
 
-2. **DETERMINE:**
-   - **If Task Transition (New Task):**
-     - **CRITICAL:** Update `VERSION_TASK` to match active Task number
-     - **CRITICAL:** Reset `VERSION_BUILD` to 1 (new Task always starts at BUILD 1)
-     - Calculate next version:
+**B. IDENTIFY COMPLETED TASK (MANDATORY):**
+2. **ANALYZE (continued):**
+   - **MANDATORY:** Read the Story file to identify completed task:
+     - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic {epic}/Story-{story}-*.md`
+     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md`
+   - Find the MOST RECENTLY COMPLETED task in the Task Checklist (marked `✅ COMPLETE`)
+   - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T008` → task number is `8`)
+   - **CRITICAL:** If no task is marked complete, or you cannot identify which task was just completed, **STOP** and ask the user which task was completed
+   - **CRITICAL:** Document the completed task number for comparison
+
+**C. DETERMINE VERSION BUMP (MANDATORY LOGIC):**
+3. **DETERMINE:**
+   - **MANDATORY:** Compare completed task number to current `VERSION_TASK`:
+     - **IF completed task number > current VERSION_TASK:** This is a NEW TASK
+       - Set `VERSION_TASK` = completed task number
+       - Set `VERSION_BUILD` = 1 (reset to 1 for new task)
+       - Example: Current `0.2.2.3+5`, completed T008 → New version: `0.2.2.8+1`
        - [Example: vibe-dev-kit] If completing Task 2, and `VERSION_TASK = 1`:
          - Update: `VERSION_TASK = 2`, `VERSION_BUILD = 1`
          - Next version: `0.4.3.2+1` (Task 2, Build 1)
-   - **If Same Task (BUILD Increment):**
-     - Keep `VERSION_TASK` unchanged
-     - Increment `VERSION_BUILD` by 1
-     - Calculate next version:
+     - **IF completed task number == current VERSION_TASK:** This is SAME TASK, new build
+       - Keep `VERSION_TASK` unchanged
+       - Increment `VERSION_BUILD` by 1
+       - Example: Current `0.2.2.3+1`, completed T003 → New version: `0.2.2.3+2`
        - [Example: Confidentia] If current is `0.4.3.2+8`, next is `0.4.3.2+9`
        - [Example: vibe-dev-kit] If current is `0.2.1.1+2`, next is `0.2.1.1+3`
+     - **IF completed task number < current VERSION_TASK:** This is an ERROR
+       - **STOP** and report error: "Completed task number ({completed}) is less than current VERSION_TASK ({current}). This indicates a versioning error. Please verify which task was actually completed."
    - Validate version matches branch:
      - [Example: Confidentia] Epic 4 = `0.4.x.x+x`
      - [Example: vibe-dev-kit] Epic 2 = `0.2.x.x+x`
 
-3. **EXECUTE:**
-   - **If Task Transition:**
+**D. VALIDATE BEFORE UPDATING:**
+4. **VALIDATE (before update):**
+   - Verify: New `VERSION_TASK` matches completed task number
+   - Verify: If new task, `VERSION_BUILD` = 1; if same task, `VERSION_BUILD` = current + 1
+   - Document decision: "Task {completed_task} completed. Current TASK={current_task}, BUILD={current_build}. Decision: {new_task/new_build} → TASK={new_task}, BUILD={new_build}"
+
+**E. UPDATE VERSION FILE:**
+5. **EXECUTE:**
+   - **If Task Transition (New Task):**
      - Update `VERSION_TASK` to match active Task number
      - Update `VERSION_BUILD` to 1
      - Update version file:
+       - [Example: Confidentia] `src/confidentia/version.py`
        - [Example: vibe-dev-kit] `src/fynd_deals/version.py`
        - Use `search_replace` tool to update both `VERSION_TASK` and `VERSION_BUILD`
-   - **If Same Task:**
+   - **If Same Task (BUILD Increment):**
      - Update `VERSION_BUILD` only (increment by 1)
      - Update version file:
        - [Example: Confidentia] `src/confidentia/version.py`
        - [Example: vibe-dev-kit] `src/fynd_deals/version.py`
        - Use `search_replace` tool to update `VERSION_BUILD`
-   - Update version string comment if needed
+   - Update `VERSION_STRING` to reflect new version
+   - Update `VERSION_INFO["description"]` if present
 
-4. **VALIDATE:**
-   - Read version file to confirm update
-   - Verify version format is valid
+**F. VALIDATE AFTER UPDATING:**
+6. **VALIDATE (after update):**
+   - Re-read version file to confirm update
+   - Verify version format is valid: `RC.EPIC.STORY.TASK+BUILD`
    - Check version matches branch schema
-   - **CRITICAL:** Verify `VERSION_TASK` matches active Task number from Story
+   - **CRITICAL:** Verify `VERSION_TASK` matches completed task number from Story
    - **CRITICAL:** If Task transition, verify `VERSION_BUILD = 1`
-   - **CRITICAL:** If same Task, verify `VERSION_BUILD` incremented correctly
+   - **CRITICAL:** If same Task, verify `VERSION_BUILD` incremented correctly (current + 1)
 
-5. **PROCEED:**
-   - Document version bump:
+7. **PROCEED:**
+   - Document version bump with decision rationale:
      - **If Task Transition:**
-       - [Example: vibe-dev-kit] "Version bumped: Task transition detected. Updated VERSION_TASK: 1 → 2, VERSION_BUILD reset to 1. New version: 0.4.3.2+1"
+       - [Example: vibe-dev-kit] "Version bumped: Task transition detected. Task T008 completed. Current TASK=3, BUILD=5. Decision: new_task → TASK=8, BUILD=1. New version: 0.2.2.8+1"
      - **If Same Task:**
-       - [Example: Confidentia] "Version bumped: 0.4.3.2+8 → 0.4.3.2+9"
-       - [Example: vibe-dev-kit] "Version bumped: 0.2.1.1+2 → 0.2.1.1+3"
+       - [Example: Confidentia] "Version bumped: Task T002 completed. Current TASK=2, BUILD=8. Decision: new_build → TASK=2, BUILD=9. New version: 0.4.3.2+9"
+       - [Example: vibe-dev-kit] "Version bumped: Task T001 completed. Current TASK=1, BUILD=2. Decision: new_build → TASK=1, BUILD=3. New version: 0.2.1.1+3"
    - Pass `new_version` to Step 3
    - Move to Step 3
+
+**🚨 CRITICAL REMINDERS:**
+- **NEVER skip reading the Story file** - It's the source of truth for completed tasks
+- **NEVER assume same task** - Always compare completed task number to current VERSION_TASK
+- **ALWAYS validate before and after** - Catch errors before they propagate
+- **ALWAYS document your decision** - Show your work for traceability
+- See `KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md` for error prevention reference
 
 ---
 
