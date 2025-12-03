@@ -93,10 +93,10 @@ Clarify the modular architecture of the `vibe-dev-kit` repository, ensuring that
 
 ### Story 3: Core KB Structure for Dev Kit
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE ✅  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02
+**Last updated:** 2025-12-03 (v0.1.3.5+1)
 
 **Goal:**  
 Establish core KB locations for architecture, PM & portfolio, and dev-kit governance. Provide a clear, maintainable documentation structure that supports the dev-kit's modular architecture and makes it easy for users to navigate and understand the repository.
