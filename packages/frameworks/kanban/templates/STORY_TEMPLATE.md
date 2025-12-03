@@ -18,7 +18,7 @@
 - [ ] **EXX:SYY:T02 – [Task Title]**
 - [ ] **EXX:SYY:T03 – [Task Title]**
 
-> **Format:** `Exx:Sxx:Txxx` (Epic, Story, Task with zero padding)  
+> **Format:** `Exx:Sxx:Txx` (Epic, Story, Task with zero padding)  
 > **Forensic Marker Format:** `✅ COMPLETE (vRC.E.S.T+B)` (e.g., `✅ COMPLETE (v0.4.1.3+1)`)  
 > **Release Workflow Requirement:** When Release Workflow (RW) Step 4 updates Epic documentation, it MUST update **ALL sections**:
 > - Epic header `Last updated` field
