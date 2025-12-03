@@ -17,6 +17,32 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.2.1+1] - 03-12-25
+
+🧰 Tooling: Task 1 complete - Added CHECK Phase (Step 12) to Release Workflow for PDCA integration
+
+### Added
+
+- Added Step 12: Post-Commit Verification & Reflection to Release Workflow
+- Created verification workflow template with 4 verification methods
+- Created reflection questions template for learning capture
+- Added examples of verification documentation (verified, unverified, deferred)
+
+### Changed
+
+- Updated workflow YAML to include Step 12
+- Updated workflow execution guide to include Step 12 (12 steps total)
+- Updated agent execution checklist to include Step 12
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.1+1.md` for full details
+- Step 12 implements CHECK phase of PDCA cycle
+- Step 12 is optional but recommended for continuous improvement
+- Foundation for Step 13 (ACT phase) implementation
+
+---
+
 ## [0.2.2.0+1] - 03-12-25
 
 📚 Documentation: Story 2 setup complete - Created Story 2 and tasks for PDCA integration into Release Workflow

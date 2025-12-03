@@ -131,6 +131,19 @@ steps:
       push_tags: true
       remote: origin
 
+  - id: step-12
+    name: Post-Commit Verification & Reflection
+    type: verification_reflection
+    handler: release.verification_reflection
+    required: false
+    enabled: true
+    dependencies:
+      - step-11
+    config:
+      verification_prompt: true
+      reflection_questions: true
+      changelog_update: true
+
 parameters:
   - name: summary
     type: string

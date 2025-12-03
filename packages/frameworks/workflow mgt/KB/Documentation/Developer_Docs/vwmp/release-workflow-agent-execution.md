@@ -10,7 +10,7 @@
 
 This document provides a **step-by-step agent execution guide** for the Release Workflow. The Release Workflow serves as the **canonical example** of intelligent agent-driven workflow execution.
 
-**This guide shows exactly how an AI agent should analyze, determine, execute, validate, and proceed through each of the 11 Release Workflow steps.**
+**This guide shows exactly how an AI agent should analyze, determine, execute, validate, and proceed through each of the 12 Release Workflow steps (Steps 1-11 are required, Step 12 is optional but recommended for PDCA CHECK phase).**
 
 > **Note on Examples:** This document includes examples from multiple projects:
 > - **[Example: Confidentia/fynd.deals]** - Examples from the original source project
@@ -26,7 +26,7 @@ This document provides a **step-by-step agent execution guide** for the Release 
 
 **Workflow:** Release Workflow
 **Type:** `release`
-**Steps:** 11 steps organized into 2 phases
+**Steps:** 12 steps organized into 3 phases (Steps 1-11: required, Step 12: optional CHECK phase)
 **Canonical Example:** Yes - this workflow demonstrates the agent-driven execution pattern
 
 ### Agent Execution Pattern
@@ -52,7 +52,7 @@ For each step, the agent follows this pattern:
 
 **Required Implementation Pattern:**
 
-1. **At Workflow Start (MANDATORY):** Create TODO list with all 11 steps as `pending`
+1. **At Workflow Start (MANDATORY):** Create TODO list with all 12 steps as `pending`
    ```python
    todo_write(merge=False, todos=[
        {'id': 'rw-step-1', 'status': 'pending', 'content': 'Step 1: Branch Safety Check - Analyze work and ensure it aligns with current branch'},
@@ -66,6 +66,7 @@ For each step, the agent follows this pattern:
        {'id': 'rw-step-9', 'status': 'pending', 'content': 'Step 9: Commit Changes - Create git commit with versioned message'},
        {'id': 'rw-step-10', 'status': 'pending', 'content': 'Step 10: Create Git Tag - Create annotated tag'},
        {'id': 'rw-step-11', 'status': 'pending', 'content': 'Step 11: Push to Remote - Push branch and tags'},
+       {'id': 'rw-step-12', 'status': 'pending', 'content': 'Step 12: Post-Commit Verification & Reflection - Verify changes and reflect on results (optional but recommended)'},
    ])
    ```
 
@@ -881,7 +882,164 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 5. **PROCEED:**
    - Document: "Pushed branch and tag to origin"
-   - **Workflow Complete!**
+   - Move to Step 12 (if enabled)
+
+---
+
+### Step 12: Post-Commit Verification & Reflection
+
+**Step Definition:**
+```yaml
+- id: step-12
+  name: Post-Commit Verification & Reflection
+  handler: release.verification_reflection
+  dependencies: [step-11]
+  config:
+    verification_prompt: true
+    reflection_questions: true
+    changelog_update: true
+```
+
+**Agent Execution:**
+
+1. **ANALYZE:**
+   - Get `new_version` from Step 2:
+     - [Example: Confidentia] `"0.4.3.2+9"`
+     - [Example: vibe-dev-kit] `"0.2.2.1+1"`
+   - Read detailed changelog from Step 3:
+     - [Example: Confidentia] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.2+9.md`
+     - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.1+1.md`
+   - Understand this is the **CHECK phase** of PDCA cycle
+   - Check if release includes bug fixes or changes requiring verification
+   - Review changelog for "Attempted Fixes" entries
+
+2. **DETERMINE:**
+   - **If release includes fixes or changes:**
+     - Prompt for verification status: "Has this change been verified?"
+     - Options: Verified / Unverified / Deferred
+     - If verified: Collect verification evidence
+     - If unverified: Document as "Attempted Fix (Pending Verification)"
+     - If deferred: Document verification plan
+   - **If release is documentation/feature (no fixes):**
+     - Prompt for reflection: "Does this change work as expected?"
+     - Document reflection results
+   - Determine verification method:
+     - Test suite execution (automated)
+     - Manual testing (documented)
+     - Observation period (for behavior changes)
+     - Defer verification (explicit decision)
+
+3. **EXECUTE:**
+   - **Verification Prompt:**
+     ```
+     🔍 POST-COMMIT VERIFICATION (CHECK Phase)
+     
+     Release: v{version}
+     Changes: {summary}
+     
+     Has this change been verified?
+     - [ ] Verified (with evidence)
+     - [ ] Unverified (pending verification)
+     - [ ] Deferred (verification planned)
+     
+     If verified, provide:
+     - Verification method: [Test Suite / Manual Testing / Observation]
+     - Verification evidence: [Link or description]
+     - Verification date: [YYYY-MM-DD HH:MM:SS UTC]
+     ```
+   
+   - **Reflection Questions:**
+     ```
+     📝 REFLECTION QUESTIONS
+     
+     1. Did the change work as expected?
+        - [ ] Yes
+        - [ ] Partially
+        - [ ] No
+        - [ ] Unknown (needs verification)
+     
+     2. Did it solve the problem?
+        - [ ] Yes
+        - [ ] Partially
+        - [ ] No
+        - [ ] Unknown (needs verification)
+     
+     3. Are there any side effects?
+        - [ ] None observed
+        - [ ] Minor side effects (document)
+        - [ ] Significant side effects (document)
+        - [ ] Unknown (needs observation)
+     
+     4. What did we learn?
+        - [Document lessons learned]
+     ```
+   
+   - **Document Verification Results:**
+     - If verified: Update changelog with verification status
+     - If unverified: Ensure changelog shows "Attempted Fix (Pending Verification)"
+     - If deferred: Document verification plan
+     - Create verification documentation file if needed
+
+4. **VALIDATE:**
+   - Verify verification status is documented
+   - Verify reflection questions are answered (if applicable)
+   - Verify changelog accurately reflects verification status
+   - **CRITICAL:** If fix is marked as "Fixed" without verification evidence, **STOP** and require verification
+   - Verify verification evidence exists (if verified)
+
+5. **PROCEED:**
+   - Document verification and reflection results
+   - Pass verification status to Step 13 (if enabled)
+   - If verification deferred: Create reminder task or schedule verification
+   - Move to Step 13 (if enabled) or mark workflow complete
+
+**Key Points:**
+- This step implements the **CHECK phase** of PDCA cycle
+- Enables explicit verification after commit
+- Prevents "Attempted Fixes" from remaining unverified indefinitely
+- Creates learning loop through reflection questions
+- Integrates with existing fix verification requirements
+
+**Integration with Fix Verification:**
+- If changelog contains "Attempted Fixes", this step prompts for verification
+- If verification succeeds, changelog can be updated to "Fixed" (in Step 13)
+- If verification fails, document what didn't work (in Step 13)
+- If verification deferred, document plan and schedule
+
+**Examples:**
+
+**Example 1: Verified Fix**
+- Release: `v0.2.2.1+1` (bugfix)
+- Changelog contains: "Attempted fix for changelog verification requirement"
+- Step 12 prompts: "Has this change been verified?"
+- Response: Verified
+- Verification method: Test suite execution
+- Verification evidence: All tests pass (15/15)
+- Result: Verification documented, ready for Step 13 to update changelog
+
+**Example 2: Unverified Fix**
+- Release: `v0.2.2.1+1` (bugfix)
+- Changelog contains: "Attempted fix for changelog verification requirement"
+- Step 12 prompts: "Has this change been verified?"
+- Response: Unverified
+- Verification plan: Run test suite after deployment
+- Result: Remains in "Attempted Fixes" section, verification plan documented
+
+**Example 3: Deferred Verification**
+- Release: `v0.2.2.1+1` (bugfix)
+- Changelog contains: "Attempted fix for changelog verification requirement"
+- Step 12 prompts: "Has this change been verified?"
+- Response: Deferred
+- Reason: Requires production deployment
+- Verification plan: Verify after next deployment (scheduled 2025-12-05)
+- Result: Verification deferred, plan documented, reminder created
+
+**Example 4: Documentation Release (No Fixes)**
+- Release: `v0.2.2.1+1` (documentation)
+- Changelog contains: "Added Step 12 execution guide"
+- Step 12 prompts: "Does this change work as expected?"
+- Reflection: Documentation complete, examples added, templates created
+- Result: Reflection documented, no verification needed
 
 ---
 
