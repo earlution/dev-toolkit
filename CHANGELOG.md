@@ -17,6 +17,30 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.2.7+2] - 03-12-25
+
+🧰 Tooling: Task 7 complete - Implemented Task naming change from Txxx to Txx format
+
+### Added
+
+- Migration guide: `KB/Architecture/Standards_and_ADRs/task-naming-migration-guide.md`
+
+### Changed
+
+- Updated Kanban templates to use Txx format (T001 → T01, T002 → T02)
+- Updated all Kanban examples to use Txx format
+- Updated RW documentation examples to use Txx format
+- Updated Kanban guides and policy examples to use Txx format
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.7+2.md` for full details
+- Format change: `Exx:Sxx:Txxx` → `Exx:Sxx:Txx`
+- Example: `E20:S07:T010` → `E20:S07:T10`
+- Existing tasks remain backward compatible
+
+---
+
 ## [0.2.2.7+1] - 03-12-25
 
 🧰 Tooling: Task 7 setup - Updated Kanban policy to Txx format and created implementation tasks

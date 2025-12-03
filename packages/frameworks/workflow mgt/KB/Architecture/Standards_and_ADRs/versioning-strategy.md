@@ -85,7 +85,7 @@ The strategy uses **two distinct timestamp layers** with **different purposes**:
 **Example Entry:**
 ```markdown
 ### [0.20.11.14+3] - 26-11-25
-🧰 Tooling: E20:S11:T014: Mark task complete with version number
+🧰 Tooling: E20:S11:T14: Mark task complete with version number
 - See [CHANGELOG_v0.20.11.14+3.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.20.11.14+3.md)
 ```
 
@@ -115,7 +115,7 @@ The strategy uses **two distinct timestamp layers** with **different purposes**:
 **Type:** 🧰 Tooling
 
 ## Summary
-🧰 Tooling: E20:S11:T014: Mark task complete with version number
+🧰 Tooling: E20:S11:T14: Mark task complete with version number
 
 ## Changes
 ...
@@ -196,7 +196,7 @@ Contains: **Release Date:** 2025-11-26 15:42:58 UTC
 **Example:**
 ```markdown
 ### [0.20.11.14+3] - 26-11-25
-🧰 Tooling: E20:S11:T014: Mark task complete with version number
+🧰 Tooling: E20:S11:T14: Mark task complete with version number
 - See [CHANGELOG_v0.20.11.14+3.md](...)
 ```
 
@@ -233,7 +233,7 @@ Task 14 markers: Version references, commit hashes, workflow runs
 ```
 Version: 0.20.11.14+3
   ↓
-Commit message: "Release v0.20.11.14+3: E20:S11:T014: Mark task complete"
+Commit message: "Release v0.20.11.14+3: E20:S11:T14: Mark task complete"
   ↓
 Git commit: abc123def456...
   ↓
@@ -356,7 +356,7 @@ These files are **preserved as historical artifacts** and not subject to new val
 
 3. **Version number in commit message:**
    ```
-   Release v0.20.11.14+3: E20:S11:T014: Description
+   Release v0.20.11.14+3: E20:S11:T14: Description
    ```
 
 4. **Kanban markers updated:**

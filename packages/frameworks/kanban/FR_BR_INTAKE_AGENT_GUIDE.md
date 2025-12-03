@@ -103,8 +103,8 @@ FR/BR Received
 
 **Step 3a.1: Determine Task Number**
 - **Action:** Read Story document's Task Checklist
-- **Find:** Highest existing Task number (e.g., T001, T002, T003)
-- **Calculate:** Next Task number = Highest + 1 (e.g., T004)
+- **Find:** Highest existing Task number (e.g., T01, T02, T03)
+- **Calculate:** Next Task number = Highest + 1 (e.g., T04)
 
 **Step 3a.2: Create Task**
 - **Location:** Story document (`KB/PM_and_Portfolio/kanban/epics/Epic-X/stories/Story-XXX-*.md`)

@@ -266,7 +266,7 @@ The step generates a changelog file with the following format:
 See commit history for detailed changes.
 
 ## Related Tasks
-- E21S3T001 – Implement Release Workflow in VWMP
+- E21S3T01 – Implement Release Workflow in VWMP
 ```
 
 #### Data Sources
@@ -505,7 +505,7 @@ The `epic_doc_pattern` supports variable substitution:
 The script updates the following in Kanban docs:
 
 1. **Task Checkboxes:**
-   - Changes `- [ ] E21:S01:T001` to `- [x] E21:S01:T001 (v0.21.0.2)`
+   - Changes `- [ ] E21:S01:T01` to `- [x] E21:S01:T01 (v0.21.0.2)`
    - Marks tasks as complete with version number
 
 2. **Story Status:**

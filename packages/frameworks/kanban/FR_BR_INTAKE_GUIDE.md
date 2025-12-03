@@ -338,7 +338,7 @@ VERSION_BUILD = 1  # ← Always 1 for new Tasks
 
 **Step 3: Create Task**
 - Open Story document: `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-002-ui-theme-and-styling.md`
-- Check existing Tasks: T001, T002, T003
+- Check existing Tasks: T01, T02, T03
 - Create Task 4: "Add dark mode toggle to settings page"
 - Assign version: `0.3.2.4+1`
 
@@ -476,7 +476,7 @@ VERSION_BUILD = 1  # ← Always 1 for new Tasks
 
 **Step 3: Create Task**
 - Open Story document: `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-002-ui-theme-and-styling.md`
-- Check existing Tasks: T001, T002, T003, T004 (from Example 1)
+- Check existing Tasks: T01, T02, T03, T004 (from Example 1)
 - Create Task 5: "Fix dark mode toggle persistence"
 - Assign version: `0.3.2.5+1`
 

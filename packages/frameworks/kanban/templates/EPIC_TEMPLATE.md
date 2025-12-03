@@ -55,8 +55,8 @@
 **Goal:** [Single sentence description]
 
 **Tasks:**
-- [ ] EXX:SYY:T001 – [Task Title] ✅ COMPLETE (vX.Y.Z.T+B)
-- [ ] EXX:SYY:T002 – [Task Title]
+- [ ] EXX:SYY:T01 – [Task Title] ✅ COMPLETE (vX.Y.Z.T+B)
+- [ ] EXX:SYY:T02 – [Task Title]
 
 > **Forensic Marker Format:** `✅ COMPLETE (vRC.E.S.T+B)` (e.g., `✅ COMPLETE (v0.4.1.3+1)`)  
 > **Consistency:** Task checkboxes in this detailed section must match the Story file's Task Checklist.

@@ -14,9 +14,9 @@
 *As a parent with diverse accessibility needs or language preferences, I want the parent portal to be fully accessible (WCAG 2.2 AA compliant), available in multiple languages, and easy to use regardless of my technical abilities, so that I can effectively monitor and support my child's learning progress without barriers.*
 
 ## Task Checklist
-- [x] **E4:S33:T001 – Audit parent templates for WCAG 2.2 AA compliance** ✅ COMPLETE (v0.4.33.1+1)
-- [x] **E4:S33:T002 – Implement internationalization (i18n) for parent portal** ✅ PLANNING COMPLETE (v0.4.33.2+1) - Implementation deferred
-- [x] **E4:S33:T003 – User testing with diverse parent users** ✅ PROTOCOL COMPLETE (v0.4.33.3+1) - Testing execution deferred
+- [x] **E4:S33:T01 – Audit parent templates for WCAG 2.2 AA compliance** ✅ COMPLETE (v0.4.33.1+1)
+- [x] **E4:S33:T02 – Implement internationalization (i18n) for parent portal** ✅ PLANNING COMPLETE (v0.4.33.2+1) - Implementation deferred
+- [x] **E4:S33:T03 – User testing with diverse parent users** ✅ PROTOCOL COMPLETE (v0.4.33.3+1) - Testing execution deferred
 
 ## Overview
 Story 33 ensures that all parent-facing features (Stories 25-32) are fully accessible and inclusive. This includes WCAG 2.2 AA compliance for all parent templates, internationalization support for non-English speaking parents, and user testing with parents of diverse backgrounds and abilities.

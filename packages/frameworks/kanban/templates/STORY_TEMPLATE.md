@@ -14,9 +14,9 @@
 
 ## Task Checklist
 
-- [ ] **EXX:SYY:T001 – [Task Title]** ✅ COMPLETE (vX.Y.Z.T+B)
-- [ ] **EXX:SYY:T002 – [Task Title]**
-- [ ] **EXX:SYY:T003 – [Task Title]**
+- [ ] **EXX:SYY:T01 – [Task Title]** ✅ COMPLETE (vX.Y.Z.T+B)
+- [ ] **EXX:SYY:T02 – [Task Title]**
+- [ ] **EXX:SYY:T03 – [Task Title]**
 
 > **Format:** `Exx:Sxx:Txxx` (Epic, Story, Task with zero padding)  
 > **Forensic Marker Format:** `✅ COMPLETE (vRC.E.S.T+B)` (e.g., `✅ COMPLETE (v0.4.1.3+1)`)  
@@ -46,7 +46,7 @@
 
 ## Tasks
 
-### EXX:SYY:T001 – [Task Title]
+### EXX:SYY:T01 – [Task Title]
 
 **Input:** [What this task requires]
 **Deliverable:** [What this task produces]
@@ -61,7 +61,7 @@
 
 ---
 
-### EXX:SYY:T002 – [Task Title]
+### EXX:SYY:T02 – [Task Title]
 
 **Input:** [What this task requires]
 **Deliverable:** [What this task produces]

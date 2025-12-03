@@ -113,7 +113,7 @@ Step 13 (ACT phase) acts on verification results from Step 12 (CHECK phase). The
   - **Root Causes:** [Document root causes]
   - **What Didn't Work:** [Document what didn't work]
   - **Lessons Learned:** [Document lessons learned]
-  - **Follow-Up Task:** E2:S02:T007 – Fix verification issue
+  - **Follow-Up Task:** E2:S02:T07 – Fix verification issue
 ```
 
 **Follow-Up Task Creation:**
@@ -121,7 +121,7 @@ Step 13 (ACT phase) acts on verification results from Step 12 (CHECK phase). The
 ```markdown
 # Task 007 – Fix Verification Issue
 
-**Task:** E2:S02:T007  
+**Task:** E2:S02:T07  
 **Status:** TODO  
 **Priority:** HIGH  
 **Created:** 2025-12-03  
@@ -186,7 +186,7 @@ Fix verification issue identified in T002. Original fix did not work as expected
     1. Deploy to production
     2. Run verification tests
     3. Document results
-  - **Reminder Task:** E2:S02:T008 – Verify fix after deployment
+  - **Reminder Task:** E2:S02:T08 – Verify fix after deployment
 ```
 
 **Reminder Task Creation:**
@@ -194,7 +194,7 @@ Fix verification issue identified in T002. Original fix did not work as expected
 ```markdown
 # Task 008 – Verify Fix After Deployment
 
-**Task:** E2:S02:T008  
+**Task:** E2:S02:T08  
 **Status:** TODO  
 **Priority:** MEDIUM  
 **Created:** 2025-12-03  
@@ -274,7 +274,7 @@ Verify fix from T002 after production deployment.
 - Update verification workflow
 - Enhance templates
 
-**Process Improvement Task:** E2:S02:T009 – Integrate CI/CD for verification
+**Process Improvement Task:** E2:S02:T09 – Integrate CI/CD for verification
 ```
 
 ---

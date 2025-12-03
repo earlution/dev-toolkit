@@ -258,7 +258,7 @@ For each step, the agent follows this pattern:
 **Process:**
 1. **Identify Active Task:**
    - Read the Story document to identify which Task is being completed
-   - Extract Task number (e.g., `E4:S03:T002` → Task 2)
+   - Extract Task number (e.g., `E4:S03:T02` → Task 2)
    - Note: This is the Task that was just completed and is being released
 
 2. **Check Version File:**
@@ -326,7 +326,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Check current Git branch to determine Epic number (already validated in Step 1)
    - **CRITICAL:** Identify the active Task being completed:
      - Read Story document to find the Task that was just completed
-     - Extract Task number (e.g., `E4:S03:T002` → Task 2)
+     - Extract Task number (e.g., `E4:S03:T02` → Task 2)
    - Understand increment type: `patch` means increment BUILD number (for same Task)
    - Verify version matches branch schema (already checked in Step 1, but double-check)
    - **CRITICAL:** Check if this is a Task transition:
@@ -1277,7 +1277,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 - Step 12 result: Failed (tests fail)
 - Step 13 action: Document failure, create follow-up task
 - Changelog update: Add "Failed Fixes" section
-- Follow-up task: E2:S02:T007 – Fix Step 12 verification issue
+- Follow-up task: E2:S02:T07 – Fix Step 12 verification issue
 - Result: Failure documented, next iteration planned
 
 **Example 3: Deferred Verification - Document Plan**

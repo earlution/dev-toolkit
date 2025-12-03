@@ -100,16 +100,16 @@ action: "Add version markers to completed tasks"
 location: "Story document, Task Checklist section"
 
 format:
-  completed: "- [x] **E4:S33:T001 – Audit parent templates** ✅ COMPLETE (v0.4.33.1+1)"
-  in_progress: "- [ ] **E4:S33:T002 – Implement i18n** ⏳ IN PROGRESS"
-  incomplete: "- [ ] **E4:S33:T003 – User testing**"
+  completed: "- [x] **E4:S33:T01 – Audit parent templates** ✅ COMPLETE (v0.4.33.1+1)"
+  in_progress: "- [ ] **E4:S33:T02 – Implement i18n** ⏳ IN PROGRESS"
+  incomplete: "- [ ] **E4:S33:T03 – User testing**"
 
 task_naming:
   format: "E{epic}:S{story}:T{task}"
   examples:
-    - "E4:S33:T001"
-    - "E12:S5:T002"
-    - "E20:S11:T014"
+    - "E4:S33:T01"
+    - "E12:S5:T02"
+    - "E20:S11:T14"
 ```
 
 ### Step 4: Update Epic Header with Version
@@ -128,8 +128,8 @@ components:
   description: "Story 33 complete"
 
 examples:
-  - "**Last updated:** 2025-12-02 (v0.4.33.1+1 – E4:S33:T001: WCAG audit complete)"
-  - "**Last updated:** 2025-12-02 (v0.4.15.1+1 – E4:S15:T001: Admin feedback verified)"
+  - "**Last updated:** 2025-12-02 (v0.4.33.1+1 – E4:S33:T01: WCAG audit complete)"
+  - "**Last updated:** 2025-12-02 (v0.4.15.1+1 – E4:S15:T01: Admin feedback verified)"
 ```
 
 ### Step 5: Maintain Traceability
@@ -141,7 +141,7 @@ when_to_update:
   task_complete:
     trigger: "Task completion"
     update: "Task Checklist in Story document"
-    format: "- [x] **E4:S33:T001** ✅ COMPLETE (v0.4.33.1+1)"
+    format: "- [x] **E4:S33:T01** ✅ COMPLETE (v0.4.33.1+1)"
     method: "Via Release Workflow (automatic)"
 
   story_complete:
@@ -254,9 +254,9 @@ after_task_3_complete:
   story_completed: "2025-12-02"
   story_version: "v0.4.33.3+1"
   story_tasks:
-    - "- [x] **E4:S33:T001** ✅ COMPLETE (v0.4.33.1+1)"
-    - "- [x] **E4:S33:T002** ✅ COMPLETE (v0.4.33.2+1)"
-    - "- [x] **E4:S33:T003** ✅ COMPLETE (v0.4.33.3+1)"
+    - "- [x] **E4:S33:T01** ✅ COMPLETE (v0.4.33.1+1)"
+    - "- [x] **E4:S33:T02** ✅ COMPLETE (v0.4.33.2+1)"
+    - "- [x] **E4:S33:T03** ✅ COMPLETE (v0.4.33.3+1)"
 ```
 
 ### Example 2: Parallel Epic Development

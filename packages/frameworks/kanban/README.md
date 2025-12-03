@@ -227,7 +227,7 @@ hierarchy:
     duration: "1-3 days"
     contains: "Atomic work unit"
     version_tracking: "Specific version (e.g., v0.4.33.1+1)"
-    example: "E4:S33:T001: Audit parent templates for WCAG 2.2 AA compliance"
+    example: "E4:S33:T01: Audit parent templates for WCAG 2.2 AA compliance"
 ```
 
 ### Forensic Traceability
@@ -595,7 +595,7 @@ patterns:
     markdown: "- [x] **E4:S33:T001 – Audit parent templates** ✅ COMPLETE (v0.4.33.1+1)"
     components:
       checkbox: "[x]"
-      task_id: "**E4:S33:T001**"
+      task_id: "**E4:S33:T01**"
       task_name: "– Audit parent templates"
       status: "✅ COMPLETE"
       version: "(v0.4.33.1+1)"

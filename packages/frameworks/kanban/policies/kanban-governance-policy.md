@@ -147,7 +147,7 @@ Atomic units inside a story.
 
 **Requirements:**
 1. Version TASK reflects the active task
-   - Working on `E20:S11:T016` → version `0.20.11.16+B`
+   - Working on `E20:S11:T16` → version `0.20.11.16+B`
    - TASK component aligns with Kanban task
 
 2. **CRITICAL: Task Transitions and Version File Updates**
@@ -360,7 +360,7 @@ Step 4 (Update KB Epic Docs) MUST update:
 
 **Examples:**
 - Story: `- [x] **Story 33 – Parent Inclusivity** ✅ COMPLETE (v0.4.33.3+1)`
-- Task: `- [x] **E4:S33:T001 – Task Name** ✅ COMPLETE (v0.4.33.1+1)`
+- Task: `- [x] **E4:S33:T01 – Task Name** ✅ COMPLETE (v0.4.33.1+1)`
 
 **Location Requirements:**
 - **Story Checklist:** Epic document, Story Checklist section (SINGLE SOURCE OF TRUTH)
