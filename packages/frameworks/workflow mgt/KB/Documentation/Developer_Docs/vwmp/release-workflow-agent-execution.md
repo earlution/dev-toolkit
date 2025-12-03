@@ -10,7 +10,7 @@
 
 This document provides a **step-by-step agent execution guide** for the Release Workflow. The Release Workflow serves as the **canonical example** of intelligent agent-driven workflow execution.
 
-**This guide shows exactly how an AI agent should analyze, determine, execute, validate, and proceed through each of the 12 Release Workflow steps (Steps 1-11 are required, Step 12 is optional but recommended for PDCA CHECK phase).**
+**This guide shows exactly how an AI agent should analyze, determine, execute, validate, and proceed through each of the 13 Release Workflow steps (Steps 1-11 are required, Steps 12-13 are optional but recommended for PDCA CHECK and ACT phases).**
 
 > **Note on Examples:** This document includes examples from multiple projects:
 > - **[Example: Confidentia/fynd.deals]** - Examples from the original source project
@@ -26,7 +26,7 @@ This document provides a **step-by-step agent execution guide** for the Release 
 
 **Workflow:** Release Workflow
 **Type:** `release`
-**Steps:** 12 steps organized into 3 phases (Steps 1-11: required, Step 12: optional CHECK phase)
+**Steps:** 13 steps organized into 3 phases (Steps 1-11: required, Steps 12-13: optional CHECK and ACT phases)
 **Canonical Example:** Yes - this workflow demonstrates the agent-driven execution pattern
 
 ### Agent Execution Pattern
@@ -52,7 +52,7 @@ For each step, the agent follows this pattern:
 
 **Required Implementation Pattern:**
 
-1. **At Workflow Start (MANDATORY):** Create TODO list with all 12 steps as `pending`
+1. **At Workflow Start (MANDATORY):** Create TODO list with all 13 steps as `pending`
    ```python
    todo_write(merge=False, todos=[
        {'id': 'rw-step-1', 'status': 'pending', 'content': 'Step 1: Branch Safety Check - Analyze work and ensure it aligns with current branch'},
@@ -67,6 +67,7 @@ For each step, the agent follows this pattern:
        {'id': 'rw-step-10', 'status': 'pending', 'content': 'Step 10: Create Git Tag - Create annotated tag'},
        {'id': 'rw-step-11', 'status': 'pending', 'content': 'Step 11: Push to Remote - Push branch and tags'},
        {'id': 'rw-step-12', 'status': 'pending', 'content': 'Step 12: Post-Commit Verification & Reflection - Verify changes and reflect on results (optional but recommended)'},
+       {'id': 'rw-step-13', 'status': 'pending', 'content': 'Step 13: Act on Verification Results - Update changelog, create follow-ups, document improvements (optional but recommended)'},
    ])
    ```
 
@@ -1040,6 +1041,161 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 - Step 12 prompts: "Does this change work as expected?"
 - Reflection: Documentation complete, examples added, templates created
 - Result: Reflection documented, no verification needed
+
+---
+
+### Step 13: Act on Verification Results
+
+**Step Definition:**
+```yaml
+- id: step-13
+  name: Act on Verification Results
+  handler: release.act_on_results
+  dependencies: [step-12]
+  config:
+    changelog_update: true
+    follow_up_tasks: true
+    process_improvement: true
+```
+
+**Agent Execution:**
+
+1. **ANALYZE:**
+   - Get verification status from Step 12:
+     - Verified / Unverified / Deferred
+     - Verification evidence (if verified)
+     - Reflection results (if available)
+   - Get `new_version` from Step 2:
+     - [Example: Confidentia] `"0.4.3.2+9"`
+     - [Example: vibe-dev-kit] `"0.2.2.2+1"`
+   - Read detailed changelog from Step 3:
+     - [Example: Confidentia] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.2+9.md`
+     - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.2+1.md`
+   - Understand this is the **ACT phase** of PDCA cycle
+   - Check if Step 12 was executed (optional step)
+   - Review changelog for "Attempted Fixes" entries
+
+2. **DETERMINE:**
+   - **If verification status is Verified:**
+     - Determine action: Update changelog to move from "Attempted Fixes" to "Fixed"
+     - Standardize successful practices
+     - Document verification evidence
+     - Create new release if needed (or update existing changelog)
+   - **If verification status is Failed:**
+     - Determine action: Document what didn't work
+     - Identify root causes
+     - Create follow-up task
+     - Plan next iteration
+   - **If verification status is Deferred:**
+     - Determine action: Document verification plan
+     - Schedule verification
+     - Create reminder task
+   - **If no verification needed (documentation/feature):**
+     - Determine action: Document process improvements
+     - Capture lessons learned
+     - Update RW documentation if needed
+
+3. **EXECUTE:**
+   - **If Verified Fix:**
+     - Update detailed changelog: Move entry from "Attempted Fixes" to "Fixed" section
+     - Add verification evidence to changelog entry
+     - Update main changelog: Move entry from "Attempted Fixes" to "Fixed" subsection
+     - Document successful practices
+     - **Option A:** Create new release with updated changelog (recommended)
+     - **Option B:** Update existing changelog file (requires manual edit)
+   
+   - **If Failed Fix:**
+     - Document what didn't work in changelog
+     - Add "Failed Fixes" section if needed
+     - Identify root causes
+     - Create follow-up task in Kanban
+     - Plan next iteration
+   
+   - **If Deferred Verification:**
+     - Document verification plan in changelog
+     - Add "Deferred Verification" section if needed
+     - Schedule verification (create reminder task)
+     - Document next steps
+   
+   - **Process Improvement:**
+     - Reflect on RW process itself
+     - Identify improvements
+     - Document lessons learned
+     - Update RW documentation if needed
+     - Create process improvement task if needed
+
+4. **VALIDATE:**
+   - Verify changelog updates are accurate
+   - Verify verification evidence is documented (if verified)
+   - Verify follow-up tasks are created (if needed)
+   - Verify process improvements are documented (if any)
+   - **CRITICAL:** If creating new release, verify version is incremented correctly
+
+5. **PROCEED:**
+   - Document actions taken
+   - If new release created: Pass to next RW cycle
+   - If changelog updated: Document update
+   - If follow-up tasks created: Document tasks
+   - **Workflow Complete!** (or ready for next iteration)
+
+**Key Points:**
+- This step implements the **ACT phase** of PDCA cycle
+- Enables acting on verification results from Step 12
+- Updates changelogs based on verification status
+- Creates follow-up tasks when needed
+- Captures process improvements
+- Completes the Document-Commit-Reflect pattern
+
+**Integration with Step 12:**
+- Step 13 depends on Step 12 (CHECK phase)
+- Uses verification status from Step 12
+- Acts on reflection results from Step 12
+- Completes the PDCA cycle
+
+**Changelog Update Options:**
+
+**Option A: Create New Release (Recommended)**
+- Increment BUILD number
+- Create new changelog entry
+- Move "Attempted Fix" to "Fixed" section
+- Include verification evidence
+- Full traceability maintained
+
+**Option B: Update Existing Release**
+- Update existing changelog file
+- Move "Attempted Fix" to "Fixed" section
+- Add verification evidence
+- Note: Requires manual file edit (not automated)
+
+**Examples:**
+
+**Example 1: Verified Fix - Create New Release**
+- Step 12 result: Verified (test suite pass)
+- Step 13 action: Create new release `v0.2.2.2+1`
+- Changelog update: Move "Attempted fix" to "Fixed" section
+- Verification evidence: Added to changelog
+- Result: Full traceability, verification documented
+
+**Example 2: Failed Fix - Document and Create Follow-Up**
+- Step 12 result: Failed (tests fail)
+- Step 13 action: Document failure, create follow-up task
+- Changelog update: Add "Failed Fixes" section
+- Follow-up task: E2:S02:T007 – Fix Step 12 verification issue
+- Result: Failure documented, next iteration planned
+
+**Example 3: Deferred Verification - Document Plan**
+- Step 12 result: Deferred (requires production deployment)
+- Step 13 action: Document verification plan, schedule reminder
+- Changelog update: Add "Deferred Verification" section
+- Reminder task: Verify after deployment (2025-12-05)
+- Result: Plan documented, verification scheduled
+
+**Example 4: Process Improvement**
+- Step 12 reflection: RW process could be improved
+- Step 13 action: Document process improvement
+- Documentation update: Update RW execution guide
+- Process improvement: Add validation for Step 12
+- Result: Process improved, documentation updated
 
 ---
 

@@ -144,6 +144,19 @@ steps:
       reflection_questions: true
       changelog_update: true
 
+  - id: step-13
+    name: Act on Verification Results
+    type: act_on_results
+    handler: release.act_on_results
+    required: false
+    enabled: true
+    dependencies:
+      - step-12
+    config:
+      changelog_update: true
+      follow_up_tasks: true
+      process_improvement: true
+
 parameters:
   - name: summary
     type: string
