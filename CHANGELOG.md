@@ -17,6 +17,29 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.2.5+1] - 03-12-25
+
+📚 Documentation: Task 5 - Created comprehensive PDCA templates and examples
+
+### Added
+
+- DO phase template
+- CHECK phase template
+- Best practices guide
+- End-to-end example
+- Quick reference guide
+- Tutorial
+- FAQ
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.5+1.md` for full details
+- PLAN and ACT phase templates already existed and were verified
+- All templates are project-agnostic
+- Examples cover multiple scenarios
+
+---
+
 ## [0.2.2.8+1] - 03-12-25
 
 🧰 Tooling: Task 8 complete - Updated all Kanban documentation to Txx standard
