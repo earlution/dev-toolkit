@@ -12,6 +12,7 @@ This section contains **technical standards**, **ADRs**, and **integration docum
 
 - **KB Structure Overview:** `Standards_and_ADRs/kb-structure-overview.md` – Comprehensive KB structure reference
 - **Dev-Kit Versioning Policy:** `Standards_and_ADRs/dev-kit-versioning-policy.md`
+- **Versioning Cookbook:** `Standards_and_ADRs/dev-kit-versioning-cookbook.md` – Practical worked examples for versioning scenarios
 - **Kanban–Versioning–RW Integration:** `Standards_and_ADRs/dev-kit-kanban-versioning-rw-integration.md`
 
 ## Navigation

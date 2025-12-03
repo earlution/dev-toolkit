@@ -17,6 +17,30 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.2+1] - 03-12-25
+
+📚 Documentation: Task 2 complete - Versioning cookbook document created with worked examples
+
+### Added
+
+- Created comprehensive versioning cookbook document (`dev-kit-versioning-cookbook.md`)
+- Provided worked examples for all 8 core scenarios from T001
+- Included real dev-kit examples from CHANGELOG archive
+- Added quick reference tables for version component rules and progression patterns
+- Documented RW perspective for each scenario
+
+### Changed
+
+- Updated Architecture README to reference versioning cookbook
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.2+1.md` for full details
+- Cookbook is project-agnostic and safe to copy into other projects
+- Foundation for T003 (cross-framework examples) and T004 (edge cases)
+
+---
+
 ## [0.3.2.1+1] - 03-12-25
 
 📚 Documentation: Task 1 complete - Core versioning scenarios defined for cookbook
