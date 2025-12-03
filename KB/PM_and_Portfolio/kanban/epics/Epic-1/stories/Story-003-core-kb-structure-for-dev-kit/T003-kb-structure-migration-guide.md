@@ -9,16 +9,18 @@
 
 ## 1. Overview
 
-This guide describes the **phased migration plan** for evolving the `vibe-dev-kit` KB structure from its current state to the target structure defined in the KB structure analysis and principles documents.
+This guide describes the **phased migration plan** for evolving the `vibe-dev-kit` KB structure from its current state to the target structure defined in the KB structure analysis and principles documents. It also provides guidance for **other projects** adopting the canonical KB pattern documented in T006.
 
-Migration is performed in **four phases**:
+**For dev-kit:** Migration is performed in **four phases** (Phase 1 implemented).
 
-1. **Phase 1: Add Navigation (Low Risk)**
+**For other projects:** See Section 5 for guidance on adopting the canonical KB pattern.
+
+Migration phases:
+
+1. **Phase 1: Add Navigation (Low Risk)** ✅ IMPLEMENTED
 2. **Phase 2: Create Guides Structure (Low Risk)**
 3. **Phase 3: Enhance Governance Structure (Low Risk)**
-4. **Phase 4: Update Cross-References (Medium Risk)
-
-Phase 1 has been **implemented** as part of this task.
+4. **Phase 4: Update Cross-References (Medium Risk)**
 
 ---
 
@@ -134,6 +136,41 @@ After each phase, verify:
 
 - `T001-kb-structure-analysis.md` – Current and target structure analysis
 - `T002-kb-structure-principles.md` – Principles and conventions
+- `T003-canonical-kb-structure-research.md` – Research on canonical KB patterns
+- `T006-scalable-kb-pattern.md` – Canonical scalable KB pattern for large codebases
+
+---
+
+## 7. Migration for Other Projects (Canonical Pattern Adoption)
+
+For projects adopting the canonical KB pattern (see T006), use this migration approach:
+
+### 7.1 Step 1: Map Current Structure
+
+1. List all current KB top-level directories
+2. Map each to canonical section (see T006 Section 3.2)
+3. Identify consolidations needed (e.g., merge duplicate sections)
+
+### 7.2 Step 2: Plan Migration
+
+1. Identify which canonical sections you need (core + optional)
+2. Plan file movements to target locations
+3. Update cross-references
+4. Validate structure (3-level default depth)
+
+### 7.3 Step 3: Execute Migration
+
+1. Create canonical section directories
+2. Move files to target locations
+3. Update all cross-references
+4. Create READMEs for navigation
+5. Validate links and structure
+
+### 7.4 Step 4: Document Decisions
+
+1. Document which canonical sections you're using
+2. Document any deviations (with rationale)
+3. Update `KB/README.md` with structure overview
 
 ---
 
