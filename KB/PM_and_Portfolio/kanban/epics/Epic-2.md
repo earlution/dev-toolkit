@@ -17,7 +17,7 @@
   - Story: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)  
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md`](epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md)
-- [ ] **E2:S03 – Additional Workflows & Examples** - IN PROGRESS (v0.2.3.2+1 – T02 complete)  
+- [ ] **E2:S03 – Additional Workflows & Examples** - IN PROGRESS (v0.2.3.3+1 – T03 complete)  
 - [ ] **E2:S04 – RW Behaviour When Used as a Template** - TODO  
 
 ---
