@@ -21,7 +21,7 @@ VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candida
 VERSION_EPIC = 1      # Epic number (Epic 1: Vibe Dev Kit Core)
 VERSION_STORY = 3     # Story number (Story 3: Core KB Structure for Dev Kit)
 VERSION_TASK = 5      # Task number (Task 5: Create KB structure documentation)
-VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
+VERSION_BUILD = 2     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
 # Format: RC.EPIC.STORY.TASK+BUILD
