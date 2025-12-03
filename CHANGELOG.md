@@ -17,6 +17,23 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.3.1+1] - 03-12-25
+
+📚 Documentation: Story 3 setup - Created Additional Workflows & Examples story
+
+### Added
+
+- Story 3: Additional Workflows & Examples
+- Task 1: Analyze workflow types and create workflow taxonomy
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.3.1+1.md` for full details
+- Story 3 will provide workflow examples beyond Release Workflow
+- All workflows will follow agent-driven execution pattern
+
+---
+
 ## [0.2.2.8+2] - 03-12-25
 
 🎯 Milestone: Story 2 COMPLETE - All PDCA integration tasks finished
