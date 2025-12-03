@@ -109,7 +109,7 @@ Tasks are **checklist items** inside a Story and are the **atomic unit of work**
 
 - All substantive work MUST be represented as a **Task**.
 - Each Task should be small enough to complete in **1–3 days**.
-- Over time, Tasks can adopt the full `Exx:Sxx:Txxx` numbering from the Kanban templates, and the active Task should map to the `TASK` component in the version number (`RC.EPIC.STORY.TASK+BUILD`).
+- Over time, Tasks can adopt the full `Exx:Sxx:Txx` numbering from the Kanban templates, and the active Task should map to the `TASK` component in the version number (`RC.EPIC.STORY.TASK+BUILD`).
 
 **FR/BR rule (this repo):**
 

@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-03  
-**Last updated:** 2025-12-03 (v0.2.2.4+1 – T004 complete)  
-**Version:** v0.2.2.4+1  
+**Last updated:** 2025-12-03 (v0.2.2.7+1 – T07 setup)  
+**Version:** v0.2.2.7+1  
 **Code:** E2S02
 
 ---
@@ -29,18 +29,20 @@ Integrate PDCA cycle into Release Workflow to:
 
 ## Task Checklist
 
-- [x] **E2:S02:T001 – Add CHECK Phase (Step 12: Post-Commit Verification & Reflection)** ✅ COMPLETE (v0.2.2.1+1)
-- [x] **E2:S02:T002 – Add ACT Phase (Step 13: Act on Verification Results)** ✅ COMPLETE (v0.2.2.2+1)
-- [x] **E2:S02:T003 – Enhance PLAN Phase (Add objectives and verification plans to changelog)** ✅ COMPLETE (v0.2.2.3+1)
-- [x] **E2:S02:T004 – Enhance DO Phase (Improve commit message guidance and execution docs)** ✅ COMPLETE (v0.2.2.4+1)
-- [ ] **E2:S02:T005 – Create PDCA templates and examples**
-- [ ] **E2:S02:T006 – Update RW workflow YAML and documentation**
+- [x] **E2:S02:T01 – Add CHECK Phase (Step 12: Post-Commit Verification & Reflection)** ✅ COMPLETE (v0.2.2.1+1)
+- [x] **E2:S02:T02 – Add ACT Phase (Step 13: Act on Verification Results)** ✅ COMPLETE (v0.2.2.2+1)
+- [x] **E2:S02:T03 – Enhance PLAN Phase (Add objectives and verification plans to changelog)** ✅ COMPLETE (v0.2.2.3+1)
+- [x] **E2:S02:T04 – Enhance DO Phase (Improve commit message guidance and execution docs)** ✅ COMPLETE (v0.2.2.4+1)
+- [ ] **E2:S02:T05 – Create PDCA templates and examples**
+- [ ] **E2:S02:T06 – Update RW workflow YAML and documentation**
+- [ ] **E2:S02:T07 – Implement Task naming change (Txxx → Txx)**
+- [ ] **E2:S02:T08 – Update Kanban docs to Txx standard**
 
 ---
 
 ## Tasks
 
-### E2:S02:T001 – Add CHECK Phase (Step 12: Post-Commit Verification & Reflection)
+### E2:S02:T01 – Add CHECK Phase (Step 12: Post-Commit Verification & Reflection)
 
 **Input:**  
 - Current RW workflow (11 steps)
@@ -71,7 +73,7 @@ Integrate PDCA cycle into Release Workflow to:
 
 ---
 
-### E2:S02:T002 – Add ACT Phase (Step 13: Act on Verification Results)
+### E2:S02:T02 – Add ACT Phase (Step 13: Act on Verification Results)
 
 **Input:**  
 - Step 12 (CHECK phase) implementation
@@ -101,7 +103,7 @@ Integrate PDCA cycle into Release Workflow to:
 
 ---
 
-### E2:S02:T003 – Enhance PLAN Phase (Add objectives and verification plans to changelog)
+### E2:S02:T03 – Enhance PLAN Phase (Add objectives and verification plans to changelog)
 
 **Input:**  
 - Current changelog format
@@ -131,7 +133,7 @@ Integrate PDCA cycle into Release Workflow to:
 
 ---
 
-### E2:S02:T004 – Enhance DO Phase (Improve commit message guidance and execution docs)
+### E2:S02:T04 – Enhance DO Phase (Improve commit message guidance and execution docs)
 
 **Input:**  
 - Current Step 9 (Commit Changes) guidance
@@ -161,7 +163,7 @@ Integrate PDCA cycle into Release Workflow to:
 
 ---
 
-### E2:S02:T005 – Create PDCA templates and examples
+### E2:S02:T05 – Create PDCA templates and examples
 
 **Input:**  
 - PDCA integration plan
@@ -191,7 +193,7 @@ Integrate PDCA cycle into Release Workflow to:
 
 ---
 
-### E2:S02:T006 – Update RW workflow YAML and documentation
+### E2:S02:T06 – Update RW workflow YAML and documentation
 
 **Input:**  
 - All previous task deliverables
@@ -219,6 +221,61 @@ Integrate PDCA cycle into Release Workflow to:
 - [ ] Migration guide created
 - [ ] Cross-references updated
 - [ ] Workflow structure validated
+
+---
+
+### E2:S02:T07 – Implement Task naming change (Txxx → Txx)
+
+**Input:**  
+- Current Kanban policy documents specifying Txxx format
+- Task naming policy documents
+
+**Deliverable:**  
+- Updated Kanban policy documents with Txx format
+- Updated all examples in policy documents
+- Updated any code/scripts that parse Task IDs
+- Updated any validators that check Task ID format
+- Migration notes for existing tasks
+
+**Approach:**
+1. Update policy documents to Txx format
+2. Update code/scripts to parse Txx format
+3. Update examples throughout documentation
+4. Document migration approach
+
+**Acceptance Criteria:**
+- [ ] Policy documents updated to Txx format
+- [ ] All examples updated to Txx format
+- [ ] Code/scripts updated to parse Txx format
+- [ ] Validators updated to check Txx format
+- [ ] Migration notes documented
+
+---
+
+### E2:S02:T08 – Update Kanban docs to Txx standard
+
+**Input:**  
+- Updated Kanban policy documents (from T07)
+- Current Kanban documentation files
+
+**Deliverable:**  
+- All Kanban documentation updated to Txx format
+- All examples updated to Txx format
+- Task file naming conventions updated
+- Migration guide created
+
+**Approach:**
+1. Update all documentation files to Txx format
+2. Update task file naming conventions
+3. Update templates and quick references
+4. Create migration guide
+
+**Acceptance Criteria:**
+- [ ] All documentation files updated to Txx format
+- [ ] All examples updated to Txx format
+- [ ] Task file naming conventions updated
+- [ ] Templates updated if needed
+- [ ] Migration guide created
 
 ---
 

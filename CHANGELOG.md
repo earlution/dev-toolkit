@@ -17,6 +17,30 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.2.7+1] - 03-12-25
+
+🧰 Tooling: Task 7 setup - Updated Kanban policy to Txx format and created implementation tasks
+
+### Added
+
+- Task T07: Implement Task naming change (Txxx → Txx)
+- Task T08: Update Kanban docs to Txx standard
+
+### Changed
+
+- Updated Kanban policy documents to use Txx format (was Txxx)
+- Updated Story 2 task checklist to use Txx format (T01-T08)
+- Updated Story 2 task descriptions to use Txx format
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.7+1.md` for full details
+- Policy change: `Exx:Sxx:Txxx` → `Exx:Sxx:Txx`
+- Example: `E20:S07:T010` → `E20:S07:T10`
+- Existing tasks remain backward compatible
+
+---
+
 ## [0.2.2.4+1] - 03-12-25
 
 🧰 Tooling: Task 4 complete - Enhanced DO Phase in Release Workflow

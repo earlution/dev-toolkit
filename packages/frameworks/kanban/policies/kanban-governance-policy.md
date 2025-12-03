@@ -114,8 +114,8 @@ Decompose epic scope into releasable slices.
 
 Atomic units inside a story.
 
-- **Numbering (example):** `Exx:Sxx:Txxx` (Epic, Story, Task with zero padding)
-- **Example:** `E20:S07:T010` = Epic 20, Story 7, Task 10
+- **Numbering (example):** `Exx:Sxx:Txx` (Epic, Story, Task with zero padding)
+- **Example:** `E20:S07:T10` = Epic 20, Story 7, Task 10
 - **Documented:** Input / Deliverable / Dependencies / Blocker / Parallel Development Candidacy
 - **Tracked:** Git commits reference task ID (or equivalent in your VCS)
 
