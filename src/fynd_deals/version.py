@@ -20,7 +20,7 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
 VERSION_EPIC = 2      # Epic number (Epic 2: Workflow Management Framework)
 VERSION_STORY = 3     # Story number (Story 3: Additional Workflows & Examples)
-VERSION_TASK = 1      # Task number (Task 1: Analyze workflow types and create workflow taxonomy)
+VERSION_TASK = 2      # Task number (Task 2: Create Refactor Workflow example)
 VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
