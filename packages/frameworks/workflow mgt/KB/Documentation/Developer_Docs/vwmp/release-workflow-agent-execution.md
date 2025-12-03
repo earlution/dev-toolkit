@@ -1206,9 +1206,9 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 When executing Release Workflow as an agent, ensure:
 
 ### Pre-Execution
-- [ ] **MANDATORY:** Created TODO list with all 11 steps (using `todo_write`)
+- [ ] **MANDATORY:** Created TODO list with all 13 steps (using `todo_write`) - Note: Steps 12-13 are optional but recommended
 - [ ] Loaded workflow definition from YAML
-- [ ] Parsed all 11 steps and dependencies
+- [ ] Parsed all 13 steps and dependencies
 - [ ] Gathered workflow parameters (summary, change_type, etc.)
 - [ ] Checked current Git branch
 - [ ] Verified workspace context
@@ -1225,6 +1225,8 @@ When executing Release Workflow as an agent, ensure:
 - [ ] **Step 9:** Analyzed template, built message, created commit, validated
 - [ ] **Step 10:** Analyzed tag format, created annotated tag, validated
 - [ ] **Step 11:** Analyzed remote, pushed branch and tag, validated
+- [ ] **Step 12:** Analyzed changes, prompted for verification, documented reflection, validated (optional but recommended)
+- [ ] **Step 13:** Analyzed verification results, acted on results, updated changelog, created follow-ups, validated (optional but recommended)
 
 ### Post-Execution
 - [ ] **MANDATORY:** All steps marked as completed in TODO list
@@ -1236,6 +1238,8 @@ When executing Release Workflow as an agent, ensure:
 - [ ] Files committed with correct message
 - [ ] Tag created and pushed
 - [ ] Branch pushed to remote
+- [ ] Verification and reflection documented (if Step 12 executed)
+- [ ] Actions taken and follow-ups created (if Step 13 executed)
 - [ ] Execution documented
 
 ---
