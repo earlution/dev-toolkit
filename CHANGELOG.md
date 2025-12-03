@@ -17,6 +17,21 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.3.6+1] - 03-12-25
+
+📚 Documentation: Task 6 complete - Created comprehensive workflow customization patterns guide
+
+### Added
+
+- Workflow Customization Patterns Guide (comprehensive guide with 8 patterns, 4 examples, best practices)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.3.6+1.md` for full details
+- Guide enables users to adapt workflows to their specific projects and use cases
+
+---
+
 ## [0.2.3.5+1] - 03-12-25
 
 🚀 Feature: Task 5 complete - Created workflow template generator with script, documentation, and examples

@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-03 (v0.2.3.5+1 – Task 5 complete: Created workflow template generator)  
+**Last updated:** 2025-12-03 (v0.2.3.6+1 – Task 6 complete: Documented workflow customization patterns)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -17,7 +17,7 @@
   - Story: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)  
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md`](epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md)
-- [ ] **E2:S03 – Additional Workflows & Examples** - IN PROGRESS (v0.2.3.5+1 – Task 5 complete: Created workflow template generator)  
+- [ ] **E2:S03 – Additional Workflows & Examples** - IN PROGRESS (v0.2.3.6+1 – Task 6 complete: Documented workflow customization patterns)  
 - [ ] **E2:S04 – RW Behaviour When Used as a Template** - TODO  
 
 ---
