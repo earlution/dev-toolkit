@@ -17,6 +17,29 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.1.3.6+1] - 02-12-25
+
+📚 Documentation: Task 6 complete - Scalable KB pattern documented for projects with 100K+ lines of code
+
+### Added
+
+- Created comprehensive scalable KB pattern documentation (T006)
+- Defined canonical KB pattern with core sections (always present) and optional sections (scale-dependent)
+- Documented full menu of possible KB sections: Architecture, PM & Portfolio, Changelog, Guides, Engineering, Operations, Testing, Product, Enablement, Data
+- Mapped example project KB structure to canonical pattern
+- Defined dev-kit's minimal subset instantiation (Architecture, PM, Changelog, Guides)
+- Created adoption guidance for new and existing projects
+- Established depth management rules (3-level default, 4th level only when justified)
+- Documented implementation plan for adopting canonical pattern
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.1.3.6+1.md` for full details
+- Pattern supports projects from small frameworks (dev-kit) to large codebases (100K+ LOC)
+- Maintains 3-level default depth while providing comprehensive section menu
+
+---
+
 ## [0.1.3.2+1] - 02-12-25
 
 📚 Documentation: Task 2 complete - KB structure principles and conventions documented

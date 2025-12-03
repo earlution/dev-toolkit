@@ -202,9 +202,10 @@ The KB follows a clear hierarchy:
 - Avoid mixing concerns (e.g., don't mix policies with guides)
 
 **Rule 2: Maximum Depth**
-- Limit directory nesting to 4 levels: `KB/Section/Subsection/Item/`
-- Deeper nesting makes navigation difficult
-- Example: `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/` (5 levels is acceptable for Kanban structure)
+- **Default rule:** Limit directory nesting to **3 levels**: `KB/Section/Category/Item`
+- **Preferred pattern:** `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md`, `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.1.3.1+1.md`
+- **Exception rule:** A 4th level is allowed **only when there is a clear need** (e.g., epic-specific assets), and MUST be documented.
+- **Hard limit:** Avoid structures deeper than 4 levels; anything deeper requires explicit justification and should be treated as technical debt.
 
 **Rule 3: README in Every Directory**
 - Every directory should have a `README.md` (optional but recommended)

@@ -107,6 +107,7 @@ Establish core KB locations for architecture, PM & portfolio, and dev-kit govern
 - [ ] E1:S03:T003 – Create KB structure migration guide
 - [ ] E1:S03:T004 – Implement target KB structure
 - [ ] E1:S03:T005 – Create KB structure documentation
+- [x] E1:S03:T006 – Document scalable KB pattern for large codebases ✅ COMPLETE (v0.1.3.6+1)
 
 > Full story: [`epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit.md`](epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit.md)
 

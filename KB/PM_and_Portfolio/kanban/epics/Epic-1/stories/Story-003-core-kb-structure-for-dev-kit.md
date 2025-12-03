@@ -17,6 +17,7 @@
 - [ ] **E1:S03:T003 – Create KB structure migration guide**
 - [ ] **E1:S03:T004 – Implement target KB structure**
 - [ ] **E1:S03:T005 – Create KB structure documentation**
+- [ ] **E1:S03:T006 – Document scalable KB pattern for large codebases**
 
 ---
 
@@ -138,6 +139,31 @@ Establish core KB locations for architecture, PM & portfolio, and dev-kit govern
 - [ ] Directory purposes documented
 - [ ] Navigation guide created
 - [ ] Maintenance procedures documented
+
+---
+
+### E1:S03:T006 – Document scalable KB pattern for large codebases
+
+**Input:** Research from T003 (canonical KB structure research), principles from T002  
+**Deliverable:** Scalable KB pattern documentation for projects with 100K+ lines of code  
+**Dependencies:** T002, T003  
+**Blocker:** None
+
+**Approach:**
+1. Document full canonical KB pattern (all possible sections)
+2. Map example project KB structure to canonical pattern
+3. Define which sections are core (always needed) vs optional (scale-dependent)
+4. Create guidance for projects adopting the pattern
+5. Document how dev-kit instantiates minimal subset
+6. Create migration mapping guide for existing projects
+
+**Acceptance Criteria:**
+- [ ] Full canonical KB pattern documented with all sections
+- [ ] Core vs optional sections clearly defined
+- [ ] Example project mapping completed
+- [ ] Adoption guidance created
+- [ ] Dev-kit minimal subset documented
+- [ ] Migration mapping guide created
 
 ---
 
