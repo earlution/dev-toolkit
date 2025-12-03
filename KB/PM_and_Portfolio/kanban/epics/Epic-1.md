@@ -4,7 +4,7 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.1.2.5+1 – Task 5 complete: Package READMEs updated with modularity information)  
+**Last updated:** 2025-12-02 (v0.1.3.1+1 – Task 1 complete: KB structure analysis and target definition)  
 **Branch:** `epic/1-vibe-dev-kit-core`  
 **Version Schema:** `0.1.S.T+B` (dev-kit RC.EPIC.STORY.TASK+BUILD)  
 **Production URL:** [N/A for this repo]
@@ -17,7 +17,9 @@
 - [x] **E1:S02 – Package & Repo Architecture** - COMPLETE ✅ (v0.1.2.5+1)
   - Tasks: T001 ✅ (v0.1.2.1+1), T002 ✅ (v0.1.2.2+1), T003 ✅ (v0.1.2.3+1), T004 ✅ (v0.1.2.4+1), T005 ✅ (v0.1.2.5+1)
   - Story: [`epics/Epic-1/stories/Story-002-package-and-repo-architecture.md`](epics/Epic-1/stories/Story-002-package-and-repo-architecture.md)  
-- [ ] **E1:S03 – Core KB Structure for Dev Kit** - TODO  
+- [ ] **E1:S03 – Core KB Structure for Dev Kit** - IN PROGRESS (v0.1.3.1+1)
+  - Tasks: T001 ✅ (v0.1.3.1+1)
+  - Story: [`epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit.md`](epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit.md)  
 
 ---
 
@@ -70,10 +72,10 @@ Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW
 
 ### Story 2: Package & Repo Architecture
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE ✅  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.1.2.5+1 – Task 5 complete: Package READMEs updated with modularity information)
+**Last updated:** 2025-12-02 (v0.1.3.1+1 – Task 1 complete: KB structure analysis and target definition)
 
 **Goal:**  
 Clarify the modular architecture of the `vibe-dev-kit` repository, ensuring that users can easily consume individual frameworks (workflow mgt, versioning, kanban) without pulling in the entire repository.
@@ -83,9 +85,30 @@ Clarify the modular architecture of the `vibe-dev-kit` repository, ensuring that
 - [x] E1:S02:T002 – Document modularity principles and boundaries ✅ COMPLETE (v0.1.2.2+1)
 - [x] E1:S02:T003 – Create package dependency matrix ✅ COMPLETE (v0.1.2.3+1)
 - [x] E1:S02:T004 – Document consumption patterns for each framework ✅ COMPLETE (v0.1.2.4+1)
-- [ ] E1:S02:T005 – Update package READMEs with modularity information
+- [x] E1:S02:T005 – Update package READMEs with modularity information ✅ COMPLETE (v0.1.2.5+1)
 
 > Full story: [`epics/Epic-1/stories/Story-002-package-and-repo-architecture.md`](epics/Epic-1/stories/Story-002-package-and-repo-architecture.md)
+
+---
+
+### Story 3: Core KB Structure for Dev Kit
+
+**Status:** IN PROGRESS  
+**Priority:** HIGH  
+**Estimated Effort:** [TBD]  
+**Last updated:** 2025-12-02
+
+**Goal:**  
+Establish core KB locations for architecture, PM & portfolio, and dev-kit governance. Provide a clear, maintainable documentation structure that supports the dev-kit's modular architecture and makes it easy for users to navigate and understand the repository.
+
+**Tasks:**
+- [x] E1:S03:T001 – Analyze current KB/core structure and define target structure ✅ COMPLETE (v0.1.3.1+1)
+- [ ] E1:S03:T002 – Document KB structure principles and conventions
+- [ ] E1:S03:T003 – Create KB structure migration guide
+- [ ] E1:S03:T004 – Implement target KB structure
+- [ ] E1:S03:T005 – Create KB structure documentation
+
+> Full story: [`epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit.md`](epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit.md)
 
 ---
 
