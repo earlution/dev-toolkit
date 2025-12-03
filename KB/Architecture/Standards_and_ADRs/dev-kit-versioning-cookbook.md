@@ -3,7 +3,7 @@
 **Task:** E3:S02:T002 – Create versioning cookbook document with worked examples  
 **Date:** 2025-12-03  
 **Status:** ✅ COMPLETE  
-**Version:** v0.3.2.2+1
+**Version:** v0.3.2.3+1
 
 ---
 
@@ -35,6 +35,10 @@ This cookbook provides **practical, worked examples** for using the `RC.EPIC.STO
 6. [Task Transitions](#6-task-transitions)
 7. [Story Completion](#7-story-completion)
 8. [Epic Completion](#8-epic-completion)
+9. [Cross-Framework Examples](#9-cross-framework-examples)
+   - [Example 1: FR → Task → Version → RW → Kanban Update](#example-1-fr--task--version--rw--kanban-update)
+   - [Example 2: Bugfix with Verification Requirement](#example-2-bugfix-with-verification-requirement)
+   - [Example 3: Parallel Epic/Story Work](#example-3-parallel-epicstory-work)
 
 ---
 
@@ -718,6 +722,309 @@ VERSION_BUILD = 1     # Reset to first build
 
 ---
 
+## 9. Cross-Framework Examples
+
+This section demonstrates **end-to-end flows** that tie together Kanban, Versioning, and Release Workflow. These examples show how the three frameworks work together in practice.
+
+---
+
+### Example 1: FR → Task → Version → RW → Kanban Update
+
+**Scenario:** A Feature Request arrives and flows through the complete system from intake to release.
+
+#### Step 1: Receive Feature Request
+
+**FR Document:** `KB/PM_and_Portfolio/kanban/fr-br/FR-001-add-validation-script.md`
+```markdown
+# Feature Request: Add Kanban Consistency Validation Script
+
+**Summary:** Add validation script to check Kanban document consistency
+**Priority:** HIGH
+**Scope:** Epic 4 (Kanban Framework)
+**Status:** Received
+```
+
+#### Step 2: Intake Decision (FR → Task)
+
+**Process:**
+1. Search Epic 4 stories for matching scope
+2. Found: Story 3 (Kanban + Versioning + RW Integration) - matches scope
+3. Decision: Create Task under Story 3
+
+**Task Created:**
+- Task: E4:S03:T008 – Add Kanban consistency validation script
+- Added to `Story-003-kanban-versioning-rw-integration.md`
+- Task status: TODO
+
+#### Step 3: Assign Version Number
+
+**Current Version:** `0.4.3.5+1` (Task 5)
+**New Task:** Task 8
+
+**Version File Update (`version.py`):**
+```python
+VERSION_RC = 0
+VERSION_EPIC = 4       # Unchanged (Epic 4)
+VERSION_STORY = 3      # Unchanged (Story 3)
+VERSION_TASK = 8      # NEW: Task 8
+VERSION_BUILD = 1     # Reset to 1 for new Task
+```
+
+**Expected Version:** `0.4.3.8+1`
+
+#### Step 4: Complete Work
+
+**Work Completed:**
+- Created validation script: `scripts/validation/validate_kanban_consistency.py`
+- Tested script
+- Work ready for release
+
+#### Step 5: Trigger Release Workflow
+
+**Developer types:** `RW`
+
+**RW Step 1: Branch Safety Check**
+- ✅ Branch: `epic/4-kanban-framework`
+- ✅ Version `0.4.3.8+1` matches Epic 4
+- ✅ `VERSION_TASK` (8) matches active Task in Story document
+
+**RW Step 2: Bump Version**
+- ✅ Detects task transition (Task 5 → Task 8)
+- ✅ Confirms `VERSION_TASK` updated to 8
+- ✅ Confirms `VERSION_BUILD` reset to 1
+- ✅ Version: `0.4.3.8+1`
+
+**RW Step 3: Create Detailed Changelog**
+- ✅ Creates: `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.8+1.md`
+- ✅ Includes Epic 4, Story 3, Task 8 context
+- ✅ Includes full timestamp: `2025-12-02 18:00:00 UTC`
+
+**RW Step 4: Update Main Changelog**
+- ✅ Adds entry: `## [0.4.3.8+1] - 02-12-25`
+- ✅ Includes summary and link to detailed changelog
+
+**RW Step 5: Update README**
+- ✅ Updates version badge (if applicable)
+- ✅ Updates latest release callout
+
+**RW Step 6: Auto-update Kanban Docs**
+- ✅ Updates `Epic-4.md`:
+  - `**Last updated:** 2025-12-02 (v0.4.3.8+1 – Task 8 complete: Add Kanban consistency validation script)`
+  - Story Checklist: `- [ ] **E4:S03 – ...** - IN PROGRESS (v0.4.3.8+1)`
+- ✅ Updates `Story-003-kanban-versioning-rw-integration.md`:
+  - `**Last updated:** 2025-12-02 (v0.4.3.8+1)`
+  - `**Version:** v0.4.3.8+1`
+  - Task Checklist: `- [x] **E4:S03:T008 – Add Kanban consistency validation script** ✅ COMPLETE (v0.4.3.8+1)`
+  - Task section: `**Status:** ✅ **COMPLETE** (v0.4.3.8+1)`
+
+**RW Steps 7-11: Git Operations**
+- ✅ Stage files
+- ✅ Run validators
+- ✅ Commit: `Release v0.4.3.8+1: Task 8 complete - Add Kanban consistency validation script`
+- ✅ Tag: `v0.4.3.8+1`
+- ✅ Push to remote
+
+#### Result
+
+**Complete Traceability:**
+- FR → Task (E4:S03:T008)
+- Task → Version (`0.4.3.8+1`)
+- Version → Changelog (`CHANGELOG_v0.4.3.8+1.md`)
+- Version → Kanban markers (`✅ COMPLETE (v0.4.3.8+1)`)
+- Version → Git tag (`v0.4.3.8+1`)
+
+**All Systems Updated:**
+- ✅ Kanban: Task marked complete with forensic marker
+- ✅ Versioning: Version file updated, changelog created
+- ✅ RW: All 11 steps executed successfully
+- ✅ Git: Committed and tagged
+
+---
+
+### Example 2: Bugfix with Verification Requirement
+
+**Scenario:** A bug is discovered in a completed task, requiring fix verification before marking as "Fixed".
+
+#### Step 1: Discover Bug
+
+**Bug Context:**
+- Task: E4:S03:T002 – Validate Kanban → Versioning integration
+- Completed version: `v0.4.3.2+1`
+- Bug: `VERSION_TASK` not correctly updated during task transitions
+
+#### Step 2: Create Bugfix Task
+
+**Task Created:**
+- Task: E4:S03:T002 (bugfix) – Fix Task → version TASK component mapping
+- Same task number (bugfix on existing task)
+- Version: `0.4.3.2+2` (BUILD increments)
+
+#### Step 3: Implement Fix
+
+**Fix Implemented:**
+- Updated RW Step 2 to detect task transitions
+- Updated RW Step 2 to automatically update `VERSION_TASK`
+- Updated RW Step 2 to reset `VERSION_BUILD` to 1
+- **Fix NOT yet verified** (no tests run yet)
+
+#### Step 4: Trigger Release Workflow
+
+**Developer types:** `RW`
+
+**RW Step 1: Branch Safety Check**
+- ✅ Branch: `epic/4-kanban-framework`
+- ✅ Version `0.4.3.2+2` matches Epic 4, Story 3, Task 2
+
+**RW Step 2: Bump Version**
+- ✅ Same task (TASK=2 unchanged)
+- ✅ Increments BUILD: `0.4.3.2+1` → `0.4.3.2+2`
+
+**RW Step 3: Create Detailed Changelog**
+- ✅ Creates: `CHANGELOG_v0.4.3.2+2.md`
+- ✅ **CRITICAL:** RW Step 3 checks fix verification status
+- ✅ Fix is **unverified** (no tests run)
+- ✅ Changelog format:
+  ```markdown
+  ### Attempted Fixes
+  - Attempted fix: Task → version TASK component mapping (verification pending)
+  ```
+- ✅ RW **does not** mark as "Fixed" (verification required)
+
+**RW Step 4: Update Main Changelog**
+- ✅ Adds entry with "Attempted Fixes" section
+- ✅ Does not add to "Fixed" section
+
+**RW Step 6: Auto-update Kanban Docs**
+- ✅ Updates Story document with bugfix context
+- ✅ Includes verification status: "verification pending"
+
+#### Step 5: Verify Fix
+
+**Verification Process:**
+- Run test suite: ✅ PASS
+- Manual verification: ✅ PASS
+- Fix verified
+
+#### Step 6: Update Changelog (Post-Verification)
+
+**Option A: Create New Release**
+- New version: `0.4.3.2+3`
+- Changelog: `### Fixed` section with verified fix
+
+**Option B: Update Existing Release**
+- Update `CHANGELOG_v0.4.3.2+2.md`:
+  - Move from "Attempted Fixes" to "Fixed"
+  - Add verification timestamp
+  - Note: This requires manual update (RW doesn't retroactively update)
+
+#### Result
+
+**Verification Workflow:**
+- ✅ Unverified fixes logged as "Attempted Fixes"
+- ✅ Verified fixes logged as "Fixed"
+- ✅ Clear distinction between attempted and verified fixes
+- ✅ Prevents false "Fixed" claims
+
+**Real Dev-Kit Example:**
+- See: `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.2+2.md`
+- Bugfix: Task → version TASK component mapping
+- Verification: Root cause analysis and documentation updates completed
+
+---
+
+### Example 3: Parallel Epic/Story Work
+
+**Scenario:** Working on multiple epics simultaneously, with work merged out of chronological order.
+
+#### Context
+
+**Epic 3 Branch (`epic/3-*`):**
+- Work: `0.3.1.1+1`, `0.3.1.2+1`, `0.3.2.1+1`
+- Merged to `main` on 2025-12-03
+
+**Epic 4 Branch (`epic/4-*`):**
+- Work: `0.4.1.1+1`, `0.4.2.1+1`, `0.4.3.1+1`
+- Merged to `main` on 2025-12-02 (earlier than Epic 3)
+
+#### Kanban State
+
+**Epic 3:**
+- Story 1: IN PROGRESS (Tasks 1-2 complete)
+- Story 2: IN PROGRESS (Task 1 complete)
+
+**Epic 4:**
+- Story 1: COMPLETE ✅
+- Story 2: COMPLETE ✅
+- Story 3: IN PROGRESS (Task 1 complete)
+
+#### Version File States
+
+**On Epic 3 Branch:**
+```python
+VERSION_RC = 0
+VERSION_EPIC = 3
+VERSION_STORY = 2
+VERSION_TASK = 1
+VERSION_BUILD = 1
+```
+
+**On Epic 4 Branch:**
+```python
+VERSION_RC = 0
+VERSION_EPIC = 4
+VERSION_STORY = 3
+VERSION_TASK = 1
+VERSION_BUILD = 1
+```
+
+#### RW Execution (Parallel)
+
+**Epic 3 RW (on `epic/3-*` branch):**
+- ✅ Step 1: Validates branch `epic/3-*` matches version `0.3.2.1+1`
+- ✅ Step 2: Bumps version (if needed)
+- ✅ Step 3: Creates `CHANGELOG_v0.3.2.1+1.md`
+- ✅ Step 6: Updates Epic-3.md and Story-002-*.md
+
+**Epic 4 RW (on `epic/4-*` branch):**
+- ✅ Step 1: Validates branch `epic/4-*` matches version `0.4.3.1+1`
+- ✅ Step 2: Bumps version (if needed)
+- ✅ Step 3: Creates `CHANGELOG_v0.4.3.1+1.md`
+- ✅ Step 6: Updates Epic-4.md and Story-003-*.md
+
+**No Conflicts:** Each epic maintains independent version stream
+
+#### Changelog Ordering (Canonical)
+
+**Main Changelog (`CHANGELOG.md`):**
+```markdown
+## [0.3.1.1+1] - 03-12-25    # Epic 3, Story 1, Task 1
+## [0.3.1.2+1] - 03-12-25    # Epic 3, Story 1, Task 2
+## [0.4.1.1+1] - 02-12-25    # Epic 4, Story 1, Task 1 (merged earlier, but ordered correctly)
+## [0.4.2.1+1] - 02-12-25    # Epic 4, Story 2, Task 1
+## [0.4.3.1+1] - 02-12-25    # Epic 4, Story 3, Task 1
+## [0.3.2.1+1] - 03-12-25    # Epic 3, Story 2, Task 1 (merged later, but ordered correctly)
+```
+
+**Key Point:** Versions ordered **canonically by version number**, not by commit timestamp.
+
+#### Result
+
+**Parallel Development Supported:**
+- ✅ Each epic maintains independent version stream
+- ✅ No version conflicts between epics
+- ✅ Changelog ordering is canonical (by version number)
+- ✅ Git history reflects actual commit order
+- ✅ Kanban board shows all epics in parallel
+
+**Real Dev-Kit Example:**
+- Epic 1: `0.1.1.1+1` → `0.1.3.6+1` (completed)
+- Epic 2: `0.2.1.1+2` → `0.2.1.1+5` (completed)
+- Epic 3: `0.3.1.1+1` → `0.3.2.2+1` (in progress)
+- Epic 4: `0.4.1.1+1` → `0.4.3.7+1` (completed)
+- See: `CHANGELOG.md` for canonical ordering
+
+---
+
 ## Quick Reference: Version Component Rules
 
 | Component | When It Changes | When It Resets | Example |
@@ -748,6 +1055,7 @@ VERSION_BUILD = 1     # Reset to first build
 - **Versioning Policy:** `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md`
 - **Framework Policy:** `packages/frameworks/numbering & versioning/versioning-policy.md`
 - **Integration Guide:** `KB/Architecture/Standards_and_ADRs/dev-kit-kanban-versioning-rw-integration.md`
+- **Integration Examples:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T006-integration-examples.md`
 - **RW Execution Guide:** `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`
 
 ---

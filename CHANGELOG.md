@@ -17,6 +17,32 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.3+1] - 03-12-25
+
+📚 Documentation: Task 3 complete - Cross-framework examples added to versioning cookbook
+
+### Added
+
+- Added comprehensive cross-framework examples section to versioning cookbook
+- Example 1: FR → Task → Version → RW → Kanban Update (complete end-to-end flow)
+- Example 2: Bugfix with Verification Requirement (unverified vs verified fixes)
+- Example 3: Parallel Epic/Story Work (canonical ordering, no conflicts)
+- Each example includes Kanban state, version changes, RW steps, and resulting documentation
+
+### Changed
+
+- Updated table of contents to include cross-framework examples section
+- Added reference to integration examples document
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.3+1.md` for full details
+- Examples demonstrate end-to-end integration of Kanban, Versioning, and RW
+- Examples align with existing integration documentation
+- Foundation for T004 (edge cases and anti-patterns)
+
+---
+
 ## [0.3.2.2+1] - 03-12-25
 
 📚 Documentation: Task 2 complete - Versioning cookbook document created with worked examples

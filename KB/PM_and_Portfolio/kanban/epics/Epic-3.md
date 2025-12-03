@@ -14,7 +14,7 @@
 ## Story Checklist
 
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
-- [ ] **E3:S02 – Versioning Cookbook & Examples** - IN PROGRESS (v0.3.2.1+1 – T001 complete)
+- [ ] **E3:S02 – Versioning Cookbook & Examples** - IN PROGRESS (v0.3.2.3+1 – T003 complete)
 - [ ] **E3:S03 – Versioning Integration with Kanban & RW** - TODO
 
 ---

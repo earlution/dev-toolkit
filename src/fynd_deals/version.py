@@ -20,7 +20,7 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
 VERSION_EPIC = 3      # Epic number (Epic 3: Numbering & Versioning Framework)
 VERSION_STORY = 2     # Story number (Story 2: Versioning Cookbook & Examples)
-VERSION_TASK = 2      # Task number (Task 2: Create versioning cookbook document with worked examples)
+VERSION_TASK = 3      # Task number (Task 3: Add cross-framework examples (Kanban + Versioning + RW))
 VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
