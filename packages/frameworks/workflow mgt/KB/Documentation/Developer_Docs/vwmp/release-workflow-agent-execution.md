@@ -773,30 +773,82 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 1. **ANALYZE:**
    - Get `new_version` from Step 2:
      - [Example: Confidentia] `"0.4.3.2+9"`
-     - [Example: vibe-dev-kit] `"0.2.1.1+3"`
+     - [Example: vibe-dev-kit] `"0.2.2.4+1"`
    - Get summary from parameters
+   - Read detailed changelog from Step 3 to understand:
+     - What was actually done (DO phase)
+     - Verification status (if fixes included)
+     - PLAN phase objectives (if included)
    - Understand commit message template: `"{version} - {summary}"`
    - Verify files are still staged
+   - **CRITICAL - Language Alignment:**
+     - Check changelog for verification status
+     - If changelog contains "Attempted Fixes", commit message MUST use unverified language
+     - If changelog contains "Fixed" (verified), commit message can use verified language
+     - Commit message language MUST match changelog verification status
 
 2. **DETERMINE:**
    - Build commit message:
      - [Example: Confidentia] `"0.4.3.2+9 - 📚 Documentation: Tighten Epic 4 [Example: Confidentia] Kanban docs..."`
-     - [Example: vibe-dev-kit] `"0.2.1.1+3 - 📚 Documentation: Task 1 complete - Audit RW documentation..."`
+     - [Example: vibe-dev-kit] `"0.2.2.4+1 - 🧰 Tooling: Task 4 complete - Enhanced DO Phase..."`
+   - **Language Pattern Selection:**
+     - **If verified fixes:** Use verified language ("Fixed", "Resolved", "Corrected")
+     - **If unverified fixes:** Use unverified language ("Attempted fix", "Addressed", "Modified")
+     - **If documentation/feature:** Use appropriate language ("Added", "Updated", "Created")
    - Ensure message follows project conventions
+   - Ensure message accurately reflects what was done (DO phase)
+   - Ensure message aligns with changelog intent (PLAN phase)
 
 3. **EXECUTE:**
    - Run `git commit -m "{message}"`
    - Capture commit hash if available
+   - **Document Execution:**
+     - Record what was actually done
+     - Note any deviations from PLAN phase
+     - Document execution details if needed
 
 4. **VALIDATE:**
    - Verify commit was created (check exit code)
    - Verify commit message is correct
+   - **CRITICAL - Language Validation:**
+     - Verify commit message language matches changelog verification status
+     - If changelog says "Attempted Fix", commit message MUST NOT say "Fixed"
+     - If changelog says "Fixed" (verified), commit message can say "Fixed"
+     - Verify commit message accurately reflects what was done
    - Check commit hash if available
 
 5. **PROCEED:**
    - Document: "Created commit {hash} with message: {message}"
+   - Document execution details (what was actually done)
    - Pass commit hash to Step 10 (if needed)
    - Move to Step 10
+
+**Key Points:**
+- This step implements the **DO phase** of PDCA cycle
+- Commit message MUST match changelog verification status
+- Commit message MUST accurately reflect what was done
+- Commit message MUST align with changelog intent (PLAN phase)
+- Language patterns must match verification status
+
+**Language Pattern Guidelines:**
+
+**Verified Fixes (use these words):**
+- "Fixed", "Resolved", "Corrected", "Repaired"
+- Only use if verification evidence exists in changelog
+
+**Unverified Fixes (use these words):**
+- "Attempted fix", "Addressed", "Modified", "Updated", "Changed"
+- Use when changelog shows "Attempted Fix (Pending Verification)"
+
+**Documentation/Features (use these words):**
+- "Added", "Created", "Updated", "Enhanced", "Improved"
+- Use for documentation, features, tooling changes
+
+**DO NOT:**
+- ❌ Say "Fixed" if changelog says "Attempted Fix"
+- ❌ Use overly confident language for unverified changes
+- ❌ Misrepresent what was actually done
+- ❌ Deviate from changelog intent without documenting why
 
 ---
 

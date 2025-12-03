@@ -17,6 +17,32 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.2.4+1] - 03-12-25
+
+🧰 Tooling: Task 4 complete - Enhanced DO Phase in Release Workflow
+
+### Added
+
+- Execution documentation template
+- Commit message language guidelines
+- Language pattern decision tree
+- Examples of good vs bad commit messages
+
+### Changed
+
+- Enhanced Step 9 execution guide with DO phase details
+- Added commit message language validation
+- Added changelog-commit alignment validation
+- Enhanced commit message guidance with verification status alignment
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.4+1.md` for full details
+- DO phase ensures commit messages match changelog verification status
+- Language patterns prevent overly confident claims for unverified fixes
+
+---
+
 ## [0.2.2.3+1] - 03-12-25
 
 🧰 Tooling: Task 3 complete - Enhanced PLAN Phase in changelog format
