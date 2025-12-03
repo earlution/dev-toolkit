@@ -1,7 +1,7 @@
 name: Release Workflow
-version: 1.0.0
+version: 2.0.0
 type: release
-description: Automated release workflow for version bump, changelog, commit, tag, push
+description: Automated release workflow with PDCA integration (version bump, changelog, commit, tag, push, verification, action)
 
 config:
   version_file: src/confidentia/version.py
@@ -138,7 +138,7 @@ steps:
     required: false
     enabled: true
     dependencies:
-      - step-11
+      - step-10
     config:
       verification_prompt: true
       reflection_questions: true

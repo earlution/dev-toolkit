@@ -54,7 +54,7 @@ The Release Workflow explains each step, its parameters, configuration options, 
 
 ## 📋 Workflow Structure
 
-The Release Workflow consists of **10 steps** organized into phases. Each step implements specific requirements from the **Kanban Governance Policy** and **Versioning Strategy**:
+The Release Workflow consists of **13 steps** organized into 3 phases. Each step implements specific requirements from the **Kanban Governance Policy**, **Versioning Strategy**, and **PDCA Integration**:
 
 ### Phase 1: Version & Documentation Updates
 
@@ -100,9 +100,25 @@ The Release Workflow consists of **10 steps** organized into phases. Each step i
   - Creates annotated tag with version (forensic marker)
   - Enables version-based navigation in Git history
 
-- **Step 10:** Push to Remote
+- **Step 11:** Push to Remote
   - Pushes branch and tags to remote repository
   - Completes forensic traceability chain
+
+### Phase 3: PDCA CHECK & ACT (Steps 12-13)
+
+**Implements:** PDCA Integration (continuous improvement, verification, reflection)
+
+- **Step 12:** Post-Commit Verification & Reflection
+  - Verifies changes worked as expected
+  - Evaluates against objectives from PLAN phase
+  - Documents verification results
+  - Reflects on what worked and what didn't
+
+- **Step 13:** Act on Verification Results
+  - Updates changelog based on verification results
+  - Standardizes successful practices
+  - Creates follow-up tasks if needed
+  - Documents lessons learned
 
 ---
 
@@ -874,7 +890,7 @@ After execution, this step outputs:
 
 ---
 
-### Step 10: Push to Remote
+### Step 11: Push to Remote
 
 **Handler:** `git.push`
 **Category:** Git
@@ -916,11 +932,11 @@ git push origin --tags                      # Push tags (if push_tags: true)
 
 #### Why Two Dependencies?
 
-This step depends on both Step 8 (commit) and Step 9 (tag) because:
-- **Step 8 dependency:** Ensures commit exists before pushing branch
-- **Step 9 dependency:** Ensures tag exists before pushing tags (if `push_tags: true`)
+This step depends on both Step 9 (commit) and Step 10 (tag) because:
+- **Step 9 dependency:** Ensures commit exists before pushing branch
+- **Step 10 dependency:** Ensures tag exists before pushing tags (if `push_tags: true`)
 
-**Note:** If Step 9 is skipped (tag not created), Step 10 will still execute (pushing branch only, skipping tag push).
+**Note:** If Step 10 is skipped (tag not created), Step 11 will still execute (pushing branch only, skipping tag push).
 
 #### Step Outputs
 
@@ -939,6 +955,149 @@ After execution, this step outputs:
 - **Git push failed:** Step fails if `git push` returns non-zero exit code
 - **Remote not accessible:** Step fails if remote repository is not accessible
 - **Authentication failed:** Step fails if Git credentials are invalid
+
+---
+
+### Step 12: Post-Commit Verification & Reflection
+
+**Handler:** `release.verification_reflection`
+**Category:** PDCA (CHECK)
+**Icon:** ✅
+**Required:** ❌ No (optional but recommended)
+**Default Dependencies:** `step-11` (verify after push)
+
+#### Purpose
+
+Implements the CHECK phase of the PDCA cycle. Verifies that changes worked as expected, evaluates against objectives from PLAN phase, and reflects on results.
+
+#### Execution Flow
+
+1. Retrieves objectives from PLAN phase (Step 3 changelog)
+2. Verifies each objective was met
+3. Documents verification results
+4. Reflects on what worked and what didn't
+5. Documents lessons learned
+
+#### Configuration Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| `verification_prompt` | boolean | ❌ No | `true` | Whether to prompt for verification |
+| `reflection_questions` | boolean | ❌ No | `true` | Whether to include reflection questions |
+| `changelog_update` | boolean | ❌ No | `true` | Whether to update changelog with verification results |
+
+#### Verification Methods
+
+- **Test Suite Execution:** Automated tests pass
+- **Manual Testing:** Documented manual test results
+- **Documentation Review:** Review completeness and accuracy
+- **Code Review:** Review code changes
+- **Observation:** Observe behavior over time
+
+#### Reflection Questions
+
+1. Did the change work as expected?
+2. Did it solve the problem?
+3. Are there any side effects?
+4. What did we learn?
+5. What should be adjusted?
+
+#### Step Outputs
+
+After execution, this step outputs:
+
+```json
+{
+  "verification_status": "verified",
+  "verification_method": "test_suite",
+  "verification_date": "2025-12-03 16:30:00 UTC",
+  "objectives_met": true,
+  "reflection_completed": true
+}
+```
+
+#### Error Handling
+
+- **Verification failed:** Step documents failure and creates follow-up task
+- **Objectives not met:** Step documents which objectives were not met
+- **Reflection incomplete:** Step prompts for completion
+
+#### Integration with PDCA
+
+- **PLAN Phase (Step 3):** Objectives and verification plan defined
+- **CHECK Phase (Step 12):** Objectives verified, results evaluated
+- **ACT Phase (Step 13):** Actions taken based on verification results
+
+---
+
+### Step 13: Act on Verification Results
+
+**Handler:** `release.act_on_results`
+**Category:** PDCA (ACT)
+**Icon:** 🎯
+**Required:** ❌ No (optional but recommended)
+**Default Dependencies:** `step-12` (act after verification)
+
+#### Purpose
+
+Implements the ACT phase of the PDCA cycle. Acts on verification results by updating changelog, standardizing successful practices, and creating follow-up tasks if needed.
+
+#### Execution Flow
+
+1. Retrieves verification results from Step 12
+2. Updates changelog based on verification status
+3. Standardizes successful practices
+4. Creates follow-up tasks if verification failed
+5. Documents lessons learned and process improvements
+
+#### Configuration Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| `changelog_update` | boolean | ❌ No | `true` | Whether to update changelog with verification results |
+| `follow_up_tasks` | boolean | ❌ No | `true` | Whether to create follow-up tasks for failed verification |
+| `process_improvement` | boolean | ❌ No | `true` | Whether to document process improvements |
+
+#### Action Workflows
+
+**Verified Fix:**
+- Update changelog: "Attempted fix" → "Fixed"
+- Standardize successful practices
+- Document what worked
+
+**Failed Fix:**
+- Document failure in changelog
+- Create follow-up task
+- Document root causes and lessons learned
+
+**Deferred Verification:**
+- Document verification plan
+- Schedule verification
+- Create reminder task
+
+#### Step Outputs
+
+After execution, this step outputs:
+
+```json
+{
+  "actions_taken": ["changelog_updated", "practices_standardized"],
+  "follow_up_tasks": [],
+  "process_improvements": ["added_verification_step"]
+}
+```
+
+#### Error Handling
+
+- **Changelog update failed:** Step documents error and continues
+- **Follow-up task creation failed:** Step documents error and continues
+- **Process improvement documentation failed:** Step documents error and continues
+
+#### Integration with PDCA
+
+- **CHECK Phase (Step 12):** Verification results provided
+- **ACT Phase (Step 13):** Actions taken based on results
+- **Next PLAN Phase:** Lessons learned inform next cycle
 
 ---
 
@@ -1042,34 +1201,44 @@ The Release Workflow accepts the following parameters when executing:
 ### Dependency Graph
 
 ```
-Step 1 (Bump Version)
-  ├─→ Step 2 (Create Detailed Changelog)
-  │     └─→ Step 3 (Update Main Changelog)
-  ├─→ Step 4 (Update README)
-  ├─→ Step 5 (Auto-update Kanban Docs)
-  └─→ Step 6 (Stage Files) ← depends on 1,2,3,4,5
-        └─→ Step 7 (Run Validators)
-              └─→ Step 8 (Commit Changes)
-                    ├─→ Step 9 (Create Git Tag)
-                    └─→ Step 10 (Push to Remote) ← depends on 8,9
+Step 1 (Branch Safety Check)
+  └─→ Step 2 (Bump Version)
+        ├─→ Step 3 (Create Detailed Changelog)
+        │     └─→ Step 4 (Update Main Changelog)
+        ├─→ Step 5 (Update README)
+        ├─→ Step 6 (Auto-update Kanban Docs)
+        └─→ Step 7 (Stage Files) ← depends on 2,3,4,5,6
+              └─→ Step 8 (Run Validators)
+                    └─→ Step 9 (Commit Changes)
+                          ├─→ Step 10 (Create Git Tag)
+                          └─→ Step 11 (Push to Remote) ← depends on 9,10
+                                └─→ Step 12 (Post-Commit Verification & Reflection)
+                                      └─→ Step 13 (Act on Verification Results)
 ```
 
 ### Execution Phases
 
-**Phase 1: Version & Documentation Updates** (Steps 1-5)
-- Steps 2, 4, 5 run in parallel after Step 1 completes
-- Step 3 runs after Step 2 completes
+**Phase 1: Version & Documentation Updates** (Steps 1-6)
+- Step 1: Branch Safety Check (first step)
+- Step 2: Bump Version (depends on Step 1)
+- Steps 3, 5, 6 run in parallel after Step 2 completes
+- Step 4 runs after Step 3 completes
 
-**Phase 2: Git Operations & Validation** (Steps 6-10)
-- Step 6 waits for all Phase 1 steps to complete
-- Steps 7, 8, 9, 10 run sequentially
-- Step 10 waits for both Step 8 and Step 9
+**Phase 2: Git Operations & Validation** (Steps 7-11)
+- Step 7 waits for all Phase 1 steps to complete
+- Steps 8, 9, 10, 11 run sequentially
+- Step 11 waits for both Step 9 and Step 10
+
+**Phase 3: PDCA CHECK & ACT** (Steps 12-13, optional but recommended)
+- Step 12 runs after Step 11 completes
+- Step 13 runs after Step 12 completes
+- Both steps are optional but recommended for continuous improvement
 
 ### Parallel Execution
 
 Steps that can run in parallel (after dependencies are met):
-- **Steps 2, 4, 5:** All depend on Step 1, but don't depend on each other
-- **Steps 9, 10:** Step 10 depends on Step 8 (which doesn't depend on Step 9)
+- **Steps 3, 5, 6:** All depend on Step 2, but don't depend on each other
+- **Steps 10, 11:** Step 11 depends on Step 9 (which doesn't depend on Step 10)
 
 ---
 

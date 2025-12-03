@@ -43,7 +43,7 @@ For each step, the agent follows this pattern:
 **REQUIRED:** Agents **MUST** use `todo_write` to create and maintain a TODO list tracking all 11 Release Workflow steps. This is **NOT OPTIONAL** - it is a mandatory requirement for Release Workflow execution.
 
 **Why TODOs are Required:**
-- ✅ **User Visibility:** User can see real-time progress through all 11 steps
+- ✅ **User Visibility:** User can see real-time progress through all 13 steps
 - ✅ **Agent Organization:** Helps agent stay organized across 11 sequential steps
 - ✅ **Error Recovery:** Clear visibility into where execution stopped if interrupted
 - ✅ **User Transparency:** User can verify all steps completed successfully
@@ -991,7 +991,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 - id: step-12
   name: Post-Commit Verification & Reflection
   handler: release.verification_reflection
-  dependencies: [step-11]
+  dependencies: [step-10]
   config:
     verification_prompt: true
     reflection_questions: true

@@ -17,6 +17,30 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.2.6+1] - 03-12-25
+
+🧰 Tooling: Task 6 complete - Updated RW workflow YAML and documentation for PDCA integration
+
+### Changed
+
+- Updated workflow YAML to version 2.0.0 with PDCA integration
+- Fixed Step 12 dependency (step-10 instead of step-11)
+- Updated all documentation to reflect 13-step workflow
+- Updated step numbering (Step 10 → Step 11 for Push to Remote)
+- Added Steps 12-13 documentation to reference guide
+
+### Added
+
+- Migration guide for existing projects
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.6+1.md` for full details
+- Steps 12-13 are optional but recommended
+- Backward compatibility maintained
+
+---
+
 ## [0.2.2.5+1] - 03-12-25
 
 📚 Documentation: Task 5 - Created comprehensive PDCA templates and examples
