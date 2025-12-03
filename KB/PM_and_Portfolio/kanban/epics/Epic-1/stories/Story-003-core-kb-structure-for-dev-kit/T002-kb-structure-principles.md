@@ -163,10 +163,11 @@ The KB follows a clear hierarchy:
 - Always use uppercase `CHANGELOG` prefix
 
 **Task Deliverable Files:**
-- Use `T{NNN}-{descriptive-name}.md` format
-- Examples: `T001-kb-structure-analysis.md`, `T002-kb-structure-principles.md`
-- Use zero-padded task numbers (T001, T002, etc.)
+- Use `T{NN}-{descriptive-name}.md` format (2-digit zero padding)
+- Examples: `T01-kb-structure-analysis.md`, `T02-kb-structure-principles.md`
+- Use zero-padded task numbers (T01, T02, etc.)
 - Use descriptive kebab-case names
+- **Note:** Existing task files may use 3-digit format (T001, T002) for backward compatibility
 
 **Story Files:**
 - Use `Story-{NNN}-{descriptive-name}.md` format
