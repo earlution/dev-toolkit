@@ -850,6 +850,33 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 - ❌ Misrepresent what was actually done
 - ❌ Deviate from changelog intent without documenting why
 
+**Examples:**
+
+**Example 1: Verified Fix (Good)**
+- Changelog: "Fixed changelog verification issue" (with verification evidence)
+- Commit: "Release v0.2.2.4+1: Fixed changelog verification issue"
+- ✅ Language matches verification status
+
+**Example 2: Unverified Fix (Good)**
+- Changelog: "Attempted fix for changelog verification issue" (pending verification)
+- Commit: "Release v0.2.2.4+1: Attempted fix for changelog verification issue"
+- ✅ Language matches verification status
+
+**Example 3: Unverified Fix (Bad)**
+- Changelog: "Attempted fix for changelog verification issue" (pending verification)
+- Commit: "Release v0.2.2.4+1: Fixed changelog verification issue"
+- ❌ Language doesn't match - too confident for unverified fix
+
+**Example 4: Documentation (Good)**
+- Changelog: "Added execution documentation template"
+- Commit: "Release v0.2.2.4+1: Added execution documentation template"
+- ✅ Appropriate language for documentation
+
+**See Also:**
+- **Commit Message Language Guidelines:** `packages/frameworks/workflow mgt/KB/Documentation/Templates/commit-message-language-guidelines.md`
+- **Execution Documentation Template:** `packages/frameworks/workflow mgt/KB/Documentation/Templates/execution-documentation-template.md`
+- **Changelog Language Analysis:** `KB/Architecture/Standards_and_ADRs/rw-changelog-commit-language-analysis.md`
+
 ---
 
 ### Step 10: Create Git Tag
