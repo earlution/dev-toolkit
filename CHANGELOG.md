@@ -1401,6 +1401,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.5+3] - 04-12-25
+
+🔧 Process Improvement: Hardened RW with automated version bump validation
+
+### Process Improvement
+
+- Created `validate_version_bump.py` validation script to enforce RW Step 2 logic
+- Validates completed task vs. current VERSION_TASK comparison
+- Validates new task detection (VERSION_TASK = completed, BUILD = 1)
+- Validates same task detection (VERSION_TASK unchanged, BUILD incremented)
+- Validates out-of-order completion (VERSION_TASK = completed, BUILD = 1)
+- Updated RW Step 8 to include version bump validation
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.5+3.md` for full details
+- Validation script prevents versioning errors by enforcing RW Step 2 logic
+- RW Step 8 now runs version bump validator in strict mode
+
+---
+
 ## [0.3.2.6+1] - 04-12-25
 
 🔧 Process Improvement: Investigated and hardened changelog ordering process

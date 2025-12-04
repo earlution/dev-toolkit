@@ -838,6 +838,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
     validators:
       - scripts/validation/validate_branch_context.py  # Use {validation_scripts_path}/validate_branch_context.py
       - scripts/validation/validate_changelog_format.py  # Use {validation_scripts_path}/validate_changelog_format.py
+      - scripts/validation/validate_version_bump.py  # Use {validation_scripts_path}/validate_version_bump.py
     strict_mode: true
 ```
 
@@ -847,9 +848,11 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Understand validators to run:
      - `validate_branch_context.py` - Checks branch/version/epic alignment
      - `validate_changelog_format.py` - Checks changelog format (including canonical ordering)
+     - `validate_version_bump.py` - Checks version bump logic (task transitions, out-of-order completion)
    - Understand strict mode: Failures block workflow
    - Check validators exist and are executable
    - **CRITICAL - Changelog Ordering:** `validate_changelog_format.py` now validates canonical ordering
+   - **CRITICAL - Version Bump Logic:** `validate_version_bump.py` validates RW Step 2 logic is followed correctly
 
 2. **DETERMINE:**
    - Run each validator with `--strict` flag
@@ -860,15 +863,21 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - **Use config path:** Run validators (from config `scripts_path` or fallback `scripts/validation/`):
      - `python {scripts_path}/validation/validate_branch_context.py --strict` (script automatically reads `rw-config.yaml` if available)
      - `python {scripts_path}/validation/validate_changelog_format.py --strict` (script automatically reads `rw-config.yaml` if available)
+     - `python {scripts_path}/validation/validate_version_bump.py --strict` (script automatically reads `rw-config.yaml` if available)
    - Capture exit codes and output
 
 4. **VALIDATE:**
    - Check exit codes: 0 = success, non-zero = failure
    - If any validator fails in strict mode, workflow must abort
    - Analyze error messages if validators fail
+   - **CRITICAL:** `validate_version_bump.py` validates:
+     - Completed task vs. current VERSION_TASK comparison
+     - New task detection (VERSION_TASK = completed, BUILD = 1)
+     - Same task detection (VERSION_TASK unchanged, BUILD incremented)
+     - Out-of-order completion (VERSION_TASK = completed, BUILD = 1)
 
 5. **PROCEED:**
-   - If validators pass: Document "Validators passed", move to Step 9
+   - If validators pass: Document "Validators passed: branch context ✓, changelog format ✓, changelog ordering ✓, version bump logic ✓", move to Step 9
    - If validators fail: Abort workflow, report errors, do not proceed
 
 ---
