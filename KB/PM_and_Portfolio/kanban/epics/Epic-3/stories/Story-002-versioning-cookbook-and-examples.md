@@ -25,6 +25,7 @@ housekeeping_policy: keep
 - [x] **E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW)** ✅ COMPLETE (v0.3.2.3+1)
 - [x] **E3:S02:T04 – Document edge cases and anti-patterns** ✅ COMPLETE (v0.3.2.4+1)
 - [ ] **E3:S02:T05 – Create quick reference summary for users and agents**
+- [ ] **E3:S02:T06 – Investigate and harden changelog ordering process**
 
 ---
 
@@ -198,6 +199,52 @@ Provide a **versioning cookbook** with worked examples that shows:
 - [ ] Quick reference created
 - [ ] Covers common scenarios and rules
 - [ ] Linked from cookbook, dev-kit versioning policy, and relevant READMEs
+
+---
+
+### E3:S02:T06 – Investigate and harden changelog ordering process
+
+**Input:**  
+- Issue: Changelog entries appeared in incorrect order (v0.3.2.4+1 before v0.2.4.9+3)
+- Canonical ordering principle: Versions must be ordered by version number (RC.EPIC.STORY.TASK+BUILD)
+- Policy: `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` Section 8
+
+**Deliverable:**  
+- Root cause analysis of how changelog ordering violation occurred
+- Process improvements to prevent future violations
+- Validation/automation recommendations
+
+**Approach:**
+1. **Root Cause Analysis:**
+   - Investigate how RW Step 4 (Update Main Changelog) handles version ordering
+   - Check if RW Step 4 reads existing changelog entries before inserting new entry
+   - Verify if RW Step 4 compares version numbers to determine insertion point
+   - Document the exact sequence that led to incorrect ordering
+
+2. **Process Gap Analysis:**
+   - Identify missing validation steps in RW workflow
+   - Check if changelog ordering is validated in RW Step 8 (Run Validators)
+   - Determine if manual process is required or if automation is possible
+
+3. **Prevention Strategy:**
+   - Update RW Step 4 to explicitly validate version ordering
+   - Add changelog ordering validation to RW Step 8
+   - Create automated validation script if needed
+   - Update RW documentation with ordering requirements
+
+4. **Documentation Updates:**
+   - Update RW Step 4 instructions to include ordering validation
+   - Add changelog ordering to validation checklist
+   - Document canonical ordering requirements clearly
+
+**Acceptance Criteria:**
+- [ ] Root cause analysis completed and documented
+- [ ] Process gaps identified
+- [ ] Prevention strategy defined
+- [ ] RW Step 4 updated with ordering validation
+- [ ] Validation added to RW Step 8 (if applicable)
+- [ ] Documentation updated with ordering requirements
+- [ ] Prevention measures implemented
 
 ---
 

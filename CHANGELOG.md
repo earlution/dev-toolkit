@@ -17,6 +17,30 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.9+3] - 04-12-25
+
+🔧 Standardization: Task naming format updated from `Txxx` to `Exx:Sxx:Txx` across entire dev-kit
+
+### Updated
+
+- Standardized task naming format from 3-digit (`T001`) to 2-digit (`T01`) with full `Exx:Sxx:Txx` format
+- Updated all kanban governance policies to clarify format requirements
+- Updated all story templates (STORY_TEMPLATE.md, EPIC_TEMPLATE.md) in both kanban and numbering & versioning packages
+- Updated 46 story documents in epics directory to use new format
+- Updated workflow documentation (release-workflow-agent-execution.md, cursorrules-rw-trigger-section.md)
+- Updated versioning policy and strategy docs with new format examples
+- Updated framework READMEs and integration guides
+- Updated task naming migration guide to emphasize full format requirement
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.9+3.md` for full details
+- All task references now use consistent `Exx:Sxx:Txx` format (e.g., `E1:S01:T01`, `E2:S04:T09`)
+- Never use standalone `T01` or `T001` - always include full Epic/Story/Task context
+- Templates ensure consistency for all future work
+
+---
+
 ## [0.3.2.4+1] - 04-12-25
 
 📚 Documentation: Added edge cases and anti-patterns section to versioning cookbook
@@ -42,30 +66,6 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - Each entry includes symptom, root cause, corrective pattern, and preventive guidance
 - References to related documentation (error reference guide, root cause analysis)
 - Versioning cookbook now complete with all major scenarios including edge cases
-
----
-
-## [0.2.4.9+3] - 04-12-25
-
-🔧 Standardization: Task naming format updated from `Txxx` to `Exx:Sxx:Txx` across entire dev-kit
-
-### Updated
-
-- Standardized task naming format from 3-digit (`T001`) to 2-digit (`T01`) with full `Exx:Sxx:Txx` format
-- Updated all kanban governance policies to clarify format requirements
-- Updated all story templates (STORY_TEMPLATE.md, EPIC_TEMPLATE.md) in both kanban and numbering & versioning packages
-- Updated 46 story documents in epics directory to use new format
-- Updated workflow documentation (release-workflow-agent-execution.md, cursorrules-rw-trigger-section.md)
-- Updated versioning policy and strategy docs with new format examples
-- Updated framework READMEs and integration guides
-- Updated task naming migration guide to emphasize full format requirement
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.9+3.md` for full details
-- All task references now use consistent `Exx:Sxx:Txx` format (e.g., `E1:S01:T01`, `E2:S04:T09`)
-- Never use standalone `T01` or `T001` - always include full Epic/Story/Task context
-- Templates ensure consistency for all future work
 
 ---
 
@@ -1797,4 +1797,3 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - This version referenced **Confidentia Epic 9** and predates dev-kit-specific epics.  
 - Starting with `v0.1.1.1+1`, all releases use **dev-kit-specific Epic numbers**.
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.9.21.3+2.md` for full details.
-
