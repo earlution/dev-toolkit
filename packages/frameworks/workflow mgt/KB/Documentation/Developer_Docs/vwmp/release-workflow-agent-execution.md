@@ -432,14 +432,14 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 **D. VALIDATE BEFORE UPDATING:**
 4. **VALIDATE (before update):**
-   - Verify: New `VERSION_TASK` matches completed task number
-   - Verify: If new task, `VERSION_BUILD` = 1; if same task, `VERSION_BUILD` = current + 1
-   - Document decision: "Task {completed_task} completed. Current TASK={current_task}, BUILD={current_build}. Decision: {new_task/new_build} → TASK={new_task}, BUILD={new_build}"
+   - Verify: New `VERSION_TASK` matches completed task number (always use completed task, not current)
+   - Verify: If new task or out-of-order task, `VERSION_BUILD` = 1; if same task, `VERSION_BUILD` = current + 1
+   - Document decision: "Task {completed_task} completed. Current TASK={current_task}, BUILD={current_build}. Decision: {new_task/out_of_order/same_task} → TASK={new_task}, BUILD={new_build}"
 
 **E. UPDATE VERSION FILE:**
 5. **EXECUTE:**
-   - **If Task Transition (New Task):**
-     - Update `VERSION_TASK` to match active Task number
+   - **If Task Transition (New Task or Out-of-Order Task):**
+     - Update `VERSION_TASK` to match completed Task number (always use completed task, not current)
      - Update `VERSION_BUILD` to 1
      - **Use config path:** Update version file (from config `version_file` or fallback):
        - [Example: Confidentia] `src/confidentia/version.py` (or from `rw-config.yaml` if present)
@@ -459,8 +459,8 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Re-read version file to confirm update
    - Verify version format is valid: `RC.EPIC.STORY.TASK+BUILD`
    - Check version matches branch schema
-   - **CRITICAL:** Verify `VERSION_TASK` matches completed task number from Story
-   - **CRITICAL:** If Task transition, verify `VERSION_BUILD = 1`
+   - **CRITICAL:** Verify `VERSION_TASK` matches completed task number from Story (always use completed task)
+   - **CRITICAL:** If Task transition (new or out-of-order), verify `VERSION_BUILD = 1`
    - **CRITICAL:** If same Task, verify `VERSION_BUILD` incremented correctly (current + 1)
 
 7. **PROCEED:**

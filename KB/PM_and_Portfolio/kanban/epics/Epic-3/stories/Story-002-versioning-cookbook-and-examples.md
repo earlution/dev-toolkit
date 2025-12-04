@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-03  
-**Last updated:** 2025-12-04 (v0.3.2.5+1 – E3:S02:T05 complete: Quick reference summary created)  
-**Version:** v0.3.2.5+1  
+**Last updated:** 2025-12-04 (v0.3.2.5+2 – E3:S02:T05 complete: RW Step 2 logic updated for out-of-order completion)  
+**Version:** v0.3.2.5+2  
 **Code:** E3S02
 
 ---

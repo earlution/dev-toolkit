@@ -1382,6 +1382,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.5+2] - 04-12-25
+
+🔧 Process Improvement: Updated RW Step 2 logic to handle out-of-order task completion
+
+### Process Improvement
+
+- Updated RW Step 2 logic to recognize out-of-order task completion as valid scenario
+- Changed logic from ERROR to VALID for completed task < current VERSION_TASK
+- Updated validation steps to handle out-of-order task completion
+- Clarified that version always reflects completed task, not current VERSION_TASK
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.5+2.md` for full details
+- RW Step 2 now correctly handles tasks completed out of sequential order
+- Documentation updated to reflect out-of-order completion as valid scenario
+
+---
+
 ## [0.3.2.6+1] - 04-12-25
 
 🔧 Process Improvement: Investigated and hardened changelog ordering process
