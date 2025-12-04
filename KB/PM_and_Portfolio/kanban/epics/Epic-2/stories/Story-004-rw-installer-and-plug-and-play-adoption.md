@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.5+2 – T05 build 2: RW config-driven philosophy aligned)  
-**Version:** v0.2.4.5+2  
+**Last updated:** 2025-12-04 (v0.2.4.5+3 – T05 build 3: Document lifecycle management spec and policy)  
+**Version:** v0.2.4.5+3  
 **Code:** E2S04
 
 ---

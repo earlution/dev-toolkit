@@ -17,6 +17,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.5+3] - 04-12-25
+
+📚 Documentation: Document lifecycle management spec and policy – TTL-based expiration system for KB documents
+
+### Added
+
+- Document Lifecycle Metadata Specification (complete schema with 5 required fields, lifecycle mapping, agent rules)
+- Document Lifecycle Policy (classification rules, housekeeping process, agent requirements, enforcement)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.5+3.md` for full details
+- Documents can be classified as evergreen (permanent), timeboxed (archive), or transient (delete)
+- TTL-based expiration enables automated housekeeping to prevent documentation bloat
+- Foundation for future Doc Housekeeping Workflow package
+
+---
+
 ## [0.2.4.5+2] - 04-12-25
 
 📚 Documentation: RW updated to reflect config-driven philosophy – RW documentation now uses rw-config.yaml as single source of truth
