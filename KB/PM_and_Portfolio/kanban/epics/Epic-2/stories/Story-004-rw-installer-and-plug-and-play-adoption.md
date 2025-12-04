@@ -13,8 +13,8 @@ housekeeping_policy: keep
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
 **Completed:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.9+1 – T09 complete: Story 4 and Epic 2 marked COMPLETE)  
-**Version:** v0.2.4.9+1  
+**Last updated:** 2025-12-04 (v0.2.4.9+2 – T09 build 2: Comprehensive README rewrite)  
+**Version:** v0.2.4.9+2  
 **Code:** E2S04
 
 ---

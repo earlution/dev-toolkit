@@ -1,318 +1,456 @@
-## Vibe Dev Kit
+# Vibe Dev Kit
 
-[![Version](https://img.shields.io/badge/version-0.2.4.9%2B1-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.4.9%2B2-blue)](./CHANGELOG.md)
 [![Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-brightgreen)](./CHANGELOG.md)
 [![Repo](https://img.shields.io/github/stars/earlution/vibe-dev-kit?style=social)](https://github.com/earlution/vibe-dev-kit)
 
-**Repository for "Vibe Coding [for Dummies]" Book Project**
-
-> An opinionated dev kit of **portable frameworks, workflows, and policies** used to build and run real projects with AI-first workflows.
+**An opinionated collection of portable frameworks, workflows, and policies for building real projects with AI-first development workflows.**
 
 ---
 
-## 📚 About The Project
+## Table of Contents
 
-This repository supports the **"Vibe Coding [for Dummies]"** book project (working title). It serves as a central collection of:
-
-- **Frameworks** – Complete, reusable development frameworks
-- **Tools** – Development tools and utilities
-- **SOPs** – Standard Operating Procedures and workflows
-- **Templates** – Ready-to-use templates for common tasks
-- **Examples** – Reference implementations and examples
-
-All packages are designed to be:
-
-- ✅ **Portable** – Copy a package into any project and adapt locally  
-- ✅ **Well-Documented** – Implementation guides and policy docs  
-- ✅ **Versioned** – Using `RC.EPIC.STORY.TASK+BUILD` for forensic traceability  
-- ✅ **Battle-Tested** – Used in real projects (e.g. fynd.deals)
-
----
-
-## 🧱 Built With
-
-The dev kit itself is deliberately **tool-agnostic** in runtime dependencies, but assumes:
-
-- **Git & GitHub** for source control and collaboration
-- **Cursor / AI coding assistants** for workflow execution
-- **Markdown-first documentation** for policies, SOPs, and KB
-
-For README and changelog conventions, we take inspiration from:
-
-- **Best-README-Template** – [`https://github.com/othneildrew/Best-README-Template`](https://github.com/othneildrew/Best-README-Template)  
-- **Keep a Changelog** – [`https://github.com/olivierlacan/keep-a-changelog`](https://github.com/olivierlacan/keep-a-changelog)  
-- **Shields.io** badges – [`https://shields.io/`](https://shields.io/)
+- [About The Project](#about-the-project)
+  - [What Problem Does This Solve?](#what-problem-does-this-solve)
+  - [Built With](#built-with)
+- [Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation)
+- [Usage](#usage)
+  - [Quick Start: Release Workflow](#quick-start-release-workflow)
+  - [Using Multiple Frameworks Together](#using-multiple-frameworks-together)
+  - [Package Structure](#package-structure)
+- [Available Frameworks](#available-frameworks)
+  - [Workflow Management](#workflow-management)
+  - [Numbering & Versioning](#numbering--versioning)
+  - [Kanban](#kanban)
+  - [Debug Path Framework](#debug-path-framework)
+  - [Document Lifecycle Management](#document-lifecycle-management)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact & Acknowledgments](#contact--acknowledgments)
 
 ---
 
-## 📦 Package Categories
+## About The Project
 
-### Frameworks (`packages/frameworks/`)
+**Vibe Dev Kit** is a collection of **portable, battle-tested frameworks** that help you build and run real software projects using AI-first development workflows. Instead of starting from scratch or cobbling together incomplete solutions, you get complete, documented frameworks that you can copy into your project and adapt to your needs.
 
-Complete, reusable development frameworks with full documentation and implementation guides.
+### What Problem Does This Solve?
 
-- **Workflow Management** – Release Workflow (RW) trigger and agent-driven workflow execution (v2.0.0)
-- **Numbering & Versioning** – Semantic versioning and numbering strategies (v2.0.0)
-- **Kanban** – Kanban governance, templates, and integration with versioning & workflows
+If you're building software with AI coding assistants (like Cursor, GitHub Copilot, or similar), you've probably encountered these challenges:
 
-Planned frameworks:
+- **No Standard Workflows**: Every project reinvents release processes, versioning strategies, and project management
+- **Incomplete Solutions**: You find a workflow here, a template there, but nothing that works together cohesively
+- **Documentation Gaps**: Tools exist but lack clear guides for non-experts or integration instructions
+- **Versioning Chaos**: Semantic versioning doesn't fit AI-driven development patterns where features emerge iteratively
+- **Knowledge Loss**: Best practices exist in your head or scattered docs, not in reusable frameworks
 
-- Architecture frameworks  
-- Testing frameworks  
-- Documentation frameworks  
+**Vibe Dev Kit solves these problems** by providing:
 
-### Tools (`packages/tools/`)
+✅ **Complete Frameworks** – Not just ideas, but full implementations with documentation  
+✅ **Portable & Modular** – Copy what you need, adapt it to your project structure  
+✅ **AI-First Design** – Built specifically for AI-assisted development workflows  
+✅ **Battle-Tested** – Used in real projects (200K+ LOC commercial products)  
+✅ **Well-Documented** – Clear guides for both technical and non-technical users  
+✅ **Integrated Systems** – Frameworks work together seamlessly (Kanban → Versioning → Release Workflow)
 
-Development tools and utilities for common tasks.  
-Examples (planned): code generators, validation tools, automation scripts.
+### Who Is This For?
 
-### SOPs (`packages/sops/`)
-
-Standard Operating Procedures and workflows for development practices:  
-code review, deployment, incident response, and more (to be populated).
+- **Solo Developers** building products with AI assistance
+- **Small Teams** needing structure without bureaucracy
+- **Non-Technical Founders** who want to understand and guide development
+- **Junior Engineers** learning best practices through proven frameworks
+- **Anyone** building software with AI coding assistants who wants to do it right
 
 ---
 
-## 🚀 Getting Started
+## Built With
 
-This is a **dev kit**, not a monolith. You typically **copy a package** into your own repo and customise it.
+The dev kit itself is **deliberately tool-agnostic** in runtime dependencies, but assumes:
+
+- **Git & GitHub** – For source control and collaboration
+- **AI Coding Assistants** – Cursor, GitHub Copilot, or similar (for workflow execution)
+- **Markdown** – For documentation, policies, and knowledge base
+
+**Design Philosophy:**
+
+- **Portable** – Copy packages into any project, adapt locally
+- **Modular** – Use one framework or combine multiple
+- **Documentation-First** – Every package includes implementation guides
+- **Versioned** – Using `RC.EPIC.STORY.TASK+BUILD` for forensic traceability
+
+**Inspiration & Standards:**
+
+- **Best-README-Template** – [`https://github.com/othneildrew/Best-README-Template`](https://github.com/othneildrew/Best-README-Template) for README structure
+- **Keep a Changelog** – [`https://github.com/olivierlacan/keep-a-changelog`](https://github.com/olivierlacan/keep-a-changelog) for changelog format
+- **Shields.io** – [`https://shields.io/`](https://shields.io/) for badges
+
+---
+
+## Getting Started
 
 ### Prerequisites
 
-- Git  
-- A GitHub account (recommended)  
-- A modern editor (e.g. Cursor) with AI assistant support  
+Before using Vibe Dev Kit, you'll need:
 
-### Installation (Using the Dev Kit in Your Project)
+- **Git** installed on your system
+- **A GitHub account** (recommended for collaboration)
+- **A modern code editor** with AI assistant support:
+  - [Cursor](https://cursor.sh/) (recommended)
+  - GitHub Copilot
+  - Or similar AI coding assistant
+- **Basic familiarity** with:
+  - Command line (terminal)
+  - Git basics (clone, commit, push)
+  - Markdown (for reading documentation)
 
-1. **Clone this repo**:
+**Don't worry if you're not an expert** – each framework includes step-by-step guides.
 
-   ```bash
-   git clone https://github.com/earlution/vibe-dev-kit.git
-   cd vibe-dev-kit
-   ```
+### Installation
 
-2. **Pick a framework** you want to adopt:
+Vibe Dev Kit is **not installed as a dependency**. Instead, you **copy the frameworks you need** into your own project. This keeps your project independent and allows you to customize everything.
 
-   ```bash
-   # List all frameworks
-   ls packages/frameworks/
-   ```
-
-3. **Copy the package** into your own project:
-
-   ```bash
-   # Example: just the workflow management framework
-   cp -r packages/frameworks/workflow\ mgt/ /path/to/your/project/
-   ```
-
-4. **Follow that package’s `README.md` and implementation guide** inside your project.
-
----
-
-## 📘 Usage
-
-### Use a Single Package (Most Common)
-
-- **Just the Release Workflow (RW) framework:**
-
-  ```bash
-  cp -r packages/frameworks/workflow\ mgt/ /path/to/your/project/
-  ```
-
-- **Just the Numbering & Versioning policies:**
-
-  ```bash
-  cp -r "packages/frameworks/numbering & versioning" /path/to/your/project/numbering-and-versioning
-  ```
-
-### Use Multiple Packages Together
-
-For full power, combine frameworks:
+#### Step 1: Clone This Repository
 
 ```bash
+git clone https://github.com/earlution/vibe-dev-kit.git
+cd vibe-dev-kit
+```
+
+#### Step 2: Browse Available Frameworks
+
+```bash
+# See what's available
+ls packages/frameworks/
+
+# Explore a specific framework
+cd packages/frameworks/workflow\ mgt/
+cat README.md
+```
+
+#### Step 3: Copy a Framework to Your Project
+
+```bash
+# Example: Copy the Release Workflow framework
+cp -r packages/frameworks/workflow\ mgt/ /path/to/your/project/
+
+# Or copy multiple frameworks
 cp -r packages/frameworks/workflow\ mgt/ /path/to/your/project/
 cp -r "packages/frameworks/numbering & versioning" /path/to/your/project/numbering-and-versioning
 cp -r packages/frameworks/kanban/ /path/to/your/project/
 ```
 
-Each package documents its own **modularity and dependencies** in its README / overview, so you can see at a glance:
+#### Step 4: Follow the Framework's Implementation Guide
 
-- Whether it is **standalone**
-- Any **hard dependencies** (usually none)
-- Any **optional companion packages** that work well with it
+Each framework includes:
+- **README.md** – Overview and quick start
+- **PACKAGE_OVERVIEW.md** – Structure and concepts
+- **IMPLEMENTATION_GUIDE.md** – Step-by-step setup instructions
+- **Templates** – Ready-to-use templates and examples
 
----
+Navigate to your copied framework and follow its documentation:
 
-## 🧩 Modular Use
-
-This repo is designed to be **modular**:
-
-- Use **a single package** (e.g. just RW, or just Numbering & Versioning)  
-- Use **multiple packages together** for tight integration  
-- Treat each package as a **drop‑in module** you adapt to your own project structure
-
-See the **Package Categories** and each package’s own docs for details.
-
----
-
-## 📁 Repository Structure
-
-```text
-vibe-dev-kit/
-├── README.md
-├── CHANGELOG.md
-├── packages/
-│   ├── frameworks/
-│   │   ├── workflow mgt/              # Release Workflow framework
-│   │   ├── numbering & versioning/    # Versioning strategy framework
-│   │   └── kanban/                    # Kanban governance & integration
-│   ├── tools/                         # Development tools and utilities
-│   └── sops/                          # Standard Operating Procedures
-├── KB/                                # Knowledge base (epics, stories, policies)
-├── docs/                              # Book-related docs and style guides
-└── src/                               # Dev-kit version file, examples (when present)
+```bash
+cd /path/to/your/project/workflow\ mgt/
+cat README.md
+cat IMPLEMENTATION_GUIDE.md
 ```
 
 ---
 
-## 🧱 Current Frameworks
+## Usage
 
-### Workflow Management (`packages/frameworks/workflow mgt/`)
+### Quick Start: Release Workflow
 
-Complete package for implementing the Release Workflow (RW) trigger and agent-driven workflow execution pattern.
+The **Release Workflow (RW)** framework is the most popular starting point. It provides an AI-driven release process that handles versioning, changelogs, git operations, and validation automatically.
 
-- 11-step Release Workflow with intelligent agent execution (including Branch Safety Check)
-- “ALL sections” requirement for documentation consistency
-- Atomicity and blocked protocol (accessibility-critical)
-- Epic/Story/Task-aware branch and version enforcement
-- Validation scripts for branch context and changelog format
+#### Option 1: Use the Installer (Recommended)
 
-**Package Version:** 2.0.0  
-**Last Updated:** 2025-12-02  
-**Source Project:** fynd.deals (Epic 15, Story 1)
+The RW framework includes an installer that sets everything up automatically:
 
-**Latest Dev-Kit Release:**  
-**v0.1.1.1+2** – 📚 Documentation: Restructured CHANGELOG and README to follow industry-standard templates. See `CHANGELOG.md` for details.
+```bash
+# 1. Copy the workflow package to your project
+cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
+
+# 2. Run the installer
+cd /path/to/your/project
+python scripts/install_release_workflow.py
+
+# 3. Answer a few questions (or use --mode c for full stack)
+# 4. Start using RW by typing "RW" in your AI assistant!
+```
+
+**That's it!** The installer generates `rw-config.yaml`, updates `.cursorrules`, and patches workflow files automatically.
+
+#### Option 2: Manual Setup
+
+If you prefer manual setup, see the [RW Quickstart Guide](packages/frameworks/workflow%20mgt/KB/Documentation/Developer_Docs/vwmp/rw-installer-quickstart-guide.md).
+
+### Using Multiple Frameworks Together
+
+Frameworks are designed to work together. The recommended combination:
+
+1. **Kanban** – Organize work into Epics, Stories, and Tasks
+2. **Numbering & Versioning** – Version your work using `RC.EPIC.STORY.TASK+BUILD`
+3. **Release Workflow** – Automate releases with AI-driven workflows
+
+**Installation:**
+
+```bash
+# Copy all three frameworks
+cp -r packages/frameworks/kanban/ /path/to/your/project/
+cp -r "packages/frameworks/numbering & versioning" /path/to/your/project/numbering-and-versioning
+cp -r packages/frameworks/workflow\ mgt/ /path/to/your/project/
+
+# Follow each framework's integration guide
+```
+
+Each framework's README includes integration instructions for working with other frameworks.
+
+### Package Structure
+
+Every framework follows a consistent structure:
+
+```
+framework-name/
+├── README.md                    # Overview and quick start
+├── PACKAGE_OVERVIEW.md          # Structure and key concepts
+├── IMPLEMENTATION_GUIDE.md      # Step-by-step setup
+├── templates/                   # Ready-to-use templates
+├── integration/                 # Guides for integrating with other frameworks
+└── KB/                          # Knowledge base (policies, examples)
+```
 
 ---
 
-### Numbering & Versioning (`packages/frameworks/numbering & versioning/`)
+## Available Frameworks
 
-Complete policy package for implementing numbering and versioning strategies.
+### Workflow Management
 
-- Semantic versioning schema: `RC.EPIC.STORY.TASK+BUILD`
-- Epic renumbering strategy (legacy vs new format separation)
-- Forensic traceability
-- Kanban integration
-- Templates for Epic and Story documents
+**Purpose:** AI-driven release and workflow automation  
+**Version:** 2.0.0  
+**Status:** ✅ Production Ready
 
-**Package Version:** 2.0.0  
-**Last Updated:** 2025-12-02  
-**Source Project:** fynd.deals (Epic 15, Story 1)
+Complete package for implementing the Release Workflow (RW) – an 11-step intelligent release process that handles versioning, changelogs, git operations, and validation automatically.
 
----
+**Key Features:**
+- 🤖 **AI-Driven Execution** – Type "RW" and your AI assistant handles the entire release
+- 🔒 **Branch Safety Checks** – Ensures you're releasing from the correct branch
+- 📝 **Automatic Changelog Generation** – Creates detailed changelogs with timestamps
+- ✅ **Validation** – Validates branch context and changelog format
+- 🔧 **Plug-and-Play Installer** – Set up in minutes with a single CLI command
+- 📚 **Complete Documentation** – Step-by-step guides for all skill levels
 
-### Kanban (`packages/frameworks/kanban/`)
+**Quick Start:** See [RW Quickstart Guide](packages/frameworks/workflow%20mgt/README.md#-rw-quickstart-using-installer)
 
-Kanban governance and templates, refactored to be project-agnostic.
-
-- Kanban governance policy
-- Epic and Story templates
-- Integration guides for:
-  - Numbering & Versioning
-  - Workflow Management
-
-The dev-kit’s **local Kanban implementation** lives under:
-
-- `KB/PM_and_Portfolio/kanban/` (board + stories)
-- `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`
+**Documentation:** [`packages/frameworks/workflow mgt/README.md`](packages/frameworks/workflow%20mgt/README.md)
 
 ---
 
-## 🗺️ Roadmap
+### Numbering & Versioning
 
-This roadmap is intentionally high-level and mirrors the internal Epics:
+**Purpose:** Semantic versioning strategy for AI-driven development  
+**Version:** 2.0.0  
+**Status:** ✅ Production Ready
 
-- **Epic 1 – Vibe Dev Kit Core**
-  - Finalise `dev-kit-versioning-policy.md` and keep it in sync with `version.py` and RW docs.
-  - Harden KB structure for architecture, PM & portfolio, and governance.
+Complete policy package for implementing the `RC.EPIC.STORY.TASK+BUILD` versioning schema, designed specifically for iterative, AI-assisted development.
 
-- **Epic 2 – Workflow Management Framework**
-  - Complete RW agent execution docs as portable templates.
-  - Add non-release workflows (e.g. refactors, migrations) using the same agent pattern.
+**Key Features:**
+- 🏷️ **Semantic Versioning** – `RC.EPIC.STORY.TASK+BUILD` schema
+- 📊 **Forensic Traceability** – Every version maps to specific work items
+- 🔄 **Epic Renumbering Strategy** – Handles legacy vs. new format separation
+- 🎯 **Kanban Integration** – Works seamlessly with Kanban framework
+- 📋 **Templates** – Epic and Story document templates
+
+**Documentation:** [`packages/frameworks/numbering & versioning/README.md`](packages/frameworks/numbering%20&%20versioning/README.md)
+
+---
+
+### Kanban
+
+**Purpose:** Kanban governance, templates, and integration  
+**Version:** 1.0.0  
+**Status:** ✅ Production Ready
+
+Kanban framework for organizing work into Epics, Stories, and Tasks, with full integration with versioning and release workflows.
+
+**Key Features:**
+- 📋 **Epic/Story/Task Structure** – Clear hierarchy for organizing work
+- 🎨 **Templates** – Ready-to-use Epic and Story templates
+- 🔗 **Integration Guides** – Works with Versioning and Release Workflow
+- 📚 **Governance Policy** – Clear rules for FR/BR → Task → Story → Epic flow
+- 🎯 **Versioning Alignment** – Maps directly to `RC.EPIC.STORY.TASK+BUILD`
+
+**Documentation:** [`packages/frameworks/kanban/README.md`](packages/frameworks/kanban/README.md)
+
+---
+
+### Debug Path Framework
+
+**Purpose:** Systematic debugging methodology for test failures and regressions  
+**Version:** 1.0.0  
+**Status:** ✅ Production Ready
+
+A 6-phase, checklist-driven protocol for investigating test failures, regressions, and production bugs. Includes Debug Round Workflow (DRW) methodology.
+
+**Key Features:**
+- 🔍 **Context Snapshots** – Capture state at failure points
+- 🗺️ **Solution Space Mapping** – Systematically explore possible solutions
+- ✅ **Assumption Validation** – Test assumptions before implementing fixes
+- 🔄 **Round-Based Iteration** – Structured approach to debugging
+- 📚 **Knowledge Extraction** – Document lessons learned
+
+**Documentation:** [`packages/frameworks/debug-path/README.md`](packages/frameworks/debug-path/README.md)
+
+---
+
+### Document Lifecycle Management
+
+**Purpose:** Manage document lifecycles with TTL-like metadata  
+**Version:** 1.0.0  
+**Status:** ✅ Production Ready
+
+System for managing document lifecycles using metadata fields (`lifecycle`, `ttl_days`, `created_at`, `expires_at`, `housekeeping_policy`).
+
+**Key Features:**
+- ⏰ **Time-to-Live (TTL)** – Automatic expiration for temporary documents
+- 🏷️ **Lifecycle Classification** – Evergreen, timeboxed, or transient
+- 🧹 **Housekeeping Policies** – Automated cleanup workflows
+- 📋 **Metadata Templates** – Ready-to-use document templates
+
+**Documentation:** [`packages/frameworks/doc-lifecycle/README.md`](packages/frameworks/doc-lifecycle/README.md)
+
+---
+
+## Roadmap
+
+This roadmap reflects the internal Epics tracked in the Kanban system. For detailed task-level work, see [`KB/PM_and_Portfolio/kanban/`](KB/PM_and_Portfolio/kanban/).
+
+### ✅ Completed Epics
+
+- **Epic 1 – Vibe Dev Kit Core** ✅
+  - Dev-kit versioning policy established
+  - Package & repo architecture documented
+  - Core KB structure implemented
+
+- **Epic 2 – Workflow Management Framework** ✅
+  - Release Workflow (RW) agent execution docs complete
+  - PDCA integration into RW
+  - Additional workflows & examples
+  - RW Installer & Plug-and-Play Adoption
+
+- **Epic 4 – Kanban Framework** ✅
+  - Dev-kit Kanban implementation
+  - FR/BR intake to tasks flow
+  - Kanban + Versioning + RW integration
+
+### 🚧 In Progress
 
 - **Epic 3 – Numbering & Versioning Framework**
-  - Align dev-kit usage examples with the generic versioning policy & strategy.
-  - Publish a “versioning cookbook” for common scenarios (new story, new task, hotfix, rollback).
+  - ✅ Dev-kit alignment with versioning framework
+  - 🚧 Versioning cookbook & examples (in progress)
+  - 📋 Versioning integration with Kanban & RW (planned)
 
-- **Epic 4 – Kanban Framework**
-  - Evolve dev-kit Kanban (Epics/Stories/Tasks) with full E/S/T numbering.
-  - Tighten FR/BR → Task → Story → Epic flow and deepen integration with RW + versioning.
+### 📋 Planned
 
-For finer-grained work, see:
+- **Architecture Frameworks** – Design patterns and architectural decision records
+- **Testing Frameworks** – Test strategies and frameworks for AI-assisted development
+- **Documentation Frameworks** – Documentation generation and management
+- **Additional Tools** – Code generators, validators, automation scripts
 
-- `KB/PM_and_Portfolio/kanban/epics/`  
-- `KB/PM_and_Portfolio/kanban/` (board and stories)
-
----
-
-## 🔄 Release & Changelog
-
-- Project versions follow **`RC.EPIC.STORY.TASK+BUILD`**  
-- Changelog format follows **Keep a Changelog** principles:
-  - See `CHANGELOG.md` (top-level summary, with `Unreleased` and version sections)
-  - Detailed per-version notes live in `KB/Changelog_and_Release_Notes/Changelog_Archive/`
-
-The Release Workflow is documented in:
-
-- `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`
+**See the [Kanban Board](KB/PM_and_Portfolio/kanban/) for detailed task-level tracking.**
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
-To contribute new packages or improvements:
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-1. **Create a new package** in the appropriate category (`frameworks/`, `tools/`, or `sops/`)
-2. **Follow package structure** – include `README`, `PACKAGE_OVERVIEW`, `IMPLEMENTATION_GUIDE`, templates/examples
-3. **Document thoroughly** – clear usage instructions and customization notes
-4. **Test in real projects** – validate packages work in practice
-5. **Open a Pull Request** – include a clear description and updated version numbers
+### How to Contribute
 
-For inspiration on structure and sectioning, see:
+1. **Fork the Project**
+2. **Create your Feature Branch** (`git checkout -b feature/AmazingFeature`)
+3. **Follow Package Structure** – Include `README.md`, `PACKAGE_OVERVIEW.md`, `IMPLEMENTATION_GUIDE.md`, templates/examples
+4. **Document Thoroughly** – Clear usage instructions and customization notes
+5. **Test in Real Projects** – Validate packages work in practice
+6. **Commit your Changes** (`git commit -m 'Add some AmazingFeature'`)
+7. **Push to the Branch** (`git push origin feature/AmazingFeature`)
+8. **Open a Pull Request** – Include a clear description and updated version numbers
 
-- Best-README-Template – [`https://github.com/othneildrew/Best-README-Template`](https://github.com/othneildrew/Best-README-Template)
+### Package Contribution Guidelines
+
+When adding a new package:
+
+- **Choose the right category:**
+  - **Frameworks** – Complete systems with full documentation (e.g., Release Workflow, Versioning Strategy)
+  - **Tools** – Utilities and scripts (e.g., code generators, validators)
+  - **SOPs** – Process documentation (e.g., code review procedures, deployment workflows)
+
+- **Follow the package structure:**
+  - Include `README.md` with overview
+  - Include `PACKAGE_OVERVIEW.md` for structure
+  - Include `IMPLEMENTATION_GUIDE.md` for step-by-step guide
+  - Add version number and update history
+  - Include templates/examples where applicable
+
+- **Update main README.md** to list your new package
+
+### Inspiration
+
+For structure and sectioning inspiration, see:
+- **Best-README-Template** – [`https://github.com/othneildrew/Best-README-Template`](https://github.com/othneildrew/Best-README-Template)
 
 ---
 
-## 📝 License
+## License
 
-Licensing may vary by package. See:
-
-- Individual package `README` / `PACKAGE_OVERVIEW` files for license notes.
+Licensing may vary by package. See individual package `README.md` or `PACKAGE_OVERVIEW.md` files for license notes.
 
 ---
 
-## 🔗 Related Projects
+## Contact & Acknowledgments
 
-Packages here are developed and refined in real projects, for example:
+### Project Information
 
-- **fynd.deals** – Epic 15, Story 1 (Documentation and dev-kit extraction)
+- **Repository:** [`https://github.com/earlution/vibe-dev-kit`](https://github.com/earlution/vibe-dev-kit)
+- **Book Project:** *"Vibe Coding [for Dummies]"* (working title)
+- **Current Repo Version:** `v0.2.4.9+2` (2025-12-04)
 
----
-
-## 📚 Book Project
+### Acknowledgments
 
 This repository supports the **"Vibe Coding [for Dummies]"** book project. Packages here represent:
 
-- **Proven practices** – Tested in real-world projects  
-- **Complete solutions** – Ready to use, not just concepts  
-- **Learning resources** – Examples and guides for readers  
-- **Reference implementations** – Code and configurations readers can study
+- **Proven Practices** – Tested in real-world projects (200K+ LOC commercial products)
+- **Complete Solutions** – Ready to use, not just concepts
+- **Learning Resources** – Examples and guides for readers
+- **Reference Implementations** – Code and configurations readers can study
+
+**Related Projects:**
+
+Packages here are developed and refined in real projects, for example:
+- **fynd.deals** – Epic 15, Story 1 (Documentation and dev-kit extraction)
+
+**Resources & Inspiration:**
+
+- [Best-README-Template](https://github.com/othneildrew/Best-README-Template) – README structure inspiration
+- [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog) – Changelog format
+- [Shields.io](https://shields.io/) – Badge generation
 
 ---
 
-**Repository:** `https://github.com/earlution/vibe-dev-kit`  
-**Book Project:** *"Vibe Coding [for Dummies]"* (working title)  
-**Current Repo Version:** `v0.2.4.9+1` (2025-12-04)
+## Table of Contents (Quick Links)
+
+- [About The Project](#about-the-project)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Available Frameworks](#available-frameworks)
+- [Roadmap](#roadmap)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact & Acknowledgments](#contact--acknowledgments)
+
+---
+
+**Ready to get started?** Jump to [Getting Started](#getting-started) or explore the [Release Workflow Quickstart](packages/frameworks/workflow%20mgt/README.md#-rw-quickstart-using-installer).
