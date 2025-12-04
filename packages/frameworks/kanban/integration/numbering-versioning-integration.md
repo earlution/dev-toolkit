@@ -250,9 +250,9 @@ before_completion:
   epic_checklist: "- [ ] **Story 33 – Parent Inclusivity**"
   story_status: "IN PROGRESS"
   story_tasks:
-    - "- [x] **E4:S33:T001** ✅ COMPLETE (v0.4.33.1+1)"
-    - "- [x] **E4:S33:T002** ✅ COMPLETE (v0.4.33.2+1)"
-    - "- [ ] **E4:S33:T003** (pending)"
+    - "- [x] **E4:S33:T01** ✅ COMPLETE (v0.4.33.1+1)"
+    - "- [x] **E4:S33:T02** ✅ COMPLETE (v0.4.33.2+1)"
+    - "- [ ] **E4:S33:T03** (pending)"
 
 after_task_3_complete:
   version: "v0.4.33.3+1"

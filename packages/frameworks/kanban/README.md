@@ -570,7 +570,7 @@ step_3:
 
 step_4:
   action: "Add forensic markers to Task Checklist"
-  format: "- [x] **E4:S33:T001** ✅ COMPLETE (v0.4.33.1+1)"
+  format: "- [x] **E4:S33:T01** ✅ COMPLETE (v0.4.33.1+1)"
   location: "Story document, Task Checklist section"
 
 step_5:
@@ -600,7 +600,7 @@ patterns:
       version: "(v0.4.35.2+2, Tasks 1-2 complete)"
 
   completed_task:
-    markdown: "- [x] **E4:S33:T001 – Audit parent templates** ✅ COMPLETE (v0.4.33.1+1)"
+    markdown: "- [x] **E4:S33:T01 – Audit parent templates** ✅ COMPLETE (v0.4.33.1+1)"
     components:
       checkbox: "[x]"
       task_id: "**E4:S33:T01**"
@@ -802,7 +802,7 @@ steps:
   1:
     action: "Complete all tasks"
     location: "Story document"
-    format: "- [x] **E4:S33:T001** ✅ COMPLETE (v0.4.33.1+1)"
+    format: "- [x] **E4:S33:T01** ✅ COMPLETE (v0.4.33.1+1)"
 
   2:
     action: "Update Story status"
@@ -898,7 +898,7 @@ best_practices:
 
   version_markers:
     rule: "Add version to completed tasks"
-    format: "- [x] **E4:S33:T001** ✅ COMPLETE (v0.4.33.1+1)"
+    format: "- [x] **E4:S33:T01** ✅ COMPLETE (v0.4.33.1+1)"
     timing: "Immediately after task completion (via RW)"
 
   dependencies:
@@ -1343,7 +1343,7 @@ update_workflow:
    - Change paths: `KB/PM_and_Portfolio/kanban/` → `docs/kanban/`
    - Change Epic paths: `epics/Epic-X.md` → `epics/Epic-X.md` (if same structure)
    - Change branch convention: `epic/X-slug` → `feature/epic-X`
-   - Change examples: Use `E1:S1:T1` instead of `E20:S11:T015`
+   - Change examples: Use `E1:S1:T1` instead of `E20:S11:T15`
 
 3. **Customize templates:**
    - Update path references in template notes

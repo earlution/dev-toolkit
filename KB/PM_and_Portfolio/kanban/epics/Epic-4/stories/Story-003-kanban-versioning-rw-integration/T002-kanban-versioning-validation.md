@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Kanban → Versioning Integration Validation
 
-**Task:** E4:S03:T002 – Validate Kanban → Versioning integration in dev-kit  
+**Task:** E4:S03:T02 – Validate Kanban → Versioning integration in dev-kit  
 **Date:** 2025-12-02  
 **Author:** AI Agent (Auto)  
 **Status:** ✅ COMPLETE
@@ -32,17 +32,17 @@ This report validates the integration between Kanban and Versioning systems in t
 ### 1.1 Test Cases
 
 **Test Case 1: Epic 4, Story 1 (Dev Kit Kanban Implementation)**
-- Tasks: E4:S01:T001 through E4:S01:T005
+- Tasks: E4:S01:T01 through E4:S01:T05
 - Expected versions: `v0.4.1.1+1`, `v0.4.1.2+1`, `v0.4.1.3+1`, `v0.4.1.4+1`, `v0.4.1.5+1`
 - Actual versions: `v0.4.1.1+2`, `v0.4.1.1+3`, `v0.4.1.1+4`, `v0.4.1.1+5`, `v0.4.1.1+6`
 
 **Test Case 2: Epic 2, Story 1 (RW Agent Execution & Docs)**
-- Tasks: E2:S01:T001 through E2:S01:T004
+- Tasks: E2:S01:T01 through E2:S01:T04
 - Expected versions: `v0.2.1.1+1`, `v0.2.1.2+1`, `v0.2.1.3+1`, `v0.2.1.4+1`
 - Actual versions: `v0.2.1.1+3`, `v0.2.1.1+4`, `v0.2.1.1+5`, `v0.2.1.1+2`
 
 **Test Case 3: Epic 3, Story 1 (Dev Kit Alignment with Versioning Framework)**
-- Tasks: E3:S01:T001 through E3:S01:T006
+- Tasks: E3:S01:T01 through E3:S01:T06
 - Expected versions: `v0.3.1.1+1`, `v0.3.1.2+1`, `v0.3.1.3+1`, `v0.3.1.4+1`, `v0.3.1.5+1`, `v0.3.1.6+1`
 - Actual versions: (to be verified)
 
@@ -83,17 +83,17 @@ This report validates the integration between Kanban and Versioning systems in t
 **Evidence:**
 
 **Epic 4, Story 1:**
-- E4:S01:T001 → `v0.4.1.1+2` ❌ (should be `v0.4.1.1+1`)
-- E4:S01:T002 → `v0.4.1.1+3` ❌ (should be `v0.4.1.2+1`)
-- E4:S01:T003 → `v0.4.1.1+4` ❌ (should be `v0.4.1.3+1`)
-- E4:S01:T004 → `v0.4.1.1+5` ❌ (should be `v0.4.1.4+1`)
-- E4:S01:T005 → `v0.4.1.1+6` ❌ (should be `v0.4.1.5+1`)
+- E4:S01:T01 → `v0.4.1.1+2` ❌ (should be `v0.4.1.1+1`)
+- E4:S01:T02 → `v0.4.1.1+3` ❌ (should be `v0.4.1.2+1`)
+- E4:S01:T03 → `v0.4.1.1+4` ❌ (should be `v0.4.1.3+1`)
+- E4:S01:T04 → `v0.4.1.1+5` ❌ (should be `v0.4.1.4+1`)
+- E4:S01:T05 → `v0.4.1.1+6` ❌ (should be `v0.4.1.5+1`)
 
 **Epic 2, Story 1:**
-- E2:S01:T001 → `v0.2.1.1+3` ❌ (should be `v0.2.1.1+1`)
-- E2:S01:T002 → `v0.2.1.1+4` ❌ (should be `v0.2.1.2+1`)
-- E2:S01:T003 → `v0.2.1.1+5` ❌ (should be `v0.2.1.3+1`)
-- E2:S01:T004 → `v0.2.1.1+2` ❌ (should be `v0.2.1.4+1`)
+- E2:S01:T01 → `v0.2.1.1+3` ❌ (should be `v0.2.1.1+1`)
+- E2:S01:T02 → `v0.2.1.1+4` ❌ (should be `v0.2.1.2+1`)
+- E2:S01:T03 → `v0.2.1.1+5` ❌ (should be `v0.2.1.3+1`)
+- E2:S01:T04 → `v0.2.1.1+2` ❌ (should be `v0.2.1.4+1`)
 
 **Status:** ❌ **FAIL** - Task numbers are NOT correctly mapping to version `TASK` component.
 
@@ -256,27 +256,27 @@ VERSION_BUILD = 1     # Build number (increments per release within task, bumped
 ### 6.1 Correct Behavior
 
 **Epic 4, Story 1 (Corrected):**
-- E4:S01:T001 → `v0.4.1.1+1` ✅ (Epic 4, Story 1, Task 1, Build 1)
-- E4:S01:T002 → `v0.4.1.2+1` ✅ (Epic 4, Story 1, Task 2, Build 1)
-- E4:S01:T003 → `v0.4.1.3+1` ✅ (Epic 4, Story 1, Task 3, Build 1)
-- E4:S01:T004 → `v0.4.1.4+1` ✅ (Epic 4, Story 1, Task 4, Build 1)
-- E4:S01:T005 → `v0.4.1.5+1` ✅ (Epic 4, Story 1, Task 5, Build 1)
+- E4:S01:T01 → `v0.4.1.1+1` ✅ (Epic 4, Story 1, Task 1, Build 1)
+- E4:S01:T02 → `v0.4.1.2+1` ✅ (Epic 4, Story 1, Task 2, Build 1)
+- E4:S01:T03 → `v0.4.1.3+1` ✅ (Epic 4, Story 1, Task 3, Build 1)
+- E4:S01:T04 → `v0.4.1.4+1` ✅ (Epic 4, Story 1, Task 4, Build 1)
+- E4:S01:T05 → `v0.4.1.5+1` ✅ (Epic 4, Story 1, Task 5, Build 1)
 
 **Epic 2, Story 1 (Corrected):**
-- E2:S01:T001 → `v0.2.1.1+1` ✅ (Epic 2, Story 1, Task 1, Build 1)
-- E2:S01:T002 → `v0.2.1.2+1` ✅ (Epic 2, Story 1, Task 2, Build 1)
-- E2:S01:T003 → `v0.2.1.3+1` ✅ (Epic 2, Story 1, Task 3, Build 1)
-- E2:S01:T004 → `v0.2.1.4+1` ✅ (Epic 2, Story 1, Task 4, Build 1)
+- E2:S01:T01 → `v0.2.1.1+1` ✅ (Epic 2, Story 1, Task 1, Build 1)
+- E2:S01:T02 → `v0.2.1.2+1` ✅ (Epic 2, Story 1, Task 2, Build 1)
+- E2:S01:T03 → `v0.2.1.3+1` ✅ (Epic 2, Story 1, Task 3, Build 1)
+- E2:S01:T04 → `v0.2.1.4+1` ✅ (Epic 2, Story 1, Task 4, Build 1)
 
 ### 6.2 BUILD Increments Within Task
 
 **If Task 1 has multiple releases:**
-- E4:S01:T001, Release 1 → `v0.4.1.1+1` ✅
-- E4:S01:T001, Release 2 → `v0.4.1.1+2` ✅ (same Task, BUILD increments)
-- E4:S01:T001, Release 3 → `v0.4.1.1+3` ✅ (same Task, BUILD increments)
+- E4:S01:T01, Release 1 → `v0.4.1.1+1` ✅
+- E4:S01:T01, Release 2 → `v0.4.1.1+2` ✅ (same Task, BUILD increments)
+- E4:S01:T01, Release 3 → `v0.4.1.1+3` ✅ (same Task, BUILD increments)
 
 **Moving to Task 2:**
-- E4:S01:T002, Release 1 → `v0.4.1.2+1` ✅ (new Task, TASK increments, BUILD resets to 1)
+- E4:S01:T02, Release 1 → `v0.4.1.2+1` ✅ (new Task, TASK increments, BUILD resets to 1)
 
 ---
 

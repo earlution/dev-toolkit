@@ -32,17 +32,17 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ## Task Checklist
 
-- [x] **E4:S01:T001 – Review existing dev-kit Kanban policies and templates** ✅ COMPLETE (v0.4.1.1+2)
-- [x] **E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit** ✅ COMPLETE (v0.4.1.1+3)
-- [x] **E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT** ✅ COMPLETE (v0.4.1.1+4)
-- [x] **E4:S01:T004 – Align dev-kit Kanban templates with updated governance** ✅ COMPLETE (v0.4.1.1+5)
-- [x] **E4:S01:T005 – Document consumption pattern for other projects** ✅ COMPLETE (v0.4.1.1+6)
+- [x] **E4:S01:T01 – Review existing dev-kit Kanban policies and templates** ✅ COMPLETE (v0.4.1.1+2)
+- [x] **E4:S01:T02 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit** ✅ COMPLETE (v0.4.1.1+3)
+- [x] **E4:S01:T03 – Update dev-kit Kanban governance policy as canonical SoT** ✅ COMPLETE (v0.4.1.1+4)
+- [x] **E4:S01:T04 – Align dev-kit Kanban templates with updated governance** ✅ COMPLETE (v0.4.1.1+5)
+- [x] **E4:S01:T05 – Document consumption pattern for other projects** ✅ COMPLETE (v0.4.1.1+6)
 
 ---
 
 ## Tasks
 
-### E4:S01:T001 – Review existing dev-kit Kanban policies and templates ✅ COMPLETE
+### E4:S01:T01 – Review existing dev-kit Kanban policies and templates ✅ COMPLETE
 
 **Input:** Current dev-kit Kanban framework files  
 **Deliverable:** Gap analysis report ✅ **DELIVERED**  
@@ -77,11 +77,11 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ---
 
-### E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit ✅ COMPLETE
+### E4:S01:T02 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit ✅ COMPLETE
 
 **Input:** fynd.deals Epic 15 Kanban documentation (via framework packages)  
 **Deliverable:** Summary of reusable patterns and findings ✅ **DELIVERED**  
-**Dependencies:** E4:S01:T001  
+**Dependencies:** E4:S01:T01  
 **Blocker:** None
 
 **Status:** ✅ **COMPLETE** - Findings documented in `T002-fynd-deals-epic15-kanban-findings.md`
@@ -122,11 +122,11 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ---
 
-### E4:S01:T003 – Update dev-kit Kanban governance policy as canonical SoT ✅ COMPLETE
+### E4:S01:T03 – Update dev-kit Kanban governance policy as canonical SoT ✅ COMPLETE
 
 **Input:** Findings from T001 and T002  
 **Deliverable:** Updated canonical Kanban governance policy ✅ **DELIVERED**  
-**Dependencies:** E4:S01:T001, E4:S01:T002  
+**Dependencies:** E4:S01:T01, E4:S01:T02  
 **Blocker:** None
 
 **Status:** ✅ **COMPLETE** - Framework policy updated with all 9 operational principles sections
@@ -158,11 +158,11 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ---
 
-### E4:S01:T004 – Align dev-kit Kanban templates with updated governance ✅ COMPLETE
+### E4:S01:T04 – Align dev-kit Kanban templates with updated governance ✅ COMPLETE
 
 **Input:** Updated governance policy from T003  
 **Deliverable:** Updated Kanban templates ✅ **DELIVERED**  
-**Dependencies:** E4:S01:T003  
+**Dependencies:** E4:S01:T03  
 **Blocker:** None
 
 **Status:** ✅ **COMPLETE** - Both templates updated with governance alignment notes
@@ -206,11 +206,11 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 
 ---
 
-### E4:S01:T005 – Document consumption pattern for other projects ✅ COMPLETE
+### E4:S01:T05 – Document consumption pattern for other projects ✅ COMPLETE
 
 **Input:** Updated policies and templates from T003-T004  
 **Deliverable:** Consumption documentation ✅ **DELIVERED**  
-**Dependencies:** E4:S01:T003, E4:S01:T004  
+**Dependencies:** E4:S01:T03, E4:S01:T04  
 **Blocker:** None
 
 **Status:** ✅ **COMPLETE** - Comprehensive consumption pattern documented in README

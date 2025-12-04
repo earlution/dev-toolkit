@@ -8,11 +8,11 @@ housekeeping_policy: keep
 
 # RW → Kanban Integration Validation
 
-**Task:** E4:S03:T004 – Validate RW → Kanban integration in dev-kit  
+**Task:** E4:S03:T04 – Validate RW → Kanban integration in dev-kit  
 **Date:** 2025-12-02  
 **Author:** AI Agent (Auto)  
 **Status:** ✅ COMPLETE (v0.4.3.4+1)  
-**Gaps Addressed:** E4:S03:T007 (in progress)
+**Gaps Addressed:** E4:S03:T07 (in progress)
 
 ---
 
@@ -102,7 +102,7 @@ This report validates the integration between Release Workflow (RW) and Kanban s
    - `**Version:** v0.4.3.3+1` ✅ **UPDATED**
 
 2. **Task Checklist:**
-   - `- [x] **E4:S03:T003 – Validate Versioning → RW integration in dev-kit** ✅ COMPLETE (v0.4.3.3+1)` ✅ **UPDATED**
+   - `- [x] **E4:S03:T03 – Validate Versioning → RW integration in dev-kit** ✅ COMPLETE (v0.4.3.3+1)` ✅ **UPDATED**
    - Forensic marker correctly added
 
 3. **Detailed Task Sections:**
@@ -363,9 +363,9 @@ This report validates the integration between Release Workflow (RW) and Kanban s
 ```markdown
 **Last updated:** 2025-12-02 (v0.4.3.3+1 – Task 3 complete: Validate Versioning → RW integration in dev-kit)
 **Tasks:**
-- [x] E4:S03:T001 ✅ COMPLETE (v0.4.3.1+1)
-- [x] E4:S03:T002 ✅ COMPLETE (v0.4.3.2+2)
-- [x] E4:S03:T003 ✅ COMPLETE (v0.4.3.3+1)
+- [x] E4:S03:T01 ✅ COMPLETE (v0.4.3.1+1)
+- [x] E4:S03:T02 ✅ COMPLETE (v0.4.3.2+2)
+- [x] E4:S03:T03 ✅ COMPLETE (v0.4.3.3+1)
 ```
 
 ### 6.2 Story Document (Correct)
@@ -378,12 +378,12 @@ This report validates the integration between Release Workflow (RW) and Kanban s
 
 **Task Checklist:**
 ```markdown
-- [x] **E4:S03:T003 – Validate Versioning → RW integration in dev-kit** ✅ COMPLETE (v0.4.3.3+1)
+- [x] **E4:S03:T03 – Validate Versioning → RW integration in dev-kit** ✅ COMPLETE (v0.4.3.3+1)
 ```
 
 **Detailed Task Section:**
 ```markdown
-### E4:S03:T003 – Validate Versioning → RW integration in dev-kit ✅ COMPLETE
+### E4:S03:T03 – Validate Versioning → RW integration in dev-kit ✅ COMPLETE
 
 **Status:** ✅ **COMPLETE** - Validation report created, integration validated
 **Version:** v0.4.3.3+1
@@ -421,9 +421,9 @@ The RW → Kanban integration is **partially implemented** with **good foundatio
 
 ---
 
-## 8. Fix Status (E4:S03:T007)
+## 8. Fix Status (E4:S03:T07)
 
-**Task:** E4:S03:T007 – Address RW → Kanban integration gaps identified in T004  
+**Task:** E4:S03:T07 – Address RW → Kanban integration gaps identified in T004  
 **Status:** 🔄 IN PROGRESS
 
 ### Fixes Applied

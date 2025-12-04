@@ -32,16 +32,16 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 ## Task Checklist
 
-- [x] **E2:S01:T001 – Audit `release-workflow-agent-execution.md` for project-specific assumptions** ✅ COMPLETE (v0.2.1.1+3)
-- [x] **E2:S01:T002 – Tag Confidentia/fynd.deals examples and add dev-kit examples** ✅ COMPLETE (v0.2.1.1+4)
-- [x] **E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy** ✅ COMPLETE (v0.2.1.1+5)
-- [x] **E2:S01:T004 – Update RW changelog step to require verification before marking fixes as "fixed"** ✅ COMPLETE (v0.2.1.1+2)
+- [x] **E2:S01:T01 – Audit `release-workflow-agent-execution.md` for project-specific assumptions** ✅ COMPLETE (v0.2.1.1+3)
+- [x] **E2:S01:T02 – Tag Confidentia/fynd.deals examples and add dev-kit examples** ✅ COMPLETE (v0.2.1.1+4)
+- [x] **E2:S01:T03 – Align `.cursorrules` RW trigger section with dev-kit policy** ✅ COMPLETE (v0.2.1.1+5)
+- [x] **E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed"** ✅ COMPLETE (v0.2.1.1+2)
 
 ---
 
 ## Tasks
 
-### E2:S01:T001 – Audit `release-workflow-agent-execution.md` for project-specific assumptions ✅ COMPLETE
+### E2:S01:T01 – Audit `release-workflow-agent-execution.md` for project-specific assumptions ✅ COMPLETE
 
 **Input:** Current `release-workflow-agent-execution.md` file  
 **Deliverable:** Audit report identifying project-specific assumptions ✅ **DELIVERED**  
@@ -79,11 +79,11 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 ---
 
-### E2:S01:T002 – Tag Confidentia/fynd.deals examples and add dev-kit examples ✅ COMPLETE
+### E2:S01:T02 – Tag Confidentia/fynd.deals examples and add dev-kit examples ✅ COMPLETE
 
 **Input:** Audit report from T001  
 **Deliverable:** Updated documentation with clearly tagged examples ✅ **DELIVERED**  
-**Dependencies:** E2:S01:T001  
+**Dependencies:** E2:S01:T01  
 **Blocker:** None
 
 **Status:** ✅ **COMPLETE** - All examples tagged and dev-kit examples added
@@ -114,11 +114,11 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 ---
 
-### E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy ✅ COMPLETE
+### E2:S01:T03 – Align `.cursorrules` RW trigger section with dev-kit policy ✅ COMPLETE
 
 **Input:** Updated RW documentation from T002  
 **Deliverable:** Updated `.cursorrules` RW trigger section ✅ **DELIVERED**  
-**Dependencies:** E2:S01:T002  
+**Dependencies:** E2:S01:T02  
 **Blocker:** None
 
 **Status:** ✅ **COMPLETE** - Cursorrules RW trigger section aligned with dev-kit policy
@@ -153,7 +153,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 ---
 
-### E2:S01:T004 – Update RW changelog step to require verification before marking fixes as "fixed"
+### E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed"
 
 **Input:** Current RW changelog documentation  
 **Deliverable:** Updated RW documentation requiring verification for fixes  

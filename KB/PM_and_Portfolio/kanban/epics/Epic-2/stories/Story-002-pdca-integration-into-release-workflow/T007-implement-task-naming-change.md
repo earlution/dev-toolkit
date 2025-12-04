@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Task 007 – Implement Task Naming Change (Txxx → Txx)
 
-**Task:** E2:S02:T007  
+**Task:** E2:S02:T07  
 **Status:** TODO  
 **Priority:** MEDIUM  
 **Created:** 2025-12-03  
@@ -48,7 +48,7 @@ Implement the change to Kanban Task naming policy from 3-digit format (Txxx) to 
    - Update `packages/frameworks/numbering & versioning/kanban-governance-policy.md`
    - Update `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`
    - Change format from `Exx:Sxx:Txxx` to `Exx:Sxx:Txx`
-   - Update examples from `E20:S07:T010` to `E20:S07:T10`
+   - Update examples from `E20:S07:T10` to `E20:S07:T10`
 
 2. **Update Code/Scripts:**
    - Find any scripts that parse Task IDs
@@ -81,7 +81,7 @@ Implement the change to Kanban Task naming policy from 3-digit format (Txxx) to 
 
 ## Related Tasks
 
-- E2:S02:T008 – Update Kanban docs to Txx standard (follow-up task)
+- E2:S02:T08 – Update Kanban docs to Txx standard (follow-up task)
 
 ---
 

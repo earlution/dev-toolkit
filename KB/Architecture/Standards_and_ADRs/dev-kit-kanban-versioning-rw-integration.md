@@ -95,14 +95,14 @@ end_to_end_flow:
 
 **Dev-Kit Example:**
 ```yaml
-kanban_task: "E4:S03:T001"
+kanban_task: "E4:S03:T01"
 version: "0.4.3.1+1"
 forensic_marker: "✅ COMPLETE (v0.4.3.1+1)"
 ```
 
-**Validation Status:** ✅ **VALIDATED** (E4:S03:T002)
+**Validation Status:** ✅ **VALIDATED** (E4:S03:T02)
 - Epic/Story mapping: ✅ PASS
-- Task mapping: ✅ PASS (fixed in E4:S03:T002)
+- Task mapping: ✅ PASS (fixed in E4:S03:T02)
 - Version assignment: ✅ PASS
 
 **Reference:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md`
@@ -129,7 +129,7 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 # Result: "0.4.3.7+1"
 ```
 
-**Validation Status:** ✅ **VALIDATED** (E4:S03:T003)
+**Validation Status:** ✅ **VALIDATED** (E4:S03:T03)
 - Version file reading: ✅ PASS
 - BUILD increment: ✅ PASS
 - Task transition handling: ✅ PASS
@@ -157,7 +157,7 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
   - Tasks: T001 ✅ (v0.4.3.1+1), T002 ✅ (v0.4.3.2+2), T003 ✅ (v0.4.3.3+1), T004 ✅ (v0.4.3.4+1), T007 ✅ (v0.4.3.7+1)
 ```
 
-**Validation Status:** ✅ **VALIDATED** (E4:S03:T004, gaps fixed in E4:S03:T007)
+**Validation Status:** ✅ **VALIDATED** (E4:S03:T04, gaps fixed in E4:S03:T07)
 - Epic document updates: ✅ PASS (after fixes)
 - Story document updates: ✅ PASS
 - "ALL sections" requirement: ✅ PASS (after fixes)
@@ -173,7 +173,7 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 
 ### Complete Workflow Example
 
-**Scenario:** Complete Task E4:S03:T005 (Create dev-kit integration guide)
+**Scenario:** Complete Task E4:S03:T05 (Create dev-kit integration guide)
 
 **Step 1: Work Completion**
 - Developer completes Task 5 work (creates integration guide)
@@ -213,7 +213,7 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 - Updates Epic-4.md Story Checklist: `- [ ] **E4:S03 – ...** - IN PROGRESS (v0.4.3.5+1)`
 - Updates Epic-4.md detailed Story section: Task 5 marked complete
 - Updates Story-003.md header: `**Last updated:** ...`, `**Version:** v0.4.3.5+1`
-- Updates Story-003.md Task Checklist: `- [x] **E4:S03:T005 – ...** ✅ COMPLETE (v0.4.3.5+1)`
+- Updates Story-003.md Task Checklist: `- [x] **E4:S03:T05 – ...** ✅ COMPLETE (v0.4.3.5+1)`
 - Updates Story-003.md detailed Task section: `**Status:** ✅ **COMPLETE** (v0.4.3.5+1) - ...`
 - Updates Story-003.md footer: `_Last updated: ..._`
 
@@ -318,20 +318,20 @@ locations:
 
 All three integration points have been validated in dev-kit:
 
-**✅ Kanban → Versioning (E4:S03:T002)**
+**✅ Kanban → Versioning (E4:S03:T02)**
 - Status: ✅ VALIDATED
 - Epic/Story mapping: ✅ PASS
 - Task mapping: ✅ PASS (fixed critical issue)
 - Version assignment: ✅ PASS
 
-**✅ Versioning → RW (E4:S03:T003)**
+**✅ Versioning → RW (E4:S03:T03)**
 - Status: ✅ VALIDATED
 - Version file reading: ✅ PASS
 - BUILD increment: ✅ PASS
 - Task transition handling: ✅ PASS
 - EPIC/STORY progression: ⚠️ PARTIAL (not explicitly documented)
 
-**✅ RW → Kanban (E4:S03:T004, E4:S03:T007)**
+**✅ RW → Kanban (E4:S03:T04, E4:S03:T07)**
 - Status: ✅ VALIDATED (gaps fixed)
 - Epic document updates: ✅ PASS
 - Story document updates: ✅ PASS
@@ -511,7 +511,7 @@ All three integration points have been validated in dev-kit:
 
 ## Version History
 
-- **v1.0.0** (2025-12-02): Initial version created (E4:S03:T005)
+- **v1.0.0** (2025-12-02): Initial version created (E4:S03:T05)
 
 ---
 

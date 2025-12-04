@@ -48,7 +48,7 @@ Implement the change to Kanban Task naming policy from 3-digit format (Txxx) to 
    - Update `packages/frameworks/numbering & versioning/kanban-governance-policy.md`
    - Update `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`
    - Change format from `Exx:Sxx:Txxx` to `Exx:Sxx:Txx`
-   - Update examples from `E20:S07:T010` to `E20:S07:T10`
+   - Update examples from `E20:S07:T10` to `E20:S07:T10`
 
 2. **Update Code/Scripts:**
    - Find any scripts that parse Task IDs

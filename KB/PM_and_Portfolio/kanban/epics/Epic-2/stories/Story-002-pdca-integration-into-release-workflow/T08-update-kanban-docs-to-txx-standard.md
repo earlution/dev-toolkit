@@ -47,7 +47,7 @@ Update all Kanban documentation throughout the repository to use the new Txx (2-
 1. **Update Documentation Files:**
    - Search for all instances of Txxx format in documentation
    - Update to Txx format
-   - Update examples: `E20:S07:T010` → `E20:S07:T10`
+   - Update examples: `E20:S07:T10` → `E20:S07:T10`
    - Update task references: `T001` → `T01`, `T010` → `T10`, etc.
 
 2. **Update Task File Naming:**

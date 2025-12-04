@@ -24,11 +24,11 @@ housekeeping_policy: keep
 
 ## Task Checklist
 
-- [ ] **EXX:SYY:T001 – [Task Title]** ✅ COMPLETE (vRC.X.Y.T+B)
-- [ ] **EXX:SYY:T002 – [Task Title]**
-- [ ] **EXX:SYY:T003 – [Task Title]**
+- [ ] **EXX:SYY:T01 – [Task Title]** ✅ COMPLETE (vRC.X.Y.T+B)
+- [ ] **EXX:SYY:T02 – [Task Title]**
+- [ ] **EXX:SYY:T03 – [Task Title]**
 
-> **Format:** `Exx:Sxx:Txxx` (Epic, Story, Task with zero padding)
+> **Format:** `Exx:Sxx:Txx` (Epic, Story, Task with 2-digit zero padding, e.g., `E1:S01:T01`, `E2:S04:T05`)
 
 ---
 
@@ -48,7 +48,9 @@ housekeeping_policy: keep
 
 ## Tasks
 
-### EXX:SYY:T001 – [Task Title]
+### EXX:SYY:T01 – [Task Title]
+
+> **Format:** Always use full `Exx:Sxx:Txx` format (e.g., `E1:S01:T01`, not `T01` alone)
 
 **Input:** [What this task requires]
 **Deliverable:** [What this task produces]
@@ -63,7 +65,7 @@ housekeeping_policy: keep
 
 ---
 
-### EXX:SYY:T002 – [Task Title]
+### EXX:SYY:T02 – [Task Title]
 
 **Input:** [What this task requires]
 **Deliverable:** [What this task produces]

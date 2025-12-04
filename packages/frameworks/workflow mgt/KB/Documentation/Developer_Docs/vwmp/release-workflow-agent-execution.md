@@ -398,7 +398,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic {epic}/Story-{story}-*.md` (or from `rw-config.yaml` if present)
      - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md` (or from `rw-config.yaml` if present)
    - Find the MOST RECENTLY COMPLETED task in the Task Checklist (marked `✅ COMPLETE`)
-   - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T008` → task number is `8`)
+   - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T08` → task number is `8`)
    - **CRITICAL:** If no task is marked complete, or you cannot identify which task was just completed, **STOP** and ask the user which task was completed
    - **CRITICAL:** Document the completed task number for comparison
 
@@ -460,10 +460,10 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 7. **PROCEED:**
    - Document version bump with decision rationale:
      - **If Task Transition:**
-       - [Example: vibe-dev-kit] "Version bumped: Task transition detected. Task T008 completed. Current TASK=3, BUILD=5. Decision: new_task → TASK=8, BUILD=1. New version: 0.2.2.8+1"
+       - [Example: vibe-dev-kit] "Version bumped: Task transition detected. Task E2:S02:T08 completed. Current TASK=3, BUILD=5. Decision: new_task → TASK=8, BUILD=1. New version: 0.2.2.8+1"
      - **If Same Task:**
-       - [Example: Confidentia] "Version bumped: Task T002 completed. Current TASK=2, BUILD=8. Decision: new_build → TASK=2, BUILD=9. New version: 0.4.3.2+9"
-       - [Example: vibe-dev-kit] "Version bumped: Task T001 completed. Current TASK=1, BUILD=2. Decision: new_build → TASK=1, BUILD=3. New version: 0.2.1.1+3"
+       - [Example: Confidentia] "Version bumped: Task E4:S03:T02 completed. Current TASK=2, BUILD=8. Decision: new_build → TASK=2, BUILD=9. New version: 0.4.3.2+9"
+       - [Example: vibe-dev-kit] "Version bumped: Task E2:S01:T01 completed. Current TASK=1, BUILD=2. Decision: new_build → TASK=1, BUILD=3. New version: 0.2.1.1+3"
    - Pass `new_version` to Step 3
    - Move to Step 3
 

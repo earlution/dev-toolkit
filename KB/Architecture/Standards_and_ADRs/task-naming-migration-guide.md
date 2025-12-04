@@ -8,15 +8,15 @@ housekeeping_policy: keep
 
 # Task Naming Migration Guide
 
-**Date:** 2025-12-03  
-**Change:** Task naming format changed from Txxx (3-digit) to Txx (2-digit)  
+**Date:** 2025-12-04  
+**Change:** Task naming format changed from `Exx:Sxx:Txxx` (3-digit task) to `Exx:Sxx:Txx` (2-digit task)  
 **Policy:** `packages/frameworks/kanban/policies/kanban-governance-policy.md`
 
 ---
 
 ## Summary
 
-The Kanban Task naming policy has been updated from 3-digit format (`Txxx`) to 2-digit format (`Txx`) to standardize with Story numbering format (`Sxx`) and simplify the naming convention.
+The Kanban Task naming policy has been updated to always use the full `Exx:Sxx:Txx` format with 2-digit task numbers (instead of 3-digit). Tasks are NEVER referenced as standalone `Txxx` or `Txx` - they must always include the Epic and Story context: `E{epic}:S{story}:T{task}`.
 
 ---
 
@@ -24,7 +24,7 @@ The Kanban Task naming policy has been updated from 3-digit format (`Txxx`) to 2
 
 **Old Format:**
 - `Exx:Sxx:Txxx` (Epic, Story, Task with 3-digit zero padding)
-- Example: `E20:S07:T010` = Epic 20, Story 7, Task 10
+- Example: `E20:S07:T10` = Epic 20, Story 7, Task 10
 
 **New Format:**
 - `Exx:Sxx:Txx` (Epic, Story, Task with 2-digit zero padding)
@@ -42,22 +42,24 @@ The Kanban Task naming policy has been updated from 3-digit format (`Txxx`) to 2
 - No requirement to update existing task references in completed work
 
 **New Tasks:**
-- All new tasks MUST use Txx format (2-digit)
-- Task files should be named `T01-*.md`, `T02-*.md`, etc.
-- Task IDs in commits and references should use Txx format
+- All new tasks MUST use full `Exx:Sxx:Txx` format (2-digit task number)
+- Task files should be named `T01-*.md`, `T02-*.md`, etc. (for file naming only)
+- Task IDs in commits and references MUST use full `Exx:Sxx:Txx` format (e.g., `E1:S01:T01`, `E2:S04:T05`)
+- NEVER use standalone `T01` or `T001` - always include Epic and Story context
 
 ### Transition Period
 
 **During Transition:**
 - Both formats are acceptable for existing tasks
-- New tasks should use Txx format
-- Documentation should be updated to show Txx format
-- Examples should use Txx format
+- New tasks MUST use full `Exx:Sxx:Txx` format (2-digit task)
+- Documentation should be updated to show `Exx:Sxx:Txx` format
+- Examples should use `Exx:Sxx:Txx` format
 
 **After Transition:**
-- All new work uses Txx format
-- Documentation consistently uses Txx format
-- Examples use Txx format
+- All new work uses full `Exx:Sxx:Txx` format (2-digit task)
+- Documentation consistently uses `Exx:Sxx:Txx` format
+- Examples use `Exx:Sxx:Txx` format
+- No standalone `Txx` or `Txxx` references - always include Epic and Story
 
 ---
 
@@ -97,8 +99,8 @@ The Kanban Task naming policy has been updated from 3-digit format (`Txxx`) to 2
 
 **Old:**
 ```markdown
-- [x] **E2:S02:T001 – Add CHECK Phase** ✅ COMPLETE (v0.2.2.1+1)
-- [ ] **E2:S02:T002 – Add ACT Phase**
+- [x] **E2:S02:T01 – Add CHECK Phase** ✅ COMPLETE (v0.2.2.1+1)
+- [ ] **E2:S02:T02 – Add ACT Phase**
 ```
 
 **New:**
@@ -127,7 +129,7 @@ T10-some-task.md
 
 **Old:**
 ```
-Release v0.2.2.1+1: E2:S02:T001: Add CHECK Phase
+Release v0.2.2.1+1: E2:S02:T01: Add CHECK Phase
 ```
 
 **New:**
@@ -154,10 +156,11 @@ Release v0.2.2.1+1: E2:S02:T01: Add CHECK Phase
 
 ## Best Practices
 
-1. **Use Txx Format for New Tasks:**
-   - All new tasks should use 2-digit format
-   - Task files: `T01-*.md`, `T02-*.md`, etc.
-   - Task IDs: `E2:S02:T01`, `E2:S02:T02`, etc.
+1. **Use Full Exx:Sxx:Txx Format for All Task References:**
+   - All task references MUST use full `Exx:Sxx:Txx` format (2-digit task number)
+   - Task files: `T01-*.md`, `T02-*.md`, etc. (file naming only - still use full format in content)
+   - Task IDs in documentation: `E2:S02:T01`, `E2:S02:T02`, etc.
+   - NEVER use standalone `T01` or `T001` - always include Epic and Story context
 
 2. **Maintain Existing Tasks:**
    - Existing tasks can keep their format

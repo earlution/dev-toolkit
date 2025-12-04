@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Canonical Knowledge Base Structure Research
 
-**Task:** E1:S03:T003 – Research canonical KB structures  
+**Task:** E1:S03:T03 – Research canonical KB structures  
 **Date:** 2025-12-02  
 **Status:** ✅ COMPLETE  
 **Version:** Research Document

@@ -116,7 +116,7 @@ The strategy uses **two distinct timestamp layers** with **different purposes**:
 **Example Entry:**
 ```markdown
 ### [0.9.21.3+1] - 01-12-25
-🚀 Feature: E9:S21:T003: Brief description
+🚀 Feature: E9:S21:T03: Brief description
 - See [CHANGELOG_v0.9.21.3+1.md](CHANGELOG_ARCHIVE/CHANGELOG_v0.9.21.3+1.md)
 ```
 
@@ -147,7 +147,7 @@ The strategy uses **two distinct timestamp layers** with **different purposes**:
 **Type:** 🚀 Feature
 
 ## Summary
-🚀 Feature: E9:S21:T003: Brief description of changes
+🚀 Feature: E9:S21:T03: Brief description of changes
 
 ## Changes
 - Detailed change 1
@@ -229,7 +229,7 @@ Contains: **Release Date:** 2025-12-01 16:51:30 UTC
 **Example:**
 ```markdown
 ### [0.9.21.3+1] - 01-12-25
-🚀 Feature: E9:S21:T003: Brief description
+🚀 Feature: E9:S21:T03: Brief description
 - See [CHANGELOG_v0.9.21.3+1.md](CHANGELOG_ARCHIVE/CHANGELOG_v0.9.21.3+1.md)
 ```
 
@@ -264,7 +264,7 @@ Story 21 markers: Version references, commit hashes, workflow runs
 ```
 Version: 0.9.21.3+1
   ↓
-Commit message: "Release v0.9.21.3+1: E9:S21:T003: Description"
+Commit message: "Release v0.9.21.3+1: E9:S21:T03: Description"
   ↓
 Git commit: abc123def456...
   ↓
@@ -391,7 +391,7 @@ These files are **preserved as historical artifacts** and not subject to new val
 
 4. **Version number in commit message:**
    ```
-   Release v0.9.21.3+1: E9:S21:T003: Description
+   Release v0.9.21.3+1: E9:S21:T03: Description
    ```
 
 5. **Kanban markers updated:**

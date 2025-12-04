@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Task 001 – Add CHECK Phase (Step 12: Post-Commit Verification & Reflection)
 
-**Task:** E2:S02:T001  
+**Task:** E2:S02:T01  
 **Status:** TODO  
 **Priority:** HIGH  
 **Created:** 2025-12-03  

@@ -210,7 +210,7 @@ project-root/
 - Detailed change 2
 
 ## Related Tasks
-- E20:S11:T003 – Task description
+- E20:S11:T03 – Task description
 
 ## Technical Details
 [Implementation notes, files changed, etc.]
@@ -382,7 +382,7 @@ git tag -a v0.20.11.3+1 -m "Release v0.20.11.3+1: Description"
 - `E4S16T001` = Epic 4, Story 16, Task 1
 
 **Rules:**
-- Zero-pad task numbers (e.g., `T001`, `T010`, `T100`)
+- Use 2-digit task numbers with zero padding (e.g., `T01`, `T10`) in full `Exx:Sxx:Txx` format (e.g., `E1:S01:T01`, `E20:S11:T10`)
 - Never reuse IDs
 - IDs are immutable once assigned
 

@@ -198,7 +198,7 @@ This dev-kit policy is a **project-specific adaptation** that:
 - Canonical board in `KB/PM_and_Portfolio/kanban/_index.md`
 - All substantive work is Task/FR-driven
 - Epics for major areas of the dev kit
-- `E{epic}S{story}T{task}` numbering for Tasks
+- `E{epic}:S{story}:T{task}` numbering for Tasks (e.g., `E1:S01:T01`, `E2:S04:T05`)
 - Full `RC.EPIC.STORY.TASK+BUILD` alignment between Kanban and versioning
 
 **Framework References:**

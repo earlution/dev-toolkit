@@ -134,7 +134,7 @@ Step 13 (ACT phase) acts on verification results from Step 12 (CHECK phase). The
 **Priority:** HIGH  
 **Created:** 2025-12-03  
 **Story:** Story 002 – PDCA Integration into Release Workflow  
-**Related:** E2:S02:T002 (failed verification)
+**Related:** E2:S02:T02 (failed verification)
 
 ## Overview
 
@@ -208,7 +208,7 @@ Fix verification issue identified in T002. Original fix did not work as expected
 **Created:** 2025-12-03  
 **Scheduled:** 2025-12-05  
 **Story:** Story 002 – PDCA Integration into Release Workflow  
-**Related:** E2:S02:T002 (deferred verification)
+**Related:** E2:S02:T02 (deferred verification)
 
 ## Overview
 

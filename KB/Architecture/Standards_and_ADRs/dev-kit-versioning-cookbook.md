@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Versioning Cookbook
 
-**Task:** E3:S02:T002 – Create versioning cookbook document with worked examples  
+**Task:** E3:S02:T02 – Create versioning cookbook document with worked examples  
 **Date:** 2025-12-03  
 **Status:** ✅ COMPLETE  
 **Version:** v0.3.2.3+1
@@ -109,7 +109,7 @@ VERSION_BUILD = 1      # NEW: Reset to first build
 **Story:** Story 1
 
 ## Task Checklist
-- [ ] **E5:S01:T001 – Define documentation structure** - TODO
+- [ ] **E5:S01:T01 – Define documentation structure** - TODO
 ```
 
 ### RW Perspective
@@ -193,7 +193,7 @@ VERSION_BUILD = 1      # NEW: Reset to first build
 **Story:** Story 2
 
 ## Task Checklist
-- [ ] **E3:S02:T001 – Define core versioning scenarios** - TODO
+- [ ] **E3:S02:T01 – Define core versioning scenarios** - TODO
 ```
 
 ### RW Perspective
@@ -266,8 +266,8 @@ VERSION_BUILD = 1      # NEW: Reset to 1 for new task
 **Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-001-*.md`
 ```markdown
 ## Task Checklist
-- [x] **E3:S01:T001 – Review dev-kit versioning policy vs framework policy** ✅ COMPLETE (v0.3.1.1+2)
-- [ ] **E3:S01:T002 – Ingest versioning findings from fynd.deals Epic 15 work** - TODO
+- [x] **E3:S01:T01 – Review dev-kit versioning policy vs framework policy** ✅ COMPLETE (v0.3.1.1+2)
+- [ ] **E3:S01:T02 – Ingest versioning findings from fynd.deals Epic 15 work** - TODO
 ```
 
 ### RW Perspective
@@ -357,7 +357,7 @@ VERSION_BUILD = 2      # Increment build number
 **Story Document:**
 ```markdown
 ## Task Checklist
-- [x] **E3:S01:T003 – Update dev-kit versioning policy as canonical SoT** ✅ COMPLETE (v0.3.1.3+1)
+- [x] **E3:S01:T03 – Update dev-kit versioning policy as canonical SoT** ✅ COMPLETE (v0.3.1.3+1)
   - Bugfix: Fixed policy reference issue ✅ COMPLETE (v0.3.1.3+2)
 ```
 
@@ -531,8 +531,8 @@ VERSION_BUILD = 1      # Reset to 1 for new task
 **Story Document:**
 ```markdown
 ## Task Checklist
-- [x] **E3:S01:T001 – Review dev-kit versioning policy vs framework policy** ✅ COMPLETE (v0.3.1.1+2)
-- [ ] **E3:S01:T002 – Ingest versioning findings from fynd.deals Epic 15 work** - TODO
+- [x] **E3:S01:T01 – Review dev-kit versioning policy vs framework policy** ✅ COMPLETE (v0.3.1.1+2)
+- [ ] **E3:S01:T02 – Ingest versioning findings from fynd.deals Epic 15 work** - TODO
 ```
 
 ### RW Perspective
@@ -629,12 +629,12 @@ VERSION_BUILD = 1      # Reset to first build
 **Completed:** 2025-12-02 (v0.3.1.6+1)
 
 ## Task Checklist
-- [x] **E3:S01:T001** ✅ COMPLETE (v0.3.1.1+2)
-- [x] **E3:S01:T002** ✅ COMPLETE (v0.3.1.2+1)
-- [x] **E3:S01:T003** ✅ COMPLETE (v0.3.1.3+1)
-- [x] **E3:S01:T004** ✅ COMPLETE (v0.3.1.4+1)
-- [x] **E3:S01:T005** ✅ COMPLETE (v0.3.1.5+1)
-- [x] **E3:S01:T006** ✅ COMPLETE (v0.3.1.6+1)
+- [x] **E3:S01:T01** ✅ COMPLETE (v0.3.1.1+2)
+- [x] **E3:S01:T02** ✅ COMPLETE (v0.3.1.2+1)
+- [x] **E3:S01:T03** ✅ COMPLETE (v0.3.1.3+1)
+- [x] **E3:S01:T04** ✅ COMPLETE (v0.3.1.4+1)
+- [x] **E3:S01:T05** ✅ COMPLETE (v0.3.1.5+1)
+- [x] **E3:S01:T06** ✅ COMPLETE (v0.3.1.6+1)
 ```
 
 ### RW Perspective
@@ -760,7 +760,7 @@ This section demonstrates **end-to-end flows** that tie together Kanban, Version
 3. Decision: Create Task under Story 3
 
 **Task Created:**
-- Task: E4:S03:T008 – Add Kanban consistency validation script
+- Task: E4:S03:T08 – Add Kanban consistency validation script
 - Added to `Story-003-kanban-versioning-rw-integration.md`
 - Task status: TODO
 
@@ -822,7 +822,7 @@ VERSION_BUILD = 1     # Reset to 1 for new Task
 - ✅ Updates `Story-003-kanban-versioning-rw-integration.md`:
   - `**Last updated:** 2025-12-02 (v0.4.3.8+1)`
   - `**Version:** v0.4.3.8+1`
-  - Task Checklist: `- [x] **E4:S03:T008 – Add Kanban consistency validation script** ✅ COMPLETE (v0.4.3.8+1)`
+  - Task Checklist: `- [x] **E4:S03:T08 – Add Kanban consistency validation script** ✅ COMPLETE (v0.4.3.8+1)`
   - Task section: `**Status:** ✅ **COMPLETE** (v0.4.3.8+1)`
 
 **RW Steps 7-11: Git Operations**
@@ -835,7 +835,7 @@ VERSION_BUILD = 1     # Reset to 1 for new Task
 #### Result
 
 **Complete Traceability:**
-- FR → Task (E4:S03:T008)
+- FR → Task (E4:S03:T08)
 - Task → Version (`0.4.3.8+1`)
 - Version → Changelog (`CHANGELOG_v0.4.3.8+1.md`)
 - Version → Kanban markers (`✅ COMPLETE (v0.4.3.8+1)`)
@@ -856,14 +856,14 @@ VERSION_BUILD = 1     # Reset to 1 for new Task
 #### Step 1: Discover Bug
 
 **Bug Context:**
-- Task: E4:S03:T002 – Validate Kanban → Versioning integration
+- Task: E4:S03:T02 – Validate Kanban → Versioning integration
 - Completed version: `v0.4.3.2+1`
 - Bug: `VERSION_TASK` not correctly updated during task transitions
 
 #### Step 2: Create Bugfix Task
 
 **Task Created:**
-- Task: E4:S03:T002 (bugfix) – Fix Task → version TASK component mapping
+- Task: E4:S03:T02 (bugfix) – Fix Task → version TASK component mapping
 - Same task number (bugfix on existing task)
 - Version: `0.4.3.2+2` (BUILD increments)
 

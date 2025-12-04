@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Task 003 – Enhance PLAN Phase (Add objectives and verification plans to changelog)
 
-**Task:** E2:S02:T003  
+**Task:** E2:S02:T03  
 **Status:** TODO  
 **Priority:** MEDIUM  
 **Created:** 2025-12-03  

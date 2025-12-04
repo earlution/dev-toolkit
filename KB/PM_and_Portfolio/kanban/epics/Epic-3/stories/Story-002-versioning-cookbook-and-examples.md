@@ -20,11 +20,11 @@ housekeeping_policy: keep
 
 ## Task Checklist
 
-- [x] **E3:S02:T001 – Define core versioning scenarios for the cookbook** ✅ COMPLETE (v0.3.2.1+1)
-- [x] **E3:S02:T002 – Create versioning cookbook document with worked examples** ✅ COMPLETE (v0.3.2.2+1)
-- [x] **E3:S02:T003 – Add cross-framework examples (Kanban + Versioning + RW)** ✅ COMPLETE (v0.3.2.3+1)
-- [ ] **E3:S02:T004 – Document edge cases and anti-patterns**
-- [ ] **E3:S02:T005 – Create quick reference summary for users and agents**
+- [x] **E3:S02:T01 – Define core versioning scenarios for the cookbook** ✅ COMPLETE (v0.3.2.1+1)
+- [x] **E3:S02:T02 – Create versioning cookbook document with worked examples** ✅ COMPLETE (v0.3.2.2+1)
+- [x] **E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW)** ✅ COMPLETE (v0.3.2.3+1)
+- [ ] **E3:S02:T04 – Document edge cases and anti-patterns**
+- [ ] **E3:S02:T05 – Create quick reference summary for users and agents**
 
 ---
 
@@ -53,7 +53,7 @@ Provide a **versioning cookbook** with worked examples that shows:
 
 ## Tasks
 
-### E3:S02:T001 – Define core versioning scenarios for the cookbook
+### E3:S02:T01 – Define core versioning scenarios for the cookbook
 
 **Input:**  
 - `packages/frameworks/numbering & versioning/versioning-policy.md`  
@@ -83,17 +83,17 @@ Provide a **versioning cookbook** with worked examples that shows:
 
 ---
 
-### E3:S02:T002 – Create versioning cookbook document with worked examples
+### E3:S02:T02 – Create versioning cookbook document with worked examples
 
 **Input:**  
-- Scenario list from T001  
+- Scenario list from T01  
 - Existing dev-kit version history (CHANGELOG + archive)  
 
 **Deliverable:**  
 - `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-cookbook.md` (or similar)
 
 **Approach:**
-1. For each scenario from T001, create:
+1. For each scenario from T01, create:
    - Before/after version examples
    - Kanban context (Epic/Story/Task)
    - RW perspective (how RW interprets the version)
@@ -108,7 +108,7 @@ Provide a **versioning cookbook** with worked examples that shows:
 
 ---
 
-### E3:S02:T003 – Add cross-framework examples (Kanban + Versioning + RW)
+### E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW)
 
 **Input:**  
 - Integration docs:
@@ -136,7 +136,7 @@ Provide a **versioning cookbook** with worked examples that shows:
 
 ---
 
-### E3:S02:T004 – Document edge cases and anti-patterns
+### E3:S02:T04 – Document edge cases and anti-patterns
 
 **Input:**  
 - Findings from Epic 3 Story 1  
@@ -164,10 +164,10 @@ Provide a **versioning cookbook** with worked examples that shows:
 
 ---
 
-### E3:S02:T005 – Create quick reference summary for users and agents
+### E3:S02:T05 – Create quick reference summary for users and agents
 
 **Input:**  
-- Cookbook content from T002–T004  
+- Cookbook content from T02–T04  
 
 **Deliverable:**  
 - Short quick reference (1–2 pages) for humans and agents

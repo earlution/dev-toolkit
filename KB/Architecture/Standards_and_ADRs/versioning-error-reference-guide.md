@@ -132,7 +132,7 @@ This document serves as a **comprehensive reference** for the versioning error a
    **B. IDENTIFY COMPLETED TASK (MANDATORY):**
    - Read the Story file: `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md`
    - Find the MOST RECENTLY COMPLETED task in the Task Checklist (marked `✅ COMPLETE`)
-   - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T008` → task number is `8`)
+   - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T08` → task number is `8`)
    - **CRITICAL:** If no task is marked complete, or you cannot identify which task was just completed, **STOP** and ask the user which task was completed
 
    **C. DETERMINE VERSION BUMP (MANDATORY LOGIC):**

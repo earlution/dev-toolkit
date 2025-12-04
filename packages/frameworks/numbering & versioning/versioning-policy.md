@@ -67,7 +67,7 @@ Defines semantic versioning schema using the `RC.EPIC.STORY.TASK+BUILD` format f
 - Task number within story
 - Set when starting new task
 - Constant for all releases within that task
-- Format: `E{epic}:S{story}:T{task}` (e.g., `E9:S21:T003`)
+- Format: `E{epic}:S{story}:T{task}` (e.g., `E9:S21:T03`) - Task numbers are 2-digit (01-99)
 
 ### BUILD
 - Build number (increments per release within task)
@@ -182,7 +182,7 @@ Each version entry:
 - Detailed change 2
 
 ## Related Tasks
-- E9:S21:T003 – Task description
+- E9:S21:T03 – Task description
 
 ## Technical Details
 [Implementation notes, files changed, etc.]

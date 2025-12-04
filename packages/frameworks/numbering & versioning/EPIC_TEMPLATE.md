@@ -55,8 +55,10 @@ housekeeping_policy: keep
 **Goal:** [Single sentence description]
 
 **Tasks:**
-- [ ] EXX:SYY:T001 – [Task Title] ✅ COMPLETE (vRC.X.Y.T+B)
-- [ ] EXX:SYY:T002 – [Task Title]
+- [ ] EXX:SYY:T01 – [Task Title] ✅ COMPLETE (vRC.X.Y.T+B)
+- [ ] EXX:SYY:T02 – [Task Title]
+
+> **Format:** Always use full `Exx:Sxx:Txx` format (e.g., `E1:S01:T01`, not `T01` alone)
 
 **Acceptance Criteria:**
 - Criterion one

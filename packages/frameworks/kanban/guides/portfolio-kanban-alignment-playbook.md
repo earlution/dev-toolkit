@@ -34,16 +34,16 @@ Operationalise Story E19S8 by giving PMO and Documentation Guild contributors a 
 - Familiarity with `_index.md` conventions and metadata requirements.
 
 ## Workflow Overview
-1. **Inventory & Audit (E19:S08:T001)**
+1. **Inventory & Audit (E19:S08:T01)**
    - Run `python scripts/portfolio_kanban_audit.py` once implemented, or manually diff `kanban-board.md` against the Trello board.
    - Capture gaps in the “Audit Log” table (see template below) and file follow-up tasks in Story E19S8.
-2. **Schema Definition (E19:S08:T002)**
+2. **Schema Definition (E19:S08:T02)**
    - Update `kanban-board.md` headers with column descriptions, WIP limits, and tagging rules.
    - Document schema changes inside this playbook for future reviewers.
-3. **Validation & Automation (E19:S08:T003)**
+3. **Validation & Automation (E19:S08:T03)**
    - Extend `scripts/sync_epic19_to_trello.py` to parse the board into `.epic19_sync_summary.json`.
    - Add lint checks (`make docs-lint`) that ensure every Kanban entry resolves to a real epic file and matching metadata.
-4. **Communication & Handover (E19:S08:T004)**
+4. **Communication & Handover (E19:S08:T04)**
    - Draft changelog entries (`CHANGELOG.md`, `CHANGELOG_vX.Y.Z.md`) and prep `#docs-updates` snippets.
    - Trigger Trello sync and archive the JSON payload with the release artefacts.
 

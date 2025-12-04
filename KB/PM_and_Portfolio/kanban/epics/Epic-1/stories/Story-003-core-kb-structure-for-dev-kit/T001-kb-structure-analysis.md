@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # KB Structure Analysis and Target Definition
 
-**Task:** E1:S03:T001 – Analyze current KB/core structure and define target structure  
+**Task:** E1:S03:T01 – Analyze current KB/core structure and define target structure  
 **Date:** 2025-12-02  
 **Status:** ✅ COMPLETE
 

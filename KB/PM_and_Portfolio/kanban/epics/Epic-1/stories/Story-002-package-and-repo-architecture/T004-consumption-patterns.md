@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Consumption Patterns for Framework Packages
 
-**Task:** E1:S02:T004 – Document consumption patterns for each framework  
+**Task:** E1:S02:T04 – Document consumption patterns for each framework  
 **Date:** 2025-12-02  
 **Status:** ✅ COMPLETE
 
@@ -445,7 +445,7 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 - ✅ Always synchronized systems
 
 **Example Complete Flow:**
-1. **Create Task in Kanban:** `E1:S01:T001 – Implement feature`
+1. **Create Task in Kanban:** `E1:S01:T01 – Implement feature`
 2. **Work on Task:** Make code changes
 3. **Run RW:** Type "RW" in AI assistant
 4. **RW Executes:**
@@ -738,5 +738,5 @@ This consumption patterns document provides the foundation for:
 
 _Document completed: 2025-12-02_  
 _Task: E1:S02:T004_  
-_Next: E1:S02:T005 – Update package READMEs with modularity information_
+_Next: E1:S02:T05 – Update package READMEs with modularity information_
 

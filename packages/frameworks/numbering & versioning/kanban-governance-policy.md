@@ -126,7 +126,7 @@ Atomic units inside a story.
 
 **Requirements:**
 1. Version TASK reflects the active task
-   - Working on `E20:S11:T016` → version `0.20.11.16+B`
+   - Working on `E20:S11:T16` → version `0.20.11.16+B`
    - TASK component aligns with Kanban task
 
 2. Task transitions use `--task` parameter

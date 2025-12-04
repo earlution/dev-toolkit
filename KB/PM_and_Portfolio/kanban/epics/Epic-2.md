@@ -13,7 +13,7 @@ housekeeping_policy: keep
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
 **Completed:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.9+2 – Epic 2 COMPLETE: All stories done, T09 build 2: Comprehensive README rewrite)  
+**Last updated:** 2025-12-04 (v0.2.4.9+3 – Epic 2 COMPLETE: All stories done, E2:S04:T09 build 3: Task naming format standardization)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -27,7 +27,7 @@ housekeeping_policy: keep
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md`](epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md)
 - [x] **E2:S03 – Additional Workflows & Examples** - COMPLETE ✅ (v0.2.3.6+1 – All tasks complete)  
-- [x] **E2:S04 – RW Installer & Plug-and-Play Adoption** - COMPLETE ✅ (v0.2.4.9+2 – All tasks complete including T09 build 2: Comprehensive README rewrite)  
+- [x] **E2:S04 – RW Installer & Plug-and-Play Adoption** - COMPLETE ✅ (v0.2.4.9+3 – All tasks complete including E2:S04:T09 build 3: Task naming format standardization)  
   - Story: [`epics/Epic-2/stories/Story-004-rw-installer-and-plug-and-play-adoption.md`](epics/Epic-2/stories/Story-004-rw-installer-and-plug-and-play-adoption.md)  
 
 ---
@@ -71,10 +71,10 @@ It defines how Release Workflow (RW) and other workflows are:
 Make RW agent execution documentation fully portable, clearly distinguishing dev-kit behaviour from external examples.
 
 **Tasks:**
-- [x] E2:S01:T001 – Audit `release-workflow-agent-execution.md` for project-specific assumptions ✅ COMPLETE (v0.2.1.1+3)
-- [x] E2:S01:T002 – Tag Confidentia/fynd.deals examples and add dev-kit examples ✅ COMPLETE (v0.2.1.1+4)
-- [x] E2:S01:T003 – Align `.cursorrules` RW trigger section with dev-kit policy ✅ COMPLETE (v0.2.1.1+5)
-- [x] E2:S01:T004 – Update RW changelog step to require verification before marking fixes as "fixed" ✅ COMPLETE (v0.2.1.1+2)
+- [x] E2:S01:T01 – Audit `release-workflow-agent-execution.md` for project-specific assumptions ✅ COMPLETE (v0.2.1.1+3)
+- [x] E2:S01:T02 – Tag Confidentia/fynd.deals examples and add dev-kit examples ✅ COMPLETE (v0.2.1.1+4)
+- [x] E2:S01:T03 – Align `.cursorrules` RW trigger section with dev-kit policy ✅ COMPLETE (v0.2.1.1+5)
+- [x] E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed" ✅ COMPLETE (v0.2.1.1+2)
 
 > Full story: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)  
 

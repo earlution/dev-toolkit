@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Task 2 Findings: fynd.deals Epic 15 Kanban Patterns
 
-**Task:** E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit  
+**Task:** E4:S01:T02 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit  
 **Created:** 2025-12-02  
 **Status:** Complete  
 **Deliverable:** Summary of reusable Kanban patterns and findings
@@ -177,7 +177,7 @@ forensic_markers:
   format: "✅ COMPLETE (vRC.E.S.T+B)"
   examples:
     story: "- [x] **Story 33 – Parent Inclusivity** ✅ COMPLETE (v0.4.33.3+1)"
-    task: "- [x] **E4:S33:T001 – Task Name** ✅ COMPLETE (v0.4.33.1+1)"
+    task: "- [x] **E4:S33:T01 – Task Name** ✅ COMPLETE (v0.4.33.1+1)"
   
   location:
     story_checklist: "Epic-{epic}.md, Story Checklist section (SINGLE SOURCE OF TRUTH)"

@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Package Dependency Matrix
 
-**Task:** E1:S02:T003 – Create package dependency matrix  
+**Task:** E1:S02:T03 – Create package dependency matrix  
 **Date:** 2025-12-02  
 **Status:** ✅ COMPLETE
 
@@ -451,5 +451,5 @@ This dependency matrix provides the foundation for:
 
 _Document completed: 2025-12-02_  
 _Task: E1:S02:T003_  
-_Next: E1:S02:T004 – Document consumption patterns for each framework_
+_Next: E1:S02:T04 – Document consumption patterns for each framework_
 

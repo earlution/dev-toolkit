@@ -70,12 +70,12 @@ It ensures the dev kit:
 Make sure the dev kit's own versioning policy, version file, and docs align cleanly with the generic versioning framework. Establish `vibe-dev-kit` as the canonical SoT for versioning policies and strategies.
 
 **Tasks:**
-- [x] E3:S01:T001 – Review dev-kit versioning policy vs framework policy ✅ COMPLETE (v0.3.1.1+2)
-- [x] E3:S01:T002 – Ingest versioning findings from fynd.deals Epic 15 work ✅ COMPLETE (v0.3.1.2+1)
-- [x] E3:S01:T003 – Update dev-kit versioning policy as canonical SoT ✅ COMPLETE (v0.3.1.3+1)
-- [x] E3:S01:T004 – Align dev-kit version.py and CHANGELOG with framework ✅ COMPLETE (v0.3.1.4+1)
-- [x] E3:S01:T005 – Document consumption pattern for other projects ✅ COMPLETE (v0.3.1.5+1)
-- [x] E3:S01:T006 – Make .cursorrules abstract (remove hardcoded version numbers) ✅ COMPLETE (v0.3.1.6+1)
+- [x] E3:S01:T01 – Review dev-kit versioning policy vs framework policy ✅ COMPLETE (v0.3.1.1+2)
+- [x] E3:S01:T02 – Ingest versioning findings from fynd.deals Epic 15 work ✅ COMPLETE (v0.3.1.2+1)
+- [x] E3:S01:T03 – Update dev-kit versioning policy as canonical SoT ✅ COMPLETE (v0.3.1.3+1)
+- [x] E3:S01:T04 – Align dev-kit version.py and CHANGELOG with framework ✅ COMPLETE (v0.3.1.4+1)
+- [x] E3:S01:T05 – Document consumption pattern for other projects ✅ COMPLETE (v0.3.1.5+1)
+- [x] E3:S01:T06 – Make .cursorrules abstract (remove hardcoded version numbers) ✅ COMPLETE (v0.3.1.6+1)
 
 > Full story: [`epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md)
 
@@ -92,11 +92,11 @@ Make sure the dev kit's own versioning policy, version file, and docs align clea
 Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.TASK+BUILD, making it easy for other projects to adopt the dev-kit versioning strategy safely and correctly.
 
 **Tasks:**
-- [ ] E3:S02:T001 – Define core versioning scenarios for the cookbook
-- [ ] E3:S02:T002 – Create versioning cookbook document with worked examples
-- [ ] E3:S02:T003 – Add cross-framework examples (Kanban + Versioning + RW)
-- [ ] E3:S02:T004 – Document edge cases and anti-patterns
-- [ ] E3:S02:T005 – Create quick reference summary for users and agents
+- [ ] E3:S02:T01 – Define core versioning scenarios for the cookbook
+- [ ] E3:S02:T02 – Create versioning cookbook document with worked examples
+- [ ] E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW)
+- [ ] E3:S02:T04 – Document edge cases and anti-patterns
+- [ ] E3:S02:T05 – Create quick reference summary for users and agents
 
 > Full story: [`epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md`](epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md)
 

@@ -66,6 +66,8 @@ housekeeping_policy: keep
 - [ ] EXX:SYY:T01 – [Task Title] ✅ COMPLETE (vX.Y.Z.T+B)
 - [ ] EXX:SYY:T02 – [Task Title]
 
+> **Format:** Always use full `Exx:Sxx:Txx` format (e.g., `E1:S01:T01`, not `T01` alone)
+
 > **Forensic Marker Format:** `✅ COMPLETE (vRC.E.S.T+B)` (e.g., `✅ COMPLETE (v0.4.1.3+1)`)  
 > **Consistency:** Task checkboxes in this detailed section must match the Story file's Task Checklist.
 

@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Documentation Updates Summary: Task → Version TASK Component Mapping Fix
 
-**Task:** E4:S03:T002 – Validate Kanban → Versioning integration in dev-kit  
+**Task:** E4:S03:T02 – Validate Kanban → Versioning integration in dev-kit  
 **Date:** 2025-12-02  
 **Author:** AI Agent (Auto)  
 **Status:** ✅ COMPLETE

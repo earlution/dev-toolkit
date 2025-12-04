@@ -122,8 +122,10 @@ Decompose epic scope into releasable slices.
 
 Atomic units inside a story.
 
-- **Numbering (example):** `Exx:Sxx:Txx` (Epic, Story, Task with zero padding)
+- **Numbering (example):** `Exx:Sxx:Txx` (Epic, Story, Task with 2-digit zero padding)
+- **Format:** `E{epic}:S{story}:T{task}` where task is 2-digit (01-99)
 - **Example:** `E20:S07:T10` = Epic 20, Story 7, Task 10
+- **Example:** `E1:S01:T01` = Epic 1, Story 1, Task 1
 - **Documented:** Input / Deliverable / Dependencies / Blocker / Parallel Development Candidacy
 - **Tracked:** Git commits reference task ID (or equivalent in your VCS)
 
@@ -368,7 +370,7 @@ Step 4 (Update KB Epic Docs) MUST update:
 
 **Examples:**
 - Story: `- [x] **Story 33 – Parent Inclusivity** ✅ COMPLETE (v0.4.33.3+1)`
-- Task: `- [x] **E4:S33:T01 – Task Name** ✅ COMPLETE (v0.4.33.1+1)`
+- Task: `- [x] **E4:S33:T01 – Task Name** ✅ COMPLETE (v0.4.33.1+1)` (using Exx:Sxx:Txx format)
 
 **Location Requirements:**
 - **Story Checklist:** Epic document, Story Checklist section (SINGLE SOURCE OF TRUTH)

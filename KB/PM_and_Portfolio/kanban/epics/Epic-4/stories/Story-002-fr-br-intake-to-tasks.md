@@ -37,17 +37,17 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ## Task Checklist
 
-- [x] **E4:S02:T001 – Analyze current FR/BR intake process and requirements** ✅ COMPLETE
-- [x] **E4:S02:T002 – Design FR/BR → Task → Story → Epic decision flow** ✅ COMPLETE
-- [x] **E4:S02:T003 – Create FR/BR intake templates and forms** ✅ COMPLETE
-- [x] **E4:S02:T004 – Document the intake process with examples** ✅ COMPLETE
-- [x] **E4:S02:T005 – Create intake workflow guide for agents/users** ✅ COMPLETE
+- [x] **E4:S02:T01 – Analyze current FR/BR intake process and requirements** ✅ COMPLETE
+- [x] **E4:S02:T02 – Design FR/BR → Task → Story → Epic decision flow** ✅ COMPLETE
+- [x] **E4:S02:T03 – Create FR/BR intake templates and forms** ✅ COMPLETE
+- [x] **E4:S02:T04 – Document the intake process with examples** ✅ COMPLETE
+- [x] **E4:S02:T05 – Create intake workflow guide for agents/users** ✅ COMPLETE
 
 ---
 
 ## Tasks
 
-### E4:S02:T001 – Analyze current FR/BR intake process and requirements ✅ COMPLETE
+### E4:S02:T01 – Analyze current FR/BR intake process and requirements ✅ COMPLETE
 
 **Input:** Current Kanban governance policy, existing FR/BR examples (if any)  
 **Deliverable:** Analysis report documenting current state and requirements ✅ **DELIVERED**  
@@ -75,11 +75,11 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-### E4:S02:T002 – Design FR/BR → Task → Story → Epic decision flow ✅ COMPLETE
+### E4:S02:T02 – Design FR/BR → Task → Story → Epic decision flow ✅ COMPLETE
 
 **Input:** Analysis report from T001  
 **Deliverable:** Decision flow diagram and process documentation ✅ **DELIVERED**  
-**Dependencies:** E4:S02:T001  
+**Dependencies:** E4:S02:T01  
 **Blocker:** None
 
 **Status:** ✅ **COMPLETE** - Comprehensive decision flow design created
@@ -109,11 +109,11 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-### E4:S02:T003 – Create FR/BR intake templates and forms ✅ COMPLETE
+### E4:S02:T03 – Create FR/BR intake templates and forms ✅ COMPLETE
 
 **Input:** Decision flow from T002  
 **Deliverable:** Templates and forms for FR/BR intake ✅ **DELIVERED**  
-**Dependencies:** E4:S02:T002  
+**Dependencies:** E4:S02:T02  
 **Blocker:** None
 
 **Status:** ✅ **COMPLETE** - FR and BR templates created
@@ -164,11 +164,11 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-### E4:S02:T004 – Document the intake process with examples ✅ COMPLETE
+### E4:S02:T04 – Document the intake process with examples ✅ COMPLETE
 
 **Input:** Templates from T003, decision flow from T002  
 **Deliverable:** Complete intake process documentation with worked examples ✅ **DELIVERED**  
-**Dependencies:** E4:S02:T003  
+**Dependencies:** E4:S02:T03  
 **Blocker:** None
 
 **Status:** ✅ **COMPLETE** - Comprehensive intake process guide with 6 worked examples created
@@ -220,11 +220,11 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-### E4:S02:T005 – Create intake workflow guide for agents/users ✅ COMPLETE
+### E4:S02:T05 – Create intake workflow guide for agents/users ✅ COMPLETE
 
 **Input:** Process documentation from T004  
 **Deliverable:** User-friendly guide for AI agents and human users ✅ **DELIVERED**  
-**Dependencies:** E4:S02:T004  
+**Dependencies:** E4:S02:T04  
 **Blocker:** None
 
 **Status:** ✅ **COMPLETE** - Agent-friendly and user-friendly guides created with quick reference

@@ -13,8 +13,8 @@ housekeeping_policy: keep
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
 **Completed:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.9+2 – T09 build 2: Comprehensive README rewrite)  
-**Version:** v0.2.4.9+2  
+**Last updated:** 2025-12-04 (v0.2.4.9+3 – E2:S04:T09 build 3: Task naming format standardization)  
+**Version:** v0.2.4.9+3  
 **Code:** E2S04
 
 ---
