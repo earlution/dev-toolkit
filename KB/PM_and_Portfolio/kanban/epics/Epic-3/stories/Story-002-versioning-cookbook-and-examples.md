@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-03  
-**Last updated:** 2025-12-04 (v0.3.2.6+2 – E3:S02:T05 complete: Quick reference summary created)  
-**Version:** v0.3.2.6+2  
+**Last updated:** 2025-12-04 (v0.3.2.5+1 – E3:S02:T05 complete: Quick reference summary created)  
+**Version:** v0.3.2.5+1  
 **Code:** E3S02
 
 ---
@@ -24,7 +24,7 @@ housekeeping_policy: keep
 - [x] **E3:S02:T02 – Create versioning cookbook document with worked examples** ✅ COMPLETE (v0.3.2.2+1)
 - [x] **E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW)** ✅ COMPLETE (v0.3.2.3+1)
 - [x] **E3:S02:T04 – Document edge cases and anti-patterns** ✅ COMPLETE (v0.3.2.4+1)
-- [x] **E3:S02:T05 – Create quick reference summary for users and agents** ✅ COMPLETE (v0.3.2.6+2)
+- [x] **E3:S02:T05 – Create quick reference summary for users and agents** ✅ COMPLETE (v0.3.2.5+1)
 - [x] **E3:S02:T06 – Investigate and harden changelog ordering process** ✅ COMPLETE (v0.3.2.6+1)
 
 ---

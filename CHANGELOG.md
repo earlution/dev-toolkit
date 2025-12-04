@@ -1362,6 +1362,26 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.5+1] - 04-12-25
+
+📚 Documentation: Created quick reference summary for users and agents
+
+### Added
+
+- Created versioning quick reference document (`versioning-quick-reference.md`)
+- 1-2 page summary covering common versioning scenarios and rules
+- Tables, decision flows, and "if-then" rules for quick lookup
+- Agent-friendly and human-friendly language
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.5+1.md` for full details
+- Quick reference linked from cookbook, dev-kit versioning policy, and framework README
+- Covers version schema, common scenarios, critical rules, and anti-patterns
+- **Note:** This task was completed after Task 6, demonstrating out-of-order task completion (see edge case documentation)
+
+---
+
 ## [0.3.2.6+1] - 04-12-25
 
 🔧 Process Improvement: Investigated and hardened changelog ordering process
@@ -1381,25 +1401,6 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - Investigation report: `KB/Architecture/Standards_and_ADRs/changelog-ordering-investigation-report.md`
 - All Epic 2 entries now correctly appear before Epic 3 entries
 - Validator confirms canonical ordering is correct
-
----
-
-## [0.3.2.6+2] - 04-12-25
-
-📚 Documentation: Created quick reference summary for users and agents
-
-### Added
-
-- Created versioning quick reference document (`versioning-quick-reference.md`)
-- 1-2 page summary covering common versioning scenarios and rules
-- Tables, decision flows, and "if-then" rules for quick lookup
-- Agent-friendly and human-friendly language
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.6+2.md` for full details
-- Quick reference linked from cookbook, dev-kit versioning policy, and framework README
-- Covers version schema, common scenarios, critical rules, and anti-patterns
 
 ---
 

@@ -405,7 +405,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 **C. DETERMINE VERSION BUMP (MANDATORY LOGIC):**
 3. **DETERMINE:**
    - **MANDATORY:** Compare completed task number to current `VERSION_TASK`:
-     - **IF completed task number > current VERSION_TASK:** This is a NEW TASK
+     - **IF completed task number > current VERSION_TASK:** This is a NEW TASK (forward progression)
        - Set `VERSION_TASK` = completed task number
        - Set `VERSION_BUILD` = 1 (reset to 1 for new task)
        - Example: Current `0.2.2.3+5`, completed T008 → New version: `0.2.2.8+1`
@@ -418,8 +418,14 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
        - Example: Current `0.2.2.3+1`, completed T003 → New version: `0.2.2.3+2`
        - [Example: Confidentia] If current is `0.4.3.2+8`, next is `0.4.3.2+9`
        - [Example: vibe-dev-kit] If current is `0.2.1.1+2`, next is `0.2.1.1+3`
-     - **IF completed task number < current VERSION_TASK:** This is an ERROR
-       - **STOP** and report error: "Completed task number ({completed}) is less than current VERSION_TASK ({current}). This indicates a versioning error. Please verify which task was actually completed."
+     - **IF completed task number < current VERSION_TASK:** This is OUT-OF-ORDER TASK COMPLETION
+       - **This is VALID** - Tasks can be completed out of sequential order
+       - Set `VERSION_TASK` = completed task number (use completed task, not current)
+       - Set `VERSION_BUILD` = 1 (reset to 1 for the completed task)
+       - Example: Current `0.3.2.6+1`, completed T005 → New version: `0.3.2.5+1`
+       - **CRITICAL:** Version reflects completed task, not current VERSION_TASK
+       - **CRITICAL:** Changelog entry will appear before higher task numbers (canonical ordering)
+       - **Note:** This enables parallel task work and out-of-order completion
    - Validate version matches branch:
      - [Example: Confidentia] Epic 4 = `0.4.x.x+x`
      - [Example: vibe-dev-kit] Epic 2 = `0.2.x.x+x`

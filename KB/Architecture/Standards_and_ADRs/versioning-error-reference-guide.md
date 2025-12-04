@@ -145,8 +145,14 @@ This document serves as a **comprehensive reference** for the versioning error a
        - Keep `VERSION_TASK` unchanged
        - Increment `VERSION_BUILD` by 1
        - Example: Current `0.2.2.3+1`, completed T003 → New version: `0.2.2.3+2`
-     - **IF completed task number < current VERSION_TASK:** This is an ERROR
-       - **STOP** and report error: "Completed task number ({completed}) is less than current VERSION_TASK ({current}). This indicates a versioning error. Please verify which task was actually completed."
+     - **IF completed task number < current VERSION_TASK:** This is OUT-OF-ORDER TASK COMPLETION
+       - **This is VALID** - Tasks can be completed out of sequential order
+       - Set `VERSION_TASK` = completed task number (use completed task, not current)
+       - Set `VERSION_BUILD` = 1 (reset to 1 for the completed task)
+       - Example: Current `0.3.2.6+1`, completed T005 → New version: `0.3.2.5+1`
+       - **CRITICAL:** Version reflects completed task, not current VERSION_TASK
+       - **CRITICAL:** Changelog entry will appear before higher task numbers (canonical ordering)
+       - **See:** Edge Case 10.11 in versioning cookbook for complete documentation
 
    **D. VALIDATE BEFORE UPDATING:**
    - Verify: New `VERSION_TASK` matches completed task number

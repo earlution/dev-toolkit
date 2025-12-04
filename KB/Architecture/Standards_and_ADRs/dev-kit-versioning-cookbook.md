@@ -1377,6 +1377,50 @@ This section documents known edge cases, common mistakes, and anti-patterns when
 
 ---
 
+### 10.11 Edge Case: Out-of-Order Task Completion
+
+**Symptom:** A task with a lower number is completed after a task with a higher number has already been released.
+
+**Example:**
+- Task 6 completed first: `0.3.2.6+1` (released 2025-12-04)
+- Task 5 completed later: Should be `0.3.2.5+1` (not `0.3.2.6+2`)
+- Version file shows `VERSION_TASK = 6` when Task 5 is completed
+
+**Root Cause:**
+- Tasks completed out of sequential order
+- RW Step 2 logic treats "completed task < current VERSION_TASK" as an ERROR
+- Agent incorrectly treats this as BUILD increment instead of new task
+
+**Corrective Pattern:**
+1. **Use Task Number from Completed Task**
+   - Version should reflect the completed task, not the current VERSION_TASK
+   - If Task 5 is completed, use `0.3.2.5+1` regardless of current VERSION_TASK
+   - Update `VERSION_TASK = 5`, `VERSION_BUILD = 1`
+
+2. **Changelog Ordering**
+   - Insert `0.3.2.5+1` before `0.3.2.6+1` in changelog (canonical ordering)
+   - Changelog uses version number ordering, not completion time
+
+3. **Version File Update**
+   - Update `VERSION_TASK` to match completed task number
+   - Reset `VERSION_BUILD` to 1 for the completed task
+   - Version file should reflect the most recently completed task
+
+**Preventive Guidance:**
+- ✅ **UNDERSTAND:** Version reflects completed task, not "current" task in version file
+- ✅ **UNDERSTAND:** Tasks can be completed out of order
+- ✅ **MANDATORY:** Always use completed task number for version, regardless of current VERSION_TASK
+- ✅ **MANDATORY:** Changelog entries ordered by version number (Task 5 before Task 6)
+- ❌ **DON'T:** Treat out-of-order completion as BUILD increment
+- ❌ **DON'T:** Use current VERSION_TASK when it's higher than completed task
+
+**Real Dev-Kit Example:**
+- Task 6 completed: `0.3.2.6+1` (E3:S02:T06 - Changelog ordering process hardened)
+- Task 5 completed later: `0.3.2.5+1` (E3:S02:T05 - Quick reference summary)
+- Changelog order: `0.3.2.5+1` before `0.3.2.6+1` (canonical ordering)
+
+---
+
 ## Quick Reference: Version Component Rules
 
 | Component | When It Changes | When It Resets | Example |
