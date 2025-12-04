@@ -1463,6 +1463,28 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.3.2+1] - 04-12-25
+
+📚 Documentation: Created comprehensive framework-level integration guide
+
+### Added
+
+- Created comprehensive framework-level integration guide
+- Documented three-way integration architecture (Kanban ↔ Versioning ↔ RW)
+- Explained integration points and data flow
+- Provided framework-level examples (portable, template-ready)
+- Documented integration patterns and best practices
+- Included troubleshooting section and quick reference
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.3.2+1.md` for full details
+- Guide located at: `packages/frameworks/numbering & versioning/integration/kanban-workflow-integration.md`
+- Framework-level documentation (portable, template-ready)
+- Distinct from dev-kit implementation validation (E4:S03)
+
+---
+
 ## [0.4.1.1+1] - 02-12-25
 
 📚 Documentation: Epic 4 structure and Story 1 definition for Kanban Framework

@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Created:** 2025-12-02
-**Last updated:** 2025-12-04 (v0.3.3.1+1 – E3:S03:T01: Story 3 structure created)
+**Last updated:** 2025-12-04 (v0.3.3.2+1 – E3:S03:T02 complete: Comprehensive framework-level integration guide created)
 **Branch:** `epic/3-numbering-and-versioning-framework`
 **Version Schema:** `0.3.S.T+B`
 **Production URL:** [N/A for this repo]
@@ -23,7 +23,7 @@ housekeeping_policy: keep
 
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
 - [x] **E3:S02 – Versioning Cookbook & Examples** - COMPLETE ✅ (v0.3.2.5+3 – All tasks complete: RW hardened with automated version bump validation)
-- [ ] **E3:S03 – Versioning Integration with Kanban & RW** - IN PROGRESS (v0.3.3.1+1 – E3:S03:T01: Story 3 structure created)
+- [ ] **E3:S03 – Versioning Integration with Kanban & RW** - IN PROGRESS (v0.3.3.2+1 – E3:S03:T02 complete: Comprehensive framework-level integration guide created)
   - Story: [`epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md`](epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md)
 
 ---
@@ -87,7 +87,7 @@ Make sure the dev kit's own versioning policy, version file, and docs align clea
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-04 (v0.3.3.1+1 – E3:S03:T01: Story 3 structure created)
+**Last updated:** 2025-12-04 (v0.3.3.2+1 – E3:S03:T02 complete: Comprehensive framework-level integration guide created)
 
 **Goal:**  
 Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.TASK+BUILD, making it easy for other projects to adopt the dev-kit versioning strategy safely and correctly.
