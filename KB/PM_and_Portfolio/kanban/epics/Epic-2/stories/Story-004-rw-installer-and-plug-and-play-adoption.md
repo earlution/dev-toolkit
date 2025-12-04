@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.8+1 – T08 complete: Agent network access limitations documented and RW Step 11 updated)  
-**Version:** v0.2.4.8+1  
+**Last updated:** 2025-12-04 (v0.2.4.8+2 – T08 build 2: Comprehensive KB article on agent network access limitations)  
+**Version:** v0.2.4.8+2  
 **Code:** E2S04
 
 ---

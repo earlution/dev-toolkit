@@ -88,7 +88,7 @@ kanban_root = config.get('kanban_root', 'KB/PM_and_Portfolio/kanban') if config 
        {'id': 'rw-step-8', 'status': 'pending', 'content': 'Step 8: Run Validators - Execute branch context and changelog format validators'},
        {'id': 'rw-step-9', 'status': 'pending', 'content': 'Step 9: Commit Changes - Create git commit with versioned message'},
        {'id': 'rw-step-10', 'status': 'pending', 'content': 'Step 10: Create Git Tag - Create annotated tag'},
-       {'id': 'rw-step-11', 'status': 'pending', 'content': 'Step 11: Push to Remote - Push branch and tags'},
+       {'id': 'rw-step-11', 'status': 'pending', 'content': 'Step 11: Push to Remote - Push branch and tags (with network permissions)'},
    ])
    ```
 
@@ -215,6 +215,10 @@ For each step, follow this pattern:
 9. **Commit Changes** - Create commit with message: `Release v{version}: {summary}\n\nEpic: {epic} | Story: {story} | Task: {task}`
 10. **Create Git Tag** - Create annotated tag: `v{version}` with message: `Release v{version}: {summary}\n\nEpic: {epic} | Story: {story} | Task: {task}`
 11. **Push to Remote** - Push epic branch and tag to origin (DO NOT push to main unless ready to deploy)
+    - **CRITICAL: Use `required_permissions: ['network']` for git push commands**
+    - Example: `run_terminal_cmd(command="git push origin {branch} --tags", required_permissions=['network'])`
+    - This enables network access in Cursor's sandbox environment
+    - See: `KB/Architecture/Standards_and_ADRs/agent-network-access-and-git-push-limitations.md`
 
 **Key Principles:**
 - ✅ **Intelligent Analysis:** Understand each step's requirements before executing

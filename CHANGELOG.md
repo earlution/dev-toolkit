@@ -17,6 +17,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.8+2] - 04-12-25
+
+📚 Documentation: Comprehensive KB article on agent network access limitations – Complete investigation, solution, and verification documentation
+
+### Updated
+
+- KB article replaced with comprehensive version including executive summary, investigation process, test cases, metrics, and lessons learned
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.8+2.md` for full details
+- Document now includes comprehensive investigation narrative
+- Test cases demonstrate solution effectiveness
+- Metrics show clear impact (0% → 100% workflow completion)
+- Document adapted for project-agnostic context
+
+---
+
 ## [0.2.4.8+1] - 04-12-25
 
 📚 Documentation: Agent network access limitations documented and RW Step 11 updated – Workflow now handles push failures gracefully
