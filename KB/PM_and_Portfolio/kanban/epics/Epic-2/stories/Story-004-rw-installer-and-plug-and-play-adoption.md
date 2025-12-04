@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.1+2 – T01 build 2: Workflow hardening guide integrated)  
-**Version:** v0.2.4.1+2  
+**Last updated:** 2025-12-04 (v0.2.4.1+3 – T01 build 3: Analysis deliverable complete)  
+**Version:** v0.2.4.1+3  
 **Code:** E2S04
 
 ---
@@ -60,9 +60,11 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 4. Document findings in a short analysis note under the workflow mgt KB.  
 
 **Acceptance Criteria:**
-- [ ] All path and project-specific touchpoints are identified and listed.  
-- [ ] Minimal config key set is defined and reviewed (no unnecessary knobs).  
-- [ ] Decision recorded on which aspects remain hard-coded vs. configurable.  
+- [x] All path and project-specific touchpoints are identified and listed ✅  
+- [x] Minimal config key set is defined and reviewed (no unnecessary knobs) ✅  
+- [x] Decision recorded on which aspects remain hard-coded vs. configurable ✅  
+
+**Deliverable:** ✅ **DELIVERED** - See `packages/frameworks/workflow mgt/KB/Analysis/T01-rw-adoption-friction-analysis.md` for complete analysis.  
 
 ---
 

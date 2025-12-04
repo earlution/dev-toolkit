@@ -17,6 +17,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.1+3] - 04-12-25
+
+📊 Analysis: T01 deliverable complete – Comprehensive analysis of RW adoption friction and required configuration keys
+
+### Added
+
+- RW Adoption Friction Analysis (complete inventory of 13-17 manual edit locations, minimal config key set, mode definitions)
+
+### Updated
+
+- Story 4 Task Checklist (marked T01 acceptance criteria complete with deliverable reference)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.1+3.md` for full details
+- Analysis provides concrete foundation for T02 (config schema design) and T03 (installer CLI)
+
+---
+
 ## [0.2.4.1+2] - 04-12-25
 
 📚 Documentation: Integrated workflow hardening guide and linked it to RW execution documentation
