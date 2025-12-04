@@ -17,6 +17,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.6+1] - 04-12-25
+
+📦 Framework Package: Debug Path Framework package created – Standalone debugging workflow framework with DRW methodology
+
+### Added
+
+- Debug Path Framework Package (standalone debugging workflow with DRW 6-phase protocol, 7 templates, integration guides)
+- Debug Path Framework Analysis (comprehensive analysis, comparison with Kanban, value assessment)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.6+1.md` for full details
+- DRW (Debug Round Workflow) provides checklist-driven debugging for test failures, regressions, and production bugs
+- Package is standalone (no dependencies) but can integrate with Kanban and Workflow Management
+- Ideal for simple projects or as complement to Kanban for structured debugging
+
+---
+
 ## [0.2.4.5+3] - 04-12-25
 
 📚 Documentation: Document lifecycle management spec and policy – TTL-based expiration system for KB documents

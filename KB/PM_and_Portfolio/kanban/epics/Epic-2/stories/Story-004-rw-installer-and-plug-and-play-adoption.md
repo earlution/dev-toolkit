@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.5+3 – T05 build 3: Document lifecycle management spec and policy)  
-**Version:** v0.2.4.5+3  
+**Last updated:** 2025-12-04 (v0.2.4.6+1 – T06 complete: Debug Path Framework package created)  
+**Version:** v0.2.4.6+1  
 **Code:** E2S04
 
 ---
@@ -36,6 +36,7 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 - [x] **E2:S04:T03 – Implement RW installer CLI** ✅ COMPLETE (v0.2.4.3+1)  
 - [x] **E2:S04:T04 – Create quickstart docs and template usage examples** ✅ COMPLETE (v0.2.4.4+1)  
 - [x] **E2:S04:T05 – Usability test installer on sample and real projects** ✅ COMPLETE (v0.2.4.5+1)  
+- [x] **E2:S04:T06 – Create Debug Path Framework package** ✅ COMPLETE (v0.2.4.6+1)  
 
 ---
 
@@ -178,6 +179,38 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 - [x] Story updated with final notes and version marker when complete ✅  
 
 **Deliverable:** ✅ **DELIVERED** - See `packages/frameworks/workflow mgt/KB/Analysis/T05-rw-installer-usability-test.md` for complete usability test report with identified issues, recommendations, and test scenarios.  
+
+---
+
+### E2:S04:T06 – Create Debug Path Framework package
+
+**Input:**  
+- Analysis of debug path framework from fynd.deals project  
+- Existing framework package patterns (Kanban, Versioning, Workflow Mgt)  
+- Debug Path Framework analysis document
+
+**Deliverable:**  
+- Complete Debug Path Framework package (`packages/frameworks/debug-path/`)  
+- Templates for all debug path documents  
+- DRW methodology documentation  
+- Integration guides for Kanban and Workflow Management
+
+**Approach:**
+1. Analyze debug path framework from fynd.deals project  
+2. Extract and adapt templates for vibe-dev-kit  
+3. Create package structure following existing framework patterns  
+4. Document DRW (Debug Round Workflow) methodology  
+5. Create integration guides for Kanban and Workflow Management  
+6. Ensure package is standalone and modular
+
+**Acceptance Criteria:**
+- [x] Debug Path Framework package created with all templates ✅  
+- [x] DRW methodology documented ✅  
+- [x] Integration guides created for Kanban and Workflow Management ✅  
+- [x] Package follows modular pattern (standalone, copy pattern) ✅  
+- [x] Package analysis document created ✅
+
+**Deliverable:** ✅ **DELIVERED** - See `packages/frameworks/debug-path/` for complete package with templates, methodology, and integration guides. Analysis document: `KB/Analysis/debug-path-framework-analysis.md`.
 
 ---
 
