@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Canonical Knowledge Base Structure Research
 
 **Task:** E1:S03:T003 – Research canonical KB structures  

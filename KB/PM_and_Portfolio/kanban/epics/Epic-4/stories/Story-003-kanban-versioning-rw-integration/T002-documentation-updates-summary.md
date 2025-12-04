@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Documentation Updates Summary: Task → Version TASK Component Mapping Fix
 
 **Task:** E4:S03:T002 – Validate Kanban → Versioning integration in dev-kit  

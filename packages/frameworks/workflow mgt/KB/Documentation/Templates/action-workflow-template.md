@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:57Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Action Workflow Template
 
 **Purpose:** Template for acting on verification results (ACT phase of PDCA)  

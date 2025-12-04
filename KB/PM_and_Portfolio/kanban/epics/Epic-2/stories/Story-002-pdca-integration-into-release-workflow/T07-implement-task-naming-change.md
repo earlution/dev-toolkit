@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Task 007 – Implement Task Naming Change (Txxx → Txx)
 
 **Task:** E2:S02:T07  

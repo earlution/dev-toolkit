@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:47Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Task Naming Migration Guide
 
 **Date:** 2025-12-03  

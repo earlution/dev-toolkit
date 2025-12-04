@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:54Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Changelog and Release Notes
 
 This section contains the **main changelog** and the **detailed changelog archive** for the `vibe-dev-kit` repository.

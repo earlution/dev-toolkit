@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:02:07Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Numbering & Versioning Policy Package
 
 **Version:** 2.0.0  

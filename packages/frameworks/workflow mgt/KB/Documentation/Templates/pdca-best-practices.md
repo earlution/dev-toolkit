@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:57Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # PDCA Best Practices Guide
 
 **Purpose:** Best practices, common pitfalls, and tips for effective PDCA implementation  

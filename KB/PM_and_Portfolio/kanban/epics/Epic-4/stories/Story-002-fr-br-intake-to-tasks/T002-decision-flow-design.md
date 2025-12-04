@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # FR/BR → Task → Story → Epic Decision Flow Design
 
 **Task:** E4:S02:T002 – Design FR/BR → Task → Story → Epic decision flow  

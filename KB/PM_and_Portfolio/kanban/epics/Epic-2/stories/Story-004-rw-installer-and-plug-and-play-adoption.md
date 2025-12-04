@@ -1,11 +1,19 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Story 004 – RW Installer & Plug-and-Play Adoption
 
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.6+1 – T06 complete: Debug Path Framework package created)  
-**Version:** v0.2.4.6+1  
+**Last updated:** 2025-12-04 (v0.2.4.7+1 – T07 complete: Lifecycle metadata applied to all existing documentation)  
+**Version:** v0.2.4.7+1  
 **Code:** E2S04
 
 ---
@@ -37,6 +45,7 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 - [x] **E2:S04:T04 – Create quickstart docs and template usage examples** ✅ COMPLETE (v0.2.4.4+1)  
 - [x] **E2:S04:T05 – Usability test installer on sample and real projects** ✅ COMPLETE (v0.2.4.5+1)  
 - [x] **E2:S04:T06 – Create Debug Path Framework package** ✅ COMPLETE (v0.2.4.6+1)  
+- [x] **E2:S04:T07 – Apply lifecycle metadata to all existing documentation** ✅ COMPLETE (v0.2.4.7+1)  
 
 ---
 
@@ -211,6 +220,35 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 - [x] Package analysis document created ✅
 
 **Deliverable:** ✅ **DELIVERED** - See `packages/frameworks/debug-path/` for complete package with templates, methodology, and integration guides. Analysis document: `KB/Analysis/debug-path-framework-analysis.md`.
+
+---
+
+### E2:S04:T07 – Apply lifecycle metadata to all existing documentation
+
+**Input:**  
+- Document Lifecycle Management package (created in T06 context)  
+- All existing KB and package markdown files  
+- Document lifecycle metadata specification
+
+**Deliverable:**  
+- All markdown files in KB and packages have lifecycle metadata  
+- 100% coverage of lifecycle metadata across all documentation  
+- Proper classification (evergreen/timeboxed/transient) based on document type
+
+**Approach:**
+1. Scan all markdown files in KB and packages directories  
+2. Classify each document by type (standards, Kanban, analysis, templates, etc.)  
+3. Add lifecycle metadata front-matter to each file  
+4. Apply appropriate lifecycle classification (evergreen for standards/Kanban, timeboxed for analysis)  
+5. Verify 100% coverage
+
+**Acceptance Criteria:**
+- [x] All KB markdown files have lifecycle metadata ✅  
+- [x] All package markdown files have lifecycle metadata ✅  
+- [x] Proper lifecycle classification applied (evergreen/timeboxed/transient) ✅  
+- [x] 100% coverage achieved ✅
+
+**Deliverable:** ✅ **DELIVERED** - All 161 markdown files now have lifecycle metadata. Standards, Kanban docs, templates, and package docs classified as evergreen. Analysis documents classified as timeboxed (90 days TTL).
 
 ---
 

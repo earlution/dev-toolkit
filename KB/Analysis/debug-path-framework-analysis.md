@@ -1,3 +1,11 @@
+---
+lifecycle: timeboxed
+ttl_days: 90
+created_at: 2025-12-04T12:01:47Z
+expires_at: 2026-03-04T12:01:47Z
+housekeeping_policy: archive
+---
+
 # Debug Path Framework Analysis
 
 **Date:** 2025-12-04  

@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Integration Examples and Edge Cases
 
 **Task:** E4:S03:T006 – Document integration examples and edge cases  

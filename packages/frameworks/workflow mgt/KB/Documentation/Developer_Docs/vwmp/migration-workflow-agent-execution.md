@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:02:13Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Migration Workflow: Agent Execution Guide
 
 **Version:** 1.0.0

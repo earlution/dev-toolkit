@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Task 001 – Add CHECK Phase (Step 12: Post-Commit Verification & Reflection)
 
 **Task:** E2:S02:T001  

@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Package Dependency Matrix
 
 **Task:** E1:S02:T003 – Create package dependency matrix  

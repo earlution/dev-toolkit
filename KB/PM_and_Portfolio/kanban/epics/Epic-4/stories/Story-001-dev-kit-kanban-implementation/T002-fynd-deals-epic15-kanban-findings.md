@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Task 2 Findings: fynd.deals Epic 15 Kanban Patterns
 
 **Task:** E4:S01:T002 – Ingest findings from fynd.deals Epic 15 Kanban work into dev-kit  

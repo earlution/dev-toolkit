@@ -17,6 +17,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.7+1] - 04-12-25
+
+📚 Documentation: Lifecycle metadata applied to all existing documentation – 161 files now have lifecycle metadata for automated housekeeping
+
+### Added
+
+- Lifecycle metadata front-matter added to all 161 markdown files (evergreen: 145 files, timeboxed: 4 files)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.7+1.md` for full details
+- Lifecycle metadata enables automated housekeeping via Doc Housekeeping Workflow (future)
+- Evergreen documents (standards, Kanban, templates) are never deleted
+- Timeboxed documents (analysis) are archived after 90 days
+- 100% coverage achieved: 161/161 markdown files have lifecycle metadata
+
+---
+
 ## [0.2.4.6+1] - 04-12-25
 
 📦 Framework Package: Debug Path Framework package created – Standalone debugging workflow framework with DRW methodology

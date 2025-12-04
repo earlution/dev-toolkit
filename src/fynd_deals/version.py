@@ -20,7 +20,7 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
 VERSION_EPIC = 2      # Epic number (Epic 2: Workflow Management Framework)
 VERSION_STORY = 4     # Story number (Story 4: RW Installer & Plug-and-Play Adoption)
-VERSION_TASK = 6      # Task number (Task 6: Create Debug Path Framework package)
+VERSION_TASK = 7      # Task number (Task 7: Apply lifecycle metadata to all existing documentation)
 VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema

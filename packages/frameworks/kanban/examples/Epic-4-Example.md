@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:57Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 
 # Epic 4: User Workflows & Use Case Modeling (Reorganized)
 

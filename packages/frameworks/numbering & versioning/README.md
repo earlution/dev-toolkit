@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:54Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Numbering & Versioning Policies
 
 **Portable Package:** This directory contains all policy documents relating to numbering and versioning strategies. These documents can be adapted for use in other projects.

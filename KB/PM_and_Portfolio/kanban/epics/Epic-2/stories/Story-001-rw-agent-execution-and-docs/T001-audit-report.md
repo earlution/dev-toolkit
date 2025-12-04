@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Audit Report: Project-Specific Assumptions in `release-workflow-agent-execution.md`
 
 **Task:** E2:S01:T001 – Audit `release-workflow-agent-execution.md` for project-specific assumptions  

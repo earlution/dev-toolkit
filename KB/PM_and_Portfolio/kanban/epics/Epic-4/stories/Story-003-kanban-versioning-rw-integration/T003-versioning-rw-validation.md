@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Versioning → Release Workflow Integration Validation
 
 **Task:** E4:S03:T003 – Validate Versioning → RW integration in dev-kit  

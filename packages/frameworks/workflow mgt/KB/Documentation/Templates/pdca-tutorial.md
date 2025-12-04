@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:57Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # PDCA Tutorial: Step-by-Step Guide
 
 **Purpose:** Step-by-step tutorial for implementing PDCA in Release Workflow  

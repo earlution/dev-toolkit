@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:47Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Epic 2: Workflow Management Framework
 
 **Status:** IN PROGRESS  
@@ -18,7 +26,7 @@
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md`](epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md)
 - [x] **E2:S03 – Additional Workflows & Examples** - COMPLETE ✅ (v0.2.3.6+1 – All tasks complete)  
-- [ ] **E2:S04 – RW Installer & Plug-and-Play Adoption** - IN PROGRESS (v0.2.4.6+1 – T06 complete: Debug Path Framework package created)  
+- [ ] **E2:S04 – RW Installer & Plug-and-Play Adoption** - IN PROGRESS (v0.2.4.7+1 – T07 complete: Lifecycle metadata applied to all existing documentation)  
   - Story: [`epics/Epic-2/stories/Story-004-rw-installer-and-plug-and-play-adoption.md`](epics/Epic-2/stories/Story-004-rw-installer-and-plug-and-play-adoption.md)  
 
 ---

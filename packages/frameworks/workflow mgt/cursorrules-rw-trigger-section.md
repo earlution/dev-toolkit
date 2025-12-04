@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:02:13Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Cursor Rules: RW Trigger Section
 
 **Purpose:** This section should be added to your project's `.cursorrules` file to enable the "RW" trigger for Release Workflow execution.

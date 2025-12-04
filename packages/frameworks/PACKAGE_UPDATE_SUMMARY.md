@@ -1,3 +1,11 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:02:50Z
+expires_at: null
+housekeeping_policy: keep
+---
+
 # Package Update Summary
 
 **Date:** 2025-12-02  
