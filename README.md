@@ -1,6 +1,6 @@
 # Vibe Dev Kit
 
-[![Version](https://img.shields.io/badge/version-0.3.3.2%2B1-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.3.3.3%2B1-blue)](./CHANGELOG.md)
 [![Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-brightgreen)](./CHANGELOG.md)
 [![Repo](https://img.shields.io/github/stars/earlution/vibe-dev-kit?style=social)](https://github.com/earlution/vibe-dev-kit)
 

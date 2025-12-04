@@ -1485,6 +1485,28 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.3.3+1] - 04-12-25
+
+📚 Documentation: Created integration patterns and best practices document
+
+### Added
+
+- Created integration patterns and best practices document
+- Documented 5 common integration patterns
+- Created 3 decision trees (version bump logic, changelog insertion, kanban update scope)
+- Documented best practices for each integration point
+- Documented 5 anti-patterns with solutions
+- Documented 4 versioning strategies for different workflows
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.3.3+1.md` for full details
+- Guide located at: `packages/frameworks/numbering & versioning/integration/integration-patterns-and-best-practices.md`
+- Includes decision trees, anti-patterns, and versioning strategies
+- Framework-level documentation (portable, template-ready)
+
+---
+
 ## [0.4.1.1+1] - 02-12-25
 
 📚 Documentation: Epic 4 structure and Story 1 definition for Kanban Framework
