@@ -47,6 +47,17 @@ This cookbook provides **practical, worked examples** for using the `RC.EPIC.STO
    - [Example 1: FR → Task → Version → RW → Kanban Update](#example-1-fr--task--version--rw--kanban-update)
    - [Example 2: Bugfix with Verification Requirement](#example-2-bugfix-with-verification-requirement)
    - [Example 3: Parallel Epic/Story Work](#example-3-parallel-epicstory-work)
+10. [Edge Cases and Anti-Patterns](#10-edge-cases-and-anti-patterns)
+   - [10.1 Anti-Pattern: BUILD Incremented Instead of TASK](#101-anti-pattern-build-incremented-instead-of-task)
+   - [10.2 Edge Case: Task Renumbering](#102-edge-case-task-renumbering)
+   - [10.3 Edge Case: Story Re-Parenting Between Epics](#103-edge-case-story-re-parenting-between-epics)
+   - [10.4 Edge Case: Version Conflicts When Branches Diverge](#104-edge-case-version-conflicts-when-branches-diverge)
+   - [10.5 Edge Case: Incorrect TASK Mapping in Version File](#105-edge-case-incorrect-task-mapping-in-version-file)
+   - [10.6 Anti-Pattern: Using Standalone Task References](#106-anti-pattern-using-standalone-task-references)
+   - [10.7 Edge Case: BUILD Number Overflow](#107-edge-case-build-number-overflow)
+   - [10.8 Edge Case: Missing Version in Changelog](#108-edge-case-missing-version-in-changelog)
+   - [10.9 Anti-Pattern: Version Number in Commit Message Doesn't Match Tag](#109-anti-pattern-version-number-in-commit-message-doesnt-match-tag)
+   - [10.10 Edge Case: Parallel Epic Development Version Ordering](#1010-edge-case-parallel-epic-development-version-ordering)
 
 ---
 
@@ -1030,6 +1041,337 @@ VERSION_BUILD = 1
 - Epic 3: `0.3.1.1+1` → `0.3.2.2+1` (in progress)
 - Epic 4: `0.4.1.1+1` → `0.4.3.7+1` (completed)
 - See: `CHANGELOG.md` for canonical ordering
+
+---
+
+## 10. Edge Cases and Anti-Patterns
+
+This section documents known edge cases, common mistakes, and anti-patterns when using the `RC.EPIC.STORY.TASK+BUILD` versioning schema. Each entry includes symptoms, root causes, corrective patterns, and preventive guidance.
+
+### 10.1 Anti-Pattern: BUILD Incremented Instead of TASK
+
+**Symptom:** When completing a new Task, BUILD is incremented instead of TASK, resulting in multiple Tasks sharing the same TASK number.
+
+**Example:**
+- ❌ **Wrong:** E2:S01:T02 completed → `0.2.1.1+2` (BUILD incremented, TASK unchanged)
+- ✅ **Correct:** E2:S01:T02 completed → `0.2.1.2+1` (TASK incremented to 2, BUILD reset to 1)
+
+**Root Cause:**
+- RW Step 2 doesn't explicitly detect Task transitions
+- No mandatory check to read Story file and identify completed Task number
+- Default behavior increments BUILD without checking if Task changed
+- No validation that `VERSION_TASK` matches completed Task
+
+**Corrective Pattern:**
+1. Read Story file to identify completed Task number
+2. Extract Task number from task identifier (`E{epic}:S{story}:T{task}`)
+3. Compare completed Task number to current `VERSION_TASK`
+4. If Task number > current `VERSION_TASK`: Update `VERSION_TASK` and reset `VERSION_BUILD` to 1
+5. If Task number == current `VERSION_TASK`: Increment `VERSION_BUILD` only
+6. Validate before and after updating
+
+**Preventive Guidance:**
+- ✅ **MANDATORY:** RW Step 2 MUST read Story file to identify completed Task
+- ✅ **MANDATORY:** RW Step 2 MUST compare Task numbers before updating
+- ✅ **MANDATORY:** RW Step 2 MUST validate `VERSION_TASK` matches completed Task
+- ❌ **NEVER:** Skip Task identification step
+- ❌ **NEVER:** Assume same Task without checking
+
+**Reference:** `KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md`
+
+---
+
+### 10.2 Edge Case: Task Renumbering
+
+**Symptom:** Tasks are renumbered after work has been completed and released, creating version conflicts.
+
+**Example:**
+- Original: E3:S02:T01, T02, T03 released as `0.3.2.1+1`, `0.3.2.2+1`, `0.3.2.3+1`
+- Renumbered: T02 becomes T01, T03 becomes T02
+- Problem: New T01 conflicts with old T01 version
+
+**Root Cause:**
+- Story structure reorganized after work completed
+- Tasks merged or split
+- Manual renumbering without version migration
+
+**Corrective Pattern:**
+1. **Option A: Keep Original Versions (Recommended)**
+   - Don't renumber completed Tasks
+   - Create new Tasks with new numbers
+   - Document mapping: "Original T02 is now T05"
+
+2. **Option B: Version Migration (Complex)**
+   - Create migration document mapping old → new versions
+   - Update all references (changelogs, commits, tags)
+   - Update Kanban docs with version mappings
+   - **Warning:** This is complex and error-prone
+
+**Preventive Guidance:**
+- ✅ **BEST PRACTICE:** Finalize Task numbering before starting work
+- ✅ **BEST PRACTICE:** If renumbering needed, do it before first release
+- ✅ **BEST PRACTICE:** Document any renumbering in Story notes
+- ❌ **AVOID:** Renumbering Tasks after releases
+- ❌ **AVOID:** Merging/splitting Tasks after work started
+
+---
+
+### 10.3 Edge Case: Story Re-Parenting Between Epics
+
+**Symptom:** A Story is moved from one Epic to another after work has been completed, creating version conflicts.
+
+**Example:**
+- Original: Story 5 in Epic 3, released as `0.3.5.1+1`
+- Re-parented: Story 5 moved to Epic 4, becomes Story 1 in Epic 4
+- Problem: Version `0.3.5.1+1` exists but Story is now in Epic 4
+
+**Root Cause:**
+- Epic structure reorganized
+- Story scope changed
+- Manual re-parenting without version migration
+
+**Corrective Pattern:**
+1. **Option A: Keep Original Versions (Recommended)**
+   - Don't re-parent Stories after releases
+   - Create new Story in target Epic
+   - Document mapping: "Original E3:S05 is now E4:S01"
+
+2. **Option B: Version Migration (Complex)**
+   - Create migration document mapping old → new versions
+   - Update all references (changelogs, commits, tags)
+   - Update Kanban docs with version mappings
+   - **Warning:** This is complex and error-prone
+
+**Preventive Guidance:**
+- ✅ **BEST PRACTICE:** Finalize Epic/Story structure before starting work
+- ✅ **BEST PRACTICE:** If re-parenting needed, do it before first release
+- ✅ **BEST PRACTICE:** Document any re-parenting in Epic notes
+- ❌ **AVOID:** Re-parenting Stories after releases
+- ❌ **AVOID:** Moving Stories between Epics after work started
+
+---
+
+### 10.4 Edge Case: Version Conflicts When Branches Diverge
+
+**Symptom:** Parallel development on different branches results in same version number being used for different work.
+
+**Example:**
+- Branch A: Epic 3, Story 2, Task 1 → `0.3.2.1+1`
+- Branch B: Epic 3, Story 2, Task 1 → `0.3.2.1+1` (conflict!)
+- Problem: Both branches use same version number
+
+**Root Cause:**
+- Parallel work on same Epic/Story/Task
+- No coordination between branches
+- Version assigned before branch merge
+
+**Corrective Pattern:**
+1. **Option A: Sequential Task Numbers (Recommended)**
+   - Coordinate Task numbering across branches
+   - Use different Task numbers for parallel work
+   - Example: Branch A uses T01, Branch B uses T02
+
+2. **Option B: Merge Before Release**
+   - Merge branches before releasing
+   - Assign versions after merge
+   - Resolve conflicts before version assignment
+
+3. **Option C: Branch-Specific Versions (Not Recommended)**
+   - Use branch identifier in version (e.g., `0.3.2.1+1-branch-a`)
+   - **Warning:** This breaks version schema and traceability
+
+**Preventive Guidance:**
+- ✅ **BEST PRACTICE:** Coordinate Task numbering before starting parallel work
+- ✅ **BEST PRACTICE:** Use different Task numbers for parallel work on same Story
+- ✅ **BEST PRACTICE:** Merge branches before releasing
+- ❌ **AVOID:** Parallel work on same Task number
+- ❌ **AVOID:** Assigning versions before branch merge
+
+---
+
+### 10.5 Edge Case: Incorrect TASK Mapping in Version File
+
+**Symptom:** `VERSION_TASK` in `version.py` doesn't match the active Task number from Kanban.
+
+**Example:**
+- Kanban: Active Task is E2:S04:T09
+- Version File: `VERSION_TASK = 1`
+- Problem: Version file shows wrong Task number
+
+**Root Cause:**
+- `VERSION_TASK` not updated when starting new Task
+- Manual update forgotten
+- No validation to catch mismatch
+
+**Corrective Pattern:**
+1. Read Story file to identify active Task number
+2. Compare active Task number to `VERSION_TASK` in `version.py`
+3. If mismatch: Update `VERSION_TASK` to match active Task
+4. Update `VERSION_BUILD` to 1 (new Task)
+5. Validate: Re-read `version.py` to confirm update
+
+**Preventive Guidance:**
+- ✅ **MANDATORY:** RW Step 1 MUST validate `VERSION_TASK` matches active Task
+- ✅ **MANDATORY:** RW Step 2 MUST update `VERSION_TASK` when Task transition detected
+- ✅ **BEST PRACTICE:** Update `version.py` when creating new Task (intake process)
+- ❌ **NEVER:** Skip Task/version validation
+- ❌ **NEVER:** Assume `VERSION_TASK` is correct without checking
+
+**Reference:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T002-root-cause-analysis.md`
+
+---
+
+### 10.6 Anti-Pattern: Using Standalone Task References
+
+**Symptom:** Task references use standalone format (`T01`, `T001`) instead of full format (`E1:S01:T01`).
+
+**Example:**
+- ❌ **Wrong:** "Completed T01" or "Task T001"
+- ✅ **Correct:** "Completed E1:S01:T01" or "Task E1:S01:T01"
+
+**Root Cause:**
+- Legacy format from 3-digit task numbering
+- Templates not updated
+- Documentation examples use old format
+
+**Corrective Pattern:**
+1. Always use full `Exx:Sxx:Txx` format
+2. Update all references in documentation
+3. Update templates to use full format
+4. Update examples to show full format
+
+**Preventive Guidance:**
+- ✅ **MANDATORY:** Always use full `Exx:Sxx:Txx` format
+- ✅ **MANDATORY:** Templates must use full format
+- ✅ **BEST PRACTICE:** Examples must show full format
+- ❌ **NEVER:** Use standalone `T01` or `T001` format
+- ❌ **NEVER:** Assume context from surrounding text
+
+**Reference:** `KB/Architecture/Standards_and_ADRs/task-naming-migration-guide.md`
+
+---
+
+### 10.7 Edge Case: BUILD Number Overflow
+
+**Symptom:** BUILD number exceeds reasonable range (e.g., `0.2.4.9+99`) due to many releases within same Task.
+
+**Example:**
+- Task E2:S04:T09 has 99 builds: `0.2.4.9+1` through `0.2.4.9+99`
+- Next build would be `0.2.4.9+100` (still valid but unusual)
+
+**Root Cause:**
+- Many bugfixes/iterations within same Task
+- Task scope too large
+- No Task completion criteria
+
+**Corrective Pattern:**
+1. **Option A: Split Task (Recommended)**
+   - Break large Task into smaller Tasks
+   - Create new Task for remaining work
+   - Example: T09 → T09 (completed), T10 (new work)
+
+2. **Option B: Complete Task and Create New**
+   - Mark current Task as complete
+   - Create new Task for additional work
+   - Example: T09 complete, T10 for follow-up work
+
+**Preventive Guidance:**
+- ✅ **BEST PRACTICE:** Keep Tasks small (1-3 days of work)
+- ✅ **BEST PRACTICE:** Complete Tasks frequently
+- ✅ **BEST PRACTICE:** Split large Tasks before starting
+- ❌ **AVOID:** Tasks with 10+ builds
+- ❌ **AVOID:** Keeping Tasks open indefinitely
+
+---
+
+### 10.8 Edge Case: Missing Version in Changelog
+
+**Symptom:** Changelog entry created but version number missing or incorrect.
+
+**Example:**
+- Changelog shows: "## [Unreleased] - Task completed"
+- Missing: Version number `0.2.4.9+3`
+
+**Root Cause:**
+- Manual changelog update forgotten
+- RW Step 3/4 not executed
+- Version number not extracted from `version.py`
+
+**Corrective Pattern:**
+1. Read `version.py` to get current version
+2. Update changelog with correct version number
+3. Verify version format: `RC.EPIC.STORY.TASK+BUILD`
+4. Validate changelog format matches policy
+
+**Preventive Guidance:**
+- ✅ **MANDATORY:** RW Step 3 MUST create changelog with version number
+- ✅ **MANDATORY:** RW Step 4 MUST update main changelog with version number
+- ✅ **BEST PRACTICE:** Always read `version.py` for version number
+- ❌ **NEVER:** Manually write version numbers without reading `version.py`
+- ❌ **NEVER:** Skip changelog updates
+
+---
+
+### 10.9 Anti-Pattern: Version Number in Commit Message Doesn't Match Tag
+
+**Symptom:** Commit message shows different version than Git tag.
+
+**Example:**
+- Commit: "Release v0.2.4.9+2: ..."
+- Tag: `v0.2.4.9+3`
+- Problem: Mismatch between commit message and tag
+
+**Root Cause:**
+- Version bumped after commit
+- Tag created with different version
+- Manual tag creation error
+
+**Corrective Pattern:**
+1. Read `version.py` to get current version
+2. Use same version in commit message and tag
+3. Verify: Commit message version == Tag version == `version.py` version
+4. If mismatch: Create new commit or update tag
+
+**Preventive Guidance:**
+- ✅ **MANDATORY:** RW Step 9 MUST use version from `version.py` in commit message
+- ✅ **MANDATORY:** RW Step 10 MUST use same version for tag
+- ✅ **BEST PRACTICE:** Always read `version.py` for version number
+- ❌ **NEVER:** Use different versions in commit and tag
+- ❌ **NEVER:** Manually create tags without reading `version.py`
+
+---
+
+### 10.10 Edge Case: Parallel Epic Development Version Ordering
+
+**Symptom:** Changelog entries appear out of chronological order due to parallel epic development.
+
+**Example:**
+- Epic 3: `0.3.1.1+1` (released 2025-12-03)
+- Epic 4: `0.4.1.1+1` (released 2025-12-02, merged earlier)
+- Changelog shows Epic 4 before Epic 3 (canonical ordering)
+
+**Root Cause:**
+- Parallel epic development
+- Different merge times
+- Canonical ordering by version number, not timestamp
+
+**Corrective Pattern:**
+1. **This is Expected Behavior (Not an Error)**
+   - Changelog uses canonical ordering (by version number)
+   - Git history shows chronological order
+   - Both are correct for different purposes
+
+2. **If Chronological Order Needed:**
+   - Use Git log: `git log --oneline --date-order`
+   - Use detailed changelog archive (includes timestamps)
+   - Don't change main changelog ordering
+
+**Preventive Guidance:**
+- ✅ **UNDERSTAND:** Changelog uses canonical ordering (by version number)
+- ✅ **UNDERSTAND:** Git history shows chronological order
+- ✅ **BEST PRACTICE:** Use detailed changelog archive for timestamps
+- ❌ **DON'T:** Change main changelog to chronological order
+- ❌ **DON'T:** Expect changelog to match Git commit order
 
 ---
 

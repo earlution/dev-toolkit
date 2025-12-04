@@ -18,10 +18,10 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 """
 
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
-VERSION_EPIC = 2      # Epic number (Epic 2: Workflow Management Framework)
-VERSION_STORY = 4     # Story number (Story 4: RW Installer & Plug-and-Play Adoption)
-VERSION_TASK = 9      # Task number (Task 9: Complete Story 4 and Epic 2 closure documentation)
-VERSION_BUILD = 3     # Build number (increments per release within task, bumped by RW)
+VERSION_EPIC = 3      # Epic number (Epic 3: Numbering & Versioning Framework)
+VERSION_STORY = 2     # Story number (Story 2: Versioning Cookbook & Examples)
+VERSION_TASK = 4      # Task number (Task 4: Document edge cases and anti-patterns)
+VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
 # Format: RC.EPIC.STORY.TASK+BUILD

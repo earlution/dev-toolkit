@@ -17,6 +17,34 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.4+1] - 04-12-25
+
+📚 Documentation: Added edge cases and anti-patterns section to versioning cookbook
+
+### Added
+
+- Section 10: Edge Cases and Anti-Patterns in versioning cookbook
+- 10 detailed entries covering common versioning mistakes and edge cases:
+  - Anti-Pattern: BUILD Incremented Instead of TASK
+  - Edge Case: Task Renumbering
+  - Edge Case: Story Re-Parenting Between Epics
+  - Edge Case: Version Conflicts When Branches Diverge
+  - Edge Case: Incorrect TASK Mapping in Version File
+  - Anti-Pattern: Using Standalone Task References
+  - Edge Case: BUILD Number Overflow
+  - Edge Case: Missing Version in Changelog
+  - Anti-Pattern: Version Number in Commit Message Doesn't Match Tag
+  - Edge Case: Parallel Epic Development Version Ordering
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.4+1.md` for full details
+- Each entry includes symptom, root cause, corrective pattern, and preventive guidance
+- References to related documentation (error reference guide, root cause analysis)
+- Versioning cookbook now complete with all major scenarios including edge cases
+
+---
+
 ## [0.2.4.9+3] - 04-12-25
 
 🔧 Standardization: Task naming format updated from `Txxx` to `Exx:Sxx:Txx` across entire dev-kit

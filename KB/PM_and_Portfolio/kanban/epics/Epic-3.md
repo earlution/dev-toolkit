@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Created:** 2025-12-02
-**Last updated:** 2025-12-02 (v0.3.1.6+1 – Task 6 complete: Cursorrules abstracted (removed hardcoded version numbers))
+**Last updated:** 2025-12-04 (v0.3.2.4+1 – E3:S02:T04 complete: Edge cases and anti-patterns documented)
 **Branch:** `epic/3-numbering-and-versioning-framework`
 **Version Schema:** `0.3.S.T+B`
 **Production URL:** [N/A for this repo]
@@ -22,7 +22,7 @@ housekeeping_policy: keep
 ## Story Checklist
 
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
-- [ ] **E3:S02 – Versioning Cookbook & Examples** - IN PROGRESS (v0.3.2.3+1 – T003 complete)
+- [ ] **E3:S02 – Versioning Cookbook & Examples** - IN PROGRESS (v0.3.2.4+1 – E3:S02:T04 complete: Edge cases and anti-patterns documented)
 - [ ] **E3:S03 – Versioning Integration with Kanban & RW** - TODO
 
 ---
@@ -83,19 +83,19 @@ Make sure the dev kit's own versioning policy, version file, and docs align clea
 
 ### Story 2: Versioning Cookbook & Examples
 
-**Status:** TODO  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-03
+**Last updated:** 2025-12-04 (v0.3.2.4+1 – E3:S02:T04 complete: Edge cases and anti-patterns documented)
 
 **Goal:**  
 Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.TASK+BUILD, making it easy for other projects to adopt the dev-kit versioning strategy safely and correctly.
 
 **Tasks:**
-- [ ] E3:S02:T01 – Define core versioning scenarios for the cookbook
-- [ ] E3:S02:T02 – Create versioning cookbook document with worked examples
-- [ ] E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW)
-- [ ] E3:S02:T04 – Document edge cases and anti-patterns
+- [x] E3:S02:T01 – Define core versioning scenarios for the cookbook ✅ COMPLETE (v0.3.2.1+1)
+- [x] E3:S02:T02 – Create versioning cookbook document with worked examples ✅ COMPLETE (v0.3.2.2+1)
+- [x] E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW) ✅ COMPLETE (v0.3.2.3+1)
+- [x] E3:S02:T04 – Document edge cases and anti-patterns ✅ COMPLETE (v0.3.2.4+1)
 - [ ] E3:S02:T05 – Create quick reference summary for users and agents
 
 > Full story: [`epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md`](epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md)

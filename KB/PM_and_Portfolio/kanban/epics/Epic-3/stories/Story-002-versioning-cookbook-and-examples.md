@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-03  
-**Last updated:** 2025-12-03  
-**Version:** v0.3.2.1+1 (planned)  
+**Last updated:** 2025-12-04 (v0.3.2.4+1 – E3:S02:T04 complete: Edge cases and anti-patterns documented)  
+**Version:** v0.3.2.4+1  
 **Code:** E3S02
 
 ---
@@ -23,7 +23,7 @@ housekeeping_policy: keep
 - [x] **E3:S02:T01 – Define core versioning scenarios for the cookbook** ✅ COMPLETE (v0.3.2.1+1)
 - [x] **E3:S02:T02 – Create versioning cookbook document with worked examples** ✅ COMPLETE (v0.3.2.2+1)
 - [x] **E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW)** ✅ COMPLETE (v0.3.2.3+1)
-- [ ] **E3:S02:T04 – Document edge cases and anti-patterns**
+- [x] **E3:S02:T04 – Document edge cases and anti-patterns** ✅ COMPLETE (v0.3.2.4+1)
 - [ ] **E3:S02:T05 – Create quick reference summary for users and agents**
 
 ---
@@ -136,31 +136,45 @@ Provide a **versioning cookbook** with worked examples that shows:
 
 ---
 
-### E3:S02:T04 – Document edge cases and anti-patterns
+### E3:S02:T04 – Document edge cases and anti-patterns ✅ COMPLETE
 
 **Input:**  
 - Findings from Epic 3 Story 1  
 - Findings from Epic 4 Story 3 (integration validation)  
 
 **Deliverable:**  
-- Edge cases & anti-patterns section in the cookbook
+- Edge cases & anti-patterns section in the cookbook ✅ **DELIVERED**
+
+**Status:** ✅ **COMPLETE** - Comprehensive edge cases and anti-patterns section added to versioning cookbook
 
 **Approach:**
-1. List known edge cases:
+1. ✅ Listed known edge cases:
    - Task renumbering
    - Story re-parenting between epics
    - Version conflicts when branches diverge
    - Incorrect TASK mapping
-2. For each, document:
+   - Standalone task references
+   - BUILD number overflow
+   - Missing version in changelog
+   - Version mismatch between commit and tag
+   - Parallel epic development ordering
+2. ✅ For each, documented:
    - Symptom
    - Root cause
    - Corrective pattern
    - Preventive guidance
 
+**Key Deliverables:**
+- ✅ Section 10 added to versioning cookbook with 10 edge cases and anti-patterns
+- ✅ Each entry includes symptom, root cause, corrective pattern, and preventive guidance
+- ✅ References to related documentation (error reference guide, root cause analysis)
+- ✅ Table of contents updated to include new section
+- ✅ Examples and real dev-kit scenarios included
+
 **Acceptance Criteria:**
-- [ ] Edge cases identified and documented
-- [ ] Anti-patterns clearly described
-- [ ] Preventive guidance provided
+- [x] Edge cases identified and documented ✅
+- [x] Anti-patterns clearly described ✅
+- [x] Preventive guidance provided ✅
 
 ---
 
