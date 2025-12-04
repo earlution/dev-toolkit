@@ -17,6 +17,26 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.5+1] - 04-12-25
+
+🧪 Testing: T05 complete – RW installer usability tested with identified issues and recommendations documented
+
+### Added
+
+- RW Installer Usability Test Report (test scenarios, identified issues, recommendations with priority levels)
+
+### Updated
+
+- Story 4 Task Checklist (marked T05 acceptance criteria complete with deliverable reference)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.5+1.md` for full details
+- Identified 6 usability issues (2 high, 3 medium, 1 low priority) - all documented with recommendations
+- Installer is functional and usable, identified improvements are enhancements not blockers
+
+---
+
 ## [0.2.4.4+1] - 04-12-25
 
 📚 Documentation: T04 complete – RW Quickstart docs and template usage examples created with greenfield/brownfield flows

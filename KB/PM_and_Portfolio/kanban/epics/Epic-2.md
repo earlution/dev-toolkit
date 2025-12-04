@@ -18,7 +18,7 @@
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md`](epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md)
 - [x] **E2:S03 – Additional Workflows & Examples** - COMPLETE ✅ (v0.2.3.6+1 – All tasks complete)  
-- [ ] **E2:S04 – RW Installer & Plug-and-Play Adoption** - IN PROGRESS (v0.2.4.4+1 – T04 complete: Quickstart docs and examples created)  
+- [ ] **E2:S04 – RW Installer & Plug-and-Play Adoption** - IN PROGRESS (v0.2.4.5+1 – T05 complete: Usability test complete, all tasks done)  
   - Story: [`epics/Epic-2/stories/Story-004-rw-installer-and-plug-and-play-adoption.md`](epics/Epic-2/stories/Story-004-rw-installer-and-plug-and-play-adoption.md)  
 
 ---
