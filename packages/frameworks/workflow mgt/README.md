@@ -127,7 +127,67 @@ See `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-002-package-and-repo-
 
 ---
 
-## 🚀 Quick Start
+## 🚀 RW Quickstart (Using Installer)
+
+**🎯 Fastest Path:** Use the RW Installer CLI to automate setup. Reduces manual configuration from 13-17 file edits to answering a few questions.
+
+### Option 1: Quick Install (Recommended)
+
+```bash
+# 1. Copy workflow package to your project
+cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
+
+# 2. Run installer (interactive)
+cd /path/to/your/project
+python scripts/install_release_workflow.py
+
+# 3. Answer prompts (or use --mode for preset)
+# Mode A: Simple RW (no Kanban)
+# Mode B: RW + Dev-Kit Versioning
+# Mode C: Full Stack (RW + Versioning + Kanban)
+
+# 4. Test RW
+git checkout -b epic/1-test
+# Type "RW" in your AI assistant
+```
+
+**That's it!** The installer generates `rw-config.yaml`, updates `.cursorrules`, and patches workflow files automatically.
+
+### Option 2: Preset Mode Installation
+
+```bash
+# Full Stack (recommended for new projects)
+python scripts/install_release_workflow.py --mode c
+
+# Or preview changes first
+python scripts/install_release_workflow.py --mode c --dry-run
+```
+
+### What the Installer Does
+
+1. **Generates `rw-config.yaml`** - Single source of truth for all paths
+2. **Updates `.cursorrules`** - Adds RW trigger section with correct paths
+3. **Patches `workflows/release-workflow.yaml`** - Uses config values instead of hardcoded paths
+4. **Validates paths** - Ensures all paths match your project structure
+
+### Next Steps After Installation
+
+1. **Review `rw-config.yaml`** - Verify paths are correct
+2. **Create version file** - At the path specified in config
+3. **Copy validation scripts** - If not already present
+4. **Test RW** - Type "RW" on an epic branch
+
+### 📖 Detailed Guides
+
+- **Quickstart Guide:** [`KB/Documentation/Developer_Docs/vwmp/rw-installer-quickstart-guide.md`](KB/Documentation/Developer_Docs/vwmp/rw-installer-quickstart-guide.md) - Complete examples for greenfield and brownfield projects
+- **Installer CLI Docs:** [`scripts/README-rw-installer.md`](scripts/README-rw-installer.md) - Full installer documentation
+- **Config Schema:** [`config/rw-config-schema.md`](config/rw-config-schema.md) - Complete config reference
+
+---
+
+## 🔧 Manual Installation (Legacy)
+
+**Note:** Manual installation is still supported but requires 13-17 manual file edits. Use the installer (above) for a much faster setup.
 
 ### Step 1: Copy Files to Your Project
 

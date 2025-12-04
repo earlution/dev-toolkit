@@ -17,6 +17,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.4+1] - 04-12-25
+
+📚 Documentation: T04 complete – RW Quickstart docs and template usage examples created with greenfield/brownfield flows
+
+### Added
+
+- RW Installer Quickstart Guide (complete guide with greenfield/brownfield examples, troubleshooting, verification checklist)
+
+### Updated
+
+- Workflow Mgt README (added RW Quickstart section using installer, moved manual installation to legacy section)
+- Story 4 Task Checklist (marked T04 acceptance criteria complete with deliverable references)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.4+1.md` for full details
+- Quickstart guide provides copy-paste ready examples for Python and Node.js projects
+- README now clearly recommends installer over manual setup
+
+---
+
 ## [0.2.4.3+1] - 04-12-25
 
 🛠️ Implementation: T03 complete – RW installer CLI implemented with config generation, .cursorrules updates, workflow patching, and validation script updates
