@@ -17,6 +17,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.5+2] - 04-12-25
+
+📚 Documentation: RW updated to reflect config-driven philosophy – RW documentation now uses rw-config.yaml as single source of truth
+
+### Updated
+
+- Cursorrules RW Trigger Section (added config loading, updated all steps to reference config values)
+- RW Execution Guide (added config loading section, updated Steps 1-8 to use config paths)
+
+### Added
+
+- RW Config-Driven Update Summary (documents philosophy alignment changes)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.5+2.md` for full details
+- RW now fully aligned with installer philosophy: single source of truth (rw-config.yaml)
+- All steps consistently reference config values with backward-compatible fallback patterns
+
+---
+
 ## [0.2.4.5+1] - 04-12-25
 
 🧪 Testing: T05 complete – RW installer usability tested with identified issues and recommendations documented

@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.5+1 – T05 complete: Usability test complete, all tasks done)  
-**Version:** v0.2.4.5+1  
+**Last updated:** 2025-12-04 (v0.2.4.5+2 – T05 build 2: RW config-driven philosophy aligned)  
+**Version:** v0.2.4.5+2  
 **Code:** E2S04
 
 ---

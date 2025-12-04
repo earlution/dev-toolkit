@@ -169,6 +169,44 @@ For each step, the agent follows this pattern:
 
 ## 📋 Step-by-Step Agent Execution
 
+### 🔧 Config Loading (Before Step 1)
+
+**MANDATORY:** Before executing any RW steps, load `rw-config.yaml` from project root if it exists. This is the **single source of truth** for all project-specific paths.
+
+**Config Loading Pattern:**
+```python
+from pathlib import Path
+import yaml
+
+config = None
+config_path = Path("rw-config.yaml")
+if config_path.exists():
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config = yaml.safe_load(f)
+    except Exception:
+        pass  # Fall back to placeholders
+
+# Extract paths from config or use fallbacks
+version_file = config['version_file'] if config and 'version_file' in config else 'src/{project}/version.py'
+main_changelog = config['main_changelog'] if config and 'main_changelog' in config else 'CHANGELOG.md'
+changelog_dir = config['changelog_dir'] if config and 'changelog_dir' in config else 'docs/changelogs'
+scripts_path = config['scripts_path'] if config and 'scripts_path' in config else 'scripts/validation'
+readme_file = config['readme_file'] if config and 'readme_file' in config else 'README.md'
+kanban_root = config.get('kanban_root') if config and config.get('use_kanban') else None
+epic_doc_pattern = config.get('epic_doc_pattern') if config and config.get('use_kanban') else None
+story_doc_pattern = config.get('story_doc_pattern') if config and config.get('use_kanban') else None
+```
+
+**Philosophy:**
+- **Config-driven (preferred):** If `rw-config.yaml` exists, use its values as the single source of truth
+- **Backward compatible:** If config doesn't exist, use placeholder patterns (ensures RW works in projects that haven't run the installer)
+- **Consistent:** All steps use the same config values loaded at the start
+
+**Note:** Validation scripts (`validate_branch_context.py`, `validate_changelog_format.py`) automatically load `rw-config.yaml` if available, so they will use the same paths.
+
+---
+
 ### Step 1: Branch Safety Check
 
 **Step Definition:**
@@ -186,11 +224,12 @@ For each step, the agent follows this pattern:
 **Agent Execution:**
 
 1. **ANALYZE:**
+   - **Load config first:** Load `rw-config.yaml` if it exists (see Config Loading section above)
    - Get current Git branch name (e.g., `epic/4` [Example: Confidentia], `epic/2` [Example: vibe-dev-kit], `main`)
    - Check if branch matches expected pattern (e.g., `epic/{n}` for epic branches)
    - Analyze modified files in working directory (`git status`, `git diff`)
-   - Check if version file exists and read current version (if file is modified)
-   - Check if changelog entries exist (if CHANGELOG.md is modified)
+   - **Use config path:** Check if version file exists (from config `version_file` or fallback `src/{project}/version.py`) and read current version (if file is modified)
+   - **Use config path:** Check if changelog entries exist (from config `main_changelog` or fallback `CHANGELOG.md` if modified)
    - Extract expected epic number from branch name (e.g., `epic/4` → Epic 4 [Example: Confidentia], `epic/2` → Epic 2 [Example: vibe-dev-kit])
    - Check modified file paths for epic-specific patterns (e.g., `Epic-4/` [Example: Confidentia], `Epic-2/` [Example: vibe-dev-kit], `epic/4/` [Example: Confidentia])
 
@@ -336,9 +375,9 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 **A. READ CURRENT VERSION:**
 1. **ANALYZE:**
-   - Read current version from version file:
-     - [Example: Confidentia] `src/confidentia/version.py`
-     - [Example: vibe-dev-kit] `src/fynd_deals/version.py`
+   - **Use config path:** Read current version from version file (from config `version_file` or fallback):
+     - [Example: Confidentia] `src/confidentia/version.py` (or from `rw-config.yaml` if present)
+     - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
    - Extract current `VERSION_EPIC`, `VERSION_STORY`, `VERSION_TASK`, `VERSION_BUILD`
    - Document current version: `RC.EPIC.STORY.TASK+BUILD`
    - Understand version schema: `RC.EPIC.STORY.TASK+BUILD`
@@ -347,9 +386,9 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 **B. IDENTIFY COMPLETED TASK (MANDATORY):**
 2. **ANALYZE (continued):**
-   - **MANDATORY:** Read the Story file to identify completed task:
-     - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic {epic}/Story-{story}-*.md`
-     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md`
+   - **MANDATORY:** Read the Story file to identify completed task. **Use config paths:** If `rw-config.yaml` exists and `use_kanban: true`, use `kanban_root` and `story_doc_pattern` from config. Otherwise, use fallback patterns:
+     - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic {epic}/Story-{story}-*.md` (or from `rw-config.yaml` if present)
+     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md` (or from `rw-config.yaml` if present)
    - Find the MOST RECENTLY COMPLETED task in the Task Checklist (marked `✅ COMPLETE`)
    - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T008` → task number is `8`)
    - **CRITICAL:** If no task is marked complete, or you cannot identify which task was just completed, **STOP** and ask the user which task was completed
@@ -388,15 +427,15 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - **If Task Transition (New Task):**
      - Update `VERSION_TASK` to match active Task number
      - Update `VERSION_BUILD` to 1
-     - Update version file:
-       - [Example: Confidentia] `src/confidentia/version.py`
-       - [Example: vibe-dev-kit] `src/fynd_deals/version.py`
+     - **Use config path:** Update version file (from config `version_file` or fallback):
+       - [Example: Confidentia] `src/confidentia/version.py` (or from `rw-config.yaml` if present)
+       - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
        - Use `search_replace` tool to update both `VERSION_TASK` and `VERSION_BUILD`
    - **If Same Task (BUILD Increment):**
      - Update `VERSION_BUILD` only (increment by 1)
-     - Update version file:
-       - [Example: Confidentia] `src/confidentia/version.py`
-       - [Example: vibe-dev-kit] `src/fynd_deals/version.py`
+     - **Use config path:** Update version file (from config `version_file` or fallback):
+       - [Example: Confidentia] `src/confidentia/version.py` (or from `rw-config.yaml` if present)
+       - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
        - Use `search_replace` tool to update `VERSION_BUILD`
    - Update `VERSION_STRING` to reflect new version
    - Update `VERSION_INFO["description"]` if present
@@ -464,9 +503,9 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Determine Story number from version:
      - [Example: Confidentia] `0.4.3.2+9` → Story 3
      - [Example: vibe-dev-kit] `0.2.1.1+3` → Story 1
-   - Create changelog file path:
-     - [Example: Confidentia] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.2+9.md`
-     - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.1+3.md`
+   - **Use config path:** Create changelog file path (from config `changelog_dir` or fallback):
+     - [Example: Confidentia] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.2+9.md` (or from `rw-config.yaml` if present)
+     - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.1+3.md` (or from `rw-config.yaml` if present)
    - Review previous changelog format for consistency
 
 3. **EXECUTE:**
@@ -546,7 +585,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - [Example: Confidentia] `"0.4.3.2+9"`
      - [Example: vibe-dev-kit] `"0.2.1.1+3"`
    - Get summary and change type from parameters
-   - Read current `CHANGELOG.md` to find "## Recent Releases" section
+   - **Use config path:** Read main changelog (from config `main_changelog` or fallback `CHANGELOG.md`) to find "## Recent Releases" section
    - Understand date format: `DD-MM-YY` (e.g., `01-12-25`)
 
 2. **DETERMINE:**
@@ -605,7 +644,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - [Example: Confidentia] `"0.4.3.2+9"`
      - [Example: vibe-dev-kit] `"0.2.1.1+3"`
    - Get summary and change type from parameters
-   - Read `README.md` to find version badge and latest release callout
+   - **Use config path:** Read README file (from config `readme_file` or fallback `README.md`) to find version badge and latest release callout
    - Understand badge format: `[![Version](...badge/version-{version}-blue)...]`
    - Understand latest release format: `**🎉 Latest Release: v{version}** - {summary}`
 
@@ -657,12 +696,12 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Extract Story number from version:
      - [Example: Confidentia] `0.4.3.2+9` → Story 3
      - [Example: vibe-dev-kit] `0.2.1.1+3` → Story 1
-   - Find Epic doc:
-     - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic 4/Epic-4.md`
-     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2.md`
-   - Find Story doc:
-     - [Example: Confidentia] `KB/PM_and_Portfolio/kanban/Epic 4/Story-3-*.md`
-     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-001-*.md`
+   - **Use config paths:** Find Epic doc (from config `kanban_root` and `epic_doc_pattern` if `use_kanban: true`, or fallback):
+     - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic 4/Epic-4.md` (or from `rw-config.yaml` if present)
+     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2.md` (or from `rw-config.yaml` if present)
+   - **Use config paths:** Find Story doc (from config `kanban_root` and `story_doc_pattern` if `use_kanban: true`, or fallback):
+     - [Example: Confidentia] `KB/PM_and_Portfolio/kanban/Epic 4/Story-3-*.md` (or from `rw-config.yaml` if present)
+     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-001-*.md` (or from `rw-config.yaml` if present)
    - Understand "Last updated" field format
 
 2. **DETERMINE:**
@@ -783,8 +822,9 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Determine if validators passed or failed
 
 3. **EXECUTE:**
-   - Run `python scripts/validation/validate_branch_context.py --strict`
-   - Run `python scripts/validation/validate_changelog_format.py --strict`
+   - **Use config path:** Run validators (from config `scripts_path` or fallback `scripts/validation/`):
+     - `python {scripts_path}/validation/validate_branch_context.py --strict` (script automatically reads `rw-config.yaml` if available)
+     - `python {scripts_path}/validation/validate_changelog_format.py --strict` (script automatically reads `rw-config.yaml` if available)
    - Capture exit codes and output
 
 4. **VALIDATE:**

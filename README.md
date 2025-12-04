@@ -1,6 +1,6 @@
 ## Vibe Dev Kit
 
-[![Version](https://img.shields.io/badge/version-0.2.4.5%2B1-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.2.4.5%2B2-blue)](./CHANGELOG.md)
 [![Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-brightgreen)](./CHANGELOG.md)
 [![Repo](https://img.shields.io/github/stars/earlution/vibe-dev-kit?style=social)](https://github.com/earlution/vibe-dev-kit)
 
@@ -315,4 +315,4 @@ This repository supports the **"Vibe Coding [for Dummies]"** book project. Packa
 
 **Repository:** `https://github.com/earlution/vibe-dev-kit`  
 **Book Project:** *"Vibe Coding [for Dummies]"* (working title)  
-**Current Repo Version:** `v0.2.4.5+1` (2025-12-04)
+**Current Repo Version:** `v0.2.4.5+2` (2025-12-04)

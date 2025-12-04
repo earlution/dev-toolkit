@@ -16,11 +16,52 @@
 
 1. **DO NOT** run the deterministic script `scripts/release_workflow.py`
 2. **DO** execute the Release Workflow using the **intelligent agent-driven execution pattern**
-3. **Follow** the step-by-step guide below
-4. **Start with Step 1: Branch Safety Check** - Analyze work and ensure it aligns with current branch before proceeding
-5. **Execute all 11 steps** using the ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern
-6. **Document** each step's analysis, actions, and results
-7. **MUST USE Cursor TODOs:** Create and maintain a TODO list tracking all 11 steps (see below)
+3. **LOAD CONFIG FIRST (MANDATORY):** Before Step 1, load `rw-config.yaml` from project root if it exists. This is the **single source of truth** for all project-specific paths. If config exists, use its values. If not, use placeholders/examples (backward compatibility).
+4. **Follow** the step-by-step guide below
+5. **Start with Step 1: Branch Safety Check** - Analyze work and ensure it aligns with current branch before proceeding
+6. **Execute all 11 steps** using the ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern
+7. **Document** each step's analysis, actions, and results
+8. **MUST USE Cursor TODOs:** Create and maintain a TODO list tracking all 11 steps (see below)
+
+**🔧 Config-Driven Approach (Preferred):**
+
+If `rw-config.yaml` exists in project root, **MUST** load it and use its values for all paths:
+- `version_file` → Use for version file path
+- `main_changelog` → Use for main changelog path
+- `changelog_dir` → Use for changelog archive directory
+- `scripts_path` → Use for validation scripts path
+- `readme_file` → Use for README path
+- `kanban_root` → Use for Kanban root (if `use_kanban: true`)
+- `epic_doc_pattern` → Use for epic document pattern (if Kanban enabled)
+- `story_doc_pattern` → Use for story document pattern (if Kanban enabled)
+
+**Loading Config Pattern:**
+```python
+# Load rw-config.yaml if it exists
+from pathlib import Path
+import yaml
+
+config = None
+config_path = Path("rw-config.yaml")
+if config_path.exists():
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            config = yaml.safe_load(f)
+    except Exception:
+        pass  # Fall back to placeholders
+
+# Use config values or fallback to defaults
+version_file = config['version_file'] if config and 'version_file' in config else 'src/{project}/version.py'
+main_changelog = config['main_changelog'] if config and 'main_changelog' in config else 'CHANGELOG.md'
+changelog_dir = config['changelog_dir'] if config and 'changelog_dir' in config else 'docs/changelogs'
+scripts_path = config['scripts_path'] if config and 'scripts_path' in config else 'scripts/validation'
+readme_file = config['readme_file'] if config and 'readme_file' in config else 'README.md'
+kanban_root = config.get('kanban_root', 'KB/PM_and_Portfolio/kanban') if config and config.get('use_kanban') else None
+```
+
+**Backward Compatibility:**
+- If `rw-config.yaml` doesn't exist, use placeholder patterns (`{project}`, `{kanban_path}`, etc.)
+- This ensures RW works in projects that haven't run the installer yet
 
 **🚨 MANDATORY: Progress Tracking with Cursor TODOs**
 
@@ -91,13 +132,15 @@ For each step, follow this pattern:
 2. **Bump Version** - **MANDATORY STEP-BY-STEP PROCESS (DO NOT SKIP ANY STEP):**
 
    **A. READ CURRENT VERSION:**
-   - Read `src/{project}/version.py` to get current `VERSION_EPIC`, `VERSION_STORY`, `VERSION_TASK`, `VERSION_BUILD`
+   - **Load config first:** If `rw-config.yaml` exists, read `version_file` from config. Otherwise, use `src/{project}/version.py` as fallback.
+   - Read the version file (from config or fallback) to get current `VERSION_EPIC`, `VERSION_STORY`, `VERSION_TASK`, `VERSION_BUILD`
    - Document current version: `RC.EPIC.STORY.TASK+BUILD`
-   - [Example: vibe-dev-kit] Read `src/fynd_deals/version.py`
+   - [Example: vibe-dev-kit] Read `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
 
    **B. IDENTIFY COMPLETED TASK (MANDATORY):**
-   - Read the Story file: `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md`
-   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md`
+   - **Load config first:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root` and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` as fallback.
+   - Read the Story file using config values or fallback pattern
+   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md` (or from `rw-config.yaml` if present)
    - Find the MOST RECENTLY COMPLETED task in the Task Checklist (marked `✅ COMPLETE`)
    - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T008` → task number is `8`)
    - **CRITICAL:** If no task is marked complete, or you cannot identify which task was just completed, **STOP** and ask the user which task was completed
@@ -121,10 +164,10 @@ For each step, follow this pattern:
    - Document decision: "Task {completed_task} completed. Current TASK={current_task}, BUILD={current_build}. Decision: {new_task/new_build} → TASK={new_task}, BUILD={new_build}"
 
    **E. UPDATE VERSION FILE:**
-   - Update `VERSION_TASK` and `VERSION_BUILD` in `src/{project}/version.py`
+   - **Use config path:** Update `VERSION_TASK` and `VERSION_BUILD` in the version file path from config (or `src/{project}/version.py` as fallback)
    - Update `VERSION_STRING` to reflect new version
    - Update `VERSION_INFO["description"]` if present
-   - [Example: vibe-dev-kit] Update `src/fynd_deals/version.py`
+   - [Example: vibe-dev-kit] Update `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
 
    **F. VALIDATE AFTER UPDATING:**
    - Re-read `version.py` and verify the new version matches your decision
@@ -141,11 +184,11 @@ For each step, follow this pattern:
    - **MUST** document decision: "Task {N} completed. Current TASK={X}, BUILD={Y}. Decision: {new_task/new_build} → TASK={Z}, BUILD={W}"
    - See `KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md` for error prevention reference
    - See `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` Step 2 for complete procedure
-3. **Create Detailed Changelog** - Create detailed changelog in changelog archive directory (typically `{changelog_archive_path}/CHANGELOG_v{version}.md`) with full timestamp (`YYYY-MM-DD HH:MM:SS UTC`). **CRITICAL:** Timestamp is IMMUTABLE once written - never edit the `**Release Date:**` field.
-   - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md`
-4. **Update Main Changelog** - Add new entry at top: `## [version] - DD-MM-YY` (short date format for merge-to-main) with release description and link to detailed changelog. Follow [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog) format. **Note:** Main changelog date can be updated if merge date changes, but detailed changelog timestamp is immutable.
-5. **Update README** - Update version badge and latest release callout if present (optional)
-6. **Auto-update Kanban Docs** - Update epic documentation at `{kanban_path}/epics/Epic-{epic}.md` and story documentation at `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` with version markers. **CRITICAL: "ALL" means ALL sections:**
+3. **Create Detailed Changelog** - Create detailed changelog in changelog archive directory. **Use config:** If `rw-config.yaml` exists, read `changelog_dir` from config. Otherwise, use `{changelog_archive_path}/CHANGELOG_v{version}.md` as fallback. Full timestamp (`YYYY-MM-DD HH:MM:SS UTC`). **CRITICAL:** Timestamp is IMMUTABLE once written - never edit the `**Release Date:**` field.
+   - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md` (or from `rw-config.yaml` if present)
+4. **Update Main Changelog** - Add new entry at top: `## [version] - DD-MM-YY` (short date format for merge-to-main) with release description and link to detailed changelog. **Use config:** If `rw-config.yaml` exists, read `main_changelog` from config. Otherwise, use `CHANGELOG.md` as fallback. Follow [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog) format. **Note:** Main changelog date can be updated if merge date changes, but detailed changelog timestamp is immutable.
+5. **Update README** - Update version badge and latest release callout if present (optional). **Use config:** If `rw-config.yaml` exists, read `readme_file` from config. Otherwise, use `README.md` as fallback.
+6. **Auto-update Kanban Docs** - Update epic documentation and story documentation with version markers. **Use config:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root`, `epic_doc_pattern`, and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}.md` and `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` as fallback. **CRITICAL: "ALL" means ALL sections:**
    - Header metadata (Last updated, Version)
    - Story Checklist at top (status, task counts, version)
    - **Detailed Story sections** (Status, Last updated, task checkboxes with forensic markers)
@@ -157,7 +200,7 @@ For each step, follow this pattern:
      4. Update ALL of them to match the Story file's state
      5. Validate consistency: header, checklist, and detailed sections must all match
 7. **Stage Files** - Run `git add -A` to stage all modified files
-8. **Run Validators** - Execute validation scripts (typically `{scripts_path}/validation/validate_branch_context.py` and `{scripts_path}/validation/validate_changelog_format.py`)
+8. **Run Validators** - Execute validation scripts. **Use config:** If `rw-config.yaml` exists, read `scripts_path` from config. Otherwise, use `{scripts_path}/validation/` as fallback. Run `validate_branch_context.py` and `validate_changelog_format.py` (both scripts automatically read from `rw-config.yaml` if available).
    - **IMPORTANT:** Validators should confirm you're on an epic branch, not `main`
    - If on `main`, warn user and suggest switching to epic branch
    - Validators check version format, branch context alignment, and changelog format
