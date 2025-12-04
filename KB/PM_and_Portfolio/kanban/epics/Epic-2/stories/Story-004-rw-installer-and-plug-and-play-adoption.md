@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.2+1 – T02 complete: RW config schema designed)  
-**Version:** v0.2.4.2+1  
+**Last updated:** 2025-12-04 (v0.2.4.3+1 – T03 complete: RW installer CLI implemented)  
+**Version:** v0.2.4.3+1  
 **Code:** E2S04
 
 ---
@@ -33,7 +33,7 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 
 - [x] **E2:S04:T01 – Analyze current RW adoption friction and required config** ✅ COMPLETE (v0.2.4.1+1)  
 - [x] **E2:S04:T02 – Design RW config schema (`rw-config.yaml`) and modes** ✅ COMPLETE (v0.2.4.2+1)  
-- [ ] **E2:S04:T03 – Implement RW installer CLI**  
+- [x] **E2:S04:T03 – Implement RW installer CLI** ✅ COMPLETE (v0.2.4.3+1)  
 - [ ] **E2:S04:T04 – Create quickstart docs and template usage examples**  
 - [ ] **E2:S04:T05 – Usability test installer on sample and real projects**  
 
@@ -120,9 +120,11 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 6. Provide a `--dry-run` mode that prints intended changes without writing files.  
 
 **Acceptance Criteria:**
-- [ ] Running the installer in a clean sample project produces a usable RW setup.  
-- [ ] `.cursorrules`, RW YAML, and validation scripts all read from `rw-config.yaml`.  
-- [ ] `--dry-run` mode works and shows intended changes clearly.  
+- [x] Running the installer in a clean sample project produces a usable RW setup ✅  
+- [x] `.cursorrules`, RW YAML, and validation scripts all read from `rw-config.yaml` ✅  
+- [x] `--dry-run` mode works and shows intended changes clearly ✅  
+
+**Deliverable:** ✅ **DELIVERED** - See `packages/frameworks/workflow mgt/scripts/install_release_workflow.py` for installer CLI and `packages/frameworks/workflow mgt/scripts/README-rw-installer.md` for documentation. Validation scripts updated to read from `rw-config.yaml`.  
 
 ---
 

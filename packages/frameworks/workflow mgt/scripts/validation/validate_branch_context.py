@@ -21,7 +21,12 @@ import re
 import subprocess
 import sys
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Dict
+
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 # Branch to epic mapping (RC.EPIC.STORY.TASK+BUILD schema)
 # Maps branch patterns to epic numbers
@@ -29,6 +34,30 @@ from typing import Optional
 BRANCH_EPIC_MAP = {
     "main": None,  # main branch can have any epic
 }
+
+
+def load_rw_config(project_root: Path = None) -> Optional[Dict]:
+    """Load rw-config.yaml if it exists."""
+    if project_root is None:
+        project_root = Path.cwd()
+    
+    config_path = project_root / "rw-config.yaml"
+    if not config_path.exists() or yaml is None:
+        return None
+    
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+    except Exception:
+        return None
+
+
+def get_version_file_path(config: Optional[Dict] = None) -> Path:
+    """Get version file path from config or use default."""
+    if config and 'version_file' in config:
+        return Path(config['version_file'])
+    # Default fallback
+    return Path("src/fynd_deals/version.py")
 
 
 def get_current_branch():
@@ -39,9 +68,9 @@ def get_current_branch():
     return result.stdout.strip()
 
 
-def get_version():
+def get_version(config: Optional[Dict] = None):
     """Get version from version.py."""
-    version_file = Path("src/fynd_deals/version.py")
+    version_file = get_version_file_path(config)
     if not version_file.exists():
         return None
     # Try to import and get the actual version value
@@ -121,9 +150,13 @@ def parse_version_patch(version: str) -> Optional[int]:
     return None
 
 
-def check_changelog(branch):
+def check_changelog(branch, config: Optional[Dict] = None):
     """Check CHANGELOG.md for cross-epic contamination (supports both old and new format)."""
-    changelog_file = Path("CHANGELOG.md")
+    if config and 'main_changelog' in config:
+        changelog_file = Path(config['main_changelog'])
+    else:
+        changelog_file = Path("CHANGELOG.md")
+    
     if not changelog_file.exists():
         return True, []
 
@@ -171,12 +204,15 @@ def validate_branch_context():
     print("🔍 Validating branch context...")
     print()
 
+    # Load config if available
+    config = load_rw_config()
+
     # Get current branch
     branch = get_current_branch()
     print(f"Current branch: {branch}")
 
     # Get version
-    version = get_version()
+    version = get_version(config)
     print(f"Current version: {version}")
 
     # Check branch-epic mapping
@@ -207,7 +243,7 @@ def validate_branch_context():
         warnings.append(f"Branch '{branch}' not in known mapping - cannot validate version")
 
     # Check CHANGELOG
-    changelog_ok, changelog_issues = check_changelog(branch)
+    changelog_ok, changelog_issues = check_changelog(branch, config)
     if not changelog_ok:
         errors.extend(changelog_issues)
 

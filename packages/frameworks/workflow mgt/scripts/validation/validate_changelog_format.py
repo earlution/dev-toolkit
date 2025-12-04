@@ -16,12 +16,40 @@ import argparse
 import re
 import sys
 from pathlib import Path
-from typing import Tuple, List
+from typing import Tuple, List, Optional, Dict
+
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 # Version patterns: RC.EPIC.STORY.PATCH (old) or RC.EPIC.STORY.TASK+BUILD (new)
 # Support both formats for backward compatibility
 OLD_VERSION_PATTERN = re.compile(r"## \[(\d+)\.(\d+)\.(\d+)\.(\d+)\] - (\d{4}-\d{2}-\d{2})")
 NEW_VERSION_PATTERN = re.compile(r"## \[(\d+)\.(\d+)\.(\d+)\.(\d+)\+(\d+)\] - (\d{2}-\d{2}-\d{2})")
+
+
+def load_rw_config(project_root: Path = None) -> Optional[Dict]:
+    """Load rw-config.yaml if it exists."""
+    if project_root is None:
+        project_root = Path.cwd()
+    
+    config_path = project_root / "rw-config.yaml"
+    if not config_path.exists() or yaml is None:
+        return None
+    
+    try:
+        with open(config_path, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f)
+    except Exception:
+        return None
+
+
+def get_changelog_path(config: Optional[Dict] = None) -> Path:
+    """Get changelog file path from config or use default."""
+    if config and 'main_changelog' in config:
+        return Path(config['main_changelog'])
+    return Path("CHANGELOG.md")
 
 
 def validate_changelog_file(filepath: Path) -> Tuple[bool, List[str], List[str]]:
@@ -102,7 +130,9 @@ def main():
     print("🔍 Validating changelog format...")
     print()
 
-    changelog_file = Path("CHANGELOG.md")
+    # Load config if available
+    config = load_rw_config()
+    changelog_file = get_changelog_path(config)
     
     if not changelog_file.exists():
         print("ℹ️  CHANGELOG.md not found - skipping validation")

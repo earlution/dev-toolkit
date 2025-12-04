@@ -17,6 +17,28 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.3+1] - 04-12-25
+
+🛠️ Implementation: T03 complete – RW installer CLI implemented with config generation, .cursorrules updates, workflow patching, and validation script updates
+
+### Added
+
+- RW Installer CLI (interactive installer with --dry-run mode, config generation, .cursorrules updates, workflow patching)
+- Installer documentation (usage guide, examples, troubleshooting)
+
+### Updated
+
+- Validation scripts (updated to read from rw-config.yaml with backward compatibility)
+- Story 4 Task Checklist (marked T03 acceptance criteria complete with deliverable references)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.3+1.md` for full details
+- Installer reduces RW adoption from 13-17 manual edits to 1 (answering installer questions)
+- Validation scripts support both config-driven (new) and legacy (backward compatible) modes
+
+---
+
 ## [0.2.4.2+1] - 04-12-25
 
 🎨 Design: T02 complete – RW config schema (`rw-config.yaml`) designed with three modes and example configs
