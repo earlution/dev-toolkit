@@ -594,16 +594,32 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - [Example: vibe-dev-kit] `"0.2.1.1+3"`
    - Get summary and change type from parameters
    - **Use config path:** Read main changelog (from config `main_changelog` or fallback `CHANGELOG.md`) to find "## Recent Releases" section
+   - **CRITICAL - Canonical Ordering:** Read ALL existing changelog entries and extract version numbers
+   - Parse existing version numbers: Extract `## [version]` headers and parse `RC.EPIC.STORY.TASK+BUILD` format
+   - Understand canonical ordering: Versions must be ordered by version number (RC → EPIC → STORY → TASK → BUILD), NOT by insertion time
    - Understand date format: `DD-MM-YY` (e.g., `01-12-25`)
 
 2. **DETERMINE:**
    - Generate summary date: Current date in `DD-MM-YY` format
    - Determine entry format: `### [version] - date`
-   - Find insertion point: After "## Recent Releases" header, before first existing entry
+   - **CRITICAL - Find Correct Insertion Point:**
+     - Parse new version: `RC.EPIC.STORY.TASK+BUILD` → (RC, EPIC, STORY, TASK, BUILD)
+     - For each existing entry:
+       - Parse existing version: `RC.EPIC.STORY.TASK+BUILD` → (RC, EPIC, STORY, TASK, BUILD)
+       - Compare versions using canonical ordering:
+         - Compare RC first (if equal, continue)
+         - Compare EPIC second (if equal, continue)
+         - Compare STORY third (if equal, continue)
+         - Compare TASK fourth (if equal, continue)
+         - Compare BUILD last
+       - If new version < existing version: Insert before this entry
+       - If new version > existing version: Continue to next entry
+     - If no existing entry is greater: Insert at end
+   - **NEVER assume "top" or "newest"** - Always use version number comparison
    - Create summary entry with link to detailed changelog
 
 3. **EXECUTE:**
-   - Insert new entry at top of Recent Releases section
+   - Insert new entry at correct position based on canonical ordering (NOT at top)
    - Format examples:
      - [Example: Confidentia] `### [0.4.3.2+9] - 01-12-25`
      - [Example: vibe-dev-kit] `### [0.2.1.1+3] - 02-12-25`
@@ -619,7 +635,11 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Verify entry was inserted correctly
    - Check date format is `DD-MM-YY`
    - Verify link to detailed changelog is correct
-   - Ensure entry is at top of Recent Releases
+   - **CRITICAL - Canonical Ordering Validation:**
+     - Verify entry is in correct canonical order (by version number, NOT by insertion time)
+     - Re-read changelog entries and verify all versions are in canonical order
+     - Check that new version appears after all smaller versions and before all larger versions
+     - If ordering violation detected: **STOP** and report error
    - **CRITICAL - Verification Validation:**
      - If entry includes "Fixed" subsection, verify all listed fixes have verification evidence in detailed changelog
      - If any fix in "Fixed" section lacks verification evidence, **STOP** and require verification
@@ -820,9 +840,10 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 1. **ANALYZE:**
    - Understand validators to run:
      - `validate_branch_context.py` - Checks branch/version/epic alignment
-     - `validate_changelog_format.py` - Checks changelog format
+     - `validate_changelog_format.py` - Checks changelog format (including canonical ordering)
    - Understand strict mode: Failures block workflow
    - Check validators exist and are executable
+   - **CRITICAL - Changelog Ordering:** `validate_changelog_format.py` now validates canonical ordering
 
 2. **DETERMINE:**
    - Run each validator with `--strict` flag

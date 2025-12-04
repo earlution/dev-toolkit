@@ -7,7 +7,7 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
-## [Unreleased]## [Unreleased]
+## [Unreleased]
 
 ### Planned
 
@@ -1359,6 +1359,28 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - Each entry includes symptom, root cause, corrective pattern, and preventive guidance
 - References to related documentation (error reference guide, root cause analysis)
 - Versioning cookbook now complete with all major scenarios including edge cases
+
+---
+
+## [0.3.2.6+1] - 04-12-25
+
+🔧 Process Improvement: Investigated and hardened changelog ordering process
+
+### Process Improvement
+
+- Root cause analysis: Identified RW Step 4 used chronological insertion instead of canonical ordering
+- Updated RW Step 4: Added canonical ordering logic requiring version number comparison before insertion
+- Enhanced validation: Added changelog ordering validation to `validate_changelog_format.py`
+- Updated RW Step 8: Added changelog ordering validation to validator checklist
+- Documentation: Updated RW execution guide with explicit canonical ordering requirements
+- Changelog reordering: Comprehensively reordered all 84 changelog entries by canonical version number
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.6+1.md` for full details
+- Investigation report: `KB/Architecture/Standards_and_ADRs/changelog-ordering-investigation-report.md`
+- All Epic 2 entries now correctly appear before Epic 3 entries
+- Validator confirms canonical ordering is correct
 
 ---
 
