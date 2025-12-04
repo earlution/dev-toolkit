@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Created:** 2025-12-02
-**Last updated:** 2025-12-04 (v0.3.2.6+1 – E3:S02:T06 complete: Changelog ordering process hardened)
+**Last updated:** 2025-12-04 (v0.3.2.6+2 – E3:S02:T05 complete: Quick reference summary created)
 **Branch:** `epic/3-numbering-and-versioning-framework`
 **Version Schema:** `0.3.S.T+B`
 **Production URL:** [N/A for this repo]
@@ -22,7 +22,7 @@ housekeeping_policy: keep
 ## Story Checklist
 
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
-- [ ] **E3:S02 – Versioning Cookbook & Examples** - IN PROGRESS (v0.3.2.6+1 – E3:S02:T06 complete: Changelog ordering process hardened)
+- [ ] **E3:S02 – Versioning Cookbook & Examples** - IN PROGRESS (v0.3.2.6+2 – E3:S02:T05 complete: Quick reference summary created)
 - [ ] **E3:S03 – Versioning Integration with Kanban & RW** - TODO
 
 ---
@@ -86,7 +86,7 @@ Make sure the dev kit's own versioning policy, version file, and docs align clea
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-04 (v0.3.2.4+1 – E3:S02:T04 complete: Edge cases and anti-patterns documented)
+**Last updated:** 2025-12-04 (v0.3.2.6+2 – E3:S02:T05 complete: Quick reference summary created)
 
 **Goal:**  
 Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.TASK+BUILD, making it easy for other projects to adopt the dev-kit versioning strategy safely and correctly.

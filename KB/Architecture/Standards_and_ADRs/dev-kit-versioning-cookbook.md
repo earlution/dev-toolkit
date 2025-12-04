@@ -35,6 +35,8 @@ This cookbook provides **practical, worked examples** for using the `RC.EPIC.STO
 
 ## Table of Contents
 
+- **[Quick Reference](versioning-quick-reference.md)** - 1-2 page summary for quick lookup ⚡
+
 1. [New Epic](#1-new-epic)
 2. [New Story Under Existing Epic](#2-new-story-under-existing-epic)
 3. [New Task Under Existing Story](#3-new-task-under-existing-story)

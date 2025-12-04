@@ -21,7 +21,7 @@ VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candida
 VERSION_EPIC = 3      # Epic number (Epic 3: Numbering & Versioning Framework)
 VERSION_STORY = 2     # Story number (Story 2: Versioning Cookbook & Examples)
 VERSION_TASK = 6      # Task number (Task 6: Investigate and harden changelog ordering process)
-VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
+VERSION_BUILD = 2     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
 # Format: RC.EPIC.STORY.TASK+BUILD

@@ -1384,6 +1384,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.6+2] - 04-12-25
+
+📚 Documentation: Created quick reference summary for users and agents
+
+### Added
+
+- Created versioning quick reference document (`versioning-quick-reference.md`)
+- 1-2 page summary covering common versioning scenarios and rules
+- Tables, decision flows, and "if-then" rules for quick lookup
+- Agent-friendly and human-friendly language
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.6+2.md` for full details
+- Quick reference linked from cookbook, dev-kit versioning policy, and framework README
+- Covers version schema, common scenarios, critical rules, and anti-patterns
+
+---
+
 ## [0.4.1.1+1] - 02-12-25
 
 📚 Documentation: Epic 4 structure and Story 1 definition for Kanban Framework

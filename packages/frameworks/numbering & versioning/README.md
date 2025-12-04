@@ -171,6 +171,7 @@ This package is designed to be **portable and customizable** for use in other pr
 ## Related Documentation
 
 These policies are part of a larger system of interconnected documents:
+- **[Versioning Quick Reference](../../../KB/Architecture/Standards_and_ADRs/versioning-quick-reference.md)** - 1-2 page summary for quick lookup ⚡ *(Dev-kit specific)*
 - **Cursor Rules** (`.cursorrules`) - Fundamental system rules that enforce versioning requirements *(Project-specific)*
 - **Release Workflow Reference** - Automated implementation of versioning schema *(see workflow mgt package)*
 - **Release Workflow Agent Execution Guide** - Step-by-step agent execution patterns *(see workflow mgt package)*
