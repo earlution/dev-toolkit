@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Created:** 2025-12-02
-**Last updated:** 2025-12-04 (v0.3.2.5+3 – E3:S02:T05 complete: RW hardened with automated version bump validation)
+**Last updated:** 2025-12-04 (v0.3.3.1+1 – E3:S03:T01: Story 3 structure created)
 **Branch:** `epic/3-numbering-and-versioning-framework`
 **Version Schema:** `0.3.S.T+B`
 **Production URL:** [N/A for this repo]
@@ -23,7 +23,8 @@ housekeeping_policy: keep
 
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
 - [x] **E3:S02 – Versioning Cookbook & Examples** - COMPLETE ✅ (v0.3.2.5+3 – All tasks complete: RW hardened with automated version bump validation)
-- [ ] **E3:S03 – Versioning Integration with Kanban & RW** - TODO
+- [ ] **E3:S03 – Versioning Integration with Kanban & RW** - IN PROGRESS (v0.3.3.1+1 – E3:S03:T01: Story 3 structure created)
+  - Story: [`epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md`](epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md)
 
 ---
 
@@ -86,7 +87,7 @@ Make sure the dev kit's own versioning policy, version file, and docs align clea
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-04 (v0.3.2.5+3 – E3:S02:T05 complete: RW hardened with automated version bump validation)
+**Last updated:** 2025-12-04 (v0.3.3.1+1 – E3:S03:T01: Story 3 structure created)
 
 **Goal:**  
 Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.TASK+BUILD, making it easy for other projects to adopt the dev-kit versioning strategy safely and correctly.
@@ -99,6 +100,27 @@ Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.T
 - [ ] E3:S02:T05 – Create quick reference summary for users and agents
 
 > Full story: [`epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md`](epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md)
+
+---
+
+### Story 3: Versioning Integration with Kanban & RW
+
+**Status:** TODO  
+**Priority:** HIGH  
+**Estimated Effort:** [TBD]  
+**Last updated:** 2025-12-04
+
+**Goal:**  
+Create comprehensive, framework-level integration documentation that explains how the Numbering & Versioning framework integrates with the Kanban and Workflow Management frameworks. Unlike E4:S03 (which validated dev-kit implementation), this story focuses on **portable, template-ready documentation** that external projects can use to integrate all three frameworks.
+
+**Tasks:**
+- [ ] E3:S03:T01 – Review existing framework-level integration documentation
+- [ ] E3:S03:T02 – Create comprehensive framework-level integration guide
+- [ ] E3:S03:T03 – Document integration patterns and best practices
+- [ ] E3:S03:T04 – Create integration examples for external projects
+- [ ] E3:S03:T05 – Document integration troubleshooting and common issues
+
+> Full story: [`epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md`](epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md)
 
 ---
 
