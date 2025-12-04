@@ -17,6 +17,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.2+1] - 04-12-25
+
+🎨 Design: T02 complete – RW config schema (`rw-config.yaml`) designed with three modes and example configs
+
+### Added
+
+- RW Config Schema Specification (complete schema definition with three modes)
+- Example config files for Mode A (Simple RW), Mode B (RW+Versioning), Mode C (Full Stack)
+
+### Updated
+
+- Story 4 Task Checklist (marked T02 acceptance criteria complete with deliverable references)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.2+1.md` for full details
+- Schema defines 5 required keys + 6 optional keys, maps cleanly to RW YAML and `.cursorrules` needs
+- Example configs serve as templates for installer CLI (T03)
+
+---
+
 ## [0.2.4.1+3] - 04-12-25
 
 📊 Analysis: T01 deliverable complete – Comprehensive analysis of RW adoption friction and required configuration keys

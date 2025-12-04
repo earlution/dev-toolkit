@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.1+3 – T01 build 3: Analysis deliverable complete)  
-**Version:** v0.2.4.1+3  
+**Last updated:** 2025-12-04 (v0.2.4.2+1 – T02 complete: RW config schema designed)  
+**Version:** v0.2.4.2+1  
 **Code:** E2S04
 
 ---
@@ -32,7 +32,7 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 ## Task Checklist
 
 - [x] **E2:S04:T01 – Analyze current RW adoption friction and required config** ✅ COMPLETE (v0.2.4.1+1)  
-- [ ] **E2:S04:T02 – Design RW config schema (`rw-config.yaml`) and modes**  
+- [x] **E2:S04:T02 – Design RW config schema (`rw-config.yaml`) and modes** ✅ COMPLETE (v0.2.4.2+1)  
 - [ ] **E2:S04:T03 – Implement RW installer CLI**  
 - [ ] **E2:S04:T04 – Create quickstart docs and template usage examples**  
 - [ ] **E2:S04:T05 – Usability test installer on sample and real projects**  
@@ -89,9 +89,11 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 4. Create example `rw-config.yaml` files under workflow mgt KB.  
 
 **Acceptance Criteria:**
-- [ ] Schema defined and documented in KB.  
-- [ ] At least three example configs (one per mode) checked into repo.  
-- [ ] Config keys map cleanly to existing RW YAML and `.cursorrules` needs.  
+- [x] Schema defined and documented in KB ✅  
+- [x] At least three example configs (one per mode) checked into repo ✅  
+- [x] Config keys map cleanly to existing RW YAML and `.cursorrules` needs ✅  
+
+**Deliverable:** ✅ **DELIVERED** - See `packages/frameworks/workflow mgt/config/rw-config-schema.md` for schema specification and `packages/frameworks/workflow mgt/config/examples/` for example configs.  
 
 ---
 
