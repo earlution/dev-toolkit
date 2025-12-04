@@ -20,6 +20,20 @@ This document provides a **step-by-step agent execution guide** for the Release 
 
 ---
 
+## 🔒 RW Hardening Principles (Summary)
+
+This Release Workflow follows the shared *Workflow Hardening Guide for Agent‑Driven Release Processes* (`KB/Architecture/Standards_and_ADRs/workflow-hardening-guide.md`). In practice, this means:
+
+- **Atomic RW per invocation:** One RW run attempts all steps for a single version or clearly stops in a `RW BLOCKED at Step X` state.
+- **Minimal, predictable tools:** RW uses a small, stable set of tools (file read/write, git/validators, TODO tracking) and avoids experimental or irrelevant tools during execution.
+- **Single sources of truth per step:** For each step, there is one authoritative artifact (version file, changelog entry, story file, etc.), and related files are normalized to it.
+- **TODOs as a state machine:** RW step TODOs (`rw-step-1` … `rw-step-N`) move monotonically from `pending` → `in_progress` → `completed` (or `cancelled`), with at most one step `in_progress` at a time.
+- **Honest blocked states:** When RW cannot proceed (missing user input, branch policy, no network for push), it reports a clear `RW BLOCKED` status with exact follow‑up actions, instead of silently stalling.
+
+These principles are part of the RW contract for agents and humans in this project and should be preserved when this workflow is copied into other repos.
+
+---
+
 ## 🎯 Execution Context
 
 ### Workflow Definition

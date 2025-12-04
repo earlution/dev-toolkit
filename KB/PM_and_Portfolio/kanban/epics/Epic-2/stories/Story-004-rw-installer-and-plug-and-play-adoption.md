@@ -4,8 +4,8 @@
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.1+1 – T01 complete: RW adoption friction & config analysis)  
-**Version:** v0.2.4.1+1  
+**Last updated:** 2025-12-04 (v0.2.4.1+2 – T01 build 2: Workflow hardening guide integrated)  
+**Version:** v0.2.4.1+2  
 **Code:** E2S04
 
 ---

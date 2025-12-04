@@ -17,6 +17,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.1+2] - 04-12-25
+
+📚 Documentation: Integrated workflow hardening guide and linked it to RW execution documentation
+
+### Added
+
+- Workflow Hardening Guide (project-agnostic standards document for agent-driven release processes)
+
+### Updated
+
+- RW Execution Guide (added hardening principles summary section with link to guide)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.1+2.md` for full details
+- Workflow hardening guide is ready to copy into other repos for consistent RW behavior
+
+---
+
 ## [0.2.4.1+1] - 04-12-25
 
 📊 Analysis: Task 1 complete – Analyzed RW adoption friction and defined required RW config keys (Story 4)
