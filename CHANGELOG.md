@@ -17,6 +17,21 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.1+1] - 04-12-25
+
+📊 Analysis: Task 1 complete – Analyzed RW adoption friction and defined required RW config keys (Story 4)
+
+### Added
+
+- Story 4 scaffold and analysis scope for RW installer (E2:S04:T01)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.1+1.md` for full details
+- No code or workflow logic changes yet; this release captures analysis and planning work for the RW installer
+
+---
+
 ## [0.2.3.6+2] - 04-12-25
 
 🔧 Maintenance: Normalized Kanban status and version markers for Epic 1, Epic 2, and Story E2:S03
