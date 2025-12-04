@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.7+1 – T07 complete: Lifecycle metadata applied to all existing documentation)  
-**Version:** v0.2.4.7+1  
+**Last updated:** 2025-12-04 (v0.2.4.8+1 – T08 complete: Agent network access limitations documented and RW Step 11 updated)  
+**Version:** v0.2.4.8+1  
 **Code:** E2S04
 
 ---
@@ -46,6 +46,7 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 - [x] **E2:S04:T05 – Usability test installer on sample and real projects** ✅ COMPLETE (v0.2.4.5+1)  
 - [x] **E2:S04:T06 – Create Debug Path Framework package** ✅ COMPLETE (v0.2.4.6+1)  
 - [x] **E2:S04:T07 – Apply lifecycle metadata to all existing documentation** ✅ COMPLETE (v0.2.4.7+1)  
+- [x] **E2:S04:T08 – Document agent network access limitations and update RW Step 11** ✅ COMPLETE (v0.2.4.8+1)  
 
 ---
 
@@ -249,6 +250,35 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 - [x] 100% coverage achieved ✅
 
 **Deliverable:** ✅ **DELIVERED** - All 161 markdown files now have lifecycle metadata. Standards, Kanban docs, templates, and package docs classified as evergreen. Analysis documents classified as timeboxed (90 days TTL).
+
+---
+
+### E2:S04:T08 – Document agent network access limitations and update RW Step 11
+
+**Input:**  
+- Issue: Agents cannot push to remote due to sandbox network restrictions  
+- Release Workflow Step 11 requires manual push intervention  
+- Need for graceful error handling and user guidance
+
+**Deliverable:**  
+- KB article documenting agent network access limitations and solutions  
+- Updated Release Workflow Step 11 with graceful error handling  
+- Clear user instructions when push fails
+
+**Approach:**
+1. Document the problem (sandbox network restrictions)  
+2. Provide multiple solutions (environment config, workflow adaptation, CI/CD)  
+3. Update RW Step 11 to handle push failures gracefully  
+4. Provide clear user instructions when push fails  
+5. Link to documentation for context
+
+**Acceptance Criteria:**
+- [x] KB article created documenting issue and solutions ✅  
+- [x] RW Step 11 updated with error handling ✅  
+- [x] Clear user instructions provided when push fails ✅  
+- [x] Workflow doesn't fail due to push restrictions ✅
+
+**Deliverable:** ✅ **DELIVERED** - KB article `agent-network-access-and-git-push-limitations.md` created with 4 solutions. RW Step 11 updated to handle push failures gracefully with clear user instructions. Workflow marked as "complete pending push" instead of failing.
 
 ---
 

@@ -1048,6 +1048,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - [Example: vibe-dev-kit] `v0.2.1.1+3`
    - Understand remote: `origin`
    - Check network access and Git credentials
+   - **Note:** Sandbox environments may have network restrictions (see: `KB/Architecture/Standards_and_ADRs/agent-network-access-and-git-push-limitations.md`)
 
 2. **DETERMINE:**
    - Push branch:
@@ -1057,20 +1058,83 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - [Example: Confidentia] `git push origin v0.4.3.2+9`
      - [Example: vibe-dev-kit] `git push origin v0.2.1.1+3`
    - Determine if network access is available
+   - **Prepare fallback:** If push fails, provide clear user instructions
 
 3. **EXECUTE:**
-   - Push branch to remote
-   - Push tag to remote
-   - Capture output
+   - **Attempt push:**
+     ```python
+     try:
+         # Push branch and tags together
+         subprocess.run(['git', 'push', 'origin', branch_name, '--tags'], check=True)
+         print("✅ Successfully pushed branch and tags to remote")
+     except subprocess.CalledProcessError as e:
+         # Handle push failures gracefully
+         print("⚠️  Push failed - see manual push instructions below")
+         # Don't fail the workflow - provide instructions instead
+     ```
+   - **If push fails:**
+     - Provide clear user instructions
+     - Show exact command to run
+     - Link to network access limitations document
+     - Mark workflow as "complete pending push"
 
 4. **VALIDATE:**
-   - Verify branch push succeeded
-   - Verify tag push succeeded
-   - Check for any errors or warnings
+   - **If push succeeds:**
+     - ✅ Verify branch push succeeded
+     - ✅ Verify tag push succeeded
+     - ✅ Check for any errors or warnings
+   - **If push fails:**
+     - ✅ Verify user instructions were provided
+     - ✅ Verify workflow marked as complete (pending push)
+     - ✅ Don't fail the entire workflow
 
 5. **PROCEED:**
-   - Document: "Pushed branch and tag to origin"
-   - Move to Step 12 (if enabled)
+   - **If push succeeded:**
+     - Document: "Pushed branch and tag to origin"
+     - Move to Step 12 (if enabled)
+   - **If push failed:**
+     - Document: "Push failed due to network restrictions - manual push required"
+     - Provide user instructions:
+       ```markdown
+       📋 Manual Push Required:
+       
+       Due to sandbox environment network restrictions, please run:
+       
+       ```bash
+       git push origin main --tags
+       ```
+       
+       See: KB/Architecture/Standards_and_ADRs/agent-network-access-and-git-push-limitations.md
+       ```
+     - Mark workflow as "complete pending push"
+     - Move to Step 12 (if enabled) - workflow is still considered successful
+
+**Error Handling:**
+
+**Network/Authentication Errors:**
+- **Don't fail the workflow** - push failures are expected in sandbox environments
+- **Provide clear instructions** - user needs to know what to do
+- **Link to documentation** - provide context and solutions
+- **Mark as complete** - workflow succeeded, push is pending
+
+**Example Error Handling:**
+```python
+try:
+    subprocess.run(['git', 'push', 'origin', 'main', '--tags'], check=True)
+    print("✅ Successfully pushed to remote")
+except subprocess.CalledProcessError as e:
+    print("⚠️  Push failed due to network/authentication restrictions")
+    print("\n📋 Manual Push Required:")
+    print("   Please run the following command locally:")
+    print("   git push origin main --tags")
+    print("\n   This is a known limitation in sandbox environments.")
+    print("   See: KB/Architecture/Standards_and_ADRs/agent-network-access-and-git-push-limitations.md")
+    # Don't fail the workflow - mark as complete pending push
+    return "complete_pending_push"
+```
+
+**Related Documentation:**
+- **Network Access Limitations:** `KB/Architecture/Standards_and_ADRs/agent-network-access-and-git-push-limitations.md` - Complete guide on this issue and solutions
 
 ---
 

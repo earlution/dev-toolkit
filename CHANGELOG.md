@@ -17,6 +17,28 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.4.8+1] - 04-12-25
+
+📚 Documentation: Agent network access limitations documented and RW Step 11 updated – Workflow now handles push failures gracefully
+
+### Added
+
+- KB article on agent network access limitations with 4 solutions (environment config, workflow adaptation, post-release hook, CI/CD)
+
+### Updated
+
+- Release Workflow Step 11 with graceful error handling for push failures
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.4.8+1.md` for full details
+- Agents executing RW will now handle push failures gracefully
+- Workflow doesn't fail due to network restrictions
+- Users receive clear instructions when manual push is required
+- Documentation provides context and multiple solutions
+
+---
+
 ## [0.2.4.7+1] - 04-12-25
 
 📚 Documentation: Lifecycle metadata applied to all existing documentation – 161 files now have lifecycle metadata for automated housekeeping
