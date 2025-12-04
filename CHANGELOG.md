@@ -1422,25 +1422,6 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
-## [0.3.3.1+1] - 04-12-25
-
-📚 Documentation: Created Story 3 structure and initial documentation framework
-
-### Added
-
-- Created Story 3 document: "Versioning Integration with Kanban & RW"
-- Defined 5 tasks for framework-level integration documentation
-- Updated Epic 3 doc with Story 3 details
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.3.1+1.md` for full details
-- Story focuses on framework-level integration documentation (portable, template-ready)
-- Distinct from E4:S03 (dev-kit specific validation)
-- Tasks defined for external project integration patterns
-
----
-
 ## [0.3.2.6+1] - 04-12-25
 
 🔧 Process Improvement: Investigated and hardened changelog ordering process
@@ -1460,6 +1441,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - Investigation report: `KB/Architecture/Standards_and_ADRs/changelog-ordering-investigation-report.md`
 - All Epic 2 entries now correctly appear before Epic 3 entries
 - Validator confirms canonical ordering is correct
+
+---
+
+## [0.3.3.1+1] - 04-12-25
+
+📚 Documentation: Created Story 3 structure and initial documentation framework
+
+### Added
+
+- Created Story 3 document: "Versioning Integration with Kanban & RW"
+- Defined 5 tasks for framework-level integration documentation
+- Updated Epic 3 doc with Story 3 details
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.3.1+1.md` for full details
+- Story focuses on framework-level integration documentation (portable, template-ready)
+- Distinct from E4:S03 (dev-kit specific validation)
+- Tasks defined for external project integration patterns
 
 ---
 
