@@ -17,6 +17,23 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.3.6+2] - 04-12-25
+
+🔧 Maintenance: Normalized Kanban status and version markers for Epic 1, Epic 2, and Story E2:S03
+
+### Changed
+
+- Updated Epic 1 Kanban to mark all stories complete and align last updated/version markers
+- Updated Epic 2 Kanban to reflect stories 1–3 complete and Story 4 TODO
+- Updated Story E2:S03 Kanban header to reflect completion and latest version
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.3.6+2.md` for full details
+- No code or workflow logic changes, documentation-only release
+
+---
+
 ## [0.2.3.6+1] - 03-12-25
 
 📚 Documentation: Task 6 complete - Created comprehensive workflow customization patterns guide

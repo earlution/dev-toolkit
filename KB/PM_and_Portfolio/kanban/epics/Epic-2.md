@@ -1,10 +1,10 @@
 # Epic 2: Workflow Management Framework
 
-**Status:** TODO  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-03 (v0.2.3.6+1 – Task 6 complete: Documented workflow customization patterns)  
+**Last updated:** 2025-12-03 (v0.2.3.6+1 – Stories 1–3 complete, Story 4 TODO)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -17,7 +17,7 @@
   - Story: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)  
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md`](epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md)
-- [ ] **E2:S03 – Additional Workflows & Examples** - IN PROGRESS (v0.2.3.6+1 – Task 6 complete: Documented workflow customization patterns)  
+- [x] **E2:S03 – Additional Workflows & Examples** - COMPLETE ✅ (v0.2.3.6+1 – All tasks complete)  
 - [ ] **E2:S04 – RW Behaviour When Used as a Template** - TODO  
 
 ---
@@ -52,10 +52,10 @@ It defines how Release Workflow (RW) and other workflows are:
 
 ### Story 1: RW Agent Execution & Docs
 
-**Status:** TODO  
+**Status:** COMPLETE ✅  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** [YYYY-MM-DD] (v0.2.1.1+1 – [summary])  
+**Last updated:** 2025-12-02 (v0.2.1.1+5 – All tasks complete)  
 
 **Goal:**  
 Make RW agent execution documentation fully portable, clearly distinguishing dev-kit behaviour from external examples.
