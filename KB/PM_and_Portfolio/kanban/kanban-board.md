@@ -11,6 +11,8 @@ housekeeping_policy: keep
 **Last Updated:** 2025-12-05  
 **Version:** v0.4.4.1+1
 
+**Note:** All 4 Epics are now COMPLETE ✅
+
 ---
 
 ## Overview
@@ -28,16 +30,17 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 
 ### Epic 1: Vibe Dev Kit Core
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE ✅  
 **Priority:** HIGH  
-**Last Updated:** v0.1.1.1+2
+**Last Updated:** v0.1.3.6+1
 
 **Stories:**
-- [x] **E1:S01 – Dev Kit Versioning & RW Behaviour** - COMPLETE ✅ (v0.1.1.1+2)
+- [x] **E1:S01 – Dev Kit Versioning & RW Behaviour** - COMPLETE ✅ (v0.1.1.1+1, E2:S01:T02, E2:S01:T03)
   - Story: [`epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md`](epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md)
-- [ ] **E1:S02 – Package & Repo Architecture** - TODO
+- [x] **E1:S02 – Package & Repo Architecture** - COMPLETE ✅ (v0.1.2.5+1)
   - Story: [`epics/Epic-1/Story-002-package-and-repo-architecture.md`](epics/Epic-1/Story-002-package-and-repo-architecture.md)
-- [ ] **E1:S03 – Core KB Structure for Dev Kit** - TODO
+- [x] **E1:S03 – Core KB Structure for Dev Kit** - COMPLETE ✅ (v0.1.3.6+1)
+  - Story: [`epics/Epic-1/Story-003-core-kb-structure-for-dev-kit.md`](epics/Epic-1/Story-003-core-kb-structure-for-dev-kit.md)
 
 **Epic Doc:** [`epics/Epic-1/Epic-1.md`](epics/Epic-1/Epic-1.md)
 
@@ -45,12 +48,19 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 
 ### Epic 2: Workflow Management Framework
 
-**Status:** TODO  
-**Priority:** HIGH
+**Status:** COMPLETE ✅  
+**Priority:** HIGH  
+**Last Updated:** v0.2.4.9+3
 
 **Stories:**
-- [ ] **E2:S01 – RW Agent Execution & Docs** - TODO
+- [x] **E2:S01 – RW Agent Execution & Docs** - COMPLETE ✅ (v0.2.1.1+5)
   - Story: [`epics/Epic-2/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/Story-001-rw-agent-execution-and-docs.md)
+- [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1)
+  - Story: [`epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md`](epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md)
+- [x] **E2:S03 – Additional Workflows & Examples** - COMPLETE ✅ (v0.2.3.6+1)
+  - Story: [`epics/Epic-2/Story-003-additional-workflows-and-examples.md`](epics/Epic-2/Story-003-additional-workflows-and-examples.md)
+- [x] **E2:S04 – RW Installer & Plug-and-Play Adoption** - COMPLETE ✅ (v0.2.4.9+3)
+  - Story: [`epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md`](epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md)
 
 **Epic Doc:** [`epics/Epic-2/Epic-2.md`](epics/Epic-2/Epic-2.md)
 

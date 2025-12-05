@@ -201,12 +201,12 @@ VERSION_BUILD = 1      # NEW: Reset to first build
 ```markdown
 # Story 002 – Versioning Cookbook & Examples
 
-**Status:** IN PROGRESS
+**Status:** COMPLETE ✅
 **Epic:** Epic 3
 **Story:** Story 2
 
 ## Task Checklist
-- [ ] **E3:S02:T01 – Define core versioning scenarios** - TODO
+- [x] **E3:S02:T01 – Define core versioning scenarios** - COMPLETE ✅ (v0.3.2.1+1)
 ```
 
 ### RW Perspective
@@ -280,7 +280,7 @@ VERSION_BUILD = 1      # NEW: Reset to 1 for new task
 ```markdown
 ## Task Checklist
 - [x] **E3:S01:T01 – Review dev-kit versioning policy vs framework policy** ✅ COMPLETE (v0.3.1.1+2)
-- [ ] **E3:S01:T02 – Ingest versioning findings from fynd.deals Epic 15 work** - TODO
+- [x] **E3:S01:T02 – Ingest versioning findings from fynd.deals Epic 15 work** ✅ COMPLETE (v0.3.1.2+1)
 ```
 
 ### RW Perspective
@@ -633,7 +633,7 @@ VERSION_BUILD = 1      # Reset to first build
 ```markdown
 ## Story Checklist
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
-- [ ] **E3:S02 – Versioning Cookbook & Examples** - IN PROGRESS
+- [x] **E3:S02 – Versioning Cookbook & Examples** - COMPLETE ✅ (v0.3.2.5+3)
 ```
 
 **Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-001-*.md`
@@ -831,7 +831,7 @@ VERSION_BUILD = 1     # Reset to 1 for new Task
 **RW Step 6: Auto-update Kanban Docs**
 - ✅ Updates `Epic-4.md`:
   - `**Last updated:** 2025-12-02 (v0.4.3.8+1 – Task 8 complete: Add Kanban consistency validation script)`
-  - Story Checklist: `- [ ] **E4:S03 – ...** - IN PROGRESS (v0.4.3.8+1)`
+  - Story Checklist: `- [x] **E4:S03 – ...** - COMPLETE ✅ (v0.4.3.7+1)`
 - ✅ Updates `Story-003-kanban-versioning-rw-integration.md`:
   - `**Last updated:** 2025-12-02 (v0.4.3.8+1)`
   - `**Version:** v0.4.3.8+1`

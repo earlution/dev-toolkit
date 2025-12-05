@@ -153,7 +153,7 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 **Last updated:** 2025-12-02 (v0.4.3.7+1 – Task 7 complete: Address RW → Kanban integration gaps)
 
 ## Story Checklist
-- [ ] **E4:S03 – Kanban + Versioning + RW Integration** - IN PROGRESS (v0.4.3.7+1)
+- [x] **E4:S03 – Kanban + Versioning + RW Integration** - COMPLETE ✅ (v0.4.3.7+1)
   - Tasks: T001 ✅ (v0.4.3.1+1), T002 ✅ (v0.4.3.2+2), T003 ✅ (v0.4.3.3+1), T004 ✅ (v0.4.3.4+1), T007 ✅ (v0.4.3.7+1)
 ```
 
@@ -210,7 +210,7 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 
 **Step 8: RW Step 6 - Auto-update Kanban Docs**
 - Updates Epic-4.md header: `**Last updated:** 2025-12-02 (v0.4.3.5+1 – Task 5 complete: Create dev-kit integration guide)`
-- Updates Epic-4.md Story Checklist: `- [ ] **E4:S03 – ...** - IN PROGRESS (v0.4.3.5+1)`
+- Updates Epic-4.md Story Checklist: `- [x] **E4:S03 – ...** - COMPLETE ✅ (v0.4.3.7+1)`
 - Updates Epic-4.md detailed Story section: Task 5 marked complete
 - Updates Story-003.md header: `**Last updated:** ...`, `**Version:** v0.4.3.5+1`
 - Updates Story-003.md Task Checklist: `- [x] **E4:S03:T05 – ...** ✅ COMPLETE (v0.4.3.5+1)`

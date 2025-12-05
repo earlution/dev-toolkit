@@ -2023,6 +2023,45 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.4.1+1] - 05-12-25
+
+🏗️ Refactoring: Task 1 complete - Kanban structure refactoring
+
+### Changed
+
+- Refactored Kanban file structure: `Epic-X.md` → `Epic-X/Epic-X.md`
+- Removed `stories/` subdirectory: Story files now directly in `Epic-X/`
+- Updated all path references across entire repository (100+ files)
+- Updated validators with legacy fallback support
+- Updated RW config patterns to reflect new structure
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.4.1+1.md` for full details
+- All Epic and Story files now consolidated in their respective Epic directories
+- Improved navigability and reduced directory depth
+
+---
+
+## [0.4.4.1+2] - 05-12-25
+
+📚 Documentation: Documentation maintenance - Update all Kanban and KB/ docs to reflect completion
+
+### Changed
+
+- Updated `KB/PM_and_Portfolio/kanban/kanban-board.md`: Epic 1 & 2 marked COMPLETE
+- Updated `KB/PM_and_Portfolio/kanban/_index.md`: All epics shown as COMPLETE, structure updated
+- Updated `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-cookbook.md`: Examples updated
+- Updated `KB/Architecture/Standards_and_ADRs/dev-kit-kanban-versioning-rw-integration.md`: Examples updated
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.4.1+2.md` for full details
+- Corrects documentation inconsistencies where board views showed incomplete status
+- All 4 Epics now correctly shown as COMPLETE ✅ across all documentation
+
+---
+
 ## [0.9.21.3+2] - 02-12-25
 
 📚 Documentation: Branch safety Step 1 and modularity docs for workflow & numbering packages

@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-05 (v0.4.4.1+1 – Task 1 complete: Kanban structure refactored)  
-**Version:** v0.4.4.1+1  
+**Last updated:** 2025-12-05 (v0.4.4.1+2 – Documentation maintenance: Updated all Kanban and KB/ docs to reflect completion)  
+**Version:** v0.4.4.1+2  
 **Code:** E4S04
 
 ---
