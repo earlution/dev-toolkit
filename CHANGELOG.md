@@ -2081,6 +2081,29 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.5.1.1+2] - 05-12-25
+
+📋 Planning: Task 1 planned - Comprehensive documentation hygiene analysis
+
+### Added
+
+- Planned E5:S01:T01 - Comprehensive documentation hygiene analysis task
+- Task includes 6-step approach: inventory, issue analysis, categorization, pattern analysis, reporting, recommendations
+- Task deliverables: hygiene report, issues inventory, health metrics, prioritized recommendations
+
+### Changed
+
+- Restructured Story 1 tasks: T01 → Hygiene Analysis, T02 → Define Policies, T03 → Review Cadences, T04 → Update Triggers
+- Updated task dependencies: T02 depends on T01, T03 depends on T02, T04 depends on T02
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.1.1+2.md` for full details
+- Hygiene analysis task provides foundation for data-driven policy definition
+- Analysis will cover entire documentation corpus across KB/, packages/frameworks/, and root directories
+
+---
+
 ## [0.9.21.3+2] - 02-12-25
 
 📚 Documentation: Branch safety Step 1 and modularity docs for workflow & numbering packages
