@@ -101,6 +101,51 @@ housekeeping_policy: keep
 
 ---
 
+## Fix Attempt History
+
+**Purpose:** This section documents all fix attempts for this bug, ensuring that if a bug isn't squashed, the next build can be informed by previous attempts.
+
+**How to Use:**
+- Each release that attempts to fix this bug should add a new entry to this section
+- Document what was attempted, what worked, what didn't, and verification status
+- This creates a knowledge base for future fix attempts
+
+### Fix Attempts
+
+#### Attempt 1: [Version] - [Date]
+
+**Fix Description:**
+[Describe what was attempted to fix this bug]
+
+**Changes Made:**
+- [List specific changes, files modified, code changes, etc.]
+
+**Verification Status:**
+- [ ] Verified (test suite passed / manual test passed)
+- [ ] Attempted Fix (pending verification)
+- [ ] Fix Failed (bug still present)
+
+**Verification Method:**
+- [ ] Test suite execution
+- [ ] Manual testing
+- [ ] Both
+
+**Verification Evidence:**
+[Link to test results, CI/CD output, or documentation]
+
+**Result:**
+- [ ] Bug Fixed
+- [ ] Bug Partially Fixed (describe partial fix)
+- [ ] Bug Not Fixed (describe why fix didn't work)
+
+**Lessons Learned:**
+[What was learned from this attempt? What should be tried differently next time?]
+
+**Next Steps:**
+[What should be attempted in the next fix attempt?]
+
+---
+
 ## Dependencies
 
 **Blocks:**

@@ -1549,6 +1549,45 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.3.6+1] - 05-12-25
+
+🧰 Tooling: Added RW Step 6: Update BR/FR Docs with fix attempt history
+
+### Added
+
+- **New RW Step 6: Update BR/FR Docs** - Added before "Auto-update Kanban Docs" (now Step 7)
+  - Purpose: Document flaws, attempted fixes, and verification status in BR/FR docs
+  - For Bug Reports: Adds entries to "Fix Attempt History" section
+  - For Feature Requests: Updates "Intake Decision" section with implementation status
+  - Enables knowledge transfer between builds when bugs aren't squashed
+- **BR Template Enhancement** - Added "Fix Attempt History" section to `BR_TEMPLATE.md`
+  - Includes fields for: Fix Description, Changes Made, Verification Status, Result, Lessons Learned, Next Steps
+  - Creates knowledge base for future fix attempts
+- **Workflow Flaw Documentation** - Added WF-003 to `workflow-flaws-reference-guide.md`
+  - Documented anti-pattern: Fix attempts not documented in BR/FR docs
+  - Root cause analysis: RW lacked step to update BR/FR documents
+  - Solution: New RW Step 6 added to document fix attempts
+
+### Changed
+
+- **RW Documentation Updated** - Renumbered all steps after new Step 6
+  - `release-workflow-agent-execution.md`: Added Step 6, renumbered Steps 7-14
+  - `cursorrules-rw-trigger-section.md`: Added Step 6, renumbered Steps 7-12
+  - Updated all step references throughout documentation
+- **RW Step Count** - Updated from 13 steps to 14 steps
+  - Steps 1-12: Required
+  - Steps 13-14: Optional (PDCA CHECK and ACT phases)
+
+### Fixed
+
+- **Knowledge Transfer Gap** - Fixed workflow flaw where fix attempts weren't documented in BR/FR docs
+  - Previous builds couldn't learn from previous fix attempts
+  - New Step 6 ensures each build is informed by previous attempts
+
+**Full changelog:** [`KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.3.6+1.md`](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.3.6+1.md)
+
+---
+
 ## [0.4.1.1+1] - 02-12-25
 
 📚 Documentation: Epic 4 structure and Story 1 definition for Kanban Framework
