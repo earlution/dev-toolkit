@@ -8,11 +8,11 @@ housekeeping_policy: keep
 
 # Story 001 – RW Agent Execution & Docs
 
-**Status:** COMPLETE  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.2.1.1+5 – Task 3 complete: Align .cursorrules RW trigger section with dev-kit policy)
+**Last updated:** 2025-12-05 (v0.2.1.1+5 – New task T05 added: Harden RW branch safety checks)  
 **Version:** v0.2.1.1+5  
 **Code:** E2S01
 
@@ -36,6 +36,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - [x] **E2:S01:T02 – Tag Confidentia/fynd.deals examples and add dev-kit examples** ✅ COMPLETE (v0.2.1.1+4)
 - [x] **E2:S01:T03 – Align `.cursorrules` RW trigger section with dev-kit policy** ✅ COMPLETE (v0.2.1.1+5)
 - [x] **E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed"** ✅ COMPLETE (v0.2.1.1+2)
+- [ ] **E2:S01:T05 – Harden RW branch safety checks to stop execution on wrong branch** - TODO
 
 ---
 
@@ -196,6 +197,99 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - Update "Fixed" section to only include verified fixes
 - Add "Attempted Fixes" section for unverified fixes
 - Include verification method and evidence in changelog entry
+
+---
+
+### E2:S01:T05 – Harden RW branch safety checks to stop execution on wrong branch
+
+**Input:** Current RW Step 1 implementation, `validate_branch_context.py` script  
+**Deliverable:** Hardened RW with mandatory branch safety enforcement  
+**Dependencies:** None  
+**Blocker:** None
+
+**Problem Statement:**
+The Release Workflow (RW) currently has Step 1: Branch Safety Check documented, but it is not being enforced. The RW continues execution even when on the wrong branch (e.g., on `epic/9` but committing Epic 5 work). This allows cross-epic contamination and violates branch isolation principles. The RW must STOP immediately if branch safety checks fail and provide clear guidance to the user.
+
+**Approach:**
+1. **Audit current implementation:**
+   - Review Step 1 execution in `release-workflow-agent-execution.md`
+   - Review `validate_branch_context.py` script behavior
+   - Identify gaps where RW continues despite branch mismatches
+   - Document all failure modes where branch safety is bypassed
+
+2. **Design mandatory branch safety enforcement:**
+   - Define branch safety check as **MANDATORY BLOCKING STEP**
+   - Ensure Step 1 runs BEFORE any file modifications
+   - Design clear failure states and error messages
+   - Create user guidance for branch mismatch scenarios
+
+3. **Implement branch safety hardening:**
+   - Update RW Step 1 to call `validate_branch_context.py` and parse exit code
+   - If validator returns non-zero exit code, STOP workflow immediately
+   - Mark all remaining steps as `cancelled`
+   - Output clear error message with actionable guidance
+
+4. **Update RW documentation:**
+   - Update `release-workflow-agent-execution.md` Step 1 to emphasize MANDATORY nature
+   - Add explicit "DO NOT PROCEED" language
+   - Document exact error message format
+   - Add examples of branch mismatch scenarios and resolutions
+
+5. **Update agent guidance:**
+   - Update `.cursorrules` RW trigger section to emphasize branch safety
+   - Add explicit instruction: "If Step 1 fails, DO NOT proceed to Step 2"
+   - Create agent rules that prevent bypassing branch checks
+   - Document anti-pattern: "Never skip or ignore branch safety checks"
+
+6. **Create validation integration:**
+   - Ensure `validate_branch_context.py` returns proper exit codes
+   - Integrate validator into RW Step 1 execution flow
+   - Add validation result parsing and error handling
+   - Create test scenarios for branch mismatch detection
+
+**Deliverables:**
+- Hardened RW Step 1 that stops on branch mismatch
+- Updated `release-workflow-agent-execution.md` with mandatory enforcement
+- Updated `.cursorrules` RW trigger section with branch safety emphasis
+- Integration of `validate_branch_context.py` into RW execution
+- Clear error messages and user guidance for branch mismatches
+- Agent rules preventing branch safety bypass
+
+**Success Criteria:**
+- RW stops immediately if branch safety check fails
+- No file modifications occur when on wrong branch
+- Clear error messages guide user to correct branch
+- All remaining steps marked as `cancelled` on failure
+- Agent cannot bypass branch safety checks
+- Validator integration is mandatory and non-optional
+
+**Error Message Format:**
+```
+🚨 RELEASE WORKFLOW BLOCKED
+
+Step 1: Branch Safety Check - FAILED
+
+Reason: Current branch '{branch}' does not align with the work being released.
+
+Details:
+- Current branch: {branch}
+- Expected branch: epic/{expected_epic}
+- Version file shows: {version}
+- Detected epic from work: {detected_epic}
+
+Action Required:
+1. Switch to the correct branch: git checkout epic/{correct_epic}
+2. Verify your changes align with the branch: git status
+3. Then run RW again
+
+RW is NOT complete. Workflow stopped at Step 1.
+All subsequent steps have been cancelled.
+```
+
+**Files to Update:**
+- `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` (Step 1 hardening)
+- `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md` (branch safety emphasis)
+- Agent execution patterns (mandatory validation)
 
 ---
 
