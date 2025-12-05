@@ -38,12 +38,13 @@ This document serves as a **comprehensive reference** for all discovered flaws, 
 
 | Flaw ID | Step | Symptom | Status | Solution Location |
 |---------|------|---------|--------|-------------------|
-| [WF-001](#wf-001-story-file-not-updated-first) | Step 6 | Story file lacks forensic markers, Epic matches incomplete state | ✅ FIXED | [Solution](#wf-001-story-file-not-updated-first) |
+| [WF-001](#wf-001-story-file-not-updated-first) | Step 7 | Story file lacks forensic markers, Epic matches incomplete state | ✅ FIXED | [Solution](#wf-001-story-file-not-updated-first) |
 | [WF-002](#wf-002-version-bump-logic-error) | Step 2 | BUILD incremented instead of TASK for new tasks | ✅ FIXED | [Solution](#wf-002-version-bump-logic-error) |
+| [WF-003](#wf-003-br-fr-fix-attempts-not-documented) | N/A (New Step 6) | Fix attempts not documented in BR/FR docs, preventing knowledge transfer between builds | ✅ FIXED | [Solution](#wf-003-br-fr-fix-attempts-not-documented) |
 
 ---
 
-## WF-001: Story File Not Updated First (Step 6)
+## WF-001: Story File Not Updated First (Step 7)
 
 **Status:** ✅ FIXED  
 **Date Discovered:** 2025-12-04  
@@ -69,25 +70,25 @@ This document serves as a **comprehensive reference** for all discovered flaws, 
 ### Root Cause Analysis
 
 **Primary Root Cause:**
-- **Location:** RW Step 6 (Auto-update Kanban Docs) instructions
+- **Location:** RW Step 7 (Auto-update Kanban Docs) instructions
 - **Problem:** Step 6 treated Story file as authoritative source but didn't update it
 - **Workflow Gap:** One-way sync where Epic matched Story, but Story wasn't updated during RW
 
 **What Happened:**
-1. Step 6 read Story file to get "correct state"
-2. Step 6 updated Epic file to match Story file
-3. But Step 6 never updated Story file with forensic markers
+1. Step 7 read Story file to get "correct state"
+2. Step 7 updated Epic file to match Story file
+3. But Step 7 never updated Story file with forensic markers
 4. Result: Story file (authoritative) lacked markers, Epic matched that incomplete state
 
 **Why It Happened:**
-- Step 6 documentation said "read Story file to get correct state" and "update Epic to match Story"
+- Step 7 documentation said "read Story file to get correct state" and "update Epic to match Story"
 - But it didn't say "update Story file FIRST, then update Epic to match"
 - The order of operations wasn't explicit
 - Story file was treated as read-only authoritative source, not as something to update
 
 ### The Fix
 
-**Solution:** Explicit order requirement in RW Step 6:
+**Solution:** Explicit order requirement in RW Step 7:
 
 1. **FIRST:** Update Story file (`Story-{N}-{Name}.md`) task checklist with forensic markers
 2. **THEN:** Update Epic-{epic}.md to match the updated Story file
@@ -257,11 +258,100 @@ This document serves as a **comprehensive reference** for all discovered flaws, 
 
 ---
 
+## WF-003: BR/FR Fix Attempts Not Documented
+
+**Status:** ✅ FIXED  
+**Date Discovered:** 2025-12-05  
+**Date Fixed:** 2025-12-05  
+**Related Work:** Epic 3, Story 3 (Versioning Integration with Kanban & RW)
+
+### Quick Reference: The Flaw
+
+**Anti-Pattern:** Fix attempts for bugs weren't being documented in Bug Report (BR) or Feature Request (FR) documents, preventing knowledge transfer between builds.
+
+**Symptom:**
+- Bug fix attempted in release v0.X.Y.Z+N
+- Bug still present in subsequent releases
+- No record of what was attempted, what worked, what didn't
+- Next build starts from scratch without learning from previous attempts
+- Result: Repeated fix attempts, wasted effort, no knowledge accumulation
+
+**Example:**
+- ❌ **Wrong:** Bug fixed in v0.2.1.1+3, bug still present, no documentation of fix attempt
+- ✅ **Correct:** Bug fix attempted in v0.2.1.1+3, documented in BR "Fix Attempt History" section with what was tried, what worked, what didn't, and lessons learned
+
+**Impact:** Knowledge loss between builds, repeated fix attempts, inability to learn from previous attempts.
+
+### Root Cause Analysis
+
+**Primary Root Cause:**
+- **Location:** Release Workflow (RW) lacked a step to update BR/FR documents
+- **Problem:** RW updated Kanban docs, changelogs, version files, but not BR/FR docs
+- **Workflow Gap:** No mechanism to document fix attempts in BR/FR documents during release
+
+**What Happened:**
+1. Bug fix attempted in release
+2. Changelog updated with fix description
+3. Kanban docs updated with version markers
+4. But BR/FR document never updated with fix attempt information
+5. Result: No record of fix attempt in BR/FR document
+
+**Why It Happened:**
+- RW focused on versioning, changelogs, and Kanban updates
+- BR/FR documents were treated as intake artifacts, not living documents
+- No step existed to update BR/FR docs during release
+- Fix attempt information existed in changelog but not in BR/FR document
+
+### The Fix
+
+**Solution:** Added new RW Step 6: "Update BR/FR Docs" before "Auto-update Kanban Docs" (now Step 7).
+
+**Implementation:**
+1. **Updated BR Template:**
+   - Added "Fix Attempt History" section to `BR_TEMPLATE.md`
+   - Template includes fields for:
+     - Fix Description
+     - Changes Made
+     - Verification Status
+     - Result (Fixed/Partially Fixed/Not Fixed)
+     - Lessons Learned
+     - Next Steps
+
+2. **Created RW Step 6:**
+   - **Purpose:** Document flaws, attempted fixes, and verification status in BR/FR docs
+   - **For Bug Reports:**
+     - Search for BR files linked to completed task
+     - Add new entry to "Fix Attempt History" section
+     - Document flaw description, attempted fix, verification status, lessons learned
+   - **For Feature Requests:**
+     - Search for FR files linked to completed task
+     - Update "Intake Decision" section with implementation status
+     - Document implementation details and verification status
+
+3. **Updated RW Documentation:**
+   - Updated `release-workflow-agent-execution.md` with new Step 6
+   - Updated `cursorrules-rw-trigger-section.md` with new Step 6
+   - Renumbered all subsequent steps (Step 7-14)
+
+**Benefits:**
+- Knowledge transfer between builds
+- Learning from previous fix attempts
+- Reduced repeated fix attempts
+- Complete fix attempt history in BR documents
+
+**See:**
+- **[Release Workflow Agent Execution Guide](../../packages/frameworks/workflow%20mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md)** - Step 6 for the complete procedure
+- **[Cursor Rules RW Trigger Section](../../packages/frameworks/workflow%20mgt/cursorrules-rw-trigger-section.md)** - Step 6 for the updated agent execution rules
+- **[BR Template](../../packages/frameworks/kanban/templates/BR_TEMPLATE.md)** - "Fix Attempt History" section
+
+---
+
 ## Version History
 
 | Date | Version | Changes |
 | --- | --- | --- |
 | 2025-12-04 | 1.0 | Initial document created with WF-001 (Story file not updated first) and WF-002 (Version bump logic error) |
+| 2025-12-05 | 1.1 | Added WF-003 (BR/FR fix attempts not documented) - New RW Step 6 added to document fix attempts |
 
 ---
 
@@ -281,6 +371,6 @@ This document serves as a **comprehensive reference** for all discovered flaws, 
 
 ---
 
-_Last updated: 2025-12-04_  
+_Last updated: 2025-12-05_  
 _This document should be updated whenever a new workflow flaw is discovered or fixed._
 

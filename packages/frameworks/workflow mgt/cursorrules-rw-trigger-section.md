@@ -201,7 +201,24 @@ For each step, follow this pattern:
    - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md` (or from `rw-config.yaml` if present)
 4. **Update Main Changelog** - Add new entry at top: `## [version] - DD-MM-YY` (short date format for merge-to-main) with release description and link to detailed changelog. **Use config:** If `rw-config.yaml` exists, read `main_changelog` from config. Otherwise, use `CHANGELOG.md` as fallback. Follow [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog) format. **Note:** Main changelog date can be updated if merge date changes, but detailed changelog timestamp is immutable.
 5. **Update README** - Update version badge and latest release callout if present (optional). **Use config:** If `rw-config.yaml` exists, read `readme_file` from config. Otherwise, use `README.md` as fallback.
-6. **Auto-update Kanban Docs** - Update epic documentation and story documentation with version markers. **Use config:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root`, `epic_doc_pattern`, and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}.md` and `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` as fallback. **CRITICAL: Update Story file FIRST, then Epic file to match:**
+6. **Update BR/FR Docs** - Update Bug Reports and Feature Requests with fix attempt information. **Use config:** If `rw-config.yaml` exists, read `fr_br_root` from config. Otherwise, use `KB/PM_and_Portfolio/kanban/fr-br` as fallback. **Purpose:** Document flaws, attempted fixes, and verification status so that if a bug isn't squashed, the next build can be informed by previous attempts.
+   - **For Bug Reports (BR):**
+     - Search for BR files linked to the completed task (via Story file, Epic file, or BR "Intake Decision" section)
+     - If BR is linked, add new entry to "Fix Attempt History" section:
+       - Document flaw description (from BR or task description)
+       - Document attempted fix (from changelog or task description)
+       - Document verification status (from Step 3 changelog or task)
+       - Document lessons learned if fix failed
+       - Document next steps for future attempts
+   - **For Feature Requests (FR):**
+     - Search for FR files linked to the completed task (via Story file, Epic file, or FR "Intake Decision" section)
+     - If FR is linked, update "Intake Decision" section:
+       - Add implementation status: `**Implementation Status:** IMPLEMENTED (v{version})`
+       - Add implementation date: `**Implementation Date:** {date}`
+       - Add verification status: `**Verification Status:** {Verified/Attempted Fix (pending verification)}`
+   - **If no BR/FR linked:** Skip this step (no BR/FR to update)
+   - **See:** `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` Step 6 for complete procedure
+7. **Auto-update Kanban Docs** - Update epic documentation and story documentation with version markers. **Use config:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root`, `epic_doc_pattern`, and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}.md` and `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` as fallback. **CRITICAL: Update Story file FIRST, then Epic file to match:**
    - **FIRST: Update the Story file (`Story-{N}-{Name}.md`) task checklist:**
      - Add forensic marker `(v{version})` to the completed task in the Task Checklist
      - Example: `✅ COMPLETE (v0.11.5.2+1)`
@@ -219,14 +236,14 @@ For each step, follow this pattern:
      4. **THEN: Find ALL sections in Epic file referencing the story/task (grep/search the file)**
      5. **Update ALL Epic sections to match the updated Story file's state**
      6. Validate consistency: Story file, Epic header, Epic checklist, and Epic detailed sections must all match
-7. **Stage Files** - Run `git add -A` to stage all modified files
-8. **Run Validators** - Execute validation scripts. **Use config:** If `rw-config.yaml` exists, read `scripts_path` from config. Otherwise, use `{scripts_path}/validation/` as fallback. Run `validate_branch_context.py` and `validate_changelog_format.py` (both scripts automatically read from `rw-config.yaml` if available).
+8. **Stage Files** - Run `git add -A` to stage all modified files
+9. **Run Validators** - Execute validation scripts. **Use config:** If `rw-config.yaml` exists, read `scripts_path` from config. Otherwise, use `{scripts_path}/validation/` as fallback. Run `validate_branch_context.py`, `validate_changelog_format.py`, and `validate_version_bump.py` (all scripts automatically read from `rw-config.yaml` if available).
    - **IMPORTANT:** Validators should confirm you're on an epic branch, not `main`
    - If on `main`, warn user and suggest switching to epic branch
-   - Validators check version format, branch context alignment, and changelog format
-9. **Commit Changes** - Create commit with message: `Release v{version}: {summary}\n\nEpic: {epic} | Story: {story} | Task: {task}`
-10. **Create Git Tag** - Create annotated tag: `v{version}` with message: `Release v{version}: {summary}\n\nEpic: {epic} | Story: {story} | Task: {task}`
-11. **Push to Remote** - Push epic branch and tag to origin (DO NOT push to main unless ready to deploy)
+   - Validators check version format, branch context alignment, changelog format, and version bump logic
+10. **Commit Changes** - Create commit with message: `Release v{version}: {summary}\n\nEpic: {epic} | Story: {story} | Task: {task}`
+11. **Create Git Tag** - Create annotated tag: `v{version}` with message: `Release v{version}: {summary}\n\nEpic: {epic} | Story: {story} | Task: {task}`
+12. **Push to Remote** - Push epic branch and tag to origin (DO NOT push to main unless ready to deploy)
     - **CRITICAL: Use `required_permissions: ['network']` for git push commands**
     - Example: `run_terminal_cmd(command="git push origin {branch} --tags", required_permissions=['network'])`
     - This enables network access in Cursor's sandbox environment
@@ -237,7 +254,7 @@ For each step, follow this pattern:
 - ✅ **Context-Aware:** Use branch context, version schema, and project state to make decisions
 - ✅ **Validation:** Verify each step succeeded before proceeding
 - ✅ **Documentation:** Document decisions and actions at each step
-- ✅ **Progress Tracking:** MUST use Cursor TODOs to track all 11 steps
+- ✅ **Progress Tracking:** MUST use Cursor TODOs to track all 12 steps (Steps 1-12 required, Steps 13-14 optional)
 - ✅ **Branch Safety First:** Step 1 validates branch alignment before any modifications
 - ✅ **Canonical Ordering:** Version numbers (not timestamps) determine changelog ordering - versions are the canonical ordering metric
 - ✅ **Forensic Traceability:** Maintain complete traceability grid (version ↔ epic/story/task ↔ changelogs ↔ kanban ↔ git)

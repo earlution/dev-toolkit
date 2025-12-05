@@ -18,7 +18,7 @@ housekeeping_policy: keep
 
 This document provides a **step-by-step agent execution guide** for the Release Workflow. The Release Workflow serves as the **canonical example** of intelligent agent-driven workflow execution.
 
-**This guide shows exactly how an AI agent should analyze, determine, execute, validate, and proceed through each of the 13 Release Workflow steps (Steps 1-11 are required, Steps 12-13 are optional but recommended for PDCA CHECK and ACT phases).**
+**This guide shows exactly how an AI agent should analyze, determine, execute, validate, and proceed through each of the 14 Release Workflow steps (Steps 1-12 are required, Steps 13-14 are optional but recommended for PDCA CHECK and ACT phases).**
 
 > **Note on Examples:** This document includes examples from multiple projects:
 > - **[Example: Confidentia/fynd.deals]** - Examples from the original source project
@@ -48,7 +48,7 @@ These principles are part of the RW contract for agents and humans in this proje
 
 **Workflow:** Release Workflow
 **Type:** `release`
-**Steps:** 13 steps organized into 3 phases (Steps 1-11: required, Steps 12-13: optional CHECK and ACT phases)
+**Steps:** 14 steps organized into 3 phases (Steps 1-12: required, Steps 13-14: optional CHECK and ACT phases)
 **Canonical Example:** Yes - this workflow demonstrates the agent-driven execution pattern
 
 ### Agent Execution Pattern
@@ -74,7 +74,7 @@ For each step, the agent follows this pattern:
 
 **Required Implementation Pattern:**
 
-1. **At Workflow Start (MANDATORY):** Create TODO list with all 13 steps as `pending`
+1. **At Workflow Start (MANDATORY):** Create TODO list with all 14 steps as `pending`
    ```python
    todo_write(merge=False, todos=[
        {'id': 'rw-step-1', 'status': 'pending', 'content': 'Step 1: Branch Safety Check - Analyze work and ensure it aligns with current branch'},
@@ -82,14 +82,15 @@ For each step, the agent follows this pattern:
        {'id': 'rw-step-3', 'status': 'pending', 'content': 'Step 3: Create Detailed Changelog - Generate CHANGELOG with full timestamp'},
        {'id': 'rw-step-4', 'status': 'pending', 'content': 'Step 4: Update Main Changelog - Add summary entry'},
        {'id': 'rw-step-5', 'status': 'pending', 'content': 'Step 5: Update README - Update version badge and latest release'},
-       {'id': 'rw-step-6', 'status': 'pending', 'content': 'Step 6: Auto-update Kanban Docs - Update Epic/Story docs with version markers'},
-       {'id': 'rw-step-7', 'status': 'pending', 'content': 'Step 7: Stage Files - Stage all modified files'},
-       {'id': 'rw-step-8', 'status': 'pending', 'content': 'Step 8: Run Validators - Execute branch context and changelog format validators'},
-       {'id': 'rw-step-9', 'status': 'pending', 'content': 'Step 9: Commit Changes - Create git commit with versioned message'},
-       {'id': 'rw-step-10', 'status': 'pending', 'content': 'Step 10: Create Git Tag - Create annotated tag'},
-       {'id': 'rw-step-11', 'status': 'pending', 'content': 'Step 11: Push to Remote - Push branch and tags'},
-       {'id': 'rw-step-12', 'status': 'pending', 'content': 'Step 12: Post-Commit Verification & Reflection - Verify changes and reflect on results (optional but recommended)'},
-       {'id': 'rw-step-13', 'status': 'pending', 'content': 'Step 13: Act on Verification Results - Update changelog, create follow-ups, document improvements (optional but recommended)'},
+       {'id': 'rw-step-6', 'status': 'pending', 'content': 'Step 6: Update BR/FR Docs - Document flaws and fix attempts in Bug Reports and Feature Requests'},
+       {'id': 'rw-step-7', 'status': 'pending', 'content': 'Step 7: Auto-update Kanban Docs - Update Epic/Story docs with version markers'},
+       {'id': 'rw-step-8', 'status': 'pending', 'content': 'Step 8: Stage Files - Stage all modified files'},
+       {'id': 'rw-step-9', 'status': 'pending', 'content': 'Step 9: Run Validators - Execute branch context and changelog format validators'},
+       {'id': 'rw-step-10', 'status': 'pending', 'content': 'Step 10: Commit Changes - Create git commit with versioned message'},
+       {'id': 'rw-step-11', 'status': 'pending', 'content': 'Step 11: Create Git Tag - Create annotated tag'},
+       {'id': 'rw-step-12', 'status': 'pending', 'content': 'Step 12: Push to Remote - Push branch and tags'},
+       {'id': 'rw-step-13', 'status': 'pending', 'content': 'Step 13: Post-Commit Verification & Reflection - Verify changes and reflect on results (optional but recommended)'},
+       {'id': 'rw-step-14', 'status': 'pending', 'content': 'Step 14: Act on Verification Results - Update changelog, create follow-ups, document improvements (optional but recommended)'},
    ])
    ```
 
@@ -702,11 +703,131 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 ---
 
-### Step 6: Auto-update Kanban Docs
+### Step 6: Update BR/FR Docs
 
 **Step Definition:**
 ```yaml
 - id: step-6
+  name: Update BR/FR Docs
+  handler: release.br_fr_update
+  dependencies: [step-2]
+  config:
+    fr_br_root: KB/PM_and_Portfolio/kanban/fr-br  # Default location for FR/BR files
+    br_pattern: BR-*.md
+    fr_pattern: FR-*.md
+```
+
+**Agent Execution:**
+
+1. **ANALYZE:**
+   - Get `new_version` from Step 2:
+     - [Example: vibe-dev-kit] `"0.2.1.1+3"`
+   - Get completed task identifier from Step 2:
+     - [Example: vibe-dev-kit] `E2:S01:T01`
+   - Get release summary from workflow parameters
+   - Extract Epic/Story/Task from completed task identifier
+   - **Use config paths:** Find FR/BR root directory (from config `fr_br_root` or fallback):
+     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/fr-br` (or from `rw-config.yaml` if present)
+   - Understand BR/FR linking pattern:
+     - BRs/FRs are linked to Tasks via "Intake Decision" section
+     - Search for BR/FR files that reference the completed task
+   - Understand fix attempt documentation requirements:
+     - Document flaw description
+     - Document attempted fix
+     - Document verification status
+     - Document lessons learned (if fix failed)
+
+2. **DETERMINE:**
+   - **Search for linked BR/FR files:**
+     - Search Story file for references to BR/FR files
+     - Search Epic file for references to BR/FR files
+     - Search task description for BR/FR links
+     - Search "Intake Decision" sections in BR/FR files for task references
+   - **For Bug Reports (BR):**
+     - If BR is linked to completed task:
+       - Add new entry to "Fix Attempt History" section
+       - Document flaw description (from BR or task description)
+       - Document attempted fix (from changelog or task description)
+       - Document verification status (from Step 3 changelog or task)
+       - Document lessons learned if fix failed
+   - **For Feature Requests (FR):**
+     - If FR is linked to completed task:
+       - Update "Intake Decision" section with implementation status
+       - Document implementation details (from changelog or task description)
+       - Document verification status (from Step 3 changelog or task)
+   - **If no BR/FR linked:**
+     - Skip this step (no BR/FR to update)
+     - Document: "No BR/FR linked to this task"
+
+3. **EXECUTE:**
+   - **For Bug Reports:**
+     - Read BR file
+     - Add new entry to "Fix Attempt History" section:
+       ```markdown
+       #### Attempt N: [Version] - [Date]
+       
+       **Fix Description:**
+       [Describe what was attempted to fix this bug]
+       
+       **Changes Made:**
+       - [List specific changes from changelog or task description]
+       
+       **Verification Status:**
+       - [ ] Verified (test suite passed / manual test passed)
+       - [ ] Attempted Fix (pending verification)
+       - [ ] Fix Failed (bug still present)
+       
+       **Verification Method:**
+       - [ ] Test suite execution
+       - [ ] Manual testing
+       - [ ] Both
+       
+       **Verification Evidence:**
+       [Link to test results, CI/CD output, or documentation]
+       
+       **Result:**
+       - [ ] Bug Fixed
+       - [ ] Bug Partially Fixed (describe partial fix)
+       - [ ] Bug Not Fixed (describe why fix didn't work)
+       
+       **Lessons Learned:**
+       [What was learned from this attempt? What should be tried differently next time?]
+       
+       **Next Steps:**
+       [What should be attempted in the next fix attempt?]
+       ```
+     - Update BR file with fix attempt entry
+   - **For Feature Requests:**
+     - Read FR file
+     - Update "Intake Decision" section:
+       - Add implementation status: `**Implementation Status:** IMPLEMENTED (v{version})`
+       - Add implementation date: `**Implementation Date:** {date}`
+       - Add verification status: `**Verification Status:** {Verified/Attempted Fix (pending verification)}`
+     - Update FR file with implementation status
+
+4. **VALIDATE:**
+   - Verify BR file was updated with fix attempt entry (if BR linked)
+   - Verify FR file was updated with implementation status (if FR linked)
+   - Verify fix attempt entry includes all required fields:
+     - Fix Description
+     - Changes Made
+     - Verification Status
+     - Result
+   - Verify version number is correct in fix attempt entry
+   - Verify date is correct in fix attempt entry
+   - Check that lessons learned are documented (if fix failed)
+
+5. **PROCEED:**
+   - Document: "Updated BR/FR docs with fix attempt information"
+   - Move to Step 7 (can run in parallel with Steps 4-7)
+
+---
+
+### Step 7: Auto-update Kanban Docs
+
+**Step Definition:**
+```yaml
+- id: step-7
   name: Auto-update Kanban Docs
   handler: confidentia.kanban_update  # [Example: Confidentia] Use {project}.kanban_update or kanban.update
   # [Example: vibe-dev-kit] handler: vibe-dev-kit.kanban_update (if implemented)
@@ -784,18 +905,18 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 5. **PROCEED:**
    - Document: "Updated Kanban docs with version markers"
-   - Move to Step 7 (waits for Steps 2-6 to complete)
+   - Move to Step 8 (waits for Steps 2-7 to complete)
 
 ---
 
-### Step 7: Stage Files
+### Step 8: Stage Files
 
 **Step Definition:**
 ```yaml
-- id: step-7
+- id: step-8
   name: Stage Files
   handler: git.stage_all
-  dependencies: [step-2, step-3, step-4, step-5, step-6]
+  dependencies: [step-2, step-3, step-4, step-5, step-6, step-7]
   config:
     paths: ["*"]
 ```
@@ -803,7 +924,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 **Agent Execution:**
 
 1. **ANALYZE:**
-   - Understand all files modified in Steps 2-6:
+   - Understand all files modified in Steps 2-7:
      - Version file
      - Detailed changelog (new file)
      - Main changelog
@@ -826,19 +947,19 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 5. **PROCEED:**
    - Document: "Staged all modified files"
-   - Move to Step 8
+   - Move to Step 9
 
 ---
 
-### Step 8: Run Validators
+### Step 9: Run Validators
 
 **Step Definition:**
 ```yaml
-- id: step-8
+- id: step-9
   name: Run Validators
   handler: confidentia.run_validators  # [Example: Confidentia] Use {project}.run_validators or validation.run_validators
   # [Example: vibe-dev-kit] handler: vibe-dev-kit.run_validators (if implemented)
-  dependencies: [step-7]
+  dependencies: [step-8]
   config:
     validators:
       - scripts/validation/validate_branch_context.py  # Use {validation_scripts_path}/validate_branch_context.py
@@ -887,11 +1008,11 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 ---
 
-### Step 9: Commit Changes
+### Step 10: Commit Changes
 
 **Step Definition:**
 ```yaml
-- id: step-9
+- id: step-10
   name: Commit Changes
   handler: git.commit
   dependencies: [step-8]
@@ -1010,11 +1131,11 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 ---
 
-### Step 10: Create Git Tag
+### Step 11: Create Git Tag
 
 **Step Definition:**
 ```yaml
-- id: step-10
+- id: step-11
   name: Create Git Tag
   handler: git.create_tag
   dependencies: [step-9]
@@ -1065,11 +1186,11 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 ---
 
-### Step 11: Push to Remote
+### Step 12: Push to Remote
 
 **Step Definition:**
 ```yaml
-- id: step-11
+- id: step-12
   name: Push to Remote
   handler: git.push
   dependencies: [step-9, step-10]
@@ -1084,7 +1205,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Get current branch name:
      - [Example: Confidentia] `epic/4` (already validated in Step 1)
      - [Example: vibe-dev-kit] `epic/2` or `main` (already validated in Step 1)
-   - Get tag name from Step 10:
+   - Get tag name from Step 11:
      - [Example: Confidentia] `v0.4.3.2+9`
      - [Example: vibe-dev-kit] `v0.2.1.1+3`
    - Understand remote: `origin`
@@ -1204,11 +1325,11 @@ except Exception as e:
 
 ---
 
-### Step 12: Post-Commit Verification & Reflection
+### Step 13: Post-Commit Verification & Reflection
 
 **Step Definition:**
 ```yaml
-- id: step-12
+- id: step-13
   name: Post-Commit Verification & Reflection
   handler: release.verification_reflection
   dependencies: [step-10]
@@ -1361,11 +1482,11 @@ except Exception as e:
 
 ---
 
-### Step 13: Act on Verification Results
+### Step 14: Act on Verification Results
 
 **Step Definition:**
 ```yaml
-- id: step-13
+- id: step-14
   name: Act on Verification Results
   handler: release.act_on_results
   dependencies: [step-12]
@@ -1378,7 +1499,7 @@ except Exception as e:
 **Agent Execution:**
 
 1. **ANALYZE:**
-   - Get verification status from Step 12:
+   - Get verification status from Step 13:
      - Verified / Unverified / Deferred
      - Verification evidence (if verified)
      - Reflection results (if available)
@@ -1463,9 +1584,9 @@ except Exception as e:
 - Captures process improvements
 - Completes the Document-Commit-Reflect pattern
 
-**Integration with Step 12:**
-- Step 13 depends on Step 12 (CHECK phase)
-- Uses verification status from Step 12
+**Integration with Step 13:**
+- Step 14 depends on Step 13 (CHECK phase)
+- Uses verification status from Step 13
 - Acts on reflection results from Step 12
 - Completes the PDCA cycle
 
@@ -1536,14 +1657,15 @@ When executing Release Workflow as an agent, ensure:
 - [ ] **Step 3:** Analyzed requirements, generated timestamp, created changelog, validated
 - [ ] **Step 4:** Analyzed format, determined date, updated CHANGELOG.md, validated
 - [ ] **Step 5:** Analyzed README, updated badge and callout, validated
-- [ ] **Step 6:** Analyzed Kanban docs, updated Epic/Story docs, validated
-- [ ] **Step 7:** Analyzed modified files, staged all files, validated
-- [ ] **Step 8:** Analyzed validators, ran both validators, validated results
-- [ ] **Step 9:** Analyzed template, built message, created commit, validated
-- [ ] **Step 10:** Analyzed tag format, created annotated tag, validated
-- [ ] **Step 11:** Analyzed remote, pushed branch and tag, validated
-- [ ] **Step 12:** Analyzed changes, prompted for verification, documented reflection, validated (optional but recommended)
-- [ ] **Step 13:** Analyzed verification results, acted on results, updated changelog, created follow-ups, validated (optional but recommended)
+- [ ] **Step 6:** Analyzed BR/FR docs, updated fix attempt history, validated
+- [ ] **Step 7:** Analyzed Kanban docs, updated Epic/Story docs, validated
+- [ ] **Step 8:** Analyzed modified files, staged all files, validated
+- [ ] **Step 9:** Analyzed validators, ran both validators, validated results
+- [ ] **Step 10:** Analyzed template, built message, created commit, validated
+- [ ] **Step 11:** Analyzed tag format, created annotated tag, validated
+- [ ] **Step 12:** Analyzed remote, pushed branch and tag, validated
+- [ ] **Step 13:** Analyzed changes, prompted for verification, documented reflection, validated (optional but recommended)
+- [ ] **Step 14:** Analyzed verification results, acted on results, updated changelog, created follow-ups, validated (optional but recommended)
 
 ### Post-Execution
 - [ ] **MANDATORY:** All steps marked as completed in TODO list
@@ -1603,7 +1725,7 @@ run_terminal_cmd("python scripts/automation/release_workflow.py --auto-go")
 **Good:**
 - Agent completes Step 1 (branch safety) before any modifications
 - Agent waits for Step 2 to complete before Step 3
-- Agent waits for Step 7 to complete before Step 8
+- Agent waits for Step 8 to complete before Step 9
 - Agent respects dependency order
 
 ---

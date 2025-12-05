@@ -58,15 +58,17 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 
 ### Epic 3: Numbering & Versioning Framework
 
-**Status:** TODO  
+**Status:** COMPLETE ✅  
 **Priority:** HIGH  
-**Last Updated:** v0.3.1.6+1
+**Last Updated:** v0.3.3.6+1
 
 **Stories:**
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
   - Story: [`epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md)
-- [ ] **E3:S02 – Versioning Cookbook & Examples** - TODO
-- [ ] **E3:S03 – Versioning Integration with Kanban & RW** - TODO
+- [x] **E3:S02 – Versioning Cookbook & Examples** - COMPLETE ✅ (v0.3.2.5+3)
+  - Story: [`epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md`](epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md)
+- [x] **E3:S03 – Versioning Integration with Kanban & RW** - COMPLETE ✅ (v0.3.3.6+1)
+  - Story: [`epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md`](epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md)
 
 **Epic Doc:** [`epics/Epic-3.md`](epics/Epic-3.md)
 
