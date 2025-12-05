@@ -380,25 +380,6 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
-## [0.2.1.5+2] - 05-12-25
-
-📚 Documentation: Framework KB version history tracking for Release Workflow
-
-### Changed
-
-- Added version history section to `release-workflow-agent-execution.md` (v1.0.0 → v1.4.0)
-- Added version history section to `release-workflow-reference.md` (v1.0.0 → v1.4.0)
-- Updated `README.md` to reflect 14-step workflow (was 13 steps)
-- Updated "Last Updated" dates to 2025-12-05
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.5+2.md` for full details
-- Framework KB now tracks all RW updates with comprehensive version history
-- Version history documents 5 revisions: v1.0.0 (initial) through v1.4.0 (branch safety hardening)
-
----
-
 ## [0.2.2.0+1] - 03-12-25
 
 📚 Documentation: Story 2 setup complete - Created Story 2 and tasks for PDCA integration into Release Workflow
@@ -2081,43 +2062,6 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
-## [0.5.1.1+1] - 05-12-25
-
-🆕 Epic: Epic 5 created - Documentation Management and Maintenance
-
-### Added
-
-- Created Epic 5: Documentation Management and Maintenance
-- Created Story 1: Documentation Maintenance Framework
-- Created Story 2: Documentation Quality Assurance
-- Created Story 3: Documentation Automation
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.1.1+1.md` for full details
-- Epic 5 establishes framework for maintaining documentation accuracy and consistency
-- Initial story structure created with task stubs
-
----
-
-## [0.6.1.1+1] - 05-12-25
-
-🆕 Epic: Epic 6 created - Framework Management and Maintenance
-
-### Added
-
-- Created Epic 6: Framework Management and Maintenance
-- Created Story 1: Framework Version Management
-- Created Story 2: Framework Update and Migration
-- Created Story 3: Framework Health Monitoring
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.1.1+1.md` for full details
-- Epic 6 ensures all framework packages remain current, well-maintained, and properly versioned
-- Initial story structure created with task stubs
-
----
 ## [0.9.21.3+2] - 02-12-25
 
 📚 Documentation: Branch safety Step 1 and modularity docs for workflow & numbering packages
