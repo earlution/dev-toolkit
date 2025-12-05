@@ -218,7 +218,20 @@ For each step, follow this pattern:
        - Add verification status: `**Verification Status:** {Verified/Attempted Fix (pending verification)}`
    - **If no BR/FR linked:** Skip this step (no BR/FR to update)
    - **See:** `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` Step 6 for complete procedure
-7. **Auto-update Kanban Docs** - Update epic documentation and story documentation with version markers. **Use config:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root`, `epic_doc_pattern`, and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}/Epic-{epic}.md` and `{kanban_path}/epics/Epic-{epic}/Story-{story}-*.md` as fallback. **CRITICAL: Update Story file FIRST, then Epic file to match:**
+7. **Auto-update Kanban Docs** - Update epic documentation and story documentation with version markers. **Use config:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root`, `epic_doc_pattern`, and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}/Epic-{epic}.md` and `{kanban_path}/epics/Epic-{epic}/Story-{story}-*.md` as fallback. **CRITICAL: Check Story file existence, create from template if missing, then update:**
+   - **MANDATORY: Check Story file existence:**
+     - Read Epic file Story Checklist to verify Story is referenced
+     - Check if Story file exists at expected path
+     - **If Story file doesn't exist but is referenced in Epic:**
+       - Create Story file from template: `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
+       - Extract Story name from Epic file reference (Story Checklist entry)
+       - Substitute template placeholders (Epic number, Story number, Story name, status, priority)
+       - Create file with proper naming: `Story-{story:03d}-{name-slug}.md`
+       - Document: "Created Story file from template: {file_path}"
+     - **If Story file doesn't exist and NOT referenced in Epic:**
+       - RW BLOCKED: Story file not found and not referenced in Epic
+       - Error message: "Story file not found for Epic {epic}, Story {story}. Story must be referenced in Epic file Story Checklist."
+   - **CRITICAL: Update Story file FIRST, then Epic file to match:**
    - **FIRST: Update the Story file (`Story-{N}-{Name}.md`) task checklist:**
      - Add forensic marker `(v{version})` to the completed task in the Task Checklist
      - Example: `✅ COMPLETE (v0.11.5.2+1)`
@@ -231,7 +244,9 @@ For each step, follow this pattern:
      - Any other references to the story/task being released
    - **Systematic Process:**
      1. Read the FULL Epic-{epic}.md file
-     2. Read the authoritative Story-{story}-{name}.md file to get correct state
+     2. **Check Story file existence:**
+        - If exists: Read the authoritative Story-{story}-{name}.md file to get correct state
+        - If not exists but referenced in Epic: Create Story file from template first
      3. **FIRST: Update the Story file's Task Checklist with forensic marker for completed task**
      4. **THEN: Find ALL sections in Epic file referencing the story/task (grep/search the file)**
      5. **Update ALL Epic sections to match the updated Story file's state**

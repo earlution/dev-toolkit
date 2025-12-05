@@ -8,8 +8,8 @@ housekeeping_policy: keep
 
 # Release Workflow: Agent Execution Guide
 
-**Version:** 1.0.0
-**Last Updated:** 2025-12-02
+**Version:** 1.5.0
+**Last Updated:** 2025-12-05
 **Related:** [Example: Confidentia - Epic 4 - User Workflows & Use Case Modeling, Release Workflow] | [Example: vibe-dev-kit - Epic 2 - Workflow Management Framework, Release Workflow]
 
 ---
@@ -854,12 +854,33 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - **Use config paths:** Find Epic doc (from config `kanban_root` and `epic_doc_pattern` if `use_kanban: true`, or fallback):
      - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic 4/Epic-4.md` (or from `rw-config.yaml` if present)
      - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/Epic-2.md` (or from `rw-config.yaml` if present)
+   - **MANDATORY: Read Epic doc to check if Story is referenced:**
+     - Read Epic file Story Checklist
+     - Check if Story number is referenced (e.g., `E4:S03` or `Story-003-*.md`)
+     - Extract Story name from Epic reference if available
    - **Use config paths:** Find Story doc (from config `kanban_root` and `story_doc_pattern` if `use_kanban: true`, or fallback):
      - [Example: Confidentia] `KB/PM_and_Portfolio/kanban/Epic 4/Story-3-*.md` (or from `rw-config.yaml` if present)
      - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-001-*.md` (or from `rw-config.yaml` if present)
+   - **CRITICAL: Check Story file existence:**
+     - If Story file doesn't exist:
+       - Check if Story is referenced in Epic file Story Checklist
+       - If referenced: Create Story file from template (see substep below)
+       - If not referenced: RW BLOCKED - Story not found and not referenced in Epic
+     - If Story file exists: Proceed with normal update flow
    - Understand "Last updated" field format
 
 2. **DETERMINE:**
+   - **If Story file doesn't exist but is referenced in Epic:**
+     - Determine Story file path from config or fallback pattern
+     - Determine Story name from Epic file reference (extract from Story Checklist)
+     - Determine Story template path: `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
+     - Plan template-based creation with proper substitutions:
+       - Epic number (from version)
+       - Story number (from version)
+       - Story name (from Epic reference)
+       - Default status (TODO)
+       - Default priority (from Epic or MEDIUM)
+       - File naming: `Story-{N:03d}-{Name}.md` (e.g., `Story-004-documentation-triggers.md`)
    - **CRITICAL: "ALL Sections" Requirement** - Must update ALL sections referencing the story/task:
      - Epic doc header "Last updated" field
      - Epic doc Story Checklist (status and version marker)
@@ -873,12 +894,29 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Determine if tasks should be marked complete (if applicable)
    - **Systematic Process:**
      1. Read the FULL Epic document file
-     2. Read the authoritative Story document file to get correct state
+     2. **Check Story file existence:**
+        - If exists: Read the authoritative Story document file to get correct state
+        - If not exists but referenced in Epic: Create Story file from template first
      3. Use grep/search to find ALL sections referencing the story/task
      4. **CRITICAL: Update Story file FIRST, then Epic file to match**
      5. Update ALL sections to match the updated Story file's state
 
 3. **EXECUTE:**
+   - **If Story file doesn't exist but is referenced in Epic:**
+     - **Substep: Create Story file from template:**
+       1. Read Story template: `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
+       2. Extract Story name from Epic file reference (Story Checklist entry)
+       3. Substitute template placeholders:
+          - `Epic X, Story Y` → `Epic {epic}, Story {story}`
+          - `[Title]` → Story name from Epic reference
+          - `EXXSYY` → `E{epic:02d}S{story:02d}` (e.g., `E05S04`)
+          - `EXX:SYY` → `E{epic:02d}:S{story:02d}` (e.g., `E05:S04`)
+          - Status: `TODO` (default)
+          - Priority: From Epic file or `MEDIUM` (default)
+          - Created date: Current date
+       4. Create Story file with proper naming: `Story-{story:03d}-{name-slug}.md`
+       5. Write Story file to correct location (from config or fallback pattern)
+       6. Document: "Created Story file from template: {file_path}"
    - **CRITICAL: Update Story file FIRST, then Epic file to match:**
    - **FIRST: Update the Story file (`Story-{N}-{Name}.md`) task checklist:**
      - Add forensic marker `(v{version})` to the completed task in the Task Checklist
@@ -892,6 +930,12 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Search for and update any other references to the story/task
 
 4. **VALIDATE:**
+   - **If Story file was created:**
+     - Verify Story file exists at expected path
+     - Verify Story file follows template structure
+     - Verify Story file has correct Epic/Story numbers
+     - Verify Story file has correct Story name
+     - Verify Story file has proper metadata (status, priority, dates)
    - Verify Epic doc header was updated
    - Verify Epic doc Story Checklist was updated with version marker
    - Verify Epic doc detailed Story sections were updated
@@ -1780,5 +1824,77 @@ The `.cursorrules` file defines a **case-insensitive "RW" trigger** that mandate
 
 ---
 
-**Last Updated:** 2025-01-02
-**Document Version:** 1.1.0
+**Last Updated:** 2025-12-05
+**Document Version:** 1.5.0
+
+---
+
+## 📜 Document Version History
+
+This section tracks significant updates and revisions to the Release Workflow Agent Execution Guide.
+
+### v1.5.0 (2025-12-05) – Step 7 Story File Pre-Existence Check & Template Creation
+
+**Changes:**
+- **Enhanced Step 7: Auto-update Kanban Docs** with Story file pre-existence check
+- Added mandatory check for Story file existence before reading/updating
+- Added template-based Story file creation when file is missing but referenced in Epic
+- Story file creation substep generated on-the-fly during RW execution
+- Template path: `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
+- Prevents RW failures when Story files are referenced but not yet created
+- Updated ANALYZE, DETERMINE, EXECUTE, and VALIDATE phases with creation logic
+
+**Related Work:** E5:S01 (Documentation Maintenance Framework) - WF-004: Story File Missing During RW Update
+
+---
+
+### v1.4.0 (2025-12-05) – Branch Safety Hardening
+
+**Changes:**
+- **Added Step 1: Branch Safety Check** as a mandatory blocking step
+- Requires `validate_branch_context.py --strict` execution before any file modifications
+- Stops workflow immediately if branch/version/epic alignment fails
+- Updated total steps from 13 to **14**
+
+**Related Work:** E2:S01:T05 – Harden RW branch safety checks
+
+---
+
+### v1.3.0 (2025-12-04) – BR/FR Documentation Integration
+
+**Changes:**
+- **Added Step 6: Update BR/FR Docs** to document flaws and fix attempts
+- Reordered subsequent steps
+- Total steps remained **14** (due to previous reordering, effectively 13 steps + new step)
+
+**Related Work:** E3:S03:T06 – Add RW step to update BR/FR docs
+
+---
+
+### v1.2.0 (2025-12-03) – PDCA ACT Phase Integration
+
+**Changes:**
+- **Added Step 13: Act on Verification Results** (ACT phase)
+- Updated total steps from 12 to **13**
+
+**Related Work:** E2:S02:T02 – Add ACT phase to RW
+
+---
+
+### v1.1.0 (2025-12-02) – PDCA CHECK Phase Integration
+
+**Changes:**
+- **Added Step 12: Post-Commit Verification & Reflection** (CHECK phase)
+- Updated total steps from 11 to **12**
+
+**Related Work:** E2:S02:T01 – Add CHECK phase to RW
+
+---
+
+### v1.0.0 (2025-12-01) – Initial Release
+
+**Changes:**
+- Initial 11-step Release Workflow structure and execution guide
+- Established core ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern
+
+**Related Work:** E2:S01:T01 – Audit RW documentation

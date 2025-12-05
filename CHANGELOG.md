@@ -2123,6 +2123,35 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.5.1.1+4] - 05-12-25
+
+📚 Framework KB: Release Workflow documentation updated to v1.5.0 with Step 7 hardening
+
+### Changed
+
+- Updated Framework KB Release Workflow documentation to **v1.5.0**
+- Added comprehensive **Document Version History** sections to both core RW documents
+- Enhanced **Step 7: Auto-update Kanban Docs** with Story file pre-existence check and template-based creation
+- Updated all step numbers to reflect **14-step structure** (was 13 steps)
+- Updated all cross-references, dependencies, and phase descriptions
+- Updated Package README with correct step counts and verification checklist
+
+### Added
+
+- Version history tracking in `release-workflow-agent-execution.md` (v1.0.0 → v1.5.0)
+- Version history tracking in `release-workflow-reference.md` (v1.0.0 → v1.5.0)
+- Step 7 documentation for Story file creation from template when missing but referenced in Epic
+- Error handling documentation for missing Story files
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.1.1+4.md` for full details
+- Framework KB now follows versioning best practices with explicit version history
+- Step 7 hardening prevents RW failures when Story files are referenced but not yet created
+- Related to WF-004: Story File Missing During RW Update
+
+---
+
 ## [0.9.21.3+2] - 02-12-25
 
 📚 Documentation: Branch safety Step 1 and modularity docs for workflow & numbering packages

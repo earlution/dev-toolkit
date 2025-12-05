@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-05 (v0.5.1.1+3 – Story 1 task planning: Update triggers task planned)  
+**Last updated:** 2025-12-05 (v0.5.1.1+4 – Framework KB documentation updated to v1.5.0)  
 **Branch:** `epic/5-documentation-management`  
 **Version Schema:** `0.5.S.T+B`  
 **Production URL:** [N/A for this repo]

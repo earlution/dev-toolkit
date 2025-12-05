@@ -41,6 +41,7 @@ This document serves as a **comprehensive reference** for all discovered flaws, 
 | [WF-001](#wf-001-story-file-not-updated-first) | Step 7 | Story file lacks forensic markers, Epic matches incomplete state | ✅ FIXED | [Solution](#wf-001-story-file-not-updated-first) |
 | [WF-002](#wf-002-version-bump-logic-error) | Step 2 | BUILD incremented instead of TASK for new tasks | ✅ FIXED | [Solution](#wf-002-version-bump-logic-error) |
 | [WF-003](#wf-003-br-fr-fix-attempts-not-documented) | N/A (New Step 6) | Fix attempts not documented in BR/FR docs, preventing knowledge transfer between builds | ✅ FIXED | [Solution](#wf-003-br-fr-fix-attempts-not-documented) |
+| [WF-004](#wf-004-story-file-missing-during-rw-update) | Step 7 | RW fails when Story file referenced in Epic doesn't exist | 🔧 TO FIX | [Solution](#wf-004-story-file-missing-during-rw-update) |
 
 ---
 
@@ -346,12 +347,112 @@ This document serves as a **comprehensive reference** for all discovered flaws, 
 
 ---
 
+## WF-004: Story File Missing During RW Update (Step 7)
+
+**Status:** 🔧 TO FIX  
+**Date Discovered:** 2025-12-05  
+**Date Fixed:** TBD  
+**Related Work:** Epic 5, Story 1 (Documentation Maintenance Framework)
+
+### Quick Reference: The Flaw
+
+**Anti-Pattern:** RW Step 7 assumes Story file exists and fails when it doesn't, even if the Story is referenced in the Epic file.
+
+**Symptom:**
+- Epic file references Story in Story Checklist (e.g., `Story-004-*.md`)
+- Story file doesn't exist in filesystem
+- RW Step 7 fails with "Story file not found" error
+- RW workflow stops, blocking release
+- Result: Release blocked due to missing Story file
+
+**Example:**
+- ❌ **Wrong:** Epic-5.md references `Story-004-*.md` in Story Checklist, but file doesn't exist → RW Step 7 fails
+- ✅ **Correct:** Epic-5.md references `Story-004-*.md`, file doesn't exist → RW Step 7 checks existence, creates from template, then updates
+
+**Impact:** RW workflow fails when Story files are referenced but not yet created, blocking releases unnecessarily.
+
+### Root Cause Analysis
+
+**Primary Root Cause:**
+- **Location:** RW Step 7 (Auto-update Kanban Docs) ANALYZE phase
+- **Problem:** Step 7 doesn't check if Story file exists before trying to read/update it
+- **Workflow Gap:** No pre-existence check, no template-based creation fallback
+
+**What Happens:**
+1. RW Step 7 extracts Story number from version (e.g., Story 4)
+2. RW Step 7 tries to find Story file using pattern matching
+3. Story file doesn't exist (not yet created)
+4. RW Step 7 fails with file not found error
+5. RW workflow stops, blocking release
+
+**Why It Happens:**
+- Step 7 documentation assumes Story file exists
+- No pre-existence check in ANALYZE phase
+- No fallback to create from template
+- No guidance on handling missing Story files
+
+### The Fix
+
+**Solution:** Add pre-existence check and template-based creation to RW Step 7:
+
+1. **ANALYZE Phase Enhancement:**
+   - Check if Story file exists before proceeding
+   - If Story file doesn't exist:
+     - Check if Story is referenced in Epic file Story Checklist
+     - If referenced, create Story file from template
+     - Extract Story name from Epic file reference
+     - Generate Story file with proper naming and structure
+     - Then proceed with normal update flow
+
+2. **Template-Based Creation:**
+   - Use Story template: `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
+   - Populate template with:
+     - Epic number and Story number from version
+     - Story name from Epic file reference
+     - Default status (TODO)
+     - Default priority (from Epic or MEDIUM)
+     - Proper file naming: `Story-{N}-{Name}.md`
+   - Create file in correct location (from config or fallback pattern)
+
+3. **Substep Generation:**
+   - Generate substep on-the-fly: "Create Story file from template"
+   - Document creation in RW execution log
+   - Proceed with normal Story file update flow
+
+**Implementation:**
+- Update `release-workflow-agent-execution.md` Step 7 ANALYZE phase
+- Add pre-existence check logic
+- Add template-based creation procedure
+- Update `cursorrules-rw-trigger-section.md` Step 7 instructions
+- Document template path and creation procedure
+
+**See:**
+- `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` Step 7
+- `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md` Step 7
+- `packages/frameworks/kanban/templates/STORY_TEMPLATE.md` (template to use)
+
+### Prevention
+
+**How to Prevent:**
+- Always check Story file existence before reading/updating
+- If Story referenced in Epic but file missing, create from template
+- Use template-based creation to ensure consistency
+- Document creation in RW execution log
+
+**Key Principle:**
+- RW should be resilient to missing Story files
+- If Story is referenced in Epic, it should exist (create if missing)
+- Template-based creation ensures consistency and proper structure
+
+---
+
 ## Version History
 
 | Date | Version | Changes |
 | --- | --- | --- |
 | 2025-12-04 | 1.0 | Initial document created with WF-001 (Story file not updated first) and WF-002 (Version bump logic error) |
 | 2025-12-05 | 1.1 | Added WF-003 (BR/FR fix attempts not documented) - New RW Step 6 added to document fix attempts |
+| 2025-12-05 | 1.2 | Added WF-004 (Story file missing during RW update) - RW Step 7 needs pre-existence check and template-based creation |
 
 ---
 

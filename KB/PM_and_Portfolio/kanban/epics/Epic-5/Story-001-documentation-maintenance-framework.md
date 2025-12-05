@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-05 (v0.5.1.1+3 – Task 4 planned: Documentation update triggers)  
-**Version:** v0.5.1.1+3  
+**Last updated:** 2025-12-05 (v0.5.1.1+4 – Framework KB documentation updated to v1.5.0)  
+**Version:** v0.5.1.1+4  
 **Code:** E5S01
 
 ---
