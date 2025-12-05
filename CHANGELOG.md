@@ -380,6 +380,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.1.5+1] - 05-12-25
+
+🐛 Bug Fix: Fixed validate_version_bump.py Epic/Story auto-detection bug
+
+### Fixed
+
+- **Validator Epic/Story Auto-Detection Bug** - Fixed `validate_version_bump.py` to correctly identify Epic/Story numbers
+  - **Root Cause:** Validator used content-based regex which matched wrong Epic numbers from file references
+  - **Solution:** Implemented three-tier detection strategy:
+    1. **Primary:** Extract Epic/Story from file path (`Epic-{N}/stories/Story-{NNN}`)
+    2. **Secondary:** Extract from Code field (`**Code:** E{epic}S{story}`)
+    3. **Tertiary:** Content-based regex (only in header section, avoids References)
+  - **Impact:** Validator now correctly identifies Story files even when they reference other Epics in content
+  - **Verification:** Manual test passed - validator successfully found `Story-003-versioning-integration-with-kanban-and-rw.md` for Epic 3, Story 3
+
+**Full changelog:** [`KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.5+1.md`](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.5+1.md)
+
+---
+
 ## [0.2.2.0+1] - 03-12-25
 
 📚 Documentation: Story 2 setup complete - Created Story 2 and tasks for PDCA integration into Release Workflow

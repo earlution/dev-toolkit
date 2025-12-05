@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.2.1.1+5 – Task 3 complete: Align .cursorrules RW trigger section with dev-kit policy)
-**Version:** v0.2.1.1+5  
+**Last updated:** 2025-12-05 (v0.2.1.5+1 – All tasks complete: Story 1 complete with validator bug fix)
+**Version:** v0.2.1.5+1  
 **Code:** E2S01
 
 ---
@@ -36,6 +36,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - [x] **E2:S01:T02 – Tag Confidentia/fynd.deals examples and add dev-kit examples** ✅ COMPLETE (v0.2.1.1+4)
 - [x] **E2:S01:T03 – Align `.cursorrules` RW trigger section with dev-kit policy** ✅ COMPLETE (v0.2.1.1+5)
 - [x] **E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed"** ✅ COMPLETE (v0.2.1.1+2)
+- [x] **E2:S01:T05 – Fix validate_version_bump.py Epic/Story auto-detection bug** ✅ COMPLETE (v0.2.1.5+1)
 
 ---
 
