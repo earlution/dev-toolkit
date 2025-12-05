@@ -380,6 +380,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.1.5+2] - 05-12-25
+
+📚 Documentation: Framework KB version history tracking for Release Workflow
+
+### Changed
+
+- Added version history section to `release-workflow-agent-execution.md` (v1.0.0 → v1.4.0)
+- Added version history section to `release-workflow-reference.md` (v1.0.0 → v1.4.0)
+- Updated `README.md` to reflect 14-step workflow (was 13 steps)
+- Updated "Last Updated" dates to 2025-12-05
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.5+2.md` for full details
+- Framework KB now tracks all RW updates with comprehensive version history
+- Version history documents 5 revisions: v1.0.0 (initial) through v1.4.0 (branch safety hardening)
+
+---
+
 ## [0.2.2.0+1] - 03-12-25
 
 📚 Documentation: Story 2 setup complete - Created Story 2 and tasks for PDCA integration into Release Workflow

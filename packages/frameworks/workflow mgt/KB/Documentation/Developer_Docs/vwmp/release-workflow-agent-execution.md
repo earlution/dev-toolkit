@@ -8,9 +8,45 @@ housekeeping_policy: keep
 
 # Release Workflow: Agent Execution Guide
 
-**Version:** 1.0.0
-**Last Updated:** 2025-12-02
+**Version:** 1.4.0
+**Last Updated:** 2025-12-05
 **Related:** [Example: Confidentia - Epic 4 - User Workflows & Use Case Modeling, Release Workflow] | [Example: vibe-dev-kit - Epic 2 - Workflow Management Framework, Release Workflow]
+
+---
+
+## 📜 Version History
+
+**Current Version:** 1.4.0 (2025-12-05)
+
+### Version 1.4.0 (2025-12-05) - Branch Safety Hardening
+- **Added:** Step 1: Branch Safety Check as mandatory blocking step
+- **Changed:** Step 1 now requires `validate_branch_context.py --strict` execution before any file modifications
+- **Changed:** Step 1 stops workflow immediately if validator returns non-zero exit code
+- **Changed:** All remaining steps marked as `cancelled` if Step 1 fails
+- **Changed:** Updated from 13 steps to 14 steps (Step 1 added, all others renumbered)
+- **Related:** E2:S01:T05 - Harden RW branch safety checks
+
+### Version 1.3.0 (2025-12-04) - BR/FR Documentation Integration
+- **Added:** Step 6: Update BR/FR Docs (before Auto-update Kanban Docs)
+- **Changed:** Auto-update Kanban Docs moved from Step 5 to Step 7
+- **Changed:** All subsequent steps renumbered (Stage Files: 6→8, Run Validators: 7→9, etc.)
+- **Changed:** Updated from 13 steps to 14 steps
+- **Related:** E3:S03:T06 - Add RW step to update BR/FR docs with fix attempt history
+
+### Version 1.2.0 (2025-12-03) - PDCA ACT Phase Integration
+- **Added:** Step 13: Act on Verification Results (ACT phase)
+- **Changed:** Updated from 12 steps to 13 steps
+- **Related:** E2:S02:T02 - Add ACT Phase (Step 13) to Release Workflow
+
+### Version 1.1.0 (2025-12-02) - PDCA CHECK Phase Integration
+- **Added:** Step 12: Post-Commit Verification & Reflection (CHECK phase)
+- **Changed:** Updated from 11 steps to 12 steps
+- **Related:** E2:S02:T01 - Add CHECK Phase (Step 12) to Release Workflow
+
+### Version 1.0.0 (2025-12-01) - Initial Release
+- **Initial:** 11-step Release Workflow
+- **Steps:** Bump Version, Create Detailed Changelog, Update Main Changelog, Update README, Auto-update Kanban Docs, Stage Files, Run Validators, Commit Changes, Create Git Tag, Push to Remote
+- **Related:** Initial framework extraction from fynd.deals Epic 15, Story 1
 
 ---
 
@@ -1814,5 +1850,5 @@ The `.cursorrules` file defines a **case-insensitive "RW" trigger** that mandate
 
 ---
 
-**Last Updated:** 2025-01-02
-**Document Version:** 1.1.0
+**Last Updated:** 2025-12-05
+**Document Version:** 1.4.0

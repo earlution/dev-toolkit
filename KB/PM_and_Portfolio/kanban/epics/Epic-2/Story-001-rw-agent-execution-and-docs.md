@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-05 (v0.2.1.5+1 – Task 5 complete: Harden RW branch safety checks)  
-**Version:** v0.2.1.5+1  
+**Last updated:** 2025-12-05 (v0.2.1.5+2 – Task 5 build 2: Framework KB version history tracking)  
+**Version:** v0.2.1.5+2  
 **Code:** E2S01
 
 ---
