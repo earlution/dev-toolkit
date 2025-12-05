@@ -380,22 +380,22 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
-## [0.2.1.5+1] - 05-12-25
+## [0.2.1.5+2] - 05-12-25
 
-🐛 Bug Fix: Fixed validate_version_bump.py Epic/Story auto-detection bug
+📚 Documentation: Framework KB version history tracking for Release Workflow
 
-### Fixed
+### Changed
 
-- **Validator Epic/Story Auto-Detection Bug** - Fixed `validate_version_bump.py` to correctly identify Epic/Story numbers
-  - **Root Cause:** Validator used content-based regex which matched wrong Epic numbers from file references
-  - **Solution:** Implemented three-tier detection strategy:
-    1. **Primary:** Extract Epic/Story from file path (`Epic-{N}/stories/Story-{NNN}`)
-    2. **Secondary:** Extract from Code field (`**Code:** E{epic}S{story}`)
-    3. **Tertiary:** Content-based regex (only in header section, avoids References)
-  - **Impact:** Validator now correctly identifies Story files even when they reference other Epics in content
-  - **Verification:** Manual test passed - validator successfully found `Story-003-versioning-integration-with-kanban-and-rw.md` for Epic 3, Story 3
+- Added version history section to `release-workflow-agent-execution.md` (v1.0.0 → v1.4.0)
+- Added version history section to `release-workflow-reference.md` (v1.0.0 → v1.4.0)
+- Updated `README.md` to reflect 14-step workflow (was 13 steps)
+- Updated "Last Updated" dates to 2025-12-05
 
-**Full changelog:** [`KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.5+1.md`](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.5+1.md)
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.5+2.md` for full details
+- Framework KB now tracks all RW updates with comprehensive version history
+- Version history documents 5 revisions: v1.0.0 (initial) through v1.4.0 (branch safety hardening)
 
 ---
 
