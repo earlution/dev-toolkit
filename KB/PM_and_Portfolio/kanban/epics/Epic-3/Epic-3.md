@@ -85,7 +85,7 @@ Make sure the dev kit's own versioning policy, version file, and docs align clea
 
 ### Story 2: Versioning Cookbook & Examples
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE ✅  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Last updated:** 2025-12-05 (v0.3.3.6+2 – Epic 3 COMPLETE: All 3 stories finished)
@@ -98,7 +98,8 @@ Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.T
 - [x] E3:S02:T02 – Create versioning cookbook document with worked examples ✅ COMPLETE (v0.3.2.2+1)
 - [x] E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW) ✅ COMPLETE (v0.3.2.3+1)
 - [x] E3:S02:T04 – Document edge cases and anti-patterns ✅ COMPLETE (v0.3.2.4+1)
-- [ ] E3:S02:T05 – Create quick reference summary for users and agents
+- [x] E3:S02:T05 – Create quick reference summary for users and agents ✅ COMPLETE (v0.3.2.5+1)
+- [x] E3:S02:T06 – Investigate and harden changelog ordering process ✅ COMPLETE (v0.3.2.6+1)
 
 > Full story: [`Story-002-versioning-cookbook-and-examples.md`](Story-002-versioning-cookbook-and-examples.md)
 
