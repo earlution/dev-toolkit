@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-05  
+**Last updated:** 2025-12-05 (v0.5.1.1+1 – Epic 5 created)  
 **Version:** v0.5.1.1+1  
 **Code:** E5S01
 
