@@ -262,6 +262,9 @@ This document serves as a **comprehensive reference** for the versioning error a
 - **[Release Workflow Agent Execution](../../../../packages/frameworks/workflow%20mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md)** - **MANDATORY** step-by-step procedure for RW Step 2
 - **[Cursor Rules RW Trigger Section](../../../../packages/frameworks/workflow%20mgt/cursorrules-rw-trigger-section.md)** - Updated RW Step 2 with explicit procedure
 
+### Workflow Flaws Documentation
+- **[Workflow Flaws Reference Guide](workflow-flaws-reference-guide.md)** - Comprehensive reference for all RW flaws (this error is documented as WF-002)
+
 ### Implementation Documents
 - **[Version File](../../../../src/fynd_deals/version.py)** - Current version implementation
 

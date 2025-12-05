@@ -1620,6 +1620,10 @@ run_terminal_cmd("python scripts/automation/release_workflow.py --auto-go")
 - **[Versioning Strategy](../../Architecture/Standards_and_ADRs/versioning-strategy.md)** - Versioning requirements
 - **[Versioning Policy](../../Architecture/Standards_and_ADRs/versioning-policy.md)** - Version schema
 
+**Reference Documentation:**
+- **[Workflow Flaws Reference Guide](../../Architecture/Standards_and_ADRs/workflow-flaws-reference-guide.md)** - Comprehensive reference for all discovered RW flaws
+- **[Versioning Error Reference Guide](../../Architecture/Standards_and_ADRs/versioning-error-reference-guide.md)** - Versioning-specific error reference (WF-002)
+
 **Cursor Rules Integration:**
 
 ### RW Trigger Definition

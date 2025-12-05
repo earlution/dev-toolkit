@@ -929,9 +929,11 @@ created_at: {date}
 
 - **Integration Guide:** `kanban-workflow-integration.md`
 - **Patterns & Best Practices:** `integration-patterns-and-best-practices.md`
+- **Troubleshooting Guide:** `integration-troubleshooting-guide.md`
 - **Kanban Framework:** `../kanban/README.md`
 - **Versioning Framework:** `../../README.md`
 - **Workflow Framework:** `../workflow mgt/README.md`
+- **Workflow Flaws Reference:** `../../KB/Architecture/Standards_and_ADRs/workflow-flaws-reference-guide.md` - Comprehensive reference for all discovered RW flaws
 
 ---
 

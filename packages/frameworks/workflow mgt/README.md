@@ -36,6 +36,11 @@ This package contains all essential files needed to implement the Release Workfl
 ### Validation Scripts
 - `scripts/validation/validate_branch_context.py` - Validates branch/version/epic alignment (supports multi-digit epics)
 - `scripts/validation/validate_changelog_format.py` - Validates changelog format (supports both old and new format)
+- `scripts/validation/validate_version_bump.py` - Validates version bump logic (new task, same task, out-of-order)
+
+### Reference Documents
+- `KB/Architecture/Standards_and_ADRs/workflow-flaws-reference-guide.md` - Comprehensive reference for all discovered RW flaws
+- `KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md` - Versioning-specific error reference (WF-002)
 
 ### Cursor Rules Section
 - `cursorrules-rw-trigger-section.md` - Section to add to your `.cursorrules` file (includes "ALL sections" requirement, atomicity, blocked protocol)

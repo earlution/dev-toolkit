@@ -306,6 +306,8 @@ For each step, follow this pattern:
 - Release Workflow Guide: `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`
 - Kanban Governance: `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (or your project's equivalent)
   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (references framework as SoT)
+- **Workflow Flaws Reference:** `KB/Architecture/Standards_and_ADRs/workflow-flaws-reference-guide.md` - Comprehensive reference for all discovered RW flaws
+- **Versioning Error Reference:** `KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md` - Versioning-specific error reference (WF-002)
 
 ---
 

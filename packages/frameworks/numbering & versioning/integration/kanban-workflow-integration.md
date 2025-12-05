@@ -484,6 +484,11 @@ validation_scripts:
 - **Versioning Framework:** `packages/frameworks/numbering & versioning/README.md`
 - **Workflow Framework:** `packages/frameworks/workflow mgt/README.md`
 
+### Reference Documentation
+
+- **Workflow Flaws Reference:** `../../KB/Architecture/Standards_and_ADRs/workflow-flaws-reference-guide.md` - Comprehensive reference for all discovered RW flaws
+- **Versioning Error Reference:** `../../KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md` - Versioning-specific error reference
+
 ### Dev-Kit Specific (Reference Only)
 
 - **Dev-Kit Integration Guide:** `KB/Architecture/Standards_and_ADRs/dev-kit-kanban-versioning-rw-integration.md`

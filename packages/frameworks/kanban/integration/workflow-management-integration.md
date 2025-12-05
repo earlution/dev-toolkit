@@ -231,11 +231,13 @@ step_4_execution:
 
   execute:
     actions:
-      - "Update Epic header 'Last updated' field"
-      - "Update Story Checklist with version marker"
-      - "Update detailed story section (Status, Last updated)"
-      - "Update task checkboxes with forensic markers"
+      - "**FIRST: Update Story file task checklist with forensic markers**"
+      - "**THEN: Update Epic header 'Last updated' field**"
+      - "**THEN: Update Story Checklist with version marker**"
+      - "**THEN: Update detailed story section (Status, Last updated)**"
+      - "**THEN: Update task checkboxes with forensic markers**"
       - "Remove any duplicate progress sections"
+      - "**CRITICAL: Story file must be updated FIRST, then Epic file matches it**"
 
   validate:
     checks:
@@ -366,6 +368,10 @@ documentation:
 integration_guides:
   versioning: "integration/numbering-versioning-integration.md"
   workflow: "integration/workflow-management-integration.md"
+
+reference_documentation:
+  workflow_flaws: "../../KB/Architecture/Standards_and_ADRs/workflow-flaws-reference-guide.md"
+  versioning_errors: "../../KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md"
 
 related_packages:
   numbering_versioning: "temp/numbering & versioning/"

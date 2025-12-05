@@ -868,6 +868,7 @@ grep -A 5 "\[0.1.1.1+1\]" CHANGELOG.md
 - **Examples:** `integration-examples-external-projects.md`
 - **Versioning Cookbook:** `../../KB/Architecture/Standards_and_ADRs/dev-kit-versioning-cookbook.md`
 - **Versioning Error Reference:** `../../KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md`
+- **Workflow Flaws Reference:** `../../KB/Architecture/Standards_and_ADRs/workflow-flaws-reference-guide.md` - Comprehensive reference for all RW flaws
 
 ---
 
