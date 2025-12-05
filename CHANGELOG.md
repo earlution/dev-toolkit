@@ -2062,6 +2062,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.9.1.1+1] - 05-12-25
+
+🆕 Epic: Epic 9 created - Book Related Work
+
+### Added
+
+- Created Epic 9: Book Related Work
+- Created Story 1: Book Content Development
+- Created Story 2: Book Integration with Dev-Kit
+- Created Story 3: Book Publishing Support
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.9.1.1+1.md` for full details
+- Epic 9 manages book content development, integration with dev-kit, and publishing support
+- Initial story structure created with task stubs
+
+---
+
 ## [0.9.21.3+2] - 02-12-25
 
 📚 Documentation: Branch safety Step 1 and modularity docs for workflow & numbering packages
