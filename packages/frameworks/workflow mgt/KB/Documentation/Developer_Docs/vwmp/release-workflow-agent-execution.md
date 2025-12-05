@@ -218,80 +218,114 @@ story_doc_pattern = config.get('story_doc_pattern') if config and config.get('us
 
 ### Step 1: Branch Safety Check
 
+**🚨 MANDATORY BLOCKING STEP - DO NOT BYPASS**
+
 **Step Definition:**
 ```yaml
 - id: step-1
   name: Branch Safety Check
   handler: release.branch_safety_check
   dependencies: []
+  mandatory: true  # MANDATORY: Cannot be skipped
+  blocking: true   # BLOCKING: Stops workflow on failure
   config:
     check_modified_files: true
     check_version_alignment: true
     check_changelog_alignment: true
+    use_validator: true  # MANDATORY: Must use validate_branch_context.py
+    strict_mode: true     # MANDATORY: Validator must run in strict mode
 ```
+
+**CRITICAL REQUIREMENTS:**
+- ✅ **MANDATORY:** This step MUST run before ANY file modifications
+- ✅ **BLOCKING:** If this step fails, the workflow MUST STOP immediately
+- ✅ **NON-OPTIONAL:** This step cannot be skipped, bypassed, or ignored
+- ✅ **VALIDATOR REQUIRED:** Must run `validate_branch_context.py` with `--strict` flag
+- ✅ **EXIT CODE CHECK:** Must check validator exit code and stop on non-zero
+- ❌ **DO NOT PROCEED:** If Step 1 fails, DO NOT proceed to Step 2 or any subsequent step
 
 **Agent Execution:**
 
 1. **ANALYZE:**
    - **Load config first:** Load `rw-config.yaml` if it exists (see Config Loading section above)
    - Get current Git branch name (e.g., `epic/4` [Example: Confidentia], `epic/2` [Example: vibe-dev-kit], `main`)
-   - Check if branch matches expected pattern (e.g., `epic/{n}` for epic branches)
-   - Analyze modified files in working directory (`git status`, `git diff`)
-   - **Use config path:** Check if version file exists (from config `version_file` or fallback `src/{project}/version.py`) and read current version (if file is modified)
-   - **Use config path:** Check if changelog entries exist (from config `main_changelog` or fallback `CHANGELOG.md` if modified)
-   - Extract expected epic number from branch name (e.g., `epic/4` → Epic 4 [Example: Confidentia], `epic/2` → Epic 2 [Example: vibe-dev-kit])
-   - Check modified file paths for epic-specific patterns (e.g., `Epic-4/` [Example: Confidentia], `Epic-2/` [Example: vibe-dev-kit], `epic/4/` [Example: Confidentia])
+   - **MANDATORY:** Determine validator script path:
+     - From config: `scripts_path` + `/validate_branch_context.py`
+     - Fallback: `packages/frameworks/workflow mgt/scripts/validation/validate_branch_context.py` [Example: vibe-dev-kit]
+     - Or: `scripts/validation/validate_branch_context.py` [Example: Confidentia]
+   - Verify validator script exists (if not found, this is a critical error - workflow must stop)
 
 2. **DETERMINE:**
-   - Determine if work aligns with current branch:
-     - If on `epic/4` [Example: Confidentia] or `epic/2` [Example: vibe-dev-kit], modified files should relate to that Epic
-     - If version file modified, version epic should match branch epic
-     - If changelog modified, changelog entries should match branch epic
-     - Modified file paths should align with branch context
-   - Identify any mismatches or cross-epic contamination
-   - Determine if RW should proceed or stop
+   - **MANDATORY ACTION:** Run `validate_branch_context.py` with `--strict` flag
+   - **Command:** `python {validator_path} --strict`
+   - **Expected Behavior:**
+     - Exit code 0 = PASS (branch and work align)
+     - Exit code 1 = FAIL (branch and work do not align)
+   - **CRITICAL:** If validator script is missing or cannot be executed, workflow MUST STOP
 
 3. **EXECUTE:**
-   - Run branch context analysis:
-     - Check `git status` for modified files
-     - Check `git diff` for changes to version file
-     - Check `git diff` for changes to CHANGELOG.md
-     - Analyze file paths for epic alignment
-   - Compare branch epic with work epic (from files/version/changelog)
+   - **MANDATORY:** Execute validator script:
+     ```bash
+     python {validator_path} --strict
+     ```
+   - **Capture exit code:** Store the exit code from validator execution
+   - **Capture output:** Store validator output for error messages
+   - **DO NOT MODIFY FILES:** This step runs BEFORE any file modifications
 
 4. **VALIDATE:**
-   - Verify branch and work alignment:
-     - ✅ **PASS**: Work aligns with branch (e.g., on `epic/4` [Example: Confidentia] or `epic/2` [Example: vibe-dev-kit], all work is related to that Epic)
-     - ❌ **FAIL**: Work does not align with branch (e.g., on `epic/4` [Example: Confidentia], but work references Epic 5 [Example: Confidentia])
-   - If mismatch detected, workflow must stop immediately
+   - **Check exit code:**
+     - ✅ **PASS (exit code 0):** Branch and work align correctly
+     - ❌ **FAIL (exit code 1 or non-zero):** Branch and work do not align
+   - **CRITICAL RULE:** If exit code is non-zero, workflow MUST STOP immediately
+   - **NO EXCEPTIONS:** Do not proceed to Step 2 if validation fails
 
 5. **PROCEED:**
-   - **If aligned**: Document "Branch safety check passed - work aligns with current branch", move to Step 2
-   - **If misaligned**: 
-     - Document: "🚨 RW BLOCKED: Branch Safety Check Failed"
-     - Output clear warning message:
-       ```
-       🚨 RELEASE WORKFLOW BLOCKED
-       
-       Step 1: Branch Safety Check - FAILED
-       
-       Reason: Current branch '{branch}' does not align with the work being released.
-       
-       Details:
-       - Current branch: {branch}
-       - Expected epic: {expected_epic}
-       - Detected issues: {list_of_issues}
-       
-       Action Required:
-       1. Switch to the correct branch: git checkout epic/{correct_epic}
-       2. Or review your changes to ensure they align with the current branch
-       3. Then run RW again
-       
-       RW is NOT complete. Workflow stopped at Step 1.
-       ```
-     - Mark Step 1 TODO as `cancelled`
-     - Mark all remaining steps as `cancelled`
-     - **DO NOT PROCEED** to Step 2
+   - **If PASS (exit code 0):**
+     - Document: "✅ Branch safety check passed - work aligns with current branch"
+     - Mark Step 1 TODO as `completed`
+     - Move to Step 2
+   
+   - **If FAIL (exit code 1 or non-zero):**
+     - **MANDATORY ACTIONS:**
+       1. Document: "🚨 RW BLOCKED: Branch Safety Check Failed"
+       2. Output clear error message using validator output:
+          ```
+          🚨 RELEASE WORKFLOW BLOCKED
+          
+          Step 1: Branch Safety Check - FAILED
+          
+          Reason: Current branch '{branch}' does not align with the work being released.
+          
+          Details:
+          - Current branch: {branch}
+          - Expected branch: epic/{expected_epic}
+          - Version file shows: {version}
+          - Detected epic from work: {detected_epic}
+          
+          Validator Output:
+          {validator_output}
+          
+          Action Required:
+          1. Switch to the correct branch: git checkout epic/{correct_epic}
+          2. Verify your changes align with the branch: git status
+          3. Then run RW again
+          
+          RW is NOT complete. Workflow stopped at Step 1.
+          All subsequent steps have been cancelled.
+          ```
+       3. Mark Step 1 TODO as `cancelled`
+       4. Mark ALL remaining steps (2-14) as `cancelled`:
+          ```python
+          todo_write(merge=True, todos=[
+              {'id': 'rw-step-1', 'status': 'cancelled'},
+              {'id': 'rw-step-2', 'status': 'cancelled'},
+              {'id': 'rw-step-3', 'status': 'cancelled'},
+              # ... mark all remaining steps as cancelled
+          ])
+          ```
+       5. **STOP WORKFLOW:** Do not execute any further steps
+       6. **DO NOT PROCEED:** Do not attempt Step 2 or any subsequent step
+       7. **DO NOT MODIFY FILES:** No file modifications should occur after Step 1 failure
 
 **Example Alignment Checks:**
 

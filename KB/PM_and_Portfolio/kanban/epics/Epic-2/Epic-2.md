@@ -8,11 +8,12 @@ housekeeping_policy: keep
 
 # Epic 2: Workflow Management Framework
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE ✅  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-05 (v0.2.4.9+3 – New task E2:S01:T05 added: Harden RW branch safety checks)  
+**Completed:** 2025-12-05  
+**Last updated:** 2025-12-05 (v0.2.1.5+1 – Story 1 COMPLETE: All tasks done, Task 5: Harden RW branch safety checks)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -21,7 +22,7 @@ housekeeping_policy: keep
 
 ## Story Checklist
 
-- [ ] **E2:S01 – RW Agent Execution & Docs** - IN PROGRESS (v0.2.1.1+5, new task T05 added)  
+- [x] **E2:S01 – RW Agent Execution & Docs** - COMPLETE ✅ (v0.2.1.5+1)  
   - Story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)  
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`Story-002-pdca-integration-into-release-workflow.md`](Story-002-pdca-integration-into-release-workflow.md)
@@ -61,10 +62,10 @@ It defines how Release Workflow (RW) and other workflows are:
 
 ### Story 1: RW Agent Execution & Docs
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE ✅  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-05 (v0.2.1.1+5 – New task T05 added: Harden RW branch safety checks)  
+**Last updated:** 2025-12-05 (v0.2.1.5+1 – All tasks complete: Task 5: Harden RW branch safety checks)  
 
 **Goal:**  
 Make RW agent execution documentation fully portable, clearly distinguishing dev-kit behaviour from external examples.
@@ -74,7 +75,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - [x] E2:S01:T02 – Tag Confidentia/fynd.deals examples and add dev-kit examples ✅ COMPLETE (v0.2.1.1+4)
 - [x] E2:S01:T03 – Align `.cursorrules` RW trigger section with dev-kit policy ✅ COMPLETE (v0.2.1.1+5)
 - [x] E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed" ✅ COMPLETE (v0.2.1.1+2)
-- [ ] E2:S01:T05 – Harden RW branch safety checks to stop execution on wrong branch - TODO
+- [x] E2:S01:T05 – Harden RW branch safety checks to stop execution on wrong branch ✅ COMPLETE (v0.2.1.5+1)
 
 > Full story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)  
 

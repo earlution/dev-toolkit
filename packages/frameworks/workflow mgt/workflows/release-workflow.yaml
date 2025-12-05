@@ -10,148 +10,174 @@ config:
 
 steps:
   - id: step-1
+    name: Branch Safety Check
+    type: branch_safety_check
+    handler: release.branch_safety_check
+    required: true
+    mandatory: true
+    blocking: true
+    dependencies: []
+    config:
+      use_validator: true
+      strict_mode: true
+      scripts_path: scripts/validation
+
+  - id: step-2
     name: Bump Version
     type: version_bump
     handler: release.version_bump
     required: true
-    dependencies: []
+    dependencies:
+      - step-1
     config:
       increment_type: patch
       version_file: ${config.version_file}
 
-  - id: step-2
+  - id: step-3
     name: Create Detailed Changelog
     type: changelog_create
     handler: release.changelog_create
     required: true
     dependencies:
-      - step-1
+      - step-2
     config:
       changelog_dir: ${config.changelog_dir}
       format: full_timestamp
 
-  - id: step-3
+  - id: step-4
     name: Update Main Changelog
     type: changelog_update
     handler: release.changelog_update
     required: true
     dependencies:
-      - step-2
+      - step-3
     config:
       main_changelog: ${config.main_changelog}
       date_format: DD-MM-YY
 
-  - id: step-4
+  - id: step-5
     name: Update README
     type: readme_update
     handler: release.readme_update
     required: false
     enabled: true
     dependencies:
-      - step-1
+      - step-2
     config:
       readme_file: README.md
       update_badge: true
       update_latest_release: true
 
-  - id: step-5
+  - id: step-6
+    name: Update BR/FR Docs
+    type: br_fr_update
+    handler: release.br_fr_update
+    required: false
+    enabled: true
+    dependencies:
+      - step-2
+    config:
+      br_fr_dir: KB/PM_and_Portfolio/kanban/fr-br
+
+  - id: step-7
     name: Auto-update Kanban Docs
     type: kanban_update
     handler: confidentia.kanban_update
     required: false
     automatic: true
     dependencies:
-      - step-1
+      - step-2
     config:
       kanban_update_script: scripts/automation/update_kanban_docs.py
       epic_doc_pattern: KB/PM_and_Portfolio/epics/overview/Epic {epic}/Epic-{epic}.md
       kanban_board: KB/PM_and_Portfolio/epics/overview/_index.md
 
-  - id: step-6
+  - id: step-8
     name: Stage Files
     type: git_stage
     handler: git.stage_all
     required: true
     dependencies:
-      - step-1
       - step-2
       - step-3
       - step-4
       - step-5
+      - step-6
+      - step-7
     config:
       paths:
         - "*"
 
-  - id: step-7
+  - id: step-9
     name: Run Validators
     type: validation
     handler: confidentia.run_validators
     required: true
     dependencies:
-      - step-6
+      - step-8
     config:
       validators:
         - scripts/validation/validate_branch_context.py
         - scripts/validation/validate_changelog_format.py
       strict_mode: true
 
-  - id: step-8
+  - id: step-10
     name: Commit Changes
     type: git_commit
     handler: git.commit
     required: true
     dependencies:
-      - step-7
+      - step-9
     config:
       message_template: "{version} - {summary}"
 
-  - id: step-9
+  - id: step-11
     name: Create Git Tag
     type: git_tag
     handler: git.create_tag
     required: false
     enabled: true
     dependencies:
-      - step-8
+      - step-10
     config:
       tag_template: v{version}
       message_template: "Release {tag}: {summary}"
       annotated: true
 
-  - id: step-10
+  - id: step-12
     name: Push to Remote
     type: git_push
     handler: git.push
     required: false
     enabled: true
     dependencies:
-      - step-8
-      - step-9
+      - step-10
+      - step-11
     config:
       push_tags: true
       remote: origin
 
-  - id: step-12
+  - id: step-13
     name: Post-Commit Verification & Reflection
     type: verification_reflection
     handler: release.verification_reflection
     required: false
     enabled: true
     dependencies:
-      - step-10
+      - step-12
     config:
       verification_prompt: true
       reflection_questions: true
       changelog_update: true
 
-  - id: step-13
+  - id: step-14
     name: Act on Verification Results
     type: act_on_results
     handler: release.act_on_results
     required: false
     enabled: true
     dependencies:
-      - step-12
+      - step-13
     config:
       changelog_update: true
       follow_up_tasks: true

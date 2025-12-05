@@ -62,28 +62,40 @@ The Release Workflow explains each step, its parameters, configuration options, 
 
 ## 📋 Workflow Structure
 
-The Release Workflow consists of **13 steps** organized into 3 phases. Each step implements specific requirements from the **Kanban Governance Policy**, **Versioning Strategy**, and **PDCA Integration**:
+The Release Workflow consists of **14 steps** organized into 3 phases. Each step implements specific requirements from the **Kanban Governance Policy**, **Versioning Strategy**, and **PDCA Integration**:
 
 ### Phase 1: Version & Documentation Updates
 
 **Implements:** Versioning Strategy (canonical ordering, timestamp system) + Kanban Governance (task-level versioning, documentation updates)
 
-- **Step 1:** Bump Version
+- **Step 1:** 🚨 **MANDATORY BLOCKING: Branch Safety Check**
+  - **CRITICAL:** Runs `validate_branch_context.py --strict` before any file modifications
+  - **BLOCKING:** Stops workflow immediately if branch/version/epic alignment fails
+  - **MANDATORY:** Cannot be skipped, bypassed, or ignored
+  - Prevents cross-epic contamination by validating branch context before proceeding
+  - See [Release Workflow Agent Execution Guide](release-workflow-agent-execution.md) for detailed Step 1 execution pattern
+
+- **Step 2:** Bump Version
   - Enforces `RC.EPIC.STORY.TASK+BUILD` schema from [Versioning Policy](../../Architecture/Standards_and_ADRs/versioning-policy.md)
   - Validates task-level versioning alignment per [Kanban Governance Policy](../../PM_and_Portfolio/rituals/policy/kanban-governance-policy.md)
+  - **Depends on:** Step 1 (Branch Safety Check) must pass first
 
-- **Step 2:** Create Detailed Changelog
+- **Step 3:** Create Detailed Changelog
   - Implements full timestamp requirement (`YYYY-MM-DD HH:MM:SS UTC`) from [Versioning Strategy](../../Architecture/Standards_and_ADRs/versioning-strategy.md)
   - Creates forensic traceability record with immutable timestamp
 
-- **Step 3:** Update Main Changelog
+- **Step 4:** Update Main Changelog
   - Implements short date format (`DD-MM-YY`) for summary changelog per [Versioning Strategy](../../Architecture/Standards_and_ADRs/versioning-strategy.md)
   - Maintains canonical ordering by version number (not commit time)
 
-- **Step 4:** Update README
+- **Step 5:** Update README
   - Updates version badge and latest release information
 
-- **Step 5:** Auto-update Kanban Docs
+- **Step 6:** Update BR/FR Docs
+  - Documents flaws and fix attempts in Bug Reports and Feature Requests
+  - Maintains fix attempt history for knowledge transfer between builds
+
+- **Step 7:** Auto-update Kanban Docs
   - Implements [Kanban Governance Policy](../../PM_and_Portfolio/rituals/policy/kanban-governance-policy.md) requirement for forensic markers
   - Updates Epic/Story documentation with version numbers and task completion status
   - Maintains traceability grid (version ↔ epic/story/task ↔ changelogs ↔ kanban markers)
@@ -92,37 +104,37 @@ The Release Workflow consists of **13 steps** organized into 3 phases. Each step
 
 **Implements:** Validation requirements from all policies + Git operations for forensic accountability
 
-- **Step 6:** Stage Files
+- **Step 8:** Stage Files
   - Stages all modified files (code + version + changelogs + docs)
 
-- **Step 7:** Run Validators
+- **Step 9:** Run Validators
   - Executes `validate_branch_context.py` (enforces branch/version/epic alignment)
   - Executes `validate_changelog_format.py` (enforces full timestamp for Epic 20+)
   - Blocks release if validations fail (enforces policy compliance)
 
-- **Step 8:** Commit Changes
+- **Step 10:** Commit Changes
   - Creates commit with version number in message (forensic marker)
   - Ensures version is traceable in Git history
 
-- **Step 9:** Create Git Tag
+- **Step 11:** Create Git Tag
   - Creates annotated tag with version (forensic marker)
   - Enables version-based navigation in Git history
 
-- **Step 11:** Push to Remote
+- **Step 12:** Push to Remote
   - Pushes branch and tags to remote repository
   - Completes forensic traceability chain
 
-### Phase 3: PDCA CHECK & ACT (Steps 12-13)
+### Phase 3: PDCA CHECK & ACT (Steps 13-14)
 
 **Implements:** PDCA Integration (continuous improvement, verification, reflection)
 
-- **Step 12:** Post-Commit Verification & Reflection
+- **Step 13:** Post-Commit Verification & Reflection
   - Verifies changes worked as expected
   - Evaluates against objectives from PLAN phase
   - Documents verification results
   - Reflects on what worked and what didn't
 
-- **Step 13:** Act on Verification Results
+- **Step 14:** Act on Verification Results
   - Updates changelog based on verification results
   - Standardizes successful practices
   - Creates follow-up tasks if needed
@@ -154,17 +166,65 @@ config:
 
 ## 📝 Step-by-Step Reference
 
-### Step 1: Bump Version
+### Step 1: 🚨 MANDATORY BLOCKING: Branch Safety Check
+
+**Handler:** `release.branch_safety_check`
+**Category:** Validation
+**Icon:** 🔒
+**Required:** ✅ Yes (MANDATORY BLOCKING)
+**Default Dependencies:** None (first step)
+**Blocking:** ✅ Yes (stops workflow on failure)
+
+#### Purpose
+
+**CRITICAL:** Validates that the current branch aligns with the work being released before any file modifications occur. This step prevents cross-epic contamination by ensuring branch/version/epic alignment.
+
+**MANDATORY REQUIREMENTS:**
+- ✅ Must run `validate_branch_context.py --strict` before any file modifications
+- ✅ Must check exit code (0 = PASS, non-zero = FAIL)
+- ✅ If exit code is non-zero, workflow MUST STOP immediately
+- ✅ All remaining steps marked as `cancelled` on failure
+- ❌ Cannot be skipped, bypassed, or ignored
+
+#### Execution Flow
+
+1. Determines validator script path (from config or fallback)
+2. Executes `python {validator_path} --strict`
+3. Captures exit code and output
+4. **If exit code 0:** Proceeds to Step 2
+5. **If exit code non-zero:** Stops workflow, marks all steps as `cancelled`, outputs error message
+
+#### Configuration Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| `use_validator` | boolean | Yes | `true` | Must use `validate_branch_context.py` |
+| `strict_mode` | boolean | Yes | `true` | Validator must run in strict mode |
+| `scripts_path` | string | No | `scripts/validation` | Path to validation scripts directory |
+
+#### Error Handling
+
+If validation fails:
+- Workflow stops immediately
+- Clear error message displayed with actionable guidance
+- All remaining steps marked as `cancelled`
+- No file modifications occur
+
+See [Release Workflow Agent Execution Guide](release-workflow-agent-execution.md) for detailed Step 1 execution pattern with code examples.
+
+---
+
+### Step 2: Bump Version
 
 **Handler:** `release.version_bump`
 **Category:** Version
 **Icon:** 🔢
 **Required:** ✅ Yes
-**Default Dependencies:** None (first step)
+**Default Dependencies:** Step 1 (Branch Safety Check)
 
 #### Purpose
 
-Increments the version number in the version file. This is typically the first step in a release workflow as other steps depend on the new version number.
+Increments the version number in the version file. This step runs after Step 1 (Branch Safety Check) passes, ensuring branch alignment before version changes.
 
 #### Execution Flow
 
