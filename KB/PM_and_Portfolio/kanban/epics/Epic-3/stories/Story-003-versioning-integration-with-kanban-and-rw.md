@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-05 (v0.3.3.6+1 – All tasks complete: Story 3 complete with RW Step 6 for BR/FR fix attempt history)  
-**Version:** v0.3.3.6+1  
+**Last updated:** 2025-12-05 (v0.3.3.6+2 – Epic 3 marked COMPLETE: All 3 stories finished)  
+**Version:** v0.3.3.6+2  
 **Code:** E3S03
 
 ---
