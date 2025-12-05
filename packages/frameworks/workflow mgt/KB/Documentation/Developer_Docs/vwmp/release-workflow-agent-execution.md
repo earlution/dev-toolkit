@@ -754,15 +754,20 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      1. Read the FULL Epic document file
      2. Read the authoritative Story document file to get correct state
      3. Use grep/search to find ALL sections referencing the story/task
-     4. Update ALL of them to match the Story file's state
+     4. **CRITICAL: Update Story file FIRST, then Epic file to match**
+     5. Update ALL sections to match the updated Story file's state
 
 3. **EXECUTE:**
-   - Update Epic doc header "Last updated" field
-   - Update Epic doc Story Checklist with version marker (format: `- [ ] **E4:S03 – Story Name** - IN PROGRESS (v{version})`)
-   - Update Epic doc detailed Story sections (Status, Last updated, Task checkboxes with forensic markers)
-   - Update Story doc header "Last updated" and "Version" fields
-   - Update Story doc Task Checklist with forensic markers (format: `✅ COMPLETE (v{version})`)
-   - Update Story doc detailed Task sections with forensic markers
+   - **CRITICAL: Update Story file FIRST, then Epic file to match:**
+   - **FIRST: Update the Story file (`Story-{N}-{Name}.md`) task checklist:**
+     - Add forensic marker `(v{version})` to the completed task in the Task Checklist
+     - Example: `✅ COMPLETE (v0.11.5.2+1)`
+     - Update Story doc header "Last updated" and "Version" fields
+     - Update Story doc detailed Task sections with forensic markers
+   - **THEN: Update Epic-{epic}.md to match the updated Story file:**
+     - Update Epic doc header "Last updated" field
+     - Update Epic doc Story Checklist with version marker (format: `- [ ] **E4:S03 – Story Name** - IN PROGRESS (v{version})`)
+     - Update Epic doc detailed Story sections (Status, Last updated, Task checkboxes with forensic markers)
    - Search for and update any other references to the story/task
 
 4. **VALIDATE:**

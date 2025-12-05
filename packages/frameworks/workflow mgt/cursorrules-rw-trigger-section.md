@@ -201,17 +201,24 @@ For each step, follow this pattern:
    - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md` (or from `rw-config.yaml` if present)
 4. **Update Main Changelog** - Add new entry at top: `## [version] - DD-MM-YY` (short date format for merge-to-main) with release description and link to detailed changelog. **Use config:** If `rw-config.yaml` exists, read `main_changelog` from config. Otherwise, use `CHANGELOG.md` as fallback. Follow [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog) format. **Note:** Main changelog date can be updated if merge date changes, but detailed changelog timestamp is immutable.
 5. **Update README** - Update version badge and latest release callout if present (optional). **Use config:** If `rw-config.yaml` exists, read `readme_file` from config. Otherwise, use `README.md` as fallback.
-6. **Auto-update Kanban Docs** - Update epic documentation and story documentation with version markers. **Use config:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root`, `epic_doc_pattern`, and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}.md` and `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` as fallback. **CRITICAL: "ALL" means ALL sections:**
-   - Header metadata (Last updated, Version)
-   - Story Checklist at top (status, task counts, version)
-   - **Detailed Story sections** (Status, Last updated, task checkboxes with forensic markers)
-   - Any other references to the story/task being released
+6. **Auto-update Kanban Docs** - Update epic documentation and story documentation with version markers. **Use config:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root`, `epic_doc_pattern`, and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}.md` and `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` as fallback. **CRITICAL: Update Story file FIRST, then Epic file to match:**
+   - **FIRST: Update the Story file (`Story-{N}-{Name}.md`) task checklist:**
+     - Add forensic marker `(v{version})` to the completed task in the Task Checklist
+     - Example: `✅ COMPLETE (v0.11.5.2+1)`
+     - Update Story doc header "Last updated" and "Version" fields
+     - Update Story doc detailed Task sections with forensic markers
+   - **THEN: Update Epic-{epic}.md to match the updated Story file:**
+     - Header metadata (Last updated, Version)
+     - Story Checklist at top (status, task counts, version)
+     - **Detailed Story sections** (Status, Last updated, task checkboxes with forensic markers)
+     - Any other references to the story/task being released
    - **Systematic Process:**
      1. Read the FULL Epic-{epic}.md file
      2. Read the authoritative Story-{story}-{name}.md file to get correct state
-     3. Find ALL sections referencing the story/task (grep/search the file)
-     4. Update ALL of them to match the Story file's state
-     5. Validate consistency: header, checklist, and detailed sections must all match
+     3. **FIRST: Update the Story file's Task Checklist with forensic marker for completed task**
+     4. **THEN: Find ALL sections in Epic file referencing the story/task (grep/search the file)**
+     5. **Update ALL Epic sections to match the updated Story file's state**
+     6. Validate consistency: Story file, Epic header, Epic checklist, and Epic detailed sections must all match
 7. **Stage Files** - Run `git add -A` to stage all modified files
 8. **Run Validators** - Execute validation scripts. **Use config:** If `rw-config.yaml` exists, read `scripts_path` from config. Otherwise, use `{scripts_path}/validation/` as fallback. Run `validate_branch_context.py` and `validate_changelog_format.py` (both scripts automatically read from `rw-config.yaml` if available).
    - **IMPORTANT:** Validators should confirm you're on an epic branch, not `main`
