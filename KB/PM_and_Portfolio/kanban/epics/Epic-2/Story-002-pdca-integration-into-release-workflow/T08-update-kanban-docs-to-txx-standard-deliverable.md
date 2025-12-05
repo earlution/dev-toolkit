@@ -67,13 +67,13 @@ Updated all Kanban documentation throughout the repository to use the new Txx (2
 ## Files Updated
 
 ### KB Documentation
-1. `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow/T001-add-check-phase-step-12.md`
-2. `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow/T002-add-act-phase-step-13.md`
-3. `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow/T003-enhance-plan-phase.md`
-4. `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow/T004-enhance-do-phase.md`
-5. `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow/T005-create-pdca-templates-examples.md`
-6. `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow/T006-update-rw-workflow-yaml-docs.md`
-7. `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T006-integration-examples.md`
+1. `KB/PM_and_Portfolio/kanban/Story-002-pdca-integration-into-release-workflow/T001-add-check-phase-step-12.md`
+2. `KB/PM_and_Portfolio/kanban/Story-002-pdca-integration-into-release-workflow/T002-add-act-phase-step-13.md`
+3. `KB/PM_and_Portfolio/kanban/Story-002-pdca-integration-into-release-workflow/T003-enhance-plan-phase.md`
+4. `KB/PM_and_Portfolio/kanban/Story-002-pdca-integration-into-release-workflow/T004-enhance-do-phase.md`
+5. `KB/PM_and_Portfolio/kanban/Story-002-pdca-integration-into-release-workflow/T005-create-pdca-templates-examples.md`
+6. `KB/PM_and_Portfolio/kanban/Story-002-pdca-integration-into-release-workflow/T006-update-rw-workflow-yaml-docs.md`
+7. `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T006-integration-examples.md`
 
 ### Framework Documentation
 8. `packages/frameworks/kanban/FR_BR_INTAKE_GUIDE.md`

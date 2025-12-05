@@ -361,7 +361,7 @@ The root cause of Task → version `TASK` component mapping failure is a **syste
 
 ## References
 
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md` (validation report)
+- `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md` (validation report)
 - `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` (RW guide)
 - `packages/frameworks/kanban/FR_BR_INTAKE_GUIDE.md` (intake guide)
 - `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` (versioning policy)

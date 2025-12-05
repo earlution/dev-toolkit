@@ -146,9 +146,9 @@ For each step, follow this pattern:
    - [Example: vibe-dev-kit] Read `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
 
    **B. IDENTIFY COMPLETED TASK (MANDATORY):**
-   - **Load config first:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root` and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` as fallback.
+   - **Load config first:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root` and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}/Story-{story}-*.md` as fallback.
    - Read the Story file using config values or fallback pattern
-   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md` (or from `rw-config.yaml` if present)
+   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Story-{story}-*.md` (or from `rw-config.yaml` if present)
    - Find the MOST RECENTLY COMPLETED task in the Task Checklist (marked `✅ COMPLETE`)
    - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T08` → task number is `8`)
    - **CRITICAL:** If no task is marked complete, or you cannot identify which task was just completed, **STOP** and ask the user which task was completed
@@ -218,7 +218,7 @@ For each step, follow this pattern:
        - Add verification status: `**Verification Status:** {Verified/Attempted Fix (pending verification)}`
    - **If no BR/FR linked:** Skip this step (no BR/FR to update)
    - **See:** `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` Step 6 for complete procedure
-7. **Auto-update Kanban Docs** - Update epic documentation and story documentation with version markers. **Use config:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root`, `epic_doc_pattern`, and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}.md` and `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` as fallback. **CRITICAL: Update Story file FIRST, then Epic file to match:**
+7. **Auto-update Kanban Docs** - Update epic documentation and story documentation with version markers. **Use config:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root`, `epic_doc_pattern`, and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}/Epic-{epic}.md` and `{kanban_path}/epics/Epic-{epic}/Story-{story}-*.md` as fallback. **CRITICAL: Update Story file FIRST, then Epic file to match:**
    - **FIRST: Update the Story file (`Story-{N}-{Name}.md`) task checklist:**
      - Add forensic marker `(v{version})` to the completed task in the Task Checklist
      - Example: `✅ COMPLETE (v0.11.5.2+1)`
@@ -274,10 +274,10 @@ For each step, follow this pattern:
   - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md`
 - Kanban Board: `{kanban_path}/kanban-board.md` or `{kanban_path}/_index.md` (customize path)
   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/_index.md` or `KB/PM_and_Portfolio/kanban/kanban-board.md`
-- Epic Docs: `{kanban_path}/epics/Epic-{epic}.md` (customize path)
-  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}.md`
-- Story Docs: `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md` (customize path)
-  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md`
+- Epic Docs: `{kanban_path}/epics/Epic-{epic}/Epic-{epic}.md` (customize path)
+  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Epic-{epic}.md`
+- Story Docs: `{kanban_path}/epics/Epic-{epic}/Story-{story}-*.md` (customize path)
+  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Story-{story}-*.md`
 - Validators: `{scripts_path}/validation/validate_branch_context.py`, `{scripts_path}/validation/validate_changelog_format.py`
   - [Example: vibe-dev-kit] `packages/frameworks/workflow mgt/scripts/validation/validate_branch_context.py`, `packages/frameworks/workflow mgt/scripts/validation/validate_changelog_format.py`
 
@@ -335,7 +335,7 @@ After copying this section to your `.cursorrules`, you MUST:
 2. **Update version file location** (currently shows `src/{project}/version.py` as template)
    - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (legacy path, acceptable for now)
 3. **Update Kanban paths** (currently shows `{kanban_path}/...` as templates)
-   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}.md`
+   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Epic-{epic}.md`
 4. **Update validator script paths** (currently shows `{scripts_path}/...` as templates)
    - [Example: vibe-dev-kit] `packages/frameworks/workflow mgt/scripts/validation/...`
 5. **Reference your project's versioning policy** instead of dev-kit policy

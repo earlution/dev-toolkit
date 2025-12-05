@@ -62,7 +62,7 @@ The KB is organized into four main areas, each with a distinct purpose:
 **Audience:** Project managers, team leads, contributors
 
 **Examples:**
-- `kanban/epics/Epic-1.md`
+- `kanban/epics/Epic-1/Epic-1.md`
 - `rituals/policy/kanban-governance-policy.md`
 - Kanban board views
 
@@ -273,7 +273,7 @@ The KB follows a clear hierarchy:
 
 **Relative Paths:**
 - Use relative paths for internal references
-- Example: `[Epic 1](epics/Epic-1.md)`
+- Example: `[Epic 1](epics/Epic-1/Epic-1.md)`
 - Example: `[Task 1 Analysis](Story-003-core-kb-structure-for-dev-kit/T001-kb-structure-analysis.md)`
 
 **Absolute Paths (from KB root):**

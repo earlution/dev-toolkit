@@ -105,7 +105,7 @@ forensic_marker: "✅ COMPLETE (v0.4.3.1+1)"
 - Task mapping: ✅ PASS (fixed in E4:S03:T02)
 - Version assignment: ✅ PASS
 
-**Reference:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md`
+**Reference:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md`
 
 ---
 
@@ -135,7 +135,7 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 - Task transition handling: ✅ PASS
 - EPIC/STORY progression: ⚠️ PARTIAL (not explicitly documented)
 
-**Reference:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T003-versioning-rw-validation.md`
+**Reference:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration/T003-versioning-rw-validation.md`
 
 ---
 
@@ -164,8 +164,8 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 - Forensic marker format: ✅ PASS (after fixes)
 
 **Reference:** 
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md`
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T007-gap-resolution-summary.md`
+- `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md`
+- `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration/T007-gap-resolution-summary.md`
 
 ---
 
@@ -339,10 +339,10 @@ All three integration points have been validated in dev-kit:
 - Forensic marker format: ✅ PASS
 
 **Reference Documents:**
-- T002: `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md`
-- T003: `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T003-versioning-rw-validation.md`
-- T004: `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md`
-- T007: `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T007-gap-resolution-summary.md`
+- T002: `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md`
+- T003: `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration/T003-versioning-rw-validation.md`
+- T004: `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md`
+- T007: `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration/T007-gap-resolution-summary.md`
 
 ---
 

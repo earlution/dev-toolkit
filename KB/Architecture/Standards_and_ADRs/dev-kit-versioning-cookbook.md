@@ -102,7 +102,7 @@ VERSION_BUILD = 1      # NEW: Reset to first build
 
 ### Kanban Context
 
-**Epic Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-5.md`
+**Epic Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-5/Epic-5.md`
 ```markdown
 # Epic 5: Documentation Framework
 
@@ -113,7 +113,7 @@ VERSION_BUILD = 1      # NEW: Reset to first build
 - [ ] **E5:S01 – Framework Documentation Structure** - TODO
 ```
 
-**Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-5/stories/Story-001-*.md`
+**Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-5/Story-001-*.md`
 ```markdown
 # Story 001 – Framework Documentation Structure
 
@@ -190,14 +190,14 @@ VERSION_BUILD = 1      # NEW: Reset to first build
 
 ### Kanban Context
 
-**Epic Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3.md`
+**Epic Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/Epic-3.md`
 ```markdown
 ## Story Checklist
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
 - [ ] **E3:S02 – Versioning Cookbook & Examples** - IN PROGRESS
 ```
 
-**Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-002-*.md`
+**Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-002-*.md`
 ```markdown
 # Story 002 – Versioning Cookbook & Examples
 
@@ -276,7 +276,7 @@ VERSION_BUILD = 1      # NEW: Reset to 1 for new task
 
 ### Kanban Context
 
-**Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-001-*.md`
+**Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-001-*.md`
 ```markdown
 ## Task Checklist
 - [x] **E3:S01:T01 – Review dev-kit versioning policy vs framework policy** ✅ COMPLETE (v0.3.1.1+2)
@@ -629,14 +629,14 @@ VERSION_BUILD = 1      # Reset to first build
 
 ### Kanban Context
 
-**Epic Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3.md`
+**Epic Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/Epic-3.md`
 ```markdown
 ## Story Checklist
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
 - [ ] **E3:S02 – Versioning Cookbook & Examples** - IN PROGRESS
 ```
 
-**Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-001-*.md`
+**Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-001-*.md`
 ```markdown
 **Status:** COMPLETE ✅
 **Completed:** 2025-12-02 (v0.3.1.6+1)
@@ -667,7 +667,7 @@ VERSION_BUILD = 1      # Reset to first build
 - Story 1: Completed at `v0.1.1.1+2`
 - Story 2: Completed at `v0.1.2.5+1`
 - Story 3: Completed at `v0.1.3.6+1`
-- See: `KB/PM_and_Portfolio/kanban/epics/Epic-1.md`
+- See: `KB/PM_and_Portfolio/kanban/epics/Epic-1/Epic-1.md`
 
 ---
 
@@ -705,7 +705,7 @@ VERSION_BUILD = 1     # Reset to first build
 
 ### Kanban Context
 
-**Epic Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-4.md`
+**Epic Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/Epic-4.md`
 ```markdown
 **Status:** COMPLETE ✅
 **Completed:** 2025-12-02 (v0.4.3.7+1)
@@ -739,7 +739,7 @@ VERSION_BUILD = 1     # Reset to first build
 **Epic 4 Completion:**
 - Epic 4: Completed at `v0.4.3.7+1`
 - All 3 stories completed
-- See: `KB/PM_and_Portfolio/kanban/epics/Epic-4.md`
+- See: `KB/PM_and_Portfolio/kanban/epics/Epic-4/Epic-4.md`
 
 ---
 
@@ -1219,7 +1219,7 @@ This section documents known edge cases, common mistakes, and anti-patterns when
 - ❌ **NEVER:** Skip Task/version validation
 - ❌ **NEVER:** Assume `VERSION_TASK` is correct without checking
 
-**Reference:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T002-root-cause-analysis.md`
+**Reference:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration/T002-root-cause-analysis.md`
 
 ---
 
@@ -1447,11 +1447,11 @@ This section documents known edge cases, common mistakes, and anti-patterns when
 
 ## References
 
-- **Scenario Definitions:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples/T001-core-versioning-scenarios.md`
+- **Scenario Definitions:** `KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-002-versioning-cookbook-and-examples/T001-core-versioning-scenarios.md`
 - **Versioning Policy:** `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md`
 - **Framework Policy:** `packages/frameworks/numbering & versioning/versioning-policy.md`
 - **Integration Guide:** `KB/Architecture/Standards_and_ADRs/dev-kit-kanban-versioning-rw-integration.md`
-- **Integration Examples:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T006-integration-examples.md`
+- **Integration Examples:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration/T006-integration-examples.md`
 - **RW Execution Guide:** `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`
 
 ---

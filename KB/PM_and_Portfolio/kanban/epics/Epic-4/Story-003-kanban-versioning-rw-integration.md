@@ -86,7 +86,7 @@ Establish and document how Kanban, Versioning, and Release Workflow integrate wi
 5. Document integration examples and edge cases
 
 **Files Created:**
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T001-integration-docs-review.md` (comprehensive review report)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T001-integration-docs-review.md` (comprehensive review report)
 
 **Deliverable:** Complete analysis of existing integration documentation with identified gaps and recommendations for dev-kit alignment.
 
@@ -137,7 +137,7 @@ Establish and document how Kanban, Versioning, and Release Workflow integrate wi
 4. Consider retroactive fixes for existing version numbers (optional)
 
 **Files Created:**
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md` (comprehensive validation report)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md` (comprehensive validation report)
 
 **Deliverable:** Complete validation report identifying critical inconsistency in Task → version TASK component mapping, with root cause analysis and recommendations.
 
@@ -200,7 +200,7 @@ Establish and document how Kanban, Versioning, and Release Workflow integrate wi
 4. Improve error handling for missing/malformed version files
 
 **Files Created:**
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T003-versioning-rw-validation.md` (comprehensive validation report)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T003-versioning-rw-validation.md` (comprehensive validation report)
 
 **Deliverable:** Complete validation report confirming strong Versioning → RW integration with 4 minor gaps identified and recommendations provided.
 
@@ -264,7 +264,7 @@ Establish and document how Kanban, Versioning, and Release Workflow integrate wi
 4. Add board updates and comprehensive validation
 
 **Files Created:**
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md` (comprehensive validation report)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md` (comprehensive validation report)
 
 **Deliverable:** Complete validation report confirming partial RW → Kanban integration with 3 gaps identified and recommendations provided.
 
@@ -317,7 +317,7 @@ This task addresses gaps identified during **E4:S03:T04 – Validate RW → Kanb
 **1. Epic Story Checklist Not Updated:**
 - **Evidence:** Story Checklist in Epic document not consistently updated with Task-level version markers
 - **Impact:** Creates inconsistency between Story Checklist and detailed sections
-- **Location:** `KB/PM_and_Portfolio/kanban/epics/Epic-4.md` Story Checklist section
+- **Location:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/Epic-4.md` Story Checklist section
 - **Reference:** T004 validation report, Section 2.1
 
 **2. Forensic Marker Format Inconsistency:**
@@ -343,10 +343,10 @@ This task addresses gaps identified during **E4:S03:T04 – Validate RW → Kanb
 
 **Files Updated:**
 - ✅ `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` (RW Step 6 enhanced)
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4.md` (Story Checklist fixed)
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md` (forensic markers standardized)
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md` (fix status added)
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T007-gap-resolution-summary.md` (created)
+- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/Epic-4.md` (Story Checklist fixed)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration.md` (forensic markers standardized)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md` (fix status added)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T007-gap-resolution-summary.md` (created)
 
 **Note:** Templates already have forensic marker format requirements (verified in EPIC_TEMPLATE.md and STORY_TEMPLATE.md)
 
@@ -432,7 +432,7 @@ This task addresses gaps identified during **E4:S03:T04 – Validate RW → Kanb
 - Best practices summary
 
 **Files Created:**
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T006-integration-examples.md` (comprehensive examples and edge cases documentation)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T006-integration-examples.md` (comprehensive examples and edge cases documentation)
 
 **Deliverable:** Complete examples and edge cases documentation with 4 worked examples, 6 edge cases, troubleshooting section, and best practices.
 

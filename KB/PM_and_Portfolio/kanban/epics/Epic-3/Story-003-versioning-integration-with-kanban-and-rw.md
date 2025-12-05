@@ -193,7 +193,7 @@ Provide comprehensive, framework-level integration documentation that:
 - `packages/frameworks/kanban/integration/numbering-versioning-integration.md`
 - `packages/frameworks/kanban/integration/workflow-management-integration.md`
 - `KB/Architecture/Standards_and_ADRs/dev-kit-kanban-versioning-rw-integration.md` (dev-kit specific)
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md` (dev-kit validation)
+- `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration.md` (dev-kit validation)
 
 ---
 

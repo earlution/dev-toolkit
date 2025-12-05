@@ -45,8 +45,8 @@ These keys are only required if using specific features:
 |-----|------|---------------|-------------|---------|
 | `use_kanban` | boolean | Mode C (Full Stack) | Enable Kanban integration | `true` |
 | `kanban_root` | string | `use_kanban: true` | Root path for Kanban docs | `KB/PM_and_Portfolio/kanban` |
-| `epic_doc_pattern` | string | `use_kanban: true` | Pattern for epic docs (relative to `kanban_root`) | `epics/Epic-{epic}.md` |
-| `story_doc_pattern` | string | `use_kanban: true` | Pattern for story docs (relative to `kanban_root`) | `epics/Epic-{epic}/stories/Story-{story}-*.md` |
+| `epic_doc_pattern` | string | `use_kanban: true` | Pattern for epic docs (relative to `kanban_root`) | `epics/Epic-{epic}/Epic-{epic}.md` |
+| `story_doc_pattern` | string | `use_kanban: true` | Pattern for story docs (relative to `kanban_root`) | `epics/Epic-{epic}/Story-{story}-*.md` |
 | `kanban_board` | string | `use_kanban: true` | Main Kanban board file (relative to `kanban_root`) | `_index.md` |
 | `versioning_schema` | string | Optional | Version schema (default: `RC.EPIC.STORY.TASK+BUILD`) | `RC.EPIC.STORY.TASK+BUILD` |
 | `project_name` | string | Optional | Project name (for examples/comments) | `myproject` |
@@ -133,8 +133,8 @@ scripts_path: tools/workflow_mgt/scripts
 readme_file: README.md
 use_kanban: true
 kanban_root: KB/PM_and_Portfolio/kanban
-epic_doc_pattern: epics/Epic-{epic}.md
-story_doc_pattern: epics/Epic-{epic}/stories/Story-{story}-*.md
+epic_doc_pattern: epics/Epic-{epic}/Epic-{epic}.md
+story_doc_pattern: epics/Epic-{epic}/Story-{story}-*.md
 kanban_board: _index.md
 versioning_schema: RC.EPIC.STORY.TASK+BUILD
 project_name: myproject
@@ -151,8 +151,8 @@ The following variables can be used in path patterns:
 - `{version}` - Full version string (e.g., `0.2.4.1+3`)
 
 **Example patterns:**
-- `epics/Epic-{epic}.md` → `epics/Epic-2.md`
-- `epics/Epic-{epic}/stories/Story-{story}-*.md` → `epics/Epic-2/stories/Story-001-*.md`
+- `epics/Epic-{epic}/Epic-{epic}.md` → `epics/Epic-2/Epic-2.md`
+- `epics/Epic-{epic}/Story-{story}-*.md` → `epics/Epic-2/Story-001-*.md`
 - `CHANGELOG_v{version}.md` → `CHANGELOG_v0.2.4.1+3.md`
 
 ---

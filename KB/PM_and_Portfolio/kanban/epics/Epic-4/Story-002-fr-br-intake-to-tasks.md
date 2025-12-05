@@ -69,7 +69,7 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 - ❌ Tooling gap: No templates or forms for FR/BR intake
 
 **Files Created:**
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks/T001-intake-analysis-report.md` (comprehensive analysis)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-002-fr-br-intake-to-tasks/T001-intake-analysis-report.md` (comprehensive analysis)
 
 **Deliverable:** See [`T001-intake-analysis-report.md`](T001-intake-analysis-report.md) for complete analysis, requirements, use cases, and recommendations.
 
@@ -103,7 +103,7 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 - ✅ Worked examples (4 scenarios)
 
 **Files Created:**
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks/T002-decision-flow-design.md` (comprehensive design)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-002-fr-br-intake-to-tasks/T002-decision-flow-design.md` (comprehensive design)
 
 **Deliverable:** See [`T002-decision-flow-design.md`](T002-decision-flow-design.md) for complete decision flow, criteria, edge cases, and examples.
 

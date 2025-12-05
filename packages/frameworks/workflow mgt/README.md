@@ -136,7 +136,7 @@ Projects must **copy** this package into their repository, not link to it.
 - Full three-way integration
 - Automated Kanban updates with version markers
 
-See `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-002-package-and-repo-architecture/T004-consumption-patterns.md` for detailed step-by-step guides for each scenario.
+See `KB/PM_and_Portfolio/kanban/epics/Epic-1/Story-002-package-and-repo-architecture/T004-consumption-patterns.md` for detailed step-by-step guides for each scenario.
 
 ---
 

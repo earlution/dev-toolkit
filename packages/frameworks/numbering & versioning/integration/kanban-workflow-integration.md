@@ -391,11 +391,11 @@ configurable_via:
 
 ```yaml
 epic_docs:
-  pattern: "{kanban_root}/epics/Epic-{epic}.md"
+  pattern: "{kanban_root}/epics/Epic-{epic}/Epic-{epic}.md"
   configurable_via: "rw-config.yaml (kanban_root, epic_doc_pattern)"
 
 story_docs:
-  pattern: "{kanban_root}/epics/Epic-{epic}/stories/Story-{N}-*.md"
+  pattern: "{kanban_root}/epics/Epic-{epic}/Story-{N}-*.md"
   configurable_via: "rw-config.yaml (kanban_root, story_doc_pattern)"
 ```
 
@@ -492,7 +492,7 @@ validation_scripts:
 ### Dev-Kit Specific (Reference Only)
 
 - **Dev-Kit Integration Guide:** `KB/Architecture/Standards_and_ADRs/dev-kit-kanban-versioning-rw-integration.md`
-- **Dev-Kit Validation:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`
+- **Dev-Kit Validation:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-003-kanban-versioning-rw-integration.md`
 
 ---
 

@@ -111,7 +111,7 @@ This document summarizes all documentation updates made to address the critical 
 
 ### 6. Root Cause Analysis Document
 
-**File:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T002-root-cause-analysis.md`
+**File:** `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T002-root-cause-analysis.md`
 
 **Created:**
 - Comprehensive root cause analysis
@@ -126,7 +126,7 @@ This document summarizes all documentation updates made to address the critical 
 
 ### 7. Validation Report
 
-**File:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md`
+**File:** `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T002-kanban-versioning-validation.md`
 
 **Created:**
 - Comprehensive validation report
@@ -140,7 +140,7 @@ This document summarizes all documentation updates made to address the critical 
 
 ### 8. Documentation Updates Summary (This Document)
 
-**File:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T002-documentation-updates-summary.md`
+**File:** `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T002-documentation-updates-summary.md`
 
 **Created:**
 - Summary of all documentation updates

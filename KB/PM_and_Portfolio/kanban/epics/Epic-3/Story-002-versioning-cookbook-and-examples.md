@@ -114,7 +114,7 @@ Provide a **versioning cookbook** with worked examples that shows:
 **Input:**  
 - Integration docs:
   - `KB/Architecture/Standards_and_ADRs/dev-kit-kanban-versioning-rw-integration.md`
-  - `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`
+  - `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration.md`
 
 **Deliverable:**  
 - Section in the cookbook with end-to-end cross-framework examples
@@ -265,7 +265,7 @@ Provide a **versioning cookbook** with worked examples that shows:
 - `packages/frameworks/numbering & versioning/versioning-strategy.md`  
 - `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md`  
 - `KB/Architecture/Standards_and_ADRs/dev-kit-kanban-versioning-rw-integration.md`  
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`  
+- `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration.md`  
 
 ---
 
