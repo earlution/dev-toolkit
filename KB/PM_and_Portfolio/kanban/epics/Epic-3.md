@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Created:** 2025-12-02
-**Last updated:** 2025-12-04 (v0.3.3.4+1 – E3:S03:T04 complete: Integration examples for external projects created)
+**Last updated:** 2025-12-04 (v0.3.3.5+1 – E3:S03:T05 complete: Integration troubleshooting guide created)
 **Branch:** `epic/3-numbering-and-versioning-framework`
 **Version Schema:** `0.3.S.T+B`
 **Production URL:** [N/A for this repo]
@@ -87,7 +87,7 @@ Make sure the dev kit's own versioning policy, version file, and docs align clea
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-04 (v0.3.3.4+1 – E3:S03:T04 complete: Integration examples for external projects created)
+**Last updated:** 2025-12-04 (v0.3.3.5+1 – E3:S03:T05 complete: Integration troubleshooting guide created)
 
 **Goal:**  
 Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.TASK+BUILD, making it easy for other projects to adopt the dev-kit versioning strategy safely and correctly.

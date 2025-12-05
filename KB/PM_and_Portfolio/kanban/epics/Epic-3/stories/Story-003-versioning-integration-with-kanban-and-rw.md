@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.3.3.4+1 – E3:S03:T04 complete: Integration examples for external projects created)  
-**Version:** v0.3.3.4+1  
+**Last updated:** 2025-12-04 (v0.3.3.5+1 – E3:S03:T05 complete: Integration troubleshooting guide created)  
+**Version:** v0.3.3.5+1  
 **Code:** E3S03
 
 ---
@@ -24,7 +24,7 @@ housekeeping_policy: keep
 - [x] **E3:S03:T02 – Create comprehensive framework-level integration guide** ✅ COMPLETE
 - [x] **E3:S03:T03 – Document integration patterns and best practices** ✅ COMPLETE
 - [x] **E3:S03:T04 – Create integration examples for external projects** ✅ COMPLETE
-- [ ] **E3:S03:T05 – Document integration troubleshooting and common issues**
+- [x] **E3:S03:T05 – Document integration troubleshooting and common issues** ✅ COMPLETE
 
 ---
 

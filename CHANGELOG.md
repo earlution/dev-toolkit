@@ -1528,6 +1528,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.3.5+1] - 04-12-25
+
+📚 Documentation: Created integration troubleshooting guide
+
+### Added
+
+- Created integration troubleshooting guide
+- Documented 8 common integration issues with symptoms, root causes, and solutions
+- Created 3 troubleshooting decision trees
+- Provided debugging strategies and validation approaches
+- Documented edge cases and handling approaches
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.3.5+1.md` for full details
+- Guide located at: `packages/frameworks/numbering & versioning/integration/integration-troubleshooting-guide.md`
+- Includes decision trees, debugging strategies, and edge case handling
+- Framework-level documentation (portable, template-ready)
+
+---
+
 ## [0.4.1.1+1] - 02-12-25
 
 📚 Documentation: Epic 4 structure and Story 1 definition for Kanban Framework
