@@ -22,7 +22,7 @@ housekeeping_policy: keep
 
 ## Story Checklist
 
-- [x] **E2:S01 – RW Agent Execution & Docs** - COMPLETE ✅ (v0.2.1.1+5)  
+- [x] **E2:S01 – RW Agent Execution & Docs** - IN PROGRESS (v0.2.1.5+1 – Task 5 complete: Fixed validate_version_bump.py Epic/Story auto-detection bug)  
   - Story: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)  
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md`](epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow.md)
