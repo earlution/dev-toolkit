@@ -397,7 +397,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 2. **ANALYZE (continued):**
    - **MANDATORY:** Read the Story file to identify completed task. **Use config paths:** If `rw-config.yaml` exists and `use_kanban: true`, use `kanban_root` and `story_doc_pattern` from config. Otherwise, use fallback patterns:
      - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic {epic}/Story-{story}-*.md` (or from `rw-config.yaml` if present)
-     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/stories/Story-{story}-*.md` (or from `rw-config.yaml` if present)
+     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Story-{story}-*.md` (or from `rw-config.yaml` if present)
    - Find the MOST RECENTLY COMPLETED task in the Task Checklist (marked `✅ COMPLETE`)
    - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T08` → task number is `8`)
    - **CRITICAL:** If no task is marked complete, or you cannot identify which task was just completed, **STOP** and ask the user which task was completed
@@ -834,7 +834,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
   dependencies: [step-2]
   config:
     epic_doc_pattern: KB/PM_and_Portfolio/epics/overview/Epic {epic}/Epic-{epic}.md  # [Example: Confidentia]
-    # [Example: vibe-dev-kit] epic_doc_pattern: KB/PM_and_Portfolio/kanban/epics/Epic-{epic}.md
+    # [Example: vibe-dev-kit] epic_doc_pattern: KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Epic-{epic}.md
     kanban_board: KB/PM_and_Portfolio/epics/overview/_index.md  # [Example: Confidentia]
     # [Example: vibe-dev-kit] kanban_board: KB/PM_and_Portfolio/kanban/kanban-board.md
 ```
@@ -853,10 +853,10 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - [Example: vibe-dev-kit] `0.2.1.1+3` → Story 1
    - **Use config paths:** Find Epic doc (from config `kanban_root` and `epic_doc_pattern` if `use_kanban: true`, or fallback):
      - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic 4/Epic-4.md` (or from `rw-config.yaml` if present)
-     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2.md` (or from `rw-config.yaml` if present)
+     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/Epic-2.md` (or from `rw-config.yaml` if present)
    - **Use config paths:** Find Story doc (from config `kanban_root` and `story_doc_pattern` if `use_kanban: true`, or fallback):
      - [Example: Confidentia] `KB/PM_and_Portfolio/kanban/Epic 4/Story-3-*.md` (or from `rw-config.yaml` if present)
-     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-001-*.md` (or from `rw-config.yaml` if present)
+     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-001-*.md` (or from `rw-config.yaml` if present)
    - Understand "Last updated" field format
 
 2. **DETERMINE:**
@@ -885,7 +885,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - Example: `✅ COMPLETE (v0.11.5.2+1)`
      - Update Story doc header "Last updated" and "Version" fields
      - Update Story doc detailed Task sections with forensic markers
-   - **THEN: Update Epic-{epic}.md to match the updated Story file:**
+   - **THEN: Update Epic-{epic}/Epic-{epic}.md to match the updated Story file:**
      - Update Epic doc header "Last updated" field
      - Update Epic doc Story Checklist with version marker (format: `- [ ] **E4:S03 – Story Name** - IN PROGRESS (v{version})`)
      - Update Epic doc detailed Story sections (Status, Last updated, Task checkboxes with forensic markers)

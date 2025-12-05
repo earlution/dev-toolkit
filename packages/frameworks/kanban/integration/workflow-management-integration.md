@@ -73,18 +73,18 @@ step_4:
 ```yaml
 updates:
   epic_header:
-    location: "Epic-{epic}.md, header metadata"
+    location: "Epic-{epic}/Epic-{epic}.md, header metadata"
     field: "Last updated"
     format: "**Last updated:** 2025-12-02 (v0.4.33.3+1 – Story 33 complete)"
 
   story_checklist:
-    location: "Epic-{epic}.md, Story Checklist section"
+    location: "Epic-{epic}/Epic-{epic}.md, Story Checklist section"
     field: "Story status and version marker"
     format: "- [x] **Story 33 – Parent Inclusivity** ✅ COMPLETE (v0.4.33.3+1)"
     requirement: "SINGLE SOURCE OF TRUTH"
 
   detailed_story_sections:
-    location: "Epic-{epic}.md, detailed story sections"
+    location: "Epic-{epic}/Epic-{epic}.md, detailed story sections"
     fields:
       - "Status"
       - "Last updated"
@@ -107,7 +107,7 @@ all_sections:
     - Any other references to the story/task being released
 
   systematic_process:
-    1: "Read the FULL Epic-{epic}.md file"
+    1: "Read the FULL Epic-{epic}/Epic-{epic}.md file"
     2: "Read the authoritative Story-{N}-{Name}.md file to get correct state"
     3: "Find ALL sections referencing the story/task (grep/search the file)"
     4: "Update ALL of them to match the Story file's state"
@@ -146,8 +146,8 @@ paths_to_configure:
     example: "KB/PM_and_Portfolio/epics/overview/Epic 4/Epic-4.md"
 
   story_docs:
-    pattern: "KB/PM_and_Portfolio/kanban/Epic {epic}/Story-{N}-{Name}.md"
-    example: "KB/PM_and_Portfolio/kanban/Epic 4/Story-33-Parent-Inclusivity-and-Accessibility.md"
+    pattern: "KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Story-{N}-{Name}.md"
+    example: "KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-33-Parent-Inclusivity-and-Accessibility.md"
 
 files_to_update:
   - ".cursorrules (RW trigger section, Step 4 description)"

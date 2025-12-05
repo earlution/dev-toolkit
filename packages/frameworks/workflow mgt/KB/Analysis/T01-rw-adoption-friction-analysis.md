@@ -78,8 +78,8 @@ This analysis identifies **all manual integration touchpoints** required when ad
 **Locations requiring manual edits:**
 
 1. **`.cursorrules` RW trigger section (Step 6):**
-   - Story file pattern: `{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md`
-   - Epic doc pattern: `{kanban_path}/epics/Epic-{epic}.md`
+   - Story file pattern: `{kanban_path}/epics/Epic-{epic}/Story-{story}-*.md`
+   - Epic doc pattern: `{kanban_path}/epics/Epic-{epic}/Epic-{epic}.md`
    - Kanban board: `{kanban_path}/_index.md` or `{kanban_path}/kanban-board.md`
    - Example: `KB/PM_and_Portfolio/kanban/...`
    - **Manual action:** Replace template/example paths
@@ -199,8 +199,8 @@ readme_file: README.md                          # Path to README (usually root)
 # Kanban integration (optional - only if using Kanban)
 use_kanban: true                                 # Enable Kanban integration
 kanban_root: KB/PM_and_Portfolio/kanban         # Root path for Kanban docs
-epic_doc_pattern: epics/Epic-{epic}.md         # Pattern for epic docs (relative to kanban_root)
-story_doc_pattern: epics/Epic-{epic}/stories/Story-{story}-*.md  # Pattern for story docs
+epic_doc_pattern: epics/Epic-{epic}/Epic-{epic}.md         # Pattern for epic docs (relative to kanban_root)
+story_doc_pattern: epics/Epic-{epic}/Story-{story}-*.md  # Pattern for story docs
 kanban_board: _index.md                         # Main Kanban board file (relative to kanban_root)
 
 # Versioning schema (optional - only if not using dev-kit versioning)

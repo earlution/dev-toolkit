@@ -114,7 +114,7 @@ This document compares the `vibe-dev-kit`'s local Kanban policy (`KB/PM_and_Port
 
 ---
 
-### Dev-Kit Epic Usage (Example: `KB/PM_and_Portfolio/kanban/epics/Epic-3.md`)
+### Dev-Kit Epic Usage (Example: `KB/PM_and_Portfolio/kanban/epics/Epic-3/Epic-3.md`)
 
 **Status:** ✅ **ALIGNED**  
 **Structure:**
@@ -159,7 +159,7 @@ This document compares the `vibe-dev-kit`'s local Kanban policy (`KB/PM_and_Port
 
 ---
 
-### Dev-Kit Story Usage (Example: `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md`)
+### Dev-Kit Story Usage (Example: `KB/PM_and_Portfolio/kanban/Story-001-dev-kit-alignment-with-versioning-framework.md`)
 
 **Status:** ✅ **ALIGNED**  
 **Structure:**

@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.3.7+1 – Story 3 COMPLETE: All Tasks done)  
+**Last updated:** 2025-12-05 (v0.4.4.1+1 – Story 4 complete: Kanban structure refactored)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -23,10 +23,12 @@ housekeeping_policy: keep
 
 - [x] **E4:S01 – Dev Kit Kanban Implementation** - COMPLETE ✅ (v0.4.1.1+6)  
 - [x] **E4:S02 – FR/BR Intake to Tasks** - COMPLETE ✅ (v0.4.2.5+1)
-  - Story: [`epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md`](epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md)  
+  - Story: [`Story-002-fr-br-intake-to-tasks.md`](Story-002-fr-br-intake-to-tasks.md)  
 - [x] **E4:S03 – Kanban + Versioning + RW Integration** - COMPLETE ✅ (v0.4.3.7+1)
   - Tasks: T001 ✅ (v0.4.3.1+1), T002 ✅ (v0.4.3.2+2), T003 ✅ (v0.4.3.3+1), T004 ✅ (v0.4.3.4+1), T005 ✅ (v0.4.3.5+1), T006 ✅ (v0.4.3.6+1), T007 ✅ (v0.4.3.7+1)
-  - Story: [`epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`](epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md)  
+  - Story: [`Story-003-kanban-versioning-rw-integration.md`](Story-003-kanban-versioning-rw-integration.md)
+- [x] **E4:S04 – Kanban Structure Refactoring** - COMPLETE ✅ (v0.4.4.1+1)
+  - Story: [`Story-004-kanban-structure-refactoring.md`](Story-004-kanban-structure-refactoring.md)  
 
 ---
 
@@ -35,7 +37,7 @@ housekeeping_policy: keep
 Epic 4 owns the **Kanban framework** (`packages/frameworks/kanban/`) and its concrete application inside this repo:
 
 - Kanban board under `KB/PM_and_Portfolio/kanban/_index.md`
-- Story files under `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/`
+- Story files under `KB/PM_and_Portfolio/kanban/epics/Epic-4/`
 - Kanban governance policy for this repo
 
 It ensures that:
@@ -81,7 +83,7 @@ Fully align the dev-kit Kanban board, stories, and governance policy with the Ka
 - [x] E4:S01:T04 – Align dev-kit Kanban templates with updated governance ✅ COMPLETE (v0.4.1.1+5)
 - [x] E4:S01:T05 – Document consumption pattern for other projects ✅ COMPLETE (v0.4.1.1+6)
 
-> Full story: [`epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md)  
+> Full story: [`Story-001-dev-kit-kanban-implementation.md`](Story-001-dev-kit-kanban-implementation.md)  
 
 ---
 
@@ -102,7 +104,7 @@ Design and implement a clear, actionable flow for converting incoming Feature Re
 - [x] E4:S02:T04 – Document the intake process with examples ✅ COMPLETE (v0.4.2.4+1)
 - [x] E4:S02:T05 – Create intake workflow guide for agents/users ✅ COMPLETE (v0.4.2.5+1)
 
-> Full story: [`epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md`](epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md)  
+> Full story: [`Story-002-fr-br-intake-to-tasks.md`](Story-002-fr-br-intake-to-tasks.md)  
 
 ---
 
@@ -125,7 +127,7 @@ Ensure seamless integration between Kanban, Versioning, and Release Workflow (RW
 - [x] E4:S03:T05 – Create dev-kit integration guide ✅ COMPLETE (v0.4.3.5+1)
 - [x] E4:S03:T06 – Document integration examples and edge cases ✅ COMPLETE (v0.4.3.6+1)
 
-> Full story: [`epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`](epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md)  
+> Full story: [`Story-003-kanban-versioning-rw-integration.md`](Story-003-kanban-versioning-rw-integration.md)  
 
 ---
 

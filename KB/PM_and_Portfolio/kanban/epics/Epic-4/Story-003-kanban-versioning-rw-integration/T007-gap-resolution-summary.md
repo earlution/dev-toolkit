@@ -64,7 +64,7 @@ The gaps were systematically identified during **E4:S03:T04** validation (comple
 - Added Task completion list: `Tasks: T001 ✅ (v0.4.3.1+1), T002 ✅ (v0.4.3.2+2), T003 ✅ (v0.4.3.3+1), T004 ✅ (v0.4.3.4+1)`
 
 **Files Updated:**
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4.md` (Story Checklist section)
+- `KB/PM_and_Portfolio/kanban/epics/Epic-4/Epic-4.md` (Story Checklist section)
 
 ---
 
@@ -87,7 +87,7 @@ The gaps were systematically identified during **E4:S03:T04** validation (comple
 - Format: `**Status:** ✅ **COMPLETE** (v{version}) - [description]`
 
 **Files Updated:**
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md` (all Task sections)
+- `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration.md` (all Task sections)
 
 ---
 
@@ -156,7 +156,7 @@ The gaps were systematically identified during **E4:S03:T04** validation (comple
 4. Updated status to show gaps are being addressed
 
 **File Updated:**
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md`
+- `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md`
 
 ---
 
@@ -193,8 +193,8 @@ The gaps were systematically identified during **E4:S03:T04** validation (comple
 
 - **Validation Report:** `T004-rw-kanban-validation.md`
 - **RW Documentation:** `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`
-- **Epic Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-4.md`
-- **Story Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`
+- **Epic Document:** `KB/PM_and_Portfolio/kanban/epics/Epic-4/Epic-4.md`
+- **Story Document:** `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration.md`
 
 ---
 

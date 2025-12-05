@@ -1179,7 +1179,7 @@ guides/portfolio-kanban-alignment-playbook.md
 
 **✅ CAN Customize:**
 - **File paths:** Update all path references to match your KB structure
-  - Example: `KB/PM_and_Portfolio/kanban/epics/Epic-X.md` → `docs/projects/epics/Epic-X.md`
+  - Example: `KB/PM_and_Portfolio/kanban/epics/Epic-X/Epic-X.md` → `docs/projects/epics/Epic-X/Epic-X.md`
 - **Project names:** Replace "Confidentia", "vibe-dev-kit", etc. with your project name
 - **Terminology:** Adjust work item names (Epic/Story/Task vs Theme/Epic/Story)
 - **Epic ranges:** Define your own Epic numbering strategy
@@ -1341,7 +1341,7 @@ update_workflow:
 
 2. **Customize `kanban-governance-policy.md`:**
    - Change paths: `KB/PM_and_Portfolio/kanban/` → `docs/kanban/`
-   - Change Epic paths: `epics/Epic-X.md` → `epics/Epic-X.md` (if same structure)
+   - Change Epic paths: `epics/Epic-X/Epic-X.md` → `epics/Epic-X/Epic-X.md` (if same structure)
    - Change branch convention: `epic/X-slug` → `feature/epic-X`
    - Change examples: Use `E1:S1:T1` instead of `E20:S11:T15`
 
@@ -1353,15 +1353,15 @@ update_workflow:
 4. **Create first Epic:**
    ```bash
    cp myapp/docs/kanban/templates/EPIC_TEMPLATE.md \
-      myapp/docs/kanban/epics/Epic-1.md
+      myapp/docs/kanban/epics/Epic-1/Epic-1.md
    # Edit Epic-1.md with your project details
    ```
 
 5. **Create first Story:**
    ```bash
-   mkdir -p myapp/docs/kanban/epics/Epic-1/stories
+   mkdir -p myapp/docs/kanban/epics/Epic-1
    cp myapp/docs/kanban/templates/STORY_TEMPLATE.md \
-      myapp/docs/kanban/epics/Epic-1/stories/Story-001.md
+      myapp/docs/kanban/epics/Epic-1/Story-001.md
    # Edit Story-001.md with your project details
    ```
 

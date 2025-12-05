@@ -184,8 +184,8 @@ Release v0.2.2.1+1: E2:S02:T01: Add CHECK Phase
 - **Kanban Policy:** `packages/frameworks/kanban/policies/kanban-governance-policy.md`
 - **Versioning Policy:** `packages/frameworks/numbering & versioning/kanban-governance-policy.md`
 - **Dev-Kit Policy:** `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`
-- **Task T07:** `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow/T07-implement-task-naming-change.md`
-- **Task T08:** `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-002-pdca-integration-into-release-workflow/T08-update-kanban-docs-to-txx-standard.md`
+- **Task T07:** `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-002-pdca-integration-into-release-workflow/T07-implement-task-naming-change.md`
+- **Task T08:** `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-002-pdca-integration-into-release-workflow/T08-update-kanban-docs-to-txx-standard.md`
 
 ---
 

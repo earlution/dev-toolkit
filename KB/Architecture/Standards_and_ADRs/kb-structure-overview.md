@@ -287,10 +287,10 @@ The dev-kit uses a **minimal subset** of the canonical KB pattern (see `T006-sca
 
 ## 7. Related Documents
 
-- `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit/T001-kb-structure-analysis.md` – Structure analysis
-- `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit/T002-kb-structure-principles.md` – Structure principles
-- `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit/T003-kb-structure-migration-guide.md` – Migration guide
-- `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit/T006-scalable-kb-pattern.md` – Scalable pattern
+- `KB/PM_and_Portfolio/kanban/epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T001-kb-structure-analysis.md` – Structure analysis
+- `KB/PM_and_Portfolio/kanban/epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T002-kb-structure-principles.md` – Structure principles
+- `KB/PM_and_Portfolio/kanban/epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T003-kb-structure-migration-guide.md` – Migration guide
+- `KB/PM_and_Portfolio/kanban/epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T006-scalable-kb-pattern.md` – Scalable pattern
 
 ---
 

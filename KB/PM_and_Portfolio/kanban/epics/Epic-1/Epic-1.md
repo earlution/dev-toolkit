@@ -24,10 +24,10 @@ housekeeping_policy: keep
 - [x] **E1:S01 – Dev Kit Versioning & RW Behaviour** - COMPLETE ✅ (v0.1.1.1+1, E2:S01:T02, E2:S01:T03)  
 - [x] **E1:S02 – Package & Repo Architecture** - COMPLETE ✅ (v0.1.2.5+1)
   - Tasks: T001 ✅ (v0.1.2.1+1), T002 ✅ (v0.1.2.2+1), T003 ✅ (v0.1.2.3+1), T004 ✅ (v0.1.2.4+1), T005 ✅ (v0.1.2.5+1)
-  - Story: [`epics/Epic-1/stories/Story-002-package-and-repo-architecture.md`](epics/Epic-1/stories/Story-002-package-and-repo-architecture.md)  
+  - Story: [`Story-002-package-and-repo-architecture.md`](Story-002-package-and-repo-architecture.md)  
 - [x] **E1:S03 – Core KB Structure for Dev Kit** - COMPLETE ✅ (v0.1.3.6+1 – All tasks complete)
   - Tasks: T001 ✅ (v0.1.3.1+1), T002 ✅ (v0.1.3.2+1), T003 ✅ (v0.1.3.3+1), T004 ✅ (v0.1.3.4+1), T005 ✅ (v0.1.3.5+1), T006 ✅ (v0.1.3.6+1)
-  - Story: [`epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit.md`](epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit.md)  
+  - Story: [`Story-003-core-kb-structure-for-dev-kit.md`](Story-003-core-kb-structure-for-dev-kit.md)  
 
 ---
 
@@ -74,7 +74,7 @@ Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW
 - [x] `version.py` encodes a real dev-kit Epic/Story/Task, not legacy external IDs ✅  
 - [x] RW docs clarify dev-kit vs Confidentia/fynd.deals examples ✅
 
-> Full story: `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md`
+> Full story: `KB/PM_and_Portfolio/kanban/Story-001-vibe-dev-kit-kanban-and-versioning.md`
 
 ---
 
@@ -95,7 +95,7 @@ Clarify the modular architecture of the `vibe-dev-kit` repository, ensuring that
 - [x] E1:S02:T04 – Document consumption patterns for each framework ✅ COMPLETE (v0.1.2.4+1)
 - [x] E1:S02:T05 – Update package READMEs with modularity information ✅ COMPLETE (v0.1.2.5+1)
 
-> Full story: [`epics/Epic-1/stories/Story-002-package-and-repo-architecture.md`](epics/Epic-1/stories/Story-002-package-and-repo-architecture.md)
+> Full story: [`Story-002-package-and-repo-architecture.md`](Story-002-package-and-repo-architecture.md)
 
 ---
 
@@ -117,7 +117,7 @@ Establish core KB locations for architecture, PM & portfolio, and dev-kit govern
 - [x] E1:S03:T05 – Create KB structure documentation ✅ COMPLETE (v0.1.3.5+1)
 - [x] E1:S03:T06 – Document scalable KB pattern for large codebases ✅ COMPLETE (v0.1.3.6+1)
 
-> Full story: [`epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit.md`](epics/Epic-1/stories/Story-003-core-kb-structure-for-dev-kit.md)
+> Full story: [`Story-003-core-kb-structure-for-dev-kit.md`](Story-003-core-kb-structure-for-dev-kit.md)
 
 ---
 

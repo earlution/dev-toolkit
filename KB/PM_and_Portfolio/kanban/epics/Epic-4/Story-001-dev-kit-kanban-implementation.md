@@ -111,7 +111,7 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 - ✅ `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`
 - ✅ `packages/frameworks/kanban/integration/workflow-management-integration.md`
 - ✅ `packages/frameworks/kanban/policies/kanban-governance-policy.md`
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation/T001-gap-analysis-report.md`
+- ✅ `KB/PM_and_Portfolio/kanban/Story-001-dev-kit-kanban-implementation/T001-gap-analysis-report.md`
 
 **Key Patterns to Capture:**
 - Atomic RW behaviour: RW must complete all 10 steps or stop with explicit BLOCKED message

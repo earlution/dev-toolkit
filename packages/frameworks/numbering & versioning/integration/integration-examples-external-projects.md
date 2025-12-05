@@ -78,7 +78,7 @@ __version__ = VERSION_STRING
 
 ### Step 4: Create First Epic
 
-**File:** `docs/kanban/epics/Epic-1.md`
+**File:** `docs/kanban/epics/Epic-1/Epic-1.md`
 
 ```markdown
 ---
@@ -122,7 +122,7 @@ created_at: 2025-12-04
 
 ### Step 5: Create Story Document
 
-**File:** `docs/kanban/epics/Epic-1/stories/Story-1-Login-System.md`
+**File:** `docs/kanban/epics/Epic-1/Story-1-Login-System.md`
 
 ```markdown
 ---
@@ -193,8 +193,8 @@ When user types 'RW' or 'rw', execute the Release Workflow:
 
 ```yaml
 kanban_root: "docs/kanban"
-epic_doc_pattern: "docs/kanban/epics/Epic-{epic}.md"
-story_doc_pattern: "docs/kanban/epics/Epic-{epic}/stories/Story-{N}-*.md"
+epic_doc_pattern: "docs/kanban/epics/Epic-{epic}/Epic-{epic}.md"
+story_doc_pattern: "docs/kanban/epics/Epic-{epic}/Story-{N}-*.md"
 version_file: "src/myproject/version.py"
 changelog_root: "docs/changelog"
 ```
@@ -228,8 +228,8 @@ version_file: "src/myproject/version.py"
 
 # Kanban structure
 kanban_root: "docs/kanban"
-epic_doc_pattern: "docs/kanban/epics/Epic-{epic}.md"
-story_doc_pattern: "docs/kanban/epics/Epic-{epic}/stories/Story-{N}-*.md"
+epic_doc_pattern: "docs/kanban/epics/Epic-{epic}/Epic-{epic}.md"
+story_doc_pattern: "docs/kanban/epics/Epic-{epic}/Story-{N}-*.md"
 
 # Changelog structure
 changelog_root: "docs/changelog"
@@ -250,7 +250,7 @@ readme_file: "README.md"
 # ... make code changes ...
 
 # 2. Update Story file to mark Task 1 complete
-# Edit: docs/kanban/epics/Epic-1/stories/Story-1-Login-System.md
+# Edit: docs/kanban/epics/Epic-1/Story-1-Login-System.md
 # Change: "- [ ] **E1:S1:T01**" to "- [x] **E1:S1:T01** ✅ COMPLETE"
 
 # 3. Trigger Release Workflow
@@ -306,13 +306,13 @@ __version__ = VERSION_STRING
 
 ```bash
 # Create Kanban directory structure
-mkdir -p docs/kanban/epics/Epic-1/stories
+mkdir -p docs/kanban/epics/Epic-1
 
 # Map existing work to Epic 1
 # Create Epic document for current feature set
 ```
 
-**File:** `docs/kanban/epics/Epic-1.md`
+**File:** `docs/kanban/epics/Epic-1/Epic-1.md`
 
 ```markdown
 ---
@@ -592,7 +592,7 @@ VERSION_STRING = "0.1.1.1+3"
 
 ### Kanban Updates
 
-**Story File:** `docs/kanban/epics/Epic-1/stories/Story-1-Login-System.md`
+**Story File:** `docs/kanban/epics/Epic-1/Story-1-Login-System.md`
 
 ```markdown
 ## Task Checklist
@@ -631,7 +631,7 @@ story_1_tasks:
 
 ### Epic Document Update
 
-**File:** `docs/kanban/epics/Epic-1.md`
+**File:** `docs/kanban/epics/Epic-1/Epic-1.md`
 
 ```markdown
 ## Story Checklist
@@ -746,8 +746,8 @@ assert sorted_entries == expected_order
 
 ```python
 # Test setup
-epic_file = "docs/kanban/epics/Epic-1.md"
-story_file = "docs/kanban/epics/Epic-1/stories/Story-1-Login-System.md"
+epic_file = "docs/kanban/epics/Epic-1/Epic-1.md"
+story_file = "docs/kanban/epics/Epic-1/Story-1-Login-System.md"
 completed_task = "E1:S1:T01"
 
 # Expected updates
@@ -777,8 +777,8 @@ assert "Story 1" in epic_content  # Story section updated
 ```yaml
 version_file: "src/myproject/version.py"
 kanban_root: "docs/kanban"
-epic_doc_pattern: "docs/kanban/epics/Epic-{epic}.md"
-story_doc_pattern: "docs/kanban/epics/Epic-{epic}/stories/Story-{N}-*.md"
+epic_doc_pattern: "docs/kanban/epics/Epic-{epic}/Epic-{epic}.md"
+story_doc_pattern: "docs/kanban/epics/Epic-{epic}/Story-{N}-*.md"
 changelog_root: "docs/changelog"
 main_changelog: "CHANGELOG.md"
 readme_file: "README.md"

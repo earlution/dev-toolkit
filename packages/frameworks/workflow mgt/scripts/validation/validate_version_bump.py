@@ -112,8 +112,8 @@ def find_story_file(config: Optional[Dict] = None, epic: int = None, story: int 
     
     # Fallback: Search for Story files
     fallback_patterns = [
-        "KB/PM_and_Portfolio/kanban/epics/Epic-*/stories/Story-*.md",
         "KB/PM_and_Portfolio/kanban/epics/Epic-*/Story-*.md",
+        "KB/PM_and_Portfolio/kanban/epics/Epic-*/stories/Story-*.md",  # Legacy support
     ]
     
     for pattern in fallback_patterns:

@@ -493,7 +493,7 @@ These scenarios will be used in **T002** to create worked examples in the versio
 - `packages/frameworks/numbering & versioning/versioning-strategy.md` – Versioning strategy
 - `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` – Dev-kit versioning policy
 - `KB/Architecture/Standards_and_ADRs/dev-kit-kanban-versioning-rw-integration.md` – Integration guide
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md` – Integration validation
+- `KB/PM_and_Portfolio/kanban/Story-003-kanban-versioning-rw-integration.md` – Integration validation
 
 ---
 

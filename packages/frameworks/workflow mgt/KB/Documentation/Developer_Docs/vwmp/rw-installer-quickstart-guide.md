@@ -66,7 +66,7 @@ readme_file: README.md
 use_kanban: true
 kanban_root: KB/PM_and_Portfolio/kanban
 epic_doc_pattern: epics/Epic-{epic}.md
-story_doc_pattern: epics/Epic-{epic}/stories/Story-{story}-*.md
+story_doc_pattern: epics/Epic-{epic}/Story-{story}-*.md
 kanban_board: _index.md
 versioning_schema: RC.EPIC.STORY.TASK+BUILD
 project_name: myproject
@@ -152,8 +152,8 @@ Select mode [B]: C
 
 📊 Kanban Integration:
 Kanban root directory [KB/PM_and_Portfolio/kanban]: docs/kanban
-Epic document pattern (use {epic} placeholder) [epics/Epic-{epic}.md]: epics/Epic-{epic}.md
-Story document pattern (use {epic} and {story} placeholders) [epics/Epic-{epic}/stories/Story-{story}-*.md]: epics/Epic-{epic}/stories/Story-{story}-*.md
+Epic document pattern (use {epic} placeholder) [epics/Epic-{epic}/Epic-{epic}.md]: epics/Epic-{epic}/Epic-{epic}.md
+Story document pattern (use {epic} and {story} placeholders) [epics/Epic-{epic}/Story-{story}-*.md]: epics/Epic-{epic}/Story-{story}-*.md
 Main Kanban board file [_index.md]: kanban.md
 ```
 
@@ -276,7 +276,7 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 EOF
 
 # 6. Create initial Kanban structure (if Mode C)
-mkdir -p KB/kanban/epics/Epic-1/stories
+mkdir -p KB/kanban/epics/Epic-1
 
 # 7. Test RW
 git checkout -b epic/1-setup

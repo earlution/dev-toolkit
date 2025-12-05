@@ -538,7 +538,7 @@ todo_tracking:
 - `packages/frameworks/kanban/policies/kanban-governance-policy.md`
 - `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md`
 - `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation/T001-gap-analysis-report.md`
+- `KB/PM_and_Portfolio/kanban/Story-001-dev-kit-kanban-implementation/T001-gap-analysis-report.md`
 
 ---
 

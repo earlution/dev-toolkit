@@ -25,7 +25,7 @@ housekeeping_policy: keep
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
 - [x] **E3:S02 – Versioning Cookbook & Examples** - COMPLETE ✅ (v0.3.2.5+3 – All tasks complete: RW hardened with automated version bump validation)
 - [x] **E3:S03 – Versioning Integration with Kanban & RW** - COMPLETE ✅ (v0.3.3.6+2 – All tasks complete: Epic 3 marked COMPLETE)
-  - Story: [`epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md`](epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md)
+  - Story: [`Story-003-versioning-integration-with-kanban-and-rw.md`](Story-003-versioning-integration-with-kanban-and-rw.md)
 
 ---
 
@@ -79,7 +79,7 @@ Make sure the dev kit's own versioning policy, version file, and docs align clea
 - [x] E3:S01:T05 – Document consumption pattern for other projects ✅ COMPLETE (v0.3.1.5+1)
 - [x] E3:S01:T06 – Make .cursorrules abstract (remove hardcoded version numbers) ✅ COMPLETE (v0.3.1.6+1)
 
-> Full story: [`epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md)
+> Full story: [`Story-001-dev-kit-alignment-with-versioning-framework.md`](Story-001-dev-kit-alignment-with-versioning-framework.md)
 
 ---
 
@@ -100,7 +100,7 @@ Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.T
 - [x] E3:S02:T04 – Document edge cases and anti-patterns ✅ COMPLETE (v0.3.2.4+1)
 - [ ] E3:S02:T05 – Create quick reference summary for users and agents
 
-> Full story: [`epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md`](epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md)
+> Full story: [`Story-002-versioning-cookbook-and-examples.md`](Story-002-versioning-cookbook-and-examples.md)
 
 ---
 
@@ -122,7 +122,7 @@ Create comprehensive, framework-level integration documentation that explains ho
 - [x] E3:S03:T05 – Document integration troubleshooting and common issues ✅ COMPLETE (v0.3.3.5+1)
 - [x] E3:S03:T06 – Add RW Step 6: Update BR/FR Docs with fix attempt history ✅ COMPLETE (v0.3.3.6+1)
 
-> Full story: [`epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md`](epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md)
+> Full story: [`Story-003-versioning-integration-with-kanban-and-rw.md`](Story-003-versioning-integration-with-kanban-and-rw.md)
 
 ---
 

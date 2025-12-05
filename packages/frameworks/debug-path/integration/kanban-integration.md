@@ -62,7 +62,7 @@ In the debug path main document, add:
 
 ```markdown
 ## References
-- Kanban Story: `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-004-*.md`
+- Kanban Story: `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-004-*.md`
 - Epic: Epic 2 - Workflow Management Framework
 - Story: Story 4 - RW Installer & Plug-and-Play Adoption
 - Task: T05 - Fix test failures

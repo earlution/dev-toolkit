@@ -34,10 +34,10 @@ Quick reference board for all Kanban work. For detailed views, see [`kanban-boar
 | 4    | 001      | Dev Kit Kanban Implementation               | TODO        | RMS   | Epic 4, Story 1                |
 
 **Story Locations:**
-- Epic 1: [`epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md`](epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md)
-- Epic 2: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)
-- Epic 3: [`epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md)
-- Epic 4: [`epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md)
+- Epic 1: [`epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md`](epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md)
+- Epic 2: [`epics/Epic-2/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/Story-001-rw-agent-execution-and-docs.md)
+- Epic 3: [`epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md)
+- Epic 4: [`epics/Epic-4/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/Story-001-dev-kit-kanban-implementation.md)
 
 ---
 
@@ -50,7 +50,7 @@ Quick reference board for all Kanban work. For detailed views, see [`kanban-boar
 | 3    | Numbering & Versioning Framework   | TODO        | 1       |
 | 4    | Kanban Framework                   | TODO        | 1       |
 
-**Epic Docs:** [`epics/Epic-1.md`](epics/Epic-1.md), [`epics/Epic-2.md`](epics/Epic-2.md), [`epics/Epic-3.md`](epics/Epic-3.md), [`epics/Epic-4.md`](epics/Epic-4.md)
+**Epic Docs:** [`epics/Epic-1/Epic-1.md`](epics/Epic-1/Epic-1.md), [`epics/Epic-2/Epic-2.md`](epics/Epic-2/Epic-2.md), [`epics/Epic-3/Epic-3.md`](epics/Epic-3/Epic-3.md), [`epics/Epic-4/Epic-4.md`](epics/Epic-4/Epic-4.md)
 
 ---
 

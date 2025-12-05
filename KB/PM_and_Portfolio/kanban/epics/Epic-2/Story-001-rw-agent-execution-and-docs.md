@@ -73,7 +73,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - Add configuration section listing all template placeholders
 
 **Files Created:**
-- ✅ `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs/T001-audit-report.md` (comprehensive audit report)
+- ✅ `KB/PM_and_Portfolio/kanban/Story-001-rw-agent-execution-and-docs/T001-audit-report.md` (comprehensive audit report)
 
 **Deliverable:** See [`T001-audit-report.md`](T001-audit-report.md) for complete audit findings and recommendations.
 

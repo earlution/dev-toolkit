@@ -8,8 +8,8 @@ housekeeping_policy: keep
 
 # Vibe Dev Kit – Kanban Board
 
-**Last Updated:** 2025-12-02  
-**Version:** v0.1.1.1+2
+**Last Updated:** 2025-12-05  
+**Version:** v0.4.4.1+1
 
 ---
 
@@ -18,8 +18,8 @@ housekeeping_policy: keep
 This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Coding For Dummies** book project.
 
 **Structure:** All Kanban documentation lives under `KB/PM_and_Portfolio/kanban/`:
-- Epic overviews: `epics/Epic-X.md`
-- Story documents: `epics/Epic-X/stories/Story-XXX-*.md`
+- Epic overviews: `epics/Epic-X/Epic-X.md`
+- Story documents: `epics/Epic-X/Story-XXX-*.md`
 - Board views: `_index.md` (quick view) and this file (detailed view)
 
 ---
@@ -34,12 +34,12 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 
 **Stories:**
 - [x] **E1:S01 – Dev Kit Versioning & RW Behaviour** - COMPLETE ✅ (v0.1.1.1+2)
-  - Story: [`epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md`](epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md)
+  - Story: [`epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md`](epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md)
 - [ ] **E1:S02 – Package & Repo Architecture** - TODO
-  - Story: [`epics/Epic-1/stories/Story-002-package-and-repo-architecture.md`](epics/Epic-1/stories/Story-002-package-and-repo-architecture.md)
+  - Story: [`epics/Epic-1/Story-002-package-and-repo-architecture.md`](epics/Epic-1/Story-002-package-and-repo-architecture.md)
 - [ ] **E1:S03 – Core KB Structure for Dev Kit** - TODO
 
-**Epic Doc:** [`epics/Epic-1.md`](epics/Epic-1.md)
+**Epic Doc:** [`epics/Epic-1/Epic-1.md`](epics/Epic-1/Epic-1.md)
 
 ---
 
@@ -50,9 +50,9 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 
 **Stories:**
 - [ ] **E2:S01 – RW Agent Execution & Docs** - TODO
-  - Story: [`epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/stories/Story-001-rw-agent-execution-and-docs.md)
+  - Story: [`epics/Epic-2/Story-001-rw-agent-execution-and-docs.md`](epics/Epic-2/Story-001-rw-agent-execution-and-docs.md)
 
-**Epic Doc:** [`epics/Epic-2.md`](epics/Epic-2.md)
+**Epic Doc:** [`epics/Epic-2/Epic-2.md`](epics/Epic-2/Epic-2.md)
 
 ---
 
@@ -64,13 +64,13 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 
 **Stories:**
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
-  - Story: [`epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/stories/Story-001-dev-kit-alignment-with-versioning-framework.md)
+  - Story: [`epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md`](epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md)
 - [x] **E3:S02 – Versioning Cookbook & Examples** - COMPLETE ✅ (v0.3.2.5+3)
-  - Story: [`epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md`](epics/Epic-3/stories/Story-002-versioning-cookbook-and-examples.md)
+  - Story: [`epics/Epic-3/Story-002-versioning-cookbook-and-examples.md`](epics/Epic-3/Story-002-versioning-cookbook-and-examples.md)
 - [x] **E3:S03 – Versioning Integration with Kanban & RW** - COMPLETE ✅ (v0.3.3.6+1)
-  - Story: [`epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md`](epics/Epic-3/stories/Story-003-versioning-integration-with-kanban-and-rw.md)
+  - Story: [`epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md`](epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md)
 
-**Epic Doc:** [`epics/Epic-3.md`](epics/Epic-3.md)
+**Epic Doc:** [`epics/Epic-3/Epic-3.md`](epics/Epic-3/Epic-3.md)
 
 ---
 
@@ -78,17 +78,19 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
 
 **Status:** COMPLETE  
 **Priority:** HIGH  
-**Last Updated:** v0.4.3.7+1
+**Last Updated:** v0.4.4.1+1
 
 **Stories:**
 - [x] **E4:S01 – Dev Kit Kanban Implementation** - COMPLETE ✅ (v0.4.1.1+6)
-  - Story: [`epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/stories/Story-001-dev-kit-kanban-implementation.md)
+  - Story: [`epics/Epic-4/Story-001-dev-kit-kanban-implementation.md`](epics/Epic-4/Story-001-dev-kit-kanban-implementation.md)
 - [x] **E4:S02 – FR/BR Intake to Tasks** - COMPLETE ✅ (v0.4.2.5+1)
-  - Story: [`epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md`](epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks.md)
+  - Story: [`epics/Epic-4/Story-002-fr-br-intake-to-tasks.md`](epics/Epic-4/Story-002-fr-br-intake-to-tasks.md)
 - [x] **E4:S03 – Kanban + Versioning + RW Integration** - COMPLETE ✅ (v0.4.3.7+1)
-  - Story: [`epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md`](epics/Epic-4/stories/Story-003-kanban-versioning-rw-integration.md)
+  - Story: [`epics/Epic-4/Story-003-kanban-versioning-rw-integration.md`](epics/Epic-4/Story-003-kanban-versioning-rw-integration.md)
+- [x] **E4:S04 – Kanban Structure Refactoring** - COMPLETE ✅ (v0.4.4.1+1)
+  - Story: [`epics/Epic-4/Story-004-kanban-structure-refactoring.md`](epics/Epic-4/Story-004-kanban-structure-refactoring.md)
 
-**Epic Doc:** [`epics/Epic-4.md`](epics/Epic-4.md)
+**Epic Doc:** [`epics/Epic-4/Epic-4.md`](epics/Epic-4/Epic-4.md)
 
 ---
 

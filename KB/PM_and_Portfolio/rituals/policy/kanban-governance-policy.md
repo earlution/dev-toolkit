@@ -73,22 +73,20 @@ You can represent these as:
 
 Epics represent broad, conceptual areas of work (for example, “Kanban Framework”, “Workflow Framework”, “Book Manuscript”).
 
-- **Location:** `KB/PM_and_Portfolio/kanban/epics/Epic-X.md` (Epic overview document)
-- **Directory:** `KB/PM_and_Portfolio/kanban/epics/Epic-X/` (contains Stories subdirectory)
+- **Location:** `KB/PM_and_Portfolio/kanban/epics/Epic-X/Epic-X.md` (Epic overview document)
+- **Directory:** `KB/PM_and_Portfolio/kanban/epics/Epic-X/` (contains all Epic files)
 - **Template:** Use `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md` as starting point
 
 **Structure:**
 ```
 kanban/epics/
-├── Epic-1.md              # Epic 1 overview
-├── Epic-1/                # Epic 1 directory
-│   └── stories/           # Stories for Epic 1
-│       ├── Story-001-*.md
-│       └── [other story files]
-├── Epic-2.md
-└── Epic-2/
-    └── stories/
-        └── Story-XXX-*.md
+├── Epic-1/                # Epic 1 directory (all files here)
+│   ├── Epic-1.md          # Epic 1 overview
+│   ├── Story-001-*.md     # Story files
+│   └── [other story files]
+├── Epic-2/                # Epic 2 directory
+│   ├── Epic-2.md
+│   └── Story-XXX-*.md
 ```
 
 **Every Story must belong to an Epic.** When creating a new Story, ensure its Epic exists (create Epic doc and directory if needed).
@@ -97,11 +95,11 @@ kanban/epics/
 
 Stories are the **primary unit of planning** in this repo.
 
-- **Location:** `KB/PM_and_Portfolio/kanban/epics/Epic-X/stories/Story-XXX-short-slug.md`
+- **Location:** `KB/PM_and_Portfolio/kanban/epics/Epic-X/Story-XXX-short-slug.md`
 - **ID:** `XXX` (numeric string, e.g. `001`, `002`)
-- **Directory:** Each Story lives in its Epic's `stories/` subdirectory, allowing for associated files (diagrams, notes, etc.)
+- **Directory:** Each Story lives in its Epic's directory, allowing for associated files (diagrams, notes, etc.) in Story subdirectories
 - **Examples:**
-  - `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md`
+  - `KB/PM_and_Portfolio/kanban/epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md`
 
 **Each Story file should include:**
 

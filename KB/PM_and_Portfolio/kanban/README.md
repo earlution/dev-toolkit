@@ -18,36 +18,34 @@ kanban/
 ├── README.md              # This file (obligatory)
 ├── kanban-board.md        # Detailed board view
 └── epics/
-    ├── Epic-1.md          # Epic 1 overview
-    ├── Epic-1/            # Epic 1 directory
-    │   └── stories/
-    │       ├── Story-001-vibe-dev-kit-kanban-and-versioning.md
-    │       └── [other story files as needed]
-    ├── Epic-2.md
-    ├── Epic-2/
-    │   └── stories/
-    │       └── Story-XXX-*.md
+    ├── Epic-1/            # Epic 1 directory (all files here)
+    │   ├── Epic-1.md      # Epic 1 overview
+    │   ├── Story-001-vibe-dev-kit-kanban-and-versioning.md
+    │   └── [other story files as needed]
+    ├── Epic-2/            # Epic 2 directory
+    │   ├── Epic-2.md
+    │   └── Story-XXX-*.md
     └── ...
 ```
 
 ## Key Principles
 
 - **Single location:** All Kanban docs (Epics, Stories, board views) live under `kanban/`
-- **Epic-centric:** Each Epic has its own directory containing its Stories
-- **Story directories:** Each Story gets its own directory to accommodate associated files (diagrams, notes, etc.)
+- **Epic-centric:** Each Epic has its own directory containing all its files (Epic overview, Stories, Task docs)
+- **Story directories:** Stories with associated files can have subdirectories (e.g., `Story-XXX/TXXX-*.md`)
 - **Board views:** `_index.md` and `kanban-board.md` provide different views of the same work
 
 ## Files
 
 - **`_index.md`** – Quick board view (table format)
 - **`kanban-board.md`** – Detailed board view with full context
-- **`epics/Epic-X.md`** – Epic overview document
-- **`epics/Epic-X/stories/Story-XXX-*.md`** – Story documents and associated files
+- **`epics/Epic-X/Epic-X.md`** – Epic overview document
+- **`epics/Epic-X/Story-XXX-*.md`** – Story documents and associated files
 
 ## Workflow
 
-1. **Create Epic:** Add `Epic-X.md` and `Epic-X/` directory under `epics/`
-2. **Create Story:** Add `Story-XXX-*.md` under `epics/Epic-X/stories/`
+1. **Create Epic:** Add `Epic-X/` directory under `epics/` with `Epic-X.md` inside
+2. **Create Story:** Add `Story-XXX-*.md` under `epics/Epic-X/`
 3. **Update Board:** Update `_index.md` and/or `kanban-board.md` with new work items
 4. **Track Progress:** Update Epic and Story docs as work progresses
 

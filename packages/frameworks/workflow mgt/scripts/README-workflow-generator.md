@@ -280,7 +280,7 @@ After generating a workflow:
 
 - **Agent-Driven Execution:** `KB/Documentation/Developer_Docs/vwmp/agent-driven-workflow-execution.md`
 - **Release Workflow:** `KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`
-- **Workflow Taxonomy:** `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-003-additional-workflows-and-examples/T01-workflow-taxonomy.md`
+- **Workflow Taxonomy:** `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-003-additional-workflows-and-examples/T01-workflow-taxonomy.md`
 - **Existing Workflows:** `workflows/`
 
 ---

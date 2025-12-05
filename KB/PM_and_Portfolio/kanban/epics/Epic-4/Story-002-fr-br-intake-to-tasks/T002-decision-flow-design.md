@@ -698,7 +698,7 @@ This decision flow design provides the foundation for:
 
 - `packages/frameworks/kanban/policies/kanban-governance-policy.md` (FR/BR rules)
 - `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (dev-kit implementation)
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks/T001-intake-analysis-report.md` (analysis)
+- `KB/PM_and_Portfolio/kanban/Story-002-fr-br-intake-to-tasks/T001-intake-analysis-report.md` (analysis)
 - `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md`
 - `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
 

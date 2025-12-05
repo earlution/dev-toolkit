@@ -60,7 +60,7 @@ This structure is:
 
 ### Task 2 – Create Story 001 File
 
-- [x] Create `KB/PM_and_Portfolio/kanban/epics/Epic-1/stories/Story-001-vibe-dev-kit-kanban-and-versioning.md` (this file).
+- [x] Create `KB/PM_and_Portfolio/kanban/Story-001-vibe-dev-kit-kanban-and-versioning.md` (this file).
 - [x] Include:
   - Status, Owner, Repo, and placeholder Version.
   - Overview of the Kanban and versioning goals.

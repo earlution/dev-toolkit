@@ -345,7 +345,7 @@ VERSION_BUILD = 1  # ← Always 1 for new Tasks
 - **Decision:** Story matches ✅
 
 **Step 3: Create Task**
-- Open Story document: `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-002-ui-theme-and-styling.md`
+- Open Story document: `KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-002-ui-theme-and-styling.md`
 - Check existing Tasks: T01, T02, T03
 - Create Task 4: "Add dark mode toggle to settings page"
 - Assign version: `0.3.2.4+1`
@@ -392,7 +392,7 @@ VERSION_BUILD = 1  # ← Always 1 for new Tasks
 
 **Step 4: Create Story and Task**
 - Create Story 3: "User Profile Management"
-  - Location: `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-003-user-profile-management.md`
+  - Location: `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-003-user-profile-management.md`
   - Status: TODO
   - Goal: "Implement user profile management features including profile picture upload"
 - Create Task 1: "Add user profile picture upload"
@@ -439,12 +439,12 @@ VERSION_BUILD = 1  # ← Always 1 for new Tasks
 
 **Step 4: Create Epic, Story, and Task**
 - Create Epic 5: "Real-Time Collaboration"
-  - Location: `KB/PM_and_Portfolio/kanban/epics/Epic-5.md`
+  - Location: `KB/PM_and_Portfolio/kanban/epics/Epic-5/Epic-5.md`
   - Status: TODO
   - **CRITICAL:** Epic is broad and abstract: "Framework for real-time collaboration features"
   - Problem Domain: Real-Time Collaboration
 - Create Story 1: "Real-Time Collaboration Foundation"
-  - Location: `KB/PM_and_Portfolio/kanban/epics/Epic-5/stories/Story-001-real-time-collaboration-foundation.md`
+  - Location: `KB/PM_and_Portfolio/kanban/epics/Epic-5/Story-001-real-time-collaboration-foundation.md`
   - Status: TODO
   - Goal: "Establish foundation for real-time collaboration features"
 - Create Task 1: "Add real-time collaboration features"
@@ -483,7 +483,7 @@ VERSION_BUILD = 1  # ← Always 1 for new Tasks
 - **Decision:** Story matches ✅
 
 **Step 3: Create Task**
-- Open Story document: `KB/PM_and_Portfolio/kanban/epics/Epic-3/stories/Story-002-ui-theme-and-styling.md`
+- Open Story document: `KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-002-ui-theme-and-styling.md`
 - Check existing Tasks: T01, T02, T03, T04 (from Example 1)
 - Create Task 5: "Fix dark mode toggle persistence"
 - Assign version: `0.3.2.5+1`
@@ -534,7 +534,7 @@ VERSION_BUILD = 1  # ← Always 1 for new Tasks
 
 **Step 4: Create Story and Task**
 - Create Story 3 (or Story 4 if Story 3 exists): "User Profile Management"
-  - Location: `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-003-user-profile-management.md`
+  - Location: `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-003-user-profile-management.md`
   - Status: TODO
   - Goal: "Implement and maintain user profile management features"
 - Create Task 1: "Fix profile picture upload file size limit"
@@ -717,8 +717,8 @@ After completing intake:
 - `packages/frameworks/kanban/templates/BR_TEMPLATE.md` (Bug Report template)
 - `packages/frameworks/kanban/templates/EPIC_TEMPLATE.md` (Epic template)
 - `packages/frameworks/kanban/templates/STORY_TEMPLATE.md` (Story template)
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks/T002-decision-flow-design.md` (Decision flow design)
-- `KB/PM_and_Portfolio/kanban/epics/Epic-4/stories/Story-002-fr-br-intake-to-tasks/T001-intake-analysis-report.md` (Intake analysis)
+- `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-002-fr-br-intake-to-tasks/T002-decision-flow-design.md` (Decision flow design)
+- `KB/PM_and_Portfolio/kanban/epics/Epic-4/Story-002-fr-br-intake-to-tasks/T001-intake-analysis-report.md` (Intake analysis)
 - `packages/frameworks/kanban/policies/kanban-governance-policy.md` (Kanban governance)
 - `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` (Versioning policy)
 
