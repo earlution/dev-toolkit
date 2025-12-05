@@ -8,11 +8,11 @@ housekeeping_policy: keep
 
 # Story 001 – RW Agent Execution & Docs
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-05 (v0.2.1.5+1 – Task 5 complete: Fixed validate_version_bump.py Epic/Story auto-detection bug)
+**Last updated:** 2025-12-05 (v0.2.1.5+1 – All tasks complete: Story 1 complete with validator bug fix)
 **Version:** v0.2.1.5+1  
 **Code:** E2S01
 
