@@ -8,12 +8,12 @@ housekeeping_policy: keep
 
 # Story 001 – Documentation Maintenance Framework
 
-**Status:** TODO  
+**Status:** COMPLETE ✅  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-06 (v0.5.1.3+3 – Documentation review cadences created)  
-**Version:** v0.5.1.3+3  
+**Last updated:** 2025-12-06 (v0.5.1.4+1 – Documentation update triggers established, Story 1 complete)  
+**Version:** v0.5.1.4+1  
 **Code:** E5S01
 
 ---
@@ -23,7 +23,7 @@ housekeeping_policy: keep
 - [ ] **E5:S01:T01 – Conduct comprehensive documentation hygiene analysis** - TODO (v0.5.1.1+2 – Task planned)
 - [x] **E5:S01:T02 – Define documentation maintenance policies** - COMPLETE ✅
 - [x] **E5:S01:T03 – Create documentation review cadences** - COMPLETE ✅
-- [ ] **E5:S01:T04 – Establish documentation update triggers** - TODO (v0.5.1.1+3 – Task planned)
+- [x] **E5:S01:T04 – Establish documentation update triggers** - COMPLETE ✅
 
 ---
 
@@ -257,6 +257,16 @@ Documentation often becomes outdated because there's no clear system for identif
 4. **Document Update Procedures for Each Trigger Type:**
    - **Automatic RW Triggers:**
      - Document RW Step 6 and Step 7 procedures
+
+**Deliverables:**
+- Documentation update triggers: `KB/Architecture/Standards_and_ADRs/documentation-update-triggers.md`
+- Defines automatic triggers (Code Changes, Framework Changes, Policy Changes)
+- Defines manual triggers (Regular Reviews, User Feedback, Quality Assurance)
+- Documents update procedures for each trigger type
+- Establishes update trigger detection (Automated and Manual)
+- Defines update workflows (Automatic and Manual)
+- Integrates with Release Workflow, Kanban, and Framework Health Monitoring
+- Establishes update trigger metrics and reporting
      - Define what gets updated automatically
      - Specify validation requirements
      - Document rollback procedures if auto-update fails
