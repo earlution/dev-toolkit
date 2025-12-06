@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-05 (v0.6.1.1+1 – Epic 6 created)  
+**Last updated:** 2025-12-06 (v0.6.1.1+2 – Framework dependency architecture designed and documented)  
 **Branch:** `epic/6-framework-management`  
 **Version Schema:** `0.6.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -33,6 +33,8 @@ housekeeping_policy: keep
 ## Overview
 
 Epic 6 owns the **Framework Management and Maintenance** processes for the vibe-dev-kit repository. This epic ensures that all framework packages remain current, well-maintained, and properly versioned.
+
+**Vision:** Transform frameworks from copy-paste packages to **reusable, auto-updating dependencies** that can be installed and updated automatically across projects. Frameworks will support multiple dependency management strategies (Git submodules, package managers, CLI tool) enabling seamless updates when frameworks are improved.
 
 ---
 
@@ -71,6 +73,8 @@ Establish version management processes for framework packages.
 - [ ] E6:S01:T01 – Define framework versioning strategy
 - [ ] E6:S01:T02 – Create framework release processes
 - [ ] E6:S01:T03 – Establish framework compatibility tracking
+- [ ] E6:S01:T04 – Design framework dependency architecture
+- [ ] E6:S01:T05 – Create framework version tagging strategy
 
 **Story:** [`Story-001-framework-version-management.md`](Story-001-framework-version-management.md)
 
@@ -90,6 +94,8 @@ Implement processes for updating and migrating framework packages.
 - [ ] E6:S02:T01 – Create framework update procedures
 - [ ] E6:S02:T02 – Build migration guides and tools
 - [ ] E6:S02:T03 – Establish backward compatibility policies
+- [ ] E6:S02:T04 – Build framework update CLI tool
+- [ ] E6:S02:T05 – Create auto-update mechanisms
 
 **Story:** [`Story-002-framework-update-and-migration.md`](Story-002-framework-update-and-migration.md)
 

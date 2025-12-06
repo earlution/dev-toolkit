@@ -9,20 +9,22 @@ housekeeping_policy: keep
 # Release Workflow (RW) Implementation Package
 
 **Version:** 2.0.0  
-**Last Updated:** 2025-12-05  
+**Last Updated:** 2025-12-06  
 **Purpose:** Complete package for implementing the Release Workflow (RW) trigger and agent-driven workflow execution pattern in your project  
 **Source Project:** fynd.deals (Epic 15, Story 1)  
 **Key Enhancements:** "ALL sections" requirement, atomicity, blocked protocol, epic branch workflow
+
+**📦 Dependency Architecture (Epic 6):** This framework is transitioning from copy-paste to **dependency-based installation** with automatic updates. See [Framework Dependency Architecture](../../../KB/Architecture/Standards_and_ADRs/framework-dependency-architecture.md) for details on installing as a Git submodule, via CLI tool, or package manager.
 
 ---
 
 ## 📋 What's Included
 
-This package contains all essential files needed to implement the Release Workflow (RW) trigger in your project. The RW trigger enables AI assistants to execute a complete 14-step release process (version bump, changelog generation, Git operations, PDCA verification and action) using intelligent agent-driven execution.
+This package contains all essential files needed to implement the Release Workflow (RW) trigger in your project. The RW trigger enables AI assistants to execute a complete 13-step release process (version bump, changelog generation, Git operations, PDCA verification and action) using intelligent agent-driven execution.
 
 ### Core Methodology Documents
 - `KB/Documentation/Developer_Docs/vwmp/agent-driven-workflow-execution.md` - General methodology for agent-driven workflow execution
-- `KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` - Step-by-step guide for executing the 14-step Release Workflow (v1.4.0)
+- `KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` - Step-by-step guide for executing the 13-step Release Workflow
 - `KB/Documentation/Developer_Docs/vwmp/release-workflow-reference.md` - Complete workflow reference
 - `KB/Documentation/Developer_Docs/vwmp/portable-workflow-implementation-guide.md` - Detailed implementation guide
 

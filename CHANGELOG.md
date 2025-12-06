@@ -17,6 +17,31 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.6.1.1+2] - 06-12-25
+
+🏗️ Framework Architecture: Designed dependency architecture for auto-updating frameworks
+
+### Added
+
+- Created framework dependency architecture document
+- Created framework update CLI tool design document
+- Added dependency architecture tasks to Epic 6 stories (E6:S01:T04, T05, E6:S02:T04, T05)
+
+### Changed
+
+- Updated Epic 6 vision to reflect dependency-based framework goal
+- Updated all framework READMEs with dependency architecture notices
+- Updated main README with dependency architecture vision
+- Updated integration guides with dependency-based installation examples
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.1.1+2.md` for full details
+- Architecture supports Git submodules (Phase 1), CLI tool (Phase 2), and package managers (Phase 3)
+- Frameworks transitioning from copy-paste to auto-updating dependencies
+
+---
+
 ## [0.1.1.1+1] - 02-12-25
 
 🏗️ Foundation: First proper release with Epic 1–4 structure, dev-kit versioning policy, and Kanban FR/BR → Task flow

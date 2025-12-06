@@ -23,6 +23,8 @@ housekeeping_policy: keep
 - [ ] **E6:S01:T01 – Define framework versioning strategy** - TODO
 - [ ] **E6:S01:T02 – Create framework release processes** - TODO
 - [ ] **E6:S01:T03 – Establish framework compatibility tracking** - TODO
+- [ ] **E6:S01:T04 – Design framework dependency architecture** - TODO
+- [ ] **E6:S01:T05 – Create framework version tagging strategy** - TODO
 
 ---
 
@@ -82,6 +84,48 @@ Establish comprehensive version management processes for framework packages.
 2. Create compatibility tracking mechanisms
 3. Implement compatibility documentation
 4. Document compatibility policies
+
+---
+
+### E6:S01:T04 – Design framework dependency architecture
+
+**Input:** Framework versioning strategy, current framework structure  
+**Deliverable:** Framework dependency architecture document  
+**Dependencies:** E6:S01:T01  
+**Blocker:** None
+
+**Approach:**
+1. Analyze current framework consumption patterns (copy-paste)
+2. Design hybrid dependency architecture (Git submodules + CLI + package managers)
+3. Define dependency management strategies (Git submodules, subtrees, npm/pip packages)
+4. Create architecture decision record (ADR)
+5. Document dependency versioning and update mechanisms
+
+**Key Deliverables:**
+- Framework dependency architecture document
+- ADR for dependency management approach
+- Comparison of dependency strategies (Git submodules vs subtrees vs package managers)
+
+---
+
+### E6:S01:T05 – Create framework version tagging strategy
+
+**Input:** Framework versioning strategy, dependency architecture  
+**Deliverable:** Framework version tagging policy and implementation  
+**Dependencies:** E6:S01:T01, E6:S01:T04  
+**Blocker:** None
+
+**Approach:**
+1. Define semantic versioning strategy for frameworks (MAJOR.MINOR.PATCH)
+2. Create Git tagging workflow for framework releases
+3. Establish tag naming conventions (e.g., `framework-name-v2.0.0`)
+4. Document tag-based versioning process
+5. Create automated tagging scripts
+
+**Key Deliverables:**
+- Framework version tagging policy
+- Git tagging workflow documentation
+- Automated tagging scripts
 
 ---
 
