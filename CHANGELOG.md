@@ -17,6 +17,36 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.5.2.1+2] - 06-12-25
+
+🔍 Documentation Management: Documentation consistency validators created
+
+### Added
+
+- Created documentation link validator (`scripts/documentation/validate-documentation-links.py`)
+- Created documentation consistency validator (`scripts/documentation/validate-documentation-consistency.py`)
+- Implemented link validation (internal and external links)
+- Implemented version consistency checking (Epic/Story alignment)
+- Implemented cross-reference validation (broken references)
+- Implemented terminology consistency checking
+- Added JSON output support for integration
+- Added CI/CD integration support with exit codes
+
+### Changed
+
+- Updated Story 002 to mark T01 as complete
+- Version bumped to v0.5.2.1+2 (Story 2, Task 1, Build 2)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.2.1+2.md` for full details
+- Validators enable automated detection of documentation issues
+- Link validator checks internal and external links
+- Consistency validator checks version, cross-reference, and terminology consistency
+- Both validators support JSON output and CI/CD integration
+
+---
+
 ## [0.5.1.4+2] - 06-12-25
 
 🔔 Documentation Management: Documentation update triggers established (Story 1 complete)
