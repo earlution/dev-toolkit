@@ -12,13 +12,15 @@ housekeeping_policy: keep
 package:
   name: "Kanban System Implementation Package"
   version: "1.0.0"
-  last_updated: "2025-12-02"
+  last_updated: "2025-12-06"
   source_project: "Example project (Confidentia, Epic 4)"
   compatibility:
     numbering_versioning: "v2.0.0"
     workflow_management: "v2.0.0"
   license: "See source project"
 ```
+
+**📦 Dependency Architecture (Epic 6):** This framework is transitioning from copy-paste to **dependency-based installation** with automatic updates. See [Framework Dependency Architecture](../../../KB/Architecture/Standards_and_ADRs/framework-dependency-architecture.md) for details on installing as a Git submodule, via CLI tool, or package manager.
 
 > **Note:** All references to specific projects (for example, *Confidentia*, *Epic 4*, or concrete paths like `KB/PM_and_Portfolio/epics/overview/Epic 4/Epic-4.md`) are **examples only**.  
 > When you install this package, you should:

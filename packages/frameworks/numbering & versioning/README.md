@@ -11,8 +11,10 @@ housekeeping_policy: keep
 **Portable Package:** This directory contains all policy documents relating to numbering and versioning strategies. These documents can be adapted for use in other projects.
 
 **Source:** Originally developed for the Confidentia project, refined and enhanced in fynd.deals (Epic 15, Story 1).  
-**Last Updated:** 2025-12-02  
+**Last Updated:** 2025-12-06  
 **Version:** 2.0.0 (includes Epic renumbering strategy, epic branch workflow)
+
+**📦 Dependency Architecture (Epic 6):** This framework is transitioning from copy-paste to **dependency-based installation** with automatic updates. See [Framework Dependency Architecture](../../../KB/Architecture/Standards_and_ADRs/framework-dependency-architecture.md) for details on installing as a Git submodule, via CLI tool, or package manager.
 
 ---
 

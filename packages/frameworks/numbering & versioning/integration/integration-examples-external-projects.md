@@ -37,12 +37,28 @@ This document provides **step-by-step integration examples** for external projec
 
 ### Step 1: Install Framework Packages
 
+**Current Approach (Copy-Paste):**
 ```bash
 # Copy framework packages to your project
 cp -r /path/to/frameworks/kanban ./frameworks/kanban
 cp -r /path/to/frameworks/numbering\ \&\ versioning ./frameworks/numbering-versioning
 cp -r /path/to/frameworks/workflow\ mgt ./frameworks/workflow-mgt
 ```
+
+**Future Approach (Dependencies - Epic 6):**
+```bash
+# Using Git submodules (Phase 1)
+git submodule add https://github.com/earlution/vibe-dev-kit.git frameworks/vibe-dev-kit
+cd frameworks/vibe-dev-kit
+git checkout v2.0.0
+
+# Or using CLI tool (Phase 2)
+vibe-dev-kit install kanban@1.0.0
+vibe-dev-kit install numbering-versioning@2.0.0
+vibe-dev-kit install workflow-mgt@2.0.0
+```
+
+See [Framework Dependency Architecture](../../../../KB/Architecture/Standards_and_ADRs/framework-dependency-architecture.md) for details.
 
 ### Step 2: Create Project Structure
 

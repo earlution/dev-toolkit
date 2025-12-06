@@ -23,6 +23,8 @@ housekeeping_policy: keep
 - [ ] **E6:S02:T01 – Create framework update procedures** - TODO
 - [ ] **E6:S02:T02 – Build migration guides and tools** - TODO
 - [ ] **E6:S02:T03 – Establish backward compatibility policies** - TODO
+- [ ] **E6:S02:T04 – Build framework update CLI tool** - TODO
+- [ ] **E6:S02:T05 – Create auto-update mechanisms** - TODO
 
 ---
 
@@ -82,6 +84,58 @@ Implement comprehensive processes for updating and migrating framework packages.
 2. Create compatibility policy documentation
 3. Establish compatibility testing processes
 4. Document compatibility policies
+
+---
+
+### E6:S02:T04 – Build framework update CLI tool
+
+**Input:** Framework dependency architecture, update procedures  
+**Deliverable:** `vibe-dev-kit` CLI tool for framework management  
+**Dependencies:** E6:S01:T04, E6:S02:T01  
+**Blocker:** None
+
+**Approach:**
+1. Design CLI tool architecture and command structure
+2. Implement framework installation commands (`install`, `add`)
+3. Implement framework update commands (`update`, `upgrade`)
+4. Implement framework version checking (`check`, `status`)
+5. Support multiple dependency backends (Git submodules, package managers)
+6. Create CLI documentation and usage examples
+
+**Key Deliverables:**
+- `vibe-dev-kit` CLI tool (Python-based)
+- CLI command reference documentation
+- Installation and usage guides
+- Example workflows
+
+**CLI Commands:**
+- `vibe-dev-kit install <framework>[@version]` - Install framework as dependency
+- `vibe-dev-kit update <framework>` - Update framework to latest version
+- `vibe-dev-kit check` - Check for framework updates
+- `vibe-dev-kit status` - Show installed framework versions
+
+---
+
+### E6:S02:T05 – Create auto-update mechanisms
+
+**Input:** Framework dependency architecture, CLI tool  
+**Deliverable:** Auto-update mechanisms for Git submodules and package managers  
+**Dependencies:** E6:S01:T04, E6:S02:T04  
+**Blocker:** None
+
+**Approach:**
+1. Implement Git submodule update automation
+2. Implement package manager update automation (npm, pip)
+3. Create update scripts for each dependency type
+4. Design version pinning and update policies
+5. Create automated update testing workflows
+6. Document auto-update procedures
+
+**Key Deliverables:**
+- Git submodule update scripts
+- Package manager update integration
+- Auto-update policy documentation
+- Update testing workflows
 
 ---
 
