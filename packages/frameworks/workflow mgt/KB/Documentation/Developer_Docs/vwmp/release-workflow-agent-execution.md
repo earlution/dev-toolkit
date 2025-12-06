@@ -8,9 +8,45 @@ housekeeping_policy: keep
 
 # Release Workflow: Agent Execution Guide
 
-**Version:** 1.5.0
+**Version:** 1.4.0
 **Last Updated:** 2025-12-05
 **Related:** [Example: Confidentia - Epic 4 - User Workflows & Use Case Modeling, Release Workflow] | [Example: vibe-dev-kit - Epic 2 - Workflow Management Framework, Release Workflow]
+
+---
+
+## 📜 Version History
+
+**Current Version:** 1.4.0 (2025-12-05)
+
+### Version 1.4.0 (2025-12-05) - Branch Safety Hardening
+- **Added:** Step 1: Branch Safety Check as mandatory blocking step
+- **Changed:** Step 1 now requires `validate_branch_context.py --strict` execution before any file modifications
+- **Changed:** Step 1 stops workflow immediately if validator returns non-zero exit code
+- **Changed:** All remaining steps marked as `cancelled` if Step 1 fails
+- **Changed:** Updated from 13 steps to 14 steps (Step 1 added, all others renumbered)
+- **Related:** E2:S01:T05 - Harden RW branch safety checks
+
+### Version 1.3.0 (2025-12-04) - BR/FR Documentation Integration
+- **Added:** Step 6: Update BR/FR Docs (before Auto-update Kanban Docs)
+- **Changed:** Auto-update Kanban Docs moved from Step 5 to Step 7
+- **Changed:** All subsequent steps renumbered (Stage Files: 6→8, Run Validators: 7→9, etc.)
+- **Changed:** Updated from 13 steps to 14 steps
+- **Related:** E3:S03:T06 - Add RW step to update BR/FR docs with fix attempt history
+
+### Version 1.2.0 (2025-12-03) - PDCA ACT Phase Integration
+- **Added:** Step 13: Act on Verification Results (ACT phase)
+- **Changed:** Updated from 12 steps to 13 steps
+- **Related:** E2:S02:T02 - Add ACT Phase (Step 13) to Release Workflow
+
+### Version 1.1.0 (2025-12-02) - PDCA CHECK Phase Integration
+- **Added:** Step 12: Post-Commit Verification & Reflection (CHECK phase)
+- **Changed:** Updated from 11 steps to 12 steps
+- **Related:** E2:S02:T01 - Add CHECK Phase (Step 12) to Release Workflow
+
+### Version 1.0.0 (2025-12-01) - Initial Release
+- **Initial:** 11-step Release Workflow
+- **Steps:** Bump Version, Create Detailed Changelog, Update Main Changelog, Update README, Auto-update Kanban Docs, Stage Files, Run Validators, Commit Changes, Create Git Tag, Push to Remote
+- **Related:** Initial framework extraction from fynd.deals Epic 15, Story 1
 
 ---
 
@@ -218,80 +254,114 @@ story_doc_pattern = config.get('story_doc_pattern') if config and config.get('us
 
 ### Step 1: Branch Safety Check
 
+**🚨 MANDATORY BLOCKING STEP - DO NOT BYPASS**
+
 **Step Definition:**
 ```yaml
 - id: step-1
   name: Branch Safety Check
   handler: release.branch_safety_check
   dependencies: []
+  mandatory: true  # MANDATORY: Cannot be skipped
+  blocking: true   # BLOCKING: Stops workflow on failure
   config:
     check_modified_files: true
     check_version_alignment: true
     check_changelog_alignment: true
+    use_validator: true  # MANDATORY: Must use validate_branch_context.py
+    strict_mode: true     # MANDATORY: Validator must run in strict mode
 ```
+
+**CRITICAL REQUIREMENTS:**
+- ✅ **MANDATORY:** This step MUST run before ANY file modifications
+- ✅ **BLOCKING:** If this step fails, the workflow MUST STOP immediately
+- ✅ **NON-OPTIONAL:** This step cannot be skipped, bypassed, or ignored
+- ✅ **VALIDATOR REQUIRED:** Must run `validate_branch_context.py` with `--strict` flag
+- ✅ **EXIT CODE CHECK:** Must check validator exit code and stop on non-zero
+- ❌ **DO NOT PROCEED:** If Step 1 fails, DO NOT proceed to Step 2 or any subsequent step
 
 **Agent Execution:**
 
 1. **ANALYZE:**
    - **Load config first:** Load `rw-config.yaml` if it exists (see Config Loading section above)
    - Get current Git branch name (e.g., `epic/4` [Example: Confidentia], `epic/2` [Example: vibe-dev-kit], `main`)
-   - Check if branch matches expected pattern (e.g., `epic/{n}` for epic branches)
-   - Analyze modified files in working directory (`git status`, `git diff`)
-   - **Use config path:** Check if version file exists (from config `version_file` or fallback `src/{project}/version.py`) and read current version (if file is modified)
-   - **Use config path:** Check if changelog entries exist (from config `main_changelog` or fallback `CHANGELOG.md` if modified)
-   - Extract expected epic number from branch name (e.g., `epic/4` → Epic 4 [Example: Confidentia], `epic/2` → Epic 2 [Example: vibe-dev-kit])
-   - Check modified file paths for epic-specific patterns (e.g., `Epic-4/` [Example: Confidentia], `Epic-2/` [Example: vibe-dev-kit], `epic/4/` [Example: Confidentia])
+   - **MANDATORY:** Determine validator script path:
+     - From config: `scripts_path` + `/validate_branch_context.py`
+     - Fallback: `packages/frameworks/workflow mgt/scripts/validation/validate_branch_context.py` [Example: vibe-dev-kit]
+     - Or: `scripts/validation/validate_branch_context.py` [Example: Confidentia]
+   - Verify validator script exists (if not found, this is a critical error - workflow must stop)
 
 2. **DETERMINE:**
-   - Determine if work aligns with current branch:
-     - If on `epic/4` [Example: Confidentia] or `epic/2` [Example: vibe-dev-kit], modified files should relate to that Epic
-     - If version file modified, version epic should match branch epic
-     - If changelog modified, changelog entries should match branch epic
-     - Modified file paths should align with branch context
-   - Identify any mismatches or cross-epic contamination
-   - Determine if RW should proceed or stop
+   - **MANDATORY ACTION:** Run `validate_branch_context.py` with `--strict` flag
+   - **Command:** `python {validator_path} --strict`
+   - **Expected Behavior:**
+     - Exit code 0 = PASS (branch and work align)
+     - Exit code 1 = FAIL (branch and work do not align)
+   - **CRITICAL:** If validator script is missing or cannot be executed, workflow MUST STOP
 
 3. **EXECUTE:**
-   - Run branch context analysis:
-     - Check `git status` for modified files
-     - Check `git diff` for changes to version file
-     - Check `git diff` for changes to CHANGELOG.md
-     - Analyze file paths for epic alignment
-   - Compare branch epic with work epic (from files/version/changelog)
+   - **MANDATORY:** Execute validator script:
+     ```bash
+     python {validator_path} --strict
+     ```
+   - **Capture exit code:** Store the exit code from validator execution
+   - **Capture output:** Store validator output for error messages
+   - **DO NOT MODIFY FILES:** This step runs BEFORE any file modifications
 
 4. **VALIDATE:**
-   - Verify branch and work alignment:
-     - ✅ **PASS**: Work aligns with branch (e.g., on `epic/4` [Example: Confidentia] or `epic/2` [Example: vibe-dev-kit], all work is related to that Epic)
-     - ❌ **FAIL**: Work does not align with branch (e.g., on `epic/4` [Example: Confidentia], but work references Epic 5 [Example: Confidentia])
-   - If mismatch detected, workflow must stop immediately
+   - **Check exit code:**
+     - ✅ **PASS (exit code 0):** Branch and work align correctly
+     - ❌ **FAIL (exit code 1 or non-zero):** Branch and work do not align
+   - **CRITICAL RULE:** If exit code is non-zero, workflow MUST STOP immediately
+   - **NO EXCEPTIONS:** Do not proceed to Step 2 if validation fails
 
 5. **PROCEED:**
-   - **If aligned**: Document "Branch safety check passed - work aligns with current branch", move to Step 2
-   - **If misaligned**: 
-     - Document: "🚨 RW BLOCKED: Branch Safety Check Failed"
-     - Output clear warning message:
-       ```
-       🚨 RELEASE WORKFLOW BLOCKED
-       
-       Step 1: Branch Safety Check - FAILED
-       
-       Reason: Current branch '{branch}' does not align with the work being released.
-       
-       Details:
-       - Current branch: {branch}
-       - Expected epic: {expected_epic}
-       - Detected issues: {list_of_issues}
-       
-       Action Required:
-       1. Switch to the correct branch: git checkout epic/{correct_epic}
-       2. Or review your changes to ensure they align with the current branch
-       3. Then run RW again
-       
-       RW is NOT complete. Workflow stopped at Step 1.
-       ```
-     - Mark Step 1 TODO as `cancelled`
-     - Mark all remaining steps as `cancelled`
-     - **DO NOT PROCEED** to Step 2
+   - **If PASS (exit code 0):**
+     - Document: "✅ Branch safety check passed - work aligns with current branch"
+     - Mark Step 1 TODO as `completed`
+     - Move to Step 2
+   
+   - **If FAIL (exit code 1 or non-zero):**
+     - **MANDATORY ACTIONS:**
+       1. Document: "🚨 RW BLOCKED: Branch Safety Check Failed"
+       2. Output clear error message using validator output:
+          ```
+          🚨 RELEASE WORKFLOW BLOCKED
+          
+          Step 1: Branch Safety Check - FAILED
+          
+          Reason: Current branch '{branch}' does not align with the work being released.
+          
+          Details:
+          - Current branch: {branch}
+          - Expected branch: epic/{expected_epic}
+          - Version file shows: {version}
+          - Detected epic from work: {detected_epic}
+          
+          Validator Output:
+          {validator_output}
+          
+          Action Required:
+          1. Switch to the correct branch: git checkout epic/{correct_epic}
+          2. Verify your changes align with the branch: git status
+          3. Then run RW again
+          
+          RW is NOT complete. Workflow stopped at Step 1.
+          All subsequent steps have been cancelled.
+          ```
+       3. Mark Step 1 TODO as `cancelled`
+       4. Mark ALL remaining steps (2-14) as `cancelled`:
+          ```python
+          todo_write(merge=True, todos=[
+              {'id': 'rw-step-1', 'status': 'cancelled'},
+              {'id': 'rw-step-2', 'status': 'cancelled'},
+              {'id': 'rw-step-3', 'status': 'cancelled'},
+              # ... mark all remaining steps as cancelled
+          ])
+          ```
+       5. **STOP WORKFLOW:** Do not execute any further steps
+       6. **DO NOT PROCEED:** Do not attempt Step 2 or any subsequent step
+       7. **DO NOT MODIFY FILES:** No file modifications should occur after Step 1 failure
 
 **Example Alignment Checks:**
 
@@ -854,33 +924,12 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - **Use config paths:** Find Epic doc (from config `kanban_root` and `epic_doc_pattern` if `use_kanban: true`, or fallback):
      - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic 4/Epic-4.md` (or from `rw-config.yaml` if present)
      - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/Epic-2.md` (or from `rw-config.yaml` if present)
-   - **MANDATORY: Read Epic doc to check if Story is referenced:**
-     - Read Epic file Story Checklist
-     - Check if Story number is referenced (e.g., `E4:S03` or `Story-003-*.md`)
-     - Extract Story name from Epic reference if available
    - **Use config paths:** Find Story doc (from config `kanban_root` and `story_doc_pattern` if `use_kanban: true`, or fallback):
      - [Example: Confidentia] `KB/PM_and_Portfolio/kanban/Epic 4/Story-3-*.md` (or from `rw-config.yaml` if present)
      - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-001-*.md` (or from `rw-config.yaml` if present)
-   - **CRITICAL: Check Story file existence:**
-     - If Story file doesn't exist:
-       - Check if Story is referenced in Epic file Story Checklist
-       - If referenced: Create Story file from template (see substep below)
-       - If not referenced: RW BLOCKED - Story not found and not referenced in Epic
-     - If Story file exists: Proceed with normal update flow
    - Understand "Last updated" field format
 
 2. **DETERMINE:**
-   - **If Story file doesn't exist but is referenced in Epic:**
-     - Determine Story file path from config or fallback pattern
-     - Determine Story name from Epic file reference (extract from Story Checklist)
-     - Determine Story template path: `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
-     - Plan template-based creation with proper substitutions:
-       - Epic number (from version)
-       - Story number (from version)
-       - Story name (from Epic reference)
-       - Default status (TODO)
-       - Default priority (from Epic or MEDIUM)
-       - File naming: `Story-{N:03d}-{Name}.md` (e.g., `Story-004-documentation-triggers.md`)
    - **CRITICAL: "ALL Sections" Requirement** - Must update ALL sections referencing the story/task:
      - Epic doc header "Last updated" field
      - Epic doc Story Checklist (status and version marker)
@@ -894,29 +943,12 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Determine if tasks should be marked complete (if applicable)
    - **Systematic Process:**
      1. Read the FULL Epic document file
-     2. **Check Story file existence:**
-        - If exists: Read the authoritative Story document file to get correct state
-        - If not exists but referenced in Epic: Create Story file from template first
+     2. Read the authoritative Story document file to get correct state
      3. Use grep/search to find ALL sections referencing the story/task
      4. **CRITICAL: Update Story file FIRST, then Epic file to match**
      5. Update ALL sections to match the updated Story file's state
 
 3. **EXECUTE:**
-   - **If Story file doesn't exist but is referenced in Epic:**
-     - **Substep: Create Story file from template:**
-       1. Read Story template: `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
-       2. Extract Story name from Epic file reference (Story Checklist entry)
-       3. Substitute template placeholders:
-          - `Epic X, Story Y` → `Epic {epic}, Story {story}`
-          - `[Title]` → Story name from Epic reference
-          - `EXXSYY` → `E{epic:02d}S{story:02d}` (e.g., `E05S04`)
-          - `EXX:SYY` → `E{epic:02d}:S{story:02d}` (e.g., `E05:S04`)
-          - Status: `TODO` (default)
-          - Priority: From Epic file or `MEDIUM` (default)
-          - Created date: Current date
-       4. Create Story file with proper naming: `Story-{story:03d}-{name-slug}.md`
-       5. Write Story file to correct location (from config or fallback pattern)
-       6. Document: "Created Story file from template: {file_path}"
    - **CRITICAL: Update Story file FIRST, then Epic file to match:**
    - **FIRST: Update the Story file (`Story-{N}-{Name}.md`) task checklist:**
      - Add forensic marker `(v{version})` to the completed task in the Task Checklist
@@ -930,12 +962,6 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Search for and update any other references to the story/task
 
 4. **VALIDATE:**
-   - **If Story file was created:**
-     - Verify Story file exists at expected path
-     - Verify Story file follows template structure
-     - Verify Story file has correct Epic/Story numbers
-     - Verify Story file has correct Story name
-     - Verify Story file has proper metadata (status, priority, dates)
    - Verify Epic doc header was updated
    - Verify Epic doc Story Checklist was updated with version marker
    - Verify Epic doc detailed Story sections were updated
@@ -1825,76 +1851,4 @@ The `.cursorrules` file defines a **case-insensitive "RW" trigger** that mandate
 ---
 
 **Last Updated:** 2025-12-05
-**Document Version:** 1.5.0
-
----
-
-## 📜 Document Version History
-
-This section tracks significant updates and revisions to the Release Workflow Agent Execution Guide.
-
-### v1.5.0 (2025-12-05) – Step 7 Story File Pre-Existence Check & Template Creation
-
-**Changes:**
-- **Enhanced Step 7: Auto-update Kanban Docs** with Story file pre-existence check
-- Added mandatory check for Story file existence before reading/updating
-- Added template-based Story file creation when file is missing but referenced in Epic
-- Story file creation substep generated on-the-fly during RW execution
-- Template path: `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
-- Prevents RW failures when Story files are referenced but not yet created
-- Updated ANALYZE, DETERMINE, EXECUTE, and VALIDATE phases with creation logic
-
-**Related Work:** E5:S01 (Documentation Maintenance Framework) - WF-004: Story File Missing During RW Update
-
----
-
-### v1.4.0 (2025-12-05) – Branch Safety Hardening
-
-**Changes:**
-- **Added Step 1: Branch Safety Check** as a mandatory blocking step
-- Requires `validate_branch_context.py --strict` execution before any file modifications
-- Stops workflow immediately if branch/version/epic alignment fails
-- Updated total steps from 13 to **14**
-
-**Related Work:** E2:S01:T05 – Harden RW branch safety checks
-
----
-
-### v1.3.0 (2025-12-04) – BR/FR Documentation Integration
-
-**Changes:**
-- **Added Step 6: Update BR/FR Docs** to document flaws and fix attempts
-- Reordered subsequent steps
-- Total steps remained **14** (due to previous reordering, effectively 13 steps + new step)
-
-**Related Work:** E3:S03:T06 – Add RW step to update BR/FR docs
-
----
-
-### v1.2.0 (2025-12-03) – PDCA ACT Phase Integration
-
-**Changes:**
-- **Added Step 13: Act on Verification Results** (ACT phase)
-- Updated total steps from 12 to **13**
-
-**Related Work:** E2:S02:T02 – Add ACT phase to RW
-
----
-
-### v1.1.0 (2025-12-02) – PDCA CHECK Phase Integration
-
-**Changes:**
-- **Added Step 12: Post-Commit Verification & Reflection** (CHECK phase)
-- Updated total steps from 11 to **12**
-
-**Related Work:** E2:S02:T01 – Add CHECK phase to RW
-
----
-
-### v1.0.0 (2025-12-01) – Initial Release
-
-**Changes:**
-- Initial 11-step Release Workflow structure and execution guide
-- Established core ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern
-
-**Related Work:** E2:S01:T01 – Audit RW documentation
+**Document Version:** 1.4.0

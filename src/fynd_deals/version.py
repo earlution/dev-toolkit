@@ -18,10 +18,10 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 """
 
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
-VERSION_EPIC = 5      # Epic number (Epic 5: Documentation Management and Maintenance)
-VERSION_STORY = 1     # Story number (Story 1: Documentation Maintenance Framework)
-VERSION_TASK = 1      # Task number (Task 1: Conduct comprehensive documentation hygiene analysis)
-VERSION_BUILD = 4     # Build number (increments per release within task, bumped by RW)
+VERSION_EPIC = 6      # Epic number (Epic 6: Framework Management and Maintenance)
+VERSION_STORY = 1     # Story number (Story 1: Framework Version Management)
+VERSION_TASK = 1      # Task number (Task 1: Define framework versioning strategy)
+VERSION_BUILD = 2     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
 # Format: RC.EPIC.STORY.TASK+BUILD

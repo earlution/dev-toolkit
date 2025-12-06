@@ -17,6 +17,31 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.6.1.1+2] - 06-12-25
+
+🏗️ Framework Architecture: Designed dependency architecture for auto-updating frameworks
+
+### Added
+
+- Created framework dependency architecture document
+- Created framework update CLI tool design document
+- Added dependency architecture tasks to Epic 6 stories (E6:S01:T04, T05, E6:S02:T04, T05)
+
+### Changed
+
+- Updated Epic 6 vision to reflect dependency-based framework goal
+- Updated all framework READMEs with dependency architecture notices
+- Updated main README with dependency architecture vision
+- Updated integration guides with dependency-based installation examples
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.1.1+2.md` for full details
+- Architecture supports Git submodules (Phase 1), CLI tool (Phase 2), and package managers (Phase 3)
+- Frameworks transitioning from copy-paste to auto-updating dependencies
+
+---
+
 ## [0.1.1.1+1] - 02-12-25
 
 🏗️ Foundation: First proper release with Epic 1–4 structure, dev-kit versioning policy, and Kanban FR/BR → Task flow
@@ -2059,96 +2084,6 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.4.1+2.md` for full details
 - Corrects documentation inconsistencies where board views showed incomplete status
 - All 4 Epics now correctly shown as COMPLETE ✅ across all documentation
-
----
-
-## [0.5.1.1+1] - 05-12-25
-
-🆕 Epic: Epic 5 created - Documentation Management and Maintenance
-
-### Added
-
-- Created Epic 5: Documentation Management and Maintenance
-- Created Story 1: Documentation Maintenance Framework
-- Created Story 2: Documentation Quality Assurance
-- Created Story 3: Documentation Automation
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.1.1+1.md` for full details
-- Epic 5 establishes framework for maintaining documentation accuracy and consistency
-- Initial story structure created with task stubs
-
----
-
-## [0.5.1.1+2] - 05-12-25
-
-📋 Planning: Task 1 planned - Comprehensive documentation hygiene analysis
-
-### Added
-
-- Planned E5:S01:T01 - Comprehensive documentation hygiene analysis task
-- Task includes 6-step approach: inventory, issue analysis, categorization, pattern analysis, reporting, recommendations
-- Task deliverables: hygiene report, issues inventory, health metrics, prioritized recommendations
-
-### Changed
-
-- Restructured Story 1 tasks: T01 → Hygiene Analysis, T02 → Define Policies, T03 → Review Cadences, T04 → Update Triggers
-- Updated task dependencies: T02 depends on T01, T03 depends on T02, T04 depends on T02
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.1.1+2.md` for full details
-- Hygiene analysis task provides foundation for data-driven policy definition
-- Analysis will cover entire documentation corpus across KB/, packages/frameworks/, and root directories
-
----
-
-## [0.5.1.1+3] - 05-12-25
-
-📋 Planning: Task 4 planned - Documentation update triggers
-
-### Added
-
-- Expanded E5:S01:T04 with comprehensive documentation update trigger definition
-- Identified 5 categories of update events: code changes, workflow changes, policy changes, structure changes, documentation-specific events
-- Defined 3 trigger types: automatic (RW-integrated), manual (developer-initiated), scheduled (time-based)
-- Created update procedures for each trigger type with checklists and validation requirements
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.1.1+3.md` for full details
-- Trigger definition integrates with Release Workflow automatic updates (Steps 6-7) and Kanban FR/BR flow
-- All trigger types now have clear procedures and deliverables defined
-
----
-
-## [0.5.1.1+4] - 05-12-25
-
-📚 Framework KB: Release Workflow documentation updated to v1.5.0 with Step 7 hardening
-
-### Changed
-
-- Updated Framework KB Release Workflow documentation to **v1.5.0**
-- Added comprehensive **Document Version History** sections to both core RW documents
-- Enhanced **Step 7: Auto-update Kanban Docs** with Story file pre-existence check and template-based creation
-- Updated all step numbers to reflect **14-step structure** (was 13 steps)
-- Updated all cross-references, dependencies, and phase descriptions
-- Updated Package README with correct step counts and verification checklist
-
-### Added
-
-- Version history tracking in `release-workflow-agent-execution.md` (v1.0.0 → v1.5.0)
-- Version history tracking in `release-workflow-reference.md` (v1.0.0 → v1.5.0)
-- Step 7 documentation for Story file creation from template when missing but referenced in Epic
-- Error handling documentation for missing Story files
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.1.1+4.md` for full details
-- Framework KB now follows versioning best practices with explicit version history
-- Step 7 hardening prevents RW failures when Story files are referenced but not yet created
-- Related to WF-004: Story File Missing During RW Update
 
 ---
 

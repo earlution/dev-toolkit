@@ -8,9 +8,45 @@ housekeeping_policy: keep
 
 # Release Workflow Reference
 
-**Version:** 1.5.0
+**Version:** 1.4.0
 **Last Updated:** 2025-12-05
 **Related:** Epic 21, Story 4 - Comprehensive VWMP Documentation
+
+---
+
+## 📜 Version History
+
+**Current Version:** 1.4.0 (2025-12-05)
+
+### Version 1.4.0 (2025-12-05) - Branch Safety Hardening
+- **Added:** Step 1: Branch Safety Check as mandatory blocking step
+- **Changed:** Step 1 now requires `validate_branch_context.py --strict` execution
+- **Changed:** Step 1 stops workflow immediately if branch/version/epic alignment fails
+- **Changed:** Updated workflow structure from 13 steps to 14 steps
+- **Changed:** All steps renumbered (Bump Version: 1→2, Create Detailed Changelog: 2→3, etc.)
+- **Related:** E2:S01:T05 - Harden RW branch safety checks
+
+### Version 1.3.0 (2025-12-04) - BR/FR Documentation Integration
+- **Added:** Step 6: Update BR/FR Docs (before Auto-update Kanban Docs)
+- **Changed:** Auto-update Kanban Docs moved from Step 5 to Step 7
+- **Changed:** All subsequent steps renumbered
+- **Changed:** Updated workflow structure from 13 steps to 14 steps
+- **Related:** E3:S03:T06 - Add RW step to update BR/FR docs
+
+### Version 1.2.0 (2025-12-03) - PDCA ACT Phase Integration
+- **Added:** Step 13: Act on Verification Results (ACT phase)
+- **Changed:** Updated workflow structure from 12 steps to 13 steps
+- **Related:** E2:S02:T02 - Add ACT Phase (Step 13) to Release Workflow
+
+### Version 1.1.0 (2025-12-02) - PDCA CHECK Phase Integration
+- **Added:** Step 12: Post-Commit Verification & Reflection (CHECK phase)
+- **Changed:** Updated workflow structure from 11 steps to 12 steps
+- **Related:** E2:S02:T01 - Add CHECK Phase (Step 12) to Release Workflow
+
+### Version 1.0.0 (2025-12-01) - Initial Release
+- **Initial:** 11-step Release Workflow
+- **Steps:** Bump Version, Create Detailed Changelog, Update Main Changelog, Update README, Auto-update Kanban Docs, Stage Files, Run Validators, Commit Changes, Create Git Tag, Push to Remote
+- **Related:** Initial framework extraction from fynd.deals Epic 15, Story 1
 
 **Policy References:**
 - **[Kanban Governance Policy](../../PM_and_Portfolio/rituals/policy/kanban-governance-policy.md)** - Work item structure and task-level versioning requirements
@@ -68,13 +104,17 @@ The Release Workflow consists of **14 steps** organized into 3 phases. Each step
 
 **Implements:** Versioning Strategy (canonical ordering, timestamp system) + Kanban Governance (task-level versioning, documentation updates)
 
-- **Step 1:** Branch Safety Check
-  - Validates branch/version/epic alignment before any file modifications
-  - Blocks workflow if alignment fails (mandatory blocking step)
+- **Step 1:** 🚨 **MANDATORY BLOCKING: Branch Safety Check**
+  - **CRITICAL:** Runs `validate_branch_context.py --strict` before any file modifications
+  - **BLOCKING:** Stops workflow immediately if branch/version/epic alignment fails
+  - **MANDATORY:** Cannot be skipped, bypassed, or ignored
+  - Prevents cross-epic contamination by validating branch context before proceeding
+  - See [Release Workflow Agent Execution Guide](release-workflow-agent-execution.md) for detailed Step 1 execution pattern
 
 - **Step 2:** Bump Version
   - Enforces `RC.EPIC.STORY.TASK+BUILD` schema from [Versioning Policy](../../Architecture/Standards_and_ADRs/versioning-policy.md)
   - Validates task-level versioning alignment per [Kanban Governance Policy](../../PM_and_Portfolio/rituals/policy/kanban-governance-policy.md)
+  - **Depends on:** Step 1 (Branch Safety Check) must pass first
 
 - **Step 3:** Create Detailed Changelog
   - Implements full timestamp requirement (`YYYY-MM-DD HH:MM:SS UTC`) from [Versioning Strategy](../../Architecture/Standards_and_ADRs/versioning-strategy.md)
@@ -89,12 +129,11 @@ The Release Workflow consists of **14 steps** organized into 3 phases. Each step
 
 - **Step 6:** Update BR/FR Docs
   - Documents flaws and fix attempts in Bug Reports and Feature Requests
-  - Enables knowledge transfer between builds
+  - Maintains fix attempt history for knowledge transfer between builds
 
 - **Step 7:** Auto-update Kanban Docs
   - Implements [Kanban Governance Policy](../../PM_and_Portfolio/rituals/policy/kanban-governance-policy.md) requirement for forensic markers
   - Updates Epic/Story documentation with version numbers and task completion status
-  - **NEW:** Checks Story file existence and creates from template if missing but referenced in Epic
   - Maintains traceability grid (version ↔ epic/story/task ↔ changelogs ↔ kanban markers)
 
 ### Phase 2: Git Operations & Validation
@@ -163,17 +202,65 @@ config:
 
 ## 📝 Step-by-Step Reference
 
-### Step 1: Bump Version
+### Step 1: 🚨 MANDATORY BLOCKING: Branch Safety Check
+
+**Handler:** `release.branch_safety_check`
+**Category:** Validation
+**Icon:** 🔒
+**Required:** ✅ Yes (MANDATORY BLOCKING)
+**Default Dependencies:** None (first step)
+**Blocking:** ✅ Yes (stops workflow on failure)
+
+#### Purpose
+
+**CRITICAL:** Validates that the current branch aligns with the work being released before any file modifications occur. This step prevents cross-epic contamination by ensuring branch/version/epic alignment.
+
+**MANDATORY REQUIREMENTS:**
+- ✅ Must run `validate_branch_context.py --strict` before any file modifications
+- ✅ Must check exit code (0 = PASS, non-zero = FAIL)
+- ✅ If exit code is non-zero, workflow MUST STOP immediately
+- ✅ All remaining steps marked as `cancelled` on failure
+- ❌ Cannot be skipped, bypassed, or ignored
+
+#### Execution Flow
+
+1. Determines validator script path (from config or fallback)
+2. Executes `python {validator_path} --strict`
+3. Captures exit code and output
+4. **If exit code 0:** Proceeds to Step 2
+5. **If exit code non-zero:** Stops workflow, marks all steps as `cancelled`, outputs error message
+
+#### Configuration Parameters
+
+| Parameter | Type | Required | Default | Description |
+|-----------|------|----------|---------|-------------|
+| `use_validator` | boolean | Yes | `true` | Must use `validate_branch_context.py` |
+| `strict_mode` | boolean | Yes | `true` | Validator must run in strict mode |
+| `scripts_path` | string | No | `scripts/validation` | Path to validation scripts directory |
+
+#### Error Handling
+
+If validation fails:
+- Workflow stops immediately
+- Clear error message displayed with actionable guidance
+- All remaining steps marked as `cancelled`
+- No file modifications occur
+
+See [Release Workflow Agent Execution Guide](release-workflow-agent-execution.md) for detailed Step 1 execution pattern with code examples.
+
+---
+
+### Step 2: Bump Version
 
 **Handler:** `release.version_bump`
 **Category:** Version
 **Icon:** 🔢
 **Required:** ✅ Yes
-**Default Dependencies:** None (first step)
+**Default Dependencies:** Step 1 (Branch Safety Check)
 
 #### Purpose
 
-Increments the version number in the version file. This is typically the first step in a release workflow as other steps depend on the new version number.
+Increments the version number in the version file. This step runs after Step 1 (Branch Safety Check) passes, ensuring branch alignment before version changes.
 
 #### Execution Flow
 
@@ -484,41 +571,13 @@ After execution, this step outputs:
 
 ---
 
-### Step 6: Update BR/FR Docs
-
-**Handler:** `release.br_fr_update`
-**Category:** Documentation
-**Icon:** 📋
-**Required:** ❌ No (optional step)
-**Default Dependencies:** `step-2` (needs version for fix attempt entries)
-
-#### Purpose
-
-Documents flaws, attempted fixes, and verification status in Bug Report (BR) and Feature Request (FR) documents. This enables knowledge transfer between builds and prevents repeated fix attempts.
-
-#### Execution Flow
-
-1. Retrieves version from Step 2 output
-2. Extracts Epic/Story/Task information from version
-3. Searches for linked BR/FR files in `KB/PM_and_Portfolio/kanban/fr-br/`
-4. Updates BR files with fix attempt history entries
-5. Updates FR files with implementation status
-
-#### Configuration Parameters
-
-| Parameter | Type | Required | Default | Description |
-|-----------|------|----------|---------|-------------|
-| `br_fr_dir` | string | ❌ No | `KB/PM_and_Portfolio/kanban/fr-br` | Directory containing BR/FR documents |
-
----
-
-### Step 7: Auto-update Kanban Docs
+### Step 5: Auto-update Kanban Docs
 
 **Handler:** `confidentia.kanban_update`
 **Category:** Documentation
 **Icon:** 📊
 **Required:** ❌ No (optional step)
-**Default Dependencies:** `step-2` (needs version for task updates)
+**Default Dependencies:** `step-1` (needs version for task updates)
 
 #### Purpose
 
@@ -526,21 +585,10 @@ Automatically updates Kanban documentation (Epic and Story markdown files) with 
 
 #### Execution Flow
 
-1. Retrieves version from Step 2 output
-2. Extracts Epic/Story information from version and branch name
-3. **MANDATORY: Checks Story file existence:**
-   - Reads Epic file Story Checklist to verify Story is referenced
-   - Checks if Story file exists at expected path
-   - **If Story file doesn't exist but is referenced in Epic:**
-     - Creates Story file from template: `packages/frameworks/kanban/templates/STORY_TEMPLATE.md`
-     - Extracts Story name from Epic file reference
-     - Substitutes template placeholders (Epic number, Story number, Story name, status, priority)
-     - Creates file with proper naming: `Story-{story:03d}-{name-slug}.md`
-     - Documents creation in RW execution log
-   - **If Story file doesn't exist and NOT referenced in Epic:**
-     - RW BLOCKED: Story file not found and not referenced in Epic
-4. Updates Story file FIRST with forensic markers
-5. Updates Epic file to match updated Story file:
+1. Retrieves version from Step 1 output
+2. Extracts Epic/Story information from Git branch name
+3. Extracts task IDs from workflow parameters (if provided)
+4. Runs `update_kanban_docs.py` script to update documentation:
    - Marks tasks as complete in Epic/Story docs
    - Updates story status if all tasks complete
    - Updates Epic status if all stories complete
@@ -590,10 +638,9 @@ The script updates the following in Kanban docs:
 
 #### Data Sources
 
-1. **Version:** From Step 2 output (`step-2.output.new_version`)
-2. **Epic/Story:** Extracted from version and Git branch name
+1. **Version:** From Step 1 output (`step-1.output.new_version`)
+2. **Epic/Story:** Extracted from Git branch name
 3. **Task IDs:** Extracted from workflow parameters (if provided) or from release summary/changelog
-4. **Story Template:** `packages/frameworks/kanban/templates/STORY_TEMPLATE.md` (for missing Story files)
 
 #### Step Outputs
 
@@ -609,15 +656,13 @@ After execution, this step outputs:
 
 #### Error Handling
 
-- **Version not found:** Step fails if Step 2 output is not available
-- **Epic/Story extraction failed:** Step fails if branch name or version cannot be parsed
-- **Story file missing and not referenced:** RW BLOCKED if Story file doesn't exist and Epic doesn't reference it
-- **Template not found:** Step fails if Story template is missing when creation is needed
+- **Version not found:** Step fails if Step 1 output is not available
+- **Epic/Story extraction failed:** Step fails if branch name cannot be parsed
 - **Script execution failed:** Step fails if `update_kanban_docs.py` returns non-zero exit code
 
 ---
 
-### Step 8: Stage Files
+### Step 6: Stage Files
 
 **Handler:** `git.stage_all`
 **Category:** Git
@@ -662,12 +707,11 @@ config:
 #### Why Multiple Dependencies?
 
 This step depends on **all previous file-modifying steps** to ensure:
-- Version file is updated (Step 2)
-- Detailed changelog is created (Step 3)
-- Main changelog is updated (Step 4)
-- README is updated (Step 5)
-- BR/FR docs are updated (Step 6)
-- Kanban docs are updated (Step 7)
+- Version file is updated (Step 1)
+- Detailed changelog is created (Step 2)
+- Main changelog is updated (Step 3)
+- README is updated (Step 4)
+- Kanban docs are updated (Step 5)
 
 **All changes are staged together** before committing, ensuring atomic commits.
 
@@ -688,7 +732,7 @@ After execution, this step outputs:
 
 ---
 
-### Step 9: Run Validators
+### Step 7: Run Validators
 
 **Handler:** `confidentia.run_validators`
 **Category:** Validation
@@ -784,7 +828,7 @@ Actual: 0.21.0.2
 
 ---
 
-### Step 10: Commit Changes
+### Step 8: Commit Changes
 
 **Handler:** `git.commit`
 **Category:** Git
@@ -862,7 +906,7 @@ After execution, this step outputs:
 
 ---
 
-### Step 11: Create Git Tag
+### Step 9: Create Git Tag
 
 **Handler:** `git.create_tag`
 **Category:** Git
@@ -950,7 +994,7 @@ After execution, this step outputs:
 
 ---
 
-### Step 12: Push to Remote
+### Step 11: Push to Remote
 
 **Handler:** `git.push`
 **Category:** Git
@@ -1104,7 +1148,7 @@ Implements the ACT phase of the PDCA cycle. Acts on verification results by upda
 
 #### Execution Flow
 
-1. Retrieves verification results from Step 13
+1. Retrieves verification results from Step 12
 2. Updates changelog based on verification status
 3. Standardizes successful practices
 4. Creates follow-up tasks if verification failed
@@ -1321,74 +1365,4 @@ Steps that can run in parallel (after dependencies are met):
 ---
 
 **Last Updated:** 2025-12-05
-**Reference Version:** 1.5.0
-
----
-
-## 📜 Document Version History
-
-This section tracks significant updates and revisions to the Release Workflow Reference.
-
-### v1.5.0 (2025-12-05) – Step 7 Story File Pre-Existence Check & Template Creation
-
-**Changes:**
-- **Enhanced Step 7: Auto-update Kanban Docs** with Story file pre-existence check
-- Added mandatory check for Story file existence before reading/updating
-- Added template-based Story file creation when file is missing but referenced in Epic
-- Story file creation substep generated on-the-fly during RW execution
-- Prevents RW failures when Story files are referenced but not yet created
-
-**Related Work:** E5:S01 (Documentation Maintenance Framework) - WF-004: Story File Missing During RW Update
-
----
-
-### v1.4.0 (2025-12-05) – Branch Safety Hardening
-
-**Changes:**
-- **Added Step 1: Branch Safety Check** as a mandatory blocking step
-- Requires `validate_branch_context.py --strict` execution before any file modifications
-- Stops workflow immediately if branch/version/epic alignment fails
-- Updated total steps from 13 to **14**
-
-**Related Work:** E2:S01:T05 – Harden RW branch safety checks
-
----
-
-### v1.3.0 (2025-12-04) – BR/FR Documentation Integration
-
-**Changes:**
-- **Added Step 6: Update BR/FR Docs** to document flaws and fix attempts
-- Reordered subsequent steps
-- Total steps remained **14** (due to previous reordering, effectively 13 steps + new step)
-
-**Related Work:** E3:S03:T06 – Add RW step to update BR/FR docs
-
----
-
-### v1.2.0 (2025-12-03) – PDCA ACT Phase Integration
-
-**Changes:**
-- **Added Step 13: Act on Verification Results** (ACT phase)
-- Updated total steps from 12 to **13**
-
-**Related Work:** E2:S02:T02 – Add ACT phase to RW
-
----
-
-### v1.1.0 (2025-12-02) – PDCA CHECK Phase Integration
-
-**Changes:**
-- **Added Step 12: Post-Commit Verification & Reflection** (CHECK phase)
-- Updated total steps from 11 to **12**
-
-**Related Work:** E2:S02:T01 – Add CHECK phase to RW
-
----
-
-### v1.0.0 (2025-12-01) – Initial Release
-
-**Changes:**
-- Initial 11-step Release Workflow structure and execution guide
-- Established core ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern
-
-**Related Work:** E2:S01:T01 – Audit RW documentation
+**Reference Version:** 1.4.0

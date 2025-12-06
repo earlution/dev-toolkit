@@ -26,10 +26,14 @@ housekeeping_policy: keep
 2. **DO** execute the Release Workflow using the **intelligent agent-driven execution pattern**
 3. **LOAD CONFIG FIRST (MANDATORY):** Before Step 1, load `rw-config.yaml` from project root if it exists. This is the **single source of truth** for all project-specific paths. If config exists, use its values. If not, use placeholders/examples (backward compatibility).
 4. **Follow** the step-by-step guide below
-5. **Start with Step 1: Branch Safety Check** - Analyze work and ensure it aligns with current branch before proceeding
-6. **Execute all 11 steps** using the ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern
+5. **🚨 MANDATORY: Start with Step 1: Branch Safety Check** - This is a **MANDATORY BLOCKING STEP** that MUST run before any file modifications
+   - **CRITICAL:** Step 1 MUST run `validate_branch_context.py --strict` and check exit code
+   - **CRITICAL:** If Step 1 fails (non-zero exit code), **DO NOT PROCEED** to Step 2
+   - **CRITICAL:** If Step 1 fails, mark all steps as `cancelled` and stop workflow immediately
+   - **CRITICAL:** Do not skip, bypass, or ignore Step 1 validation
+6. **Execute all remaining steps** using the ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern (only if Step 1 passes)
 7. **Document** each step's analysis, actions, and results
-8. **MUST USE Cursor TODOs:** Create and maintain a TODO list tracking all 11 steps (see below)
+8. **MUST USE Cursor TODOs:** Create and maintain a TODO list tracking all 14 steps (see below)
 
 **🔧 Config-Driven Approach (Preferred):**
 
@@ -73,12 +77,12 @@ kanban_root = config.get('kanban_root', 'KB/PM_and_Portfolio/kanban') if config 
 
 **🚨 MANDATORY: Progress Tracking with Cursor TODOs**
 
-**REQUIRED:** Agents **MUST** use `todo_write` to create and maintain a TODO list for all 11 Release Workflow steps:
+**REQUIRED:** Agents **MUST** use `todo_write` to create and maintain a TODO list for all 14 Release Workflow steps:
 
-1. **At Workflow Start:** Create TODO list with all 11 steps as `pending`
+1. **At Workflow Start:** Create TODO list with all 14 steps as `pending`
    ```python
    todo_write(merge=False, todos=[
-       {'id': 'rw-step-1', 'status': 'pending', 'content': 'Step 1: Branch Safety Check - Analyze work and ensure it aligns with current branch'},
+       {'id': 'rw-step-1', 'status': 'pending', 'content': 'Step 1: Branch Safety Check - MANDATORY: Run validate_branch_context.py --strict, stop if fails'},
        {'id': 'rw-step-2', 'status': 'pending', 'content': 'Step 2: Bump Version - Read Story file, identify completed task number, compare to current VERSION_TASK, determine if new task or same task, update version file, validate'},
        {'id': 'rw-step-3', 'status': 'pending', 'content': 'Step 3: Create Detailed Changelog - Generate CHANGELOG with full timestamp'},
        {'id': 'rw-step-4', 'status': 'pending', 'content': 'Step 4: Update Main Changelog - Add summary entry'},
@@ -107,10 +111,19 @@ kanban_root = config.get('kanban_root', 'KB/PM_and_Portfolio/kanban') if config 
 
 4. **On Completion:** All steps marked as `completed`
 
-5. **Atomicity & Blocking Behaviour (Accessibility-Critical):**
+5. **🚨 CRITICAL: Step 1 Branch Safety Enforcement:**
+   - **MANDATORY:** Step 1 MUST run `validate_branch_context.py --strict`
+   - **MANDATORY:** If Step 1 fails (non-zero exit code), workflow MUST STOP immediately
+   - **MANDATORY:** If Step 1 fails, mark ALL remaining steps as `cancelled`
+   - **MANDATORY:** Do not modify any files if Step 1 fails
+   - **MANDATORY:** Do not proceed to Step 2 if Step 1 fails
+   - **Anti-Pattern:** Never skip, bypass, or ignore Step 1 validation
+   - **Anti-Pattern:** Never proceed to Step 2 if validator returns non-zero exit code
+
+6. **Atomicity & Blocking Behaviour (Accessibility-Critical):**
 
    - When the user types **`RW`**, the agent MUST either:
-     - Run **all 11 steps (1–11)** to completion for the target version, OR
+     - Run **all 14 steps (1–14)** to completion for the target version, OR
      - Stop at a **specific step** and clearly state:
        - The **step number and name** (e.g. "Step 1: Branch Safety Check" or "Step 8: Run Validators")
        - The **reason** it is blocked (e.g. wrong branch, missing tool, sandbox limitation)
@@ -134,9 +147,15 @@ For each step, follow this pattern:
 4. **VALIDATE** - Verify execution succeeded
 5. **PROCEED** - Document and move to next step
 
-**The 11 Steps:**
+**The 14 Steps:**
 
-1. **Branch Safety Check** - Analyze work done and ensure it aligns with current branch. Check modified files, version alignment, and changelog alignment. If work does not align with branch (e.g., on `epic/4` but work references Epic 5), STOP workflow with clear warning. This prevents cross-epic contamination before any modifications.
+1. **🚨 MANDATORY BLOCKING: Branch Safety Check** - **CRITICAL:** This step MUST run `validate_branch_context.py --strict` and check exit code. **DO NOT PROCEED** if exit code is non-zero. This is a **MANDATORY BLOCKING STEP** that prevents cross-epic contamination:
+   - **MANDATORY:** Run `python {validator_path} --strict` before any file modifications
+   - **MANDATORY:** Check exit code (0 = PASS, non-zero = FAIL)
+   - **IF FAIL:** Mark all steps as `cancelled`, output error message, STOP workflow immediately
+   - **IF PASS:** Proceed to Step 2
+   - **DO NOT SKIP:** This step cannot be bypassed or ignored
+   - **DO NOT PROCEED:** If Step 1 fails, DO NOT attempt Step 2 or any subsequent step
 2. **Bump Version** - **MANDATORY STEP-BY-STEP PROCESS (DO NOT SKIP ANY STEP):**
 
    **A. READ CURRENT VERSION:**

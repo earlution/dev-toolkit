@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Completed:** 2025-12-04  
-**Last updated:** 2025-12-04 (v0.2.4.9+3 – Epic 2 COMPLETE: All stories done, E2:S04:T09 build 3: Task naming format standardization)  
+**Completed:** 2025-12-05  
+**Last updated:** 2025-12-05 (v0.2.1.5+2 – Story 1 build 2: Framework KB version history tracking)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -22,7 +22,7 @@ housekeeping_policy: keep
 
 ## Story Checklist
 
-- [x] **E2:S01 – RW Agent Execution & Docs** - COMPLETE ✅ (v0.2.1.1+5)  
+- [x] **E2:S01 – RW Agent Execution & Docs** - COMPLETE ✅ (v0.2.1.5+2)  
   - Story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)  
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`Story-002-pdca-integration-into-release-workflow.md`](Story-002-pdca-integration-into-release-workflow.md)
@@ -65,7 +65,7 @@ It defines how Release Workflow (RW) and other workflows are:
 **Status:** COMPLETE ✅  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-02 (v0.2.1.1+5 – All tasks complete)  
+**Last updated:** 2025-12-05 (v0.2.1.5+2 – All tasks complete: Task 5 build 2: Framework KB version history tracking)  
 
 **Goal:**  
 Make RW agent execution documentation fully portable, clearly distinguishing dev-kit behaviour from external examples.
@@ -75,6 +75,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - [x] E2:S01:T02 – Tag Confidentia/fynd.deals examples and add dev-kit examples ✅ COMPLETE (v0.2.1.1+4)
 - [x] E2:S01:T03 – Align `.cursorrules` RW trigger section with dev-kit policy ✅ COMPLETE (v0.2.1.1+5)
 - [x] E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed" ✅ COMPLETE (v0.2.1.1+2)
+- [x] E2:S01:T05 – Harden RW branch safety checks to stop execution on wrong branch ✅ COMPLETE (v0.2.1.5+1)
 
 > Full story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)  
 

@@ -9,20 +9,22 @@ housekeeping_policy: keep
 # Release Workflow (RW) Implementation Package
 
 **Version:** 2.0.0  
-**Last Updated:** 2025-12-05  
+**Last Updated:** 2025-12-06  
 **Purpose:** Complete package for implementing the Release Workflow (RW) trigger and agent-driven workflow execution pattern in your project  
 **Source Project:** fynd.deals (Epic 15, Story 1)  
 **Key Enhancements:** "ALL sections" requirement, atomicity, blocked protocol, epic branch workflow
+
+**📦 Dependency Architecture (Epic 6):** This framework is transitioning from copy-paste to **dependency-based installation** with automatic updates. See [Framework Dependency Architecture](../../../KB/Architecture/Standards_and_ADRs/framework-dependency-architecture.md) for details on installing as a Git submodule, via CLI tool, or package manager.
 
 ---
 
 ## 📋 What's Included
 
-This package contains all essential files needed to implement the Release Workflow (RW) trigger in your project. The RW trigger enables AI assistants to execute a complete 14-step release process (version bump, changelog generation, Git operations, PDCA verification and action) using intelligent agent-driven execution.
+This package contains all essential files needed to implement the Release Workflow (RW) trigger in your project. The RW trigger enables AI assistants to execute a complete 13-step release process (version bump, changelog generation, Git operations, PDCA verification and action) using intelligent agent-driven execution.
 
 ### Core Methodology Documents
 - `KB/Documentation/Developer_Docs/vwmp/agent-driven-workflow-execution.md` - General methodology for agent-driven workflow execution
-- `KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` - Step-by-step guide for executing the 14-step Release Workflow (v1.5.0)
+- `KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` - Step-by-step guide for executing the 13-step Release Workflow
 - `KB/Documentation/Developer_Docs/vwmp/release-workflow-reference.md` - Complete workflow reference
 - `KB/Documentation/Developer_Docs/vwmp/portable-workflow-implementation-guide.md` - Detailed implementation guide
 
@@ -77,9 +79,9 @@ This package is designed to be **fully modular** with maximum flexibility. You c
 - Integration: RW reads version file and follows versioning schema
 
 **With Kanban Package:**
-- RW automatically updates Kanban documentation (Step 7)
+- RW automatically updates Kanban documentation (Step 4)
 - Integration: RW adds forensic markers to Kanban Story Checklist
-- Optional: Can use RW without Kanban (skip Step 7)
+- Optional: Can use RW without Kanban (skip Step 4)
 
 **With Both Packages:**
 - Complete three-way integration (Kanban ↔ Versioning ↔ RW)
@@ -281,21 +283,20 @@ If using different branch naming conventions:
 1. Ensure you have a version file (e.g., `src/yourproject/version.py` with `VERSION_STRING = "0.1.1.1+1"`)
 2. Create an epic branch (e.g., `git checkout -b epic/1-first-epic`)
 3. Type "RW" in your AI assistant (Cursor)
-4. Verify all 14 steps execute correctly:
+4. Verify all 13 steps execute correctly:
    - Step 1: Branch Safety Check
    - Step 2: Version bumped
-   - Step 3: Create Detailed Changelog
-   - Step 4: Update Main Changelog
-   - Step 5: Update README (if applicable)
-   - Step 6: Update BR/FR Docs
-   - Step 7: Auto-update Kanban Docs (with Story file pre-existence check)
-   - Step 8: Stage Files
-   - Step 9: Run Validators
-   - Step 10: Commit Changes
-   - Step 11: Create Git Tag
-   - Step 12: Push to Remote
-   - Step 13: Post-Commit Verification & Reflection (optional but recommended)
-   - Step 14: Act on Verification Results (optional but recommended)
+   - Step 3: CHANGELOG + archive updated
+   - Step 4: Main CHANGELOG updated
+   - Step 5: README updated (if applicable)
+   - Step 6: Kanban docs auto-updated
+   - Step 7: Files staged
+   - Step 8: Validators run
+   - Step 9: Commit created
+   - Step 10: Tag created
+   - Step 11: Branch and tag pushed (or manual instructions provided)
+   - Step 12: Post-Commit Verification & Reflection (optional but recommended)
+   - Step 13: Act on Verification Results (optional but recommended)
 
 ---
 
@@ -307,32 +308,31 @@ When a user types "RW" or "rw" (case-insensitive) in their AI assistant:
 
 1. **AI Assistant Recognizes Trigger:** The `.cursorrules` file instructs the AI to execute the Release Workflow
 2. **Intelligent Execution:** The AI follows the step-by-step guide, analyzing each step before executing
-3. **Progress Tracking:** The AI creates and maintains a TODO list tracking all 14 steps
+3. **Progress Tracking:** The AI creates and maintains a TODO list tracking all 13 steps
 4. **Validation:** Each step is validated before proceeding to the next
 5. **Documentation:** All actions are documented with analysis and results
-6. **Atomicity:** The workflow either completes all 14 steps or stops with a clear "RW BLOCKED" message
+6. **Atomicity:** The workflow either completes all 13 steps or stops with a clear "RW BLOCKED" message
 
-### The 14 Steps
+### The 13 Steps
 
-**Phase 1: Version & Documentation Updates (Steps 1-7)**
-1. **Branch Safety Check** - Verify work aligns with branch context (mandatory blocking)
+**Phase 1: Version & Documentation Updates (Steps 1-6)**
+1. **Branch Safety Check** - Verify work aligns with branch context
 2. **Bump Version** - Increment version number based on schema (BUILD for same task, or TASK+BUILD=1 for new task)
 3. **Create Detailed Changelog** - Create detailed changelog archive with full timestamp and PLAN section
 4. **Update Main Changelog** - Add summary entry with short date (DD-MM-YY)
 5. **Update README** - Update version references if present (optional)
-6. **Update BR/FR Docs** - Document flaws and fix attempts in Bug Reports and Feature Requests
-7. **Auto-update Kanban Docs** - Update **ALL sections** (header, checklist, detailed story sections) to match authoritative Story file. **NEW:** Checks Story file existence and creates from template if missing but referenced in Epic
+6. **Auto-update Kanban Docs** - Update **ALL sections** (header, checklist, detailed story sections) to match authoritative Story file
 
-**Phase 2: Git Operations & Validation (Steps 8-12)**
-8. **Stage Files** - Stage all modified files
-9. **Run Validators** - Execute branch context and changelog format validators (must be on epic branch, not main)
-10. **Commit Changes** - Create git commit with versioned message
-11. **Create Git Tag** - Create annotated tag
-12. **Push to Remote** - Push epic branch and tags to remote repository (DO NOT push to main unless ready to deploy)
+**Phase 2: Git Operations & Validation (Steps 7-11)**
+7. **Stage Files** - Stage all modified files
+8. **Run Validators** - Execute branch context and changelog format validators (must be on epic branch, not main)
+9. **Commit Changes** - Create git commit with versioned message
+10. **Create Git Tag** - Create annotated tag
+11. **Push to Remote** - Push epic branch and tags to remote repository (DO NOT push to main unless ready to deploy)
 
-**Phase 3: PDCA CHECK & ACT (Steps 13-14, optional but recommended)**
-13. **Post-Commit Verification & Reflection** - Verify changes worked as expected, evaluate against objectives, reflect on results
-14. **Act on Verification Results** - Update changelog based on verification, standardize practices, create follow-up tasks if needed
+**Phase 3: PDCA CHECK & ACT (Steps 12-13, optional but recommended)**
+12. **Post-Commit Verification & Reflection** - Verify changes worked as expected, evaluate against objectives, reflect on results
+13. **Act on Verification Results** - Update changelog based on verification, standardize practices, create follow-up tasks if needed
 
 ### Agent-Driven Execution
 
@@ -459,10 +459,9 @@ After implementation, verify:
 - [ ] Git commit includes version number
 - [ ] Git tag created with correct format
 - [ ] Branch and tag pushed to remote (or manual instructions provided)
-- [ ] TODO list tracks all 14 steps (visible in AI assistant)
+- [ ] TODO list tracks all 13 steps (visible in AI assistant)
 - [ ] RW completes atomically or stops with clear "RW BLOCKED" message
-- [ ] PDCA CHECK and ACT phases executed (Steps 13-14)
-- [ ] Story files created from template if missing but referenced in Epic (Step 7)
+- [ ] PDCA CHECK and ACT phases executed (Steps 12-13)
 
 ---
 
