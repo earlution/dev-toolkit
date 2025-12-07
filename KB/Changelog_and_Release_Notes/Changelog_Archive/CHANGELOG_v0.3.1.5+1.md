@@ -23,7 +23,7 @@ This release completes **Task 5: Document consumption pattern for other projects
   - Explained customization boundaries (what can be customized vs what must stay)
   - Documented update process (how to stay aligned with framework updates)
   - Added example setup workflow
-  - Clarified SoT relationship (vibe-dev-kit is canonical source)
+  - Clarified SoT relationship (ai-dev-kit is canonical source)
 
 - ✅ Enhanced **IMPLEMENTATION_GUIDE.md** (`packages/frameworks/numbering & versioning/IMPLEMENTATION_GUIDE.md`)
   - Added "CRITICAL: Copy, Don't Reference" section at top
@@ -41,7 +41,7 @@ This release completes **Task 5: Document consumption pattern for other projects
 ### Key Documentation Points
 
 **Copy vs Reference Pattern:**
-- ✅ **Copy, don't reference:** Projects must copy files, not link to `vibe-dev-kit`
+- ✅ **Copy, don't reference:** Projects must copy files, not link to `ai-dev-kit`
 - ✅ **Why copy:** Independence, customization, control, stability
 - ✅ **What to copy:** Core policies, templates, validation scripts
 
@@ -55,7 +55,7 @@ This release completes **Task 5: Document consumption pattern for other projects
 - ✅ Adopt relevant patterns while preserving customizations
 
 **SoT Relationship:**
-- ✅ `vibe-dev-kit` is canonical source of truth
+- ✅ `ai-dev-kit` is canonical source of truth
 - ✅ Projects adapt framework for their context
 - ✅ Projects reference framework as source in documentation
 

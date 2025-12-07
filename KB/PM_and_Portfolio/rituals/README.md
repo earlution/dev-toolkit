@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Rituals
 
-This directory contains **rituals** and **operational policies** for the `vibe-dev-kit` repository.
+This directory contains **rituals** and **operational policies** for the `ai-dev-kit` repository.
 
 ## Structure
 

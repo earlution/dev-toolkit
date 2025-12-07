@@ -13,7 +13,7 @@ housekeeping_policy: keep
 **Location in `.cursorrules`:** Add this section in the "Version Control and Release Process" section (or equivalent).
 
 **Last Updated:** 2025-12-02  
-**Source Project:** Originally fynd.deals (Epic 15, Story 1), now maintained in vibe-dev-kit as canonical SoT  
+**Source Project:** Originally fynd.deals (Epic 15, Story 1), now maintained in ai-dev-kit as canonical SoT  
 **Version:** 2.2.0 (abstracted version numbers and file paths, added schema calculation examples)
 
 ---
@@ -162,12 +162,12 @@ For each step, follow this pattern:
    - **Load config first:** If `rw-config.yaml` exists, read `version_file` from config. Otherwise, use `src/{project}/version.py` as fallback.
    - Read the version file (from config or fallback) to get current `VERSION_EPIC`, `VERSION_STORY`, `VERSION_TASK`, `VERSION_BUILD`
    - Document current version: `RC.EPIC.STORY.TASK+BUILD`
-   - [Example: vibe-dev-kit] Read `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
+   - [Example: ai-dev-kit] Read `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
 
    **B. IDENTIFY COMPLETED TASK (MANDATORY):**
    - **Load config first:** If `rw-config.yaml` exists and `use_kanban: true`, read `kanban_root` and `story_doc_pattern` from config. Otherwise, use `{kanban_path}/epics/Epic-{epic}/Story-{story}-*.md` as fallback.
    - Read the Story file using config values or fallback pattern
-   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Story-{story}-*.md` (or from `rw-config.yaml` if present)
+   - [Example: ai-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Story-{story}-*.md` (or from `rw-config.yaml` if present)
    - Find the MOST RECENTLY COMPLETED task in the Task Checklist (marked `✅ COMPLETE`)
    - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T08` → task number is `8`)
    - **CRITICAL:** If no task is marked complete, or you cannot identify which task was just completed, **STOP** and ask the user which task was completed
@@ -199,7 +199,7 @@ For each step, follow this pattern:
    - **Use config path:** Update `VERSION_TASK` and `VERSION_BUILD` in the version file path from config (or `src/{project}/version.py` as fallback)
    - Update `VERSION_STRING` to reflect new version
    - Update `VERSION_INFO["description"]` if present
-   - [Example: vibe-dev-kit] Update `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
+   - [Example: ai-dev-kit] Update `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
 
    **F. VALIDATE AFTER UPDATING:**
    - Re-read `version.py` and verify the new version matches your decision
@@ -217,7 +217,7 @@ For each step, follow this pattern:
    - See `KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md` for error prevention reference
    - See `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` Step 2 for complete procedure
 3. **Create Detailed Changelog** - Create detailed changelog in changelog archive directory. **Use config:** If `rw-config.yaml` exists, read `changelog_dir` from config. Otherwise, use `{changelog_archive_path}/CHANGELOG_v{version}.md` as fallback. Full timestamp (`YYYY-MM-DD HH:MM:SS UTC`). **CRITICAL:** Timestamp is IMMUTABLE once written - never edit the `**Release Date:**` field.
-   - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md` (or from `rw-config.yaml` if present)
+   - [Example: ai-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md` (or from `rw-config.yaml` if present)
 4. **Update Main Changelog** - Add new entry at top: `## [version] - DD-MM-YY` (short date format for merge-to-main) with release description and link to detailed changelog. **Use config:** If `rw-config.yaml` exists, read `main_changelog` from config. Otherwise, use `CHANGELOG.md` as fallback. Follow [Keep a Changelog](https://github.com/olivierlacan/keep-a-changelog) format. **Note:** Main changelog date can be updated if merge date changes, but detailed changelog timestamp is immutable.
 5. **Update README** - Update version badge and latest release callout if present (optional). **Use config:** If `rw-config.yaml` exists, read `readme_file` from config. Otherwise, use `README.md` as fallback.
 6. **Update BR/FR Docs** - Update Bug Reports and Feature Requests with fix attempt information. **Use config:** If `rw-config.yaml` exists, read `fr_br_root` from config. Otherwise, use `KB/PM_and_Portfolio/kanban/fr-br` as fallback. **Purpose:** Document flaws, attempted fixes, and verification status so that if a bug isn't squashed, the next build can be informed by previous attempts.
@@ -302,18 +302,18 @@ For each step, follow this pattern:
 
 **File Paths (Customize for Your Project):**
 - Version file: `src/{project}/version.py` (e.g., `src/myproject/version.py`)
-  - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (legacy path, acceptable for now)
+  - [Example: ai-dev-kit] `src/fynd_deals/version.py` (legacy path, acceptable for now)
 - Changelog: `CHANGELOG.md`
 - Changelog Archive: `{changelog_archive_path}/CHANGELOG_v{version}.md`
-  - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md`
+  - [Example: ai-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v{version}.md`
 - Kanban Board: `{kanban_path}/kanban-board.md` or `{kanban_path}/_index.md` (customize path)
-  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/_index.md` or `KB/PM_and_Portfolio/kanban/kanban-board.md`
+  - [Example: ai-dev-kit] `KB/PM_and_Portfolio/kanban/_index.md` or `KB/PM_and_Portfolio/kanban/kanban-board.md`
 - Epic Docs: `{kanban_path}/epics/Epic-{epic}/Epic-{epic}.md` (customize path)
-  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Epic-{epic}.md`
+  - [Example: ai-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Epic-{epic}.md`
 - Story Docs: `{kanban_path}/epics/Epic-{epic}/Story-{story}-*.md` (customize path)
-  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Story-{story}-*.md`
+  - [Example: ai-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Story-{story}-*.md`
 - Validators: `{scripts_path}/validation/validate_branch_context.py`, `{scripts_path}/validation/validate_changelog_format.py`
-  - [Example: vibe-dev-kit] `packages/frameworks/workflow mgt/scripts/validation/validate_branch_context.py`, `packages/frameworks/workflow mgt/scripts/validation/validate_changelog_format.py`
+  - [Example: ai-dev-kit] `packages/frameworks/workflow mgt/scripts/validation/validate_branch_context.py`, `packages/frameworks/workflow mgt/scripts/validation/validate_changelog_format.py`
 
 **Version Schema:**
 - Format: `RC.EPIC.STORY.TASK+BUILD` (e.g., `0.{epic}.{story}.{task}+{build}`)
@@ -324,7 +324,7 @@ For each step, follow this pattern:
 - **New Epic:** Different Epic → Reset STORY to 1, TASK to 1, BUILD to 1 (e.g., `0.N.S.T+B` → `0.{N+1}.1.1+1`)
 - **Epic Alignment:** Epic number should match current branch (if on `epic/{n}`, version should be `0.{n}.S.T+B`)
 - **Epic Ranges:**
-  - [Example: vibe-dev-kit] Epic 1-4+ (Epic 1: Vibe Dev Kit Core, Epic 2: Workflow Management Framework, Epic 3: Numbering & Versioning Framework, Epic 4: Kanban Framework)
+  - [Example: ai-dev-kit] Epic 1-4+ (Epic 1: AI Dev Kit Core, Epic 2: Workflow Management Framework, Epic 3: Numbering & Versioning Framework, Epic 4: Kanban Framework)
   - No legacy range in dev-kit - starts from Epic 1 with full schema
 - **Reference:** See `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` (or your project's versioning policy) for complete schema definition
 
@@ -342,21 +342,21 @@ For each step, follow this pattern:
 
 **Version Calculation Examples:**
 - Working on Epic 1, Story 1, Task 1: `0.1.1.1+1` (first build) → `0.1.1.1+2` (second build)
-  - [Example: vibe-dev-kit] Epic 1 (Vibe Dev Kit Core), Story 1, Task 1: `0.1.1.1+1` → `0.1.1.1+2`
+  - [Example: ai-dev-kit] Epic 1 (AI Dev Kit Core), Story 1, Task 1: `0.1.1.1+1` → `0.1.1.1+2`
 - Moving to Task 2 in same Story: `0.1.1.2+1` (new task, BUILD resets to 1)
-  - [Example: vibe-dev-kit] Epic 2 (Workflow Management Framework), Story 1, Task 2: `0.2.1.2+1`
+  - [Example: ai-dev-kit] Epic 2 (Workflow Management Framework), Story 1, Task 2: `0.2.1.2+1`
 - Moving to Story 2 in same Epic: `0.1.2.1+1` (new story, TASK and BUILD reset)
-  - [Example: vibe-dev-kit] Epic 3 (Numbering & Versioning Framework), Story 2: `0.3.2.1+1`
+  - [Example: ai-dev-kit] Epic 3 (Numbering & Versioning Framework), Story 2: `0.3.2.1+1`
 - Moving to Epic 2: `0.2.1.1+1` (new epic, STORY, TASK, and BUILD reset)
-  - [Example: vibe-dev-kit] Epic 4 (Kanban Framework), Story 1, Task 1: `0.4.1.1+1`
+  - [Example: ai-dev-kit] Epic 4 (Kanban Framework), Story 1, Task 1: `0.4.1.1+1`
 
 **Reference Documentation:**
 - Versioning Policy: `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` (or your project's equivalent)
-  - [Example: vibe-dev-kit] `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` (canonical SoT for dev-kit)
+  - [Example: ai-dev-kit] `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` (canonical SoT for dev-kit)
 - Versioning Strategy: `packages/frameworks/numbering & versioning/versioning-strategy.md` (framework reference)
 - Release Workflow Guide: `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`
 - Kanban Governance: `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (or your project's equivalent)
-  - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (references framework as SoT)
+  - [Example: ai-dev-kit] `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (references framework as SoT)
 - **Workflow Flaws Reference:** `KB/Architecture/Standards_and_ADRs/workflow-flaws-reference-guide.md` - Comprehensive reference for all discovered RW flaws
 - **Versioning Error Reference:** `KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md` - Versioning-specific error reference (WF-002)
 
@@ -367,19 +367,19 @@ For each step, follow this pattern:
 After copying this section to your `.cursorrules`, you MUST:
 1. **Update all file paths** to match your project structure
 2. **Update version file location** (currently shows `src/{project}/version.py` as template)
-   - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (legacy path, acceptable for now)
+   - [Example: ai-dev-kit] `src/fynd_deals/version.py` (legacy path, acceptable for now)
 3. **Update Kanban paths** (currently shows `{kanban_path}/...` as templates)
-   - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Epic-{epic}.md`
+   - [Example: ai-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Epic-{epic}.md`
 4. **Update validator script paths** (currently shows `{scripts_path}/...` as templates)
-   - [Example: vibe-dev-kit] `packages/frameworks/workflow mgt/scripts/validation/...`
+   - [Example: ai-dev-kit] `packages/frameworks/workflow mgt/scripts/validation/...`
 5. **Reference your project's versioning policy** instead of dev-kit policy
-   - [Example: vibe-dev-kit] Uses `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` as canonical SoT
+   - [Example: ai-dev-kit] Uses `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` as canonical SoT
 6. **Customize branch naming** if your project uses different conventions (e.g., `feature/epic-{n}` instead of `epic/{n}`)
 7. **Customize epic ranges** if your project uses different epic numbering (e.g., legacy range 1-9, new range 10+)
-   - [Example: vibe-dev-kit] Epic 1-4+ (no legacy range, starts from Epic 1 with full schema)
+   - [Example: ai-dev-kit] Epic 1-4+ (no legacy range, starts from Epic 1 with full schema)
 
-**For vibe-dev-kit Usage:**
-When using this section in the vibe-dev-kit repository itself:
+**For ai-dev-kit Usage:**
+When using this section in the ai-dev-kit repository itself:
 - Version file: `src/fynd_deals/version.py`
 - Changelog Archive: `KB/Changelog_and_Release_Notes/Changelog_Archive/`
 - Kanban: `KB/PM_and_Portfolio/kanban/`

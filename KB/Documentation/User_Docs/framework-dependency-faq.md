@@ -19,7 +19,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-Frequently asked questions about installing, updating, and using Vibe Dev Kit frameworks as dependencies.
+Frequently asked questions about installing, updating, and using AI Dev Kit frameworks as dependencies.
 
 ---
 
@@ -66,8 +66,8 @@ You can use them standalone or together.
 
 ### How do I install frameworks in a new project?
 
-1. Initialize vibe-dev-kit: `vibe-dev-kit init`
-2. Install frameworks: `vibe-dev-kit install workflow-mgmt@2.0.0`
+1. Initialize ai-dev-kit: `ai-dev-kit init`
+2. Install frameworks: `ai-dev-kit install workflow-mgmt@2.0.0`
 3. Configure frameworks: Update paths and settings
 4. Test installation: Run validation scripts
 
@@ -113,12 +113,12 @@ See the [Usage Guide](framework-dependency-usage-guide.md) for configuration ste
 
 **CLI Tool:**
 ```bash
-vibe-dev-kit check
+ai-dev-kit check
 ```
 
 **Git Submodules:**
 ```bash
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git fetch origin --tags
 git tag | grep workflow-mgmt
 ```
@@ -143,22 +143,22 @@ You can also configure automatic checking and notifications.
 
 **Rollback:**
 ```bash
-vibe-dev-kit update workflow-mgmt@2.0.0  # Previous version
+ai-dev-kit update workflow-mgmt@2.0.0  # Previous version
 ```
 
 **Or:**
 ```bash
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git checkout workflow-mgmt-v2.0.0
 cd ..
-cp -r .vibe-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
+cp -r .ai-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
 ```
 
 Always test updates in a development branch before applying to production.
 
 ### Can I pin frameworks to specific versions?
 
-Yes. In `.vibe-dev-kit.yaml`:
+Yes. In `.ai-dev-kit.yaml`:
 
 ```yaml
 frameworks:
@@ -175,7 +175,7 @@ Or use Git tags to pin submodule versions.
 
 ### Where is the configuration file?
 
-Configuration file: `.vibe-dev-kit.yaml` in your project root.
+Configuration file: `.ai-dev-kit.yaml` in your project root.
 
 Framework-specific configuration:
 - Workflow Management: `frameworks/workflow-mgmt/rw-config.yaml`
@@ -185,11 +185,11 @@ Framework-specific configuration:
 
 ```bash
 # Enable automatic checking
-vibe-dev-kit config set auto_check true
-vibe-dev-kit config set check_interval daily
+ai-dev-kit config set auto_check true
+ai-dev-kit config set check_interval daily
 
 # Configure notification channel
-vibe-dev-kit config set notification_channel console
+ai-dev-kit config set notification_channel console
 ```
 
 ### Can I use different backends for different frameworks?
@@ -220,28 +220,28 @@ Frameworks use **Semantic Versioning (SemVer):** `MAJOR.MINOR.PATCH`
 
 ```bash
 # CLI tool
-vibe-dev-kit status
+ai-dev-kit status
 
 # Git submodules
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git describe --tags
 
 # Package managers
-npm list @vibe-dev-kit/workflow-mgmt  # npm
-pip show vibe-dev-kit-workflow-mgmt  # pip
+npm list @ai-dev-kit/workflow-mgmt  # npm
+pip show ai-dev-kit-workflow-mgmt  # pip
 ```
 
 ### What if frameworks have version conflicts?
 
 ```bash
 # Check compatibility
-vibe-dev-kit check-compatibility
+ai-dev-kit check-compatibility
 
 # Resolve conflicts
-vibe-dev-kit update --resolve-conflicts
+ai-dev-kit update --resolve-conflicts
 
 # Or update specific framework
-vibe-dev-kit update workflow-mgmt@2.1.0
+ai-dev-kit update workflow-mgmt@2.1.0
 ```
 
 ---
@@ -252,11 +252,11 @@ vibe-dev-kit update workflow-mgmt@2.1.0
 
 **Manual:**
 ```bash
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git fetch origin
 git checkout workflow-mgmt-v2.1.0
 cd ..
-cp -r .vibe-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
+cp -r .ai-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
 ```
 
 **Automated:**
@@ -279,7 +279,7 @@ git clone --recurse-submodules <repo-url>
 Yes. The CLI tool supports Git subtrees:
 
 ```bash
-vibe-dev-kit install workflow-mgmt --backend git-subtree
+ai-dev-kit install workflow-mgmt --backend git-subtree
 ```
 
 Subtrees merge framework code directly into your repository (no separate submodule directory).
@@ -296,11 +296,11 @@ The CLI tool is planned for Phase 2 (short-term). Git submodules (Phase 1) are a
 
 ```bash
 # Via pip (when available)
-pip install vibe-dev-kit
+pip install ai-dev-kit
 
 # From source
-git clone https://github.com/earlution/vibe-dev-kit.git
-cd vibe-dev-kit/cli
+git clone https://github.com/earlution/ai-dev-kit.git
+cd ai-dev-kit/cli
 pip install -e .
 ```
 
@@ -308,10 +308,10 @@ pip install -e .
 
 ```bash
 # Check installation
-pip show vibe-dev-kit
+pip show ai-dev-kit
 
 # Install if missing
-pip install vibe-dev-kit
+pip install ai-dev-kit
 
 # Check PATH
 echo $PATH
@@ -400,14 +400,14 @@ Yes. You can migrate one framework at a time:
 **GitHub Actions:**
 ```yaml
 - name: Check for updates
-  run: vibe-dev-kit check --notify
+  run: ai-dev-kit check --notify
 ```
 
 **GitLab CI:**
 ```yaml
 check-updates:
   script:
-    - vibe-dev-kit check --notify
+    - ai-dev-kit check --notify
 ```
 
 See the [Integration Guide](framework-dependency-integration-guide.md) for complete examples.
@@ -429,20 +429,20 @@ See the [Update Guide](framework-dependency-update-guide.md) for update automati
 
 ### Framework installation fails. What do I do?
 
-1. Check framework name: `vibe-dev-kit list`
-2. Verify version exists: `vibe-dev-kit list --versions`
-3. Check network: `git ls-remote https://github.com/earlution/vibe-dev-kit.git`
+1. Check framework name: `ai-dev-kit list`
+2. Verify version exists: `ai-dev-kit list --versions`
+3. Check network: `git ls-remote https://github.com/earlution/ai-dev-kit.git`
 4. Check permissions: `ls -la frameworks/`
-5. Try different backend: `vibe-dev-kit install workflow-mgmt --backend git-submodule`
+5. Try different backend: `ai-dev-kit install workflow-mgmt --backend git-submodule`
 
 See the [Troubleshooting Guide](framework-dependency-troubleshooting-guide.md) for detailed solutions.
 
 ### Update doesn't work. How do I fix it?
 
-1. Check version availability: `vibe-dev-kit list --versions`
-2. Check compatibility: `vibe-dev-kit check --compatibility`
+1. Check version availability: `ai-dev-kit list --versions`
+2. Check compatibility: `ai-dev-kit check --compatibility`
 3. Resolve Git conflicts: `git status`
-4. Force update: `vibe-dev-kit update workflow-mgmt --force`
+4. Force update: `ai-dev-kit update workflow-mgmt --force`
 
 See the [Troubleshooting Guide](framework-dependency-troubleshooting-guide.md) for more solutions.
 
@@ -450,13 +450,13 @@ See the [Troubleshooting Guide](framework-dependency-troubleshooting-guide.md) f
 
 ```bash
 # Validate configuration
-vibe-dev-kit validate-config
+ai-dev-kit validate-config
 
 # Auto-fix if possible
-vibe-dev-kit validate-config --fix
+ai-dev-kit validate-config --fix
 
 # Or reinitialize
-vibe-dev-kit init
+ai-dev-kit init
 ```
 
 ---
@@ -485,7 +485,7 @@ frameworks:
 
 ```bash
 # Set automatic checking
-vibe-dev-kit config set check_interval weekly
+ai-dev-kit config set check_interval weekly
 ```
 
 ### Should I commit framework files to Git?
@@ -505,13 +505,13 @@ vibe-dev-kit config set check_interval weekly
 1. **Documentation:** See guides in `KB/Documentation/User_Docs/`
 2. **Troubleshooting Guide:** [framework-dependency-troubleshooting-guide.md](framework-dependency-troubleshooting-guide.md)
 3. **GitHub Issues:** Create issue with diagnostic information
-4. **CLI Help:** `vibe-dev-kit --help` or `vibe-dev-kit <command> --help`
+4. **CLI Help:** `ai-dev-kit --help` or `ai-dev-kit <command> --help`
 
 ### How do I report a bug?
 
 ```bash
 # Use CLI to report
-vibe-dev-kit report-issue \
+ai-dev-kit report-issue \
   --framework workflow-mgmt \
   --version 2.0.0 \
   --description "Error description"

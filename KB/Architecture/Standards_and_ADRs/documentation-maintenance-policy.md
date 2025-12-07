@@ -19,7 +19,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This policy defines the framework for maintaining documentation accuracy, consistency, and currency across the vibe-dev-kit repository. It establishes ownership, review cadences, update triggers, and quality standards to ensure all documentation remains useful and reliable.
+This policy defines the framework for maintaining documentation accuracy, consistency, and currency across the ai-dev-kit repository. It establishes ownership, review cadences, update triggers, and quality standards to ensure all documentation remains useful and reliable.
 
 **Key Principle:** Documentation is a living asset that must evolve with the codebase. All documentation must be maintained proactively, not reactively.
 

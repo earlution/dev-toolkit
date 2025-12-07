@@ -37,7 +37,7 @@
   - Execution patterns: pre-flight, step discipline, TODO state machine
   - Blocked state contract and tooling rules
   - Consistency checks and integration guidance
-  - Ready to copy into other repos (vibe-dev-kit, application repos)
+  - Ready to copy into other repos (ai-dev-kit, application repos)
 
 ### Updated
 - **RW Execution Guide:** `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`

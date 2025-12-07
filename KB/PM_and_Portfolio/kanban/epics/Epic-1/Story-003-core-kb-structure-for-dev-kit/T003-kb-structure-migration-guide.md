@@ -17,7 +17,7 @@ housekeeping_policy: keep
 
 ## 1. Overview
 
-This guide describes the **phased migration plan** for evolving the `vibe-dev-kit` KB structure from its current state to the target structure defined in the KB structure analysis and principles documents. It also provides guidance for **other projects** adopting the canonical KB pattern documented in T006.
+This guide describes the **phased migration plan** for evolving the `ai-dev-kit` KB structure from its current state to the target structure defined in the KB structure analysis and principles documents. It also provides guidance for **other projects** adopting the canonical KB pattern documented in T006.
 
 **For dev-kit:** Migration is performed in **four phases** (Phase 1 implemented).
 

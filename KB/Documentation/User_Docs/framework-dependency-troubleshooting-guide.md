@@ -19,7 +19,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-This guide provides solutions to common issues when installing, updating, and using Vibe Dev Kit frameworks as dependencies. Each issue includes symptoms, causes, and step-by-step solutions.
+This guide provides solutions to common issues when installing, updating, and using AI Dev Kit frameworks as dependencies. Each issue includes symptoms, causes, and step-by-step solutions.
 
 **Quick Navigation:**
 - [Installation Issues](#installation-issues)
@@ -38,7 +38,7 @@ This guide provides solutions to common issues when installing, updating, and us
 ### Issue: Framework Installation Fails
 
 **Symptoms:**
-- `vibe-dev-kit install` command fails
+- `ai-dev-kit install` command fails
 - Error message about framework not found
 - Installation completes but framework files missing
 
@@ -55,27 +55,27 @@ This guide provides solutions to common issues when installing, updating, and us
 
 ```bash
 # List available frameworks
-vibe-dev-kit list
+ai-dev-kit list
 
 # Check exact framework name
-vibe-dev-kit list --versions | grep workflow
+ai-dev-kit list --versions | grep workflow
 ```
 
 **2. Check Version Availability:**
 
 ```bash
 # List available versions
-vibe-dev-kit list --versions workflow-mgmt
+ai-dev-kit list --versions workflow-mgmt
 
 # Use available version
-vibe-dev-kit install workflow-mgmt@2.0.0
+ai-dev-kit install workflow-mgmt@2.0.0
 ```
 
 **3. Check Network Connection:**
 
 ```bash
 # Test repository access
-git ls-remote https://github.com/earlution/vibe-dev-kit.git
+git ls-remote https://github.com/earlution/ai-dev-kit.git
 
 # If fails, check network/firewall
 ```
@@ -94,10 +94,10 @@ chmod -R u+w frameworks/
 
 ```bash
 # Check available backends
-vibe-dev-kit list --backends
+ai-dev-kit list --backends
 
 # Use different backend
-vibe-dev-kit install workflow-mgmt --backend git-submodule
+ai-dev-kit install workflow-mgmt --backend git-submodule
 ```
 
 ---
@@ -123,7 +123,7 @@ vibe-dev-kit install workflow-mgmt --backend git-submodule
 git submodule update --init --recursive
 
 # Or initialize specific submodule
-git submodule update --init .vibe-dev-kit
+git submodule update --init .ai-dev-kit
 ```
 
 **2. Clone with Submodules:**
@@ -143,9 +143,9 @@ git submodule update --init --recursive
 cat .gitmodules
 
 # Should contain:
-# [submodule ".vibe-dev-kit"]
-#   path = .vibe-dev-kit
-#   url = https://github.com/earlution/vibe-dev-kit.git
+# [submodule ".ai-dev-kit"]
+#   path = .ai-dev-kit
+#   url = https://github.com/earlution/ai-dev-kit.git
 ```
 
 ---
@@ -168,30 +168,30 @@ cat .gitmodules
 
 ```bash
 # Check where framework was installed
-vibe-dev-kit status workflow-mgmt
+ai-dev-kit status workflow-mgmt
 
 # Verify path in configuration
-cat .vibe-dev-kit.yaml | grep -A 5 workflow-mgmt
+cat .ai-dev-kit.yaml | grep -A 5 workflow-mgmt
 ```
 
 **2. Reinstall to Correct Location:**
 
 ```bash
 # Remove incorrectly installed framework
-vibe-dev-kit remove workflow-mgmt
+ai-dev-kit remove workflow-mgmt
 
 # Reinstall to default location
-vibe-dev-kit install workflow-mgmt
+ai-dev-kit install workflow-mgmt
 
 # Or specify correct path
-vibe-dev-kit install workflow-mgmt --path frameworks/workflow-mgmt
+ai-dev-kit install workflow-mgmt --path frameworks/workflow-mgmt
 ```
 
 **3. Update Configuration:**
 
 ```bash
 # Edit configuration file
-vim .vibe-dev-kit.yaml
+vim .ai-dev-kit.yaml
 
 # Update path:
 # frameworks:
@@ -206,7 +206,7 @@ vim .vibe-dev-kit.yaml
 ### Issue: Update Command Fails
 
 **Symptoms:**
-- `vibe-dev-kit update` fails with error
+- `ai-dev-kit update` fails with error
 - Update partially applied
 - Framework in inconsistent state
 
@@ -223,20 +223,20 @@ vim .vibe-dev-kit.yaml
 
 ```bash
 # Verify version exists
-vibe-dev-kit list --versions workflow-mgmt
+ai-dev-kit list --versions workflow-mgmt
 
 # Use available version
-vibe-dev-kit update workflow-mgmt@2.1.0
+ai-dev-kit update workflow-mgmt@2.1.0
 ```
 
 **2. Check Compatibility:**
 
 ```bash
 # Check compatibility before update
-vibe-dev-kit check --compatibility
+ai-dev-kit check --compatibility
 
 # Review breaking changes
-vibe-dev-kit changelog workflow-mgmt --breaking --from 2.0.0 --to 2.1.0
+ai-dev-kit changelog workflow-mgmt --breaking --from 2.0.0 --to 2.1.0
 ```
 
 **3. Resolve Git Conflicts:**
@@ -253,17 +253,17 @@ git commit -m "Save work before framework update"
 git stash
 
 # Retry update
-vibe-dev-kit update workflow-mgmt
+ai-dev-kit update workflow-mgmt
 ```
 
 **4. Force Update:**
 
 ```bash
 # Force update (use with caution)
-vibe-dev-kit update workflow-mgmt --force
+ai-dev-kit update workflow-mgmt --force
 
 # Verify after force update
-vibe-dev-kit status workflow-mgmt
+ai-dev-kit status workflow-mgmt
 ```
 
 ---
@@ -272,7 +272,7 @@ vibe-dev-kit status workflow-mgmt
 
 **Symptoms:**
 - Framework has newer version available but not detected
-- `vibe-dev-kit check` shows up to date when update exists
+- `ai-dev-kit check` shows up to date when update exists
 - Manual check shows different version
 
 **Causes:**
@@ -287,20 +287,20 @@ vibe-dev-kit status workflow-mgmt
 
 ```bash
 # Clear cache and recheck
-vibe-dev-kit check --refresh
+ai-dev-kit check --refresh
 
 # Or manually fetch tags
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git fetch origin --tags
 cd ..
-vibe-dev-kit check
+ai-dev-kit check
 ```
 
 **2. Verify Git Tags:**
 
 ```bash
 # Check available tags
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git fetch origin --tags
 git tag | grep workflow-mgmt | sort -V
 
@@ -311,7 +311,7 @@ git tag | grep workflow-mgmt | sort -V
 
 ```bash
 # Verify framework version in config
-cat .vibe-dev-kit.yaml | grep -A 3 workflow-mgmt
+cat .ai-dev-kit.yaml | grep -A 3 workflow-mgmt
 
 # Check if version is pinned
 # If pin: true, updates won't be detected
@@ -339,30 +339,30 @@ cat .vibe-dev-kit.yaml | grep -A 3 workflow-mgmt
 
 ```bash
 # Rollback to previous version
-vibe-dev-kit update workflow-mgmt@2.0.0
+ai-dev-kit update workflow-mgmt@2.0.0
 
 # Or use rollback command
-vibe-dev-kit rollback workflow-mgmt
+ai-dev-kit rollback workflow-mgmt
 ```
 
 **2. Review Changelog:**
 
 ```bash
 # Check what changed
-vibe-dev-kit changelog workflow-mgmt --from 2.0.0 --to 2.1.0
+ai-dev-kit changelog workflow-mgmt --from 2.0.0 --to 2.1.0
 
 # Look for breaking changes
-vibe-dev-kit changelog workflow-mgmt --breaking
+ai-dev-kit changelog workflow-mgmt --breaking
 ```
 
 **3. Update Configuration:**
 
 ```bash
 # Check for deprecated settings
-vibe-dev-kit validate-config
+ai-dev-kit validate-config
 
 # Fix configuration issues
-vibe-dev-kit validate-config --fix
+ai-dev-kit validate-config --fix
 
 # Or manually update
 vim frameworks/workflow-mgmt/rw-config.yaml
@@ -372,10 +372,10 @@ vim frameworks/workflow-mgmt/rw-config.yaml
 
 ```bash
 # Verify dependency versions
-vibe-dev-kit check-compatibility
+ai-dev-kit check-compatibility
 
 # Update dependencies if needed
-vibe-dev-kit update numbering-versioning
+ai-dev-kit update numbering-versioning
 ```
 
 ---
@@ -386,7 +386,7 @@ vibe-dev-kit update numbering-versioning
 
 **Symptoms:**
 - CLI commands fail with "configuration not found"
-- `.vibe-dev-kit.yaml` missing
+- `.ai-dev-kit.yaml` missing
 - Default configuration not working
 
 **Causes:**
@@ -401,10 +401,10 @@ vibe-dev-kit update numbering-versioning
 
 ```bash
 # Create configuration file
-vibe-dev-kit init
+ai-dev-kit init
 
 # Verify file created
-ls -la .vibe-dev-kit.yaml
+ls -la .ai-dev-kit.yaml
 ```
 
 **2. Check File Location:**
@@ -412,23 +412,23 @@ ls -la .vibe-dev-kit.yaml
 ```bash
 # Configuration should be in project root
 pwd
-ls -la .vibe-dev-kit.yaml
+ls -la .ai-dev-kit.yaml
 
 # If not found, create it
-vibe-dev-kit init --path .
+ai-dev-kit init --path .
 ```
 
 **3. Verify File Format:**
 
 ```bash
 # Check YAML syntax
-cat .vibe-dev-kit.yaml
+cat .ai-dev-kit.yaml
 
 # Validate configuration
-vibe-dev-kit validate-config
+ai-dev-kit validate-config
 
 # Fix if needed
-vibe-dev-kit validate-config --fix
+ai-dev-kit validate-config --fix
 ```
 
 ---
@@ -452,30 +452,30 @@ vibe-dev-kit validate-config --fix
 
 ```bash
 # Check for errors
-vibe-dev-kit validate-config
+ai-dev-kit validate-config
 
 # Auto-fix if possible
-vibe-dev-kit validate-config --fix
+ai-dev-kit validate-config --fix
 ```
 
 **2. Check YAML Syntax:**
 
 ```bash
 # Validate YAML syntax
-python3 -c "import yaml; yaml.safe_load(open('.vibe-dev-kit.yaml'))"
+python3 -c "import yaml; yaml.safe_load(open('.ai-dev-kit.yaml'))"
 
 # Or use yamllint
-yamllint .vibe-dev-kit.yaml
+yamllint .ai-dev-kit.yaml
 ```
 
 **3. Review Configuration Schema:**
 
 ```bash
 # Check expected structure
-vibe-dev-kit config list
+ai-dev-kit config list
 
 # Compare with example
-cat .vibe-dev-kit.yaml
+cat .ai-dev-kit.yaml
 # Should match expected structure
 ```
 
@@ -483,13 +483,13 @@ cat .vibe-dev-kit.yaml
 
 ```bash
 # Backup current config
-cp .vibe-dev-kit.yaml .vibe-dev-kit.yaml.backup
+cp .ai-dev-kit.yaml .ai-dev-kit.yaml.backup
 
 # Reset to defaults
-vibe-dev-kit config reset
+ai-dev-kit config reset
 
 # Restore frameworks
-vibe-dev-kit install workflow-mgmt@2.0.0
+ai-dev-kit install workflow-mgmt@2.0.0
 ```
 
 ---
@@ -586,7 +586,7 @@ else:
 ```bash
 # Always run from project root
 cd /path/to/project
-vibe-dev-kit status
+ai-dev-kit status
 
 # Or use absolute paths in scripts
 ```
@@ -731,7 +731,7 @@ python3 -c "import sys; sys.path.insert(0, 'src'); from yourproject import versi
 
 ```bash
 # Check submodule commit
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git log -1 --oneline
 
 # Check current tag
@@ -751,20 +751,20 @@ git checkout workflow-mgmt-v2.0.0
 cd ..
 
 # Copy updated framework
-cp -r .vibe-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
+cp -r .ai-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
 ```
 
 **3. Update Submodule Reference:**
 
 ```bash
 # Update submodule to latest
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git fetch origin
 git checkout workflow-mgmt-v2.1.0
 cd ..
 
 # Commit submodule update
-git add .vibe-dev-kit
+git add .ai-dev-kit
 git commit -m "Update submodule to workflow-mgmt-v2.1.0"
 ```
 
@@ -788,7 +788,7 @@ git commit -m "Update submodule to workflow-mgmt-v2.1.0"
 
 ```bash
 # Navigate to submodule
-cd .vibe-dev-kit
+cd .ai-dev-kit
 
 # Reset to remote state
 git fetch origin
@@ -802,13 +802,13 @@ git checkout workflow-mgmt-v2.0.0
 
 ```bash
 # Remove submodule
-git submodule deinit .vibe-dev-kit
-git rm .vibe-dev-kit
-rm -rf .git/modules/.vibe-dev-kit
+git submodule deinit .ai-dev-kit
+git rm .ai-dev-kit
+rm -rf .git/modules/.ai-dev-kit
 
 # Re-add submodule
-git submodule add https://github.com/earlution/vibe-dev-kit.git .vibe-dev-kit
-cd .vibe-dev-kit
+git submodule add https://github.com/earlution/ai-dev-kit.git .ai-dev-kit
+cd .ai-dev-kit
 git checkout workflow-mgmt-v2.0.0
 cd ..
 ```
@@ -820,7 +820,7 @@ cd ..
 ### Issue: Command Not Found
 
 **Symptoms:**
-- `vibe-dev-kit` command not found
+- `ai-dev-kit` command not found
 - "command not found" error
 - CLI tool not in PATH
 
@@ -836,10 +836,10 @@ cd ..
 
 ```bash
 # Check if installed
-pip show vibe-dev-kit
+pip show ai-dev-kit
 
 # If not installed, install it
-pip install vibe-dev-kit
+pip install ai-dev-kit
 ```
 
 **2. Check Python PATH:**
@@ -859,7 +859,7 @@ export PATH="$HOME/.local/bin:$PATH"
 python3 -m vibe_dev_kit install workflow-mgmt
 
 # Or use full path
-~/.local/bin/vibe-dev-kit install workflow-mgmt
+~/.local/bin/ai-dev-kit install workflow-mgmt
 ```
 
 ---
@@ -883,23 +883,23 @@ python3 -m vibe_dev_kit install workflow-mgmt
 
 ```bash
 # Check configuration
-vibe-dev-kit validate-config
+ai-dev-kit validate-config
 
 # Fix issues
-vibe-dev-kit validate-config --fix
+ai-dev-kit validate-config --fix
 ```
 
 **2. Reinitialize Configuration:**
 
 ```bash
 # Backup current config
-cp .vibe-dev-kit.yaml .vibe-dev-kit.yaml.backup
+cp .ai-dev-kit.yaml .ai-dev-kit.yaml.backup
 
 # Reinitialize
-vibe-dev-kit init
+ai-dev-kit init
 
 # Restore frameworks
-vibe-dev-kit install workflow-mgmt@2.0.0
+ai-dev-kit install workflow-mgmt@2.0.0
 ```
 
 ---
@@ -1027,14 +1027,14 @@ python3 --version
 git --version
 
 # CLI information
-vibe-dev-kit --version
-vibe-dev-kit status --verbose
+ai-dev-kit --version
+ai-dev-kit status --verbose
 
 # Configuration
-cat .vibe-dev-kit.yaml
+cat .ai-dev-kit.yaml
 
 # Framework status
-vibe-dev-kit status
+ai-dev-kit status
 ls -la frameworks/
 ```
 
@@ -1044,7 +1044,7 @@ ls -la frameworks/
 
 ```bash
 # Use CLI to report issue
-vibe-dev-kit report-issue \
+ai-dev-kit report-issue \
   --framework workflow-mgmt \
   --version 2.0.0 \
   --description "Update fails with error X"

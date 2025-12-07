@@ -19,7 +19,7 @@ This release completes **Task 2: Tag Confidentia/fynd.deals examples and add dev
 
 - ✅ Added **overview note** explaining the example tagging system
 - ✅ Tagged all **Confidentia/fynd.deals examples** with `[Example: Confidentia]` or `[Example: Confidentia/fynd.deals]` labels
-- ✅ Added **dev-kit examples** with `[Example: vibe-dev-kit]` labels throughout all 11 steps
+- ✅ Added **dev-kit examples** with `[Example: ai-dev-kit]` labels throughout all 11 steps
 - ✅ Tagged **document header** "Related" field with example labels
 - ✅ Updated **all 11 steps** with tagged examples:
   - Step 1: Branch Safety Check (branch examples)
@@ -41,7 +41,7 @@ This release completes **Task 2: Tag Confidentia/fynd.deals examples and add dev
 
 **Example Tagging System:**
 - `[Example: Confidentia/fynd.deals]` - Examples from the original source project
-- `[Example: vibe-dev-kit]` - Examples from the dev-kit project
+- `[Example: ai-dev-kit]` - Examples from the dev-kit project
 - Clear note in overview explaining that users should replace examples with their project-specific values
 
 **Coverage:**
@@ -51,7 +51,7 @@ This release completes **Task 2: Tag Confidentia/fynd.deals examples and add dev
 
 **Examples Tagged:**
 - Version file paths (`src/confidentia/version.py` vs `src/fynd_deals/version.py`)
-- Handler names (`confidentia.kanban_update` vs `vibe-dev-kit.kanban_update`)
+- Handler names (`confidentia.kanban_update` vs `ai-dev-kit.kanban_update`)
 - Version numbers (`0.4.3.2+9` vs `0.2.1.1+3`)
 - Branch names (`epic/4` vs `epic/2`)
 - Kanban paths (Confidentia structure vs dev-kit structure)

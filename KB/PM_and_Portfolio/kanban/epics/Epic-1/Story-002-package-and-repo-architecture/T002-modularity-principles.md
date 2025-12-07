@@ -16,7 +16,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This document establishes the **modularity principles and boundaries** for the `vibe-dev-kit` repository's framework packages. It defines what "modular" means for this dev-kit, establishes clear boundaries between packages, documents copy vs reference patterns, and defines dependency rules.
+This document establishes the **modularity principles and boundaries** for the `ai-dev-kit` repository's framework packages. It defines what "modular" means for this dev-kit, establishes clear boundaries between packages, documents copy vs reference patterns, and defines dependency rules.
 
 **Key Principles:**
 - **Standalone First:** Each package must be usable independently
@@ -26,11 +26,11 @@ This document establishes the **modularity principles and boundaries** for the `
 
 ---
 
-## 1. What "Modular" Means for vibe-dev-kit
+## 1. What "Modular" Means for ai-dev-kit
 
 ### 1.1 Core Definition
 
-**Modularity** in the context of `vibe-dev-kit` means:
+**Modularity** in the context of `ai-dev-kit` means:
 
 1. **Standalone Capability:** Each framework package can be used independently without requiring other packages from the dev-kit
 2. **Self-Contained:** Each package includes all necessary documentation, policies, templates, and tools to function independently

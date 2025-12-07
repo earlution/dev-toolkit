@@ -19,17 +19,17 @@ housekeeping_policy: keep
 
 ## Overview
 
-This document provides a complete reference for the `vibe-dev-kit` CLI tool commands. The CLI tool provides a unified interface for managing framework dependencies across all backends (Git submodules, package managers).
+This document provides a complete reference for the `ai-dev-kit` CLI tool commands. The CLI tool provides a unified interface for managing framework dependencies across all backends (Git submodules, package managers).
 
 **Installation:**
 
 ```bash
 # Install via pip
-pip install vibe-dev-kit
+pip install ai-dev-kit
 
 # Or from source
-git clone https://github.com/earlution/vibe-dev-kit.git
-cd vibe-dev-kit/cli
+git clone https://github.com/earlution/ai-dev-kit.git
+cd ai-dev-kit/cli
 pip install -e .
 ```
 
@@ -37,14 +37,14 @@ pip install -e .
 
 ## Core Commands
 
-### `vibe-dev-kit init`
+### `ai-dev-kit init`
 
-Initialize vibe-dev-kit in your project.
+Initialize ai-dev-kit in your project.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit init [--path <path>] [--backend <backend>]
+ai-dev-kit init [--path <path>] [--backend <backend>]
 ```
 
 **Options:**
@@ -55,25 +55,25 @@ vibe-dev-kit init [--path <path>] [--backend <backend>]
 
 ```bash
 # Initialize in current directory
-vibe-dev-kit init
+ai-dev-kit init
 
 # Initialize with specific backend
-vibe-dev-kit init --backend git-submodule
+ai-dev-kit init --backend git-submodule
 ```
 
 **Creates:**
-- `.vibe-dev-kit.yaml` - Configuration file
+- `.ai-dev-kit.yaml` - Configuration file
 
 ---
 
-### `vibe-dev-kit install`
+### `ai-dev-kit install`
 
 Install a framework as a dependency.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit install <framework>[@version] [options]
+ai-dev-kit install <framework>[@version] [options]
 ```
 
 **Arguments:**
@@ -89,24 +89,24 @@ vibe-dev-kit install <framework>[@version] [options]
 
 ```bash
 # Install latest version
-vibe-dev-kit install workflow-mgmt
+ai-dev-kit install workflow-mgmt
 
 # Install specific version
-vibe-dev-kit install workflow-mgmt@2.0.0
+ai-dev-kit install workflow-mgmt@2.0.0
 
 # Install multiple frameworks
-vibe-dev-kit install workflow-mgmt@2.0.0 kanban@1.0.0 numbering-versioning@2.0.0
+ai-dev-kit install workflow-mgmt@2.0.0 kanban@1.0.0 numbering-versioning@2.0.0
 
 # Install with specific backend
-vibe-dev-kit install workflow-mgmt --backend git-submodule
+ai-dev-kit install workflow-mgmt --backend git-submodule
 
 # Preview installation
-vibe-dev-kit install workflow-mgmt --dry-run
+ai-dev-kit install workflow-mgmt --dry-run
 ```
 
 **Behavior:**
 - Detects project type and suggests appropriate backend
-- Creates `.vibe-dev-kit.yaml` if it doesn't exist
+- Creates `.ai-dev-kit.yaml` if it doesn't exist
 - Installs framework using selected backend
 - Updates project configuration files
 - Validates installation
@@ -128,14 +128,14 @@ Framework installed:
 
 ---
 
-### `vibe-dev-kit update`
+### `ai-dev-kit update`
 
 Update a framework to the latest compatible version.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit update <framework>[@version] [options]
+ai-dev-kit update <framework>[@version] [options]
 ```
 
 **Arguments:**
@@ -153,29 +153,29 @@ vibe-dev-kit update <framework>[@version] [options]
 
 ```bash
 # Update to latest compatible version
-vibe-dev-kit update workflow-mgmt
+ai-dev-kit update workflow-mgmt
 
 # Update to specific version
-vibe-dev-kit update workflow-mgmt@2.1.0
+ai-dev-kit update workflow-mgmt@2.1.0
 
 # Update all frameworks
-vibe-dev-kit update --all
+ai-dev-kit update --all
 
 # Check for updates without applying
-vibe-dev-kit update workflow-mgmt --check
+ai-dev-kit update workflow-mgmt --check
 
 # Preview update
-vibe-dev-kit update workflow-mgmt --dry-run
+ai-dev-kit update workflow-mgmt --dry-run
 
 # Force update
-vibe-dev-kit update workflow-mgmt --force
+ai-dev-kit update workflow-mgmt --force
 ```
 
 **Behavior:**
 - Checks for available updates
 - Validates compatibility
 - Updates framework using appropriate backend
-- Updates `.vibe-dev-kit.yaml` configuration
+- Updates `.ai-dev-kit.yaml` configuration
 - Runs post-update validation
 
 **Output:**
@@ -196,14 +196,14 @@ Framework updated:
 
 ---
 
-### `vibe-dev-kit check`
+### `ai-dev-kit check`
 
 Check for available framework updates.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit check [<framework>] [options]
+ai-dev-kit check [<framework>] [options]
 ```
 
 **Arguments:**
@@ -218,19 +218,19 @@ vibe-dev-kit check [<framework>] [options]
 
 ```bash
 # Check all frameworks
-vibe-dev-kit check
+ai-dev-kit check
 
 # Check specific framework
-vibe-dev-kit check workflow-mgmt
+ai-dev-kit check workflow-mgmt
 
 # Check with notifications
-vibe-dev-kit check --notify
+ai-dev-kit check --notify
 
 # Check compatibility
-vibe-dev-kit check --compatibility
+ai-dev-kit check --compatibility
 
 # JSON output
-vibe-dev-kit check --json
+ai-dev-kit check --json
 ```
 
 **Output:**
@@ -251,14 +251,14 @@ Framework: kanban
 
 ---
 
-### `vibe-dev-kit status`
+### `ai-dev-kit status`
 
 Show status of installed frameworks.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit status [<framework>] [options]
+ai-dev-kit status [<framework>] [options]
 ```
 
 **Arguments:**
@@ -272,16 +272,16 @@ vibe-dev-kit status [<framework>] [options]
 
 ```bash
 # Show all frameworks
-vibe-dev-kit status
+ai-dev-kit status
 
 # Show specific framework
-vibe-dev-kit status workflow-mgmt
+ai-dev-kit status workflow-mgmt
 
 # JSON output
-vibe-dev-kit status --json
+ai-dev-kit status --json
 
 # Verbose output
-vibe-dev-kit status --verbose
+ai-dev-kit status --verbose
 ```
 
 **Output:**
@@ -303,14 +303,14 @@ Installed Frameworks:
 
 ---
 
-### `vibe-dev-kit list`
+### `ai-dev-kit list`
 
 List available frameworks.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit list [options]
+ai-dev-kit list [options]
 ```
 
 **Options:**
@@ -321,13 +321,13 @@ vibe-dev-kit list [options]
 
 ```bash
 # List all frameworks
-vibe-dev-kit list
+ai-dev-kit list
 
 # List with versions
-vibe-dev-kit list --versions
+ai-dev-kit list --versions
 
 # JSON output
-vibe-dev-kit list --json
+ai-dev-kit list --json
 ```
 
 **Output:**
@@ -349,14 +349,14 @@ Available Frameworks:
 
 ---
 
-### `vibe-dev-kit remove`
+### `ai-dev-kit remove`
 
 Remove a framework dependency.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit remove <framework> [options]
+ai-dev-kit remove <framework> [options]
 ```
 
 **Arguments:**
@@ -369,14 +369,14 @@ vibe-dev-kit remove <framework> [options]
 
 ```bash
 # Remove framework
-vibe-dev-kit remove workflow-mgmt
+ai-dev-kit remove workflow-mgmt
 
 # Remove but keep files
-vibe-dev-kit remove workflow-mgmt --keep-files
+ai-dev-kit remove workflow-mgmt --keep-files
 ```
 
 **Behavior:**
-- Removes framework from `.vibe-dev-kit.yaml`
+- Removes framework from `.ai-dev-kit.yaml`
 - Removes framework files (unless `--keep-files`)
 - Updates project configuration
 
@@ -384,14 +384,14 @@ vibe-dev-kit remove workflow-mgmt --keep-files
 
 ## Configuration Commands
 
-### `vibe-dev-kit config`
+### `ai-dev-kit config`
 
 Manage CLI configuration.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit config <command> [options]
+ai-dev-kit config <command> [options]
 ```
 
 **Commands:**
@@ -404,18 +404,18 @@ vibe-dev-kit config <command> [options]
 
 ```bash
 # Get configuration value
-vibe-dev-kit config get default_backend
+ai-dev-kit config get default_backend
 
 # Set configuration value
-vibe-dev-kit config set default_backend git-submodule
-vibe-dev-kit config set auto_check true
-vibe-dev-kit config set check_interval daily
+ai-dev-kit config set default_backend git-submodule
+ai-dev-kit config set auto_check true
+ai-dev-kit config set check_interval daily
 
 # List all configuration
-vibe-dev-kit config list
+ai-dev-kit config list
 
 # Reset to defaults
-vibe-dev-kit config reset
+ai-dev-kit config reset
 ```
 
 **Configuration Keys:**
@@ -431,14 +431,14 @@ vibe-dev-kit config reset
 
 ## Information Commands
 
-### `vibe-dev-kit changelog`
+### `ai-dev-kit changelog`
 
 View framework changelog.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit changelog <framework> [options]
+ai-dev-kit changelog <framework> [options]
 ```
 
 **Arguments:**
@@ -454,28 +454,28 @@ vibe-dev-kit changelog <framework> [options]
 
 ```bash
 # Show full changelog
-vibe-dev-kit changelog workflow-mgmt
+ai-dev-kit changelog workflow-mgmt
 
 # Show changes between versions
-vibe-dev-kit changelog workflow-mgmt --from 2.0.0 --to 2.1.0
+ai-dev-kit changelog workflow-mgmt --from 2.0.0 --to 2.1.0
 
 # Show only breaking changes
-vibe-dev-kit changelog workflow-mgmt --breaking
+ai-dev-kit changelog workflow-mgmt --breaking
 
 # Show configuration changes
-vibe-dev-kit changelog workflow-mgmt --config
+ai-dev-kit changelog workflow-mgmt --config
 ```
 
 ---
 
-### `vibe-dev-kit deps`
+### `ai-dev-kit deps`
 
 Show framework dependencies.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit deps <framework>
+ai-dev-kit deps <framework>
 ```
 
 **Arguments:**
@@ -484,7 +484,7 @@ vibe-dev-kit deps <framework>
 **Example:**
 
 ```bash
-vibe-dev-kit deps workflow-mgmt
+ai-dev-kit deps workflow-mgmt
 ```
 
 **Output:**
@@ -498,14 +498,14 @@ Dependencies:
 
 ---
 
-### `vibe-dev-kit check-compatibility`
+### `ai-dev-kit check-compatibility`
 
 Check framework compatibility.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit check-compatibility [options]
+ai-dev-kit check-compatibility [options]
 ```
 
 **Options:**
@@ -514,7 +514,7 @@ vibe-dev-kit check-compatibility [options]
 **Example:**
 
 ```bash
-vibe-dev-kit check-compatibility
+ai-dev-kit check-compatibility
 ```
 
 **Output:**
@@ -530,14 +530,14 @@ Framework Compatibility:
 
 ## Utility Commands
 
-### `vibe-dev-kit validate-config`
+### `ai-dev-kit validate-config`
 
 Validate configuration files.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit validate-config [options]
+ai-dev-kit validate-config [options]
 ```
 
 **Options:**
@@ -547,22 +547,22 @@ vibe-dev-kit validate-config [options]
 
 ```bash
 # Validate configuration
-vibe-dev-kit validate-config
+ai-dev-kit validate-config
 
 # Validate and fix
-vibe-dev-kit validate-config --fix
+ai-dev-kit validate-config --fix
 ```
 
 ---
 
-### `vibe-dev-kit migrate`
+### `ai-dev-kit migrate`
 
 Migrate from copy-paste to dependencies.
 
 **Usage:**
 
 ```bash
-vibe-dev-kit migrate [options]
+ai-dev-kit migrate [options]
 ```
 
 **Options:**
@@ -574,13 +574,13 @@ vibe-dev-kit migrate [options]
 
 ```bash
 # Detect existing frameworks
-vibe-dev-kit migrate --detect
+ai-dev-kit migrate --detect
 
 # Convert to dependencies
-vibe-dev-kit migrate --convert
+ai-dev-kit migrate --convert
 
 # Preview migration
-vibe-dev-kit migrate --convert --dry-run
+ai-dev-kit migrate --convert --dry-run
 ```
 
 ---
@@ -599,23 +599,23 @@ All commands support these global options:
 
 ```bash
 # Show help
-vibe-dev-kit install --help
+ai-dev-kit install --help
 
 # Show version
-vibe-dev-kit --version
+ai-dev-kit --version
 
 # Verbose output
-vibe-dev-kit check --verbose
+ai-dev-kit check --verbose
 
 # Use custom config
-vibe-dev-kit status --config /path/to/config.yaml
+ai-dev-kit status --config /path/to/config.yaml
 ```
 
 ---
 
 ## Configuration File
 
-### `.vibe-dev-kit.yaml`
+### `.ai-dev-kit.yaml`
 
 Configuration file for framework dependencies.
 
@@ -642,7 +642,7 @@ frameworks:
     version: "2.0.0"
     backend: "git-submodule"
     path: "frameworks/workflow-mgmt"
-    source: "https://github.com/earlution/vibe-dev-kit.git"
+    source: "https://github.com/earlution/ai-dev-kit.git"
     tag: "workflow-mgmt-v2.0.0"
     pin: false
 ```
@@ -680,7 +680,7 @@ CLI commands return exit codes:
 **Example Error Handling:**
 
 ```bash
-if vibe-dev-kit install workflow-mgmt; then
+if ai-dev-kit install workflow-mgmt; then
   echo "Installation successful"
 else
   exit_code=$?
@@ -701,30 +701,30 @@ fi
 
 ```bash
 # Initialize project
-vibe-dev-kit init
+ai-dev-kit init
 
 # Install frameworks
-vibe-dev-kit install workflow-mgmt@2.0.0
-vibe-dev-kit install kanban@1.0.0
+ai-dev-kit install workflow-mgmt@2.0.0
+ai-dev-kit install kanban@1.0.0
 
 # Check status
-vibe-dev-kit status
+ai-dev-kit status
 
 # Check for updates
-vibe-dev-kit check
+ai-dev-kit check
 
 # Update framework
-vibe-dev-kit update workflow-mgmt@2.1.0
+ai-dev-kit update workflow-mgmt@2.1.0
 
 # Verify update
-vibe-dev-kit status workflow-mgmt
+ai-dev-kit status workflow-mgmt
 ```
 
 ### CI/CD Integration
 
 ```bash
 # In CI/CD pipeline
-vibe-dev-kit check --notify
+ai-dev-kit check --notify
 
 # If updates available, create issue
 if [ $? -ne 0 ]; then
@@ -736,13 +736,13 @@ fi
 
 ```bash
 # Detect existing frameworks
-vibe-dev-kit migrate --detect
+ai-dev-kit migrate --detect
 
 # Preview migration
-vibe-dev-kit migrate --convert --dry-run
+ai-dev-kit migrate --convert --dry-run
 
 # Execute migration
-vibe-dev-kit migrate --convert
+ai-dev-kit migrate --convert
 ```
 
 ---
@@ -755,30 +755,30 @@ vibe-dev-kit migrate --convert
 
 ```bash
 # Check installation
-pip show vibe-dev-kit
+pip show ai-dev-kit
 
 # Reinstall if needed
-pip install --upgrade vibe-dev-kit
+pip install --upgrade ai-dev-kit
 ```
 
 **Configuration not found:**
 
 ```bash
 # Initialize project
-vibe-dev-kit init
+ai-dev-kit init
 
 # Or specify config file
-vibe-dev-kit status --config /path/to/config.yaml
+ai-dev-kit status --config /path/to/config.yaml
 ```
 
 **Backend not available:**
 
 ```bash
 # Check available backends
-vibe-dev-kit list --backends
+ai-dev-kit list --backends
 
 # Use different backend
-vibe-dev-kit install workflow-mgmt --backend git-submodule
+ai-dev-kit install workflow-mgmt --backend git-submodule
 ```
 
 See the [Troubleshooting Guide](framework-dependency-troubleshooting-guide.md) for more detailed solutions.

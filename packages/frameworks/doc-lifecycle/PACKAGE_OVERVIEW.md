@@ -223,7 +223,7 @@ Projects must **copy** this package into their repository, not link to it.
 - Projects need to customize lifecycle defaults and housekeeping policies
 - Projects evolve independently and may need project-specific adaptations
 - Copying ensures projects have full control over their lifecycle management
-- Prevents breaking changes in `vibe-dev-kit` from affecting consuming projects
+- Prevents breaking changes in `ai-dev-kit` from affecting consuming projects
 
 **What to copy:**
 1. All files in `packages/frameworks/doc-lifecycle/`

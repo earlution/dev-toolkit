@@ -50,7 +50,7 @@ This directory contains a complete, portable set of policies for implementing nu
 
 This package is designed to be **fully modular**. You can:
 
-- Use **only this package** in your project, without copying any other part of `vibe-dev-kit`
+- Use **only this package** in your project, without copying any other part of `ai-dev-kit`
 - Combine it with other packages (for example, the **Workflow Management** package) when you want automation built on top of these policies
 
 **Package dependencies:**

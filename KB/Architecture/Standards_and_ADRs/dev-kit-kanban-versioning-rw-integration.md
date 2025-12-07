@@ -17,7 +17,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-This guide documents how the three core frameworks—**Kanban**, **Versioning**, and **Release Workflow (RW)**—integrate within the `vibe-dev-kit` repository. It provides dev-kit specific examples, end-to-end flows, troubleshooting, and validation results.
+This guide documents how the three core frameworks—**Kanban**, **Versioning**, and **Release Workflow (RW)**—integrate within the `ai-dev-kit` repository. It provides dev-kit specific examples, end-to-end flows, troubleshooting, and validation results.
 
 **Integration Type:** Three-way complementary integration
 - **Kanban** tracks work items (Epics, Stories, Tasks)
@@ -281,7 +281,7 @@ components:
   BUILD: "Build number (increments per release within task)"
 
 dev_kit_epics:
-  1: "Vibe Dev Kit Core"
+  1: "AI Dev Kit Core"
   2: "Workflow Management Framework"
   3: "Numbering & Versioning Framework"
   4: "Kanban Framework"

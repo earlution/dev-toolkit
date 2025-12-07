@@ -19,7 +19,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-This guide explains how to integrate Vibe Dev Kit frameworks into existing projects, migrate from copy-paste to dependency-based installation, and integrate frameworks with CI/CD pipelines.
+This guide explains how to integrate AI Dev Kit frameworks into existing projects, migrate from copy-paste to dependency-based installation, and integrate frameworks with CI/CD pipelines.
 
 **Use Cases:**
 - Migrating existing projects from copy-paste to dependencies
@@ -96,7 +96,7 @@ git status  # If frameworks were in Git
 
 # Or compare with original
 diff -r .backup/frameworks/workflow-mgmt/ \
-      /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/
+      /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/
 ```
 
 **Common Customizations:**
@@ -123,25 +123,25 @@ git commit -m "Remove copied frameworks before migration to dependencies"
 **Using Git Submodules:**
 
 ```bash
-# Add vibe-dev-kit as submodule
-git submodule add https://github.com/earlution/vibe-dev-kit.git .vibe-dev-kit
+# Add ai-dev-kit as submodule
+git submodule add https://github.com/earlution/ai-dev-kit.git .ai-dev-kit
 
 # Checkout framework versions
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git checkout workflow-mgmt-v2.0.0
 cd ..
 
 # Copy frameworks
-cp -r .vibe-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
-cp -r .vibe-dev-kit/packages/frameworks/kanban/ ./frameworks/kanban
+cp -r .ai-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
+cp -r .ai-dev-kit/packages/frameworks/kanban/ ./frameworks/kanban
 ```
 
 **Using CLI Tool:**
 
 ```bash
 # Install frameworks
-vibe-dev-kit install workflow-mgmt@2.0.0
-vibe-dev-kit install kanban@1.0.0
+ai-dev-kit install workflow-mgmt@2.0.0
+ai-dev-kit install kanban@1.0.0
 ```
 
 **Step 5: Restore Customizations**
@@ -181,7 +181,7 @@ python3 scripts/update-kanban-docs.py --help
 
 ```bash
 # Commit migrated frameworks
-git add frameworks/ .vibe-dev-kit .gitmodules
+git add frameworks/ .ai-dev-kit .gitmodules
 git commit -m "Migrate frameworks from copy-paste to Git submodule dependencies"
 ```
 
@@ -220,9 +220,9 @@ mkdir -p src/myproject KB/PM_and_Portfolio/kanban
 
 ```bash
 # Install all three core frameworks
-vibe-dev-kit install workflow-mgmt@2.0.0
-vibe-dev-kit install kanban@1.0.0
-vibe-dev-kit install numbering-versioning@2.0.0
+ai-dev-kit install workflow-mgmt@2.0.0
+ai-dev-kit install kanban@1.0.0
+ai-dev-kit install numbering-versioning@2.0.0
 ```
 
 **3. Configure Frameworks:**
@@ -290,11 +290,11 @@ jobs:
         with:
           python-version: '3.10'
       
-      - name: Install vibe-dev-kit CLI
-        run: pip install vibe-dev-kit
+      - name: Install ai-dev-kit CLI
+        run: pip install ai-dev-kit
       
       - name: Check for updates
-        run: vibe-dev-kit check --notify
+        run: ai-dev-kit check --notify
       
       - name: Create issue if updates available
         if: failure()
@@ -305,7 +305,7 @@ jobs:
               owner: context.repo.owner,
               repo: context.repo.repo,
               title: 'Framework Updates Available',
-              body: 'Framework updates are available. Run `vibe-dev-kit check` for details.'
+              body: 'Framework updates are available. Run `ai-dev-kit check` for details.'
             })
 ```
 
@@ -339,11 +339,11 @@ jobs:
         with:
           python-version: '3.10'
       
-      - name: Install vibe-dev-kit CLI
-        run: pip install vibe-dev-kit
+      - name: Install ai-dev-kit CLI
+        run: pip install ai-dev-kit
       
       - name: Update framework
-        run: vibe-dev-kit update ${{ inputs.framework }}@${{ inputs.version }}
+        run: ai-dev-kit update ${{ inputs.framework }}@${{ inputs.version }}
       
       - name: Run tests
         run: |
@@ -368,8 +368,8 @@ Create `.gitlab-ci.yml`:
 check-framework-updates:
   image: python:3.10
   script:
-    - pip install vibe-dev-kit
-    - vibe-dev-kit check --notify
+    - pip install ai-dev-kit
+    - ai-dev-kit check --notify
   only:
     - schedules
   when: manual
@@ -390,8 +390,8 @@ pipeline {
     stages {
         stage('Check Updates') {
             steps {
-                sh 'pip install vibe-dev-kit'
-                sh 'vibe-dev-kit check --notify'
+                sh 'pip install ai-dev-kit'
+                sh 'ai-dev-kit check --notify'
             }
         }
     }
@@ -423,18 +423,18 @@ Some frameworks depend on others:
 
 ```bash
 # Install dependencies first
-vibe-dev-kit install numbering-versioning@2.0.0
-vibe-dev-kit install kanban@1.0.0
+ai-dev-kit install numbering-versioning@2.0.0
+ai-dev-kit install kanban@1.0.0
 
 # Then install dependent framework
-vibe-dev-kit install workflow-mgmt@2.0.0
+ai-dev-kit install workflow-mgmt@2.0.0
 ```
 
 **Check Dependencies:**
 
 ```bash
 # List framework dependencies
-vibe-dev-kit deps workflow-mgmt
+ai-dev-kit deps workflow-mgmt
 
 # Output:
 # Dependencies:
@@ -448,7 +448,7 @@ vibe-dev-kit deps workflow-mgmt
 
 ```bash
 # Check if installed frameworks are compatible
-vibe-dev-kit check-compatibility
+ai-dev-kit check-compatibility
 
 # Output:
 # Framework Compatibility:
@@ -461,10 +461,10 @@ vibe-dev-kit check-compatibility
 
 ```bash
 # If conflicts found, update frameworks
-vibe-dev-kit update --resolve-conflicts
+ai-dev-kit update --resolve-conflicts
 
 # Or update specific framework
-vibe-dev-kit update workflow-mgmt@2.1.0
+ai-dev-kit update workflow-mgmt@2.1.0
 ```
 
 ---
@@ -502,7 +502,7 @@ chmod +x frameworks/workflow-mgmt/scripts/custom/my-custom-script.py
 
 **Pre-Update Hook:**
 
-Create `.vibe-dev-kit/hooks/pre-update.sh`:
+Create `.ai-dev-kit/hooks/pre-update.sh`:
 
 ```bash
 #!/bin/bash
@@ -516,7 +516,7 @@ echo "Pre-update hook complete"
 
 **Post-Update Hook:**
 
-Create `.vibe-dev-kit/hooks/post-update.sh`:
+Create `.ai-dev-kit/hooks/post-update.sh`:
 
 ```bash
 #!/bin/bash
@@ -538,7 +538,7 @@ echo "Post-update hook complete"
 
 ```bash
 # Commit framework configuration
-git add .vibe-dev-kit.yaml
+git add .ai-dev-kit.yaml
 git add frameworks/*/rw-config.yaml
 git commit -m "Add framework configuration"
 
@@ -549,7 +549,7 @@ git clone --recurse-submodules https://github.com/yourorg/yourproject.git
 **Configuration Management:**
 
 ```yaml
-# .vibe-dev-kit.yaml (committed to repo)
+# .ai-dev-kit.yaml (committed to repo)
 version: "1.0.0"
 default_backend: "git-submodule"
 frameworks:
@@ -564,7 +564,7 @@ frameworks:
 
 1. **Developer checks for updates:**
    ```bash
-   vibe-dev-kit check
+   ai-dev-kit check
    ```
 
 2. **Create update branch:**
@@ -574,7 +574,7 @@ frameworks:
 
 3. **Apply update:**
    ```bash
-   vibe-dev-kit update workflow-mgmt@2.1.0
+   ai-dev-kit update workflow-mgmt@2.1.0
    ```
 
 4. **Test update:**
@@ -617,17 +617,17 @@ git clone --recurse-submodules <repo-url>
 vim frameworks/workflow-mgmt/rw-config.yaml
 
 # Or use CLI tool
-vibe-dev-kit config update-paths
+ai-dev-kit config update-paths
 ```
 
 **Issue: Version conflicts**
 
 ```bash
 # Check for conflicts
-vibe-dev-kit check-compatibility
+ai-dev-kit check-compatibility
 
 # Resolve conflicts
-vibe-dev-kit update --resolve-conflicts
+ai-dev-kit update --resolve-conflicts
 ```
 
 See the [Troubleshooting Guide](framework-dependency-troubleshooting-guide.md) for more detailed solutions.

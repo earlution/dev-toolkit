@@ -19,7 +19,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This document defines review cadences, procedures, and checklists for maintaining documentation quality across the vibe-dev-kit repository. It establishes systematic review schedules based on documentation priority and provides structured processes for conducting reviews.
+This document defines review cadences, procedures, and checklists for maintaining documentation quality across the ai-dev-kit repository. It establishes systematic review schedules based on documentation priority and provides structured processes for conducting reviews.
 
 **Key Principle:** Documentation reviews must be systematic, thorough, and actionable. Reviews should identify issues, prioritize fixes, and track improvements.
 

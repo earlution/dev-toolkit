@@ -74,7 +74,7 @@ It ensures that:
 **Last updated:** 2025-12-02 (v0.4.3.7+1 – Story 3 COMPLETE: All Tasks done)  
 
 **Goal:**  
-Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `vibe-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.
+Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. Establish `ai-dev-kit` as the canonical SoT for Kanban policies, templates, and governance.
 
 **Tasks:**
 - [x] E4:S01:T01 – Review existing dev-kit Kanban policies and templates ✅ COMPLETE (v0.4.1.1+2)
@@ -140,7 +140,7 @@ Ensure seamless integration between Kanban, Versioning, and Release Workflow (RW
 - Epic 1 and Epic 3 for some versioning and core-policy decisions.
 
 **Coordinates With:**
-- Epic 1: Vibe Dev Kit Core  
+- Epic 1: AI Dev Kit Core  
 - Epic 2: Workflow Management Framework  
 - Epic 3: Numbering & Versioning Framework  
 

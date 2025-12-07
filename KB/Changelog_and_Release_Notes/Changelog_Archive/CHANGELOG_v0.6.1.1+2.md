@@ -33,7 +33,7 @@ Designed framework dependency architecture and updated all documentation to refl
 
 **New CLI Design Document:**
 - Created `KB/Architecture/Standards_and_ADRs/framework-update-cli-design.md`
-- Designs `vibe-dev-kit` CLI tool for framework management
+- Designs `ai-dev-kit` CLI tool for framework management
 - Defines commands: `install`, `update`, `check`, `status`, `list`, `remove`
 - Documents backend abstraction (Git submodules, package managers)
 

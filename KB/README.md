@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Knowledge Base (KB)
 
-The `KB/` directory contains all **knowledge base documentation** for the `vibe-dev-kit` repository.
+The `KB/` directory contains all **knowledge base documentation** for the `ai-dev-kit` repository.
 
 ## Structure
 

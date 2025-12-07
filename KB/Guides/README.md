@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Guides
 
-This section contains **user-facing documentation** and **how-to guides** for the `vibe-dev-kit` repository.
+This section contains **user-facing documentation** and **how-to guides** for the `ai-dev-kit` repository.
 
 ## Structure
 

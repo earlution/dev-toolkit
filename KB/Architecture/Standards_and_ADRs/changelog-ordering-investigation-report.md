@@ -9,7 +9,7 @@ housekeeping_policy: keep
 # Changelog Ordering Investigation Report
 
 **Status:** Complete  
-**Owner:** Vibe Dev Kit / Book Project Lead  
+**Owner:** AI Dev Kit / Book Project Lead  
 **Last Updated:** 2025-12-04  
 **Related Work:** Epic 3, Story 2, Task 6 (E3:S02:T06)
 

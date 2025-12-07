@@ -34,7 +34,7 @@ Both paths use the same installer, but the setup differs slightly.
 
 ```bash
 # Clone or copy the workflow mgt package to your project
-cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
+cp -r /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
 ```
 
 ### Step 2: Run Installer
@@ -113,9 +113,9 @@ git checkout -b epic/1-first-epic
 
 ```bash
 # Copy only the installer and templates
-cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/scripts /path/to/your/project/tools/workflow_mgt/
-cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/workflows /path/to/your/project/
-cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/config /path/to/your/project/tools/workflow_mgt/
+cp -r /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/scripts /path/to/your/project/tools/workflow_mgt/
+cp -r /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/workflows /path/to/your/project/
+cp -r /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/config /path/to/your/project/tools/workflow_mgt/
 ```
 
 ### Step 2: Identify Your Project Structure
@@ -185,7 +185,7 @@ cat workflows/release-workflow.yaml | grep -A 3 "config:"
 mkdir -p tools/workflow_mgt/scripts/validation
 
 # Copy validation scripts
-cp /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/scripts/validation/*.py tools/workflow_mgt/scripts/validation/
+cp /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/scripts/validation/*.py tools/workflow_mgt/scripts/validation/
 ```
 
 ### Step 7: Test RW
@@ -250,7 +250,7 @@ mkdir my-python-app && cd my-python-app
 git init
 
 # 2. Copy workflow package
-cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/* .
+cp -r /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/* .
 
 # 3. Run installer (Full Stack)
 python scripts/install_release_workflow.py --mode c
@@ -298,9 +298,9 @@ cd existing-node-app
 
 # 2. Copy only necessary files
 mkdir -p tools/workflow_mgt
-cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/scripts tools/workflow_mgt/
-cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/workflows .
-cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/config tools/workflow_mgt/
+cp -r /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/scripts tools/workflow_mgt/
+cp -r /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/workflows .
+cp -r /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/config tools/workflow_mgt/
 
 # 3. Run installer (Mode B - no Kanban)
 python tools/workflow_mgt/scripts/install_release_workflow.py --mode b
@@ -317,7 +317,7 @@ python tools/workflow_mgt/scripts/install_release_workflow.py --mode b
 cat rw-config.yaml
 
 # 6. Copy validation scripts
-cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/scripts/validation tools/workflow_mgt/scripts/
+cp -r /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/scripts/validation tools/workflow_mgt/scripts/
 
 # 7. Test RW
 git checkout -b epic/1-add-rw
@@ -363,7 +363,7 @@ pip install pyyaml
 **Solution:**
 ```bash
 # Copy workflow file
-cp /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/workflows/release-workflow.yaml workflows/
+cp /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/workflows/release-workflow.yaml workflows/
 # Re-run installer
 ```
 

@@ -31,7 +31,7 @@ This release completes **Task 3: Align `.cursorrules` RW trigger section with de
   - Clarification that dev-kit has no legacy range (starts from Epic 1 with full schema)
 
 - ✅ **Version Calculation Examples:** Added dev-kit-specific examples:
-  - Epic 1 (Vibe Dev Kit Core), Story 1, Task 1: `0.1.1.1+1` → `0.1.1.1+2`
+  - Epic 1 (AI Dev Kit Core), Story 1, Task 1: `0.1.1.1+1` → `0.1.1.1+2`
   - Epic 2 (Workflow Management Framework), Story 1, Task 2: `0.2.1.2+1`
   - Epic 3 (Numbering & Versioning Framework), Story 2: `0.3.2.1+1`
   - Epic 4 (Kanban Framework), Story 1, Task 1: `0.4.1.1+1`
@@ -50,7 +50,7 @@ This release completes **Task 3: Align `.cursorrules` RW trigger section with de
   - Kanban governance policy reference: `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`
   - Dev-kit versioning policy as canonical SoT reference
 
-- ✅ **Customization Section:** Added "For vibe-dev-kit Usage" subsection:
+- ✅ **Customization Section:** Added "For ai-dev-kit Usage" subsection:
   - Dev-kit-specific paths for all file locations
   - Versioning policy reference (`KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md` as canonical SoT)
   - Epic ranges information (Epic 1-4+, no legacy range)
@@ -65,7 +65,7 @@ This release completes **Task 3: Align `.cursorrules` RW trigger section with de
 
 **Template Readiness:**
 - Template placeholders remain for other projects
-- Dev-kit examples clearly tagged with `[Example: vibe-dev-kit]`
+- Dev-kit examples clearly tagged with `[Example: ai-dev-kit]`
 - Clear distinction between template placeholders and dev-kit-specific usage
 
 ---
@@ -74,7 +74,7 @@ This release completes **Task 3: Align `.cursorrules` RW trigger section with de
 
 - The cursorrules section needed explicit dev-kit examples to show how the template works in the dev-kit repository itself.
 - Adding dev-kit-specific principles (canonical ordering, forensic traceability, immutability) makes the template more complete and aligned with the dev-kit versioning policy.
-- The "For vibe-dev-kit Usage" subsection provides a clear reference for using the template in the dev-kit repo.
+- The "For ai-dev-kit Usage" subsection provides a clear reference for using the template in the dev-kit repo.
 - Enhanced version schema section with new story/epic progression rules provides better guidance for version calculation.
 
 ---

@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Changelog Archive
 
-This directory contains **detailed changelog entries** for each version of the `vibe-dev-kit` repository.
+This directory contains **detailed changelog entries** for each version of the `ai-dev-kit` repository.
 
 ## Contents
 

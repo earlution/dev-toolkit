@@ -6,18 +6,18 @@ expires_at: null
 housekeeping_policy: keep
 ---
 
-# Story 001 – Set Up Kanban and Versioning for Vibe Dev Kit
+# Story 001 – Set Up Kanban and Versioning for AI Dev Kit
 
 **Status:** COMPLETE  
 **Owner:** RMS  
-**Repo:** `vibe-dev-kit`  
+**Repo:** `ai-dev-kit`  
 **Version:** (TBD – dev-kit schema to be defined for this repo)  
 
 ---
 
 ## 1. Story Overview
 
-This story creates a **local Kanban structure** and **versioning entry point** for the `vibe-dev-kit` repo itself, separate from any application project (like fynd.deals or Confidentia).
+This story creates a **local Kanban structure** and **versioning entry point** for the `ai-dev-kit` repo itself, separate from any application project (like fynd.deals or Confidentia).
 
 Goals:
 
@@ -37,13 +37,13 @@ KB/
     kanban/
       _index.md                  # Kanban board for this repo
       stories/
-        Story-001-vibe-dev-kit-kanban-and-versioning.md
+        Story-001-ai-dev-kit-kanban-and-versioning.md
         Story-XXX-...            # Future stories
 ```
 
 This structure is:
 
-- **Local:** It belongs only to `vibe-dev-kit`.
+- **Local:** It belongs only to `ai-dev-kit`.
 - **Epic-centric:** Stories live in `kanban/epics/Epic-X/stories/` with simple numeric IDs.
 - **Flexible:** You can introduce epics or other groupings later without changing the base layout.
 
@@ -60,7 +60,7 @@ This structure is:
 
 ### Task 2 – Create Story 001 File
 
-- [x] Create `KB/PM_and_Portfolio/kanban/Story-001-vibe-dev-kit-kanban-and-versioning.md` (this file).
+- [x] Create `KB/PM_and_Portfolio/kanban/Story-001-ai-dev-kit-kanban-and-versioning.md` (this file).
 - [x] Include:
   - Status, Owner, Repo, and placeholder Version.
   - Overview of the Kanban and versioning goals.
@@ -81,11 +81,11 @@ This structure is:
 
 - [x] Update `release-workflow-agent-execution.md` to:
   - ✅ Clarify that examples using `0.9.21.3+2` are **Confidentia/fynd.deals examples**, not dev-kit releases (completed in E2:S01:T02)
-  - ✅ Add a short note about how RW should be interpreted when running directly in the `vibe-dev-kit` repo (completed in E2:S01:T02)
+  - ✅ Add a short note about how RW should be interpreted when running directly in the `ai-dev-kit` repo (completed in E2:S01:T02)
 - [x] Ensure `.cursorrules` (when added for this repo) uses the correct dev-kit version schema.
   - ✅ `.cursorrules` RW trigger section aligned with dev-kit policy (completed in E2:S01:T03)
 
-**Status:** ✅ **COMPLETE** - RW docs updated to distinguish dev-kit vs external examples. All examples tagged with `[Example: Confidentia/fynd.deals]` or `[Example: vibe-dev-kit]` labels. Cursorrules section aligned with dev-kit versioning policy.
+**Status:** ✅ **COMPLETE** - RW docs updated to distinguish dev-kit vs external examples. All examples tagged with `[Example: Confidentia/fynd.deals]` or `[Example: ai-dev-kit]` labels. Cursorrules section aligned with dev-kit versioning policy.
 
 ---
 

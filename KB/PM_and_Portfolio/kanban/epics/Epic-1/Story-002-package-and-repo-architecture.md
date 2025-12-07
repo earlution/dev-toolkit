@@ -20,7 +20,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-This story clarifies the **modular architecture** of the `vibe-dev-kit` repository, ensuring that users can easily consume individual frameworks (workflow mgt, versioning, kanban) without pulling in the entire repository. It establishes clear boundaries, dependencies, and consumption patterns for each package.
+This story clarifies the **modular architecture** of the `ai-dev-kit` repository, ensuring that users can easily consume individual frameworks (workflow mgt, versioning, kanban) without pulling in the entire repository. It establishes clear boundaries, dependencies, and consumption patterns for each package.
 
 ---
 
@@ -83,7 +83,7 @@ Make it easy for users to consume **individual frameworks** (workflow mgt, versi
 **Status:** ✅ **COMPLETE** - Modularity principles document created in `T002-modularity-principles.md`
 
 **Key Deliverables:**
-- Defined what "modular" means for vibe-dev-kit
+- Defined what "modular" means for ai-dev-kit
 - Established package boundaries for all three packages
 - Documented copy vs reference patterns
 - Defined dependency rules (hard vs soft/optional)

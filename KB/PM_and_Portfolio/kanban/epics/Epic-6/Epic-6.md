@@ -32,7 +32,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-Epic 6 owns the **Framework Management and Maintenance** processes for the vibe-dev-kit repository. This epic ensures that all framework packages remain current, well-maintained, and properly versioned.
+Epic 6 owns the **Framework Management and Maintenance** processes for the ai-dev-kit repository. This epic ensures that all framework packages remain current, well-maintained, and properly versioned.
 
 **Vision:** Transform frameworks from copy-paste packages to **reusable, auto-updating dependencies** that can be installed and updated automatically across projects. Frameworks will support multiple dependency management strategies (Git submodules, package managers, CLI tool) enabling seamless updates when frameworks are improved.
 

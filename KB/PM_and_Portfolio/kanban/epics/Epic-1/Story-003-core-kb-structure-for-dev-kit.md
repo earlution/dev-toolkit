@@ -31,7 +31,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-This story establishes a **solid KB (Knowledge Base) foundation** for the `vibe-dev-kit` repository. It defines core KB locations for architecture, PM & portfolio, and dev-kit governance, ensuring a clear and maintainable documentation structure.
+This story establishes a **solid KB (Knowledge Base) foundation** for the `ai-dev-kit` repository. It defines core KB locations for architecture, PM & portfolio, and dev-kit governance, ensuring a clear and maintainable documentation structure.
 
 ---
 

@@ -10,7 +10,7 @@
 
 ## Summary
 
-Completed comprehensive user documentation suite for Epic 6 framework dependency architecture. All 7 documentation files created, covering installation, usage, updates, integration, CLI reference, troubleshooting, and FAQ. Documentation is ready for testing by setting up a new project using vibe-dev-kit as a template.
+Completed comprehensive user documentation suite for Epic 6 framework dependency architecture. All 7 documentation files created, covering installation, usage, updates, integration, CLI reference, troubleshooting, and FAQ. Documentation is ready for testing by setting up a new project using ai-dev-kit as a template.
 
 ---
 
@@ -127,7 +127,7 @@ This release completes comprehensive user documentation for Epic 6's framework d
 
 - **Simple and accessible** - Clear, direct instructions without obfuscation
 - **Technically accurate** - Includes all necessary technical details
-- **Testable** - User can follow to set up a new project using vibe-dev-kit as template
+- **Testable** - User can follow to set up a new project using ai-dev-kit as template
 - **Complete** - Covers installation, usage, updates, integration, CLI, troubleshooting, and FAQ
 
 **Documentation Features:**
@@ -141,7 +141,7 @@ This release completes comprehensive user documentation for Epic 6's framework d
 - Comprehensive FAQ covering all aspects
 
 **Ready for Testing:**
-Documentation is ready to be tested by setting up a new project using vibe-dev-kit as a template, following the installation guide step-by-step.
+Documentation is ready to be tested by setting up a new project using ai-dev-kit as a template, following the installation guide step-by-step.
 
 **Next Steps:**
 - Test documentation by setting up new project

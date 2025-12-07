@@ -26,7 +26,7 @@ This package is designed to be **fully modular** with maximum independence. It c
 
 ### Standalone Usage
 
-✅ **This package can be used completely independently** without requiring any other `vibe-dev-kit` packages.
+✅ **This package can be used completely independently** without requiring any other `ai-dev-kit` packages.
 
 **What you get standalone:**
 - Complete versioning policy and strategy documents
@@ -196,13 +196,13 @@ These documents should be referenced when:
 
 ### ⚠️ CRITICAL: Copy, Don't Reference
 
-**Projects MUST copy versioning policies from `vibe-dev-kit`, not link to them.**
+**Projects MUST copy versioning policies from `ai-dev-kit`, not link to them.**
 
 **Why Copy?**
 - Projects need to customize Epic/Story/Task ranges, file paths, and terminology
 - Projects evolve independently and may need project-specific adaptations
 - Copying ensures projects have full control over their versioning policies
-- Prevents breaking changes in `vibe-dev-kit` from affecting consuming projects
+- Prevents breaking changes in `ai-dev-kit` from affecting consuming projects
 
 **What to Copy:**
 1. **Core Policy Documents:**
@@ -238,7 +238,7 @@ These documents should be referenced when:
 
 **How to Stay Aligned with Framework Updates:**
 
-1. **Monitor `vibe-dev-kit` for updates:**
+1. **Monitor `ai-dev-kit` for updates:**
    - Watch for new versions of framework packages
    - Review changelog for versioning framework changes
 
@@ -259,14 +259,14 @@ These documents should be referenced when:
 
 **Example Update Workflow:**
 ```bash
-# 1. Review changes in vibe-dev-kit
-git clone https://github.com/earlution/vibe-dev-kit.git
-cd vibe-dev-kit
+# 1. Review changes in ai-dev-kit
+git clone https://github.com/earlution/ai-dev-kit.git
+cd ai-dev-kit
 git log --oneline packages/frameworks/numbering\ \&\ versioning/
 
 # 2. Compare with your copied policies
 diff -u your-project/docs/versioning/versioning-policy.md \
-         vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-policy.md
+         ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-policy.md
 
 # 3. Selectively merge relevant changes
 # (Manual process - review each change)
@@ -274,7 +274,7 @@ diff -u your-project/docs/versioning/versioning-policy.md \
 
 ### Single Source of Truth Relationship
 
-**`vibe-dev-kit` is the canonical source of truth (SoT) for:**
+**`ai-dev-kit` is the canonical source of truth (SoT) for:**
 - Versioning schema definition (`RC.EPIC.STORY.TASK+BUILD`)
 - Core versioning principles (canonical ordering, immutability, traceability)
 - Best practices and patterns
@@ -290,7 +290,7 @@ diff -u your-project/docs/versioning/versioning-policy.md \
 ```markdown
 # Your Project Versioning Policy
 
-**Based on:** vibe-dev-kit `packages/frameworks/numbering & versioning/versioning-policy.md`  
+**Based on:** ai-dev-kit `packages/frameworks/numbering & versioning/versioning-policy.md`  
 **Last Synced:** 2025-12-02  
 **Customizations:** Epic 1-9 legacy range, custom file paths
 
@@ -302,9 +302,9 @@ diff -u your-project/docs/versioning/versioning-policy.md \
 1. **Copy Framework Files:**
    ```bash
    # Copy core policies
-   cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-policy.md your-project/docs/versioning/
-   cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-strategy.md your-project/docs/versioning/
-   cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/IMPLEMENTATION_GUIDE.md your-project/docs/versioning/
+   cp ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-policy.md your-project/docs/versioning/
+   cp ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-strategy.md your-project/docs/versioning/
+   cp ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/IMPLEMENTATION_GUIDE.md your-project/docs/versioning/
    ```
 
 2. **Customize for Your Project:**
@@ -340,7 +340,7 @@ diff -u your-project/docs/versioning/versioning-policy.md \
 1. **Copy framework:**
    ```bash
    mkdir -p myapp/docs/versioning
-   cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/*.md myapp/docs/versioning/
+   cp ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/*.md myapp/docs/versioning/
    ```
 
 2. **Customize `versioning-policy.md`:**
@@ -369,7 +369,7 @@ diff -u your-project/docs/versioning/versioning-policy.md \
    ```markdown
    # MyApp Versioning Policy
 
-   **Based on:** vibe-dev-kit versioning framework  
+   **Based on:** ai-dev-kit versioning framework  
    **Customizations:**
    - Epic 1+ uses new format (no legacy range)
    - Version file: `src/myapp/version.py`
@@ -381,4 +381,4 @@ diff -u your-project/docs/versioning/versioning-policy.md \
 **Last Updated:** 2025-12-02  
 **Source Location:** `docs/fynd_deals/_design/versioning/` (fynd.deals)  
 **Package Version:** 2.0.0  
-**Canonical SoT:** `vibe-dev-kit` - Projects should copy and customize, not reference
+**Canonical SoT:** `ai-dev-kit` - Projects should copy and customize, not reference

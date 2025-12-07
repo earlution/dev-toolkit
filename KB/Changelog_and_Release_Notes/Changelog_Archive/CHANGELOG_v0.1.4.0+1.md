@@ -1,7 +1,7 @@
 # Changelog v0.1.4.0+1
 
 **Release Date:** 2025-12-07 12:31:44 UTC  
-**Epic:** Epic 1 - Vibe Dev Kit Core  
+**Epic:** Epic 1 - AI Dev Kit Core  
 **Story:** Story 4 - Repository Branding and Renaming  
 **Task:** Story creation - planning tasks defined  
 **Build:** 1
@@ -10,7 +10,7 @@
 
 ## Summary
 
-Created comprehensive planning story for repository branding and renaming strategy. This story establishes a two-phase approach to align the repository name with "Head First AI-Assisted Development" book branding: Phase 1 (`vibe-dev-kit` → `ai-dev-kit`) and Phase 2 (`ai-dev-kit` → `head-first-ai-dev-kit`, conditional on O'Reilly acceptance).
+Created comprehensive planning story for repository branding and renaming strategy. This story establishes a two-phase approach to align the repository name with "Head First AI-Assisted Development" book branding: Phase 1 (`ai-dev-kit` → `ai-dev-kit`) and Phase 2 (`ai-dev-kit` → `head-first-ai-dev-kit`, conditional on O'Reilly acceptance).
 
 ---
 
@@ -23,10 +23,10 @@ Created comprehensive planning story for repository branding and renaming strate
 - Two-phase approach to align with book branding
 - Epic 1 status updated from COMPLETE to IN PROGRESS
 
-**Task 1: Plan repository rename from vibe-dev-kit to ai-dev-kit**
+**Task 1: Plan repository rename from ai-dev-kit to ai-dev-kit**
 - **Purpose:** Plan Phase 1 rename to align with "AI-Assisted Development" focus
 - **Scope:** 
-  - Inventory all references to `vibe-dev-kit`
+  - Inventory all references to `ai-dev-kit`
   - Impact analysis with breaking changes identification
   - Create comprehensive rename plan with rollback procedures
   - Document migration guide for users
@@ -91,7 +91,7 @@ Created comprehensive planning story for repository branding and renaming strate
 
 ## Related Work
 
-- **Epic 1:** Vibe Dev Kit Core (repository infrastructure)
+- **Epic 1:** AI Dev Kit Core (repository infrastructure)
 - **Epic 9:** Book Related Work (book branding and O'Reilly acceptance)
 - **Epic 6:** Framework Management (framework dependency references)
 - **Epic 5:** Documentation Management (documentation updates)
@@ -100,7 +100,7 @@ Created comprehensive planning story for repository branding and renaming strate
 
 ## Next Steps
 
-1. **Execute Task 1:** Begin planning Phase 1 rename (`vibe-dev-kit` → `ai-dev-kit`)
+1. **Execute Task 1:** Begin planning Phase 1 rename (`ai-dev-kit` → `ai-dev-kit`)
    - Inventory all references
    - Conduct impact analysis
    - Create rename plan

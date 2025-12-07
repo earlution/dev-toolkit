@@ -64,7 +64,7 @@ housekeeping_policy: keep
     - Updated `cursorrules-rw-trigger-section.md` with new fallback patterns
     - Updated `rw-installer-quickstart-guide.md` with new prompt defaults
     - Updated `rw-config-schema.md` with new default patterns
-    - Updated all RW config examples (`rw-config-vibe-dev-kit.yaml`, `rw-config-mode-c-full-stack.yaml`)
+    - Updated all RW config examples (`rw-config-ai-dev-kit.yaml`, `rw-config-mode-c-full-stack.yaml`)
   - **Numbering & Versioning Framework:**
     - Updated `integration-examples-external-projects.md` with new config patterns
     - Updated `integration-troubleshooting-guide.md` with new diagnostic commands

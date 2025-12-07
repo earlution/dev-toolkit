@@ -16,7 +16,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This document establishes the **principles and conventions** for organizing the `vibe-dev-kit` Knowledge Base (KB). It defines separation of concerns, naming conventions, file organization rules, and cross-referencing patterns to ensure consistency, maintainability, and ease of navigation.
+This document establishes the **principles and conventions** for organizing the `ai-dev-kit` Knowledge Base (KB). It defines separation of concerns, naming conventions, file organization rules, and cross-referencing patterns to ensure consistency, maintainability, and ease of navigation.
 
 **Key Principles:**
 - **Separation of Concerns:** Clear boundaries between Architecture, PM & Portfolio, Changelog, and Guides
@@ -179,7 +179,7 @@ The KB follows a clear hierarchy:
 
 **Story Files:**
 - Use `Story-{NNN}-{descriptive-name}.md` format
-- Examples: `Story-001-vibe-dev-kit-kanban-and-versioning.md`, `Story-003-core-kb-structure-for-dev-kit.md`
+- Examples: `Story-001-ai-dev-kit-kanban-and-versioning.md`, `Story-003-core-kb-structure-for-dev-kit.md`
 - Use zero-padded story numbers (Story-001, Story-002, etc.)
 - Use descriptive kebab-case names
 

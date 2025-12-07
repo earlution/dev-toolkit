@@ -56,8 +56,8 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 ### Added
 - **Epic 1, Story 4 – Repository Branding and Renaming:**
   - Created comprehensive planning story for repository renaming strategy
-  - Two-phase approach: `vibe-dev-kit` → `ai-dev-kit` → `head-first-ai-dev-kit`
-  - Task 1: Plan rename from `vibe-dev-kit` to `ai-dev-kit` (immediate alignment)
+  - Two-phase approach: `ai-dev-kit` → `ai-dev-kit` → `head-first-ai-dev-kit`
+  - Task 1: Plan rename from `ai-dev-kit` to `ai-dev-kit` (immediate alignment)
   - Task 2: Plan rename from `ai-dev-kit` to `head-first-ai-dev-kit` (conditional on O'Reilly acceptance)
   - Includes impact analysis, migration guides, and user communication planning
 - **Epic 1 Status Update:**
@@ -92,7 +92,7 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.4.5+1.md` for full details
 - Installation guide is designed to be simple, accessible, and technically accurate
-- Ready for testing by setting up a new project using vibe-dev-kit as template
+- Ready for testing by setting up a new project using ai-dev-kit as template
 - First deliverable in comprehensive Epic 6 user documentation series
 
 ---
@@ -427,7 +427,7 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 ### Notes
 
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.1.3.5+2.md` for full details
-- Story 3 establishes solid KB foundation for vibe-dev-kit
+- Story 3 establishes solid KB foundation for ai-dev-kit
 - All deliverables completed: analysis, principles, migration guide, implementation, documentation, scalable pattern
 
 ---
@@ -506,7 +506,7 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 - Added overview note explaining example tagging system
 - Tagged all Confidentia/fynd.deals examples with `[Example: Confidentia]` labels
-- Added dev-kit examples with `[Example: vibe-dev-kit]` labels throughout all 11 steps
+- Added dev-kit examples with `[Example: ai-dev-kit]` labels throughout all 11 steps
 - 73 example tags added across the document
 
 ### Changed
@@ -530,7 +530,7 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - Added dev-kit-specific examples for all file paths (version file, changelog, Kanban, validators)
 - Added dev-kit epic ranges information (Epic 1-4+, no legacy range)
 - Added canonical ordering, forensic traceability, and immutability principles
-- Added "For vibe-dev-kit Usage" subsection with dev-kit-specific paths and policy references
+- Added "For ai-dev-kit Usage" subsection with dev-kit-specific paths and policy references
 - Added Kanban governance policy reference
 
 ### Changed

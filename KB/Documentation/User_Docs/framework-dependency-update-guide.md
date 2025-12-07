@@ -19,9 +19,9 @@ housekeeping_policy: keep
 
 ## Overview
 
-This guide explains how to update Vibe Dev Kit frameworks when new versions are available. It covers update mechanisms, notification systems, version compatibility, and how to respond to update notifications.
+This guide explains how to update AI Dev Kit frameworks when new versions are available. It covers update mechanisms, notification systems, version compatibility, and how to respond to update notifications.
 
-**Key Feature:** When frameworks are updated in the vibe-dev-kit repository, you receive notifications about available updates and can update your project's framework dependencies automatically or manually.
+**Key Feature:** When frameworks are updated in the ai-dev-kit repository, you receive notifications about available updates and can update your project's framework dependencies automatically or manually.
 
 ---
 
@@ -36,7 +36,7 @@ Automatic updates apply framework updates without manual intervention, based on 
 **Auto-Update Policy (Recommended for PATCH updates):**
 
 ```yaml
-# In .vibe-dev-kit.yaml
+# In .ai-dev-kit.yaml
 update_policy:
   patch: auto      # Auto-update patch versions (2.0.0 → 2.0.1)
   minor: notify    # Notify for minor updates (2.0.0 → 2.1.0)
@@ -60,11 +60,11 @@ The system checks for updates periodically (daily, weekly, or on-demand):
 
 ```bash
 # CLI tool checks for updates
-vibe-dev-kit check
+ai-dev-kit check
 
 # Or configure automatic checking
-vibe-dev-kit config set auto_check true
-vibe-dev-kit config set check_interval daily
+ai-dev-kit config set auto_check true
+ai-dev-kit config set check_interval daily
 ```
 
 **2. Update Application:**
@@ -74,7 +74,7 @@ If auto-update is enabled for the update type:
 ```bash
 # Automatic update happens in background
 # Or triggered by:
-vibe-dev-kit update --auto
+ai-dev-kit update --auto
 ```
 
 **3. Update Notification:**
@@ -99,7 +99,7 @@ Manual updates require explicit approval before applying.
 
 ```bash
 # Check all frameworks
-vibe-dev-kit check
+ai-dev-kit check
 
 # Output:
 # Framework: workflow-mgmt
@@ -116,27 +116,27 @@ vibe-dev-kit check
 cat frameworks/workflow-mgmt/CHANGELOG.md
 
 # Or view specific version changes
-vibe-dev-kit changelog workflow-mgmt --from 2.0.0 --to 2.1.0
+ai-dev-kit changelog workflow-mgmt --from 2.0.0 --to 2.1.0
 ```
 
 **3. Apply Update:**
 
 ```bash
 # Update specific framework
-vibe-dev-kit update workflow-mgmt
+ai-dev-kit update workflow-mgmt
 
 # Update to specific version
-vibe-dev-kit update workflow-mgmt@2.1.0
+ai-dev-kit update workflow-mgmt@2.1.0
 
 # Update all frameworks
-vibe-dev-kit update --all
+ai-dev-kit update --all
 ```
 
 **4. Verify Update:**
 
 ```bash
 # Check updated version
-vibe-dev-kit status workflow-mgmt
+ai-dev-kit status workflow-mgmt
 
 # Test framework functionality
 cd frameworks/workflow-mgmt
@@ -154,13 +154,13 @@ python3 scripts/validation/validate_branch_context.py
 **Check Command Output:**
 
 ```bash
-$ vibe-dev-kit check
+$ ai-dev-kit check
 
 Available Updates:
   ⚠️  workflow-mgmt: 2.0.0 → 2.1.0 (MINOR)
       Changes: New features, improved performance
       Breaking: None
-      Action: Run 'vibe-dev-kit update workflow-mgmt' to update
+      Action: Run 'ai-dev-kit update workflow-mgmt' to update
 
   ✓ kanban: 1.0.0 (up to date)
   ✓ numbering-versioning: 2.0.0 (up to date)
@@ -169,7 +169,7 @@ Available Updates:
 **Status Command:**
 
 ```bash
-$ vibe-dev-kit status
+$ ai-dev-kit status
 
 Installed Frameworks:
   workflow-mgmt: 2.0.0 (update available: 2.1.0)
@@ -183,7 +183,7 @@ Installed Frameworks:
 
 ```bash
 # Navigate to submodule
-cd .vibe-dev-kit
+cd .ai-dev-kit
 
 # Fetch latest tags
 git fetch origin
@@ -207,7 +207,7 @@ Create `scripts/check-framework-updates.sh`:
 #!/bin/bash
 # Check for framework updates
 
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git fetch origin
 
 echo "Checking for framework updates..."
@@ -234,7 +234,7 @@ npm outdated
 
 # Output:
 # Package                    Current  Wanted  Latest
-# @vibe-dev-kit/workflow-mgmt  2.0.0   2.0.1   2.1.0
+# @ai-dev-kit/workflow-mgmt  2.0.0   2.0.1   2.1.0
 ```
 
 **pip:**
@@ -245,7 +245,7 @@ pip list --outdated
 
 # Output:
 # Package                    Version  Latest
-# vibe-dev-kit-workflow-mgmt  2.0.0    2.1.0
+# ai-dev-kit-workflow-mgmt  2.0.0    2.1.0
 ```
 
 ### Notification Configuration
@@ -254,28 +254,28 @@ pip list --outdated
 
 ```bash
 # Check daily
-vibe-dev-kit config set check_interval daily
+ai-dev-kit config set check_interval daily
 
 # Check weekly
-vibe-dev-kit config set check_interval weekly
+ai-dev-kit config set check_interval weekly
 
 # Check on-demand only
-vibe-dev-kit config set check_interval manual
+ai-dev-kit config set check_interval manual
 ```
 
 #### Configure Notification Channels
 
 ```bash
 # Console output (default)
-vibe-dev-kit config set notification_channel console
+ai-dev-kit config set notification_channel console
 
 # Email notifications (future)
-vibe-dev-kit config set notification_channel email
-vibe-dev-kit config set email your@email.com
+ai-dev-kit config set notification_channel email
+ai-dev-kit config set email your@email.com
 
 # Slack notifications (future)
-vibe-dev-kit config set notification_channel slack
-vibe-dev-kit config set slack_webhook https://hooks.slack.com/...
+ai-dev-kit config set notification_channel slack
+ai-dev-kit config set slack_webhook https://hooks.slack.com/...
 ```
 
 ---
@@ -296,7 +296,7 @@ Frameworks use Semantic Versioning (SemVer): `MAJOR.MINOR.PATCH`
 
 ```bash
 # Check if update is compatible
-vibe-dev-kit check --compatibility
+ai-dev-kit check --compatibility
 
 # Output:
 # Framework: workflow-mgmt
@@ -310,10 +310,10 @@ vibe-dev-kit check --compatibility
 
 ```bash
 # View breaking changes
-vibe-dev-kit changelog workflow-mgmt --breaking
+ai-dev-kit changelog workflow-mgmt --breaking
 
 # Or check specific version range
-vibe-dev-kit changelog workflow-mgmt --from 2.0.0 --to 3.0.0 --breaking
+ai-dev-kit changelog workflow-mgmt --from 2.0.0 --to 3.0.0 --breaking
 ```
 
 ### Version Pinning
@@ -321,7 +321,7 @@ vibe-dev-kit changelog workflow-mgmt --from 2.0.0 --to 3.0.0 --breaking
 **Pin to Specific Version:**
 
 ```yaml
-# In .vibe-dev-kit.yaml
+# In .ai-dev-kit.yaml
 frameworks:
   workflow-mgmt:
     version: "2.0.0"  # Pinned version
@@ -332,10 +332,10 @@ frameworks:
 
 ```bash
 # Update pin manually
-vibe-dev-kit update workflow-mgmt@2.1.0 --pin
+ai-dev-kit update workflow-mgmt@2.1.0 --pin
 
-# Or edit .vibe-dev-kit.yaml directly
-vim .vibe-dev-kit.yaml
+# Or edit .ai-dev-kit.yaml directly
+vim .ai-dev-kit.yaml
 ```
 
 ---
@@ -348,7 +348,7 @@ vim .vibe-dev-kit.yaml
 
 ```bash
 # 1. Navigate to submodule
-cd .vibe-dev-kit
+cd .ai-dev-kit
 
 # 2. Fetch latest changes
 git fetch origin
@@ -363,7 +363,7 @@ git checkout workflow-mgmt-v2.1.0
 cd ..
 
 # 6. Copy updated framework
-cp -r .vibe-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
+cp -r .ai-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
 
 # 7. Commit update
 git add frameworks/
@@ -388,7 +388,7 @@ if [ -z "$FRAMEWORK" ] || [ -z "$VERSION" ]; then
 fi
 
 # Navigate to submodule
-cd .vibe-dev-kit
+cd .ai-dev-kit
 
 # Fetch and checkout version
 git fetch origin
@@ -399,7 +399,7 @@ cd ..
 
 # Copy updated framework
 FRAMEWORK_DIR=$(echo "$FRAMEWORK" | sed 's/-mgmt/-mgt/' | sed 's/-/_/g')
-cp -r ".vibe-dev-kit/packages/frameworks/${FRAMEWORK_DIR}/" "./frameworks/${FRAMEWORK}/"
+cp -r ".ai-dev-kit/packages/frameworks/${FRAMEWORK_DIR}/" "./frameworks/${FRAMEWORK}/"
 
 echo "✓ Updated ${FRAMEWORK} to v${VERSION}"
 echo "Review changes and commit:"
@@ -413,16 +413,16 @@ echo "  git commit -m 'Update ${FRAMEWORK} framework to v${VERSION}'"
 
 ```bash
 # Update specific framework
-vibe-dev-kit update workflow-mgmt
+ai-dev-kit update workflow-mgmt
 
 # Update to specific version
-vibe-dev-kit update workflow-mgmt@2.1.0
+ai-dev-kit update workflow-mgmt@2.1.0
 
 # Update all frameworks
-vibe-dev-kit update --all
+ai-dev-kit update --all
 
 # Dry run (preview changes)
-vibe-dev-kit update workflow-mgmt --dry-run
+ai-dev-kit update workflow-mgmt --dry-run
 ```
 
 #### Update Process
@@ -440,10 +440,10 @@ The CLI tool handles:
 
 ```bash
 # Update to latest compatible version
-npm update @vibe-dev-kit/workflow-mgmt
+npm update @ai-dev-kit/workflow-mgmt
 
 # Update to specific version
-npm install @vibe-dev-kit/workflow-mgmt@2.1.0
+npm install @ai-dev-kit/workflow-mgmt@2.1.0
 
 # Update all frameworks
 npm update
@@ -453,10 +453,10 @@ npm update
 
 ```bash
 # Update to latest version
-pip install --upgrade vibe-dev-kit-workflow-mgmt
+pip install --upgrade ai-dev-kit-workflow-mgmt
 
 # Update to specific version
-pip install --upgrade vibe-dev-kit-workflow-mgmt==2.1.0
+pip install --upgrade ai-dev-kit-workflow-mgmt==2.1.0
 
 # Update all frameworks
 pip install --upgrade -r requirements.txt
@@ -498,7 +498,7 @@ pip install --upgrade -r requirements.txt
 
 ```bash
 # View changelog
-vibe-dev-kit changelog workflow-mgmt --from 2.0.0 --to 2.1.0
+ai-dev-kit changelog workflow-mgmt --from 2.0.0 --to 2.1.0
 
 # Or read framework changelog
 cat frameworks/workflow-mgmt/CHANGELOG.md
@@ -508,7 +508,7 @@ cat frameworks/workflow-mgmt/CHANGELOG.md
 
 ```bash
 # Verify compatibility
-vibe-dev-kit check --compatibility workflow-mgmt
+ai-dev-kit check --compatibility workflow-mgmt
 ```
 
 **4. Test Update (Recommended):**
@@ -518,7 +518,7 @@ vibe-dev-kit check --compatibility workflow-mgmt
 git checkout -b test/framework-update
 
 # Apply update
-vibe-dev-kit update workflow-mgmt@2.1.0
+ai-dev-kit update workflow-mgmt@2.1.0
 
 # Test framework
 cd frameworks/workflow-mgmt
@@ -536,7 +536,7 @@ git merge test/framework-update
 
 ```bash
 # Update framework
-vibe-dev-kit update workflow-mgmt
+ai-dev-kit update workflow-mgmt
 
 # Or update manually (Git submodules)
 ./scripts/update-frameworks.sh workflow-mgmt 2.1.0
@@ -546,7 +546,7 @@ vibe-dev-kit update workflow-mgmt
 
 ```bash
 # Check version
-vibe-dev-kit status workflow-mgmt
+ai-dev-kit status workflow-mgmt
 
 # Test functionality
 cd frameworks/workflow-mgmt
@@ -563,17 +563,17 @@ python3 scripts/validation/validate_branch_context.py
 
 ```bash
 # Rollback to previous version
-vibe-dev-kit update workflow-mgmt@2.0.0
+ai-dev-kit update workflow-mgmt@2.0.0
 
 # Or use rollback command (if available)
-vibe-dev-kit rollback workflow-mgmt
+ai-dev-kit rollback workflow-mgmt
 ```
 
 **Git Submodules:**
 
 ```bash
 # Navigate to submodule
-cd .vibe-dev-kit
+cd .ai-dev-kit
 
 # Checkout previous version
 git checkout workflow-mgmt-v2.0.0
@@ -582,7 +582,7 @@ git checkout workflow-mgmt-v2.0.0
 cd ..
 
 # Copy previous version
-cp -r .vibe-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
+cp -r .ai-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
 
 # Commit rollback
 git add frameworks/
@@ -593,10 +593,10 @@ git commit -m "Rollback workflow-mgmt to v2.0.0"
 
 ```bash
 # npm
-npm install @vibe-dev-kit/workflow-mgmt@2.0.0
+npm install @ai-dev-kit/workflow-mgmt@2.0.0
 
 # pip
-pip install --upgrade vibe-dev-kit-workflow-mgmt==2.0.0
+pip install --upgrade ai-dev-kit-workflow-mgmt==2.0.0
 ```
 
 ### Rollback After Issues
@@ -616,14 +616,14 @@ python3 scripts/validation/validate_branch_context.py
 
 ```bash
 # Rollback to previous version
-vibe-dev-kit update workflow-mgmt@2.0.0
+ai-dev-kit update workflow-mgmt@2.0.0
 ```
 
 **3. Report Issue:**
 
 ```bash
 # Create issue report
-vibe-dev-kit report-issue workflow-mgmt \
+ai-dev-kit report-issue workflow-mgmt \
   --version 2.1.0 \
   --description "Validation script fails after update"
 ```
@@ -643,10 +643,10 @@ git checkout -b test/framework-update-workflow-mgmt-2.1.0
 **2. Apply Update:**
 
 ```bash
-vibe-dev-kit update workflow-mgmt@2.1.0 --dry-run
+ai-dev-kit update workflow-mgmt@2.1.0 --dry-run
 # Review changes
 
-vibe-dev-kit update workflow-mgmt@2.1.0
+ai-dev-kit update workflow-mgmt@2.1.0
 ```
 
 **3. Run Tests:**
@@ -674,7 +674,7 @@ python3 scripts/validation/validate_changelog_format.py
 **1. Verify Version:**
 
 ```bash
-vibe-dev-kit status workflow-mgmt
+ai-dev-kit status workflow-mgmt
 # Should show: 2.1.0
 ```
 
@@ -709,7 +709,7 @@ cat frameworks/workflow-mgmt/rw-config.yaml
 
 ```bash
 # Set up daily checks
-vibe-dev-kit config set check_interval daily
+ai-dev-kit config set check_interval daily
 
 # Or add to CI/CD
 # .github/workflows/check-framework-updates.yml
@@ -751,7 +751,7 @@ vim CHANGELOG.md
 
 ```bash
 # Check for conflicts
-vibe-dev-kit status
+ai-dev-kit status
 
 # Check Git status
 git status
@@ -766,10 +766,10 @@ git status
 
 ```bash
 # Check current version
-vibe-dev-kit status workflow-mgmt
+ai-dev-kit status workflow-mgmt
 
 # Force update
-vibe-dev-kit update workflow-mgmt --force
+ai-dev-kit update workflow-mgmt --force
 
 # Or manually update
 ./scripts/update-frameworks.sh workflow-mgmt 2.1.0
@@ -781,10 +781,10 @@ vibe-dev-kit update workflow-mgmt --force
 
 ```bash
 # Check for deprecated settings
-vibe-dev-kit validate-config
+ai-dev-kit validate-config
 
 # Review configuration changes
-vibe-dev-kit changelog workflow-mgmt --config
+ai-dev-kit changelog workflow-mgmt --config
 
 # Update configuration
 vim frameworks/workflow-mgmt/rw-config.yaml

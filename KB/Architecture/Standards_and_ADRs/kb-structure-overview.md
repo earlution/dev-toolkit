@@ -17,7 +17,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This document provides a **comprehensive overview** of the `vibe-dev-kit` Knowledge Base (KB) structure, including directory purposes, navigation patterns, and maintenance procedures. It serves as the **primary reference** for understanding how the KB is organized and how to navigate it effectively.
+This document provides a **comprehensive overview** of the `ai-dev-kit` Knowledge Base (KB) structure, including directory purposes, navigation patterns, and maintenance procedures. It serves as the **primary reference** for understanding how the KB is organized and how to navigate it effectively.
 
 **Key Points:**
 - **3-level default depth** for optimal navigation

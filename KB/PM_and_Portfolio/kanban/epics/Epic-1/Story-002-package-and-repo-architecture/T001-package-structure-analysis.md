@@ -16,7 +16,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This report analyzes the current structure of the `vibe-dev-kit` repository's framework packages, identifies dependencies between packages, documents modularity gaps, and provides recommendations for improving package independence and consumption patterns.
+This report analyzes the current structure of the `ai-dev-kit` repository's framework packages, identifies dependencies between packages, documents modularity gaps, and provides recommendations for improving package independence and consumption patterns.
 
 **Key Findings:**
 - ✅ All three framework packages are designed to be modular
@@ -301,7 +301,7 @@ packages/frameworks/
 
 ## 6. Conclusion
 
-The `vibe-dev-kit` repository demonstrates **strong modularity** with all three framework packages designed to be used independently. However, there are opportunities to improve:
+The `ai-dev-kit` repository demonstrates **strong modularity** with all three framework packages designed to be used independently. However, there are opportunities to improve:
 
 1. **Documentation consistency** - Standardize how modularity is described
 2. **Dependency clarity** - Make dependencies explicit and well-documented

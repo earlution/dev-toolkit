@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Changelog and Release Notes
 
-This section contains the **main changelog** and the **detailed changelog archive** for the `vibe-dev-kit` repository.
+This section contains the **main changelog** and the **detailed changelog archive** for the `ai-dev-kit` repository.
 
 ## Structure
 

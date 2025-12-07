@@ -17,7 +17,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This report analyzes the current state of Feature Request (FR) and Bug Report (BR) intake processes in the `vibe-dev-kit` repository and identifies requirements for a systematic intake flow that converts FRs/BRs into Kanban Tasks.
+This report analyzes the current state of Feature Request (FR) and Bug Report (BR) intake processes in the `ai-dev-kit` repository and identifies requirements for a systematic intake flow that converts FRs/BRs into Kanban Tasks.
 
 **Key Findings:**
 - ✅ Policy exists: FR/BR → Task → Story → Epic flow is defined in Kanban governance policy

@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Framework Consumption
 
-This directory contains **guides for adopting** the `vibe-dev-kit` frameworks in your projects.
+This directory contains **guides for adopting** the `ai-dev-kit` frameworks in your projects.
 
 ## Contents
 

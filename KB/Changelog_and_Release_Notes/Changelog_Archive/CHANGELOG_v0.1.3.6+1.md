@@ -1,7 +1,7 @@
 # Changelog v0.1.3.6+1
 
 **Release Date:** 2025-12-02 18:00:00 UTC
-**Epic:** Epic 1 - Vibe Dev Kit Core
+**Epic:** Epic 1 - AI Dev Kit Core
 **Story:** Story 3 - Core KB Structure for Dev Kit
 **Task:** Task 6 - Document scalable KB pattern for large codebases
 **Type:** 📚 Documentation

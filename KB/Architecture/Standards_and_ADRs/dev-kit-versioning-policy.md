@@ -9,21 +9,21 @@ housekeeping_policy: keep
 # Dev Kit Versioning Policy
 
 **Status:** Active  
-**Owner:** Vibe Dev Kit / Book Project Lead  
+**Owner:** AI Dev Kit / Book Project Lead  
 **Last Updated:** 2025-12-02  
-**Related Work:** Epic 1 (Vibe Dev Kit Core)
+**Related Work:** Epic 1 (AI Dev Kit Core)
 
 ---
 
 ## 1. Purpose
 
-This policy defines how the **Vibe Dev Kit** repository uses the `RC.EPIC.STORY.TASK+BUILD` versioning schema.
+This policy defines how the **AI Dev Kit** repository uses the `RC.EPIC.STORY.TASK+BUILD` versioning schema.
 
 Goals:
 
 - Apply the **full versioning schema and strategy** from the Numbering & Versioning framework to this repo.
 - Ensure all substantive work is **Task-driven** and that versions reflect **Tasks**.
-- Keep `vibe-dev-kit` logically separate from any external project (e.g., Confidentia, fynd.deals) while reusing the same principles.
+- Keep `ai-dev-kit` logically separate from any external project (e.g., Confidentia, fynd.deals) while reusing the same principles.
 
 ---
 
@@ -49,7 +49,7 @@ Examples (dev-kit context):
 
 ---
 
-## 3. Epic Ranges for Vibe Dev Kit
+## 3. Epic Ranges for AI Dev Kit
 
 Unlike the legacy/new split in the original policy, this repo starts **clean**:
 
@@ -58,7 +58,7 @@ Unlike the legacy/new split in the original policy, this repo starts **clean**:
 
 Initial epics:
 
-- **Epic 1 – Vibe Dev Kit Core**
+- **Epic 1 – AI Dev Kit Core**
 - **Epic 2 – Workflow Management Framework**
 - **Epic 3 – Numbering & Versioning Framework**
 - **Epic 4 – Kanban Framework**
@@ -512,7 +512,7 @@ The dev-kit policy:
 ## 14. Status and Maintenance
 
 **Status:** Active  
-**Owner:** Vibe Dev Kit Lead  
+**Owner:** AI Dev Kit Lead  
 **Last Updated:** 2025-12-02  
 **Related Work:** Epic 3, Story 1 (Dev Kit Alignment with Versioning Framework)
 

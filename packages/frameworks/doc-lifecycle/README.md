@@ -13,7 +13,7 @@ This package is designed to be **fully modular** with maximum independence. It c
 
 ### Standalone Usage
 
-✅ **This package can be used completely independently** without requiring any other `vibe-dev-kit` packages.
+✅ **This package can be used completely independently** without requiring any other `ai-dev-kit` packages.
 
 **What you get standalone:**
 - Complete document lifecycle metadata specification

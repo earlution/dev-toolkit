@@ -6,7 +6,7 @@ expires_at: null
 housekeeping_policy: keep
 ---
 
-# Vibe Dev Kit – Kanban Board
+# AI Dev Kit – Kanban Board
 
 **Last Updated:** 2025-12-06  
 **Version:** v0.5.2.2+1
@@ -17,7 +17,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-This board tracks all work on the `vibe-dev-kit` repository and the **Head First AI-Assisted Development** book project.
+This board tracks all work on the `ai-dev-kit` repository and the **Head First AI-Assisted Development** book project.
 
 **Structure:** All Kanban documentation lives under `KB/PM_and_Portfolio/kanban/`:
 - Epic overviews: `epics/Epic-X/Epic-X.md`
@@ -28,7 +28,7 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Head First
 
 ## Epics
 
-### Epic 1: Vibe Dev Kit Core
+### Epic 1: AI Dev Kit Core
 
 **Status:** COMPLETE ✅  
 **Priority:** HIGH  
@@ -36,7 +36,7 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Head First
 
 **Stories:**
 - [x] **E1:S01 – Dev Kit Versioning & RW Behaviour** - COMPLETE ✅ (v0.1.1.1+1, E2:S01:T02, E2:S01:T03)
-  - Story: [`epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md`](epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md)
+  - Story: [`epics/Epic-1/Story-001-ai-dev-kit-kanban-and-versioning.md`](epics/Epic-1/Story-001-ai-dev-kit-kanban-and-versioning.md)
 - [x] **E1:S02 – Package & Repo Architecture** - COMPLETE ✅ (v0.1.2.5+1)
   - Story: [`epics/Epic-1/Story-002-package-and-repo-architecture.md`](epics/Epic-1/Story-002-package-and-repo-architecture.md)
 - [x] **E1:S03 – Core KB Structure for Dev Kit** - COMPLETE ✅ (v0.1.3.6+1)

@@ -6,14 +6,14 @@ expires_at: null
 housekeeping_policy: keep
 ---
 
-# Epic 1: Vibe Dev Kit Core
+# Epic 1: AI Dev Kit Core
 
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
 **Last updated:** 2025-12-07 (v0.1.4.0+1 – Story 4 created: Repository Branding and Renaming)  
-**Branch:** `epic/1-vibe-dev-kit-core`  
+**Branch:** `epic/1-ai-dev-kit-core`  
 **Version Schema:** `0.1.S.T+B` (dev-kit RC.EPIC.STORY.TASK+BUILD)  
 **Production URL:** [N/A for this repo]
 
@@ -35,7 +35,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-Epic 1 establishes the **core infrastructure and conventions** for the Vibe Dev Kit repository.  
+Epic 1 establishes the **core infrastructure and conventions** for the AI Dev Kit repository.  
 It defines how the repo is structured, how versioning works for the dev kit itself, and how Release Workflow (RW) should behave when run *inside this repo* rather than inside an application project.
 
 **Note:** Epic 1 status changed to IN PROGRESS due to new Story 4 (Repository Branding and Renaming).
@@ -78,7 +78,7 @@ Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW
 - [x] `version.py` encodes a real dev-kit Epic/Story/Task, not legacy external IDs ✅  
 - [x] RW docs clarify dev-kit vs Confidentia/fynd.deals examples ✅
 
-> Full story: `KB/PM_and_Portfolio/kanban/Story-001-vibe-dev-kit-kanban-and-versioning.md`
+> Full story: `KB/PM_and_Portfolio/kanban/Story-001-ai-dev-kit-kanban-and-versioning.md`
 
 ---
 
@@ -90,7 +90,7 @@ Define and implement how the dev kit uses `RC.EPIC.STORY.TASK+BUILD`, and how RW
 **Last updated:** 2025-12-02 (v0.1.3.2+1 – Task 2 complete: KB structure principles and conventions documented)
 
 **Goal:**  
-Clarify the modular architecture of the `vibe-dev-kit` repository, ensuring that users can easily consume individual frameworks (workflow mgt, versioning, kanban) without pulling in the entire repository.
+Clarify the modular architecture of the `ai-dev-kit` repository, ensuring that users can easily consume individual frameworks (workflow mgt, versioning, kanban) without pulling in the entire repository.
 
 **Tasks:**
 - [x] E1:S02:T01 – Analyze current package structure and dependencies ✅ COMPLETE (v0.1.2.1+1)

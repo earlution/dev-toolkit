@@ -69,7 +69,7 @@ It ensures the dev kit:
 **Last updated:** 2025-12-02 (v0.3.1.6+1 – Task 6 complete: Cursorrules abstracted (removed hardcoded version numbers))
 
 **Goal:**
-Make sure the dev kit's own versioning policy, version file, and docs align cleanly with the generic versioning framework. Establish `vibe-dev-kit` as the canonical SoT for versioning policies and strategies.
+Make sure the dev kit's own versioning policy, version file, and docs align cleanly with the generic versioning framework. Establish `ai-dev-kit` as the canonical SoT for versioning policies and strategies.
 
 **Tasks:**
 - [x] E3:S01:T01 – Review dev-kit versioning policy vs framework policy ✅ COMPLETE (v0.3.1.1+2)

@@ -9,7 +9,7 @@
 
 ## 📋 Summary
 
-This is the **first proper release** of the `vibe-dev-kit` repository using the full `RC.EPIC.STORY.TASK+BUILD` versioning schema. This release establishes:
+This is the **first proper release** of the `ai-dev-kit` repository using the full `RC.EPIC.STORY.TASK+BUILD` versioning schema. This release establishes:
 
 - **Epic structure** (Epics 1-4) for organizing dev-kit work
 - **Dev-kit versioning policy** aligned with the full schema
@@ -22,7 +22,7 @@ This is the **first proper release** of the `vibe-dev-kit` repository using the 
 
 ### Epic Structure & Versioning
 
-- ✅ Created **Epic 1: Vibe Dev Kit Core** (`KB/PM_and_Portfolio/epics/overview/Epic 1/Epic-1.md`)
+- ✅ Created **Epic 1: AI Dev Kit Core** (`KB/PM_and_Portfolio/epics/overview/Epic 1/Epic-1.md`)
   - Defines repo architecture, modularity, and dev-kit versioning policy
   - Story checklist for versioning policy, package structure, and KB organization
 

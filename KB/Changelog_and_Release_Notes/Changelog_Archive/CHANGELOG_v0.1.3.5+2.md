@@ -1,7 +1,7 @@
 # Changelog v0.1.3.5+2
 
 **Release Date:** 2025-12-03 14:15:00 UTC
-**Epic:** Epic 1 - Vibe Dev Kit Core
+**Epic:** Epic 1 - AI Dev Kit Core
 **Story:** Story 3 - Core KB Structure for Dev Kit
 **Task:** Task 5 - Create KB structure documentation
 **Type:** ✅ Story Completion
@@ -23,7 +23,7 @@
 - E1:S03:T006 – Document scalable KB pattern ✅ COMPLETE (v0.1.3.6+1)
 
 ## Technical Details
-- Story 3 establishes solid KB foundation for vibe-dev-kit
+- Story 3 establishes solid KB foundation for ai-dev-kit
 - All deliverables completed: analysis, principles, migration guide, implementation, documentation, scalable pattern
 - KB structure now includes: Architecture, Changelog, PM & Portfolio, Guides sections
 - Canonical pattern documented for adoption by other projects

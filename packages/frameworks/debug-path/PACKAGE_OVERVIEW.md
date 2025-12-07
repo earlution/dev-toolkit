@@ -45,7 +45,7 @@ This directory contains a complete, portable Debug Path Framework (DPF) with Deb
 
 This package is designed to be **fully modular** with maximum independence. You can:
 
-- Use **only this package** in your project, without copying any other part of `vibe-dev-kit`
+- Use **only this package** in your project, without copying any other part of `ai-dev-kit`
 - Combine it with other packages (Kanban, Workflow Management) when you want integration
 
 **Package dependencies:**

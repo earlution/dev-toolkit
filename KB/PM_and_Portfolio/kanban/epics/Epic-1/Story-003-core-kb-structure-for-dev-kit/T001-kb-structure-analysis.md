@@ -16,7 +16,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This report analyzes the current KB (Knowledge Base) structure of the `vibe-dev-kit` repository and defines a target structure that supports the dev-kit's modular architecture, makes navigation easy for users, and provides a solid foundation for future growth.
+This report analyzes the current KB (Knowledge Base) structure of the `ai-dev-kit` repository and defines a target structure that supports the dev-kit's modular architecture, makes navigation easy for users, and provides a solid foundation for future growth.
 
 **Key Findings:**
 - Current structure is functional but lacks clear organization principles
@@ -59,7 +59,7 @@ KB/
     │       ├── Epic-1.md
     │       ├── Epic-1/
     │       │   └── stories/
-    │       │       ├── Story-001-vibe-dev-kit-kanban-and-versioning.md
+    │       │       ├── Story-001-ai-dev-kit-kanban-and-versioning.md
     │       │       ├── Story-002-package-and-repo-architecture.md
     │       │       ├── Story-002-package-and-repo-architecture/
     │       │       ├── Story-003-core-kb-structure-for-dev-kit.md

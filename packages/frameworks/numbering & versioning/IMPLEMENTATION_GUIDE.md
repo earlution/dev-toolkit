@@ -8,23 +8,23 @@ housekeeping_policy: keep
 
 # Implementation Guide: Numbering & Versioning Strategies
 
-**Purpose:** This guide explains how to implement the vibe-dev-kit numbering and versioning strategies in a different project.
+**Purpose:** This guide explains how to implement the ai-dev-kit numbering and versioning strategies in a different project.
 
 **Target Audience:** Project maintainers, engineering leads, and developers setting up versioning and numbering systems.
 
-**Source:** Originally developed for Confidentia, refined in fynd.deals (Epic 15), now maintained in `vibe-dev-kit` as canonical SoT.
+**Source:** Originally developed for Confidentia, refined in fynd.deals (Epic 15), now maintained in `ai-dev-kit` as canonical SoT.
 
 ---
 
 ## ⚠️ CRITICAL: Copy, Don't Reference
 
-**Projects MUST copy versioning policies from `vibe-dev-kit`, not link to them.**
+**Projects MUST copy versioning policies from `ai-dev-kit`, not link to them.**
 
 **Why Copy?**
 - Projects need to customize Epic/Story/Task ranges, file paths, and terminology
 - Projects evolve independently and may need project-specific adaptations
 - Copying ensures projects have full control over their versioning policies
-- Prevents breaking changes in `vibe-dev-kit` from affecting consuming projects
+- Prevents breaking changes in `ai-dev-kit` from affecting consuming projects
 
 **What to Copy:**
 1. Core policy documents (`versioning-policy.md`, `versioning-strategy.md`)
@@ -37,7 +37,7 @@ housekeeping_policy: keep
 - ❌ **MUST keep:** Schema format, validation rules, core principles, date formats
 
 **Single Source of Truth:**
-- `vibe-dev-kit` is the canonical SoT for versioning schema and principles
+- `ai-dev-kit` is the canonical SoT for versioning schema and principles
 - Your copied policies are adaptations for your specific context
 - Reference framework as source of truth in your documentation
 
@@ -680,14 +680,14 @@ Use this checklist to ensure you've customized everything for your project:
 **Copy Pattern (✅ Correct):**
 ```bash
 # Copy framework files to your project
-cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-policy.md your-project/docs/versioning/
-cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-strategy.md your-project/docs/versioning/
+cp ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-policy.md your-project/docs/versioning/
+cp ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-strategy.md your-project/docs/versioning/
 ```
 
 **Reference Pattern (❌ Incorrect):**
 ```markdown
 # DON'T do this:
-See: https://github.com/earlution/vibe-dev-kit/blob/main/packages/frameworks/numbering%20%26%20versioning/versioning-policy.md
+See: https://github.com/earlution/ai-dev-kit/blob/main/packages/frameworks/numbering%20%26%20versioning/versioning-policy.md
 ```
 
 ### Why Copy?
@@ -714,7 +714,7 @@ See: https://github.com/earlution/vibe-dev-kit/blob/main/packages/frameworks/num
 1. **Copy Files:**
    ```bash
    mkdir -p your-project/docs/versioning
-   cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/*.md your-project/docs/versioning/
+   cp ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/*.md your-project/docs/versioning/
    ```
 
 2. **Customize Epic Ranges:**
@@ -736,7 +736,7 @@ See: https://github.com/earlution/vibe-dev-kit/blob/main/packages/frameworks/num
    ```markdown
    # Your Project Versioning Policy
 
-   **Based on:** vibe-dev-kit versioning framework  
+   **Based on:** ai-dev-kit versioning framework  
    **Last Synced:** 2025-12-02  
    **Customizations:**
    - Epic 1+ uses new format (no legacy range)
@@ -749,7 +749,7 @@ See: https://github.com/earlution/vibe-dev-kit/blob/main/packages/frameworks/num
 **Update Workflow:**
 
 1. **Monitor Framework:**
-   - Watch `vibe-dev-kit` repository for updates
+   - Watch `ai-dev-kit` repository for updates
    - Review changelog for versioning framework changes
    - Check for new patterns or best practices
 
@@ -757,7 +757,7 @@ See: https://github.com/earlution/vibe-dev-kit/blob/main/packages/frameworks/num
    ```bash
    # Compare updated framework with your copied policies
    diff -u your-project/docs/versioning/versioning-policy.md \
-            vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-policy.md
+            ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/versioning-policy.md
    ```
 
 3. **Selectively Adopt:**
@@ -778,7 +778,7 @@ See: https://github.com/earlution/vibe-dev-kit/blob/main/packages/frameworks/num
 ```bash
 # 1. Copy framework files
 mkdir -p myapp/docs/versioning
-cp vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/*.md myapp/docs/versioning/
+cp ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/*.md myapp/docs/versioning/
 
 # 2. Customize versioning-policy.md
 # - Change Epic ranges: "Epic 1+ uses new format"
@@ -807,7 +807,7 @@ cat >> myapp/docs/versioning/versioning-policy.md << 'EOF'
 
 ## Customizations
 
-**Based on:** vibe-dev-kit versioning framework  
+**Based on:** ai-dev-kit versioning framework  
 **Last Synced:** 2025-12-02  
 **Customizations:**
 - Epic 1+ uses new format (no legacy range)
@@ -818,7 +818,7 @@ EOF
 
 ### Framework as Single Source of Truth
 
-**`vibe-dev-kit` is the canonical SoT for:**
+**`ai-dev-kit` is the canonical SoT for:**
 - Versioning schema definition (`RC.EPIC.STORY.TASK+BUILD`)
 - Core versioning principles (canonical ordering, immutability, traceability)
 - Best practices and patterns
@@ -834,7 +834,7 @@ EOF
 ```markdown
 # MyApp Versioning Policy
 
-**Based on:** vibe-dev-kit `packages/frameworks/numbering & versioning/versioning-policy.md`  
+**Based on:** ai-dev-kit `packages/frameworks/numbering & versioning/versioning-policy.md`  
 **Last Synced:** 2025-12-02  
 **Customizations:** Epic 1+ new format, custom file paths
 
@@ -844,5 +844,5 @@ EOF
 ---
 
 **Last Updated:** 2025-12-02  
-**Based on:** Confidentia Project → fynd.deals (Epic 15) → vibe-dev-kit (canonical SoT)  
-**Canonical Source:** `vibe-dev-kit` - Projects should copy and customize, not reference
+**Based on:** Confidentia Project → fynd.deals (Epic 15) → ai-dev-kit (canonical SoT)  
+**Canonical Source:** `ai-dev-kit` - Projects should copy and customize, not reference

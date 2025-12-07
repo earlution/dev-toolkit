@@ -212,7 +212,7 @@ epic_doc_pattern: "{kanban_path}/epics/Epic-{epic}.md"
 kanban_board_path: "{kanban_path}/kanban-board.md"
 story_doc_pattern: "{kanban_path}/epics/Epic-{epic}/stories/Story-{story}-*.md"
 validation_scripts_path: "scripts/validation"
-project_handler_namespace: "{project}"  # e.g., "confidentia", "vibe-dev-kit"
+project_handler_namespace: "{project}"  # e.g., "confidentia", "ai-dev-kit"
 ```
 
 ---

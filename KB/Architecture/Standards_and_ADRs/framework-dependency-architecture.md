@@ -19,9 +19,9 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This document defines the architecture for transforming Vibe Dev Kit frameworks from **copy-paste packages** to **reusable, auto-updating dependencies**. The architecture supports multiple dependency management strategies, enabling frameworks to be installed and updated automatically across projects.
+This document defines the architecture for transforming AI Dev Kit frameworks from **copy-paste packages** to **reusable, auto-updating dependencies**. The architecture supports multiple dependency management strategies, enabling frameworks to be installed and updated automatically across projects.
 
-**Vision:** When a framework is updated in `vibe-dev-kit`, projects using that framework can automatically receive updates through their chosen dependency management mechanism.
+**Vision:** When a framework is updated in `ai-dev-kit`, projects using that framework can automatically receive updates through their chosen dependency management mechanism.
 
 ---
 
@@ -69,8 +69,8 @@ cp -r packages/frameworks/numbering\ \&\ versioning /path/to/project/
 **Example:**
 ```bash
 # Target: Dependency-based
-vibe-dev-kit install numbering-versioning@2.0.0
-vibe-dev-kit update numbering-versioning  # Auto-updates to latest compatible version
+ai-dev-kit install numbering-versioning@2.0.0
+ai-dev-kit update numbering-versioning  # Auto-updates to latest compatible version
 ```
 
 ---
@@ -87,7 +87,7 @@ The architecture supports **three dependency management strategies**, allowing p
    - Manual update commands
 
 2. **CLI Tool** (Phase 2 - Short-term)
-   - `vibe-dev-kit` CLI for framework management
+   - `ai-dev-kit` CLI for framework management
    - Supports multiple backends
    - Automated updates
 
@@ -109,7 +109,7 @@ The architecture supports **three dependency management strategies**, allowing p
 project/
 ├── .gitmodules
 ├── frameworks/
-│   ├── vibe-dev-kit/          # Git submodule
+│   ├── ai-dev-kit/          # Git submodule
 │   │   └── packages/frameworks/
 │   │       ├── numbering & versioning/
 │   │       ├── workflow mgt/
@@ -121,8 +121,8 @@ project/
 
 ```bash
 # Add framework as submodule
-git submodule add https://github.com/earlution/vibe-dev-kit.git frameworks/vibe-dev-kit
-cd frameworks/vibe-dev-kit
+git submodule add https://github.com/earlution/ai-dev-kit.git frameworks/ai-dev-kit
+cd frameworks/ai-dev-kit
 git checkout v2.0.0  # Pin to specific version
 ```
 
@@ -130,12 +130,12 @@ git checkout v2.0.0  # Pin to specific version
 
 ```bash
 # Update to latest version
-cd frameworks/vibe-dev-kit
+cd frameworks/ai-dev-kit
 git fetch
 git checkout v2.1.0  # Update to new version
 cd ../..
-git add frameworks/vibe-dev-kit
-git commit -m "Update vibe-dev-kit to v2.1.0"
+git add frameworks/ai-dev-kit
+git commit -m "Update ai-dev-kit to v2.1.0"
 ```
 
 ### Automated Update Script
@@ -143,13 +143,13 @@ git commit -m "Update vibe-dev-kit to v2.1.0"
 ```bash
 #!/bin/bash
 # update-frameworks.sh
-cd frameworks/vibe-dev-kit
+cd frameworks/ai-dev-kit
 git fetch
 LATEST=$(git tag -l "v*" | sort -V | tail -1)
 git checkout $LATEST
 cd ../..
-git add frameworks/vibe-dev-kit
-git commit -m "Auto-update vibe-dev-kit to $LATEST"
+git add frameworks/ai-dev-kit
+git commit -m "Auto-update ai-dev-kit to $LATEST"
 ```
 
 **Pros:**
@@ -169,31 +169,31 @@ git commit -m "Auto-update vibe-dev-kit to $LATEST"
 
 ### Architecture
 
-**Strategy:** Build `vibe-dev-kit` CLI tool that manages frameworks across multiple backends.
+**Strategy:** Build `ai-dev-kit` CLI tool that manages frameworks across multiple backends.
 
 **CLI Commands:**
 ```bash
 # Install framework
-vibe-dev-kit install numbering-versioning@2.0.0
+ai-dev-kit install numbering-versioning@2.0.0
 
 # Update framework
-vibe-dev-kit update numbering-versioning
+ai-dev-kit update numbering-versioning
 
 # Check for updates
-vibe-dev-kit check
+ai-dev-kit check
 
 # Show status
-vibe-dev-kit status
+ai-dev-kit status
 
 # List available frameworks
-vibe-dev-kit list
+ai-dev-kit list
 ```
 
 ### Implementation
 
 **Tool Structure:**
 ```
-vibe-dev-kit/
+ai-dev-kit/
 ├── cli/
 │   ├── __init__.py
 │   ├── commands/
@@ -217,16 +217,16 @@ vibe-dev-kit/
 
 **Configuration:**
 ```yaml
-# .vibe-dev-kit.yaml
+# .ai-dev-kit.yaml
 frameworks:
   numbering-versioning:
     version: "2.0.0"
     backend: "git-submodule"
-    path: "frameworks/vibe-dev-kit/packages/frameworks/numbering & versioning"
+    path: "frameworks/ai-dev-kit/packages/frameworks/numbering & versioning"
   workflow-mgt:
     version: "2.0.0"
     backend: "git-submodule"
-    path: "frameworks/vibe-dev-kit/packages/frameworks/workflow mgt"
+    path: "frameworks/ai-dev-kit/packages/frameworks/workflow mgt"
 ```
 
 **Pros:**
@@ -250,7 +250,7 @@ frameworks:
 **npm Package:**
 ```json
 {
-  "name": "@vibe-dev-kit/numbering-versioning",
+  "name": "@ai-dev-kit/numbering-versioning",
   "version": "2.0.0",
   "description": "Numbering and versioning framework",
   "main": "index.js",
@@ -266,12 +266,12 @@ frameworks:
 
 **Installation:**
 ```bash
-npm install @vibe-dev-kit/numbering-versioning@2.0.0
+npm install @ai-dev-kit/numbering-versioning@2.0.0
 ```
 
 **Updates:**
 ```bash
-npm update @vibe-dev-kit/numbering-versioning
+npm update @ai-dev-kit/numbering-versioning
 ```
 
 **Pros:**
@@ -307,7 +307,7 @@ git tag -a numbering-versioning-v2.0.0 -m "Release numbering-versioning v2.0.0"
 git push origin numbering-versioning-v2.0.0
 
 # Tag all frameworks in monorepo
-git tag -a vibe-dev-kit-v2.0.0 -m "Release vibe-dev-kit v2.0.0"
+git tag -a ai-dev-kit-v2.0.0 -m "Release ai-dev-kit v2.0.0"
 ```
 
 ### Version File
@@ -330,8 +330,8 @@ FRAMEWORK_SEMVER = "2.0.0"
 **Step 1: Install as Dependency**
 ```bash
 # Using Git submodule
-git submodule add https://github.com/earlution/vibe-dev-kit.git frameworks/vibe-dev-kit
-cd frameworks/vibe-dev-kit
+git submodule add https://github.com/earlution/ai-dev-kit.git frameworks/ai-dev-kit
+cd frameworks/ai-dev-kit
 git checkout numbering-versioning-v2.0.0
 ```
 

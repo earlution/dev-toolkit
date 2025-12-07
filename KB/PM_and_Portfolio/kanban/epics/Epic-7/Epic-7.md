@@ -32,7 +32,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-Epic 7 owns the **Examples & Adoption Support** framework for the vibe-dev-kit repository. This epic provides real-world examples, migration guides, and onboarding materials to help users successfully adopt the dev-kit frameworks.
+Epic 7 owns the **Examples & Adoption Support** framework for the ai-dev-kit repository. This epic provides real-world examples, migration guides, and onboarding materials to help users successfully adopt the dev-kit frameworks.
 
 ---
 

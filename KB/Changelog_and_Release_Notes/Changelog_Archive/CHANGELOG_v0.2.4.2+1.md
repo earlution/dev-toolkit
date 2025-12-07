@@ -43,7 +43,7 @@
   - `rw-config-mode-a-simple.yaml` - Mode A: Simple RW (no Kanban, any versioning)
   - `rw-config-mode-b-versioning.yaml` - Mode B: RW + Dev-Kit Versioning
   - `rw-config-mode-c-full-stack.yaml` - Mode C: Full Stack (RW + Versioning + Kanban)
-  - `rw-config-vibe-dev-kit.yaml` - Real example from vibe-dev-kit repo
+  - `rw-config-ai-dev-kit.yaml` - Real example from ai-dev-kit repo
 
 ### Updated
 - **Story 4 Task Checklist:** `KB/PM_and_Portfolio/kanban/epics/Epic-2/stories/Story-004-rw-installer-and-plug-and-play-adoption.md`

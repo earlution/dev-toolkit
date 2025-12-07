@@ -16,7 +16,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This document provides a **visual dependency matrix** for the three framework packages in `vibe-dev-kit`. It shows dependencies between packages, identifies optional vs required dependencies, documents how to break dependencies if needed, and provides guidance for standalone and combined usage.
+This document provides a **visual dependency matrix** for the three framework packages in `ai-dev-kit`. It shows dependencies between packages, identifies optional vs required dependencies, documents how to break dependencies if needed, and provides guidance for standalone and combined usage.
 
 **Key Findings:**
 - ✅ No hard dependencies between packages
@@ -430,7 +430,7 @@ This document provides a **visual dependency matrix** for the three framework pa
 
 ## 9. Conclusion
 
-The `vibe-dev-kit` framework packages demonstrate **excellent modularity** with:
+The `ai-dev-kit` framework packages demonstrate **excellent modularity** with:
 
 - ✅ **No hard dependencies** between packages
 - ✅ **High independence scores** (9-10/10)

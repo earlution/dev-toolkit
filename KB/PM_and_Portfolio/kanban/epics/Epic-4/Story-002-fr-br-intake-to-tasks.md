@@ -318,7 +318,7 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 **Coordinates With:**
 - Epic 2: Workflow Management Framework (for RW integration)
 - Epic 3: Numbering & Versioning Framework (for versioning alignment)
-- Epic 1: Vibe Dev Kit Core (for core policies)
+- Epic 1: AI Dev Kit Core (for core policies)
 
 ---
 

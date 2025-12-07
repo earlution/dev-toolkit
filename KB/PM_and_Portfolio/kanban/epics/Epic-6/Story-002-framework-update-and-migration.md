@@ -90,7 +90,7 @@ Implement comprehensive processes for updating and migrating framework packages.
 ### E6:S02:T04 – Build framework update CLI tool
 
 **Input:** Framework dependency architecture, update procedures  
-**Deliverable:** `vibe-dev-kit` CLI tool for framework management  
+**Deliverable:** `ai-dev-kit` CLI tool for framework management  
 **Dependencies:** E6:S01:T04, E6:S02:T01  
 **Blocker:** None
 
@@ -103,16 +103,16 @@ Implement comprehensive processes for updating and migrating framework packages.
 6. Create CLI documentation and usage examples
 
 **Key Deliverables:**
-- `vibe-dev-kit` CLI tool (Python-based)
+- `ai-dev-kit` CLI tool (Python-based)
 - CLI command reference documentation
 - Installation and usage guides
 - Example workflows
 
 **CLI Commands:**
-- `vibe-dev-kit install <framework>[@version]` - Install framework as dependency
-- `vibe-dev-kit update <framework>` - Update framework to latest version
-- `vibe-dev-kit check` - Check for framework updates
-- `vibe-dev-kit status` - Show installed framework versions
+- `ai-dev-kit install <framework>[@version]` - Install framework as dependency
+- `ai-dev-kit update <framework>` - Update framework to latest version
+- `ai-dev-kit check` - Check for framework updates
+- `ai-dev-kit status` - Show installed framework versions
 
 ---
 

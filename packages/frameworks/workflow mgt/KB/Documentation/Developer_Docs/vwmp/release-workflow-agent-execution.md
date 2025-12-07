@@ -10,7 +10,7 @@ housekeeping_policy: keep
 
 **Version:** 1.4.0
 **Last Updated:** 2025-12-05
-**Related:** [Example: Confidentia - Epic 4 - User Workflows & Use Case Modeling, Release Workflow] | [Example: vibe-dev-kit - Epic 2 - Workflow Management Framework, Release Workflow]
+**Related:** [Example: Confidentia - Epic 4 - User Workflows & Use Case Modeling, Release Workflow] | [Example: ai-dev-kit - Epic 2 - Workflow Management Framework, Release Workflow]
 
 ---
 
@@ -58,7 +58,7 @@ This document provides a **step-by-step agent execution guide** for the Release 
 
 > **Note on Examples:** This document includes examples from multiple projects:
 > - **[Example: Confidentia/fynd.deals]** - Examples from the original source project
-> - **[Example: vibe-dev-kit]** - Examples from the dev-kit project
+> - **[Example: ai-dev-kit]** - Examples from the dev-kit project
 > 
 > When adopting this workflow in your own project, replace all examples with your project-specific paths, versions, and structures.
 
@@ -284,10 +284,10 @@ story_doc_pattern = config.get('story_doc_pattern') if config and config.get('us
 
 1. **ANALYZE:**
    - **Load config first:** Load `rw-config.yaml` if it exists (see Config Loading section above)
-   - Get current Git branch name (e.g., `epic/4` [Example: Confidentia], `epic/2` [Example: vibe-dev-kit], `main`)
+   - Get current Git branch name (e.g., `epic/4` [Example: Confidentia], `epic/2` [Example: ai-dev-kit], `main`)
    - **MANDATORY:** Determine validator script path:
      - From config: `scripts_path` + `/validate_branch_context.py`
-     - Fallback: `packages/frameworks/workflow mgt/scripts/validation/validate_branch_context.py` [Example: vibe-dev-kit]
+     - Fallback: `packages/frameworks/workflow mgt/scripts/validation/validate_branch_context.py` [Example: ai-dev-kit]
      - Or: `scripts/validation/validate_branch_context.py` [Example: Confidentia]
    - Verify validator script exists (if not found, this is a critical error - workflow must stop)
 
@@ -372,7 +372,7 @@ story_doc_pattern = config.get('story_doc_pattern') if config and config.get('us
   - ❌ Version file shows `0.5.x.x+x` → FAIL (mismatch)
   - ❌ Modified files in `Epic-5/` directory → FAIL (mismatch)
 
-- **On `epic/2` branch [Example: vibe-dev-kit]:**
+- **On `epic/2` branch [Example: ai-dev-kit]:**
   - ✅ Version file shows `0.2.x.x+x` → PASS
   - ✅ Modified files in `Epic-2/` directory → PASS
   - ✅ Changelog entry references Epic 2 → PASS
@@ -444,7 +444,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
   dependencies: [step-1]
   config:
     version_file: src/confidentia/version.py  # [Example: Confidentia] Use {version_file_path} template placeholder
-    # [Example: vibe-dev-kit] version_file: src/fynd_deals/version.py
+    # [Example: ai-dev-kit] version_file: src/fynd_deals/version.py
     increment_type: patch
 ```
 
@@ -456,7 +456,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 1. **ANALYZE:**
    - **Use config path:** Read current version from version file (from config `version_file` or fallback):
      - [Example: Confidentia] `src/confidentia/version.py` (or from `rw-config.yaml` if present)
-     - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
+     - [Example: ai-dev-kit] `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
    - Extract current `VERSION_EPIC`, `VERSION_STORY`, `VERSION_TASK`, `VERSION_BUILD`
    - Document current version: `RC.EPIC.STORY.TASK+BUILD`
    - Understand version schema: `RC.EPIC.STORY.TASK+BUILD`
@@ -467,7 +467,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 2. **ANALYZE (continued):**
    - **MANDATORY:** Read the Story file to identify completed task. **Use config paths:** If `rw-config.yaml` exists and `use_kanban: true`, use `kanban_root` and `story_doc_pattern` from config. Otherwise, use fallback patterns:
      - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic {epic}/Story-{story}-*.md` (or from `rw-config.yaml` if present)
-     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Story-{story}-*.md` (or from `rw-config.yaml` if present)
+     - [Example: ai-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Story-{story}-*.md` (or from `rw-config.yaml` if present)
    - Find the MOST RECENTLY COMPLETED task in the Task Checklist (marked `✅ COMPLETE`)
    - Extract the task number from the task identifier: `E{epic}:S{story}:T{task}` (e.g., `E2:S02:T08` → task number is `8`)
    - **CRITICAL:** If no task is marked complete, or you cannot identify which task was just completed, **STOP** and ask the user which task was completed
@@ -480,7 +480,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
        - Set `VERSION_TASK` = completed task number
        - Set `VERSION_BUILD` = 1 (reset to 1 for new task)
        - Example: Current `0.2.2.3+5`, completed T008 → New version: `0.2.2.8+1`
-       - [Example: vibe-dev-kit] If completing Task 2, and `VERSION_TASK = 1`:
+       - [Example: ai-dev-kit] If completing Task 2, and `VERSION_TASK = 1`:
          - Update: `VERSION_TASK = 2`, `VERSION_BUILD = 1`
          - Next version: `0.4.3.2+1` (Task 2, Build 1)
      - **IF completed task number == current VERSION_TASK:** This is SAME TASK, new build
@@ -488,7 +488,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
        - Increment `VERSION_BUILD` by 1
        - Example: Current `0.2.2.3+1`, completed T003 → New version: `0.2.2.3+2`
        - [Example: Confidentia] If current is `0.4.3.2+8`, next is `0.4.3.2+9`
-       - [Example: vibe-dev-kit] If current is `0.2.1.1+2`, next is `0.2.1.1+3`
+       - [Example: ai-dev-kit] If current is `0.2.1.1+2`, next is `0.2.1.1+3`
      - **IF completed task number < current VERSION_TASK:** This is OUT-OF-ORDER TASK COMPLETION
        - **This is VALID** - Tasks can be completed out of sequential order
        - Set `VERSION_TASK` = completed task number (use completed task, not current)
@@ -499,7 +499,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
        - **Note:** This enables parallel task work and out-of-order completion
    - Validate version matches branch:
      - [Example: Confidentia] Epic 4 = `0.4.x.x+x`
-     - [Example: vibe-dev-kit] Epic 2 = `0.2.x.x+x`
+     - [Example: ai-dev-kit] Epic 2 = `0.2.x.x+x`
 
 **D. VALIDATE BEFORE UPDATING:**
 4. **VALIDATE (before update):**
@@ -514,13 +514,13 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
      - Update `VERSION_BUILD` to 1
      - **Use config path:** Update version file (from config `version_file` or fallback):
        - [Example: Confidentia] `src/confidentia/version.py` (or from `rw-config.yaml` if present)
-       - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
+       - [Example: ai-dev-kit] `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
        - Use `search_replace` tool to update both `VERSION_TASK` and `VERSION_BUILD`
    - **If Same Task (BUILD Increment):**
      - Update `VERSION_BUILD` only (increment by 1)
      - **Use config path:** Update version file (from config `version_file` or fallback):
        - [Example: Confidentia] `src/confidentia/version.py` (or from `rw-config.yaml` if present)
-       - [Example: vibe-dev-kit] `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
+       - [Example: ai-dev-kit] `src/fynd_deals/version.py` (or from `rw-config.yaml` if present)
        - Use `search_replace` tool to update `VERSION_BUILD`
    - Update `VERSION_STRING` to reflect new version
    - Update `VERSION_INFO["description"]` if present
@@ -537,10 +537,10 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 7. **PROCEED:**
    - Document version bump with decision rationale:
      - **If Task Transition:**
-       - [Example: vibe-dev-kit] "Version bumped: Task transition detected. Task E2:S02:T08 completed. Current TASK=3, BUILD=5. Decision: new_task → TASK=8, BUILD=1. New version: 0.2.2.8+1"
+       - [Example: ai-dev-kit] "Version bumped: Task transition detected. Task E2:S02:T08 completed. Current TASK=3, BUILD=5. Decision: new_task → TASK=8, BUILD=1. New version: 0.2.2.8+1"
      - **If Same Task:**
        - [Example: Confidentia] "Version bumped: Task E4:S03:T02 completed. Current TASK=2, BUILD=8. Decision: new_build → TASK=2, BUILD=9. New version: 0.4.3.2+9"
-       - [Example: vibe-dev-kit] "Version bumped: Task E2:S01:T01 completed. Current TASK=1, BUILD=2. Decision: new_build → TASK=1, BUILD=3. New version: 0.2.1.1+3"
+       - [Example: ai-dev-kit] "Version bumped: Task E2:S01:T01 completed. Current TASK=1, BUILD=2. Decision: new_build → TASK=1, BUILD=3. New version: 0.2.1.1+3"
    - Pass `new_version` to Step 3
    - Move to Step 3
 
@@ -571,12 +571,12 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 1. **ANALYZE:**
    - Get `new_version` from Step 2 output:
      - [Example: Confidentia] `"0.4.3.2+9"`
-     - [Example: vibe-dev-kit] `"0.2.1.1+3"`
+     - [Example: ai-dev-kit] `"0.2.1.1+3"`
    - Get release summary from workflow parameters
    - Get change type from workflow parameters
    - Extract Epic/Story from Git branch name:
      - [Example: Confidentia] `epic/4` → Epic 4
-     - [Example: vibe-dev-kit] `epic/2` → Epic 2
+     - [Example: ai-dev-kit] `epic/2` → Epic 2
    - Understand timestamp format: `YYYY-MM-DD HH:MM:SS UTC`
    - Check changelog directory exists
 
@@ -584,13 +584,13 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Generate full timestamp: `date -u +"%Y-%m-%d %H:%M:%S UTC"`
    - Determine Epic number from branch:
      - [Example: Confidentia] `epic/4` → Epic 4
-     - [Example: vibe-dev-kit] `epic/2` → Epic 2
+     - [Example: ai-dev-kit] `epic/2` → Epic 2
    - Determine Story number from version:
      - [Example: Confidentia] `0.4.3.2+9` → Story 3
-     - [Example: vibe-dev-kit] `0.2.1.1+3` → Story 1
+     - [Example: ai-dev-kit] `0.2.1.1+3` → Story 1
    - **Use config path:** Create changelog file path (from config `changelog_dir` or fallback):
      - [Example: Confidentia] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.2+9.md` (or from `rw-config.yaml` if present)
-     - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.1+3.md` (or from `rw-config.yaml` if present)
+     - [Example: ai-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.1+3.md` (or from `rw-config.yaml` if present)
    - Review previous changelog format for consistency
 
 3. **EXECUTE:**
@@ -644,7 +644,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 5. **PROCEED:**
    - Document changelog creation:
      - [Example: Confidentia] "Created detailed changelog: CHANGELOG_v0.4.3.2+9.md"
-     - [Example: vibe-dev-kit] "Created detailed changelog: CHANGELOG_v0.2.1.1+3.md"
+     - [Example: ai-dev-kit] "Created detailed changelog: CHANGELOG_v0.2.1.1+3.md"
    - Pass `changelog_file` path to Step 4
    - Move to Step 4
 
@@ -668,7 +668,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 1. **ANALYZE:**
    - Get `new_version` from Step 2:
      - [Example: Confidentia] `"0.4.3.2+9"`
-     - [Example: vibe-dev-kit] `"0.2.1.1+3"`
+     - [Example: ai-dev-kit] `"0.2.1.1+3"`
    - Get summary and change type from parameters
    - **Use config path:** Read main changelog (from config `main_changelog` or fallback `CHANGELOG.md`) to find "## Recent Releases" section
    - **CRITICAL - Canonical Ordering:** Read ALL existing changelog entries and extract version numbers
@@ -699,7 +699,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
    - Insert new entry at correct position based on canonical ordering (NOT at top)
    - Format examples:
      - [Example: Confidentia] `### [0.4.3.2+9] - 01-12-25`
-     - [Example: vibe-dev-kit] `### [0.2.1.1+3] - 02-12-25`
+     - [Example: ai-dev-kit] `### [0.2.1.1+3] - 02-12-25`
    - Include summary with emoji
    - **CRITICAL - Verification Check for Fixes:**
      - If this release includes bug fixes, check verification status from detailed changelog:
@@ -747,7 +747,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 1. **ANALYZE:**
    - Get `new_version` from Step 2:
      - [Example: Confidentia] `"0.4.3.2+9"`
-     - [Example: vibe-dev-kit] `"0.2.1.1+3"`
+     - [Example: ai-dev-kit] `"0.2.1.1+3"`
    - Get summary and change type from parameters
    - **Use config path:** Read README file (from config `readme_file` or fallback `README.md`) to find version badge and latest release callout
    - Understand badge format: `[![Version](...badge/version-{version}-blue)...]`
@@ -791,13 +791,13 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 
 1. **ANALYZE:**
    - Get `new_version` from Step 2:
-     - [Example: vibe-dev-kit] `"0.2.1.1+3"`
+     - [Example: ai-dev-kit] `"0.2.1.1+3"`
    - Get completed task identifier from Step 2:
-     - [Example: vibe-dev-kit] `E2:S01:T01`
+     - [Example: ai-dev-kit] `E2:S01:T01`
    - Get release summary from workflow parameters
    - Extract Epic/Story/Task from completed task identifier
    - **Use config paths:** Find FR/BR root directory (from config `fr_br_root` or fallback):
-     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/fr-br` (or from `rw-config.yaml` if present)
+     - [Example: ai-dev-kit] `KB/PM_and_Portfolio/kanban/fr-br` (or from `rw-config.yaml` if present)
    - Understand BR/FR linking pattern:
      - BRs/FRs are linked to Tasks via "Intake Decision" section
      - Search for BR/FR files that reference the completed task
@@ -900,13 +900,13 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 - id: step-7
   name: Auto-update Kanban Docs
   handler: confidentia.kanban_update  # [Example: Confidentia] Use {project}.kanban_update or kanban.update
-  # [Example: vibe-dev-kit] handler: vibe-dev-kit.kanban_update (if implemented)
+  # [Example: ai-dev-kit] handler: ai-dev-kit.kanban_update (if implemented)
   dependencies: [step-2]
   config:
     epic_doc_pattern: KB/PM_and_Portfolio/epics/overview/Epic {epic}/Epic-{epic}.md  # [Example: Confidentia]
-    # [Example: vibe-dev-kit] epic_doc_pattern: KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Epic-{epic}.md
+    # [Example: ai-dev-kit] epic_doc_pattern: KB/PM_and_Portfolio/kanban/epics/Epic-{epic}/Epic-{epic}.md
     kanban_board: KB/PM_and_Portfolio/epics/overview/_index.md  # [Example: Confidentia]
-    # [Example: vibe-dev-kit] kanban_board: KB/PM_and_Portfolio/kanban/kanban-board.md
+    # [Example: ai-dev-kit] kanban_board: KB/PM_and_Portfolio/kanban/kanban-board.md
 ```
 
 **Agent Execution:**
@@ -914,19 +914,19 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 1. **ANALYZE:**
    - Get `new_version` from Step 2:
      - [Example: Confidentia] `"0.4.3.2+9"`
-     - [Example: vibe-dev-kit] `"0.2.1.1+3"`
+     - [Example: ai-dev-kit] `"0.2.1.1+3"`
    - Extract Epic number from branch:
      - [Example: Confidentia] `epic/4` → Epic 4 (already validated in Step 1)
-     - [Example: vibe-dev-kit] `epic/2` → Epic 2 (already validated in Step 1)
+     - [Example: ai-dev-kit] `epic/2` → Epic 2 (already validated in Step 1)
    - Extract Story number from version:
      - [Example: Confidentia] `0.4.3.2+9` → Story 3
-     - [Example: vibe-dev-kit] `0.2.1.1+3` → Story 1
+     - [Example: ai-dev-kit] `0.2.1.1+3` → Story 1
    - **Use config paths:** Find Epic doc (from config `kanban_root` and `epic_doc_pattern` if `use_kanban: true`, or fallback):
      - [Example: Confidentia] `KB/PM_and_Portfolio/epics/overview/Epic 4/Epic-4.md` (or from `rw-config.yaml` if present)
-     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/Epic-2.md` (or from `rw-config.yaml` if present)
+     - [Example: ai-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/Epic-2.md` (or from `rw-config.yaml` if present)
    - **Use config paths:** Find Story doc (from config `kanban_root` and `story_doc_pattern` if `use_kanban: true`, or fallback):
      - [Example: Confidentia] `KB/PM_and_Portfolio/kanban/Epic 4/Story-3-*.md` (or from `rw-config.yaml` if present)
-     - [Example: vibe-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-001-*.md` (or from `rw-config.yaml` if present)
+     - [Example: ai-dev-kit] `KB/PM_and_Portfolio/kanban/epics/Epic-2/Story-001-*.md` (or from `rw-config.yaml` if present)
    - Understand "Last updated" field format
 
 2. **DETERMINE:**
@@ -1028,7 +1028,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 - id: step-9
   name: Run Validators
   handler: confidentia.run_validators  # [Example: Confidentia] Use {project}.run_validators or validation.run_validators
-  # [Example: vibe-dev-kit] handler: vibe-dev-kit.run_validators (if implemented)
+  # [Example: ai-dev-kit] handler: ai-dev-kit.run_validators (if implemented)
   dependencies: [step-8]
   config:
     validators:
@@ -1095,7 +1095,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 1. **ANALYZE:**
    - Get `new_version` from Step 2:
      - [Example: Confidentia] `"0.4.3.2+9"`
-     - [Example: vibe-dev-kit] `"0.2.2.4+1"`
+     - [Example: ai-dev-kit] `"0.2.2.4+1"`
    - Get summary from parameters
    - Read detailed changelog from Step 3 to understand:
      - What was actually done (DO phase)
@@ -1112,7 +1112,7 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 2. **DETERMINE:**
    - Build commit message:
      - [Example: Confidentia] `"0.4.3.2+9 - 📚 Documentation: Tighten Epic 4 [Example: Confidentia] Kanban docs..."`
-     - [Example: vibe-dev-kit] `"0.2.2.4+1 - 🧰 Tooling: Task 4 complete - Enhanced DO Phase..."`
+     - [Example: ai-dev-kit] `"0.2.2.4+1 - 🧰 Tooling: Task 4 complete - Enhanced DO Phase..."`
    - **Language Pattern Selection:**
      - **If verified fixes:** Use verified language ("Fixed", "Resolved", "Corrected")
      - **If unverified fixes:** Use unverified language ("Attempted fix", "Addressed", "Modified")
@@ -1220,21 +1220,21 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 1. **ANALYZE:**
    - Get `new_version` from Step 2:
      - [Example: Confidentia] `"0.4.3.2+9"`
-     - [Example: vibe-dev-kit] `"0.2.1.1+3"`
+     - [Example: ai-dev-kit] `"0.2.1.1+3"`
    - Get summary from parameters
    - Understand tag template: `v{version}`:
      - [Example: Confidentia] → `v0.4.3.2+9`
-     - [Example: vibe-dev-kit] → `v0.2.1.1+3`
+     - [Example: ai-dev-kit] → `v0.2.1.1+3`
    - Understand message template: `"Release {tag}: {summary}"`
    - Understand annotated tag: Includes metadata
 
 2. **DETERMINE:**
    - Build tag name:
      - [Example: Confidentia] `v0.4.3.2+9`
-     - [Example: vibe-dev-kit] `v0.2.1.1+3`
+     - [Example: ai-dev-kit] `v0.2.1.1+3`
    - Build tag message:
      - [Example: Confidentia] `"Release v0.4.3.2+9: 📚 Documentation: Tighten Epic 4 [Example: Confidentia] Kanban docs..."`
-     - [Example: vibe-dev-kit] `"Release v0.2.1.1+3: Task 1 complete - Audit RW documentation..."`
+     - [Example: ai-dev-kit] `"Release v0.2.1.1+3: Task 1 complete - Audit RW documentation..."`
    - Check if tag already exists (should not)
 
 3. **EXECUTE:**
@@ -1244,14 +1244,14 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 4. **VALIDATE:**
    - Verify tag exists:
      - [Example: Confidentia] `git tag -l "v0.4.3.2+9"`
-     - [Example: vibe-dev-kit] `git tag -l "v0.2.1.1+3"`
+     - [Example: ai-dev-kit] `git tag -l "v0.2.1.1+3"`
    - Check tag message is correct
    - Verify tag is annotated
 
 5. **PROCEED:**
    - Document tag creation:
      - [Example: Confidentia] "Created annotated tag v0.4.3.2+9"
-     - [Example: vibe-dev-kit] "Created annotated tag v0.2.1.1+3"
+     - [Example: ai-dev-kit] "Created annotated tag v0.2.1.1+3"
    - Move to Step 11 (waits for Step 9 to complete)
 
 ---
@@ -1274,10 +1274,10 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 1. **ANALYZE:**
    - Get current branch name:
      - [Example: Confidentia] `epic/4` (already validated in Step 1)
-     - [Example: vibe-dev-kit] `epic/2` or `main` (already validated in Step 1)
+     - [Example: ai-dev-kit] `epic/2` or `main` (already validated in Step 1)
    - Get tag name from Step 11:
      - [Example: Confidentia] `v0.4.3.2+9`
-     - [Example: vibe-dev-kit] `v0.2.1.1+3`
+     - [Example: ai-dev-kit] `v0.2.1.1+3`
    - Understand remote: `origin`
    - **CRITICAL:** Must use `required_permissions: ['network']` for git push commands
    - This enables network access in Cursor's sandbox environment
@@ -1286,10 +1286,10 @@ WARNING: This step prevents accidental cross-epic contamination and ensures vers
 2. **DETERMINE:**
    - Push branch:
      - [Example: Confidentia] `git push origin epic/4`
-     - [Example: vibe-dev-kit] `git push origin main` (or `epic/2`)
+     - [Example: ai-dev-kit] `git push origin main` (or `epic/2`)
    - Push tag:
      - [Example: Confidentia] `git push origin v0.4.3.2+9`
-     - [Example: vibe-dev-kit] `git push origin v0.2.1.1+3`
+     - [Example: ai-dev-kit] `git push origin v0.2.1.1+3`
    - **Use network permissions:** Always use `required_permissions: ['network']` for git push
    - **Prepare fallback:** If push still fails (shouldn't happen), provide clear user instructions
 
@@ -1414,10 +1414,10 @@ except Exception as e:
 1. **ANALYZE:**
    - Get `new_version` from Step 2:
      - [Example: Confidentia] `"0.4.3.2+9"`
-     - [Example: vibe-dev-kit] `"0.2.2.1+1"`
+     - [Example: ai-dev-kit] `"0.2.2.1+1"`
    - Read detailed changelog from Step 3:
      - [Example: Confidentia] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.2+9.md`
-     - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.1+1.md`
+     - [Example: ai-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.1+1.md`
    - Understand this is the **CHECK phase** of PDCA cycle
    - Check if release includes bug fixes or changes requiring verification
    - Review changelog for "Attempted Fixes" entries
@@ -1575,10 +1575,10 @@ except Exception as e:
      - Reflection results (if available)
    - Get `new_version` from Step 2:
      - [Example: Confidentia] `"0.4.3.2+9"`
-     - [Example: vibe-dev-kit] `"0.2.2.2+1"`
+     - [Example: ai-dev-kit] `"0.2.2.2+1"`
    - Read detailed changelog from Step 3:
      - [Example: Confidentia] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.3.2+9.md`
-     - [Example: vibe-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.2+1.md`
+     - [Example: ai-dev-kit] `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.2.2+1.md`
    - Understand this is the **ACT phase** of PDCA cycle
    - Check if Step 12 was executed (optional step)
    - Review changelog for "Attempted Fixes" entries

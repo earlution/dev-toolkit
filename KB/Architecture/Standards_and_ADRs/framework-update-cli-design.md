@@ -19,7 +19,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This document designs the `vibe-dev-kit` CLI tool for managing framework dependencies across projects. The CLI provides a unified interface for installing, updating, and managing frameworks regardless of the underlying dependency backend (Git submodules, package managers, etc.).
+This document designs the `ai-dev-kit` CLI tool for managing framework dependencies across projects. The CLI provides a unified interface for installing, updating, and managing frameworks regardless of the underlying dependency backend (Git submodules, package managers, etc.).
 
 ---
 
@@ -37,20 +37,20 @@ This document designs the `vibe-dev-kit` CLI tool for managing framework depende
 
 ### Core Commands
 
-#### `vibe-dev-kit install <framework>[@version]`
+#### `ai-dev-kit install <framework>[@version]`
 
 Install a framework as a dependency.
 
 **Examples:**
 ```bash
 # Install latest version
-vibe-dev-kit install numbering-versioning
+ai-dev-kit install numbering-versioning
 
 # Install specific version
-vibe-dev-kit install numbering-versioning@2.0.0
+ai-dev-kit install numbering-versioning@2.0.0
 
 # Install multiple frameworks
-vibe-dev-kit install numbering-versioning@2.0.0 workflow-mgt@2.0.0 kanban@1.0.0
+ai-dev-kit install numbering-versioning@2.0.0 workflow-mgt@2.0.0 kanban@1.0.0
 ```
 
 **Options:**
@@ -60,26 +60,26 @@ vibe-dev-kit install numbering-versioning@2.0.0 workflow-mgt@2.0.0 kanban@1.0.0
 
 **Behavior:**
 - Detects project type and suggests appropriate backend
-- Creates `.vibe-dev-kit.yaml` configuration file
+- Creates `.ai-dev-kit.yaml` configuration file
 - Installs framework using selected backend
 - Updates project configuration files
 
 ---
 
-#### `vibe-dev-kit update <framework>`
+#### `ai-dev-kit update <framework>`
 
 Update a framework to the latest compatible version.
 
 **Examples:**
 ```bash
 # Update specific framework
-vibe-dev-kit update numbering-versioning
+ai-dev-kit update numbering-versioning
 
 # Update all frameworks
-vibe-dev-kit update --all
+ai-dev-kit update --all
 
 # Update to specific version
-vibe-dev-kit update numbering-versioning@2.1.0
+ai-dev-kit update numbering-versioning@2.1.0
 ```
 
 **Options:**
@@ -91,21 +91,21 @@ vibe-dev-kit update numbering-versioning@2.1.0
 - Checks for available updates
 - Validates compatibility
 - Updates framework using appropriate backend
-- Updates `.vibe-dev-kit.yaml` configuration
+- Updates `.ai-dev-kit.yaml` configuration
 
 ---
 
-#### `vibe-dev-kit check`
+#### `ai-dev-kit check`
 
 Check for available framework updates.
 
 **Examples:**
 ```bash
 # Check all frameworks
-vibe-dev-kit check
+ai-dev-kit check
 
 # Check specific framework
-vibe-dev-kit check numbering-versioning
+ai-dev-kit check numbering-versioning
 ```
 
 **Output:**
@@ -123,17 +123,17 @@ Framework: workflow-mgt
 
 ---
 
-#### `vibe-dev-kit status`
+#### `ai-dev-kit status`
 
 Show status of installed frameworks.
 
 **Examples:**
 ```bash
 # Show all frameworks
-vibe-dev-kit status
+ai-dev-kit status
 
 # Show specific framework
-vibe-dev-kit status numbering-versioning
+ai-dev-kit status numbering-versioning
 ```
 
 **Output:**
@@ -146,17 +146,17 @@ Installed Frameworks:
 
 ---
 
-#### `vibe-dev-kit list`
+#### `ai-dev-kit list`
 
 List available frameworks.
 
 **Examples:**
 ```bash
 # List all frameworks
-vibe-dev-kit list
+ai-dev-kit list
 
 # List with versions
-vibe-dev-kit list --versions
+ai-dev-kit list --versions
 ```
 
 **Output:**
@@ -171,14 +171,14 @@ Available Frameworks:
 
 ---
 
-#### `vibe-dev-kit remove <framework>`
+#### `ai-dev-kit remove <framework>`
 
 Remove a framework dependency.
 
 **Examples:**
 ```bash
 # Remove framework
-vibe-dev-kit remove numbering-versioning
+ai-dev-kit remove numbering-versioning
 ```
 
 **Options:**
@@ -188,7 +188,7 @@ vibe-dev-kit remove numbering-versioning
 
 ## Configuration File
 
-### `.vibe-dev-kit.yaml`
+### `.ai-dev-kit.yaml`
 
 Configuration file for framework dependencies.
 
@@ -200,14 +200,14 @@ frameworks:
   numbering-versioning:
     version: "2.0.0"
     backend: "git-submodule"
-    path: "frameworks/vibe-dev-kit/packages/frameworks/numbering & versioning"
-    source: "https://github.com/earlution/vibe-dev-kit.git"
+    path: "frameworks/ai-dev-kit/packages/frameworks/numbering & versioning"
+    source: "https://github.com/earlution/ai-dev-kit.git"
     tag: "numbering-versioning-v2.0.0"
   workflow-mgt:
     version: "2.0.0"
     backend: "git-submodule"
-    path: "frameworks/vibe-dev-kit/packages/frameworks/workflow mgt"
-    source: "https://github.com/earlution/vibe-dev-kit.git"
+    path: "frameworks/ai-dev-kit/packages/frameworks/workflow mgt"
+    source: "https://github.com/earlution/ai-dev-kit.git"
     tag: "workflow-mgt-v2.0.0"
 ```
 
@@ -231,8 +231,8 @@ backend = GitSubmoduleBackend()
 backend.install(
     framework="numbering-versioning",
     version="2.0.0",
-    path="frameworks/vibe-dev-kit",
-    source="https://github.com/earlution/vibe-dev-kit.git"
+    path="frameworks/ai-dev-kit",
+    source="https://github.com/earlution/ai-dev-kit.git"
 )
 ```
 
@@ -255,8 +255,8 @@ backend.install(
 **Implementation:** `cli/backends/package_manager.py`
 
 **Supported:**
-- npm (`@vibe-dev-kit/numbering-versioning`)
-- pip (`vibe-dev-kit-numbering-versioning`)
+- npm (`@ai-dev-kit/numbering-versioning`)
+- pip (`ai-dev-kit-numbering-versioning`)
 
 **Operations:**
 - `install()` - Install via package manager
@@ -269,7 +269,7 @@ backend.install(
 ## Tool Structure
 
 ```
-vibe-dev-kit/
+ai-dev-kit/
 ├── cli/
 │   ├── __init__.py
 │   ├── main.py                 # CLI entry point
@@ -301,14 +301,14 @@ vibe-dev-kit/
 ### As Python Package
 
 ```bash
-pip install vibe-dev-kit
+pip install ai-dev-kit
 ```
 
 ### From Source
 
 ```bash
-git clone https://github.com/earlution/vibe-dev-kit.git
-cd vibe-dev-kit/cli
+git clone https://github.com/earlution/ai-dev-kit.git
+cd ai-dev-kit/cli
 pip install -e .
 ```
 
@@ -320,25 +320,25 @@ pip install -e .
 
 ```bash
 # Install all three core frameworks
-vibe-dev-kit install numbering-versioning@2.0.0 \
+ai-dev-kit install numbering-versioning@2.0.0 \
                    workflow-mgt@2.0.0 \
                    kanban@1.0.0
 
 # Check for updates
-vibe-dev-kit check
+ai-dev-kit check
 
 # Update to latest versions
-vibe-dev-kit update --all
+ai-dev-kit update --all
 ```
 
 ### Migration from Copy-Paste
 
 ```bash
 # Detect existing frameworks
-vibe-dev-kit migrate --detect
+ai-dev-kit migrate --detect
 
 # Convert to dependencies
-vibe-dev-kit migrate --convert
+ai-dev-kit migrate --convert
 ```
 
 ---
@@ -387,7 +387,7 @@ Available backends: git-submodule, git-subtree
 
 ## Decision Record
 
-**Decision:** Build `vibe-dev-kit` CLI tool for framework management.
+**Decision:** Build `ai-dev-kit` CLI tool for framework management.
 
 **Rationale:**
 - Provides unified interface for all dependency backends

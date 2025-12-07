@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Kanban Directory
 
-This directory contains **all Kanban-related documentation** for the `vibe-dev-kit` repository.
+This directory contains **all Kanban-related documentation** for the `ai-dev-kit` repository.
 
 ## Structure
 
@@ -20,7 +20,7 @@ kanban/
 └── epics/
     ├── Epic-1/            # Epic 1 directory (all files here)
     │   ├── Epic-1.md      # Epic 1 overview
-    │   ├── Story-001-vibe-dev-kit-kanban-and-versioning.md
+    │   ├── Story-001-ai-dev-kit-kanban-and-versioning.md
     │   └── [other story files as needed]
     ├── Epic-2/            # Epic 2 directory
     │   ├── Epic-2.md

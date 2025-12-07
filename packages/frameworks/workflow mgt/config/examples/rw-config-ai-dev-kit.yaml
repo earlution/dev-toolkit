@@ -1,4 +1,4 @@
-# RW Config: vibe-dev-kit (Real Example)
+# RW Config: ai-dev-kit (Real Example)
 # This is the actual config that would be used in this repo
 
 version_file: src/fynd_deals/version.py
@@ -20,4 +20,4 @@ kanban_board: _index.md
 versioning_schema: RC.EPIC.STORY.TASK+BUILD
 
 # Project name
-project_name: vibe-dev-kit
+project_name: ai-dev-kit

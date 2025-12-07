@@ -20,7 +20,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-Ensure the dev kit's own versioning policy, version file, and docs align cleanly with the generic versioning framework. This story ensures that `vibe-dev-kit` serves as the **single point of truth (SoT)** for versioning policies and strategies, which other projects can copy and adapt.
+Ensure the dev kit's own versioning policy, version file, and docs align cleanly with the generic versioning framework. This story ensures that `ai-dev-kit` serves as the **single point of truth (SoT)** for versioning policies and strategies, which other projects can copy and adapt.
 
 ---
 
@@ -201,7 +201,7 @@ Make sure the dev kit's versioning implementation demonstrates best practices an
    - Explained customization boundaries (what can be customized vs what must stay)
    - Documented update process (how to stay aligned with framework updates)
    - Added example setup workflow
-   - Clarified SoT relationship (vibe-dev-kit is canonical source)
+   - Clarified SoT relationship (ai-dev-kit is canonical source)
 
 2. ✅ Enhanced `packages/frameworks/numbering & versioning/IMPLEMENTATION_GUIDE.md`:
    - Added "CRITICAL: Copy, Don't Reference" section at top
@@ -213,10 +213,10 @@ Make sure the dev kit's versioning implementation demonstrates best practices an
    - Clarified framework as single source of truth
 
 **Key Documentation Points:**
-- ✅ **Copy, don't reference:** Projects must copy files, not link to `vibe-dev-kit`
+- ✅ **Copy, don't reference:** Projects must copy files, not link to `ai-dev-kit`
 - ✅ **Customization boundaries:** What can be customized (Epic ranges, paths) vs what must stay (schema, validation)
 - ✅ **Update process:** How to pull framework updates into projects (monitor, review, selectively adopt)
-- ✅ **SoT relationship:** `vibe-dev-kit` is the canonical source, projects adapt for their context
+- ✅ **SoT relationship:** `ai-dev-kit` is the canonical source, projects adapt for their context
 
 **Files Updated:**
 - ✅ `packages/frameworks/numbering & versioning/README.md` - Added consumption section
@@ -287,7 +287,7 @@ Make sure the dev kit's versioning implementation demonstrates best practices an
 **Coordinates With:**
 - Epic 4: Kanban Framework (for Kanban + versioning integration)
 - Epic 2: Workflow Management Framework (for RW + versioning integration)
-- Epic 1: Vibe Dev Kit Core (for dev-kit versioning decisions)
+- Epic 1: AI Dev Kit Core (for dev-kit versioning decisions)
 
 ---
 

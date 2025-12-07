@@ -36,7 +36,7 @@ This package is designed to be **fully modular** with maximum flexibility. You c
 
 ### Standalone Usage
 
-✅ **This package can be used completely independently** without requiring any other `vibe-dev-kit` packages.
+✅ **This package can be used completely independently** without requiring any other `ai-dev-kit` packages.
 
 **What you get standalone:**
 - Complete Kanban governance policy
@@ -88,7 +88,7 @@ Projects must **copy** this package into their repository, not link to it.
 - Projects need to customize file paths, KB structure, and terminology
 - Projects evolve independently and may need project-specific adaptations
 - Copying ensures projects have full control over their Kanban implementation
-- Prevents breaking changes in `vibe-dev-kit` from affecting consuming projects
+- Prevents breaking changes in `ai-dev-kit` from affecting consuming projects
 
 **What to copy:**
 1. All files in `packages/frameworks/kanban/`
@@ -1129,7 +1129,7 @@ solution:
 
 ## 🔄 Consumption Pattern for Other Projects
 
-**CRITICAL:** This framework follows a **copy, don't reference** pattern. Projects must copy the framework files into their own repository and customize them, rather than referencing or linking to `vibe-dev-kit`.
+**CRITICAL:** This framework follows a **copy, don't reference** pattern. Projects must copy the framework files into their own repository and customize them, rather than referencing or linking to `ai-dev-kit`.
 
 ### Why Copy, Don't Reference?
 
@@ -1138,7 +1138,7 @@ reasons:
   independence:
     - "Your project needs its own version of policies and templates"
     - "You can customize paths, names, and project-specific details"
-    - "You're not dependent on vibe-dev-kit repository structure"
+    - "You're not dependent on ai-dev-kit repository structure"
   
   customization:
     - "Each project has different KB structures and paths"
@@ -1182,7 +1182,7 @@ guides/portfolio-kanban-alignment-playbook.md
 **✅ CAN Customize:**
 - **File paths:** Update all path references to match your KB structure
   - Example: `KB/PM_and_Portfolio/kanban/epics/Epic-X/Epic-X.md` → `docs/projects/epics/Epic-X/Epic-X.md`
-- **Project names:** Replace "Confidentia", "vibe-dev-kit", etc. with your project name
+- **Project names:** Replace "Confidentia", "ai-dev-kit", etc. with your project name
 - **Terminology:** Adjust work item names (Epic/Story/Task vs Theme/Epic/Story)
 - **Epic ranges:** Define your own Epic numbering strategy
 - **Branch conventions:** Use your own branch naming (e.g., `epic/X-slug` vs `feature/X`)
@@ -1217,17 +1217,17 @@ guides/portfolio-kanban-alignment-playbook.md
 ```yaml
 update_workflow:
   step_1:
-    action: "Review changes in vibe-dev-kit"
+    action: "Review changes in ai-dev-kit"
     command: |
-      git clone https://github.com/earlution/vibe-dev-kit.git
-      cd vibe-dev-kit
+      git clone https://github.com/earlution/ai-dev-kit.git
+      cd ai-dev-kit
       git log --oneline packages/frameworks/kanban/
   
   step_2:
     action: "Compare with your copied policies"
     command: |
       diff -u your-project/docs/kanban/policies/kanban-governance-policy.md \
-               vibe-dev-kit/packages/frameworks/kanban/policies/kanban-governance-policy.md
+               ai-dev-kit/packages/frameworks/kanban/policies/kanban-governance-policy.md
   
   step_3:
     action: "Selectively merge relevant changes"
@@ -1255,7 +1255,7 @@ update_workflow:
 
 ### Single Source of Truth Relationship
 
-**`vibe-dev-kit` is the canonical source of truth (SoT) for:**
+**`ai-dev-kit` is the canonical source of truth (SoT) for:**
 - Kanban governance policy (all 9 operational principles)
 - Epic and Story templates (structure and requirements)
 - Integration patterns (with versioning and workflows)
@@ -1272,7 +1272,7 @@ update_workflow:
 ```markdown
 # Your Project Kanban Governance Policy
 
-**Based on:** vibe-dev-kit `packages/frameworks/kanban/policies/kanban-governance-policy.md`  
+**Based on:** ai-dev-kit `packages/frameworks/kanban/policies/kanban-governance-policy.md`  
 **Last Synced:** 2025-12-02  
 **Customizations:** 
   - Epic paths: `docs/projects/epics/` (vs `KB/PM_and_Portfolio/kanban/epics/`)
@@ -1290,11 +1290,11 @@ update_workflow:
    mkdir -p your-project/docs/kanban/{policies,templates,integration}
    
    # Copy core files
-   cp vibe-dev-kit/packages/frameworks/kanban/policies/kanban-governance-policy.md \
+   cp ai-dev-kit/packages/frameworks/kanban/policies/kanban-governance-policy.md \
       your-project/docs/kanban/policies/
-   cp vibe-dev-kit/packages/frameworks/kanban/templates/*.md \
+   cp ai-dev-kit/packages/frameworks/kanban/templates/*.md \
       your-project/docs/kanban/templates/
-   cp vibe-dev-kit/packages/frameworks/kanban/integration/*.md \
+   cp ai-dev-kit/packages/frameworks/kanban/integration/*.md \
       your-project/docs/kanban/integration/
    ```
 
@@ -1338,7 +1338,7 @@ update_workflow:
 1. **Copy framework:**
    ```bash
    mkdir -p myapp/docs/kanban/{policies,templates,integration}
-   cp -r vibe-dev-kit/packages/frameworks/kanban/* myapp/docs/kanban/
+   cp -r ai-dev-kit/packages/frameworks/kanban/* myapp/docs/kanban/
    ```
 
 2. **Customize `kanban-governance-policy.md`:**
@@ -1371,7 +1371,7 @@ update_workflow:
    ```markdown
    # MyApp Kanban Governance Policy
    
-   **Based on:** vibe-dev-kit `packages/frameworks/kanban/policies/kanban-governance-policy.md`  
+   **Based on:** ai-dev-kit `packages/frameworks/kanban/policies/kanban-governance-policy.md`  
    **Last Synced:** 2025-12-02  
    **Customizations:**
      - Paths: `docs/kanban/` (vs `KB/PM_and_Portfolio/kanban/`)
@@ -1381,10 +1381,10 @@ update_workflow:
 
 ### Key Principles
 
-1. **Copy, Don't Reference:** Always copy files into your project, never link to `vibe-dev-kit`
+1. **Copy, Don't Reference:** Always copy files into your project, never link to `ai-dev-kit`
 2. **Preserve Principles:** Keep all operational principles intact, customize only paths/names
 3. **Document Customizations:** Always document what you changed and why
-4. **Reference SoT:** Always reference `vibe-dev-kit` as the canonical source of truth
+4. **Reference SoT:** Always reference `ai-dev-kit` as the canonical source of truth
 5. **Regular Sync:** Periodically review framework updates and merge relevant changes
 
 ---

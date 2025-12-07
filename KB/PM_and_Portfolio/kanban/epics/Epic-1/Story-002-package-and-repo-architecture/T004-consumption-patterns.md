@@ -16,7 +16,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This document provides **detailed consumption patterns** for each framework package in `vibe-dev-kit`. It includes step-by-step guides for standalone usage, combined usage, and incremental adoption, with practical examples for each scenario.
+This document provides **detailed consumption patterns** for each framework package in `ai-dev-kit`. It includes step-by-step guides for standalone usage, combined usage, and incremental adoption, with practical examples for each scenario.
 
 **Key Patterns:**
 - **Standalone Usage:** Use one package independently
@@ -70,7 +70,7 @@ Do you need all three?
 1. **Copy Package Files:**
    ```bash
    # Copy Workflow Management package
-   cp -r vibe-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
+   cp -r ai-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
    ```
 
 2. **Update File Paths:**
@@ -137,7 +137,7 @@ your-project/
 1. **Copy Package Files:**
    ```bash
    # Copy Numbering & Versioning package
-   cp -r vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/* /path/to/your/project/docs/versioning/
+   cp -r ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/* /path/to/your/project/docs/versioning/
    ```
 
 2. **Customize Policy Documents:**
@@ -196,7 +196,7 @@ your-project/
 1. **Copy Package Files:**
    ```bash
    # Copy Kanban package
-   cp -r vibe-dev-kit/packages/frameworks/kanban/* /path/to/your/project/docs/kanban/
+   cp -r ai-dev-kit/packages/frameworks/kanban/* /path/to/your/project/docs/kanban/
    ```
 
 2. **Set Up Kanban Structure:**
@@ -268,10 +268,10 @@ your-project/
 1. **Copy Both Packages:**
    ```bash
    # Copy Workflow Management
-   cp -r vibe-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
+   cp -r ai-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
    
    # Copy Numbering & Versioning
-   cp -r vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/* /path/to/your/project/docs/versioning/
+   cp -r ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/* /path/to/your/project/docs/versioning/
    ```
 
 2. **Use Numbering & Versioning as Canonical:**
@@ -319,10 +319,10 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 1. **Copy Both Packages:**
    ```bash
    # Copy Kanban
-   cp -r vibe-dev-kit/packages/frameworks/kanban/* /path/to/your/project/docs/kanban/
+   cp -r ai-dev-kit/packages/frameworks/kanban/* /path/to/your/project/docs/kanban/
    
    # Copy Numbering & Versioning
-   cp -r vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/* /path/to/your/project/docs/versioning/
+   cp -r ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/* /path/to/your/project/docs/versioning/
    ```
 
 2. **Configure Version Markers:**
@@ -365,10 +365,10 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 1. **Copy Both Packages:**
    ```bash
    # Copy Kanban
-   cp -r vibe-dev-kit/packages/frameworks/kanban/* /path/to/your/project/docs/kanban/
+   cp -r ai-dev-kit/packages/frameworks/kanban/* /path/to/your/project/docs/kanban/
    
    # Copy Workflow Management
-   cp -r vibe-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
+   cp -r ai-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
    ```
 
 2. **Configure RW → Kanban Integration:**
@@ -411,9 +411,9 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 1. **Copy All Packages:**
    ```bash
    # Copy all three packages
-   cp -r vibe-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
-   cp -r vibe-dev-kit/packages/frameworks/numbering\ \&\ versioning/* /path/to/your/project/docs/versioning/
-   cp -r vibe-dev-kit/packages/frameworks/kanban/* /path/to/your/project/docs/kanban/
+   cp -r ai-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
+   cp -r ai-dev-kit/packages/frameworks/numbering\ \&\ versioning/* /path/to/your/project/docs/versioning/
+   cp -r ai-dev-kit/packages/frameworks/kanban/* /path/to/your/project/docs/kanban/
    ```
 
 2. **Configure Three-Way Integration:**

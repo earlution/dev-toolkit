@@ -13,7 +13,7 @@
 - Extract and adapt debug path templates from fynd.deals project
 - Document DRW (Debug Round Workflow) methodology
 - Create integration guides for Kanban and Workflow Management
-- Ensure package follows vibe-dev-kit modular patterns
+- Ensure package follows ai-dev-kit modular patterns
 
 ### Expected Outcomes
 - Complete Debug Path Framework package with all templates

@@ -32,7 +32,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-Epic 8 owns the **Tooling & Automation** framework for the vibe-dev-kit repository. This epic provides additional tools, validators, and automation scripts to support framework adoption and maintenance.
+Epic 8 owns the **Tooling & Automation** framework for the ai-dev-kit repository. This epic provides additional tools, validators, and automation scripts to support framework adoption and maintenance.
 
 ---
 

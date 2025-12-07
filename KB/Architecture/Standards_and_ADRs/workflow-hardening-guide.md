@@ -10,7 +10,7 @@ housekeeping_policy: keep
 
 **Audience:**  
 - Projects using AI/agent assistance for release workflows and documentation updates.  
-- Intended to be **project‑agnostic**, so you can copy this into any repo (e.g. `vibe-dev-kit`, application repos) and customize file paths and step names.
+- Intended to be **project‑agnostic**, so you can copy this into any repo (e.g. `ai-dev-kit`, application repos) and customize file paths and step names.
 
 **Goals:**  
 - Make release workflows **atomic, predictable, and low‑friction**.  
@@ -297,7 +297,7 @@ After commit/tag (and push if possible):
 
 ## 8. How to Integrate This into a New Project
 
-To use this guide in another repo (e.g. `vibe-dev-kit` or any application):
+To use this guide in another repo (e.g. `ai-dev-kit` or any application):
 
 1. **Copy this file** into the new project (e.g. `docs/WORKFLOW-HARDENING-GUIDE.md`).
 2. **Define project‑specific artifacts**:
@@ -327,5 +327,5 @@ The key to robust, agent‑driven workflows is not more complexity, but **discip
 - **Clear single sources of truth** per step.  
 - **Honest blocked states** with explicit user actions when necessary.
 
-By following this guide, you can reuse the same hardened RW pattern across multiple projects (both documentation‑heavy frameworks like `vibe-dev-kit` and application repos), while avoiding the time and resource waste that comes from repeated partial workflows and tool thrashing.
+By following this guide, you can reuse the same hardened RW pattern across multiple projects (both documentation‑heavy frameworks like `ai-dev-kit` and application repos), while avoiding the time and resource waste that comes from repeated partial workflows and tool thrashing.
 

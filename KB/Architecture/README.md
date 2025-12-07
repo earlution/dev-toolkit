@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Architecture Documentation
 
-This section contains **technical standards**, **ADRs**, and **integration documentation** for the `vibe-dev-kit`.
+This section contains **technical standards**, **ADRs**, and **integration documentation** for the `ai-dev-kit`.
 
 ## Structure
 

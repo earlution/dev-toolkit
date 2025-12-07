@@ -50,7 +50,7 @@ This release completes **Task 1: Review existing integration documentation** for
 1. **Update Path References:**
    - Create dev-kit specific examples in integration docs
    - Update framework docs with dev-kit path structure examples
-   - Tag examples as `[Example: vibe-dev-kit]`
+   - Tag examples as `[Example: ai-dev-kit]`
 
 2. **Fix Step Numbering:**
    - Update workflow-management-integration.md to reference Step 6 (not Step 4)

@@ -18,7 +18,7 @@ This release completes **Task 2: Document modularity principles and boundaries**
 ### Task 2 Completion
 
 - ✅ **Modularity Principles Document Created:**
-  - Defined what "modular" means for vibe-dev-kit
+  - Defined what "modular" means for ai-dev-kit
   - Established package boundaries for all three frameworks
   - Documented copy vs reference patterns
   - Defined dependency rules (hard vs soft/optional)

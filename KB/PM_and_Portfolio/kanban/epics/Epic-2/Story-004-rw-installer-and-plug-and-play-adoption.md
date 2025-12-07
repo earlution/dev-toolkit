@@ -209,7 +209,7 @@ Provide a **project-agnostic RW installer** and configuration model that allows:
 
 **Approach:**
 1. Analyze debug path framework from fynd.deals project  
-2. Extract and adapt templates for vibe-dev-kit  
+2. Extract and adapt templates for ai-dev-kit  
 3. Create package structure following existing framework patterns  
 4. Document DRW (Debug Round Workflow) methodology  
 5. Create integration guides for Kanban and Workflow Management  

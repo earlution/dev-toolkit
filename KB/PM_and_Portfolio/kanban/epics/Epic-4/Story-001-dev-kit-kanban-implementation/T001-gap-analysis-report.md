@@ -19,7 +19,7 @@ housekeeping_policy: keep
 
 ## Summary of Gap Analysis
 
-This document compares the `vibe-dev-kit`'s local Kanban policy (`KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`) and templates with the canonical framework policies (`packages/frameworks/kanban/policies/kanban-governance-policy.md` and templates).
+This document compares the `ai-dev-kit`'s local Kanban policy (`KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md`) and templates with the canonical framework policies (`packages/frameworks/kanban/policies/kanban-governance-policy.md` and templates).
 
 ---
 

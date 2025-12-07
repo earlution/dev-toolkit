@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Getting Started
 
-This directory contains **getting started guides** and **onboarding materials** for the `vibe-dev-kit`.
+This directory contains **getting started guides** and **onboarding materials** for the `ai-dev-kit`.
 
 ## Contents
 

@@ -336,7 +336,7 @@ VERSION_STRING = f"{VERSION_RC}.{VERSION_EPIC}.{VERSION_STORY}.{VERSION_TASK}+{V
 
 **Examples:**
 - fynd.deals: `src/fynd_deals/version.py`
-- vibe-dev-kit: `src/fynd_deals/version.py` (currently - should be `src/vibe_dev_kit/version.py`)
+- ai-dev-kit: `src/fynd_deals/version.py` (currently - should be `src/vibe_dev_kit/version.py`)
 
 **Note:** Dev-kit currently uses `src/fynd_deals/version.py` which is a legacy path from when it was copied. Should be updated to `src/vibe_dev_kit/version.py` or similar.
 

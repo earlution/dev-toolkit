@@ -1,7 +1,7 @@
 """
-Vibe Dev Kit Version File
+AI Dev Kit Version File
 
-This file defines the version for the vibe-dev-kit repository using the RC.EPIC.STORY.TASK+BUILD schema.
+This file defines the version for the ai-dev-kit repository using the RC.EPIC.STORY.TASK+BUILD schema.
 
 Schema: RC.EPIC.STORY.TASK+BUILD
 - RC: Release Candidate (0 = development, 1+ = release candidate)
@@ -18,7 +18,7 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 """
 
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
-VERSION_EPIC = 1      # Epic number (Epic 1: Vibe Dev Kit Core)
+VERSION_EPIC = 1      # Epic number (Epic 1: AI Dev Kit Core)
 VERSION_STORY = 4     # Story number (Story 4: Repository Branding and Renaming)
 VERSION_TASK = 0      # Task number (Story creation - planning tasks defined)
 VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)

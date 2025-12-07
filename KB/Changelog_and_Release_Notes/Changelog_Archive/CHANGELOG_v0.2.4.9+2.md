@@ -9,7 +9,7 @@
 
 ## Summary
 
-Comprehensive README rewrite based on Best-README-Template, transforming the project's main README from a threadbare document into a complete, accessible, and guiding introduction to Vibe Dev Kit.
+Comprehensive README rewrite based on Best-README-Template, transforming the project's main README from a threadbare document into a complete, accessible, and guiding introduction to AI Dev Kit.
 
 ---
 
@@ -17,7 +17,7 @@ Comprehensive README rewrite based on Best-README-Template, transforming the pro
 
 ### Documentation
 - ✅ **Complete README Rewrite** – Transformed main README from ~319 lines to 456 lines with comprehensive structure
-- ✅ **Project Introduction** – Clear explanation of what Vibe Dev Kit is and why it exists
+- ✅ **Project Introduction** – Clear explanation of what AI Dev Kit is and why it exists
 - ✅ **Problem Statement** – Detailed explanation of problems solved (no standard workflows, incomplete solutions, documentation gaps, versioning chaos, knowledge loss)
 - ✅ **Target Audience** – Clear identification of who this is for (solo developers, small teams, non-technical founders, junior engineers)
 - ✅ **Value Proposition** – Six key benefits clearly articulated
@@ -64,7 +64,7 @@ Comprehensive README rewrite based on Best-README-Template, transforming the pro
 - Inadequate for prospective users
 
 **After:**
-- Comprehensive introduction explaining what Vibe Dev Kit is
+- Comprehensive introduction explaining what AI Dev Kit is
 - Clear problem statement and solutions
 - Target audience clearly identified
 - Step-by-step getting started guide

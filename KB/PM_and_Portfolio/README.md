@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # PM and Portfolio
 
-This section contains **project management** and **portfolio** documentation for the `vibe-dev-kit` repository.
+This section contains **project management** and **portfolio** documentation for the `ai-dev-kit` repository.
 
 ## Structure
 

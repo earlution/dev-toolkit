@@ -35,7 +35,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-Epic 5 owns the **Documentation Management and Maintenance** framework for the vibe-dev-kit repository. This epic ensures that all documentation remains accurate, up-to-date, and consistent across the entire project.
+Epic 5 owns the **Documentation Management and Maintenance** framework for the ai-dev-kit repository. This epic ensures that all documentation remains accurate, up-to-date, and consistent across the entire project.
 
 ---
 

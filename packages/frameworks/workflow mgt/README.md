@@ -55,7 +55,7 @@ This package is designed to be **fully modular** with maximum flexibility. You c
 
 ### Standalone Usage
 
-✅ **This package can be used completely independently** without requiring any other `vibe-dev-kit` packages.
+✅ **This package can be used completely independently** without requiring any other `ai-dev-kit` packages.
 
 **What you get standalone:**
 - Complete Release Workflow (RW) trigger and execution methodology
@@ -108,7 +108,7 @@ Projects must **copy** this package into their repository, not link to it.
 - Projects need to customize file paths, project names, and terminology
 - Projects evolve independently and may need project-specific adaptations
 - Copying ensures projects have full control over their workflow implementation
-- Prevents breaking changes in `vibe-dev-kit` from affecting consuming projects
+- Prevents breaking changes in `ai-dev-kit` from affecting consuming projects
 
 **What to copy:**
 1. All files in `packages/frameworks/workflow mgt/`
@@ -150,7 +150,7 @@ See `KB/PM_and_Portfolio/kanban/epics/Epic-1/Story-002-package-and-repo-architec
 
 ```bash
 # 1. Copy workflow package to your project
-cp -r /path/to/vibe-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
+cp -r /path/to/ai-dev-kit/packages/frameworks/workflow\ mgt/* /path/to/your/project/
 
 # 2. Run installer (interactive)
 cd /path/to/your/project

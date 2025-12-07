@@ -210,7 +210,7 @@ The system includes automation scripts (`automation/dpf/`) for:
 
 ---
 
-## 💡 Potential Value for vibe-dev-kit
+## 💡 Potential Value for ai-dev-kit
 
 ### 1. Lightweight Debugging Workflow Package
 
@@ -395,7 +395,7 @@ steps:
 1. **Create package structure:**
    - `packages/frameworks/debug-path/`
    - Copy templates from `fynd.deals/debug_paths/templates/`
-   - Adapt for vibe-dev-kit (remove project-specific references)
+   - Adapt for ai-dev-kit (remove project-specific references)
 
 2. **Create documentation:**
    - `README.md` — Package overview

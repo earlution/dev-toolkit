@@ -19,7 +19,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-This guide explains how to install Vibe Dev Kit frameworks as dependencies in your project. Frameworks can be installed using three methods: Git submodules (Phase 1), the `vibe-dev-kit` CLI tool (Phase 2), or package managers like npm/pip (Phase 3).
+This guide explains how to install ai-dev-kit frameworks as dependencies in your project. Frameworks can be installed using three methods: Git submodules (Phase 1), the `ai-dev-kit` CLI tool (Phase 2), or package managers like npm/pip (Phase 3).
 
 **What you get:** Frameworks installed as dependencies can be automatically updated when improvements are made, with notifications about available updates. This replaces the previous copy-paste approach.
 
@@ -98,7 +98,7 @@ git remote -v
 
 ### Method 1: Git Submodules (Phase 1 - Available Now)
 
-Git submodules allow you to include the vibe-dev-kit repository (or specific frameworks) as a subdirectory in your project, with version control via Git tags.
+Git submodules allow you to include the ai-dev-kit repository (or specific frameworks) as a subdirectory in your project, with version control via Git tags.
 
 #### Installation Steps
 
@@ -115,21 +115,21 @@ git init  # Only if needed
 git status
 ```
 
-**2. Add the vibe-dev-kit repository as a submodule:**
+**2. Add the ai-dev-kit repository as a submodule:**
 
 ```bash
-# Add the entire vibe-dev-kit repository as a submodule
-git submodule add https://github.com/earlution/vibe-dev-kit.git .vibe-dev-kit
+# Add the entire ai-dev-kit repository as a submodule
+git submodule add https://github.com/earlution/ai-dev-kit.git .ai-dev-kit
 
 # Or add to a specific directory
-git submodule add https://github.com/earlution/vibe-dev-kit.git frameworks/vibe-dev-kit
+git submodule add https://github.com/earlution/ai-dev-kit.git frameworks/ai-dev-kit
 ```
 
 **3. Checkout a specific framework version (recommended):**
 
 ```bash
 # Navigate to the submodule
-cd .vibe-dev-kit
+cd .ai-dev-kit
 
 # List available framework tags
 git tag | grep framework
@@ -145,18 +145,18 @@ cd ..
 
 ```bash
 # Copy the workflow management framework
-cp -r .vibe-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
+cp -r .ai-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
 
 # Or copy multiple frameworks
-cp -r .vibe-dev-kit/packages/frameworks/kanban/ ./frameworks/kanban
-cp -r ".vibe-dev-kit/packages/frameworks/numbering & versioning" ./frameworks/numbering-versioning
+cp -r .ai-dev-kit/packages/frameworks/kanban/ ./frameworks/kanban
+cp -r ".ai-dev-kit/packages/frameworks/numbering & versioning" ./frameworks/numbering-versioning
 ```
 
 **5. Commit the submodule reference:**
 
 ```bash
-git add .gitmodules .vibe-dev-kit frameworks/
-git commit -m "Add vibe-dev-kit frameworks as Git submodule"
+git add .gitmodules .ai-dev-kit frameworks/
+git commit -m "Add ai-dev-kit frameworks as Git submodule"
 ```
 
 #### Updating Frameworks (Git Submodules)
@@ -165,7 +165,7 @@ git commit -m "Add vibe-dev-kit frameworks as Git submodule"
 
 ```bash
 # Navigate to submodule
-cd .vibe-dev-kit
+cd .ai-dev-kit
 
 # Fetch latest changes
 git fetch origin
@@ -180,7 +180,7 @@ git checkout workflow-mgmt-v2.1.0
 cd ..
 
 # Copy updated framework
-cp -r .vibe-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
+cp -r .ai-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
 
 # Commit update
 git add frameworks/
@@ -195,14 +195,14 @@ Create `scripts/update-frameworks.sh`:
 #!/bin/bash
 # Update all frameworks from Git submodule
 
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git fetch origin
 git checkout workflow-mgmt-v2.1.0  # Update to desired version
 cd ..
 
 # Copy updated frameworks
-cp -r .vibe-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
-cp -r .vibe-dev-kit/packages/frameworks/kanban/ ./frameworks/kanban
+cp -r .ai-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
+cp -r .ai-dev-kit/packages/frameworks/kanban/ ./frameworks/kanban
 
 echo "Frameworks updated. Review changes and commit."
 ```
@@ -212,19 +212,19 @@ echo "Frameworks updated. Review changes and commit."
 - **Version control:** Pin frameworks to specific Git tags
 - **No external dependencies:** Works with Git only
 - **Explicit updates:** You control when to update
-- **Full access:** Access to entire vibe-dev-kit repository
+- **Full access:** Access to entire ai-dev-kit repository
 
 #### Limitations of Git Submodules
 
 - **Manual updates:** Requires manual copying after submodule update
 - **Git knowledge:** Requires understanding of Git submodules
-- **Repository size:** Includes entire vibe-dev-kit repository
+- **Repository size:** Includes entire ai-dev-kit repository
 
 ---
 
 ### Method 2: CLI Tool (Phase 2 - Coming Soon)
 
-The `vibe-dev-kit` CLI tool provides a unified interface for installing and managing frameworks across all dependency backends.
+The `ai-dev-kit` CLI tool provides a unified interface for installing and managing frameworks across all dependency backends.
 
 #### Installation Steps
 
@@ -242,22 +242,22 @@ git init  # Only if not already a Git repository
 
 ```bash
 # Install via pip
-pip install vibe-dev-kit
+pip install ai-dev-kit
 
 # Or install from source
-git clone https://github.com/earlution/vibe-dev-kit.git
-cd vibe-dev-kit
+git clone https://github.com/earlution/ai-dev-kit.git
+cd ai-dev-kit
 pip install -e .
 ```
 
-**3. Initialize vibe-dev-kit in your project:**
+**3. Initialize ai-dev-kit in your project:**
 
 ```bash
 cd /path/to/your/project
-vibe-dev-kit init
+ai-dev-kit init
 ```
 
-This creates a `.vibe-dev-kit.yaml` configuration file:
+This creates a `.ai-dev-kit.yaml` configuration file:
 
 ```yaml
 project_root: .
@@ -270,19 +270,19 @@ auto_update: false
 
 ```bash
 # Install workflow management framework
-vibe-dev-kit install workflow-mgmt
+ai-dev-kit install workflow-mgmt
 
 # Install specific version
-vibe-dev-kit install workflow-mgmt@2.0.0
+ai-dev-kit install workflow-mgmt@2.0.0
 
 # Install multiple frameworks
-vibe-dev-kit install workflow-mgmt kanban numbering-versioning
+ai-dev-kit install workflow-mgmt kanban numbering-versioning
 ```
 
 **5. Check installed frameworks:**
 
 ```bash
-vibe-dev-kit status
+ai-dev-kit status
 ```
 
 Output:
@@ -298,7 +298,7 @@ Installed Frameworks:
 **Check for updates:**
 
 ```bash
-vibe-dev-kit check
+ai-dev-kit check
 ```
 
 Output:
@@ -312,13 +312,13 @@ Available Updates:
 
 ```bash
 # Update specific framework
-vibe-dev-kit update workflow-mgmt
+ai-dev-kit update workflow-mgmt
 
 # Update all frameworks
-vibe-dev-kit update --all
+ai-dev-kit update --all
 
 # Update to specific version
-vibe-dev-kit update workflow-mgmt@2.1.0
+ai-dev-kit update workflow-mgmt@2.1.0
 ```
 
 **Automatic update notifications:**
@@ -327,11 +327,11 @@ The CLI tool can be configured to check for updates and notify you:
 
 ```bash
 # Enable automatic update checks
-vibe-dev-kit config set auto_check true
-vibe-dev-kit config set check_interval daily
+ai-dev-kit config set auto_check true
+ai-dev-kit config set check_interval daily
 
 # Run update check (can be added to CI/CD)
-vibe-dev-kit check --notify
+ai-dev-kit check --notify
 ```
 
 #### Advantages of CLI Tool
@@ -363,13 +363,13 @@ git init  # Only if not already a Git repository
 
 ```bash
 # Install workflow management framework
-npm install @vibe-dev-kit/workflow-mgmt
+npm install @ai-dev-kit/workflow-mgmt
 
 # Install specific version
-npm install @vibe-dev-kit/workflow-mgmt@2.0.0
+npm install @ai-dev-kit/workflow-mgmt@2.0.0
 
 # Install multiple frameworks
-npm install @vibe-dev-kit/workflow-mgmt @vibe-dev-kit/kanban
+npm install @ai-dev-kit/workflow-mgmt @ai-dev-kit/kanban
 ```
 
 #### Installation Steps (pip - Future)
@@ -388,13 +388,13 @@ git init  # Only if not already a Git repository
 
 ```bash
 # Install workflow management framework
-pip install vibe-dev-kit-workflow-mgmt
+pip install ai-dev-kit-workflow-mgmt
 
 # Install specific version
-pip install vibe-dev-kit-workflow-mgmt==2.0.0
+pip install ai-dev-kit-workflow-mgmt==2.0.0
 
 # Install multiple frameworks
-pip install vibe-dev-kit-workflow-mgmt vibe-dev-kit-kanban
+pip install ai-dev-kit-workflow-mgmt ai-dev-kit-kanban
 ```
 
 **Note:** While package managers (npm/pip) don't strictly require Git, having a Git repository is still recommended for:
@@ -412,10 +412,10 @@ pip install vibe-dev-kit-workflow-mgmt vibe-dev-kit-kanban
 npm outdated
 
 # Update to latest compatible version
-npm update @vibe-dev-kit/workflow-mgmt
+npm update @ai-dev-kit/workflow-mgmt
 
 # Update to specific version
-npm install @vibe-dev-kit/workflow-mgmt@2.1.0
+npm install @ai-dev-kit/workflow-mgmt@2.1.0
 ```
 
 **pip:**
@@ -425,10 +425,10 @@ npm install @vibe-dev-kit/workflow-mgmt@2.1.0
 pip list --outdated
 
 # Update to latest version
-pip install --upgrade vibe-dev-kit-workflow-mgmt
+pip install --upgrade ai-dev-kit-workflow-mgmt
 
 # Update to specific version
-pip install --upgrade vibe-dev-kit-workflow-mgmt==2.1.0
+pip install --upgrade ai-dev-kit-workflow-mgmt==2.1.0
 ```
 
 #### Advantages of Package Managers
@@ -569,11 +569,11 @@ git commit -m "Initial commit"
 
 **Solution:**
 ```bash
-cd .vibe-dev-kit
+cd .ai-dev-kit
 git fetch origin
 git checkout <tag-name>
 cd ..
-git add .vibe-dev-kit
+git add .ai-dev-kit
 git commit -m "Update submodule"
 ```
 
@@ -584,10 +584,10 @@ git commit -m "Update submodule"
 **Solution:**
 ```bash
 # Manually copy framework from submodule
-cp -r .vibe-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
+cp -r .ai-dev-kit/packages/frameworks/workflow\ mgt/ ./frameworks/workflow-mgmt
 
 # Or use CLI tool
-vibe-dev-kit install workflow-mgmt --force
+ai-dev-kit install workflow-mgmt --force
 ```
 
 ### Issue: Path errors in framework scripts
@@ -612,7 +612,7 @@ vim frameworks/workflow-mgmt/rw-config.yaml
 rm -rf frameworks/workflow-mgmt
 
 # Install correct version
-vibe-dev-kit install workflow-mgmt@2.0.0
+ai-dev-kit install workflow-mgmt@2.0.0
 ```
 
 ---

@@ -10,7 +10,7 @@ housekeeping_policy: keep
 
 **Portable Package:** This directory contains the Debug Path Framework (DPF) and Debug Round Workflow (DRW) for structured debugging of test failures, regressions, and production bugs.
 
-**Source:** Originally developed for fynd.deals project, refined and adapted for vibe-dev-kit.  
+**Source:** Originally developed for fynd.deals project, refined and adapted for ai-dev-kit.  
 **Last Updated:** 2025-12-04  
 **Version:** 1.0.0
 
@@ -22,7 +22,7 @@ This package is designed to be **fully modular** with maximum independence. It c
 
 ### Standalone Usage
 
-✅ **This package can be used completely independently** without requiring any other `vibe-dev-kit` packages.
+✅ **This package can be used completely independently** without requiring any other `ai-dev-kit` packages.
 
 **What you get standalone:**
 - Complete Debug Round Workflow (DRW) methodology
@@ -178,7 +178,7 @@ Projects must **copy** this package into their repository, not link to it.
 - Projects need to customize templates and workflows
 - Projects evolve independently and may need project-specific adaptations
 - Copying ensures projects have full control over their debugging process
-- Prevents breaking changes in `vibe-dev-kit` from affecting consuming projects
+- Prevents breaking changes in `ai-dev-kit` from affecting consuming projects
 
 **What to copy:**
 1. All files in `packages/frameworks/debug-path/`

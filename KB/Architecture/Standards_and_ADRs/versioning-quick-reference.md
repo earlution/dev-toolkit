@@ -9,7 +9,7 @@ housekeeping_policy: keep
 # Versioning Quick Reference
 
 **Status:** Active  
-**Owner:** Vibe Dev Kit / Book Project Lead  
+**Owner:** AI Dev Kit / Book Project Lead  
 **Last Updated:** 2025-12-04  
 **Related Work:** Epic 3, Story 2, Task 5 (E3:S02:T05)
 

@@ -430,7 +430,7 @@ VERSION_BUILD = 1  # ← Always 1 for new Tasks
 
 **Step 3: Search for Epic**
 - Check existing Epics: 1-4
-  - Epic 1: Vibe Dev Kit Core
+  - Epic 1: AI Dev Kit Core
   - Epic 2: Workflow Management Framework
   - Epic 3: Numbering & Versioning Framework
   - Epic 4: Kanban Framework
@@ -570,7 +570,7 @@ VERSION_BUILD = 1  # ← Always 1 for new Tasks
 - This FR requires work across multiple Epics:
   - Backend OAuth implementation (Epic 2: Workflow Management or new Epic)
   - Frontend OAuth UI (Epic 3: Numbering & Versioning or UI Epic)
-  - OAuth documentation (Epic 1: Vibe Dev Kit Core)
+  - OAuth documentation (Epic 1: AI Dev Kit Core)
 
 **Step 3: Create Multiple Tasks**
 

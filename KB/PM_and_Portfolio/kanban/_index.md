@@ -6,7 +6,7 @@ expires_at: null
 housekeeping_policy: keep
 ---
 
-# Vibe Dev Kit – Kanban Board (Quick View)
+# AI Dev Kit – Kanban Board (Quick View)
 
 **Last Updated:** 2025-12-06  
 **Version:** v0.5.2.2+1
@@ -30,7 +30,7 @@ Quick reference board for all Kanban work. For detailed views, see [`kanban-boar
 
 | Epic | Title                              | Status         | Stories | Progress |
 |------|------------------------------------|----------------|---------|----------|
-| 1    | Vibe Dev Kit Core                 | COMPLETE ✅     | 3       | 3/3      |
+| 1    | AI Dev Kit Core                 | COMPLETE ✅     | 3       | 3/3      |
 | 2    | Workflow Management Framework      | COMPLETE ✅     | 4       | 4/4      |
 | 3    | Numbering & Versioning Framework   | COMPLETE ✅     | 3       | 3/3      |
 | 4    | Kanban Framework                   | COMPLETE ✅     | 4       | 4/4      |

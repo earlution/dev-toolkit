@@ -310,7 +310,7 @@ VERSION_STRING = "0.9.21.3+1"
 ### Dev-Kit Policy
 
 **Project-Specific:**
-- References "Vibe Dev Kit" ✅
+- References "AI Dev Kit" ✅
 - Uses Epic 1-4 examples ✅
 - No legacy handling (clean start) ✅
 - References dev-kit Kanban structure ✅

@@ -83,7 +83,7 @@ Created comprehensive installation guide for Epic 6 framework dependency archite
 This release creates the first comprehensive user documentation for Epic 6's framework dependency architecture. The installation guide is designed to be:
 - **Simple and accessible** - Clear step-by-step instructions
 - **Technically accurate** - No obfuscation of technical details
-- **Testable** - User can follow to set up a new project using vibe-dev-kit as template
+- **Testable** - User can follow to set up a new project using ai-dev-kit as template
 
 **Next Steps:**
 - Create usage guide
@@ -98,7 +98,7 @@ This release creates the first comprehensive user documentation for Epic 6's fra
 ## Testing
 
 This documentation should be tested by:
-1. Setting up a new project using vibe-dev-kit as a template
+1. Setting up a new project using ai-dev-kit as a template
 2. Following the installation guide step-by-step
 3. Verifying all commands work as documented
 4. Identifying any gaps or unclear instructions

@@ -20,13 +20,13 @@ housekeeping_policy: keep
 
 ## Overview
 
-Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. This story ensures that `vibe-dev-kit` serves as the **single point of truth (SoT)** for Kanban policies, templates, and governance, which other projects (like `fynd.deals`) can copy and adapt.
+Fully align the dev-kit Kanban board, stories, and governance policy with the Kanban framework package. This story ensures that `ai-dev-kit` serves as the **single point of truth (SoT)** for Kanban policies, templates, and governance, which other projects (like `fynd.deals`) can copy and adapt.
 
 ---
 
 ## Goal
 
-Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, templates, and governance. Ensure that findings from real-world implementations (e.g., `fynd.deals` Epic 15) are captured and refined into reusable framework components.
+Establish `ai-dev-kit` as the canonical source for Kanban framework policies, templates, and governance. Ensure that findings from real-world implementations (e.g., `fynd.deals` Epic 15) are captured and refined into reusable framework components.
 
 ---
 
@@ -229,12 +229,12 @@ Establish `vibe-dev-kit` as the canonical source for Kanban framework policies, 
 3. ✅ Provided clear guidance on customization boundaries and update process
 
 **Key Documentation:**
-- **Copy, Don't Reference:** Projects must copy files, not link to `vibe-dev-kit`
+- **Copy, Don't Reference:** Projects must copy files, not link to `ai-dev-kit`
 - **Customization Boundaries:** 
   - ✅ CAN customize: File paths, project names, terminology, Epic ranges, branch conventions, board structure
   - ❌ MUST NOT customize: Operational principles, forensic marker format, Story Checklist as SoT, governance rules, version schema structure
 - **Update Process:** Step-by-step workflow for syncing with framework updates
-- **SoT Relationship:** `vibe-dev-kit` is canonical source, projects are adaptations
+- **SoT Relationship:** `ai-dev-kit` is canonical source, projects are adaptations
 
 **Files Updated:**
 - ✅ `packages/frameworks/kanban/README.md` (added comprehensive consumption pattern section)

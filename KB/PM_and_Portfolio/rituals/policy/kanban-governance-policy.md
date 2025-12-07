@@ -6,20 +6,20 @@ expires_at: null
 housekeeping_policy: keep
 ---
 
-# Vibe Dev Kit – Kanban Governance Policy
+# AI Dev Kit – Kanban Governance Policy
 
-**Owner:** Vibe Dev Kit / Book Project Lead  
+**Owner:** AI Dev Kit / Book Project Lead  
 **Last Updated:** 2025-12-02  
-**Applies To:** All work tracked in the `vibe-dev-kit` repo  
+**Applies To:** All work tracked in the `ai-dev-kit` repo  
 **Based On:** `packages/frameworks/kanban/policies/kanban-governance-policy.md` (project-agnostic framework - **CANONICAL SOURCE OF TRUTH**)
 
 ---
 
 ## 1. Purpose
 
-This policy defines **how the Vibe Dev Kit repo runs Kanban** for:
+This policy defines **how the AI Dev Kit repo runs Kanban** for:
 
-- Work on the **Vibe Dev Kit** frameworks themselves (workflow mgt, numbering & versioning, kanban, etc.)
+- Work on the **AI Dev Kit** frameworks themselves (workflow mgt, numbering & versioning, kanban, etc.)
 - Work on the **Vibe Coding For Dummies** book project that lives in this repo
 
 This policy adopts the **full versioning schema and strategy** from the Numbering & Versioning package:
@@ -99,13 +99,13 @@ Stories are the **primary unit of planning** in this repo.
 - **ID:** `XXX` (numeric string, e.g. `001`, `002`)
 - **Directory:** Each Story lives in its Epic's directory, allowing for associated files (diagrams, notes, etc.) in Story subdirectories
 - **Examples:**
-  - `KB/PM_and_Portfolio/kanban/epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md`
+  - `KB/PM_and_Portfolio/kanban/epics/Epic-1/Story-001-ai-dev-kit-kanban-and-versioning.md`
 
 **Each Story file should include:**
 
 - Status (`TODO` / `In Progress` / `Done`)
 - Owner
-- Repo (usually `vibe-dev-kit`)
+- Repo (usually `ai-dev-kit`)
 - A brief overview of the goal
 - A task checklist
 
@@ -218,7 +218,7 @@ This repo adopts the **RC.EPIC.STORY.TASK+BUILD** schema from the Numbering & Ve
 - Over time, each Task in Kanban will map to the `TASK` component of the version.
 - Feature Requests and Bug Reports feed into Tasks, which then feed into versions (via Release Workflow) and documentation (via Kanban + RW integration).
 
-Story 001 (“Set Up Kanban and Versioning for Vibe Dev Kit”) owns the work of:
+Story 001 (“Set Up Kanban and Versioning for AI Dev Kit”) owns the work of:
 
 - Defining the dev-kit epic/story/task ranges.
 - Documenting the mapping between Kanban items and version components.
@@ -228,7 +228,7 @@ Story 001 (“Set Up Kanban and Versioning for Vibe Dev Kit”) owns the work of
 
 ## 7. Next Steps
 
-1. Finish **Story 001 – Set Up Kanban and Versioning for Vibe Dev Kit**:
+1. Finish **Story 001 – Set Up Kanban and Versioning for AI Dev Kit**:
    - Decide on a dev-kit versioning schema.
    - Document it under `KB/Architecture/Standards_and_ADRs/`.
    - Update this policy to align with that schema.

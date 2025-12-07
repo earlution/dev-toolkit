@@ -17,7 +17,7 @@ housekeeping_policy: keep
 
 ## Executive Summary
 
-This document defines the **canonical, scalable KB structure pattern** that supports projects ranging from small framework repositories (like `vibe-dev-kit`) to large codebases with 100K+ lines of code. The pattern maintains a **3-level default depth** while providing a comprehensive "menu" of sections that projects can adopt based on their needs.
+This document defines the **canonical, scalable KB structure pattern** that supports projects ranging from small framework repositories (like `ai-dev-kit`) to large codebases with 100K+ lines of code. The pattern maintains a **3-level default depth** while providing a comprehensive "menu" of sections that projects can adopt based on their needs.
 
 **Key Principles:**
 - **Core sections:** Always present (Architecture, PM & Portfolio, Changelog, Guides)
@@ -154,7 +154,7 @@ These sections are **added as needed** for larger, more complex projects:
 
 ## 2. Dev-Kit Instantiation (Minimal Subset)
 
-The `vibe-dev-kit` repository uses a **minimal subset** of the canonical pattern:
+The `ai-dev-kit` repository uses a **minimal subset** of the canonical pattern:
 
 ### 2.1 Current Structure
 

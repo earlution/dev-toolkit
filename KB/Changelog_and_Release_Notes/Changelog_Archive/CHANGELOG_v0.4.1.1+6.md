@@ -35,7 +35,7 @@ This release completes **Task 5: Document consumption pattern for other projects
 
 **Copy, Don't Reference Pattern:**
 - Projects MUST copy files into their own repository
-- Projects must NOT link or reference `vibe-dev-kit` files
+- Projects must NOT link or reference `ai-dev-kit` files
 - Each project owns its Kanban implementation
 
 **Customization Boundaries:**
@@ -48,7 +48,7 @@ This release completes **Task 5: Document consumption pattern for other projects
 - Manual merge process with preservation of customizations
 
 **SoT Relationship:**
-- `vibe-dev-kit` is canonical source of truth
+- `ai-dev-kit` is canonical source of truth
 - Project implementations are adaptations
 - Documentation pattern for referencing framework
 

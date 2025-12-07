@@ -91,7 +91,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 
 **Approach:**
 1. ✅ Tagged all Confidentia/fynd.deals examples with `[Example: Confidentia]` or `[Example: Confidentia/fynd.deals]` labels
-2. ✅ Added dev-kit-specific examples with `[Example: vibe-dev-kit]` labels throughout the document
+2. ✅ Added dev-kit-specific examples with `[Example: ai-dev-kit]` labels throughout the document
 3. ✅ Added overview note explaining example tagging system
 4. ✅ Ensured examples are clearly distinguished in all 11 steps
 
@@ -132,7 +132,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 5. ✅ Added dev-kit file path examples
 6. ✅ Added dev-kit epic ranges information
 7. ✅ Added canonical ordering, forensic traceability, and immutability principles
-8. ✅ Added "For vibe-dev-kit Usage" section with dev-kit-specific paths
+8. ✅ Added "For ai-dev-kit Usage" section with dev-kit-specific paths
 9. ✅ Enhanced changelog format notes with immutability requirements
 
 **Key Changes:**
@@ -145,7 +145,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - **Key Principles:** Added canonical ordering, forensic traceability, and immutability principles
 - **Changelog Steps:** Enhanced with immutability notes (detailed changelog timestamps are immutable)
 - **Reference Documentation:** Added Kanban governance policy reference
-- **Customization Section:** Added "For vibe-dev-kit Usage" subsection with dev-kit-specific paths and policy references
+- **Customization Section:** Added "For ai-dev-kit Usage" subsection with dev-kit-specific paths and policy references
 
 **Files Updated:**
 - ✅ `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md` (aligned with dev-kit policy)

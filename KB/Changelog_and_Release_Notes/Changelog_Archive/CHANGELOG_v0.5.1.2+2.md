@@ -10,7 +10,7 @@
 
 ## Summary
 
-Created comprehensive documentation maintenance policy establishing ownership model, maintenance principles, update triggers, review cadences, quality standards, and enforcement procedures. This policy provides the foundation for systematic documentation maintenance across the vibe-dev-kit repository.
+Created comprehensive documentation maintenance policy establishing ownership model, maintenance principles, update triggers, review cadences, quality standards, and enforcement procedures. This policy provides the foundation for systematic documentation maintenance across the ai-dev-kit repository.
 
 ---
 

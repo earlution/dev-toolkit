@@ -19,7 +19,7 @@ housekeeping_policy: keep
 
 ## Overview
 
-This guide explains how to use Vibe Dev Kit frameworks after installation. It covers configuration, basic usage, integration with your project, and best practices for managing framework dependencies.
+This guide explains how to use AI Dev Kit frameworks after installation. It covers configuration, basic usage, integration with your project, and best practices for managing framework dependencies.
 
 **Prerequisites:** You should have completed the [Installation Guide](framework-dependency-installation-guide.md) and have at least one framework installed.
 
@@ -386,7 +386,7 @@ cat frameworks/kanban/README.md | grep -A 5 "compatibility"
 
 Each framework has configuration files that control behavior:
 
-#### `.vibe-dev-kit.yaml` (if using CLI tool)
+#### `.ai-dev-kit.yaml` (if using CLI tool)
 
 ```yaml
 version: "1.0.0"
@@ -396,7 +396,7 @@ frameworks:
     version: "2.0.0"
     backend: "git-submodule"
     path: "frameworks/workflow-mgmt"
-    source: "https://github.com/earlution/vibe-dev-kit.git"
+    source: "https://github.com/earlution/ai-dev-kit.git"
     tag: "workflow-mgmt-v2.0.0"
 ```
 
@@ -454,7 +454,7 @@ export VIBE_DEV_KIT_AUTO_UPDATE=false
 1. **Test updates before applying:**
    ```bash
    # Check for updates
-   vibe-dev-kit check
+   ai-dev-kit check
    
    # Review changelog
    # Test in development branch
@@ -463,7 +463,7 @@ export VIBE_DEV_KIT_AUTO_UPDATE=false
 
 2. **Pin versions for stability:**
    ```yaml
-   # In .vibe-dev-kit.yaml
+   # In .ai-dev-kit.yaml
    frameworks:
      workflow-mgmt:
        version: "2.0.0"  # Pin to specific version
