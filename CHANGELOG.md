@@ -17,6 +17,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.5.1+1] - 07-12-25
+
+📋 Planning: PIR workflow structure and requirements
+
+### Added
+- **PIR Workflow Planning Document:** Comprehensive planning document with workflow structure, integration points, and all key design decisions
+- **Workflow Design:** 21-step workflow across 5 phases (ANALYZE, DETERMINATE, EXECUTE, VALIDATE, PROCEED)
+- **Story Significance Criteria:** Defined criteria for when Story-level PIR is triggered
+- **Integration Points:** Value-add assessment for Kanban, versioning, RW, and KB integration
+
+### Changed
+- **Story 5 Document:** Updated with T01 completion status
+- **Epic 2 Document:** Updated to reflect Story 5 planning completion
+
+**Details:** [CHANGELOG_v0.2.5.1+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.5.1+1.md)
+
+---
+
 ## [0.6.4.2+1] - 07-12-25
 
 📚 Documentation: Canonical stories for Kanban framework

@@ -29,7 +29,7 @@ housekeeping_policy: keep
   - Story: [`Story-003-framework-health-monitoring.md`](Story-003-framework-health-monitoring.md)
 - [ ] **E6:S04 – Bug Reports** - IN PROGRESS
   - Story: [`Story-004-bug-reports.md`](Story-004-bug-reports.md)
-  - Tasks: T01 ✅
+  - Tasks: T01 ✅, T02 ✅
 - [ ] **E6:S05 – Feature Requests** - TODO
   - Story: [`Story-005-feature-requests.md`](Story-005-feature-requests.md)
 

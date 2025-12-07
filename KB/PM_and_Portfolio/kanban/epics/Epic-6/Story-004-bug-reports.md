@@ -81,6 +81,49 @@ The RW installer script (`install_release_workflow.py`) was looking for the `cur
 
 ---
 
+### E6:S04:T02 – Document canonical stories for Kanban framework
+
+**Input:** Bug Reports and Feature Requests stories created in Epic 6  
+**Deliverable:** Canonical stories documentation for Kanban framework  
+**Dependencies:** E6:S04:T01, E6:S05 (Feature Requests story)  
+**Blocker:** None
+
+**Status:** ✅ COMPLETE
+
+**Problem Statement:**
+No centralized documentation existed for reusable story patterns in the Kanban framework. Projects adopting the framework had no reference for common organizational patterns like Bug Reports and Feature Requests stories.
+
+**Solution:**
+Created `CANONICAL_STORIES.md` document in the Kanban framework templates directory that:
+- Documents Bug Reports and Feature Requests as canonical story patterns
+- Provides usage instructions for adopting these patterns
+- Includes template references and example locations
+- Establishes process for adding new canonical stories
+
+**Changes Made:**
+- `packages/frameworks/kanban/templates/CANONICAL_STORIES.md`:
+  - Created new document listing canonical story patterns
+  - Documented Bug Reports pattern (purpose, characteristics, template references, example location)
+  - Documented Feature Requests pattern (purpose, characteristics, template references, example location)
+  - Added usage instructions and guidelines for adding new patterns
+- `packages/frameworks/kanban/README.md`:
+  - Added `CANONICAL_STORIES.md` to Package Contents section (templates)
+  - Added `CANONICAL_STORIES.md` to Documentation section with description
+
+**Verification:**
+- ✅ Canonical stories document created with Bug Reports and Feature Requests patterns
+- ✅ Document includes usage instructions and guidelines
+- ✅ README updated to reference canonical stories document
+- ✅ Document follows framework documentation standards
+- ✅ Template references point to existing FR/BR templates
+
+**Impact:**
+- **Before:** Projects had to discover and implement common story patterns independently
+- **After:** Projects can reference canonical story patterns and adapt them to their needs
+- **User Impact:** Improves framework adoption by providing reusable patterns
+
+---
+
 ## Dependencies
 
 **Blocks:**

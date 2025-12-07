@@ -8,12 +8,11 @@ housekeeping_policy: keep
 
 # Epic 2: Workflow Management Framework
 
-**Status:** COMPLETE ✅  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Completed:** 2025-12-05  
-**Last updated:** 2025-12-05 (v0.2.1.5+2 – Story 1 build 2: Framework KB version history tracking)  
+**Last updated:** 2025-12-07 (v0.2.5.1+1 – Story 5, T01 complete: PIR workflow planning completed)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -29,6 +28,8 @@ housekeeping_policy: keep
 - [x] **E2:S03 – Additional Workflows & Examples** - COMPLETE ✅ (v0.2.3.6+1 – All tasks complete)  
 - [x] **E2:S04 – RW Installer & Plug-and-Play Adoption** - COMPLETE ✅ (v0.2.4.9+3 – All tasks complete including E2:S04:T09 build 3: Task naming format standardization)  
   - Story: [`Story-004-rw-installer-and-plug-and-play-adoption.md`](Story-004-rw-installer-and-plug-and-play-adoption.md)  
+- [ ] **E2:S05 – Post-Implementation Review (PIR) Workflow** - TODO
+  - Story: [`Story-005-post-implementation-review-workflow.md`](Story-005-post-implementation-review-workflow.md)
 
 ---
 
@@ -55,6 +56,11 @@ It defines how Release Workflow (RW) and other workflows are:
 
 3. **Clarify RW-as-template behaviour**  
    - Document how RW should be customised when imported into a new project.
+
+4. **Create Post-Implementation Review (PIR) workflow**  
+   - Enable systematic review of completed Epics and Stories
+   - Capture lessons learned and identify improvements
+   - Support both Epic-level and Story-level reviews
 
 ---
 
