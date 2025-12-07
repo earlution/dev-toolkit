@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-07 (v0.5.4.5+2 – Complete Epic 6 framework dependency documentation suite created)  
-**Version:** v0.5.4.5+2  
+**Last updated:** 2025-12-07 (v0.5.4.5+3 – Enhanced installation guide with Git repository setup prerequisites)  
+**Version:** v0.5.4.5+3  
 **Code:** E05S04
 
 ---

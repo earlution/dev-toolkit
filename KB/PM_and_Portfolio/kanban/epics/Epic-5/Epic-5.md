@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-06 (v0.5.2.2+1 – Documentation review workflows implemented)  
+**Last updated:** 2025-12-07 (v0.5.4.5+3 – Enhanced installation guide with Git repository setup prerequisites)  
 **Branch:** `epic/5-documentation-management`  
 **Version Schema:** `0.5.S.T+B`  
 **Production URL:** [N/A for this repo]
