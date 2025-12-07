@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-07 (v0.5.4.7+1 – Template setup guides created)  
+**Last updated:** 2025-12-07 (v0.5.5.1+1 – Legacy repository incorporation analysis and story created, T01 complete)  
 **Branch:** `epic/5-documentation-management`  
 **Version Schema:** `0.5.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -28,8 +28,12 @@ housekeeping_policy: keep
   - Tasks: T01 ✅, T02 ✅, T03 TODO
 - [ ] **E5:S03 – Documentation Automation** - TODO
   - Story: [`Story-003-documentation-automation.md`](Story-003-documentation-automation.md)
-- [ ] **E5:S04 – Framework Documentation Management** - TODO
+- [ ] **E5:S04 – Framework Documentation Management** - IN PROGRESS
   - Story: [`Story-004-framework-documentation-management.md`](Story-004-framework-documentation-management.md)
+  - Tasks: T01 TODO, T02 TODO, T03 TODO, T04 TODO, T05 ✅, T06 TODO, T07 ✅
+- [ ] **E5:S05 – Legacy Repository Incorporation** - IN PROGRESS
+  - Story: [`Story-005-legacy-repository-incorporation.md`](Story-005-legacy-repository-incorporation.md)
+  - Tasks: T01 ✅, T02-T25 TODO (25 tasks across 4 phases)
 
 ---
 
