@@ -49,6 +49,34 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.1.4.1+2] - 07-12-25
+
+🏗️ Core Infrastructure: Repository rename from vibe-dev-kit to ai-dev-kit completed
+
+### Changed
+- **Repository Name:** All references updated from `vibe-dev-kit` to `ai-dev-kit`
+- **Branding:** All "Vibe Dev Kit" references updated to "AI Dev Kit"
+- **GitHub Repository:** New repository created at `https://github.com/earlution/ai-dev-kit`
+- **Configuration Files:** Renamed `rw-config-vibe-dev-kit.yaml` → `rw-config-ai-dev-kit.yaml`
+- **CLI Tool Name:** Updated from `vibe-dev-kit` to `ai-dev-kit` throughout documentation
+
+### Added
+- **Remote Repository:** All branches and tags pushed to new `ai-dev-kit` repository
+- **Repository Alignment:** Repository name now aligns with "Head First AI-Assisted Development" book branding
+
+### Technical Details
+- **Files Modified:** 101 files updated across codebase
+- **Branches Pushed:** All 10 branches (main + 9 epic branches) pushed to new remote
+- **Tags Pushed:** All 100+ version tags pushed to new remote
+- **Migration:** No migration needed - remote repository was deleted, allowing clean rename
+
+### Impact
+- **Zero Breaking Changes:** No existing users affected (remote repo was deleted)
+- **Clean Start:** New repository created with correct branding from day one
+- **Phase 1 Complete:** Ready for Phase 2 rename to `head-first-ai-dev-kit` if O'Reilly accepts book
+
+---
+
 ## [0.1.4.0+1] - 07-12-25
 
 🏗️ Core Infrastructure: Repository branding and renaming planning story created
