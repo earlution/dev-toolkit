@@ -46,6 +46,44 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.5.4.5+4] - 07-12-25
+
+📚 Documentation Management: Comprehensive use cases guide and documentation enhancements
+
+### Added
+- **Use Cases Guide:** Complete use case documentation (`framework-dependency-use-cases.md`):
+  - All 4 primary use cases documented (Template → All/Some, Existing → All/Some)
+  - 8 additional use cases documented (Reference Only, Monorepo, Gradual Adoption, Fork & Customize, Non-GitHub Git, Local Only, CI/CD Only, Educational)
+  - Use case selection matrix with quick reference table
+  - Implementation guidance for each use case
+  - Version updates section explaining how all use cases benefit from updates
+- **Installation Guide Enhancements:**
+  - New "Use Cases" section before installation methods
+  - All 4 primary use cases summarized with links to detailed guide
+  - Template usage instructions enhanced
+- **FAQ Enhancements:**
+  - New "Use Case Questions" section
+  - Questions covering all 12 use cases
+  - Guidance on choosing the right use case
+  - Specific questions for additional use cases (5-12)
+- **Template Setup Task:**
+  - E05:S04:T07 task created for setting up ai-dev-kit as GitHub template
+  - Task definition includes template enablement, documentation, and testing
+
+### Changed
+- **Installation Guide:** Now includes use case guidance before installation methods
+- **FAQ:** Expanded with comprehensive use case coverage
+- **README:** Added link to Use Cases Guide in installation section
+- **Documentation Structure:** Better navigation between use cases, installation, and FAQ
+
+### Technical Details
+- **Use Cases Documented:** 12 total (4 primary + 8 additional)
+- **Documentation Files:** 1 new guide, 3 updated guides, 1 updated README
+- **Coverage:** All adoption patterns now documented with implementation guidance
+- **Integration:** Use cases guide cross-referenced throughout documentation
+
+---
+
 ## [0.5.1.5+1] - 07-12-25
 
 📚 Documentation Management: KB platform/tooling evaluation task added

@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-07 (v0.5.4.5+3 – Enhanced installation guide with Git repository setup prerequisites)  
+**Last updated:** 2025-12-07 (v0.5.4.5+3 – Template usage instructions added, T07 task created)  
 **Version:** v0.5.4.5+3  
 **Code:** E05S04
 
@@ -26,6 +26,7 @@ housekeeping_policy: keep
 - [ ] **E05:S04:T04 – Establish framework documentation update triggers** - TODO
 - [x] **E05:S04:T05 – Create comprehensive user documentation for Epic 6 framework dependency architecture** - COMPLETE ✅
 - [ ] **E05:S04:T06 – Create quick-start guide for framework dependency installation** - TODO
+- [ ] **E05:S04:T07 – Set up ai-dev-kit repository as GitHub template** - TODO
 
 ---
 
@@ -276,6 +277,71 @@ The comprehensive installation guide (E05:S04:T05) covers the full setup process
 - E05:S04:T05 (Comprehensive Installation Guide) - Source material and prerequisite
 - Epic 6 (Framework Management) - Framework dependency architecture
 - E05:S04:T01-T04 (Framework Documentation Management) - Part of framework documentation suite
+
+---
+
+### E05:S04:T07 – Set up ai-dev-kit repository as GitHub template
+
+**Input:** Current repository structure, GitHub repository settings  
+**Deliverable:** Repository configured as GitHub template with documentation  
+**Dependencies:** None  
+**Blocker:** None
+
+**Problem Statement:**
+Users should be able to create new projects using `ai-dev-kit` as a template, providing them with a complete starting structure including KB organization, framework directories, configuration files, and example workflows. This makes onboarding significantly easier, especially for book readers who may be less technical.
+
+**Approach:**
+
+1. **Enable Template Repository:**
+   - Navigate to GitHub repository settings
+   - Enable "Template repository" option
+   - Add template description and topics
+   - Configure template-specific settings
+
+2. **Create Template Documentation:**
+   - Add template usage instructions to installation guide (completed in T05 update)
+   - Create template-specific README section (if needed)
+   - Document what's included in template
+   - Document post-template setup steps
+
+3. **Template Structure Verification:**
+   - Verify all essential files are included
+   - Ensure no sensitive information in template
+   - Check that template structure is complete
+   - Validate that template works correctly
+
+4. **Template Metadata:**
+   - Add template description to repository
+   - Add relevant topics/tags
+   - Create template-specific documentation
+   - Add template badge/indicator if applicable
+
+5. **Testing:**
+   - Test creating repository from template
+   - Verify all files are included correctly
+   - Test post-template setup instructions
+   - Validate that frameworks can be installed after template creation
+
+**Deliverables:**
+- Repository configured as GitHub template
+- Template description and metadata added
+- Template usage documented in installation guide (completed)
+- Template-specific README section (if needed)
+- Post-template setup guide
+- Template verification checklist
+
+**Success Criteria:**
+- Repository is enabled as template on GitHub
+- Users can create new repositories from template
+- Template includes all essential structure
+- Template usage is documented
+- Post-template setup instructions are clear
+- Template works correctly for new projects
+
+**Related Work:**
+- E05:S04:T05 - Installation guide (template usage instructions added)
+- Epic 1: Story 4 - Repository Branding and Renaming (repository setup)
+- Epic 7 - Examples and Adoption (template adoption examples)
 
 ---
 

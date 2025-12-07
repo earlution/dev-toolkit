@@ -62,6 +62,150 @@ You can use them standalone or together.
 
 ---
 
+## Use Case Questions
+
+### What are the different ways I can use ai-dev-kit frameworks?
+
+There are 12 primary use cases for adopting ai-dev-kit frameworks:
+
+**Primary Use Cases:**
+1. **Template → All Packages:** New project from template with all frameworks
+2. **Template → Some Packages:** New project from template with selected frameworks
+3. **Existing Project → All Packages:** Install all frameworks into existing project
+4. **Existing Project → Some Packages:** Install selected frameworks into existing project
+
+**Additional Use Cases:**
+5. **Reference/Learning Only:** Use documentation and examples without installing
+6. **Monorepo/Multi-Project:** Single installation shared across multiple projects
+7. **Gradual/Migratory Adoption:** Start with one framework, add more over time
+8. **Fork and Customize:** Fork repository for heavy customization
+9. **Non-GitHub Git Repositories:** Use with GitLab, Bitbucket, or self-hosted Git
+10. **Local-Only Projects:** Use frameworks in local Git repository only
+11. **CI/CD Only Usage:** Use frameworks in build/CI processes only
+12. **Educational/Training Context:** Use for teaching, workshops, or training
+
+See the [Use Cases Guide](framework-dependency-use-cases.md) for detailed information about each use case.
+
+### Which use case should I choose?
+
+**If you're starting a new project:**
+- Use **Template → All Packages** (Use Case 1) if you want everything
+- Use **Template → Some Packages** (Use Case 2) if you want selective adoption
+
+**If you have an existing project:**
+- Use **Existing Project → All Packages** (Use Case 3) if you want all frameworks
+- Use **Existing Project → Some Packages** (Use Case 4) if you want selective adoption
+
+**If you're just learning:**
+- Use **Reference/Learning Only** (Use Case 5) to study without installing
+
+**If you're managing multiple projects:**
+- Use **Monorepo/Multi-Project** (Use Case 6) for centralized management
+
+See the [Use Cases Guide](framework-dependency-use-cases.md) for a selection matrix and detailed guidance.
+
+### Can I use frameworks with non-GitHub repositories?
+
+Yes. **Use Case 9: Non-GitHub Git Repositories** covers this scenario.
+
+**Supported:**
+- GitLab repositories
+- Bitbucket repositories
+- Self-hosted Git servers
+- Any Git-compatible repository
+
+**Limitations:**
+- Template feature may not be available (depends on your Git host)
+- Manual setup required
+- May need to adapt instructions for your Git host
+
+**Implementation:**
+- Use Git submodules (works with any Git host)
+- Follow installation guide, adapting for your Git host
+- Framework updates still work via Git tags
+
+See [Use Cases Guide - Non-GitHub Git Repositories](framework-dependency-use-cases.md#use-case-9-non-github-git-repositories) for details.
+
+### Can I use frameworks in a local-only project (no remote repository)?
+
+Yes. **Use Case 10: Local-Only Projects** covers this scenario.
+
+**Benefits:**
+- No remote repository required
+- Local-only development
+- Full framework functionality
+- Privacy and security
+
+**Limitations:**
+- No remote backup
+- No collaboration features
+- Manual update process
+- No CI/CD integration
+
+**Implementation:**
+- Initialize local Git repository
+- Install frameworks using Git submodules
+- Work locally
+- Manual updates as needed
+
+See [Use Cases Guide - Local-Only Projects](framework-dependency-use-cases.md#use-case-10-local-only-projects) for details.
+
+### Can I use frameworks in a monorepo with multiple projects?
+
+Yes. **Use Case 6: Monorepo/Multi-Project Setup** covers this scenario.
+
+**Benefits:**
+- Single installation point
+- Centralized framework management
+- Version consistency across projects
+- Shared KB structure (optional)
+
+**Implementation:**
+- Install frameworks at monorepo root
+- Projects reference shared frameworks
+- Centralized update management
+- All projects benefit from updates
+
+See [Use Cases Guide - Monorepo Setup](framework-dependency-use-cases.md#use-case-6-monorepomulti-project-setup) for details.
+
+### Can I start with one framework and add more later?
+
+Yes. **Use Case 7: Gradual/Migratory Adoption** covers this scenario.
+
+**Benefits:**
+- Low-risk adoption
+- Test before committing
+- Gradual workflow improvement
+- Hybrid approach during transition
+
+**Implementation:**
+- Start with one framework (e.g., Kanban)
+- Test and validate
+- Add more frameworks incrementally
+- Migrate from copy-paste as needed
+
+See [Use Cases Guide - Gradual Adoption](framework-dependency-use-cases.md#use-case-7-gradualmigratory-adoption) for details.
+
+### Can I use frameworks for learning without installing?
+
+Yes. **Use Case 5: Reference/Learning Only** covers this scenario.
+
+**Benefits:**
+- No dependency management overhead
+- Study patterns without commitment
+- Copy specific components as needed
+- Educational and research purposes
+
+**Implementation:**
+- Browse documentation and examples
+- Copy templates or code snippets manually
+- Study patterns and best practices
+- No installation required
+
+See [Use Cases Guide - Reference Only](framework-dependency-use-cases.md#use-case-5-referencelearning-only) for details.
+
+---
+
 ## Installation Questions
 
 ### How do I install frameworks in a new project?

@@ -92,6 +92,89 @@ git status
 git remote -v
 ```
 
+**Alternative: Use ai-dev-kit as a GitHub Template**
+
+Instead of creating a repository from scratch, you can use `ai-dev-kit` as a template:
+
+**1. Create Repository from Template:**
+
+- Go to [https://github.com/earlution/ai-dev-kit](https://github.com/earlution/ai-dev-kit)
+- Click the **"Use this template"** button (if template is enabled)
+- Select **"Create a new repository"**
+- Choose your repository name and settings
+- Click **"Create repository"**
+
+**2. Clone Your New Repository:**
+
+```bash
+# Clone your new repository (replace with your username and repo name)
+git clone https://github.com/yourusername/your-project.git
+cd your-project
+```
+
+**3. Post-Template Setup:**
+
+After creating from template, you'll have:
+- ✅ Complete `KB/` structure
+- ✅ Framework directories (`packages/frameworks/`)
+- ✅ Configuration files
+- ✅ Example workflows and templates
+
+**Next Steps:**
+- Update `README.md` with your project information
+- Review and customize `KB/` structure for your needs
+- Install additional frameworks using the methods below
+- Configure Release Workflow (RW) for your project
+
+**Note:** If the template option is not available, you can still manually clone and set up:
+
+```bash
+# Clone ai-dev-kit
+git clone https://github.com/earlution/ai-dev-kit.git your-project
+cd your-project
+
+# Remove the original remote and set up your own
+git remote remove origin
+git remote add origin https://github.com/yourusername/your-project.git
+
+# Push to your repository
+git push -u origin main
+```
+
+---
+
+## Use Cases
+
+Before installing, identify which use case matches your needs:
+
+### Use Case 1: Template → All Packages
+**New project from template with all frameworks included**
+- Create repository from ai-dev-kit template
+- All frameworks pre-installed
+- Complete KB structure included
+- See [Use Cases Guide](framework-dependency-use-cases.md#use-case-1-template--all-packages) for details
+
+### Use Case 2: Template → Some Packages
+**New project from template with selected frameworks**
+- Create repository from ai-dev-kit template
+- Remove unused frameworks
+- Keep only what you need
+- See [Use Cases Guide](framework-dependency-use-cases.md#use-case-2-template--some-packages) for details
+
+### Use Case 3: Existing Project → All Packages
+**Install all frameworks into existing project**
+- Add all frameworks to your existing repository
+- Integrate with current structure
+- See [Use Cases Guide](framework-dependency-use-cases.md#use-case-3-existing-project--all-packages) for details
+
+### Use Case 4: Existing Project → Some Packages
+**Install selected frameworks into existing project**
+- Add only the frameworks you need
+- Incremental adoption
+- See [Use Cases Guide](framework-dependency-use-cases.md#use-case-4-existing-project--some-packages) for details
+
+**📖 For complete use case details and additional scenarios, see the [Use Cases Guide](framework-dependency-use-cases.md)**
+
 ---
 
 ## Installation Methods

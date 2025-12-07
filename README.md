@@ -119,6 +119,8 @@ pip install ai-dev-kit-workflow-mgmt ai-dev-kit-kanban
 
 **📖 For detailed installation instructions, see the [Framework Dependency Installation Guide](KB/Documentation/User_Docs/framework-dependency-installation-guide.md)**
 
+**📋 Not sure which approach to use? See the [Use Cases Guide](KB/Documentation/User_Docs/framework-dependency-use-cases.md)**
+
 ---
 
 ## Usage
