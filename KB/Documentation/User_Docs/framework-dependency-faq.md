@@ -679,7 +679,10 @@ Yes. Contributions are welcome:
 
 ## References
 
+- [Use Cases Guide](framework-dependency-use-cases.md) - Comprehensive use case overview
 - [Installation Guide](framework-dependency-installation-guide.md)
+- [Post-Template Setup Guide](framework-dependency-post-template-setup-guide.md) - Setup steps after creating from template
+- [Template Enablement Instructions](framework-dependency-template-enablement-instructions.md) - How to enable repository as template
 - [Usage Guide](framework-dependency-usage-guide.md)
 - [Update Guide](framework-dependency-update-guide.md)
 - [Integration Guide](framework-dependency-integration-guide.md)

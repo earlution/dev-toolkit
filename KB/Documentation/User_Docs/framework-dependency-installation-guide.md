@@ -121,9 +121,9 @@ After creating from template, you'll have:
 - ✅ Example workflows and templates
 
 **Next Steps:**
+- Follow the [Post-Template Setup Guide](framework-dependency-post-template-setup-guide.md) for detailed customization steps
 - Update `README.md` with your project information
 - Review and customize `KB/` structure for your needs
-- Install additional frameworks using the methods below
 - Configure Release Workflow (RW) for your project
 
 **Note:** If the template option is not available, you can still manually clone and set up:

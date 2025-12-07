@@ -45,11 +45,12 @@ This document provides a comprehensive overview of all use cases for adopting ai
 **Implementation:**
 1. Create repository from ai-dev-kit template
 2. All frameworks included automatically
-3. Customize for your project needs
+3. Follow [Post-Template Setup Guide](framework-dependency-post-template-setup-guide.md) to customize
 4. Receive updates for all frameworks via version numbers
 
 **Documentation:**
 - See [Installation Guide - Template Usage](framework-dependency-installation-guide.md#alternative-use-ai-dev-kit-as-a-github-template)
+- See [Post-Template Setup Guide](framework-dependency-post-template-setup-guide.md) - Essential customization steps
 
 ---
 

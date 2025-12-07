@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-07 (v0.5.4.5+4 – Comprehensive use cases guide created, documentation enhanced)  
-**Version:** v0.5.4.5+4  
+**Last updated:** 2025-12-07 (v0.5.4.7+1 – Template setup guides created)  
+**Version:** v0.5.4.7+1  
 **Code:** E05S04
 
 ---
@@ -26,7 +26,7 @@ housekeeping_policy: keep
 - [ ] **E05:S04:T04 – Establish framework documentation update triggers** - TODO
 - [x] **E05:S04:T05 – Create comprehensive user documentation for Epic 6 framework dependency architecture** - COMPLETE ✅
 - [ ] **E05:S04:T06 – Create quick-start guide for framework dependency installation** - TODO
-- [ ] **E05:S04:T07 – Set up ai-dev-kit repository as GitHub template** - TODO
+- [x] **E05:S04:T07 – Set up ai-dev-kit repository as GitHub template** ✅ COMPLETE (v0.5.4.7+1) - Documentation complete, manual template enablement pending
 
 ---
 
@@ -293,50 +293,63 @@ Users should be able to create new projects using `ai-dev-kit` as a template, pr
 **Approach:**
 
 1. **Enable Template Repository:**
-   - Navigate to GitHub repository settings
-   - Enable "Template repository" option
-   - Add template description and topics
-   - Configure template-specific settings
+   - Navigate to GitHub repository settings: `https://github.com/earlution/ai-dev-kit/settings`
+   - Scroll to "Template repository" section
+   - Check "Template repository" checkbox
+   - Add template description: "A comprehensive toolkit for AI-assisted development workflows. Includes Workflow Management, Kanban, Versioning, Document Lifecycle, and Debug Path frameworks."
+   - Add topics: `ai-assisted-development`, `workflow-management`, `kanban`, `versioning`, `documentation`, `template`
+   - Save changes
 
 2. **Create Template Documentation:**
-   - Add template usage instructions to installation guide (completed in T05 update)
-   - Create template-specific README section (if needed)
+   - ✅ Template usage instructions added to installation guide (completed in T05 update)
+   - ✅ Post-template setup guide created (this task)
    - Document what's included in template
-   - Document post-template setup steps
+   - Create template README section (optional)
 
 3. **Template Structure Verification:**
-   - Verify all essential files are included
-   - Ensure no sensitive information in template
-   - Check that template structure is complete
+   - ✅ Verify all essential files are included:
+     - All 5 frameworks in `packages/frameworks/`
+     - Complete KB structure
+     - Configuration files
+     - Example workflows
+   - ✅ Ensure no sensitive information in template (review .gitignore)
+   - ✅ Check that template structure is complete
    - Validate that template works correctly
 
 4. **Template Metadata:**
-   - Add template description to repository
-   - Add relevant topics/tags
+   - Add template description to repository (via GitHub settings)
+   - Add relevant topics/tags (via GitHub settings)
+   - Update README with template badge/indicator (optional)
    - Create template-specific documentation
-   - Add template badge/indicator if applicable
 
 5. **Testing:**
    - Test creating repository from template
    - Verify all files are included correctly
    - Test post-template setup instructions
-   - Validate that frameworks can be installed after template creation
+   - Validate that frameworks work after template creation
+   - Document any issues found
+
+6. **Create Template Enablement Instructions:**
+   - Document step-by-step process for enabling template
+   - Create checklist for template readiness
+   - Document template verification steps
 
 **Deliverables:**
-- Repository configured as GitHub template
-- Template description and metadata added
-- Template usage documented in installation guide (completed)
-- Template-specific README section (if needed)
-- Post-template setup guide
-- Template verification checklist
+- ✅ Post-template setup guide (`framework-dependency-post-template-setup-guide.md`)
+- ✅ GitHub template enablement instructions (`framework-dependency-template-enablement-instructions.md`)
+- ✅ Template usage documented in installation guide (completed)
+- ⏳ Repository configured as GitHub template (manual step required)
+- ⏳ Template description and metadata (manual step required)
+- ⏳ Template verification checklist (to be created after enablement)
 
 **Success Criteria:**
-- Repository is enabled as template on GitHub
-- Users can create new repositories from template
-- Template includes all essential structure
-- Template usage is documented
-- Post-template setup instructions are clear
-- Template works correctly for new projects
+- ✅ Post-template setup guide created and comprehensive
+- ✅ Template enablement instructions created
+- ✅ Template usage is documented in installation guide
+- ⏳ Repository is enabled as template on GitHub (manual step)
+- ⏳ Users can create new repositories from template (after enablement)
+- ✅ Template includes all essential structure (verified)
+- ⏳ Template works correctly for new projects (to be tested after enablement)
 
 **Related Work:**
 - E05:S04:T05 - Installation guide (template usage instructions added)

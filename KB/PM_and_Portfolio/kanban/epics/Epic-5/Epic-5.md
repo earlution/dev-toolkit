@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-07 (v0.5.4.5+4 – Comprehensive use cases guide created)  
+**Last updated:** 2025-12-07 (v0.5.4.7+1 – Template setup guides created)  
 **Branch:** `epic/5-documentation-management`  
 **Version Schema:** `0.5.S.T+B`  
 **Production URL:** [N/A for this repo]

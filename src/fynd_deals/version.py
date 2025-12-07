@@ -20,8 +20,8 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
 VERSION_EPIC = 5      # Epic number (Epic 5: Documentation Management and Maintenance)
 VERSION_STORY = 4     # Story number (Story 4: Framework Documentation Management)
-VERSION_TASK = 5      # Task number (Task 5: Comprehensive user documentation - use cases guide added)
-VERSION_BUILD = 4     # Build number (increments per release within task, bumped by RW)
+VERSION_TASK = 7      # Task number (Task 7: Set up ai-dev-kit repository as GitHub template - documentation created)
+VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
 # Format: RC.EPIC.STORY.TASK+BUILD

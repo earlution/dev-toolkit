@@ -17,6 +17,49 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.5.4.7+1] - 07-12-25
+
+📚 Documentation: Template setup guides created for GitHub template enablement
+
+### Added
+- **Post-Template Setup Guide** (`framework-dependency-post-template-setup-guide.md`):
+  - Comprehensive 8-step setup process after creating repository from template
+  - Project name and branding customization
+  - Version file configuration
+  - Changelog initialization/reset
+  - Kanban board customization
+  - Configuration file updates
+  - Framework installation verification
+  - Release Workflow (RW) testing
+  - Post-setup verification checklist
+  - Common issues and solutions
+  - Template-specific files reference
+- **Template Enablement Instructions** (`framework-dependency-template-enablement-instructions.md`):
+  - Step-by-step GitHub template enablement process
+  - Template description and topics recommendations
+  - Template readiness checklist
+  - What users get from template
+  - Post-enablement tasks
+  - Troubleshooting section
+
+### Changed
+- **Installation Guide** (`framework-dependency-installation-guide.md`):
+  - Added link to post-template setup guide in template usage section
+- **Use Cases Guide** (`framework-dependency-use-cases.md`):
+  - Added link to post-template setup guide for Use Case 1 (Template → All Packages)
+- **FAQ** (`framework-dependency-faq.md`):
+  - Added both new template guides to references section
+- **Story 4 Documentation** (`Epic-5/Story-004-framework-documentation-management.md`):
+  - Updated T07 deliverables with completed documentation items
+  - Updated success criteria to reflect documentation completion
+
+### Documentation
+- Template setup documentation complete for E05:S04:T07
+- Manual template enablement step documented (GitHub settings)
+- Cross-references updated across all user documentation
+
+---
+
 ## [0.1.4.1+3] - 07-12-25
 
 📝 Documentation: Comprehensive README created based on Best-README-Template
