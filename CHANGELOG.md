@@ -17,6 +17,23 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.6.4.1+1] - 07-12-25
+
+🐛 Bug Fix: RW installer template path bug fixed
+
+### Fixed
+- **RW Installer:** Fixed incorrect path to `cursorrules-rw-trigger-section.md` template file
+- **Path Resolution:** Added `FRAMEWORK_ROOT` variable to correctly resolve framework directory paths
+- **User Impact:** Installer now works correctly without manual workarounds
+
+### Added
+- **Bug Reports Story:** Created Story 4 in Epic 6 to track framework-related bug reports
+- **Feature Requests Story:** Created Story 5 in Epic 6 to track framework-related feature requests
+
+**Details:** [CHANGELOG_v0.6.4.1+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.4.1+1.md)
+
+---
+
 ## [0.5.4.8+1] - 07-12-25
 
 📚 Documentation: `.cursorrules` setup for RW trigger

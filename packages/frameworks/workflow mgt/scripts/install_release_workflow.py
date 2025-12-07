@@ -31,9 +31,10 @@ except ImportError:
 # Template paths (relative to this script)
 SCRIPT_DIR = Path(__file__).parent
 PACKAGE_ROOT = SCRIPT_DIR.parent.parent
+FRAMEWORK_ROOT = SCRIPT_DIR.parent  # workflow mgt directory
 TEMPLATES_DIR = PACKAGE_ROOT / "templates"
-CURSORRULES_TEMPLATE = PACKAGE_ROOT / "cursorrules-rw-trigger-section.md"
-SCHEMA_DOC = PACKAGE_ROOT / "config" / "rw-config-schema.md"
+CURSORRULES_TEMPLATE = FRAMEWORK_ROOT / "cursorrules-rw-trigger-section.md"
+SCHEMA_DOC = FRAMEWORK_ROOT / "config" / "rw-config-schema.md"
 
 
 def load_template(template_path: Path) -> str:

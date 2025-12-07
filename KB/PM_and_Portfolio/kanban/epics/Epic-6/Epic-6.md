@@ -8,11 +8,11 @@ housekeeping_policy: keep
 
 # Epic 6: Framework Management and Maintenance
 
-**Status:** COMPLETE ✅  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-06 (v0.6.1.1+2 – Framework dependency architecture designed and documented)  
+**Last updated:** 2025-12-07 (v0.6.4.1+1 – Bug Reports and Feature Requests stories created, T01 complete)  
 **Branch:** `epic/6-framework-management`  
 **Version Schema:** `0.6.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -27,6 +27,11 @@ housekeeping_policy: keep
   - Story: [`Story-002-framework-update-and-migration.md`](Story-002-framework-update-and-migration.md)
 - [x] **E6:S03 – Framework Health Monitoring** - COMPLETE ✅
   - Story: [`Story-003-framework-health-monitoring.md`](Story-003-framework-health-monitoring.md)
+- [ ] **E6:S04 – Bug Reports** - IN PROGRESS
+  - Story: [`Story-004-bug-reports.md`](Story-004-bug-reports.md)
+  - Tasks: T01 ✅
+- [ ] **E6:S05 – Feature Requests** - TODO
+  - Story: [`Story-005-feature-requests.md`](Story-005-feature-requests.md)
 
 ---
 

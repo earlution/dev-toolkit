@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-05  
+**Last updated:** 2025-12-07 (v0.6.2.1+1 – Bug fix task moved to Story 4)  
 **Version:** v0.6.2.1+1  
 **Code:** E6S02
 
