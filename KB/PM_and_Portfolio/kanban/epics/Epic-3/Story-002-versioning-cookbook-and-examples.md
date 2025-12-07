@@ -8,12 +8,12 @@ housekeeping_policy: keep
 
 # Story 002 – Versioning Cookbook & Examples
 
-**Status:** COMPLETE  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-03  
-**Last updated:** 2025-12-04 (v0.3.2.5+3 – E3:S02:T05 complete: RW hardened with automated version bump validation)  
-**Version:** v0.3.2.5+3  
+**Last updated:** 2025-12-07 (v0.3.2.7+1 – T07 complete: Dual-versioning package manager documentation created)  
+**Version:** v0.3.2.7+1  
 **Code:** E3S02
 
 ---
@@ -26,6 +26,7 @@ housekeeping_policy: keep
 - [x] **E3:S02:T04 – Document edge cases and anti-patterns** ✅ COMPLETE (v0.3.2.4+1)
 - [x] **E3:S02:T05 – Create quick reference summary for users and agents** ✅ COMPLETE (v0.3.2.5+1)
 - [x] **E3:S02:T06 – Investigate and harden changelog ordering process** ✅ COMPLETE (v0.3.2.6+1)
+- [x] **E3:S02:T07 – Create dual-versioning guide for package manager compatibility** ✅ COMPLETE (v0.3.2.7+1)
 
 ---
 
@@ -245,6 +246,71 @@ Provide a **versioning cookbook** with worked examples that shows:
 - [x] Validation added to RW Step 8 ✅
 - [x] Documentation updated with ordering requirements ✅
 - [x] Prevention measures implemented ✅
+
+---
+
+### E3:S02:T07 – Create dual-versioning guide for package manager compatibility
+
+**Input:**  
+- User requirement: Projects using `RC.EPIC.STORY.TASK+BUILD` schema need SemVer (`MAJOR.MINOR.PATCH`) for package managers (npm, pub.dev, PyPI, etc.)
+- Issue identified: `been-there` project agent created sync script, indicating need for canonical guidance
+- Framework documentation: `packages/frameworks/numbering & versioning/IMPLEMENTATION_GUIDE.md`
+
+**Deliverable:**  
+- `KB/Architecture/Standards_and_ADRs/dual-versioning-package-managers.md` - Comprehensive guide for managing dual versioning
+- Updated `IMPLEMENTATION_GUIDE.md` with package manager compatibility warning
+- Updated framework README with dual-versioning reference
+
+**Approach:**
+1. **Document the Problem:**
+   - Explain incompatibility between `RC.EPIC.STORY.TASK+BUILD` and SemVer requirements
+   - Provide examples of package manager requirements (npm, pub.dev, PyPI, Maven)
+   - Show real-world scenario (been-there project)
+
+2. **Define Mapping Strategies:**
+   - Strategy 1: Direct Mapping (MAJOR=RC, MINOR=EPIC, PATCH=STORY*100+TASK)
+   - Strategy 2: Compact Mapping (includes BUILD in PATCH)
+   - Strategy 3: Independent SemVer (for public releases)
+   - Strategy 4: BUILD-Preserving Mapping (Recommended) - `MINOR = EPIC * 100 + STORY`, `PATCH = TASK * 100 + BUILD`
+   - Strategy 5: Hybrid Approach (combines strategies)
+
+3. **Implementation Patterns:**
+   - Pattern 1: Single Source of Truth (Python example)
+   - Pattern 2: Sync Script (any language)
+   - Pattern 3: Build-Time Generation (CI/CD)
+
+4. **Code Examples:**
+   - Python implementation (Strategy 4)
+   - Dart/Flutter implementation (pubspec.yaml)
+   - Sync script examples
+   - Validation scripts
+
+5. **Best Practices:**
+   - Single source of truth principle
+   - Automation recommendations
+   - Validation requirements
+   - Integration with Release Workflow
+
+6. **Update Framework Documentation:**
+   - Add warning to `IMPLEMENTATION_GUIDE.md` about package manager compatibility
+   - Update framework README with dual-versioning reference
+   - Update dev-kit versioning policy with dual-versioning reference
+
+**Key Requirements:**
+- Use mathematical formula `EPIC * 100 + STORY` (not string concatenation) to avoid ambiguity
+- Preserve BUILD number in SemVer when possible (Strategy 4)
+- Provide clear, copyable examples for different languages
+- Document all mapping strategies with pros/cons
+
+**Acceptance Criteria:**
+- [ ] Dual-versioning guide created with comprehensive mapping strategies
+- [ ] Strategy 4 (BUILD-Preserving Mapping) documented as recommended approach
+- [ ] Mathematical formula `EPIC * 100 + STORY` used (not string concatenation)
+- [ ] Implementation patterns provided (Python, Dart/Flutter, sync scripts)
+- [ ] Code examples included for all patterns
+- [ ] Best practices and validation documented
+- [ ] Framework documentation updated with references
+- [ ] Guide linked from Implementation Guide and framework README
 
 ---
 

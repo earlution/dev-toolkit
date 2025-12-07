@@ -133,6 +133,7 @@ This package is designed to be **portable and customizable** for use in other pr
    - Customization instructions
    - Testing and validation strategies
    - CI/CD integration patterns
+   - **⚠️ Package Manager Compatibility:** Projects using package managers (npm, pub.dev, PyPI) that require SemVer should see the dual-versioning guide
 
 ## Core Versioning Schema
 
@@ -174,11 +175,14 @@ This package is designed to be **portable and customizable** for use in other pr
 
 These policies are part of a larger system of interconnected documents:
 - **[Versioning Quick Reference](../../../KB/Architecture/Standards_and_ADRs/versioning-quick-reference.md)** - 1-2 page summary for quick lookup ⚡ *(Dev-kit specific)*
+- **[Dual-Versioning Guide](../../../KB/Architecture/Standards_and_ADRs/dual-versioning-package-managers.md)** - Managing `RC.EPIC.STORY.TASK+BUILD` + SemVer for package managers ⚠️ *(Dev-kit specific)*
 - **Cursor Rules** (`.cursorrules`) - Fundamental system rules that enforce versioning requirements *(Project-specific)*
 - **Release Workflow Reference** - Automated implementation of versioning schema *(see workflow mgt package)*
 - **Release Workflow Agent Execution Guide** - Step-by-step agent execution patterns *(see workflow mgt package)*
 
 **Note:** Some references point to project-specific files. When implementing in other projects, see `IMPLEMENTATION_GUIDE.md` for customization instructions.
+
+**⚠️ Package Manager Compatibility:** If your project uses package managers (npm, pub.dev, PyPI, etc.) that require Semantic Versioning (`MAJOR.MINOR.PATCH`), see the [Dual-Versioning Guide](../../../KB/Architecture/Standards_and_ADRs/dual-versioning-package-managers.md) for mapping strategies and implementation patterns.
 
 ## Usage
 

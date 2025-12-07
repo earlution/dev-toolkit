@@ -8,12 +8,11 @@ housekeeping_policy: keep
 
 # Epic 3: Numbering & Versioning Framework
 
-**Status:** COMPLETE ✅
+**Status:** IN PROGRESS
 **Priority:** HIGH
 **Estimated Effort:** [TBD]
 **Created:** 2025-12-02
-**Completed:** 2025-12-05
-**Last updated:** 2025-12-05 (v0.3.3.6+1 – Epic 3 COMPLETE: All 3 stories finished)
+**Last updated:** 2025-12-07 (v0.3.2.7+1 – Story 2 T07 added: Dual-versioning package manager documentation)
 **Branch:** `epic/3-numbering-and-versioning-framework`
 **Version Schema:** `0.3.S.T+B`
 **Production URL:** [N/A for this repo]
@@ -23,7 +22,7 @@ housekeeping_policy: keep
 ## Story Checklist
 
 - [x] **E3:S01 – Dev Kit Alignment with Versioning Framework** - COMPLETE ✅ (v0.3.1.6+1)
-- [x] **E3:S02 – Versioning Cookbook & Examples** - COMPLETE ✅ (v0.3.2.5+3 – All tasks complete: RW hardened with automated version bump validation)
+- [ ] **E3:S02 – Versioning Cookbook & Examples** - IN PROGRESS (v0.3.2.7+1 – T07 added: Dual-versioning package manager documentation)
 - [x] **E3:S03 – Versioning Integration with Kanban & RW** - COMPLETE ✅ (v0.3.3.6+2 – All tasks complete: Epic 3 marked COMPLETE)
   - Story: [`Story-003-versioning-integration-with-kanban-and-rw.md`](Story-003-versioning-integration-with-kanban-and-rw.md)
 
@@ -85,10 +84,10 @@ Make sure the dev kit's own versioning policy, version file, and docs align clea
 
 ### Story 2: Versioning Cookbook & Examples
 
-**Status:** COMPLETE ✅  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-05 (v0.3.3.6+2 – Epic 3 COMPLETE: All 3 stories finished)
+**Last updated:** 2025-12-07 (v0.3.2.7+1 – T07 added: Dual-versioning package manager documentation)
 
 **Goal:**  
 Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.TASK+BUILD, making it easy for other projects to adopt the dev-kit versioning strategy safely and correctly.
@@ -100,6 +99,7 @@ Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.T
 - [x] E3:S02:T04 – Document edge cases and anti-patterns ✅ COMPLETE (v0.3.2.4+1)
 - [x] E3:S02:T05 – Create quick reference summary for users and agents ✅ COMPLETE (v0.3.2.5+1)
 - [x] E3:S02:T06 – Investigate and harden changelog ordering process ✅ COMPLETE (v0.3.2.6+1)
+- [ ] E3:S02:T07 – Create dual-versioning guide for package manager compatibility - TODO
 
 > Full story: [`Story-002-versioning-cookbook-and-examples.md`](Story-002-versioning-cookbook-and-examples.md)
 

@@ -17,6 +17,52 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.7+1] - 07-12-25
+
+📚 Documentation: Dual-versioning guide for package manager compatibility
+
+### Added
+- **Dual-Versioning Guide** (`KB/Architecture/Standards_and_ADRs/dual-versioning-package-managers.md`):
+  - Comprehensive guide for managing `RC.EPIC.STORY.TASK+BUILD` + SemVer (`MAJOR.MINOR.PATCH`)
+  - Problem statement: Package managers require SemVer while internal development uses RC.EPIC.STORY.TASK+BUILD
+  - Five mapping strategies:
+    - Strategy 1: Direct Mapping (MAJOR=RC, MINOR=EPIC, PATCH=STORY*100+TASK)
+    - Strategy 2: Compact Mapping (includes BUILD in PATCH)
+    - Strategy 3: Independent SemVer (for public releases)
+    - Strategy 4: BUILD-Preserving Mapping (Recommended) - `MINOR = EPIC * 100 + STORY`, `PATCH = TASK * 100 + BUILD`
+    - Strategy 5: Hybrid Approach (combines strategies)
+  - Implementation patterns: Single Source of Truth, Sync Scripts, Build-Time Generation
+  - Code examples: Python, Dart/Flutter (pubspec.yaml), sync scripts, validation scripts
+  - Best practices, validation, troubleshooting, and integration with Release Workflow
+  - Mathematical formula `EPIC * 100 + STORY` (not string concatenation) to avoid ambiguity
+
+### Changed
+- **Implementation Guide** (`packages/frameworks/numbering & versioning/IMPLEMENTATION_GUIDE.md`):
+  - Added warning about package manager compatibility requirements
+  - Added reference to dual-versioning guide
+  - Updated schema adaptation section with package manager notes
+- **Framework README** (`packages/frameworks/numbering & versioning/README.md`):
+  - Added dual-versioning section to Related Documentation
+  - Added package manager compatibility warning
+- **Dev-Kit Versioning Policy** (`KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md`):
+  - Added reference to dual-versioning guide in Related Documentation section
+- **Epic 3 Documentation** (`KB/PM_and_Portfolio/kanban/epics/Epic-3/Epic-3.md`):
+  - Updated Story 2 status to IN PROGRESS
+  - Added T07 to task checklist
+  - Updated last updated timestamp
+- **Story 2 Documentation** (`KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-002-versioning-cookbook-and-examples.md`):
+  - Added T07: Create dual-versioning guide for package manager compatibility
+  - Updated status to IN PROGRESS
+  - Updated last updated timestamp
+
+### Documentation
+- Comprehensive dual-versioning strategy documentation complete
+- Strategy 4 (BUILD-Preserving Mapping) documented as recommended approach
+- Mathematical formula ensures unambiguous mapping (EPIC * 100 + STORY)
+- Framework documentation updated with package manager compatibility guidance
+
+---
+
 ## [0.5.5.1+1] - 07-12-25
 
 📚 Documentation: Legacy repository incorporation analysis and planning

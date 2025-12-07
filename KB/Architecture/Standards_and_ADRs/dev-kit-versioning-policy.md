@@ -542,6 +542,7 @@ The dev-kit policy:
 
 **Related Documentation:**
 - **[Versioning Quick Reference](versioning-quick-reference.md)** - 1-2 page summary for quick lookup ⚡
+- **[Dual-Versioning Guide](dual-versioning-package-managers.md)** - Managing `RC.EPIC.STORY.TASK+BUILD` + SemVer for package managers ⚠️
 - `KB/Architecture/Standards_and_ADRs/dev-kit-versioning-cookbook.md` - Practical worked examples
 - `KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework/T001-gap-analysis-report.md` (gap analysis)
 - `KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework/T002-fynd-deals-epic15-findings.md` (findings)

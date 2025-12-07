@@ -98,6 +98,28 @@ Adapted:  RC.MILESTONE.FEATURE.TASK+BUILD
           RC.EPIC.STORY+BUILD
 ```
 
+**⚠️ IMPORTANT: Package Manager Compatibility**
+
+If your project uses package managers (npm, pub.dev, PyPI, etc.) that require **Semantic Versioning (SemVer)** format (`MAJOR.MINOR.PATCH`), you need to maintain **dual versioning**:
+
+- **Internal Development:** Use `RC.EPIC.STORY.TASK+BUILD` (source of truth)
+- **Package Managers:** Use `MAJOR.MINOR.PATCH` (derived from internal version)
+
+**See:** `KB/Architecture/Standards_and_ADRs/dual-versioning-package-managers.md` for complete guidance on:
+- Mapping strategies (how to convert internal version to SemVer)
+- Implementation patterns (sync scripts, build-time generation)
+- Best practices and validation
+- Integration with Release Workflow
+
+**Quick Example:**
+```python
+# Internal version (source of truth)
+VERSION_STRING = "0.1.1.1+1"  # RC.EPIC.STORY.TASK+BUILD
+
+# Derived SemVer for package managers
+SEMVER_VERSION = "0.1.101"  # MAJOR.MINOR.PATCH (Strategy 1: Direct Mapping)
+```
+
 ### 2.2 Define Your Work Item Structure
 
 **Map your work items to the version schema:**
