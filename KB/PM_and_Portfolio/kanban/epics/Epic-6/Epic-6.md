@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-07 (v0.6.4.1+1 – Bug Reports and Feature Requests stories created, T01 complete)  
+**Last updated:** 2025-12-07 (v0.6.4.2+1 – T02 complete: Canonical stories documentation created)  
 **Branch:** `epic/6-framework-management`  
 **Version Schema:** `0.6.S.T+B`  
 **Production URL:** [N/A for this repo]

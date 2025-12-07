@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-07  
-**Last updated:** 2025-12-07 (v0.6.4.1+1 – T01 complete: RW installer template path bug fixed)  
-**Version:** v0.6.4.1+1  
+**Last updated:** 2025-12-07 (v0.6.4.2+1 – T02 complete: Canonical stories documentation created)  
+**Version:** v0.6.4.2+1  
 **Code:** E6S04
 
 ---
@@ -21,6 +21,7 @@ housekeeping_policy: keep
 ## Task Checklist
 
 - [x] **E6:S04:T01 – Fix RW installer template path bug** ✅ COMPLETE (v0.6.4.1+1) - Fixed incorrect path to cursorrules template file
+- [x] **E6:S04:T02 – Document canonical stories for Kanban framework** ✅ COMPLETE (v0.6.4.2+1) - Created CANONICAL_STORIES.md documenting Bug Reports and Feature Requests patterns
 
 ---
 

@@ -17,6 +17,18 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.6.4.2+1] - 07-12-25
+
+📚 Documentation: Canonical stories for Kanban framework
+
+### Added
+- **Canonical Stories Document:** Created `CANONICAL_STORIES.md` documenting reusable story patterns (Bug Reports, Feature Requests)
+- **Framework Documentation:** Added canonical stories reference to Kanban framework README
+
+**Details:** [CHANGELOG_v0.6.4.2+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.4.2+1.md)
+
+---
+
 ## [0.6.4.1+1] - 07-12-25
 
 🐛 Bug Fix: RW installer template path bug fixed
