@@ -17,6 +17,35 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.1.4.1+3] - 07-12-25
+
+📝 Documentation: Comprehensive README created based on Best-README-Template
+
+### Added
+- **README.md:** Complete project README with:
+  - Project overview and features
+  - Installation instructions (3 methods: Git submodules, CLI tool, package managers)
+  - Usage examples (Release Workflow, Kanban, Versioning)
+  - Frameworks overview table with status and versions
+  - Roadmap (completed, in progress, planned)
+  - Contributing guidelines
+  - Contact information and acknowledgments
+- **Badges:** Version, license, and status badges
+- **Table of Contents:** Navigation with anchor links
+- **Quick Start Examples:** Code snippets for common workflows
+
+### Changed
+- **Documentation:** README now provides comprehensive project overview
+- **User Experience:** Clear installation and usage instructions
+- **Professional Presentation:** Aligned with industry-standard README template
+
+### Technical Details
+- **Template:** Based on [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+- **Structure:** Follows standard open-source README conventions
+- **Links:** Integrated with existing documentation structure
+
+---
+
 ## [0.5.4.5+3] - 07-12-25
 
 📚 Documentation Management: Enhanced installation guide with Git repository setup prerequisites

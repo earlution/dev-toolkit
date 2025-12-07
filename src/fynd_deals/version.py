@@ -21,7 +21,7 @@ VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candida
 VERSION_EPIC = 1      # Epic number (Epic 1: AI Dev Kit Core)
 VERSION_STORY = 4     # Story number (Story 4: Repository Branding and Renaming)
 VERSION_TASK = 1      # Task number (Task 1: Execute repository rename from vibe-dev-kit to ai-dev-kit - COMPLETE)
-VERSION_BUILD = 2     # Build number (increments per release within task, bumped by RW)
+VERSION_BUILD = 3     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
 # Format: RC.EPIC.STORY.TASK+BUILD
