@@ -17,487 +17,6 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
-## [0.2.5.1+1] - 07-12-25
-
-📋 Planning: PIR workflow structure and requirements
-
-### Added
-- **PIR Workflow Planning Document:** Comprehensive planning document with workflow structure, integration points, and all key design decisions
-- **Workflow Design:** 21-step workflow across 5 phases (ANALYZE, DETERMINATE, EXECUTE, VALIDATE, PROCEED)
-- **Story Significance Criteria:** Defined criteria for when Story-level PIR is triggered
-- **Integration Points:** Value-add assessment for Kanban, versioning, RW, and KB integration
-
-### Changed
-- **Story 5 Document:** Updated with T01 completion status
-- **Epic 2 Document:** Updated to reflect Story 5 planning completion
-
-**Details:** [CHANGELOG_v0.2.5.1+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.5.1+1.md)
-
----
-
-## [0.6.4.2+1] - 07-12-25
-
-📚 Documentation: Canonical stories for Kanban framework
-
-### Added
-- **Canonical Stories Document:** Created `CANONICAL_STORIES.md` documenting reusable story patterns (Bug Reports, Feature Requests)
-- **Framework Documentation:** Added canonical stories reference to Kanban framework README
-
-**Details:** [CHANGELOG_v0.6.4.2+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.4.2+1.md)
-
----
-
-## [0.6.4.1+1] - 07-12-25
-
-🐛 Bug Fix: RW installer template path bug fixed
-
-### Fixed
-- **RW Installer:** Fixed incorrect path to `cursorrules-rw-trigger-section.md` template file
-- **Path Resolution:** Added `FRAMEWORK_ROOT` variable to correctly resolve framework directory paths
-- **User Impact:** Installer now works correctly without manual workarounds
-
-### Added
-- **Bug Reports Story:** Created Story 4 in Epic 6 to track framework-related bug reports
-- **Feature Requests Story:** Created Story 5 in Epic 6 to track framework-related feature requests
-
-**Details:** [CHANGELOG_v0.6.4.1+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.4.1+1.md)
-
----
-
-## [0.5.4.8+1] - 07-12-25
-
-📚 Documentation: `.cursorrules` setup for RW trigger
-
-### Added
-- **Documentation:** Added comprehensive `.cursorrules` setup instructions to installation guide, troubleshooting guide, and FAQ
-- **Task:** E05:S04:T08 - Document `.cursorrules` setup for RW trigger
-
-### Changed
-- **Installation Guide:** Added dedicated section for enabling RW trigger in Cursor
-- **Troubleshooting Guide:** Added "Issue: RW Trigger Not Working" section with solutions
-- **FAQ:** Added "How do I enable the 'RW' trigger in Cursor?" entry
-
-**Details:** [CHANGELOG_v0.5.4.8+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.4.8+1.md)
-
----
-
-## [0.3.2.7+1] - 07-12-25
-
-📚 Documentation: Dual-versioning guide for package manager compatibility
-
-### Added
-- **Dual-Versioning Guide** (`KB/Architecture/Standards_and_ADRs/dual-versioning-package-managers.md`):
-  - Comprehensive guide for managing `RC.EPIC.STORY.TASK+BUILD` + SemVer (`MAJOR.MINOR.PATCH`)
-  - Problem statement: Package managers require SemVer while internal development uses RC.EPIC.STORY.TASK+BUILD
-  - Five mapping strategies:
-    - Strategy 1: Direct Mapping (MAJOR=RC, MINOR=EPIC, PATCH=STORY*100+TASK)
-    - Strategy 2: Compact Mapping (includes BUILD in PATCH)
-    - Strategy 3: Independent SemVer (for public releases)
-    - Strategy 4: BUILD-Preserving Mapping (Recommended) - `MINOR = EPIC * 100 + STORY`, `PATCH = TASK * 100 + BUILD`
-    - Strategy 5: Hybrid Approach (combines strategies)
-  - Implementation patterns: Single Source of Truth, Sync Scripts, Build-Time Generation
-  - Code examples: Python, Dart/Flutter (pubspec.yaml), sync scripts, validation scripts
-  - Best practices, validation, troubleshooting, and integration with Release Workflow
-  - Mathematical formula `EPIC * 100 + STORY` (not string concatenation) to avoid ambiguity
-
-### Changed
-- **Implementation Guide** (`packages/frameworks/numbering & versioning/IMPLEMENTATION_GUIDE.md`):
-  - Added warning about package manager compatibility requirements
-  - Added reference to dual-versioning guide
-  - Updated schema adaptation section with package manager notes
-- **Framework README** (`packages/frameworks/numbering & versioning/README.md`):
-  - Added dual-versioning section to Related Documentation
-  - Added package manager compatibility warning
-- **Dev-Kit Versioning Policy** (`KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md`):
-  - Added reference to dual-versioning guide in Related Documentation section
-- **Epic 3 Documentation** (`KB/PM_and_Portfolio/kanban/epics/Epic-3/Epic-3.md`):
-  - Updated Story 2 status to IN PROGRESS
-  - Added T07 to task checklist
-  - Updated last updated timestamp
-- **Story 2 Documentation** (`KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-002-versioning-cookbook-and-examples.md`):
-  - Added T07: Create dual-versioning guide for package manager compatibility
-  - Updated status to IN PROGRESS
-  - Updated last updated timestamp
-
-### Documentation
-- Comprehensive dual-versioning strategy documentation complete
-- Strategy 4 (BUILD-Preserving Mapping) documented as recommended approach
-- Mathematical formula ensures unambiguous mapping (EPIC * 100 + STORY)
-- Framework documentation updated with package manager compatibility guidance
-
----
-
-## [0.5.5.1+1] - 07-12-25
-
-📚 Documentation: Legacy repository incorporation analysis and planning
-
-### Added
-- **Legacy Repository Analysis** (`KB/Architecture/Standards_and_ADRs/legacy-repo-analysis.md`):
-  - Comprehensive analysis of ai-architect-kit and paradigm repositories
-  - Component-by-component evaluation
-  - Incorporation plan with 3 phases (High, Medium, Low priority)
-  - Source material references and recommendations
-  - Missing components analysis
-- **Story 5: Legacy Repository Incorporation** (`KB/PM_and_Portfolio/kanban/epics/Epic-5/Story-005-legacy-repository-incorporation.md`):
-  - Complete story with 25 tasks across 4 phases
-  - Phase 0: Planning and Preparation (T01-T04)
-  - Phase 1: High Priority Components (T05-T09) - Architectural principles, AI collaboration, template script
-  - Phase 2: Medium Priority Components (T10-T14) - Patterns, testing strategy, coding conventions
-  - Phase 3: Low Priority Components (T15-T19) - Project structure, TDD, issue-driven workflow
-  - Phase 4: Finalization and Archive (T20-T25) - Cross-references, migration guide, archive process
-  - Each task includes problem statement, approach, deliverables, success criteria, and dependencies
-
-### Changed
-- **Epic 5 Documentation** (`KB/PM_and_Portfolio/kanban/epics/Epic-5/Epic-5.md`):
-  - Added Story 5 to story checklist
-  - Updated last updated timestamp
-
-### Documentation
-- Comprehensive planning for incorporating legacy repository components
-- 25 detailed tasks covering complete incorporation process
-- Analysis identifies 3 high-priority, 3 medium-priority, and 3 low-priority components
-- Migration guide and archive process included in planning
-
----
-
-## [0.5.4.7+1] - 07-12-25
-
-📚 Documentation: Template setup guides created for GitHub template enablement
-
-### Added
-- **Post-Template Setup Guide** (`framework-dependency-post-template-setup-guide.md`):
-  - Comprehensive 8-step setup process after creating repository from template
-  - Project name and branding customization
-  - Version file configuration
-  - Changelog initialization/reset
-  - Kanban board customization
-  - Configuration file updates
-  - Framework installation verification
-  - Release Workflow (RW) testing
-  - Post-setup verification checklist
-  - Common issues and solutions
-  - Template-specific files reference
-- **Template Enablement Instructions** (`framework-dependency-template-enablement-instructions.md`):
-  - Step-by-step GitHub template enablement process
-  - Template description and topics recommendations
-  - Template readiness checklist
-  - What users get from template
-  - Post-enablement tasks
-  - Troubleshooting section
-
-### Changed
-- **Installation Guide** (`framework-dependency-installation-guide.md`):
-  - Added link to post-template setup guide in template usage section
-- **Use Cases Guide** (`framework-dependency-use-cases.md`):
-  - Added link to post-template setup guide for Use Case 1 (Template → All Packages)
-- **FAQ** (`framework-dependency-faq.md`):
-  - Added both new template guides to references section
-- **Story 4 Documentation** (`Epic-5/Story-004-framework-documentation-management.md`):
-  - Updated T07 deliverables with completed documentation items
-  - Updated success criteria to reflect documentation completion
-
-### Documentation
-- Template setup documentation complete for E05:S04:T07
-- Manual template enablement step documented (GitHub settings)
-- Cross-references updated across all user documentation
-
----
-
-## [0.1.4.1+3] - 07-12-25
-
-📝 Documentation: Comprehensive README created based on Best-README-Template
-
-### Added
-- **README.md:** Complete project README with:
-  - Project overview and features
-  - Installation instructions (3 methods: Git submodules, CLI tool, package managers)
-  - Usage examples (Release Workflow, Kanban, Versioning)
-  - Frameworks overview table with status and versions
-  - Roadmap (completed, in progress, planned)
-  - Contributing guidelines
-  - Contact information and acknowledgments
-- **Badges:** Version, license, and status badges
-- **Table of Contents:** Navigation with anchor links
-- **Quick Start Examples:** Code snippets for common workflows
-
-### Changed
-- **Documentation:** README now provides comprehensive project overview
-- **User Experience:** Clear installation and usage instructions
-- **Professional Presentation:** Aligned with industry-standard README template
-
-### Technical Details
-- **Template:** Based on [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
-- **Structure:** Follows standard open-source README conventions
-- **Links:** Integrated with existing documentation structure
-
----
-
-## [0.5.4.5+4] - 07-12-25
-
-📚 Documentation Management: Comprehensive use cases guide and documentation enhancements
-
-### Added
-- **Use Cases Guide:** Complete use case documentation (`framework-dependency-use-cases.md`):
-  - All 4 primary use cases documented (Template → All/Some, Existing → All/Some)
-  - 8 additional use cases documented (Reference Only, Monorepo, Gradual Adoption, Fork & Customize, Non-GitHub Git, Local Only, CI/CD Only, Educational)
-  - Use case selection matrix with quick reference table
-  - Implementation guidance for each use case
-  - Version updates section explaining how all use cases benefit from updates
-- **Installation Guide Enhancements:**
-  - New "Use Cases" section before installation methods
-  - All 4 primary use cases summarized with links to detailed guide
-  - Template usage instructions enhanced
-- **FAQ Enhancements:**
-  - New "Use Case Questions" section
-  - Questions covering all 12 use cases
-  - Guidance on choosing the right use case
-  - Specific questions for additional use cases (5-12)
-- **Template Setup Task:**
-  - E05:S04:T07 task created for setting up ai-dev-kit as GitHub template
-  - Task definition includes template enablement, documentation, and testing
-
-### Changed
-- **Installation Guide:** Now includes use case guidance before installation methods
-- **FAQ:** Expanded with comprehensive use case coverage
-- **README:** Added link to Use Cases Guide in installation section
-- **Documentation Structure:** Better navigation between use cases, installation, and FAQ
-
-### Technical Details
-- **Use Cases Documented:** 12 total (4 primary + 8 additional)
-- **Documentation Files:** 1 new guide, 3 updated guides, 1 updated README
-- **Coverage:** All adoption patterns now documented with implementation guidance
-- **Integration:** Use cases guide cross-referenced throughout documentation
-
----
-
-## [0.5.1.5+1] - 07-12-25
-
-📚 Documentation Management: KB platform/tooling evaluation task added
-
-### Added
-- **E5:S01:T05 – Explore and evaluate KB platform/tooling options:**
-  - Comprehensive task definition for evaluating KB platform/tooling options
-  - 14 evaluation criteria categories covering:
-    - Ease of setup and technical fluency requirements
-    - Maintenance overhead and operational considerations
-    - Ringfencing/public exposure capabilities
-    - Remote team support and collaboration features
-    - Integration with existing dev-kit workflows
-    - Cost, licensing, and sustainability
-    - Search, discoverability, and Markdown support
-    - Agent/AI compatibility and automation
-    - Versioning, export, and portability
-    - Performance, scalability, and security
-  - Platform options to evaluate (Git-based, static site generators, documentation platforms, wikis, hybrid solutions)
-  - Use case scenario analysis (framework users, book readers, public-facing content, remote teams)
-  - Deliverables defined (evaluation report, comparison matrix, recommendations)
-
-### Changed
-- **Epic 5, Story 1 Status:** Updated from COMPLETE to IN PROGRESS (T01 and T05 are TODO)
-- **Story 1 Task Checklist:** Added T05 to task list
-
-### Technical Details
-- **Task Scope:** Evaluation of KB platform/tooling options for framework package
-- **Considerations:** Framework user technical fluency, book reader accessibility, public content ringfencing, remote collaboration
-- **Integration:** Will inform KB framework package design and implementation
-
----
-
-## [0.5.4.5+3] - 07-12-25
-
-📚 Documentation Management: Enhanced installation guide with Git repository setup prerequisites
-
-### Added
-- **Prerequisites Section Enhancement:**
-  - Added comprehensive "Setting Up a Git Repository" section with:
-    - Local Git repository initialization instructions
-    - GitHub repository setup (optional, with clear explanation)
-    - Git setup verification steps
-  - Clarified that local Git repository is sufficient; GitHub is optional
-- **Installation Methods Updates:**
-  - Added Git initialization step to all three installation methods:
-    - Method 1 (Git Submodules): Step 1 ensures Git is initialized
-    - Method 2 (CLI Tool): Step 1 ensures Git is initialized
-    - Method 3 (Package Managers): Step 1 for both npm and pip ensures Git is initialized
-- **Troubleshooting Section:**
-  - Added "Issue: Not a Git repository" with solution steps
-  - Clarifies that frameworks can be installed with just a local Git repository
-- **Verification Section Enhancement:**
-  - Added Git repository status check to verification steps
-  - Added remote repository check (if configured)
-- **Package Manager Notes:**
-  - Added note explaining why Git is still recommended even when using npm/pip
-
-### Changed
-- Installation guide now addresses users who haven't set up a GitHub repository yet
-- All installation methods now include explicit Git initialization steps
-- Prerequisites section expanded with detailed setup instructions
-
----
-
-## [0.1.4.1+2] - 07-12-25
-
-🏗️ Core Infrastructure: Repository rename from vibe-dev-kit to ai-dev-kit completed
-
-### Changed
-- **Repository Name:** All references updated from `vibe-dev-kit` to `ai-dev-kit`
-- **Branding:** All "Vibe Dev Kit" references updated to "AI Dev Kit"
-- **GitHub Repository:** New repository created at `https://github.com/earlution/ai-dev-kit`
-- **Configuration Files:** Renamed `rw-config-vibe-dev-kit.yaml` → `rw-config-ai-dev-kit.yaml`
-- **CLI Tool Name:** Updated from `vibe-dev-kit` to `ai-dev-kit` throughout documentation
-
-### Added
-- **Remote Repository:** All branches and tags pushed to new `ai-dev-kit` repository
-- **Repository Alignment:** Repository name now aligns with "Head First AI-Assisted Development" book branding
-
-### Technical Details
-- **Files Modified:** 101 files updated across codebase
-- **Branches Pushed:** All 10 branches (main + 9 epic branches) pushed to new remote
-- **Tags Pushed:** All 100+ version tags pushed to new remote
-- **Migration:** No migration needed - remote repository was deleted, allowing clean rename
-
-### Impact
-- **Zero Breaking Changes:** No existing users affected (remote repo was deleted)
-- **Clean Start:** New repository created with correct branding from day one
-- **Phase 1 Complete:** Ready for Phase 2 rename to `head-first-ai-dev-kit` if O'Reilly accepts book
-
----
-
-## [0.1.4.0+1] - 07-12-25
-
-🏗️ Core Infrastructure: Repository branding and renaming planning story created
-
-### Added
-- **Epic 1, Story 4 – Repository Branding and Renaming:**
-  - Created comprehensive planning story for repository renaming strategy
-  - Two-phase approach: `ai-dev-kit` → `ai-dev-kit` → `head-first-ai-dev-kit`
-  - Task 1: Plan rename from `ai-dev-kit` to `ai-dev-kit` (immediate alignment)
-  - Task 2: Plan rename from `ai-dev-kit` to `head-first-ai-dev-kit` (conditional on O'Reilly acceptance)
-  - Includes impact analysis, migration guides, and user communication planning
-- **Epic 1 Status Update:**
-  - Epic 1 status changed from COMPLETE to IN PROGRESS
-  - New story added to track repository branding alignment with book
-
-### Changed
-- Epic 1 status updated to reflect new repository branding work
-- Repository naming strategy aligned with "Head First AI-Assisted Development" book branding
-
----
-
-## [0.5.4.5+1] - 06-12-25
-
-📚 Documentation Management: Framework dependency installation guide created
-
-### Added
-
-- Created framework dependency installation guide (`KB/Documentation/User_Docs/framework-dependency-installation-guide.md`)
-- Comprehensive installation instructions for all three dependency methods (Git submodules, CLI tool, package managers)
-- Post-installation setup procedures
-- Verification steps and troubleshooting section
-- Added E05:S04:T05 task to Story 4 for comprehensive Epic 6 user documentation
-
-### Changed
-
-- Updated Story 4 to include new task
-- Updated Epic 5 story checklist
-- Version bumped to v0.5.4.5+1 (Story 4, Task 5, Build 1)
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.4.5+1.md` for full details
-- Installation guide is designed to be simple, accessible, and technically accurate
-- Ready for testing by setting up a new project using ai-dev-kit as template
-- First deliverable in comprehensive Epic 6 user documentation series
-
----
-
-## [0.5.2.1+2] - 06-12-25
-
-🔍 Documentation Management: Documentation consistency validators created
-
-### Added
-
-- Created documentation link validator (`scripts/documentation/validate-documentation-links.py`)
-- Created documentation consistency validator (`scripts/documentation/validate-documentation-consistency.py`)
-- Implemented link validation (internal and external links)
-- Implemented version consistency checking (Epic/Story alignment)
-- Implemented cross-reference validation (broken references)
-- Implemented terminology consistency checking
-- Added JSON output support for integration
-- Added CI/CD integration support with exit codes
-
-### Changed
-
-- Updated Story 002 to mark T01 as complete
-- Version bumped to v0.5.2.1+2 (Story 2, Task 1, Build 2)
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.2.1+2.md` for full details
-- Validators enable automated detection of documentation issues
-- Link validator checks internal and external links
-- Consistency validator checks version, cross-reference, and terminology consistency
-- Both validators support JSON output and CI/CD integration
-
----
-
-## [0.5.1.4+2] - 06-12-25
-
-🔔 Documentation Management: Documentation update triggers established (Story 1 complete)
-
-### Added
-
-- Created documentation update triggers document (`KB/Architecture/Standards_and_ADRs/documentation-update-triggers.md`)
-- Defined automatic triggers (Code Changes, Framework Changes, Policy Changes)
-- Defined manual triggers (Regular Reviews, User Feedback, Quality Assurance)
-- Documented update procedures for each trigger type
-- Established update trigger detection (Automated and Manual)
-- Defined update workflows (Automatic and Manual)
-- Integrated with Release Workflow, Kanban, and Framework Health Monitoring
-- Established update trigger metrics and reporting
-
-### Changed
-
-- Updated Story 001 to mark T04 as complete and Story 1 as COMPLETE
-- Updated Epic 5 to mark Story 1 as COMPLETE
-- Version bumped to v0.5.1.4+2 (Story 1, Task 4, Build 2)
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.1.4+2.md` for full details
-- Story 1 (Documentation Maintenance Framework) is now COMPLETE - all 4 tasks completed
-- Update triggers ensure documentation stays current with codebase and processes
-- Automatic triggers enable proactive updates
-- Manual triggers support reactive updates
-- Integration with existing workflows ensures seamless operation
-
----
-
-## [0.6.1.1+2] - 06-12-25
-
-🏗️ Framework Architecture: Designed dependency architecture for auto-updating frameworks
-
-### Added
-
-- Created framework dependency architecture document
-- Created framework update CLI tool design document
-- Added dependency architecture tasks to Epic 6 stories (E6:S01:T04, T05, E6:S02:T04, T05)
-
-### Changed
-
-- Updated Epic 6 vision to reflect dependency-based framework goal
-- Updated all framework READMEs with dependency architecture notices
-- Updated main README with dependency architecture vision
-- Updated integration guides with dependency-based installation examples
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.1.1+2.md` for full details
-- Architecture supports Git submodules (Phase 1), CLI tool (Phase 2), and package managers (Phase 3)
-- Frameworks transitioning from copy-paste to auto-updating dependencies
-
----
-
 ## [0.1.1.1+1] - 02-12-25
 
 🏗️ Foundation: First proper release with Epic 1–4 structure, dev-kit versioning policy, and Kanban FR/BR → Task flow
@@ -766,6 +285,84 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.1.3.6+1.md` for full details
 - Pattern supports projects from small frameworks (dev-kit) to large codebases (100K+ LOC)
 - Maintains 3-level default depth while providing comprehensive section menu
+
+---
+
+## [0.1.4.0+1] - 07-12-25
+
+🏗️ Core Infrastructure: Repository branding and renaming planning story created
+
+### Added
+- **Epic 1, Story 4 – Repository Branding and Renaming:**
+  - Created comprehensive planning story for repository renaming strategy
+  - Two-phase approach: `ai-dev-kit` → `ai-dev-kit` → `head-first-ai-dev-kit`
+  - Task 1: Plan rename from `ai-dev-kit` to `ai-dev-kit` (immediate alignment)
+  - Task 2: Plan rename from `ai-dev-kit` to `head-first-ai-dev-kit` (conditional on O'Reilly acceptance)
+  - Includes impact analysis, migration guides, and user communication planning
+- **Epic 1 Status Update:**
+  - Epic 1 status changed from COMPLETE to IN PROGRESS
+  - New story added to track repository branding alignment with book
+
+### Changed
+- Epic 1 status updated to reflect new repository branding work
+- Repository naming strategy aligned with "Head First AI-Assisted Development" book branding
+
+---
+
+## [0.1.4.1+2] - 07-12-25
+
+🏗️ Core Infrastructure: Repository rename from vibe-dev-kit to ai-dev-kit completed
+
+### Changed
+- **Repository Name:** All references updated from `vibe-dev-kit` to `ai-dev-kit`
+- **Branding:** All "Vibe Dev Kit" references updated to "AI Dev Kit"
+- **GitHub Repository:** New repository created at `https://github.com/earlution/ai-dev-kit`
+- **Configuration Files:** Renamed `rw-config-vibe-dev-kit.yaml` → `rw-config-ai-dev-kit.yaml`
+- **CLI Tool Name:** Updated from `vibe-dev-kit` to `ai-dev-kit` throughout documentation
+
+### Added
+- **Remote Repository:** All branches and tags pushed to new `ai-dev-kit` repository
+- **Repository Alignment:** Repository name now aligns with "Head First AI-Assisted Development" book branding
+
+### Technical Details
+- **Files Modified:** 101 files updated across codebase
+- **Branches Pushed:** All 10 branches (main + 9 epic branches) pushed to new remote
+- **Tags Pushed:** All 100+ version tags pushed to new remote
+- **Migration:** No migration needed - remote repository was deleted, allowing clean rename
+
+### Impact
+- **Zero Breaking Changes:** No existing users affected (remote repo was deleted)
+- **Clean Start:** New repository created with correct branding from day one
+- **Phase 1 Complete:** Ready for Phase 2 rename to `head-first-ai-dev-kit` if O'Reilly accepts book
+
+---
+
+## [0.1.4.1+3] - 07-12-25
+
+📝 Documentation: Comprehensive README created based on Best-README-Template
+
+### Added
+- **README.md:** Complete project README with:
+  - Project overview and features
+  - Installation instructions (3 methods: Git submodules, CLI tool, package managers)
+  - Usage examples (Release Workflow, Kanban, Versioning)
+  - Frameworks overview table with status and versions
+  - Roadmap (completed, in progress, planned)
+  - Contributing guidelines
+  - Contact information and acknowledgments
+- **Badges:** Version, license, and status badges
+- **Table of Contents:** Navigation with anchor links
+- **Quick Start Examples:** Code snippets for common workflows
+
+### Changed
+- **Documentation:** README now provides comprehensive project overview
+- **User Experience:** Clear installation and usage instructions
+- **Professional Presentation:** Aligned with industry-standard README template
+
+### Technical Details
+- **Template:** Based on [Best-README-Template](https://github.com/othneildrew/Best-README-Template)
+- **Structure:** Follows standard open-source README conventions
+- **Links:** Integrated with existing documentation structure
 
 ---
 
@@ -1593,6 +1190,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.5.1+1] - 07-12-25
+
+📋 Planning: PIR workflow structure and requirements
+
+### Added
+- **PIR Workflow Planning Document:** Comprehensive planning document with workflow structure, integration points, and all key design decisions
+- **Workflow Design:** 21-step workflow across 5 phases (ANALYZE, DETERMINATE, EXECUTE, VALIDATE, PROCEED)
+- **Story Significance Criteria:** Defined criteria for when Story-level PIR is triggered
+- **Integration Points:** Value-add assessment for Kanban, versioning, RW, and KB integration
+
+### Changed
+- **Story 5 Document:** Updated with T01 completion status
+- **Epic 2 Document:** Updated to reflect Story 5 planning completion
+
+**Details:** [CHANGELOG_v0.2.5.1+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.5.1+1.md)
+
+---
+
 ## [0.3.1.1+1] - 02-12-25
 
 📚 Documentation: Epic 3 structure and Story 1 definition for Numbering & Versioning Framework
@@ -1922,6 +1537,52 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - Investigation report: `KB/Architecture/Standards_and_ADRs/changelog-ordering-investigation-report.md`
 - All Epic 2 entries now correctly appear before Epic 3 entries
 - Validator confirms canonical ordering is correct
+
+---
+
+## [0.3.2.7+1] - 07-12-25
+
+📚 Documentation: Dual-versioning guide for package manager compatibility
+
+### Added
+- **Dual-Versioning Guide** (`KB/Architecture/Standards_and_ADRs/dual-versioning-package-managers.md`):
+  - Comprehensive guide for managing `RC.EPIC.STORY.TASK+BUILD` + SemVer (`MAJOR.MINOR.PATCH`)
+  - Problem statement: Package managers require SemVer while internal development uses RC.EPIC.STORY.TASK+BUILD
+  - Five mapping strategies:
+    - Strategy 1: Direct Mapping (MAJOR=RC, MINOR=EPIC, PATCH=STORY*100+TASK)
+    - Strategy 2: Compact Mapping (includes BUILD in PATCH)
+    - Strategy 3: Independent SemVer (for public releases)
+    - Strategy 4: BUILD-Preserving Mapping (Recommended) - `MINOR = EPIC * 100 + STORY`, `PATCH = TASK * 100 + BUILD`
+    - Strategy 5: Hybrid Approach (combines strategies)
+  - Implementation patterns: Single Source of Truth, Sync Scripts, Build-Time Generation
+  - Code examples: Python, Dart/Flutter (pubspec.yaml), sync scripts, validation scripts
+  - Best practices, validation, troubleshooting, and integration with Release Workflow
+  - Mathematical formula `EPIC * 100 + STORY` (not string concatenation) to avoid ambiguity
+
+### Changed
+- **Implementation Guide** (`packages/frameworks/numbering & versioning/IMPLEMENTATION_GUIDE.md`):
+  - Added warning about package manager compatibility requirements
+  - Added reference to dual-versioning guide
+  - Updated schema adaptation section with package manager notes
+- **Framework README** (`packages/frameworks/numbering & versioning/README.md`):
+  - Added dual-versioning section to Related Documentation
+  - Added package manager compatibility warning
+- **Dev-Kit Versioning Policy** (`KB/Architecture/Standards_and_ADRs/dev-kit-versioning-policy.md`):
+  - Added reference to dual-versioning guide in Related Documentation section
+- **Epic 3 Documentation** (`KB/PM_and_Portfolio/kanban/epics/Epic-3/Epic-3.md`):
+  - Updated Story 2 status to IN PROGRESS
+  - Added T07 to task checklist
+  - Updated last updated timestamp
+- **Story 2 Documentation** (`KB/PM_and_Portfolio/kanban/epics/Epic-3/Story-002-versioning-cookbook-and-examples.md`):
+  - Added T07: Create dual-versioning guide for package manager compatibility
+  - Updated status to IN PROGRESS
+  - Updated last updated timestamp
+
+### Documentation
+- Comprehensive dual-versioning strategy documentation complete
+- Strategy 4 (BUILD-Preserving Mapping) documented as recommended approach
+- Mathematical formula ensures unambiguous mapping (EPIC * 100 + STORY)
+- Framework documentation updated with package manager compatibility guidance
 
 ---
 
@@ -2543,6 +2204,345 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.5.1.4+2] - 06-12-25
+
+🔔 Documentation Management: Documentation update triggers established (Story 1 complete)
+
+### Added
+
+- Created documentation update triggers document (`KB/Architecture/Standards_and_ADRs/documentation-update-triggers.md`)
+- Defined automatic triggers (Code Changes, Framework Changes, Policy Changes)
+- Defined manual triggers (Regular Reviews, User Feedback, Quality Assurance)
+- Documented update procedures for each trigger type
+- Established update trigger detection (Automated and Manual)
+- Defined update workflows (Automatic and Manual)
+- Integrated with Release Workflow, Kanban, and Framework Health Monitoring
+- Established update trigger metrics and reporting
+
+### Changed
+
+- Updated Story 001 to mark T04 as complete and Story 1 as COMPLETE
+- Updated Epic 5 to mark Story 1 as COMPLETE
+- Version bumped to v0.5.1.4+2 (Story 1, Task 4, Build 2)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.1.4+2.md` for full details
+- Story 1 (Documentation Maintenance Framework) is now COMPLETE - all 4 tasks completed
+- Update triggers ensure documentation stays current with codebase and processes
+- Automatic triggers enable proactive updates
+- Manual triggers support reactive updates
+- Integration with existing workflows ensures seamless operation
+
+---
+
+## [0.5.1.5+1] - 07-12-25
+
+📚 Documentation Management: KB platform/tooling evaluation task added
+
+### Added
+- **E5:S01:T05 – Explore and evaluate KB platform/tooling options:**
+  - Comprehensive task definition for evaluating KB platform/tooling options
+  - 14 evaluation criteria categories covering:
+    - Ease of setup and technical fluency requirements
+    - Maintenance overhead and operational considerations
+    - Ringfencing/public exposure capabilities
+    - Remote team support and collaboration features
+    - Integration with existing dev-kit workflows
+    - Cost, licensing, and sustainability
+    - Search, discoverability, and Markdown support
+    - Agent/AI compatibility and automation
+    - Versioning, export, and portability
+    - Performance, scalability, and security
+  - Platform options to evaluate (Git-based, static site generators, documentation platforms, wikis, hybrid solutions)
+  - Use case scenario analysis (framework users, book readers, public-facing content, remote teams)
+  - Deliverables defined (evaluation report, comparison matrix, recommendations)
+
+### Changed
+- **Epic 5, Story 1 Status:** Updated from COMPLETE to IN PROGRESS (T01 and T05 are TODO)
+- **Story 1 Task Checklist:** Added T05 to task list
+
+### Technical Details
+- **Task Scope:** Evaluation of KB platform/tooling options for framework package
+- **Considerations:** Framework user technical fluency, book reader accessibility, public content ringfencing, remote collaboration
+- **Integration:** Will inform KB framework package design and implementation
+
+---
+
+## [0.5.2.1+2] - 06-12-25
+
+🔍 Documentation Management: Documentation consistency validators created
+
+### Added
+
+- Created documentation link validator (`scripts/documentation/validate-documentation-links.py`)
+- Created documentation consistency validator (`scripts/documentation/validate-documentation-consistency.py`)
+- Implemented link validation (internal and external links)
+- Implemented version consistency checking (Epic/Story alignment)
+- Implemented cross-reference validation (broken references)
+- Implemented terminology consistency checking
+- Added JSON output support for integration
+- Added CI/CD integration support with exit codes
+
+### Changed
+
+- Updated Story 002 to mark T01 as complete
+- Version bumped to v0.5.2.1+2 (Story 2, Task 1, Build 2)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.2.1+2.md` for full details
+- Validators enable automated detection of documentation issues
+- Link validator checks internal and external links
+- Consistency validator checks version, cross-reference, and terminology consistency
+- Both validators support JSON output and CI/CD integration
+
+---
+
+## [0.5.4.5+1] - 06-12-25
+
+📚 Documentation Management: Framework dependency installation guide created
+
+### Added
+
+- Created framework dependency installation guide (`KB/Documentation/User_Docs/framework-dependency-installation-guide.md`)
+- Comprehensive installation instructions for all three dependency methods (Git submodules, CLI tool, package managers)
+- Post-installation setup procedures
+- Verification steps and troubleshooting section
+- Added E05:S04:T05 task to Story 4 for comprehensive Epic 6 user documentation
+
+### Changed
+
+- Updated Story 4 to include new task
+- Updated Epic 5 story checklist
+- Version bumped to v0.5.4.5+1 (Story 4, Task 5, Build 1)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.4.5+1.md` for full details
+- Installation guide is designed to be simple, accessible, and technically accurate
+- Ready for testing by setting up a new project using ai-dev-kit as template
+- First deliverable in comprehensive Epic 6 user documentation series
+
+---
+
+## [0.5.4.5+3] - 07-12-25
+
+📚 Documentation Management: Enhanced installation guide with Git repository setup prerequisites
+
+### Added
+- **Prerequisites Section Enhancement:**
+  - Added comprehensive "Setting Up a Git Repository" section with:
+    - Local Git repository initialization instructions
+    - GitHub repository setup (optional, with clear explanation)
+    - Git setup verification steps
+  - Clarified that local Git repository is sufficient; GitHub is optional
+- **Installation Methods Updates:**
+  - Added Git initialization step to all three installation methods:
+    - Method 1 (Git Submodules): Step 1 ensures Git is initialized
+    - Method 2 (CLI Tool): Step 1 ensures Git is initialized
+    - Method 3 (Package Managers): Step 1 for both npm and pip ensures Git is initialized
+- **Troubleshooting Section:**
+  - Added "Issue: Not a Git repository" with solution steps
+  - Clarifies that frameworks can be installed with just a local Git repository
+- **Verification Section Enhancement:**
+  - Added Git repository status check to verification steps
+  - Added remote repository check (if configured)
+- **Package Manager Notes:**
+  - Added note explaining why Git is still recommended even when using npm/pip
+
+### Changed
+- Installation guide now addresses users who haven't set up a GitHub repository yet
+- All installation methods now include explicit Git initialization steps
+- Prerequisites section expanded with detailed setup instructions
+
+---
+
+## [0.5.4.5+4] - 07-12-25
+
+📚 Documentation Management: Comprehensive use cases guide and documentation enhancements
+
+### Added
+- **Use Cases Guide:** Complete use case documentation (`framework-dependency-use-cases.md`):
+  - All 4 primary use cases documented (Template → All/Some, Existing → All/Some)
+  - 8 additional use cases documented (Reference Only, Monorepo, Gradual Adoption, Fork & Customize, Non-GitHub Git, Local Only, CI/CD Only, Educational)
+  - Use case selection matrix with quick reference table
+  - Implementation guidance for each use case
+  - Version updates section explaining how all use cases benefit from updates
+- **Installation Guide Enhancements:**
+  - New "Use Cases" section before installation methods
+  - All 4 primary use cases summarized with links to detailed guide
+  - Template usage instructions enhanced
+- **FAQ Enhancements:**
+  - New "Use Case Questions" section
+  - Questions covering all 12 use cases
+  - Guidance on choosing the right use case
+  - Specific questions for additional use cases (5-12)
+- **Template Setup Task:**
+  - E05:S04:T07 task created for setting up ai-dev-kit as GitHub template
+  - Task definition includes template enablement, documentation, and testing
+
+### Changed
+- **Installation Guide:** Now includes use case guidance before installation methods
+- **FAQ:** Expanded with comprehensive use case coverage
+- **README:** Added link to Use Cases Guide in installation section
+- **Documentation Structure:** Better navigation between use cases, installation, and FAQ
+
+### Technical Details
+- **Use Cases Documented:** 12 total (4 primary + 8 additional)
+- **Documentation Files:** 1 new guide, 3 updated guides, 1 updated README
+- **Coverage:** All adoption patterns now documented with implementation guidance
+- **Integration:** Use cases guide cross-referenced throughout documentation
+
+---
+
+## [0.5.4.7+1] - 07-12-25
+
+📚 Documentation: Template setup guides created for GitHub template enablement
+
+### Added
+- **Post-Template Setup Guide** (`framework-dependency-post-template-setup-guide.md`):
+  - Comprehensive 8-step setup process after creating repository from template
+  - Project name and branding customization
+  - Version file configuration
+  - Changelog initialization/reset
+  - Kanban board customization
+  - Configuration file updates
+  - Framework installation verification
+  - Release Workflow (RW) testing
+  - Post-setup verification checklist
+  - Common issues and solutions
+  - Template-specific files reference
+- **Template Enablement Instructions** (`framework-dependency-template-enablement-instructions.md`):
+  - Step-by-step GitHub template enablement process
+  - Template description and topics recommendations
+  - Template readiness checklist
+  - What users get from template
+  - Post-enablement tasks
+  - Troubleshooting section
+
+### Changed
+- **Installation Guide** (`framework-dependency-installation-guide.md`):
+  - Added link to post-template setup guide in template usage section
+- **Use Cases Guide** (`framework-dependency-use-cases.md`):
+  - Added link to post-template setup guide for Use Case 1 (Template → All Packages)
+- **FAQ** (`framework-dependency-faq.md`):
+  - Added both new template guides to references section
+- **Story 4 Documentation** (`Epic-5/Story-004-framework-documentation-management.md`):
+  - Updated T07 deliverables with completed documentation items
+  - Updated success criteria to reflect documentation completion
+
+### Documentation
+- Template setup documentation complete for E05:S04:T07
+- Manual template enablement step documented (GitHub settings)
+- Cross-references updated across all user documentation
+
+---
+
+## [0.5.4.8+1] - 07-12-25
+
+📚 Documentation: `.cursorrules` setup for RW trigger
+
+### Added
+- **Documentation:** Added comprehensive `.cursorrules` setup instructions to installation guide, troubleshooting guide, and FAQ
+- **Task:** E05:S04:T08 - Document `.cursorrules` setup for RW trigger
+
+### Changed
+- **Installation Guide:** Added dedicated section for enabling RW trigger in Cursor
+- **Troubleshooting Guide:** Added "Issue: RW Trigger Not Working" section with solutions
+- **FAQ:** Added "How do I enable the 'RW' trigger in Cursor?" entry
+
+**Details:** [CHANGELOG_v0.5.4.8+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.4.8+1.md)
+
+---
+
+## [0.5.5.1+1] - 07-12-25
+
+📚 Documentation: Legacy repository incorporation analysis and planning
+
+### Added
+- **Legacy Repository Analysis** (`KB/Architecture/Standards_and_ADRs/legacy-repo-analysis.md`):
+  - Comprehensive analysis of ai-architect-kit and paradigm repositories
+  - Component-by-component evaluation
+  - Incorporation plan with 3 phases (High, Medium, Low priority)
+  - Source material references and recommendations
+  - Missing components analysis
+- **Story 5: Legacy Repository Incorporation** (`KB/PM_and_Portfolio/kanban/epics/Epic-5/Story-005-legacy-repository-incorporation.md`):
+  - Complete story with 25 tasks across 4 phases
+  - Phase 0: Planning and Preparation (T01-T04)
+  - Phase 1: High Priority Components (T05-T09) - Architectural principles, AI collaboration, template script
+  - Phase 2: Medium Priority Components (T10-T14) - Patterns, testing strategy, coding conventions
+  - Phase 3: Low Priority Components (T15-T19) - Project structure, TDD, issue-driven workflow
+  - Phase 4: Finalization and Archive (T20-T25) - Cross-references, migration guide, archive process
+  - Each task includes problem statement, approach, deliverables, success criteria, and dependencies
+
+### Changed
+- **Epic 5 Documentation** (`KB/PM_and_Portfolio/kanban/epics/Epic-5/Epic-5.md`):
+  - Added Story 5 to story checklist
+  - Updated last updated timestamp
+
+### Documentation
+- Comprehensive planning for incorporating legacy repository components
+- 25 detailed tasks covering complete incorporation process
+- Analysis identifies 3 high-priority, 3 medium-priority, and 3 low-priority components
+- Migration guide and archive process included in planning
+
+---
+
+## [0.6.1.1+2] - 06-12-25
+
+🏗️ Framework Architecture: Designed dependency architecture for auto-updating frameworks
+
+### Added
+
+- Created framework dependency architecture document
+- Created framework update CLI tool design document
+- Added dependency architecture tasks to Epic 6 stories (E6:S01:T04, T05, E6:S02:T04, T05)
+
+### Changed
+
+- Updated Epic 6 vision to reflect dependency-based framework goal
+- Updated all framework READMEs with dependency architecture notices
+- Updated main README with dependency architecture vision
+- Updated integration guides with dependency-based installation examples
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.1.1+2.md` for full details
+- Architecture supports Git submodules (Phase 1), CLI tool (Phase 2), and package managers (Phase 3)
+- Frameworks transitioning from copy-paste to auto-updating dependencies
+
+---
+
+## [0.6.4.1+1] - 07-12-25
+
+🐛 Bug Fix: RW installer template path bug fixed
+
+### Fixed
+- **RW Installer:** Fixed incorrect path to `cursorrules-rw-trigger-section.md` template file
+- **Path Resolution:** Added `FRAMEWORK_ROOT` variable to correctly resolve framework directory paths
+- **User Impact:** Installer now works correctly without manual workarounds
+
+### Added
+- **Bug Reports Story:** Created Story 4 in Epic 6 to track framework-related bug reports
+- **Feature Requests Story:** Created Story 5 in Epic 6 to track framework-related feature requests
+
+**Details:** [CHANGELOG_v0.6.4.1+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.4.1+1.md)
+
+---
+
+## [0.6.4.2+1] - 07-12-25
+
+📚 Documentation: Canonical stories for Kanban framework
+
+### Added
+- **Canonical Stories Document:** Created `CANONICAL_STORIES.md` documenting reusable story patterns (Bug Reports, Feature Requests)
+- **Framework Documentation:** Added canonical stories reference to Kanban framework README
+
+**Details:** [CHANGELOG_v0.6.4.2+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.4.2+1.md)
+
+---
+
 ## [0.9.21.3+2] - 02-12-25
 
 📚 Documentation: Branch safety Step 1 and modularity docs for workflow & numbering packages
@@ -2558,3 +2558,4 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - This version referenced **Confidentia Epic 9** and predates dev-kit-specific epics.  
 - Starting with `v0.1.1.1+1`, all releases use **dev-kit-specific Epic numbers**.
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.9.21.3+2.md` for full details.
+

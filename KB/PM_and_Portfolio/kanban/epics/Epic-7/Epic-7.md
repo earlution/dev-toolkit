@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-05 (v0.7.1.1+1 – Epic 7 created)  
+**Last updated:** 2025-01-27 (v0.7.4.1+1 – Story 4 added)  
 **Branch:** `epic/7-examples-adoption`  
 **Version Schema:** `0.7.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -27,6 +27,8 @@ housekeeping_policy: keep
   - Story: [`Story-002-migration-guides.md`](Story-002-migration-guides.md)
 - [ ] **E7:S03 – User Onboarding Materials** - TODO
   - Story: [`Story-003-user-onboarding-materials.md`](Story-003-user-onboarding-materials.md)
+- [ ] **E7:S04 – README Template Based on Best-README-Template** - TODO
+  - Story: [`Story-04-readme-template-based-on-best-readme-template.md`](Story-04-readme-template-based-on-best-readme-template.md)
 
 ---
 
@@ -111,6 +113,28 @@ Develop comprehensive onboarding materials for new users.
 - [ ] E7:S03:T03 – Establish user support resources
 
 **Story:** [`Story-003-user-onboarding-materials.md`](Story-003-user-onboarding-materials.md)
+
+---
+
+### Story 4: README Template Based on Best-README-Template
+
+**Status:** TODO  
+**Priority:** MEDIUM  
+**Estimated Effort:** [TBD]  
+**Last updated:** 2025-01-27
+
+**Goal:**  
+Create a README template based on Best-README-Template with ai-dev-kit integration and proper acknowledgments, then provide guidance on how adopting projects can customize it further.
+
+**Tasks:**
+- [ ] E7:S04:T01 – Create README template based on Best-README-Template
+- [ ] E7:S04:T02 – Add ai-dev-kit integration and acknowledgments to template
+- [ ] E7:S04:T03 – Create customization guide for adopting projects
+- [ ] E7:S04:T04 – Set up dependency tracking for external resources
+- [ ] E7:S04:T05 – Implement automated update detection mechanism
+- [ ] E7:S04:T06 – Create PR generation workflow for upstream updates
+
+**Story:** [`Story-04-readme-template-based-on-best-readme-template.md`](Story-04-readme-template-based-on-best-readme-template.md)
 
 ---
 

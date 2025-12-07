@@ -154,6 +154,9 @@ This board tracks all work on the `ai-dev-kit` repository and the **Head First A
   - Story: [`epics/Epic-7/Story-002-migration-guides.md`](epics/Epic-7/Story-002-migration-guides.md)
 - [ ] **E7:S03 – User Onboarding Materials** - TODO
   - Story: [`epics/Epic-7/Story-003-user-onboarding-materials.md`](epics/Epic-7/Story-003-user-onboarding-materials.md)
+- [ ] **E7:S04 – README Template Based on Best-README-Template** - TODO
+  - Tasks: T01 TODO, T02 TODO, T03 TODO, T04 TODO, T05 TODO, T06 TODO
+  - Story: [`epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md`](epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md)
 
 **Epic Doc:** [`epics/Epic-7/Epic-7.md`](epics/Epic-7/Epic-7.md)
 
