@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** MEDIUM  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-07  
-**Last updated:** 2025-12-07 (v0.1.4.0+0 – Story created)  
-**Version:** v0.1.4.0+0  
+**Last updated:** 2025-12-07 (v0.1.4.0+1 – Story created and committed)  
+**Version:** v0.1.4.0+1  
 **Code:** E1S04
 
 ---
