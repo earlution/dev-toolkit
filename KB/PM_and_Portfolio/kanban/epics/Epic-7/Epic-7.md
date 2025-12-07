@@ -121,7 +121,7 @@ Develop comprehensive onboarding materials for new users.
 **Status:** TODO  
 **Priority:** MEDIUM  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-01-27
+**Last updated:** 2025-01-27 (v0.7.4.1+1 – Story created)
 
 **Goal:**  
 Create a README template based on Best-README-Template with ai-dev-kit integration and proper acknowledgments, then provide guidance on how adopting projects can customize it further.

@@ -98,7 +98,7 @@ Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.T
 - [x] E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW) ✅ COMPLETE (v0.3.2.3+1)
 - [x] E3:S02:T04 – Document edge cases and anti-patterns ✅ COMPLETE (v0.3.2.4+1)
 - [x] E3:S02:T05 – Create quick reference summary for users and agents ✅ COMPLETE (v0.3.2.5+1)
-- [x] E3:S02:T06 – Investigate and harden changelog ordering process ✅ COMPLETE (v0.3.2.6+1)
+- [x] E3:S02:T06 – Investigate and harden changelog ordering process 🔄 PERPETUAL (v0.3.2.6+1)
 - [ ] E3:S02:T07 – Create dual-versioning guide for package manager compatibility - TODO
 
 > Full story: [`Story-002-versioning-cookbook-and-examples.md`](Story-002-versioning-cookbook-and-examples.md)

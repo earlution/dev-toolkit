@@ -25,7 +25,7 @@ housekeeping_policy: keep
 - [x] **E3:S02:T03 – Add cross-framework examples (Kanban + Versioning + RW)** ✅ COMPLETE (v0.3.2.3+1)
 - [x] **E3:S02:T04 – Document edge cases and anti-patterns** ✅ COMPLETE (v0.3.2.4+1)
 - [x] **E3:S02:T05 – Create quick reference summary for users and agents** ✅ COMPLETE (v0.3.2.5+1)
-- [x] **E3:S02:T06 – Investigate and harden changelog ordering process** ✅ COMPLETE (v0.3.2.6+1)
+- [x] **E3:S02:T06 – Investigate and harden changelog ordering process** 🔄 PERPETUAL (v0.3.2.6+1)
 - [x] **E3:S02:T07 – Create dual-versioning guide for package manager compatibility** ✅ COMPLETE (v0.3.2.7+1)
 
 ---
@@ -205,6 +205,9 @@ Provide a **versioning cookbook** with worked examples that shows:
 
 ### E3:S02:T06 – Investigate and harden changelog ordering process
 
+**Status:** 🔄 PERPETUAL  
+**Note:** This task is marked as PERPETUAL because changelog ordering is an ongoing maintenance concern. While the initial investigation and hardening work was completed in v0.3.2.6+1, the changelog must be continuously maintained to ensure canonical ordering is preserved. This task remains active to track any future ordering violations and ensure the process continues to work correctly.
+
 **Input:**  
 - Issue: Changelog entries appeared in incorrect order (v0.3.2.4+1 before v0.2.4.9+3)
 - Canonical ordering principle: Versions must be ordered by version number (RC.EPIC.STORY.TASK+BUILD)
@@ -214,6 +217,7 @@ Provide a **versioning cookbook** with worked examples that shows:
 - Root cause analysis of how changelog ordering violation occurred
 - Process improvements to prevent future violations
 - Validation/automation recommendations
+- Ongoing maintenance of changelog canonical ordering
 
 **Approach:**
 1. **Root Cause Analysis:**

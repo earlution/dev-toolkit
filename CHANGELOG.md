@@ -1540,6 +1540,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.6+2] - 07-12-25
+
+🔄 Process Improvement: Updated changelog ordering task status to PERPETUAL
+
+### Changed
+
+- **E3:S02:T06 Status:** Updated from COMPLETE to PERPETUAL
+- **Task Documentation:** Added status note explaining PERPETUAL designation
+- **Deliverables:** Added "Ongoing maintenance of changelog canonical ordering"
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.6+2.md` for full details
+- Changelog ordering is an ongoing maintenance concern requiring continuous attention
+- Task remains active to track future ordering violations and ensure process continues to work correctly
+
+---
+
 ## [0.3.2.7+1] - 07-12-25
 
 📚 Documentation: Dual-versioning guide for package manager compatibility
