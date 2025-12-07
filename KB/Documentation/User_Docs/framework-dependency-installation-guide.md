@@ -39,6 +39,59 @@ Before installing frameworks, ensure you have:
 - Terminal/command line access
 - Write permissions to your project directory
 
+### Setting Up a Git Repository
+
+If you don't have a Git repository yet, set one up first:
+
+**1. Initialize Local Git Repository:**
+
+```bash
+# Navigate to your project directory
+cd /path/to/your/project
+
+# Initialize Git repository
+git init
+
+# Create initial commit (optional but recommended)
+echo "# My Project" > README.md
+git add README.md
+git commit -m "Initial commit"
+```
+
+**2. Create GitHub Repository (Optional but Recommended):**
+
+```bash
+# Create repository on GitHub (via web interface or GitHub CLI)
+# Then connect local repository to remote:
+
+git remote add origin https://github.com/yourusername/your-project.git
+
+# Or using SSH:
+git remote add origin git@github.com:yourusername/your-project.git
+
+# Push initial commit
+git branch -M main
+git push -u origin main
+```
+
+**Note:** You can install frameworks with just a local Git repository. A GitHub (or other remote) repository is optional but recommended for:
+- Backup and collaboration
+- CI/CD integration
+- Framework update notifications (if using GitHub Actions)
+
+**3. Verify Git Setup:**
+
+```bash
+# Check Git is working
+git --version
+
+# Check repository is initialized
+git status
+
+# Check remote (if configured)
+git remote -v
+```
+
 ---
 
 ## Installation Methods
@@ -49,12 +102,22 @@ Git submodules allow you to include the vibe-dev-kit repository (or specific fra
 
 #### Installation Steps
 
-**1. Add the vibe-dev-kit repository as a submodule:**
+**1. Ensure Git repository is initialized:**
 
 ```bash
 # Navigate to your project root
 cd /path/to/your/project
 
+# If not already a Git repository, initialize it
+git init  # Only if needed
+
+# Verify Git is set up
+git status
+```
+
+**2. Add the vibe-dev-kit repository as a submodule:**
+
+```bash
 # Add the entire vibe-dev-kit repository as a submodule
 git submodule add https://github.com/earlution/vibe-dev-kit.git .vibe-dev-kit
 
@@ -62,7 +125,7 @@ git submodule add https://github.com/earlution/vibe-dev-kit.git .vibe-dev-kit
 git submodule add https://github.com/earlution/vibe-dev-kit.git frameworks/vibe-dev-kit
 ```
 
-**2. Checkout a specific framework version (recommended):**
+**3. Checkout a specific framework version (recommended):**
 
 ```bash
 # Navigate to the submodule
@@ -78,7 +141,7 @@ git checkout workflow-mgmt-v2.0.0
 cd ..
 ```
 
-**3. Copy the framework to your project structure:**
+**4. Copy the framework to your project structure:**
 
 ```bash
 # Copy the workflow management framework
@@ -89,7 +152,7 @@ cp -r .vibe-dev-kit/packages/frameworks/kanban/ ./frameworks/kanban
 cp -r ".vibe-dev-kit/packages/frameworks/numbering & versioning" ./frameworks/numbering-versioning
 ```
 
-**4. Commit the submodule reference:**
+**5. Commit the submodule reference:**
 
 ```bash
 git add .gitmodules .vibe-dev-kit frameworks/
@@ -165,7 +228,17 @@ The `vibe-dev-kit` CLI tool provides a unified interface for installing and mana
 
 #### Installation Steps
 
-**1. Install the CLI tool:**
+**1. Ensure Git repository is initialized:**
+
+```bash
+# Navigate to your project
+cd /path/to/your/project
+
+# Initialize Git if needed
+git init  # Only if not already a Git repository
+```
+
+**2. Install the CLI tool:**
 
 ```bash
 # Install via pip
@@ -177,7 +250,7 @@ cd vibe-dev-kit
 pip install -e .
 ```
 
-**2. Initialize vibe-dev-kit in your project:**
+**3. Initialize vibe-dev-kit in your project:**
 
 ```bash
 cd /path/to/your/project
@@ -193,7 +266,7 @@ backend: git_submodule  # or 'npm', 'pip'
 auto_update: false
 ```
 
-**3. Install a framework:**
+**4. Install a framework:**
 
 ```bash
 # Install workflow management framework
@@ -206,7 +279,7 @@ vibe-dev-kit install workflow-mgmt@2.0.0
 vibe-dev-kit install workflow-mgmt kanban numbering-versioning
 ```
 
-**4. Check installed frameworks:**
+**5. Check installed frameworks:**
 
 ```bash
 vibe-dev-kit status
@@ -276,6 +349,18 @@ Frameworks will be published as npm packages (for Node.js projects) and pip pack
 
 #### Installation Steps (npm - Future)
 
+**1. Ensure Git repository is initialized:**
+
+```bash
+# Navigate to your project
+cd /path/to/your/project
+
+# Initialize Git if needed
+git init  # Only if not already a Git repository
+```
+
+**2. Install workflow management framework:**
+
 ```bash
 # Install workflow management framework
 npm install @vibe-dev-kit/workflow-mgmt
@@ -289,6 +374,18 @@ npm install @vibe-dev-kit/workflow-mgmt @vibe-dev-kit/kanban
 
 #### Installation Steps (pip - Future)
 
+**1. Ensure Git repository is initialized:**
+
+```bash
+# Navigate to your project
+cd /path/to/your/project
+
+# Initialize Git if needed
+git init  # Only if not already a Git repository
+```
+
+**2. Install workflow management framework:**
+
 ```bash
 # Install workflow management framework
 pip install vibe-dev-kit-workflow-mgmt
@@ -299,6 +396,12 @@ pip install vibe-dev-kit-workflow-mgmt==2.0.0
 # Install multiple frameworks
 pip install vibe-dev-kit-workflow-mgmt vibe-dev-kit-kanban
 ```
+
+**Note:** While package managers (npm/pip) don't strictly require Git, having a Git repository is still recommended for:
+- Version control of your project
+- Tracking framework versions
+- CI/CD integration
+- Framework update workflows
 
 #### Updating Frameworks (Package Managers)
 
@@ -425,15 +528,40 @@ python3 scripts/validation/validate_branch_context.py
 ### 3. Check Git Integration
 
 ```bash
+# Verify Git repository is initialized
+git status
+# Should show repository status (not "not a git repository")
+
 # Verify submodule is tracked (if using Git submodules)
 git submodule status
-
 # Should show submodule with commit hash
+
+# Check remote (if configured)
+git remote -v
+# Shows remote repository URL if configured
 ```
 
 ---
 
 ## Troubleshooting
+
+### Issue: Not a Git repository
+
+**Problem:** `git status` shows "not a git repository" error.
+
+**Solution:**
+```bash
+# Initialize Git repository
+git init
+
+# Create initial commit
+git add .
+git commit -m "Initial commit"
+
+# Then proceed with framework installation
+```
+
+**Note:** You can install frameworks without a remote repository (GitHub). A local Git repository is sufficient for framework installation.
 
 ### Issue: Git submodule not updating
 
