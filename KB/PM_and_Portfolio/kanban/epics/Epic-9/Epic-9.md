@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Epic 9: Book Related Work
 
-**Status:** TODO  
+**Status:** IN PROGRESS  
 **Priority:** MEDIUM  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
@@ -21,7 +21,7 @@ housekeeping_policy: keep
 
 ## Story Checklist
 
-- [ ] **E9:S01 – Book Content Development** - TODO
+- [ ] **E9:S01 – Book Content Development** - IN PROGRESS
   - Story: [`Story-001-book-content-development.md`](Story-001-book-content-development.md)
 - [ ] **E9:S02 – Book Integration with Dev-Kit** - TODO
   - Story: [`Story-002-book-integration-with-dev-kit.md`](Story-002-book-integration-with-dev-kit.md)

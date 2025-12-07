@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Story 001 – Book Content Development
 
-**Status:** TODO  
+**Status:** IN PROGRESS  
 **Priority:** MEDIUM  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  

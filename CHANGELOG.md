@@ -17,6 +17,33 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.5.4.5+1] - 06-12-25
+
+📚 Documentation Management: Framework dependency installation guide created
+
+### Added
+
+- Created framework dependency installation guide (`KB/Documentation/User_Docs/framework-dependency-installation-guide.md`)
+- Comprehensive installation instructions for all three dependency methods (Git submodules, CLI tool, package managers)
+- Post-installation setup procedures
+- Verification steps and troubleshooting section
+- Added E05:S04:T05 task to Story 4 for comprehensive Epic 6 user documentation
+
+### Changed
+
+- Updated Story 4 to include new task
+- Updated Epic 5 story checklist
+- Version bumped to v0.5.4.5+1 (Story 4, Task 5, Build 1)
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.4.5+1.md` for full details
+- Installation guide is designed to be simple, accessible, and technically accurate
+- Ready for testing by setting up a new project using vibe-dev-kit as template
+- First deliverable in comprehensive Epic 6 user documentation series
+
+---
+
 ## [0.5.2.1+2] - 06-12-25
 
 🔍 Documentation Management: Documentation consistency validators created

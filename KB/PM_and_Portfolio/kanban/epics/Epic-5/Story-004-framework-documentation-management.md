@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-05  
-**Version:** v0.5.4.1+1  
+**Last updated:** 2025-12-06 (v0.5.4.5+1 – Framework dependency installation guide created)  
+**Version:** v0.5.4.5+1  
 **Code:** E05S04
 
 ---
@@ -24,6 +24,7 @@ housekeeping_policy: keep
 - [ ] **E05:S04:T02 – Define framework documentation maintenance policies** - TODO
 - [ ] **E05:S04:T03 – Create framework documentation review cadences** - TODO
 - [ ] **E05:S04:T04 – Establish framework documentation update triggers** - TODO
+- [ ] **E05:S04:T05 – Create comprehensive user documentation for Epic 6 framework dependency architecture** - IN PROGRESS
 
 ---
 

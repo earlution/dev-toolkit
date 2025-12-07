@@ -8,16 +8,16 @@ housekeeping_policy: keep
 
 # Vibe Dev Kit – Kanban Board
 
-**Last Updated:** 2025-12-05  
-**Version:** v0.4.4.1+1
+**Last Updated:** 2025-12-06  
+**Version:** v0.5.2.2+1
 
-**Note:** All 4 Epics are now COMPLETE ✅
+**Note:** Epics 1-4 are COMPLETE ✅. Epics 5-9 are IN PROGRESS.
 
 ---
 
 ## Overview
 
-This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Coding For Dummies** book project.
+This board tracks all work on the `vibe-dev-kit` repository and the **Head First AI-Assisted Development** book project.
 
 **Structure:** All Kanban documentation lives under `KB/PM_and_Portfolio/kanban/`:
 - Epic overviews: `epics/Epic-X/Epic-X.md`
@@ -101,6 +101,97 @@ This board tracks all work on the `vibe-dev-kit` repository and the **Vibe Codin
   - Story: [`epics/Epic-4/Story-004-kanban-structure-refactoring.md`](epics/Epic-4/Story-004-kanban-structure-refactoring.md)
 
 **Epic Doc:** [`epics/Epic-4/Epic-4.md`](epics/Epic-4/Epic-4.md)
+
+---
+
+### Epic 5: Documentation Management and Maintenance
+
+**Status:** IN PROGRESS  
+**Priority:** HIGH  
+**Last Updated:** v0.5.2.2+1
+
+**Stories:**
+- [x] **E5:S01 – Documentation Maintenance Framework** - COMPLETE ✅ (v0.5.1.4+2)
+  - Story: [`epics/Epic-5/Story-001-documentation-maintenance-framework.md`](epics/Epic-5/Story-001-documentation-maintenance-framework.md)
+- [ ] **E5:S02 – Documentation Quality Assurance** - IN PROGRESS (v0.5.2.2+1)
+  - Tasks: T01 ✅, T02 ✅, T03 TODO
+  - Story: [`epics/Epic-5/Story-002-documentation-quality-assurance.md`](epics/Epic-5/Story-002-documentation-quality-assurance.md)
+- [ ] **E5:S03 – Documentation Automation** - TODO
+  - Story: [`epics/Epic-5/Story-003-documentation-automation.md`](epics/Epic-5/Story-003-documentation-automation.md)
+
+**Epic Doc:** [`epics/Epic-5/Epic-5.md`](epics/Epic-5/Epic-5.md)
+
+---
+
+### Epic 6: Framework Management and Maintenance
+
+**Status:** IN PROGRESS  
+**Priority:** HIGH  
+**Last Updated:** v0.6.3.3+2
+
+**Stories:**
+- [x] **E6:S01 – Framework Version Management** - COMPLETE ✅
+  - Story: [`epics/Epic-6/Story-001-framework-version-management.md`](epics/Epic-6/Story-001-framework-version-management.md)
+- [x] **E6:S02 – Framework Update and Migration** - COMPLETE ✅
+  - Story: [`epics/Epic-6/Story-002-framework-update-and-migration.md`](epics/Epic-6/Story-002-framework-update-and-migration.md)
+- [x] **E6:S03 – Framework Health Monitoring** - COMPLETE ✅
+  - Story: [`epics/Epic-6/Story-003-framework-health-monitoring.md`](epics/Epic-6/Story-003-framework-health-monitoring.md)
+
+**Epic Doc:** [`epics/Epic-6/Epic-6.md`](epics/Epic-6/Epic-6.md)
+
+---
+
+### Epic 7: Examples and Adoption
+
+**Status:** TODO  
+**Priority:** MEDIUM  
+**Last Updated:** [TBD]
+
+**Stories:**
+- [ ] **E7:S01 – Real-World Adoption Examples** - TODO
+  - Story: [`epics/Epic-7/Story-001-real-world-adoption-examples.md`](epics/Epic-7/Story-001-real-world-adoption-examples.md)
+- [ ] **E7:S02 – Migration Guides** - TODO
+  - Story: [`epics/Epic-7/Story-002-migration-guides.md`](epics/Epic-7/Story-002-migration-guides.md)
+- [ ] **E7:S03 – User Onboarding Materials** - TODO
+  - Story: [`epics/Epic-7/Story-003-user-onboarding-materials.md`](epics/Epic-7/Story-003-user-onboarding-materials.md)
+
+**Epic Doc:** [`epics/Epic-7/Epic-7.md`](epics/Epic-7/Epic-7.md)
+
+---
+
+### Epic 8: Tooling and Automation
+
+**Status:** TODO  
+**Priority:** MEDIUM  
+**Last Updated:** [TBD]
+
+**Stories:**
+- [ ] **E8:S01 – Code Generators** - TODO
+  - Story: [`epics/Epic-8/Story-001-code-generators.md`](epics/Epic-8/Story-001-code-generators.md)
+- [ ] **E8:S02 – Additional Validators** - TODO
+  - Story: [`epics/Epic-8/Story-002-additional-validators.md`](epics/Epic-8/Story-002-additional-validators.md)
+- [ ] **E8:S03 – Automation Scripts** - TODO
+  - Story: [`epics/Epic-8/Story-003-automation-scripts.md`](epics/Epic-8/Story-003-automation-scripts.md)
+
+**Epic Doc:** [`epics/Epic-8/Epic-8.md`](epics/Epic-8/Epic-8.md)
+
+---
+
+### Epic 9: Book Content Development
+
+**Status:** IN PROGRESS  
+**Priority:** MEDIUM  
+**Last Updated:** [TBD]
+
+**Stories:**
+- [ ] **E9:S01 – Book Content Development** - IN PROGRESS
+  - Story: [`epics/Epic-9/Story-001-book-content-development.md`](epics/Epic-9/Story-001-book-content-development.md)
+- [ ] **E9:S02 – Book Integration with Dev Kit** - TODO
+  - Story: [`epics/Epic-9/Story-002-book-integration-with-dev-kit.md`](epics/Epic-9/Story-002-book-integration-with-dev-kit.md)
+- [ ] **E9:S03 – Book Publishing Support** - TODO
+  - Story: [`epics/Epic-9/Story-003-book-publishing-support.md`](epics/Epic-9/Story-003-book-publishing-support.md)
+
+**Epic Doc:** [`epics/Epic-9/Epic-9.md`](epics/Epic-9/Epic-9.md)
 
 ---
 

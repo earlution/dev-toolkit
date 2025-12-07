@@ -8,11 +8,11 @@ housekeeping_policy: keep
 
 # Epic 5: Documentation Management and Maintenance
 
-**Status:** TODO  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-05 (v0.5.1.1+4 – Framework KB documentation updated to v1.5.0)  
+**Last updated:** 2025-12-06 (v0.5.2.2+1 – Documentation review workflows implemented)  
 **Branch:** `epic/5-documentation-management`  
 **Version Schema:** `0.5.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -23,10 +23,13 @@ housekeeping_policy: keep
 
 - [x] **E5:S01 – Documentation Maintenance Framework** - COMPLETE ✅
   - Story: [`Story-001-documentation-maintenance-framework.md`](Story-001-documentation-maintenance-framework.md)
-- [ ] **E5:S02 – Documentation Quality Assurance** - TODO
+- [ ] **E5:S02 – Documentation Quality Assurance** - IN PROGRESS
   - Story: [`Story-002-documentation-quality-assurance.md`](Story-002-documentation-quality-assurance.md)
+  - Tasks: T01 ✅, T02 ✅, T03 TODO
 - [ ] **E5:S03 – Documentation Automation** - TODO
   - Story: [`Story-003-documentation-automation.md`](Story-003-documentation-automation.md)
+- [ ] **E5:S04 – Framework Documentation Management** - TODO
+  - Story: [`Story-004-framework-documentation-management.md`](Story-004-framework-documentation-management.md)
 
 ---
 
