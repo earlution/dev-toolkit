@@ -46,6 +46,39 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.5.1.5+1] - 07-12-25
+
+📚 Documentation Management: KB platform/tooling evaluation task added
+
+### Added
+- **E5:S01:T05 – Explore and evaluate KB platform/tooling options:**
+  - Comprehensive task definition for evaluating KB platform/tooling options
+  - 14 evaluation criteria categories covering:
+    - Ease of setup and technical fluency requirements
+    - Maintenance overhead and operational considerations
+    - Ringfencing/public exposure capabilities
+    - Remote team support and collaboration features
+    - Integration with existing dev-kit workflows
+    - Cost, licensing, and sustainability
+    - Search, discoverability, and Markdown support
+    - Agent/AI compatibility and automation
+    - Versioning, export, and portability
+    - Performance, scalability, and security
+  - Platform options to evaluate (Git-based, static site generators, documentation platforms, wikis, hybrid solutions)
+  - Use case scenario analysis (framework users, book readers, public-facing content, remote teams)
+  - Deliverables defined (evaluation report, comparison matrix, recommendations)
+
+### Changed
+- **Epic 5, Story 1 Status:** Updated from COMPLETE to IN PROGRESS (T01 and T05 are TODO)
+- **Story 1 Task Checklist:** Added T05 to task list
+
+### Technical Details
+- **Task Scope:** Evaluation of KB platform/tooling options for framework package
+- **Considerations:** Framework user technical fluency, book reader accessibility, public content ringfencing, remote collaboration
+- **Integration:** Will inform KB framework package design and implementation
+
+---
+
 ## [0.5.4.5+3] - 07-12-25
 
 📚 Documentation Management: Enhanced installation guide with Git repository setup prerequisites

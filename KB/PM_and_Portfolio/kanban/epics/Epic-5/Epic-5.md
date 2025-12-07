@@ -21,7 +21,7 @@ housekeeping_policy: keep
 
 ## Story Checklist
 
-- [x] **E5:S01 – Documentation Maintenance Framework** - COMPLETE ✅
+- [ ] **E5:S01 – Documentation Maintenance Framework** - IN PROGRESS (T02-T04 complete, T01 and T05 TODO)
   - Story: [`Story-001-documentation-maintenance-framework.md`](Story-001-documentation-maintenance-framework.md)
 - [ ] **E5:S02 – Documentation Quality Assurance** - IN PROGRESS
   - Story: [`Story-002-documentation-quality-assurance.md`](Story-002-documentation-quality-assurance.md)

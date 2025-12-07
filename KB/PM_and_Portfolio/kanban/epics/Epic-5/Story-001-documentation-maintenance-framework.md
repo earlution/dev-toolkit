@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-06 (v0.5.1.4+1 – Documentation update triggers established, Story 1 complete)  
+**Last updated:** 2025-12-07 (v0.5.1.4+1 – Task T05 added: KB platform/tooling evaluation)  
 **Version:** v0.5.1.4+1  
 **Code:** E5S01
 
@@ -24,6 +24,7 @@ housekeeping_policy: keep
 - [x] **E5:S01:T02 – Define documentation maintenance policies** - COMPLETE ✅
 - [x] **E5:S01:T03 – Create documentation review cadences** - COMPLETE ✅
 - [x] **E5:S01:T04 – Establish documentation update triggers** - COMPLETE ✅
+- [ ] **E5:S01:T05 – Explore and evaluate KB platform/tooling options** - TODO
 
 ---
 
@@ -323,6 +324,220 @@ Documentation often becomes outdated because there's no clear system for identif
 - E5:S01:T03 - Documentation review cadences (scheduled triggers)
 - Epic 2: Release Workflow (automatic triggers in RW Steps 6-7)
 - Epic 4: Kanban Framework (FR/BR → Task flow for documentation issues)
+
+---
+
+### E5:S01:T05 – Explore and evaluate KB platform/tooling options
+
+**Input:** Current KB structure (Git-based Markdown), framework user requirements, book reader requirements  
+**Deliverable:** KB platform/tooling evaluation report with recommendations  
+**Dependencies:** None  
+**Blocker:** None
+
+**Problem Statement:**
+The current KB is Git-based (Markdown files in `KB/` directory), which works well for development teams but may not be optimal for all use cases. As KB management becomes a framework package, we need to evaluate whether the current approach is sufficient or if alternative platforms/tools would better serve:
+- Framework users with varying technical fluency
+- Book readers who may be less technical
+- Public-facing content (feature requests, bug reports)
+- Remote teams requiring collaboration features
+- Integration with existing dev-kit workflows
+
+**Approach:**
+
+1. **Define Evaluation Criteria:**
+   - **Ease of Setup:**
+     - Installation/configuration complexity
+     - Time to first value
+     - Infrastructure requirements (self-hosted vs. SaaS)
+     - Initial learning curve
+   
+   - **Technical Fluency Requirements:**
+     - Skill level needed for setup (beginner, intermediate, advanced)
+     - Skill level needed for daily use
+     - Learning curve for book readers/framework users
+     - Documentation quality and accessibility
+   
+   - **Maintenance Overhead:**
+     - Ongoing operational requirements
+     - Update frequency and complexity
+     - Backup/disaster recovery needs
+     - Scaling considerations
+     - Long-term sustainability
+   
+   - **Ringfencing/Public Exposure:**
+     - Ability to expose specific sections publicly (feature requests, bug reports)
+     - Access control granularity (per-section, per-user, per-role)
+     - Public/private content separation
+     - Integration with GitHub/GitLab issues
+     - Public API access
+   
+   - **Remote Team Support:**
+     - Collaboration features (real-time editing, comments, discussions)
+     - Notification systems
+     - Multi-user concurrent editing
+     - Version conflict resolution
+     - Activity feeds and change tracking
+   
+   - **Integration with Existing Tools:**
+     - Git/GitHub integration (read/write access)
+     - CI/CD compatibility
+     - Release Workflow (RW) integration
+     - Kanban framework integration
+     - Version control compatibility
+     - API access for automation
+   
+   - **Cost and Licensing:**
+     - Open source vs. commercial
+     - Self-hosted vs. SaaS
+     - Pricing model (per user, per project, one-time, subscription)
+     - Long-term sustainability and vendor lock-in risk
+     - Community support vs. commercial support
+   
+   - **Search and Discoverability:**
+     - Full-text search capabilities
+     - Tagging/categorization systems
+     - Navigation structure flexibility
+     - Content organization patterns
+     - Search performance with large KBs
+   
+   - **Markdown Support:**
+     - Native Markdown support (syntax, extensions)
+     - Frontmatter/metadata support
+     - Template support
+     - Migration path from current Git-based structure
+     - Markdown rendering quality
+   
+   - **Agent/AI Compatibility:**
+     - API access for automation
+     - Structured data formats (JSON, YAML)
+     - Agent-friendly editing capabilities
+     - Programmatic updates and bulk operations
+     - Structured content for AI consumption
+   
+   - **Versioning and History:**
+     - Change tracking and audit trails
+     - Version control integration (Git)
+     - Rollback capabilities
+     - Diff/comparison tools
+     - Version history retention
+   
+   - **Export and Portability:**
+     - Data export formats (Markdown, HTML, PDF, JSON)
+     - Migration paths to/from other platforms
+     - Vendor lock-in risk assessment
+     - Backup/restore capabilities
+     - Data ownership and portability
+   
+   - **Performance and Scalability:**
+     - Response times for large KBs
+     - Large document handling
+     - Concurrent user support
+     - Storage limits and costs
+     - Caching and CDN support
+   
+   - **Security and Compliance:**
+     - Access controls (authentication, authorization)
+     - Data encryption (at rest, in transit)
+     - Compliance certifications (SOC2, GDPR, etc.)
+     - Audit logging
+     - SSO integration
+
+2. **Identify KB Platform/Tooling Options:**
+   - **Git-Based (Current):**
+     - Markdown files in Git repository
+     - GitHub/GitLab native rendering
+     - Pros: Version control, no additional infrastructure, developer-friendly
+     - Cons: Limited collaboration, no public ringfencing, technical barrier
+   
+   - **Static Site Generators:**
+     - MkDocs, Docusaurus, GitBook, VuePress, Jekyll
+     - Pros: Markdown-based, version controlled, fast, free hosting options
+     - Cons: Requires build process, limited collaboration, technical setup
+   
+   - **Documentation Platforms:**
+     - Read the Docs, GitBook (hosted), Notion, Confluence
+     - Pros: Easy setup, collaboration features, public/private separation
+     - Cons: Cost, vendor lock-in, migration complexity
+   
+   - **Wiki Platforms:**
+     - MediaWiki, BookStack, TiddlyWiki, Obsidian Publish
+     - Pros: Rich features, collaboration, search
+     - Cons: Setup complexity, maintenance overhead, migration from Markdown
+   
+   - **Hybrid Solutions:**
+     - Git-based with enhanced UI (Gitiles, Gollum)
+     - Markdown with collaboration layer (HackMD, StackEdit)
+     - Custom solutions built on existing frameworks
+
+3. **Evaluate Each Option Against Criteria:**
+   - Create evaluation matrix scoring each option on all criteria
+   - Weight criteria based on priority (e.g., ease of setup may be higher priority for book readers)
+   - Identify top 3-5 options for detailed evaluation
+   - Document pros/cons for each option
+   - Identify deal-breakers and must-haves
+
+4. **Consider Use Case Scenarios:**
+   - **Scenario 1: Framework User (Technical)**
+     - Needs: Easy setup, Git integration, Markdown support
+     - Priority: Technical fluency, integration, maintenance
+   
+   - **Scenario 2: Book Reader (Less Technical)**
+     - Needs: Easy setup, intuitive UI, minimal technical knowledge
+     - Priority: Ease of setup, technical fluency, discoverability
+   
+   - **Scenario 3: Public-Facing Content**
+     - Needs: Ringfencing, public access, GitHub integration
+     - Priority: Public exposure, integration, security
+   
+   - **Scenario 4: Remote Team Collaboration**
+     - Needs: Real-time editing, notifications, discussions
+     - Priority: Remote support, collaboration, integration
+
+5. **Create Recommendation Framework:**
+   - **Recommended for Framework Package:**
+     - Primary recommendation with rationale
+     - Implementation considerations
+     - Migration path from current structure
+   
+   - **Alternative Options:**
+     - Secondary recommendations for specific use cases
+     - When to choose alternatives
+   
+   - **Hybrid Approach:**
+     - Combining multiple tools for different needs
+     - Integration patterns
+     - Complexity vs. benefit analysis
+
+6. **Document Evaluation Results:**
+   - Executive summary with key findings
+   - Detailed evaluation matrix
+   - Use case scenario analysis
+   - Recommendations with rationale
+   - Implementation roadmap (if applicable)
+   - Migration considerations
+
+**Deliverables:**
+- `KB/Analysis/kb-platform-tooling-evaluation-report.md` - Comprehensive evaluation report
+- `KB/Analysis/kb-platform-evaluation-matrix.md` - Detailed comparison matrix
+- `KB/Analysis/kb-platform-recommendations.md` - Recommendations with rationale
+- `KB/Architecture/Standards_and_ADRs/kb-platform-selection-criteria.md` - Selection criteria document
+- Use case scenario analysis documents
+
+**Success Criteria:**
+- All major KB platform/tooling options identified and evaluated
+- Evaluation criteria comprehensively defined
+- Each option scored against all criteria
+- Top 3-5 options identified for detailed evaluation
+- Use case scenarios analyzed for each option
+- Clear recommendations provided with rationale
+- Implementation considerations documented
+- Migration path identified (if applicable)
+
+**Related Work:**
+- E5:S01:T01 - Documentation hygiene analysis (may inform requirements)
+- Epic 1: Story 3 - Core KB Structure (current structure baseline)
+- Epic 6: Framework Management (KB as framework package)
+- Epic 9: Book Content Development (book reader requirements)
 
 ---
 
