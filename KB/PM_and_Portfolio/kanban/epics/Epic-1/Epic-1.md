@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-07 (v0.1.4.1+2 – Story 4, Task 1 complete: Repository rename to ai-dev-kit)  
+**Last updated:** 2025-12-07 (v0.1.4.1+3 – Comprehensive README created)  
 **Branch:** `epic/1-ai-dev-kit-core`  
 **Version Schema:** `0.1.S.T+B` (dev-kit RC.EPIC.STORY.TASK+BUILD)  
 **Production URL:** [N/A for this repo]
