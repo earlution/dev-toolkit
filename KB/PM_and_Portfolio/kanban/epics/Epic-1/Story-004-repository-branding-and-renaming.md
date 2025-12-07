@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** MEDIUM  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-07  
-**Last updated:** 2025-12-07 (v0.1.4.0+1 – Phase 1 rename executed: all references updated to ai-dev-kit)  
-**Version:** v0.1.4.0+1  
+**Last updated:** 2025-12-07 (v0.1.4.1+2 – Phase 1 rename completed: repository renamed and pushed to GitHub)  
+**Version:** v0.1.4.1+2  
 **Code:** E1S04
 
 ---
