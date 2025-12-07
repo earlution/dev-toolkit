@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-07 (v0.5.1.4+1 – Task T05 added: KB platform/tooling evaluation)  
-**Version:** v0.5.1.4+1  
+**Last updated:** 2025-12-07 (v0.5.1.5+1 – Task T05 added: KB platform/tooling evaluation)  
+**Version:** v0.5.1.5+1  
 **Code:** E5S01
 
 ---
