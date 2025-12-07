@@ -25,6 +25,7 @@ housekeeping_policy: keep
 - [ ] **E05:S04:T03 – Create framework documentation review cadences** - TODO
 - [ ] **E05:S04:T04 – Establish framework documentation update triggers** - TODO
 - [x] **E05:S04:T05 – Create comprehensive user documentation for Epic 6 framework dependency architecture** - COMPLETE ✅
+- [ ] **E05:S04:T06 – Create quick-start guide for framework dependency installation** - TODO
 
 ---
 
@@ -209,6 +210,72 @@ Framework documentation often becomes outdated because there isn't a clear, syst
 - E05:S02 (Quality Assurance) - Validators can act as automatic triggers
 - E05:S03 (Automation) - Automation scripts will implement automatic triggers
 - E05:S01:T04 (Project Documentation Update Triggers) - Similar triggers for project documentation
+
+---
+
+### E05:S04:T06 – Create quick-start guide for framework dependency installation
+
+**Input:** Framework dependency installation guide (E05:S04:T05)  
+**Deliverable:** Quick-start guide for users who already have Git set up  
+**Dependencies:** E05:S04:T05  
+**Blocker:** None
+
+**Problem Statement:**
+The comprehensive installation guide (E05:S04:T05) covers the full setup process from scratch, including Git repository initialization. However, many users may already have a Git repository set up and want a faster path to get started. A quick-start guide would provide a streamlined installation path for experienced users while still maintaining technical accuracy.
+
+**Approach:**
+
+1. **Identify Quick-Start Scenarios:**
+   - Users with existing Git repository (local or remote)
+   - Users familiar with Git submodules
+   - Users who want to install frameworks quickly
+   - Users who have already reviewed the comprehensive guide
+
+2. **Create Streamlined Installation Path:**
+   - **Prerequisites Check:** Quick verification that Git is set up (skip detailed setup)
+   - **Method Selection:** Help users choose the right installation method quickly
+   - **Minimal Steps:** Focus on essential commands only
+   - **Quick Verification:** Simplified verification steps
+   - **Next Steps:** Link to comprehensive guide for detailed configuration
+
+3. **Structure Quick-Start Guide:**
+   - **Prerequisites:** Quick checklist (Git installed, repository initialized, Python/Node if needed)
+   - **Choose Your Method:** Brief comparison table to help selection
+   - **Quick Install:** Step-by-step commands for each method (minimal explanation)
+   - **Verify Installation:** Quick verification commands
+   - **Next Steps:** Links to comprehensive guide, usage guide, and configuration
+
+4. **Content Requirements:**
+   - **Concise:** Focus on commands and essential information only
+   - **Copy-paste ready:** All commands should be ready to use
+   - **Clear assumptions:** Explicitly state what is assumed (Git knowledge, existing repo, etc.)
+   - **Error handling:** Brief troubleshooting for common quick-start issues
+   - **Cross-references:** Link to comprehensive guide for details
+
+5. **Integration with Existing Documentation:**
+   - Link from comprehensive installation guide to quick-start
+   - Link from quick-start back to comprehensive guide for details
+   - Ensure consistency between both guides
+   - Update main README to reference both guides
+
+**Deliverables:**
+- `KB/Documentation/User_Docs/framework-dependency-quick-start-guide.md` - Quick-start installation guide
+- Updates to `KB/Documentation/User_Docs/framework-dependency-installation-guide.md` - Add link to quick-start guide
+- Updates to `README.md` - Add reference to quick-start guide
+
+**Success Criteria:**
+- Quick-start guide provides streamlined installation path
+- All three installation methods covered (Git submodules, CLI tool, package managers)
+- Guide assumes Git knowledge and existing repository
+- Commands are copy-paste ready and tested
+- Guide links to comprehensive guide for details
+- Verification steps are simplified but effective
+- Guide is accessible to users who want faster installation
+
+**Related Work:**
+- E05:S04:T05 (Comprehensive Installation Guide) - Source material and prerequisite
+- Epic 6 (Framework Management) - Framework dependency architecture
+- E05:S04:T01-T04 (Framework Documentation Management) - Part of framework documentation suite
 
 ---
 

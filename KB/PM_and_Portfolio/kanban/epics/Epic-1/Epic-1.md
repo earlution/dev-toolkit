@@ -8,11 +8,11 @@ housekeeping_policy: keep
 
 # Epic 1: Vibe Dev Kit Core
 
-**Status:** COMPLETE ✅  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-03 (v0.1.3.6+1 – All stories complete: Core KB structure established)  
+**Last updated:** 2025-12-07 (v0.1.4.0+0 – Story 4 added: Repository Branding and Renaming)  
 **Branch:** `epic/1-vibe-dev-kit-core`  
 **Version Schema:** `0.1.S.T+B` (dev-kit RC.EPIC.STORY.TASK+BUILD)  
 **Production URL:** [N/A for this repo]
@@ -28,6 +28,8 @@ housekeeping_policy: keep
 - [x] **E1:S03 – Core KB Structure for Dev Kit** - COMPLETE ✅ (v0.1.3.6+1 – All tasks complete)
   - Tasks: T001 ✅ (v0.1.3.1+1), T002 ✅ (v0.1.3.2+1), T003 ✅ (v0.1.3.3+1), T004 ✅ (v0.1.3.4+1), T005 ✅ (v0.1.3.5+1), T006 ✅ (v0.1.3.6+1)
   - Story: [`Story-003-core-kb-structure-for-dev-kit.md`](Story-003-core-kb-structure-for-dev-kit.md)  
+- [ ] **E1:S04 – Repository Branding and Renaming** - TODO
+  - Story: [`Story-004-repository-branding-and-renaming.md`](Story-004-repository-branding-and-renaming.md)
 
 ---
 
@@ -35,6 +37,8 @@ housekeeping_policy: keep
 
 Epic 1 establishes the **core infrastructure and conventions** for the Vibe Dev Kit repository.  
 It defines how the repo is structured, how versioning works for the dev kit itself, and how Release Workflow (RW) should behave when run *inside this repo* rather than inside an application project.
+
+**Note:** Epic 1 status changed to IN PROGRESS due to new Story 4 (Repository Branding and Renaming).
 
 ---
 

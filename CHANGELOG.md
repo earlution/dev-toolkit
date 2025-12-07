@@ -49,6 +49,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.1.4.0+1] - 07-12-25
+
+🏗️ Core Infrastructure: Repository branding and renaming planning story created
+
+### Added
+- **Epic 1, Story 4 – Repository Branding and Renaming:**
+  - Created comprehensive planning story for repository renaming strategy
+  - Two-phase approach: `vibe-dev-kit` → `ai-dev-kit` → `head-first-ai-dev-kit`
+  - Task 1: Plan rename from `vibe-dev-kit` to `ai-dev-kit` (immediate alignment)
+  - Task 2: Plan rename from `ai-dev-kit` to `head-first-ai-dev-kit` (conditional on O'Reilly acceptance)
+  - Includes impact analysis, migration guides, and user communication planning
+- **Epic 1 Status Update:**
+  - Epic 1 status changed from COMPLETE to IN PROGRESS
+  - New story added to track repository branding alignment with book
+
+### Changed
+- Epic 1 status updated to reflect new repository branding work
+- Repository naming strategy aligned with "Head First AI-Assisted Development" book branding
+
+---
+
 ## [0.5.4.5+1] - 06-12-25
 
 📚 Documentation Management: Framework dependency installation guide created
