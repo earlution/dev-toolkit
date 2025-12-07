@@ -17,6 +17,23 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.5.4.8+1] - 07-12-25
+
+📚 Documentation: `.cursorrules` setup for RW trigger
+
+### Added
+- **Documentation:** Added comprehensive `.cursorrules` setup instructions to installation guide, troubleshooting guide, and FAQ
+- **Task:** E05:S04:T08 - Document `.cursorrules` setup for RW trigger
+
+### Changed
+- **Installation Guide:** Added dedicated section for enabling RW trigger in Cursor
+- **Troubleshooting Guide:** Added "Issue: RW Trigger Not Working" section with solutions
+- **FAQ:** Added "How do I enable the 'RW' trigger in Cursor?" entry
+
+**Details:** [CHANGELOG_v0.5.4.8+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.5.4.8+1.md)
+
+---
+
 ## [0.3.2.7+1] - 07-12-25
 
 📚 Documentation: Dual-versioning guide for package manager compatibility

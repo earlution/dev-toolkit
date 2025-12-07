@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-07 (v0.5.5.1+1 – Legacy repository incorporation analysis and story created, T01 complete)  
+**Last updated:** 2025-12-07 (v0.5.4.8+1 – `.cursorrules` setup documentation added)  
 **Branch:** `epic/5-documentation-management`  
 **Version Schema:** `0.5.S.T+B`  
 **Production URL:** [N/A for this repo]

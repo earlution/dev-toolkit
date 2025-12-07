@@ -490,6 +490,32 @@ python3 scripts/validation/validate_changelog_format.py
 # Fix issues and retry
 ```
 
+### How do I enable the "RW" trigger in Cursor?
+
+**Answer:** You need to add the RW trigger section to your `.cursorrules` file.
+
+**Quick Setup:**
+
+1. **Use the RW installer (recommended):**
+   ```bash
+   python frameworks/workflow-mgmt/scripts/install_release_workflow.py
+   ```
+   This automatically creates/updates `.cursorrules` with the RW trigger section.
+
+2. **Or manually add the section:**
+   - Open `frameworks/workflow-mgmt/cursorrules-rw-trigger-section.md`
+   - Copy the section from `### 🚀 RELEASE WORKFLOW (RW) TRIGGER` to the end
+   - Paste into your project's `.cursorrules` file (create it if it doesn't exist)
+   - Update file paths in the section to match your project structure
+
+3. **Restart Cursor** to reload `.cursorrules`
+
+4. **Test:** Type "RW" in Cursor chat - the agent should recognize the trigger
+
+**Without `.cursorrules`:** The "RW" command won't work. You'll need to manually run workflow steps.
+
+**See:** [Installation Guide](framework-dependency-installation-guide.md#4-enable-rw-trigger-in-cursorrules-workflow-management-framework-only) for detailed instructions.
+
 ### How do I update Kanban documentation?
 
 ```bash

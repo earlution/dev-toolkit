@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-07 (v0.5.4.7+1 – Template setup guides created)  
-**Version:** v0.5.4.7+1  
+**Last updated:** 2025-12-07 (v0.5.4.8+1 – `.cursorrules` setup documentation added)  
+**Version:** v0.5.4.8+1  
 **Code:** E05S04
 
 ---
@@ -27,6 +27,7 @@ housekeeping_policy: keep
 - [x] **E05:S04:T05 – Create comprehensive user documentation for Epic 6 framework dependency architecture** - COMPLETE ✅
 - [ ] **E05:S04:T06 – Create quick-start guide for framework dependency installation** - TODO
 - [x] **E05:S04:T07 – Set up ai-dev-kit repository as GitHub template** ✅ COMPLETE (v0.5.4.7+1) - Documentation complete, manual template enablement pending
+- [x] **E05:S04:T08 – Document `.cursorrules` setup for RW trigger** ✅ COMPLETE (v0.5.4.8+1) - Added `.cursorrules` setup instructions to installation guide, troubleshooting guide, and FAQ
 
 ---
 
@@ -355,6 +356,61 @@ Users should be able to create new projects using `ai-dev-kit` as a template, pr
 - E05:S04:T05 - Installation guide (template usage instructions added)
 - Epic 1: Story 4 - Repository Branding and Renaming (repository setup)
 - Epic 7 - Examples and Adoption (template adoption examples)
+
+---
+
+### E05:S04:T08 – Document `.cursorrules` setup for RW trigger
+
+**Input:** User feedback from `been-there` project indicating `.cursorrules` file missing  
+**Deliverable:** Updated documentation with `.cursorrules` setup instructions  
+**Dependencies:** E05:S04:T05 (Installation guide must exist)  
+**Blocker:** None
+
+**Problem Statement:**
+Users installing the Workflow Management framework need clear instructions on how to enable the "RW" trigger in Cursor by adding the RW trigger section to their `.cursorrules` file. Without this setup, the "RW" command won't work, which is a critical adoption barrier. The initial installation guide didn't explicitly cover this requirement.
+
+**Approach:**
+
+1. **Update Installation Guide:**
+   - Add dedicated section in "Post-Installation Setup" (Step 4) for `.cursorrules` setup
+   - Provide two options: RW installer (recommended) and manual setup
+   - Explain what the RW trigger does and why it's needed
+   - Include location of template file: `frameworks/workflow-mgmt/cursorrules-rw-trigger-section.md`
+   - Add to "Next Steps" section for visibility
+
+2. **Update Troubleshooting Guide:**
+   - Add "Issue: RW Trigger Not Working" section
+   - Document symptoms, causes, and step-by-step solutions
+   - Include verification steps and prevention tips
+   - Cover common issues: missing file, incorrect paths, Cursor not reloaded
+
+3. **Update FAQ:**
+   - Add "How do I enable the 'RW' trigger in Cursor?" entry
+   - Provide quick setup instructions
+   - Link to detailed installation guide
+
+4. **Ensure Consistency:**
+   - Verify all three documents reference the same template file location
+   - Ensure instructions are consistent across all documents
+   - Cross-reference between documents appropriately
+
+**Deliverables:**
+- ✅ Updated `KB/Documentation/User_Docs/framework-dependency-installation-guide.md` - Added `.cursorrules` setup section
+- ✅ Updated `KB/Documentation/User_Docs/framework-dependency-troubleshooting-guide.md` - Added RW trigger troubleshooting
+- ✅ Updated `KB/Documentation/User_Docs/framework-dependency-faq.md` - Added RW trigger FAQ entry
+
+**Success Criteria:**
+- ✅ Installation guide includes clear `.cursorrules` setup instructions
+- ✅ Troubleshooting guide covers RW trigger issues
+- ✅ FAQ provides quick reference for RW trigger setup
+- ✅ All documents reference correct template file location
+- ✅ Instructions are consistent and actionable
+- ✅ Users can successfully enable RW trigger after following documentation
+
+**Related Work:**
+- E05:S04:T05 (Comprehensive Installation Guide) - Base document updated
+- `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md` - Template file referenced
+- `packages/frameworks/workflow mgt/scripts/install_release_workflow.py` - RW installer that generates `.cursorrules`
 
 ---
 

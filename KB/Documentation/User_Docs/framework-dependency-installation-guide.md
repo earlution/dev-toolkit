@@ -525,6 +525,77 @@ pip install --upgrade ai-dev-kit-workflow-mgmt==2.1.0
 
 ## Post-Installation Setup
 
+### Enable RW Trigger in `.cursorrules` (Workflow Management Framework)
+
+**⚠️ IMPORTANT:** If you installed the Workflow Management framework, you need to add the RW trigger section to your `.cursorrules` file to enable the "RW" command in Cursor.
+
+**Option A: Use the RW Installer (Recommended)**
+
+The RW installer can automatically generate and add the `.cursorrules` section:
+
+```bash
+# Navigate to your project root
+cd /path/to/your/project
+
+# Run the RW installer
+python frameworks/workflow-mgmt/scripts/install_release_workflow.py
+
+# The installer will:
+# - Generate rw-config.yaml (if it doesn't exist)
+# - Create or update .cursorrules with the RW trigger section
+# - Update workflow YAML files with correct paths
+```
+
+**Option B: Manual Setup**
+
+If you prefer to set it up manually:
+
+1. **Open the cursorrules template:**
+   ```bash
+   # View the template
+   cat frameworks/workflow-mgmt/cursorrules-rw-trigger-section.md
+   ```
+
+2. **Copy the RW trigger section:**
+   - Copy everything from `### 🚀 RELEASE WORKFLOW (RW) TRIGGER` to the end of the file
+   - This is the section that enables the "RW" command
+
+3. **Add to your `.cursorrules` file:**
+   ```bash
+   # Create .cursorrules if it doesn't exist
+   touch .cursorrules
+   
+   # Add the RW trigger section (paste the copied content)
+   # You can add it in a "Version Control and Release Process" section
+   ```
+
+4. **Update file paths in the section:**
+   - Replace `{project}` with your project name
+   - Update version file path: `src/{project}/version.py` → `src/yourproject/version.py`
+   - Update Kanban paths if using Kanban framework
+   - Update validator script paths to match your framework location
+
+5. **Verify the trigger works:**
+   - Restart Cursor to reload `.cursorrules`
+   - Type "RW" in Cursor chat
+   - The agent should recognize the trigger and execute the Release Workflow
+
+**What the RW Trigger Does:**
+
+When you type "RW" or "rw" in Cursor, the AI assistant will:
+- Execute the complete 14-step Release Workflow
+- Bump version, update changelogs, commit, tag, and push
+- Update Kanban documentation automatically
+- Validate everything before committing
+
+**Without `.cursorrules`:** The "RW" command won't work - you'll need to manually run the workflow steps.
+
+**With `.cursorrules`:** The "RW" command triggers intelligent agent-driven execution of the complete workflow.
+
+---
+
+## Post-Installation Setup (Other Frameworks)
+
 After installing frameworks, you need to configure them for your project:
 
 ### 1. Update File Paths
@@ -569,7 +640,77 @@ vim frameworks/workflow-mgmt/rw-config.yaml
 # - Validation settings
 ```
 
-### 4. Test Installation
+### 4. Enable RW Trigger in `.cursorrules` (Workflow Management Framework Only)
+
+**⚠️ IMPORTANT:** If you installed the Workflow Management framework, you need to add the RW trigger section to your `.cursorrules` file to enable the "RW" command in Cursor.
+
+**Option A: Use the RW Installer (Recommended)**
+
+The RW installer can automatically generate and add the `.cursorrules` section:
+
+```bash
+# Navigate to your project root
+cd /path/to/your/project
+
+# Run the RW installer
+python frameworks/workflow-mgmt/scripts/install_release_workflow.py
+
+# The installer will:
+# - Generate rw-config.yaml (if it doesn't exist)
+# - Create or update .cursorrules with the RW trigger section
+# - Update workflow YAML files with correct paths
+```
+
+**Option B: Manual Setup**
+
+If you prefer to set it up manually:
+
+1. **Open the cursorrules template:**
+   ```bash
+   # View the template
+   cat frameworks/workflow-mgmt/cursorrules-rw-trigger-section.md
+   ```
+
+2. **Copy the RW trigger section:**
+   - Copy everything from `### 🚀 RELEASE WORKFLOW (RW) TRIGGER` to the end of the file
+   - This is the section that enables the "RW" command
+
+3. **Add to your `.cursorrules` file:**
+   ```bash
+   # Create .cursorrules if it doesn't exist
+   touch .cursorrules
+   
+   # Add the RW trigger section (paste the copied content)
+   # You can add it in a "Version Control and Release Process" section
+   ```
+
+4. **Update file paths in the section:**
+   - Replace `{project}` with your project name
+   - Update version file path: `src/{project}/version.py` → `src/yourproject/version.py`
+   - Update Kanban paths if using Kanban framework
+   - Update validator script paths to match your framework location
+
+5. **Verify the trigger works:**
+   - Restart Cursor to reload `.cursorrules`
+   - Type "RW" in Cursor chat
+   - The agent should recognize the trigger and execute the Release Workflow
+
+**What the RW Trigger Does:**
+
+When you type "RW" or "rw" in Cursor, the AI assistant will:
+- Execute the complete 14-step Release Workflow
+- Bump version, update changelogs, commit, tag, and push
+- Update Kanban documentation automatically
+- Validate everything before committing
+
+**Without `.cursorrules`:** The "RW" command won't work - you'll need to manually run the workflow steps.
+
+**With `.cursorrules`:** The "RW" command triggers intelligent agent-driven execution of the complete workflow.
+
+**Location of Template:**
+- `frameworks/workflow-mgmt/cursorrules-rw-trigger-section.md`
+
+### 5. Test Installation
 
 Verify the framework is installed correctly:
 
@@ -707,8 +848,17 @@ After installation:
 1. **Read the framework README:** `frameworks/<framework-name>/README.md`
 2. **Follow the implementation guide:** `frameworks/<framework-name>/IMPLEMENTATION_GUIDE.md`
 3. **Configure for your project:** Update paths, version schema, and settings
-4. **Test the framework:** Run validation scripts and test workflows
-5. **Set up update notifications:** Configure automatic update checking
+4. **Set up `.cursorrules` for RW trigger (Workflow Management Framework only):**
+   - If you installed the Workflow Management framework, you need to add the RW trigger section to your `.cursorrules` file
+   - **Location:** `frameworks/workflow-mgmt/cursorrules-rw-trigger-section.md`
+   - **Instructions:** Copy the section from that file into your project's `.cursorrules` file
+   - **Alternative:** Use the RW installer script which can generate it automatically:
+     ```bash
+     python frameworks/workflow-mgmt/scripts/install_release_workflow.py
+     ```
+   - **Note:** Without the `.cursorrules` section, the "RW" trigger won't work in Cursor
+5. **Test the framework:** Run validation scripts and test workflows
+6. **Set up update notifications:** Configure automatic update checking
 
 See the [Usage Guide](framework-dependency-usage-guide.md) for detailed usage instructions.
 

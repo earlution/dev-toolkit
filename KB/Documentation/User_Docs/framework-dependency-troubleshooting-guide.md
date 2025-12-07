@@ -906,6 +906,107 @@ ai-dev-kit install workflow-mgmt@2.0.0
 
 ## Framework Functionality Issues
 
+### Issue: RW Trigger Not Working
+
+**Symptoms:**
+- Typing "RW" in Cursor doesn't trigger Release Workflow
+- Agent doesn't recognize "RW" command
+- No response when typing "RW"
+
+**Causes:**
+- `.cursorrules` file doesn't exist
+- RW trigger section not added to `.cursorrules`
+- `.cursorrules` file not properly formatted
+- Cursor hasn't reloaded `.cursorrules`
+- File paths in `.cursorrules` are incorrect
+
+**Solutions:**
+
+**1. Check if `.cursorrules` exists:**
+
+```bash
+# Check if file exists
+ls -la .cursorrules
+
+# If it doesn't exist, create it
+touch .cursorrules
+```
+
+**2. Check if RW trigger section is present:**
+
+```bash
+# Search for RW trigger section
+grep -i "RELEASE WORKFLOW" .cursorrules
+
+# If not found, add the section (see installation guide)
+```
+
+**3. Add RW trigger section:**
+
+**Option A: Use RW Installer (Recommended):**
+```bash
+# Run the installer to automatically add the section
+python frameworks/workflow-mgmt/scripts/install_release_workflow.py
+```
+
+**Option B: Manual Setup:**
+```bash
+# Copy the template section
+cat frameworks/workflow-mgmt/cursorrules-rw-trigger-section.md
+
+# Add to .cursorrules (copy from "### 🚀 RELEASE WORKFLOW (RW) TRIGGER" to end)
+# Update file paths in the section to match your project
+```
+
+**4. Verify file paths in `.cursorrules`:**
+
+```bash
+# Check that paths match your project structure
+grep -E "version_file|changelog|kanban" .cursorrules
+
+# Update paths if they don't match:
+# - version_file: Should point to your version.py location
+# - main_changelog: Should point to your CHANGELOG.md
+# - kanban_root: Should point to your Kanban directory (if using Kanban)
+```
+
+**5. Reload Cursor:**
+
+- **Restart Cursor** to reload `.cursorrules` file
+- The `.cursorrules` file is loaded when Cursor starts
+- Changes won't take effect until Cursor is restarted
+
+**6. Test the trigger:**
+
+```bash
+# In Cursor chat, type:
+RW
+
+# The agent should recognize the trigger and start executing the Release Workflow
+```
+
+**7. Check for syntax errors:**
+
+```bash
+# Verify .cursorrules is valid
+cat .cursorrules
+
+# Check for:
+# - Proper markdown formatting
+# - Complete RW trigger section
+# - No broken syntax
+```
+
+**Prevention:**
+- Always run the RW installer after installing Workflow Management framework
+- Verify `.cursorrules` exists and contains RW trigger section
+- Test "RW" command after installation
+- Document `.cursorrules` setup in project README
+
+---
+
+## Framework Functionality Issues (Other)
+
 ### Issue: Release Workflow Fails
 
 **Symptoms:**
