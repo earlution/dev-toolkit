@@ -1,6 +1,6 @@
 # Vibe Dev Kit
 
-[![Version](https://img.shields.io/badge/version-0.5.4.5%2B1-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.5.4.5%2B2-blue)](./CHANGELOG.md)
 [![Changelog](https://img.shields.io/badge/changelog-Keep%20a%20Changelog-brightgreen)](./CHANGELOG.md)
 [![Repo](https://img.shields.io/github/stars/earlution/vibe-dev-kit?style=social)](https://github.com/earlution/vibe-dev-kit)
 
@@ -115,7 +115,7 @@ Before using Vibe Dev Kit, you'll need:
 
 **Current Approach (Copy-Paste):** Vibe Dev Kit frameworks can be **copied** into your project. This keeps your project independent and allows you to customize everything.
 
-**Future Approach (Dependencies - Epic 6):** Frameworks will be installable as **dependencies** with automatic updates. See [Framework Dependency Architecture](KB/Architecture/Standards_and_ADRs/framework-dependency-architecture.md) for the roadmap.
+**Dependency-Based Installation (Epic 6):** Frameworks can now be installed as **dependencies** with automatic update notifications. See the [Framework Dependency Installation Guide](KB/Documentation/User_Docs/framework-dependency-installation-guide.md) for installation instructions.
 
 #### Step 1: Clone This Repository
 
