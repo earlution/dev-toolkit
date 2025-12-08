@@ -27,6 +27,7 @@ housekeeping_policy: keep
 - [x] **E3:S02:T05 – Create quick reference summary for users and agents** ✅ COMPLETE (v0.3.2.5+1)
 - [x] **E3:S02:T06 – Investigate and harden changelog ordering process** 🔄 PERPETUAL (v0.3.2.6+1)
 - [x] **E3:S02:T07 – Create dual-versioning guide for package manager compatibility** ✅ COMPLETE (v0.3.2.7+1)
+- [ ] **E3:S02:T08 – Audit dual-versioning application across packages and propose strategy** - TODO
 
 ---
 
@@ -315,6 +316,39 @@ Provide a **versioning cookbook** with worked examples that shows:
 - [ ] Best practices and validation documented
 - [ ] Framework documentation updated with references
 - [ ] Guide linked from Implementation Guide and framework README
+
+---
+
+### E3:S02:T08 – Audit dual-versioning application across packages and propose strategy
+
+**Status:** TODO  
+
+**Input:**  
+- Dual-versioning guide (`dual-versioning-package-managers.md`)  
+- Current package version metadata (if any) in each package  
+- Release history and SemVer expectations for package managers  
+
+**Deliverable:**  
+- Audit report covering each package: current package version (if present), whether SemVer is in use, and gaps  
+- Proposed, consistent dual-versioning application strategy per package (internal RC.EPIC.STORY.TASK+BUILD ↔ SemVer)  
+- Recommendation on mapping strategy selection (e.g., Strategy 1 Direct Mapping vs Strategy 4 BUILD-preserving) considering SemVer continuity/history  
+- Guidance on keeping SemVer sequences sensible for package consumers (e.g., publish-only SemVer increments vs derived mappings)  
+
+**Dependencies:** None (uses existing policy and guide)  
+**Blocker:** None  
+**Parallel Development Candidacy:** Safe  
+
+**Approach:**  
+1. Inventory all packages and locate any existing SemVer fields (e.g., `package.json`, `pubspec.yaml`, `pyproject.toml`, `setup.py`, `pom.xml`, `composer.json`).  
+2. Record current SemVer values and release history (if any) for each package.  
+3. Evaluate applicability of dual-versioning mapping strategies to each package:  
+   - Assess whether derived SemVer would disrupt existing published sequences.  
+   - Consider maintaining a publish-only SemVer track while keeping RC.EPIC.STORY.TASK+BUILD as internal SoT.  
+4. Propose package-specific strategy for consistent, reliable dual-versioning, including:  
+   - Mapping choice or separate SemVer track policy.  
+   - Sync mechanism (generation script, CI step) and validation.  
+   - Guidance for future releases to preserve SemVer continuity for consumers.  
+5. Summarize findings and recommendations in an audit report.  
 
 ---
 

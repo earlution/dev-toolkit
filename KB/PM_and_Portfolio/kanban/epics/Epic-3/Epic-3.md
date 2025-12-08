@@ -99,7 +99,8 @@ Provide a practical versioning cookbook with worked examples for RC.EPIC.STORY.T
 - [x] E3:S02:T04 – Document edge cases and anti-patterns ✅ COMPLETE (v0.3.2.4+1)
 - [x] E3:S02:T05 – Create quick reference summary for users and agents ✅ COMPLETE (v0.3.2.5+1)
 - [x] E3:S02:T06 – Investigate and harden changelog ordering process 🔄 PERPETUAL (v0.3.2.6+1)
-- [ ] E3:S02:T07 – Create dual-versioning guide for package manager compatibility - TODO
+- [x] E3:S02:T07 – Create dual-versioning guide for package manager compatibility ✅ COMPLETE (v0.3.2.7+1)
+- [ ] E3:S02:T08 – Audit dual-versioning application across packages and propose strategy - TODO
 
 > Full story: [`Story-002-versioning-cookbook-and-examples.md`](Story-002-versioning-cookbook-and-examples.md)
 
