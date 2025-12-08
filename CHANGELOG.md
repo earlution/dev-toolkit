@@ -1604,18 +1604,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
-## [0.3.2.8+1] - 07-12-25
+## [0.3.2.10+1] - 08-12-25
 
-📊 Analysis: Created task to audit dual-versioning application across packages
+📋 Task: Created Kanban task to integrate PVW into Release Workflow agent execution guide
 
 ### Added
-- **Task T08:** Created E3:S02:T08 to audit dual-versioning application across all packages
-- **Task Scope:** Investigate current package versioning state, analyze dual-versioning strategy applicability, propose solution
+- **Task E3:S02:T10:** Created task to integrate PVW into RW agent execution guide
+  - Task definition with complete deliverables and requirements
+  - Identified need to update RW guide from 14 to 15 steps
+  - Documented step-2.5 execution requirements
+
+### Changed
+- **Story 2:** Added T10 to task checklist
+- **Epic 3:** Added T10 to task checklist
+- **Version:** Bumped to 0.3.2.10+1
 
 ### Notes
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.8+1.md` for full details
-- Task addresses concerns about SemVer continuity and mapping strategy appropriateness for package management
-- Will investigate Workflow Management package versioning pattern (1.0, 1.1, 1.2) mentioned by user
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.10+1.md` for full details
+- Release Workflow YAML already includes PVW as step-2.5
+- Agent execution guide needs to be updated to document step-2.5 execution
 
 ---
 
@@ -1644,6 +1651,21 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - PVW follows proven agentic execution pattern from Release Workflow
 - Emphasizes intelligent analysis, validation as tools, criteria as guidance
 - Comprehensive TODO tracking prevents agentic drift during execution
+
+---
+
+## [0.3.2.8+1] - 07-12-25
+
+📊 Analysis: Created task to audit dual-versioning application across packages
+
+### Added
+- **Task T08:** Created E3:S02:T08 to audit dual-versioning application across all packages
+- **Task Scope:** Investigate current package versioning state, analyze dual-versioning strategy applicability, propose solution
+
+### Notes
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.8+1.md` for full details
+- Task addresses concerns about SemVer continuity and mapping strategy appropriateness for package management
+- Will investigate Workflow Management package versioning pattern (1.0, 1.1, 1.2) mentioned by user
 
 ---
 

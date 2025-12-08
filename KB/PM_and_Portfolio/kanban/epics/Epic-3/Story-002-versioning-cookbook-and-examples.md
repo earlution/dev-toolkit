@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-03  
-**Last updated:** 2025-12-08 (v0.3.2.9+1 – T09 complete: Package Version Workflow (PVW) implemented with agentic execution)  
-**Version:** v0.3.2.9+1  
+**Last updated:** 2025-12-08 (v0.3.2.10+1 – T10 created: Integrate PVW into Release Workflow agent execution guide)  
+**Version:** v0.3.2.10+1  
 **Code:** E3S02
 
 ---
@@ -29,6 +29,7 @@ housekeeping_policy: keep
 - [x] **E3:S02:T07 – Create dual-versioning guide for package manager compatibility** ✅ COMPLETE (v0.3.2.7+1)
 - [x] **E3:S02:T08 – Audit dual-versioning application across packages and propose strategy** ✅ COMPLETE (v0.3.2.8+1)
 - [x] **E3:S02:T09 – Implement Package Version Workflow (PVW) with agentic execution** ✅ COMPLETE (v0.3.2.9+1)
+- [ ] **E3:S02:T10 – Integrate PVW into Release Workflow agent execution guide** - TODO
 
 ---
 
@@ -366,6 +367,81 @@ Provide a **versioning cookbook** with worked examples that shows:
    - Future published packages: Use independent SemVer with project version reference in metadata
    - Guidance provided on when to use dual-versioning vs. independent SemVer
 5. ✅ Summarized findings and recommendations in comprehensive audit report  
+
+---
+
+### E3:S02:T09 – Implement Package Version Workflow (PVW) with agentic execution
+
+**Status:** ✅ COMPLETE (v0.3.2.9+1)  
+
+**Input:**  
+- Audit report (`T008-dual-versioning-package-audit-report.md`)
+- Agentic approach proposal (`T008-package-versioning-agentic-approach.md`)
+- Release Workflow agent execution pattern
+- Agent-driven execution methodology
+
+**Deliverable:**  
+- ✅ **PVW Workflow Definition:** `packages/frameworks/workflow mgt/workflows/package-version-workflow.yaml`
+- ✅ **PVW Agent Execution Guide:** `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/package-version-workflow-agent-execution.md`
+- ✅ **Validation Scripts (Tools):** `packages/frameworks/workflow mgt/scripts/validation/package/`
+- ✅ **RW Integration:** Updated `release-workflow.yaml` with PVW as Step 2.5
+- ✅ **Cursor Rules Section:** Added PVW trigger section with comprehensive TODO tracking
+- ✅ **Version Bump Criteria:** `KB/Architecture/Standards_and_ADRs/package-versioning-criteria.md`
+
+**Package Version Updates:**
+- **Workflow Management:** 2.0.0 → 2.1.0 (MINOR) - Added Package Version Workflow (PVW)
+
+**Dependencies:** E3:S02:T08 (completed)  
+**Blocker:** None  
+**Parallel Development Candidacy:** Safe  
+
+**Approach:**  
+1. ✅ Created PVW workflow definition (YAML structure similar to RW)
+2. ✅ Created PVW agent execution guide (step-by-step guide with examples)
+3. ✅ Created validation scripts as tools (format, increment, consistency, change analysis)
+4. ✅ Integrated with Release Workflow YAML (PVW as Step 2.5)
+5. ✅ Created Cursor rules section (PVW trigger with TODO tracking)
+6. ✅ Documented version bump criteria as guidance
+
+---
+
+### E3:S02:T10 – Integrate PVW into Release Workflow agent execution guide
+
+**Status:** TODO  
+
+**Input:**  
+- PVW implementation (E3:S02:T09 - completed)
+- Release Workflow agent execution guide (`release-workflow-agent-execution.md`)
+- Release Workflow YAML definition (`release-workflow.yaml` - already has step-2.5)
+
+**Deliverable:**  
+- ✅ **Updated RW Agent Execution Guide:** `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md`
+  - Add step-2.5 (PVW) to TODO list (15 steps total, not 14)
+  - Add step-2.5 execution documentation (ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED)
+  - Reference PVW agent execution guide for detailed step-by-step instructions
+  - Update Step 3 dependencies to include step-2.5
+  - Update execution checklist to include step-2.5
+  - Update version history to document PVW integration
+- ✅ **Updated Step Dependencies:** Ensure Step 3 (Create Detailed Changelog) depends on both step-2 and step-2.5
+- ✅ **Updated Workflow Count:** Update from 14 steps to 15 steps (with step-2.5)
+
+**Key Requirements:**
+- Step-2.5 executes after Step 2 (Bump Version) and before Step 3 (Create Detailed Changelog)
+- Step-2.5 should reference the PVW agent execution guide for detailed instructions
+- Step-2.5 should be optional (required: false) but enabled by default
+- Step-2.5 should handle the case where no packages have changed (skip gracefully)
+
+**Dependencies:** E3:S02:T09 (completed)  
+**Blocker:** None  
+**Parallel Development Candidacy:** Safe  
+
+**Approach:**  
+1. Update TODO list in RW guide to include `rw-step-2.5`
+2. Add step-2.5 section to RW guide with execution instructions
+3. Reference PVW agent execution guide for detailed step-by-step
+4. Update Step 3 dependencies documentation
+5. Update execution checklist
+6. Update version history
 
 ---
 
