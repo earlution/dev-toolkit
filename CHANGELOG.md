@@ -1619,6 +1619,34 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.3.2.9+1] - 08-12-25
+
+🚀 Feature: Implemented Package Version Workflow (PVW) with agentic execution
+
+### Added
+- **Package Version Workflow (PVW):** Complete workflow for intelligent agent-driven package versioning
+  - Workflow definition (`package-version-workflow.yaml`)
+  - Agent execution guide with comprehensive TODO tracking (drift prevention)
+  - Validation scripts as tools (format, increment, consistency, change analysis)
+  - Integrated as RW Step 2.5 (executes after project version bump)
+- **Version Bump Criteria:** Documentation of MAJOR/MINOR/PATCH criteria as guidance (not hard rules)
+- **Cursor Rules:** PVW trigger section with comprehensive TODO tracking requirements
+- **Package Changelog:** Workflow Management package changelog (2.0.0 → 2.1.0)
+
+### Changed
+- **Release Workflow:** Added PVW as Step 2.5 in `release-workflow.yaml`
+- **Workflow Management Package:** Version bumped to 2.1.0 (MINOR - new feature)
+- **Story 2:** Added T09 to task checklist
+- **Epic 3:** Added T09 to task checklist
+
+### Notes
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.9+1.md` for full details
+- PVW follows proven agentic execution pattern from Release Workflow
+- Emphasizes intelligent analysis, validation as tools, criteria as guidance
+- Comprehensive TODO tracking prevents agentic drift during execution
+
+---
+
 ## [0.3.3.1+1] - 04-12-25
 
 📚 Documentation: Created Story 3 structure and initial documentation framework

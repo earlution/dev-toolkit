@@ -12,9 +12,9 @@ housekeeping_policy: keep
 
 **Location in `.cursorrules`:** Add this section in the "Version Control and Release Process" section (or equivalent).
 
-**Last Updated:** 2025-12-02  
+**Last Updated:** 2025-12-08  
 **Source Project:** Originally fynd.deals (Epic 15, Story 1), now maintained in ai-dev-kit as canonical SoT  
-**Version:** 2.2.0 (abstracted version numbers and file paths, added schema calculation examples)
+**Version:** 2.3.0 (added PVW trigger section)
 
 ---
 
@@ -359,6 +359,104 @@ For each step, follow this pattern:
   - [Example: ai-dev-kit] `KB/PM_and_Portfolio/rituals/policy/kanban-governance-policy.md` (references framework as SoT)
 - **Workflow Flaws Reference:** `KB/Architecture/Standards_and_ADRs/workflow-flaws-reference-guide.md` - Comprehensive reference for all discovered RW flaws
 - **Versioning Error Reference:** `KB/Architecture/Standards_and_ADRs/versioning-error-reference-guide.md` - Versioning-specific error reference (WF-002)
+
+---
+
+### 📦 PACKAGE VERSION WORKFLOW (PVW) TRIGGER
+
+**When the user types "PVW" or "pvw" (case-insensitive), or when RW Step 2.5 executes, run the Package Version Workflow as an intelligent agent:**
+
+1. **DO NOT** run deterministic scripts to determine bump types
+2. **DO** execute PVW using the **intelligent agent-driven execution pattern**
+3. **Follow** the agent execution pattern (ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED)
+4. **Use** validation scripts as tools, not determiners
+5. **Apply** version bump criteria as guidance, not hard rules
+6. **Document** reasoning and justification for each bump
+
+**PVW Execution Steps:**
+1. **Step 1: Detect Changed Packages** - Analyze git diff to identify changed packages
+2. **Step 2: Analyze Package Changes** - Read package files, identify what changed
+3. **Step 3: Determine Version Bumps** - Analyze changes against criteria, determine bump type intelligently
+4. **Step 4: Execute Version Updates** - Update README, create changelog, document justification
+5. **Step 5: Validate Updates** - Run validation scripts as tools, verify format/consistency
+6. **Step 6: Document & Proceed** - Document changes, pass to RW Step 3
+
+**Key Principles:**
+- ✅ **Agent-Driven:** Intelligent analysis and decision-making, not deterministic scripts
+- ✅ **Context-Aware:** Understand actual changes and impact
+- ✅ **Validation as Tools:** Scripts provide checks and data, not decisions
+- ✅ **Criteria as Guidance:** Criteria inform decisions, not dictate them
+- ✅ **Clear Documentation:** Explain decisions and reasoning
+
+**🚨 MANDATORY: Progress Tracking with Cursor TODOs**
+
+**REQUIRED:** Agents **MUST** use `todo_write` to create and maintain a TODO list tracking all 6 PVW steps. This is **NOT OPTIONAL** - it is a mandatory requirement for PVW execution.
+
+**Why TODOs are Required:**
+- ✅ **User Visibility:** User can see real-time progress through all 6 steps
+- ✅ **Agent Organization:** Helps agent stay organized across sequential steps
+- ✅ **Error Recovery:** Clear visibility into where execution stopped if interrupted
+- ✅ **User Transparency:** User can verify all steps completed successfully
+- ✅ **Status Management:** Automatic status updates provide clear execution state
+- ✅ **Accountability:** Provides audit trail of workflow execution
+- ✅ **Agentic Drift Prevention:** TODOs serve as checkpoints to prevent workflow drift and ensure all steps are completed
+
+**Required Implementation Pattern:**
+
+1. **At Workflow Start (MANDATORY):** Create TODO list with all 6 steps as `pending`
+   ```python
+   todo_write(merge=False, todos=[
+       {'id': 'pvw-step-1', 'status': 'pending', 'content': 'Step 1: Detect Changed Packages - Analyze git diff to identify changed packages'},
+       {'id': 'pvw-step-2', 'status': 'pending', 'content': 'Step 2: Analyze Package Changes - Read package files, identify what changed'},
+       {'id': 'pvw-step-3', 'status': 'pending', 'content': 'Step 3: Determine Version Bumps - Analyze changes against criteria, determine bump type'},
+       {'id': 'pvw-step-4', 'status': 'pending', 'content': 'Step 4: Execute Version Updates - Update README, create changelog, document justification'},
+       {'id': 'pvw-step-5', 'status': 'pending', 'content': 'Step 5: Validate Updates - Run validation scripts as tools, verify format/consistency'},
+       {'id': 'pvw-step-6', 'status': 'pending', 'content': 'Step 6: Document & Proceed - Document changes, pass to RW Step 3'},
+   ])
+   ```
+
+2. **Before Each Step (MANDATORY):** Mark step as `in_progress`
+   ```python
+   todo_write(merge=True, todos=[{'id': 'pvw-step-1', 'status': 'in_progress'}])
+   ```
+
+3. **After Each Step (MANDATORY):** Mark step as `completed` and mark next step as `in_progress`
+   ```python
+   todo_write(merge=True, todos=[
+       {'id': 'pvw-step-1', 'status': 'completed'},
+       {'id': 'pvw-step-2', 'status': 'in_progress'}
+   ])
+   ```
+
+4. **On Completion (MANDATORY):** All steps marked as `completed`
+   ```python
+   todo_write(merge=True, todos=[{'id': 'pvw-step-6', 'status': 'completed'}])
+   ```
+
+**Enforcement:**
+- ❌ **DO NOT** execute PVW without creating TODO list first
+- ❌ **DO NOT** skip TODO updates between steps
+- ✅ **MUST** create TODO list before Step 1 execution
+- ✅ **MUST** update TODO status before and after each step
+- ✅ **MUST** mark all steps as completed on successful completion
+- ✅ **MUST** use TODOs as checkpoints to prevent agentic drift
+
+**Agent Execution Guide:**
+- See `KB/Documentation/Developer_Docs/vwmp/package-version-workflow-agent-execution.md` for detailed step-by-step guide
+- Follow ANALYZE → DETERMINE → EXECUTE → VALIDATE → PROCEED pattern for each step
+- Use validation scripts as tools: `scripts/validation/package/validate_package_version_format.py`, `validate_package_version_increment.py`, `validate_package_version_consistency.py`, `get_package_changes.py`
+
+**Version Bump Criteria (Guidance, Not Rules):**
+- **MAJOR (X.0.0):** Breaking changes (removing files, changing structure, breaking API)
+- **MINOR (x.Y.0):** New features, enhancements, additions (backward compatible)
+- **PATCH (x.y.Z):** Bug fixes, corrections, clarifications (no new functionality)
+
+**Agent applies criteria intelligently based on context, not mechanically.**
+
+**Integration with RW:**
+- PVW executes as RW Step 2.5 (after project version bump, before changelog creation)
+- PVW can also be triggered manually with "PVW" command
+- Package versions are included in RW Step 3 (changelog creation)
 
 ---
 

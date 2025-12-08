@@ -33,6 +33,19 @@ steps:
       increment_type: patch
       version_file: ${config.version_file}
 
+  - id: step-2.5
+    name: Package Version Workflow (PVW)
+    type: package_version
+    handler: package.version_bump
+    required: false
+    enabled: true
+    dependencies:
+      - step-2
+    config:
+      packages_dir: packages/frameworks
+      auto_detect_changes: true
+      validation_scripts: scripts/validation/package
+
   - id: step-3
     name: Create Detailed Changelog
     type: changelog_create
