@@ -17,6 +17,29 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.2.6+1] - 2025-12-09
+
+✨ Feature: GitHub Issue integration for FR, BR, and UXR submissions (FR-004)
+
+### Added
+
+- **GitHub Issue Templates:** Bug Report, Feature Request, and UXR templates for GitHub Issues
+  - Structured forms aligned with Kanban templates
+  - Automatic conversion to FR/BR/UXR documents
+- **GitHub Action:** Automatic conversion from GitHub Issues to Kanban documents
+  - `.github/workflows/fr-br-intake.yml` - Converts Issues to documents
+  - Bidirectional linking between GitHub Issues and Kanban documents
+- **UXR Template:** User Experience Research template (`UXR_TEMPLATE.md`)
+- **GitHub Submission Guide:** Comprehensive guide for external contributors
+- **Kanban Package v1.3.0:** GitHub integration feature (MINOR bump)
+
+### Changed
+
+- Updated Kanban package README with new templates and guides
+- Enhanced FR/BR intake workflow with GitHub integration
+
+---
+
 ## [0.2.1.7+1] - 2025-12-09
 
 🐛 Bug Fix: Added support for update/maintenance branch patterns in RW branch validation (BR-003)
