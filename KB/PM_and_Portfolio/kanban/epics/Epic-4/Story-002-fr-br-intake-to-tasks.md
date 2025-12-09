@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-09 (v0.4.2.6+1 – Task 6 completed: GitHub submission integration for FR, BR, and UXR - FR-004 implemented)  
-**Version:** v0.4.2.6+1
+**Last updated:** 2025-12-09 (v0.4.2.6+2 – Task 6 build 2: Documentation improvements - CONTRIBUTING.md and enhanced discoverability)  
+**Version:** v0.4.2.6+2
 **Code:** E4S02
 
 ---

@@ -2,7 +2,7 @@
 
 <div align="center">
 
-![Version](https://img.shields.io/badge/version-v0.4.2.6%2B1-blue.svg)
+![Version](https://img.shields.io/badge/version-v0.4.2.6%2B2-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 ![Status](https://img.shields.io/badge/status-active-success.svg)
 
@@ -227,7 +227,16 @@ See the [Kanban Board](KB/PM_and_Portfolio/kanban/kanban-board.md) for detailed 
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
 
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement". Don't forget to give the project a star! Thanks again!
+### Quick Ways to Contribute
+
+- 🐛 **Report Bugs:** Use the [Bug Report template](https://github.com/earlution/ai-dev-kit/issues/new?template=bug_report.yml)
+- ✨ **Request Features:** Use the [Feature Request template](https://github.com/earlution/ai-dev-kit/issues/new?template=feature_request.yml)
+- 🔬 **Share UX Research:** Use the [UX Research template](https://github.com/earlution/ai-dev-kit/issues/new?template=ux_research.yml)
+- 💻 **Contribute Code:** Fork, branch, commit, and open a Pull Request
+
+**📖 For detailed submission guides, see [CONTRIBUTING.md](CONTRIBUTING.md)**
+
+### Code Contributions
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)

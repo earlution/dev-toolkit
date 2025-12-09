@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-09 (v0.4.2.6+1 – Story 2, T06 completed: GitHub submission integration for FR, BR, and UXR - FR-004 implemented)  
+**Last updated:** 2025-12-09 (v0.4.2.6+2 – Story 2, T06 build 2: Documentation improvements - CONTRIBUTING.md and enhanced discoverability)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -22,7 +22,7 @@ housekeeping_policy: keep
 ## Story Checklist
 
 - [x] **E4:S01 – Dev Kit Kanban Implementation** - COMPLETE ✅ (v0.4.1.1+6)  
-- [ ] **E4:S02 – FR/BR Intake to Tasks** - IN PROGRESS (v0.4.2.6+1 – Task 6 completed)
+- [ ] **E4:S02 – FR/BR Intake to Tasks** - IN PROGRESS (v0.4.2.6+2 – Task 6 build 2: Documentation improvements)
   - Story: [`Story-002-fr-br-intake-to-tasks.md`](Story-002-fr-br-intake-to-tasks.md)
   - Tasks: T01-T06 ✅ COMPLETE (T06: GitHub submission integration for FR, BR, and UXR)  
 - [x] **E4:S03 – Kanban + Versioning + RW Integration** - COMPLETE ✅ (v0.4.3.7+1)

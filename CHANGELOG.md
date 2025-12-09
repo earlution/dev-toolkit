@@ -17,6 +17,24 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.2.6+2] - 2025-12-09
+
+📚 Documentation: Improved discoverability of GitHub submission process
+
+### Added
+
+- **CONTRIBUTING.md:** Client-focused guide for submitting feedback via GitHub Issues
+  - Quick start instructions
+  - Links to all issue templates
+  - Code contribution guidelines
+
+### Changed
+
+- **README.md:** Enhanced Contributing section with quick links to issue templates
+- **GitHub Issue Templates:** Added help links to detailed submission guide in all templates
+
+---
+
 ## [0.4.2.6+1] - 2025-12-09
 
 ✨ Feature: GitHub Issue integration for FR, BR, and UXR submissions (FR-004)
