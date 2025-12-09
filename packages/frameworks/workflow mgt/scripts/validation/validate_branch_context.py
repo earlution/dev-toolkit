@@ -28,14 +28,6 @@ try:
 except ImportError:
     yaml = None
 
-# Branch to epic mapping (RC.EPIC.STORY.TASK+BUILD schema)
-# Maps branch patterns to epic numbers
-# Note: Epic numbers are parsed from branch names using regex to handle multi-digit epics
-BRANCH_EPIC_MAP = {
-    "main": None,  # main branch can have any epic
-}
-
-
 def load_rw_config(project_root: Path = None) -> Optional[Dict]:
     """Load rw-config.yaml if it exists."""
     if project_root is None:
@@ -111,6 +103,18 @@ def parse_branch_epic(branch: str) -> Optional[int]:
     if match:
         return int(match.group(1))
     return None
+
+
+def is_maintenance_branch(branch: str) -> bool:
+    """
+    Detect maintenance/update branches that should skip epic/version validation.
+
+    Examples:
+    - update/ai-dev-kit
+    - maintenance/workflow-mgt
+    - upgrade/deps
+    """
+    return re.match(r"^(update|maintenance|upgrade)/", branch) is not None
 
 
 def parse_version_epic(version: str) -> Optional[int]:
@@ -216,8 +220,12 @@ def validate_branch_context():
     print(f"Current version: {version}")
 
     # Check branch-epic mapping
+    maintenance_branch = is_maintenance_branch(branch)
     if branch == "main":
         expected_epic = None  # main branch can have any epic
+    elif maintenance_branch:
+        expected_epic = None  # maintenance/update branches intentionally skip epic validation
+        print("Detected maintenance/update branch pattern; skipping epic/version enforcement.")
     else:
         # Parse epic number from branch name (e.g., epic/10-fastapi-migration -> 10)
         expected_epic = parse_branch_epic(branch)
@@ -239,7 +247,7 @@ def validate_branch_context():
                     f"Version mismatch: Branch '{branch}' expects Epic {expected_epic} "
                     f"but version '{version}' has Epic {version_epic}"
                 )
-    elif branch != "main":
+    elif branch != "main" and not maintenance_branch:
         warnings.append(f"Branch '{branch}' not in known mapping - cannot validate version")
 
     # Check CHANGELOG

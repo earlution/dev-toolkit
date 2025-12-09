@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [2.1.1] - 2025-12-09
+
+**Package Version:** 2.1.1
+**Project Version:** 0.2.1.7+1
+**Bump Type:** PATCH
+
+### Fixed
+- **BR-003:** Added support for `update/*`, `maintenance/*`, and `upgrade/*` branch patterns in branch validation
+  - Maintenance/update branches now skip epic/version validation (similar to `main` branch)
+  - Eliminates false warnings when running RW on framework update branches
+  - Added `is_maintenance_branch()` function to detect maintenance branch patterns
+
+### Changed
+- Updated `validate_branch_context.py` to recognize maintenance branch patterns
+- Maintenance branches no longer trigger "Branch not in known mapping" warnings
+
+**Criteria Reference:** PATCH Version Bump
+- ✅ Bug fix: Resolves BR-003 (false warnings for valid update branches)
+- ✅ Backward compatible: No breaking changes
+- ✅ Improves validator behavior for framework update workflows
+
+---
+
 ## [2.1.0] - 2025-12-08
 
 **Package Version:** 2.1.0

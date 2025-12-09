@@ -18,9 +18,9 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 """
 
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
-VERSION_EPIC = 7      # Epic number (Epic 7: Codebase Maintenance and Review)
-VERSION_STORY = 1     # Story number (Story 1: Codebase Maintenance Tasks)
-VERSION_TASK = 1      # Task number (Task 1: PERPETUAL: Address IDE-Flagged Error, Warning, and Info level problems)
+VERSION_EPIC = 2      # Epic number (Epic 2: Workflow Management Framework)
+VERSION_STORY = 1     # Story number (Story 1: RW Agent Execution & Docs)
+VERSION_TASK = 7      # Task number (Task 7: Add support for update/maintenance branch patterns in branch validation)
 VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema

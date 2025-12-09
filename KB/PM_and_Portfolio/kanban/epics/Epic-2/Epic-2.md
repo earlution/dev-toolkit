@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-09 (v0.2.1.7+1 – Story 1, T07 created: Add support for update/maintenance branch patterns in branch validation)  
+**Last updated:** 2025-12-09 (v0.2.1.7+1 – Story 1, T07 completed: Added support for update/maintenance branch patterns in branch validation)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -23,7 +23,7 @@ housekeeping_policy: keep
 
 - [ ] **E2:S01 – RW Agent Execution & Docs** - IN PROGRESS (v0.2.1.7+1)  
   - Story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)
-  - Tasks: T01-T06 ✅ COMPLETE, T07 - TODO (Add support for update/maintenance branch patterns in branch validation)  
+  - Tasks: T01-T07 ✅ COMPLETE (T07: Added support for update/maintenance branch patterns in branch validation)  
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`Story-002-pdca-integration-into-release-workflow.md`](Story-002-pdca-integration-into-release-workflow.md)
 - [x] **E2:S03 – Additional Workflows & Examples** - COMPLETE ✅ (v0.2.3.6+1 – All tasks complete)  
@@ -84,7 +84,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - [x] E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed" ✅ COMPLETE (v0.2.1.1+2)
 - [x] E2:S01:T05 – Harden RW branch safety checks to stop execution on wrong branch ✅ COMPLETE (v0.2.1.5+1)
 - [x] E2:S01:T06 – Fix changelog validator ordering bug ✅ COMPLETE (v0.2.1.6+2)
-- [ ] E2:S01:T07 – Add support for update/maintenance branch patterns in branch validation - TODO
+- [x] E2:S01:T07 – Add support for update/maintenance branch patterns in branch validation ✅ COMPLETE (v0.2.1.7+1)
 
 > Full story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)  
 

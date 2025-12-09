@@ -8,7 +8,7 @@ housekeeping_policy: keep
 
 # Release Workflow (RW) Implementation Package
 
-**Version:** 2.1.0  
+**Version:** 2.1.1  
 **Last Updated:** 2025-12-08  
 **Purpose:** Complete package for implementing the Release Workflow (RW) trigger and agent-driven workflow execution pattern in your project  
 **Source Project:** fynd.deals (Epic 15, Story 1)  

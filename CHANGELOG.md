@@ -17,6 +17,19 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.1.7+1] - 2025-12-09
+
+🐛 Bug Fix: Added support for update/maintenance branch patterns in RW branch validation (BR-003)
+
+### Fixed
+
+- **BR-003:** Added support for `update/*`, `maintenance/*`, and `upgrade/*` branch patterns in branch validation
+  - Maintenance/update branches now skip epic/version validation (similar to `main` branch)
+  - Eliminates false warnings when running RW on framework update branches like `update/ai-dev-kit`
+- **Workflow Management Package v2.1.1:** Updated branch validator to recognize maintenance branch patterns
+
+---
+
 ## [0.7.1.1+1] - 2025-12-09
 
 📦 New Canonical Epic: Added Epic 7 (Codebase Maintenance and Review) with perpetual task for IDE-flagged issues
