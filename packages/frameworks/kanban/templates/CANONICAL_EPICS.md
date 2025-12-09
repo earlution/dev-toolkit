@@ -91,13 +91,25 @@ This epic covers the Kanban system implementation, including Kanban governance p
 **Status:** Canonical (part of framework structure)
 
 **Description:**
-This epic encompasses Feature Request (FR) implementation and management, including FR intake processes, FR processing workflows, FR implementation patterns, and FR-related tooling.
+This epic encompasses Feature Request (FR) implementation and management, including FR intake processes, FR processing workflows, FR implementation patterns, and FR-related tooling. This epic provides the organizational structure for all feature development work that originates from Feature Requests.
 
 **Key Characteristics:**
-- FR intake processes
-- FR processing workflows
-- FR implementation patterns
-- FR tooling
+- FR intake processes (converting FRs to Kanban tasks)
+- FR processing workflows (prioritization, analysis, design)
+- FR implementation patterns (development, testing, documentation)
+- FR tooling (automation, tracking, reporting)
+
+**Typical Stories:**
+- Story 1: FR Intake and Processing Workflow
+- Story 2: FR Prioritization and Planning
+- Story 3: FR Implementation Patterns and Best Practices
+- Story 4: FR Tracking and Reporting
+- Story 5: FR Automation and Tooling
+
+**Integration Points:**
+- **Epic 4 (Kanban Framework):** Uses Kanban intake processes to convert FRs to tasks
+- **Epic 2 (Workflow Management):** May use workflows for FR processing automation
+- **Epic 3 (Versioning):** Tracks FR implementation with version markers
 
 ---
 
@@ -108,13 +120,25 @@ This epic encompasses Feature Request (FR) implementation and management, includ
 **Status:** Canonical (part of framework structure)
 
 **Description:**
-This epic covers Bug Report (BR) implementation and management, including BR intake processes, BR processing workflows, bug fix patterns, and BR-related tooling.
+This epic covers Bug Report (BR) implementation and management, including BR intake processes, BR processing workflows, bug fix patterns, and BR-related tooling. This epic provides the organizational structure for all bug fix work that originates from Bug Reports.
 
 **Key Characteristics:**
-- BR intake processes
-- BR processing workflows
-- Bug fix patterns
-- BR tooling
+- BR intake processes (converting BRs to Kanban tasks)
+- BR processing workflows (triage, prioritization, assignment)
+- Bug fix patterns (reproduction, root cause analysis, testing)
+- BR tooling (automation, tracking, reporting)
+
+**Typical Stories:**
+- Story 1: BR Intake and Triage Workflow
+- Story 2: BR Prioritization and Assignment
+- Story 3: Bug Fix Patterns and Best Practices
+- Story 4: BR Tracking and Reporting
+- Story 5: BR Automation and Tooling
+
+**Integration Points:**
+- **Epic 4 (Kanban Framework):** Uses Kanban intake processes to convert BRs to tasks
+- **Epic 2 (Workflow Management):** May use workflows for BR processing automation
+- **Epic 3 (Versioning):** Tracks bug fixes with version markers
 
 ---
 
@@ -139,10 +163,47 @@ The canonical epics are ordered logically:
 
 ## How to Use Canonical Epics
 
+### Adoption Steps
+
 1. **Adopt Structure:** Use these canonical epics as the foundation for your project
+   - Start with Epics 1-6 as your base organizational structure
+   - Customize names and descriptions to match your project context
+   - Example: "AI Dev Kit Core" → "MyProject Core" or "Product Foundation"
+
 2. **Customize:** Adapt epic names and descriptions to your project's specific context
+   - Keep the core purpose and scope aligned with canonical definitions
+   - Adjust terminology to match your domain
+   - Maintain the logical ordering (foundational → operational → implementation)
+
 3. **Extend:** Add additional epics as needed for your project's specific domains
+   - Start numbering from Epic 7 (canonical epics are 1-6)
+   - Example: Epic 7 (Mobile App), Epic 8 (API Integration), Epic 9 (Analytics)
+
 4. **Maintain Order:** When adding new epics, continue numbering from Epic 6 (or your highest epic number)
+   - Don't reuse canonical epic numbers (1-6) for project-specific epics
+   - Keep canonical epics as the foundation
+
+### Customization Examples
+
+**Example 1: Software Product**
+- Epic 1: Product Core → "Application Core"
+- Epic 2: Workflow Management → "Process Automation"
+- Epic 3: Numbering & Versioning → "Release Management"
+- Epic 4: Kanban Framework → "Project Management"
+- Epic 5: FR Implementation → "Feature Development"
+- Epic 6: BR Implementation → "Bug Fixes"
+- Epic 7: Mobile App (project-specific)
+- Epic 8: API Integration (project-specific)
+
+**Example 2: Framework Package**
+- Epic 1: Framework Core → "Framework Foundation"
+- Epic 2: Workflow Management → "Workflow Engine"
+- Epic 3: Numbering & Versioning → "Versioning System"
+- Epic 4: Kanban Framework → "Task Management"
+- Epic 5: FR Implementation → "Feature Requests"
+- Epic 6: BR Implementation → "Issue Resolution"
+- Epic 7: Documentation (project-specific)
+- Epic 8: Examples & Tutorials (project-specific)
 
 ---
 
@@ -151,14 +212,66 @@ The canonical epics are ordered logically:
 When an epic pattern proves reusable across multiple projects, it should be added to this document:
 
 1. **Identify Pattern:** Epic appears in multiple projects or represents a common organizational need
+   - Pattern must appear in at least 3 different projects
+   - Pattern must represent a fundamental organizational structure
+   - Pattern must be reusable across different domains
+
 2. **Document Pattern:** Create entry in this document with:
-   - Epic number (following canonical order)
-   - Purpose
-   - Scope
-   - Key characteristics
-   - Ordering rationale
+   - Epic number (following canonical order, after Epic 6)
+   - Purpose (clear, concise statement)
+   - Scope (what's included/excluded)
+   - Key characteristics (distinguishing features)
+   - Typical stories (common story patterns)
+   - Integration points (how it relates to other canonical epics)
+   - Ordering rationale (why it comes in this position)
+
 3. **Update Framework:** Add to Kanban framework documentation
+   - Update `CANONICAL_EPICS.md` (this document)
+   - Update `README.md` with new epic count
+   - Update intake guides to reference new epic
+   - Update examples to show new epic usage
+
 4. **Update References:** Update all references to canonical epics in intake guides and other documentation
+   - `FR_BR_INTAKE_GUIDE.md`
+   - `FR_BR_INTAKE_AGENT_GUIDE.md`
+   - `FR_BR_INTAKE_USER_GUIDE.md`
+   - `FR_BR_INTAKE_QUICK_REFERENCE.md`
+   - Any other framework documentation
+
+### Example: Adding Epic 7 (Documentation Management)
+
+If documentation management becomes a common pattern:
+
+1. **Identify:** Documentation management appears in 3+ projects
+2. **Document:**
+   ```markdown
+   ### Epic 7: Documentation Management
+   
+   **Purpose:** Documentation creation, maintenance, and quality assurance.
+   **Scope:** Documentation workflows, quality standards, automation, and documentation tooling.
+   **Status:** Canonical (part of framework structure)
+   
+   **Description:**
+   This epic encompasses documentation management, including documentation workflows, quality standards, automation, and documentation-related tooling.
+   
+   **Key Characteristics:**
+   - Documentation workflows
+   - Quality standards and review processes
+   - Documentation automation
+   - Documentation tooling
+   
+   **Typical Stories:**
+   - Story 1: Documentation Standards and Guidelines
+   - Story 2: Documentation Quality Assurance
+   - Story 3: Documentation Automation
+   - Story 4: Documentation Maintenance Workflows
+   
+   **Integration Points:**
+   - Epic 4 (Kanban Framework): Uses Kanban for documentation task tracking
+   - Epic 2 (Workflow Management): May use workflows for documentation automation
+   ```
+3. **Update Framework:** Add to all relevant documentation
+4. **Update References:** Update intake guides and examples
 
 ---
 

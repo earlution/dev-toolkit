@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-07 (v0.2.5.1+1 – Story 5, T01 complete: PIR workflow planning completed)  
+**Last updated:** 2025-12-09 (v0.2.1.6+2 – Story 1, T06 build 2: Enhanced canonical epics documentation and GitHub submission FR)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -21,8 +21,9 @@ housekeeping_policy: keep
 
 ## Story Checklist
 
-- [x] **E2:S01 – RW Agent Execution & Docs** - COMPLETE ✅ (v0.2.1.5+2)  
-  - Story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)  
+- [ ] **E2:S01 – RW Agent Execution & Docs** - IN PROGRESS (v0.2.1.6+2)  
+  - Story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)
+  - Tasks: T01-T05 ✅ COMPLETE, T06 ✅ COMPLETE (v0.2.1.6+2 - Enhanced canonical epics documentation and GitHub submission FR)  
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`Story-002-pdca-integration-into-release-workflow.md`](Story-002-pdca-integration-into-release-workflow.md)
 - [x] **E2:S03 – Additional Workflows & Examples** - COMPLETE ✅ (v0.2.3.6+1 – All tasks complete)  
@@ -68,10 +69,10 @@ It defines how Release Workflow (RW) and other workflows are:
 
 ### Story 1: RW Agent Execution & Docs
 
-**Status:** COMPLETE ✅  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-05 (v0.2.1.5+2 – All tasks complete: Task 5 build 2: Framework KB version history tracking)  
+**Last updated:** 2025-12-09 (v0.2.1.6+2 – Task 6 build 2: Enhanced canonical epics documentation and GitHub submission FR)  
 
 **Goal:**  
 Make RW agent execution documentation fully portable, clearly distinguishing dev-kit behaviour from external examples.
@@ -82,6 +83,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - [x] E2:S01:T03 – Align `.cursorrules` RW trigger section with dev-kit policy ✅ COMPLETE (v0.2.1.1+5)
 - [x] E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed" ✅ COMPLETE (v0.2.1.1+2)
 - [x] E2:S01:T05 – Harden RW branch safety checks to stop execution on wrong branch ✅ COMPLETE (v0.2.1.5+1)
+- [x] E2:S01:T06 – Fix changelog validator ordering bug ✅ COMPLETE (v0.2.1.6+2)
 
 > Full story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)  
 

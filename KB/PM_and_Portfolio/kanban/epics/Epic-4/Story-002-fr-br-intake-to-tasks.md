@@ -8,12 +8,12 @@ housekeeping_policy: keep
 
 # Story 002 – FR/BR Intake to Tasks
 
-**Status:** COMPLETE  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-02 (v0.4.2.5+1 – Task 5 complete: Create intake workflow guide for agents/users - Story 2 COMPLETE)
-**Version:** v0.4.2.5+1
+**Last updated:** 2025-12-09 (v0.4.2.6+1 – Task 6 created: GitHub submission integration for FR, BR, and UXR)  
+**Version:** v0.4.2.6+1
 **Code:** E4S02
 
 ---
@@ -42,6 +42,7 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 - [x] **E4:S02:T03 – Create FR/BR intake templates and forms** ✅ COMPLETE
 - [x] **E4:S02:T04 – Document the intake process with examples** ✅ COMPLETE
 - [x] **E4:S02:T05 – Create intake workflow guide for agents/users** ✅ COMPLETE
+- [ ] **E4:S02:T06 – GitHub submission integration for FR, BR, and UXR** - TODO
 
 ---
 
@@ -302,6 +303,79 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
+### E4:S02:T06 – GitHub submission integration for FR, BR, and UXR
+
+**Input:**  
+- Feature Request FR-004: GitHub submission for FR, BR, and UXR
+- Need for external contributors to submit via GitHub
+- Need for automated evaluation methods to submit programmatically
+
+**Deliverable:**  
+- GitHub Issue templates for BR, FR, and UXR submissions
+- GitHub Action or script to convert GitHub Issues to FR/BR/UXR documents
+- Automatic creation of Kanban tasks from GitHub submissions
+- Bidirectional linking between GitHub Issues and FR/BR documents
+- Documentation for external contributors
+
+**Dependencies:** E4:S02:T01-T05 (foundation intake workflow)  
+**Blocker:** None
+
+**Problem Statement:**
+External contributors, automated evaluation methods, and UX researchers need a way to submit Bug Reports (BR), Feature Requests (FR), or User Experience Research reports (UXR) via GitHub, rather than requiring manual creation of FR/BR documents in the repository. This will improve accessibility, enable automation, and streamline the intake process.
+
+**Approach:**
+1. **Create GitHub Issue Templates:**
+   - Bug Report template (aligned with BR_TEMPLATE.md)
+   - Feature Request template (aligned with FR_TEMPLATE.md)
+   - UXR template (new template for User Experience Research reports)
+   - Use GitHub Issue Forms for structured submissions
+
+2. **Implement Conversion Mechanism:**
+   - GitHub Action or script to monitor new Issues
+   - Parse GitHub Issue content and metadata
+   - Convert to FR/BR/UXR document format
+   - Create document in appropriate location (`KB/PM_and_Portfolio/kanban/fr-br/`)
+
+3. **Integrate with Intake Workflow:**
+   - Automatically trigger FR/BR intake process
+   - Create Kanban task using existing intake workflow
+   - Link GitHub Issue to FR/BR document
+   - Update GitHub Issue with Kanban task reference
+
+4. **Add Bidirectional Linking:**
+   - Link GitHub Issue in FR/BR document
+   - Link FR/BR document in GitHub Issue
+   - Sync status updates between GitHub and Kanban
+
+5. **Documentation:**
+   - Create guide for external contributors
+   - Document GitHub submission process
+   - Provide examples and best practices
+
+**Acceptance Criteria:**
+- [ ] GitHub Issue templates created for BR, FR, and UXR
+- [ ] GitHub Action or script converts Issues to FR/BR/UXR documents
+- [ ] Automatic creation of Kanban tasks from GitHub submissions
+- [ ] Bidirectional linking between GitHub Issues and FR/BR documents
+- [ ] Integration with existing FR/BR intake workflow
+- [ ] Documentation for external contributors
+- [ ] Validation and error handling for malformed submissions
+- [ ] Support for GitHub Issue Forms
+
+**Files to Create/Update:**
+- `.github/ISSUE_TEMPLATE/bug_report.yml` (GitHub Issue Form)
+- `.github/ISSUE_TEMPLATE/feature_request.yml` (GitHub Issue Form)
+- `.github/ISSUE_TEMPLATE/ux_research.yml` (GitHub Issue Form)
+- `.github/workflows/fr-br-intake.yml` (GitHub Action for conversion)
+- `packages/frameworks/kanban/templates/UXR_TEMPLATE.md` (UXR template)
+- `packages/frameworks/kanban/FR_BR_UXR_GITHUB_SUBMISSION_GUIDE.md` (documentation)
+
+**Related:**
+- FR-004: GitHub submission for FR, BR, and UXR
+- Epic 4 Story 2: FR/BR Intake to Tasks (foundation workflow)
+
+---
+
 ## Acceptance Criteria
 
 - [ ] Clear decision flow exists for FR/BR → Task → Story → Epic
@@ -331,5 +405,5 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 
 ---
 
-_Last updated: 2025-12-02 (v0.4.2.5+1 – Task 5 complete: Create intake workflow guide for agents/users - Story 2 COMPLETE)_
+_Last updated: 2025-12-09 (v0.4.2.6+1 – Task 6 created: GitHub submission integration for FR, BR, and UXR)_
 

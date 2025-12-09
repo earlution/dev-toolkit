@@ -8,12 +8,12 @@ housekeeping_policy: keep
 
 # Story 001 – RW Agent Execution & Docs
 
-**Status:** COMPLETE ✅  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-05 (v0.2.1.5+2 – Task 5 build 2: Framework KB version history tracking)  
-**Version:** v0.2.1.5+2  
+**Last updated:** 2025-12-09 (v0.2.1.6+2 – Task 6 build 2: Enhanced canonical epics documentation and GitHub submission FR)  
+**Version:** v0.2.1.6+2  
 **Code:** E2S01
 
 ---
@@ -37,6 +37,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - [x] **E2:S01:T03 – Align `.cursorrules` RW trigger section with dev-kit policy** ✅ COMPLETE (v0.2.1.1+5)
 - [x] **E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed"** ✅ COMPLETE (v0.2.1.1+2)
 - [x] **E2:S01:T05 – Harden RW branch safety checks to stop execution on wrong branch** ✅ COMPLETE (v0.2.1.5+1)
+- [x] **E2:S01:T06 – Fix changelog validator ordering bug** ✅ COMPLETE (v0.2.1.6+2)
 
 ---
 
@@ -320,5 +321,5 @@ All subsequent steps have been cancelled.
 
 ---
 
-_Last updated: 2025-12-02 (v0.2.1.1+5 – Task 3 complete: Align .cursorrules RW trigger section with dev-kit policy)_
+_Last updated: 2025-12-09 (v0.2.1.6+2 – Task 6 build 2: Enhanced canonical epics documentation and GitHub submission FR)_
 

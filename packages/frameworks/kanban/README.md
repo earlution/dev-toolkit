@@ -11,8 +11,8 @@ housekeeping_policy: keep
 ```yaml
 package:
   name: "Kanban System Implementation Package"
-  version: "1.0.0"
-  last_updated: "2025-12-06"
+  version: "1.1.0"
+  last_updated: "2025-12-09"
   source_project: "Example project (Confidentia, Epic 4)"
   compatibility:
     numbering_versioning: "v2.0.0"
@@ -1410,12 +1410,20 @@ included_docs:
     purpose: "Reusable canonical story patterns (Bug Reports, Feature Requests)"
   - file: "templates/CANONICAL_EPICS.md"
     purpose: "Canonical epic definitions (Epics 1-6: Core, Workflow, Versioning, Kanban, FR Implementation, BR Implementation)"
+  - file: "templates/CANONICAL_STORIES_FR_BR.md"
+    purpose: "Canonical story patterns for Epic 5 (FR Implementation) and Epic 6 (BR Implementation)"
 
   - file: "examples/Epic-4-Example.md"
     purpose: "Real Epic with 37 stories"
 
   - file: "examples/Story-33-Example.md"
     purpose: "Real Story with 3 tasks"
+
+  - file: "examples/Epic-5-FR-Implementation-Example.md"
+    purpose: "Example Epic 5 (FR Implementation) demonstrating canonical epic structure"
+
+  - file: "examples/Epic-6-BR-Implementation-Example.md"
+    purpose: "Example Epic 6 (BR Implementation) demonstrating canonical epic structure"
 
   - file: "guides/portfolio-kanban-alignment-playbook.md"
     purpose: "Alignment guide"

@@ -17,6 +17,29 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.2.1.6+2] - 2025-12-09
+
+📦 Package Enhancements: Enhanced canonical epics documentation and added GitHub submission FR
+
+### Added
+
+- **Epic 4 Story 2 Task 6:** Created Feature Request FR-004 for GitHub submission integration (FR, BR, UXR via GitHub Issues/Discussions)
+- **Epic 4 Story 5 Enhancements:** Enhanced canonical epics documentation with detailed descriptions, typical stories, and integration points
+- **New Examples:** Added Epic 5 (FR Implementation) and Epic 6 (BR Implementation) example documents
+- **New Template:** Added CANONICAL_STORIES_FR_BR.md guide for FR/BR Implementation epic stories
+
+### Changed
+
+- **Kanban Package:** Version bumped from 1.0.0 to 1.1.0 (MINOR) - new examples and enhanced documentation
+- **CANONICAL_EPICS.md:** Enhanced with comprehensive usage guidance, customization examples, and detailed epic descriptions
+- **Kanban README:** Updated with references to new examples and templates
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.6+2.md` for full details.
+
+---
+
 ## [0.1.1.1+1] - 02-12-25
 
 🏗️ Foundation: First proper release with Epic 1–4 structure, dev-kit versioning policy, and Kanban FR/BR → Task flow
@@ -1651,6 +1674,30 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - PVW follows proven agentic execution pattern from Release Workflow
 - Emphasizes intelligent analysis, validation as tools, criteria as guidance
 - Comprehensive TODO tracking prevents agentic drift during execution
+
+---
+
+## [0.2.1.6+1] - 09-12-25
+
+🐛 Bug Report: Created BR-002 and Kanban task for changelog validator ordering bug
+
+### Added
+- **Bug Report BR-002:** Created bug report for changelog validator ordering issue
+  - Validator expects canonical ordering (lowest first) but Keep a Changelog format uses newest first
+  - Identified by been-there project when syncing workflow management framework
+- **Task E2:S01:T06:** Added task to fix changelog validator ordering bug
+  - Support both Keep a Changelog format (newest first) and canonical ordering (lowest first)
+  - Add configuration option to choose format preference
+  - Default to Keep a Changelog format (industry standard)
+
+### Changed
+- **Story 1 Status:** Changed from COMPLETE to IN PROGRESS (new task added)
+- **Epic 2/Story 1 Docs:** Updated with Task 6 and version markers
+
+### Notes
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.6+1.md` for full details
+- Bug was identified by been-there project during framework sync
+- Fix will support both formats to maintain compatibility
 
 ---
 
