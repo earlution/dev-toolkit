@@ -173,7 +173,7 @@ You don't need to understand the details—just know that each Task gets a uniqu
 **What happens:**
 - System searches for existing collaboration work
 - Doesn't find any matching Epic
-- Creates new Epic 7: "Real-Time Collaboration" (canonical epics are 1-6, so new epics start at 7)
+- Creates new Epic 8: "Real-Time Collaboration" (canonical epics are 1-7, so new epics start at 8)
 - Creates Story 1: "Real-Time Collaboration Foundation"
 - Creates Task 1: Your feature request
 - Assigns version: `0.7.1.1+1`

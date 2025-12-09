@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-09 (v0.2.1.6+2 – Story 1, T06 build 2: Enhanced canonical epics documentation and GitHub submission FR)  
+**Last updated:** 2025-12-09 (v0.2.1.7+1 – Story 1, T07 created: Add support for update/maintenance branch patterns in branch validation)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -21,9 +21,9 @@ housekeeping_policy: keep
 
 ## Story Checklist
 
-- [ ] **E2:S01 – RW Agent Execution & Docs** - IN PROGRESS (v0.2.1.6+2)  
+- [ ] **E2:S01 – RW Agent Execution & Docs** - IN PROGRESS (v0.2.1.7+1)  
   - Story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)
-  - Tasks: T01-T05 ✅ COMPLETE, T06 ✅ COMPLETE (v0.2.1.6+2 - Enhanced canonical epics documentation and GitHub submission FR)  
+  - Tasks: T01-T06 ✅ COMPLETE, T07 - TODO (Add support for update/maintenance branch patterns in branch validation)  
 - [x] **E2:S02 – PDCA Integration into Release Workflow** - COMPLETE ✅ (v0.2.2.8+1 – All tasks complete)  
   - Story: [`Story-002-pdca-integration-into-release-workflow.md`](Story-002-pdca-integration-into-release-workflow.md)
 - [x] **E2:S03 – Additional Workflows & Examples** - COMPLETE ✅ (v0.2.3.6+1 – All tasks complete)  
@@ -72,7 +72,7 @@ It defines how Release Workflow (RW) and other workflows are:
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-09 (v0.2.1.6+2 – Task 6 build 2: Enhanced canonical epics documentation and GitHub submission FR)  
+**Last updated:** 2025-12-09 (v0.2.1.7+1 – Task 7 created: Add support for update/maintenance branch patterns in branch validation)  
 
 **Goal:**  
 Make RW agent execution documentation fully portable, clearly distinguishing dev-kit behaviour from external examples.
@@ -84,6 +84,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - [x] E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed" ✅ COMPLETE (v0.2.1.1+2)
 - [x] E2:S01:T05 – Harden RW branch safety checks to stop execution on wrong branch ✅ COMPLETE (v0.2.1.5+1)
 - [x] E2:S01:T06 – Fix changelog validator ordering bug ✅ COMPLETE (v0.2.1.6+2)
+- [ ] E2:S01:T07 – Add support for update/maintenance branch patterns in branch validation - TODO
 
 > Full story: [`Story-001-rw-agent-execution-and-docs.md`](Story-001-rw-agent-execution-and-docs.md)  
 

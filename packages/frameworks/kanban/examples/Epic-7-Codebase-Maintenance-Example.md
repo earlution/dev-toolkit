@@ -6,13 +6,13 @@ expires_at: null
 housekeeping_policy: keep
 ---
 
-# Epic 7: Codebase Maintenance and Review
+# Epic 7: Codebase Maintenance and Review (Example)
 
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-09  
-**Last updated:** 2025-12-09 (v0.7.1.1+1 – Story 1, Task 1 created: PERPETUAL task for IDE-flagged issues)  
+**Last updated:** 2025-12-09 (v0.7.1.1+1 – Epic 7 created)  
 **Branch:** `epic/7-codebase-maintenance`  
 **Version Schema:** `0.7.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -21,7 +21,7 @@ housekeeping_policy: keep
 
 ## Story Checklist
 
-- [ ] **E7:S01 – Codebase Maintenance Tasks** - IN PROGRESS (v0.7.1.1+1 – Task 1 created)
+- [ ] **E7:S01 – Codebase Maintenance Tasks** - TODO
 - [ ] **E7:S02 – Code Review Standards and Processes** - TODO
 - [ ] **E7:S03 – Code Quality Metrics and Monitoring** - TODO
 - [ ] **E7:S04 – Maintenance Automation and Tooling** - TODO
@@ -59,10 +59,10 @@ This epic works in conjunction with Epic 4 (Kanban Framework) to provide a compl
 
 ### Story 1: Codebase Maintenance Tasks
 
-**Status:** IN PROGRESS  
+**Status:** TODO  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-09 (v0.7.1.1+1 – Story 1, Task 1 created: PERPETUAL task for IDE-flagged issues)
+**Last updated:** 2025-12-09 (v0.7.1.1+1 – Story 1 created)
 
 **Goal:** Establish systematic processes for addressing IDE-flagged issues and organizing codebase maintenance work.
 
@@ -89,7 +89,7 @@ This epic works in conjunction with Epic 4 (Kanban Framework) to provide a compl
 - Epic 2 (Workflow Management) - May use workflows for maintenance automation
 - *Parallel Development Candidacy:* Safe (can develop independently)
 
-> Full story: [`Story-001-codebase-maintenance-tasks.md`](Story-001-codebase-maintenance-tasks.md)
+> Full story: `KB/PM_and_Portfolio/kanban/epics/Epic-7/Story-001-codebase-maintenance-tasks.md`
 
 ---
 
@@ -214,9 +214,14 @@ This epic works in conjunction with Epic 4 (Kanban Framework) to provide a compl
 ## References
 
 - `packages/frameworks/kanban/templates/CANONICAL_EPICS.md` - Canonical epic definitions
-- `packages/frameworks/kanban/examples/Epic-7-Codebase-Maintenance-Example.md` - Example Epic 7 document
+- `packages/frameworks/kanban/templates/BR_TEMPLATE.md` - Bug Report template (for converting IDE issues to BRs)
 - `KB/PM_and_Portfolio/kanban/epics/Epic-4/Epic-4.md` - Kanban Framework epic
 
 ---
 
-_Last updated: 2025-12-09 (v0.7.1.1+1 – Story 1, Task 1 created: PERPETUAL task for IDE-flagged issues)_
+**Note:** This is an example Epic 7 document demonstrating the structure and content for a Codebase Maintenance and Review epic. When adopting the Kanban framework, customize this to match your project's specific needs and context.
+
+---
+
+_Last updated: 2025-12-09 (v0.7.1.1+1 – Epic 7 example created)_
+

@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-09 (v0.2.1.6+2 – Task 6 build 2: Enhanced canonical epics documentation and GitHub submission FR)  
-**Version:** v0.2.1.6+2  
+**Last updated:** 2025-12-09 (v0.2.1.7+1 – Task 7 created: Add support for update/maintenance branch patterns in branch validation)  
+**Version:** v0.2.1.7+1  
 **Code:** E2S01
 
 ---
@@ -38,6 +38,7 @@ Make RW agent execution documentation fully portable, clearly distinguishing dev
 - [x] **E2:S01:T04 – Update RW changelog step to require verification before marking fixes as "fixed"** ✅ COMPLETE (v0.2.1.1+2)
 - [x] **E2:S01:T05 – Harden RW branch safety checks to stop execution on wrong branch** ✅ COMPLETE (v0.2.1.5+1)
 - [x] **E2:S01:T06 – Fix changelog validator ordering bug** ✅ COMPLETE (v0.2.1.6+2)
+- [ ] **E2:S01:T07 – Add support for update/maintenance branch patterns in branch validation** - TODO
 
 ---
 
@@ -294,6 +295,72 @@ All subsequent steps have been cancelled.
 
 ---
 
+### E2:S01:T07 – Add support for update/maintenance branch patterns in branch validation
+
+**Input:**  
+- Bug Report BR-003: RW Branch Validation Missing Support for Update/Maintenance Branches
+- Current `validate_branch_context.py` implementation
+- User feedback: "update/ai-dev-kit branch pattern is good for framework updates, but RW should know about it"
+
+**Deliverable:**  
+- Updated `validate_branch_context.py` with support for `update/*` branch patterns
+- Configurable branch mapping via `rw-config.yaml` (optional enhancement)
+- Updated RW documentation explaining update branch handling
+- No warnings for valid `update/*` branches
+
+**Dependencies:** E2:S01:T05 (branch safety hardening foundation)  
+**Blocker:** None
+
+**Problem Statement:**
+The `validate_branch_context.py` script only recognizes `main` branch and `epic/{n}` pattern branches. When running RW on an `update/ai-dev-kit` branch (or similar update/maintenance branches), the validator issues a warning: "Branch 'update/ai-dev-kit' not in known mapping - cannot validate version". The `update/*` branch pattern is a good practice for incorporating framework updates, and the RW should recognize and support this pattern.
+
+**Approach:**
+1. **Extend branch pattern recognition:**
+   - Add support for `update/*` branch pattern (e.g., `update/ai-dev-kit`, `update/workflow-mgt`)
+   - Consider other maintenance patterns (e.g., `maintenance/*`, `upgrade/*`)
+   - Decide on validation behavior: skip validation (like `main`) or provide configurable mapping
+
+2. **Update `parse_branch_epic()` function:**
+   - Add pattern matching for `update/*` branches
+   - Return appropriate epic context (None for skip, or extract from config)
+   - Maintain backward compatibility with existing `epic/{n}` pattern
+
+3. **Add configuration support (optional enhancement):**
+   - Extend `rw-config.yaml` schema to support custom branch mappings
+   - Allow projects to define their own branch patterns
+   - Document configuration options
+
+4. **Update validation logic:**
+   - Handle `update/*` branches appropriately (skip validation or use config)
+   - Remove warning for recognized update branches
+   - Maintain clear error messages for truly unknown branches
+
+5. **Update documentation:**
+   - Document `update/*` branch pattern usage in RW guide
+   - Explain when to use update branches vs epic branches
+   - Add examples of update branch usage
+   - Update `.cursorrules` if needed
+
+**Acceptance Criteria:**
+- [ ] `validate_branch_context.py` recognizes `update/*` branch patterns
+- [ ] No warnings issued for valid `update/*` branches
+- [ ] Update branches handled appropriately (skip validation or configurable)
+- [ ] Documentation updated to explain update branch handling
+- [ ] Backward compatibility maintained with existing `epic/{n}` pattern
+- [ ] Optional: Configuration support for custom branch patterns
+
+**Files to Update:**
+- `packages/frameworks/workflow mgt/scripts/validation/validate_branch_context.py` - Add update branch support
+- `packages/frameworks/workflow mgt/KB/Documentation/Developer_Docs/vwmp/release-workflow-agent-execution.md` - Document update branch usage
+- `packages/frameworks/workflow mgt/config/rw-config-schema.md` - Add branch mapping configuration (if implementing config support)
+- `packages/frameworks/workflow mgt/cursorrules-rw-trigger-section.md` - Update branch mapping section (if needed)
+
+**Related:**
+- BR-003: RW Branch Validation Missing Support for Update/Maintenance Branches
+- E2:S01:T05: Harden RW branch safety checks (foundation for branch validation)
+
+---
+
 ## Acceptance Criteria
 
 - [x] RW documentation is fully portable and template-ready ✅
@@ -321,5 +388,5 @@ All subsequent steps have been cancelled.
 
 ---
 
-_Last updated: 2025-12-09 (v0.2.1.6+2 – Task 6 build 2: Enhanced canonical epics documentation and GitHub submission FR)_
+_Last updated: 2025-12-09 (v0.2.1.7+1 – Task 7 created: Add support for update/maintenance branch patterns in branch validation)_
 

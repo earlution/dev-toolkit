@@ -11,7 +11,7 @@ housekeeping_policy: keep
 ```yaml
 package:
   name: "Kanban System Implementation Package"
-  version: "1.1.0"
+  version: "1.2.0"
   last_updated: "2025-12-09"
   source_project: "Example project (Confidentia, Epic 4)"
   compatibility:
@@ -779,7 +779,7 @@ steps:
   1:
     action: "Create Epic document"
     template: "templates/EPIC_TEMPLATE.md"
-    output: "Epic-7-Mobile-App.md"  # Note: Canonical epics are 1-6, so new epics start at 7
+    output: "Epic-8-Mobile-App.md"  # Note: Canonical epics are 1-7, so new epics start at 8
 
   2:
     action: "Define stories"
@@ -1409,7 +1409,7 @@ included_docs:
   - file: "templates/CANONICAL_STORIES.md"
     purpose: "Reusable canonical story patterns (Bug Reports, Feature Requests)"
   - file: "templates/CANONICAL_EPICS.md"
-    purpose: "Canonical epic definitions (Epics 1-6: Core, Workflow, Versioning, Kanban, FR Implementation, BR Implementation)"
+    purpose: "Canonical epic definitions (Epics 1-7: Core, Workflow, Versioning, Kanban, FR Implementation, BR Implementation, Codebase Maintenance)"
   - file: "templates/CANONICAL_STORIES_FR_BR.md"
     purpose: "Canonical story patterns for Epic 5 (FR Implementation) and Epic 6 (BR Implementation)"
 
@@ -1424,6 +1424,9 @@ included_docs:
 
   - file: "examples/Epic-6-BR-Implementation-Example.md"
     purpose: "Example Epic 6 (BR Implementation) demonstrating canonical epic structure"
+
+  - file: "examples/Epic-7-Codebase-Maintenance-Example.md"
+    purpose: "Example Epic 7 (Codebase Maintenance and Review) demonstrating canonical epic structure"
 
   - file: "guides/portfolio-kanban-alignment-playbook.md"
     purpose: "Alignment guide"

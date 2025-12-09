@@ -1,65 +1,121 @@
-# Changelog v0.7.1.1+1
+# Changelog: v0.7.1.1+1
 
-**Release Date:** 2025-12-05  
-**Epic:** Epic 7 - Examples & Adoption Support  
-**Story:** Story 1 - Real-World Adoption Examples  
-**Task:** Task 1 - Document adoption case studies  
+**Release Date:** 2025-12-09T02:33:35Z  
+**Epic:** Epic 7 - Codebase Maintenance and Review  
+**Story:** Story 1 - Codebase Maintenance Tasks  
+**Task:** Task 1 - PERPETUAL: Address IDE-Flagged Error, Warning, and Info level problems  
 **Build:** 1
 
 ---
 
 ## Summary
 
-Created Epic 7: Examples & Adoption Support with initial story structure. This epic provides real-world examples, migration guides, and onboarding materials to help users successfully adopt the dev-kit frameworks.
+This release adds Epic 7: Codebase Maintenance and Review to the canonical epics, establishing a systematic approach to codebase maintenance and review work. The epic includes a perpetual task for addressing IDE-flagged issues (errors, warnings, info), ensuring continuous codebase health monitoring and maintenance.
 
 ---
 
 ## Changes
 
-### 🆕 New Epic
+### Epic 7: Codebase Maintenance and Review
 
-**Epic 7: Examples & Adoption Support**
-- Created Epic 7 document with overview and goals
-- Established 3 initial stories:
-  - Story 1: Real-World Adoption Examples
-  - Story 2: Migration Guides
-  - Story 3: User Onboarding Materials
+**New Canonical Epic Added:**
+- **Epic 7: Codebase Maintenance and Review** - New canonical epic for codebase maintenance and review work
+  - Purpose: Codebase maintenance, quality assurance, and continuous improvement
+  - Scope: Code review processes, maintenance tasks, quality standards, IDE-flagged issues, and codebase health monitoring
+  - Status: Canonical (part of framework structure)
 
-### 📚 Story Documents Created
+**Story 1: Codebase Maintenance Tasks**
+- **Task 1: PERPETUAL: Address IDE-Flagged Error, Warning, and Info level problems**
+  - Type: PERPETUAL (ongoing maintenance task)
+  - Purpose: Continuous resolution of IDE-flagged issues, maintaining codebase health
+  - Approach: Monitor IDE flags, prioritize issues (errors → warnings → info), batch work, document resolution
+  - Integration: Epic 4 (Kanban Framework), Epic 6 (BR Implementation), Epic 2 (Workflow Management)
 
-- `Story-001-real-world-adoption-examples.md` - Real-world examples and case studies
-- `Story-002-migration-guides.md` - Migration guides for framework adoption
-- `Story-003-user-onboarding-materials.md` - User onboarding materials
+**Additional Stories (Planned):**
+- Story 2: Code Review Standards and Processes
+- Story 3: Code Quality Metrics and Monitoring
+- Story 4: Maintenance Automation and Tooling
+
+### Kanban Package Updates
+
+**Version Bump:** 1.1.0 → 1.2.0 (MINOR)
+
+**Added:**
+- Epic 7: Codebase Maintenance and Review to canonical epics
+- Example Epic 7 document: `examples/Epic-7-Codebase-Maintenance-Example.md`
+- Epic 7 Story 1 document with perpetual task structure
+- CHANGELOG.md for kanban package
+
+**Changed:**
+- Updated canonical epic count from 1-6 to 1-7
+- Updated intake guides to reference Epic 7 (new project-specific epics now start at Epic 8)
+- Updated README to include Epic 7 in canonical epic definitions
+- Updated `CANONICAL_EPICS.md` with Epic 7 definition and ordering rationale
+- Updated all intake guides (`FR_BR_INTAKE_GUIDE.md`, `FR_BR_INTAKE_AGENT_GUIDE.md`, `FR_BR_INTAKE_USER_GUIDE.md`)
+
+### Documentation Updates
+
+**Epic 7 Documentation:**
+- Created `KB/PM_and_Portfolio/kanban/epics/Epic-7/Epic-7.md`
+- Created `KB/PM_and_Portfolio/kanban/epics/Epic-7/Story-001-codebase-maintenance-tasks.md`
+- Created `packages/frameworks/kanban/examples/Epic-7-Codebase-Maintenance-Example.md`
+
+**Framework Documentation:**
+- Updated `packages/frameworks/kanban/templates/CANONICAL_EPICS.md` with Epic 7
+- Updated `packages/frameworks/kanban/README.md` with Epic 7 references
+- Updated intake guides to reflect new canonical epic count
 
 ---
 
-## Files Created
+## Version Details
 
-- `KB/PM_and_Portfolio/kanban/epics/Epic-7/Epic-7.md`
-- `KB/PM_and_Portfolio/kanban/epics/Epic-7/Story-001-real-world-adoption-examples.md`
-- `KB/PM_and_Portfolio/kanban/epics/Epic-7/Story-002-migration-guides.md`
-- `KB/PM_and_Portfolio/kanban/epics/Epic-7/Story-003-user-onboarding-materials.md`
-- `src/fynd_deals/version.py` (updated to v0.7.1.1+1)
+**Project Version:** `0.7.1.1+1`
+- RC: 0 (Development)
+- EPIC: 7 (Codebase Maintenance and Review)
+- STORY: 1 (Codebase Maintenance Tasks)
+- TASK: 1 (PERPETUAL: Address IDE-Flagged Error, Warning, and Info level problems)
+- BUILD: 1 (First build for this task)
+
+**Package Versions:**
+- Kanban Package: `1.2.0` (MINOR bump - new canonical epic added)
+
+---
+
+## Impact
+
+**Framework Impact:**
+- Adds new canonical epic to Kanban framework
+- Establishes perpetual task pattern for ongoing maintenance work
+- Provides organizational structure for codebase maintenance and review
+
+**User Impact:**
+- Projects adopting Kanban framework now have Epic 7 available for maintenance work
+- Perpetual task pattern available for tracking ongoing maintenance activities
+- Clear guidance on addressing IDE-flagged issues
+
+**Integration Points:**
+- Epic 4 (Kanban Framework): Uses Kanban for tracking maintenance tasks
+- Epic 6 (BR Implementation): May convert IDE-flagged issues to Bug Reports when appropriate
+- Epic 2 (Workflow Management): May use workflows for maintenance automation
 
 ---
 
 ## Next Steps
 
-- Begin work on E7:S01:T01 - Document adoption case studies
-- Create example implementations
-- Build adoption pattern library
+1. Begin work on Epic 7 Story 1 Task 1 (PERPETUAL) - Address IDE-flagged issues
+2. Plan Story 2: Code Review Standards and Processes
+3. Plan Story 3: Code Quality Metrics and Monitoring
+4. Plan Story 4: Maintenance Automation and Tooling
 
 ---
 
-## Related Work
+## References
 
-- **Epic 5:** Documentation Management and Maintenance (in progress)
-- **Epic 6:** Framework Management and Maintenance (in progress)
-- **Epic 8:** Tooling & Automation (planned)
+- Epic 7: `KB/PM_and_Portfolio/kanban/epics/Epic-7/Epic-7.md`
+- Story 1: `KB/PM_and_Portfolio/kanban/epics/Epic-7/Story-001-codebase-maintenance-tasks.md`
+- Canonical Epics: `packages/frameworks/kanban/templates/CANONICAL_EPICS.md`
+- Kanban Package: `packages/frameworks/kanban/README.md`
 
 ---
 
-## Notes
-
-This release marks the beginning of Epic 7, which will provide comprehensive examples, migration guides, and onboarding materials to help users successfully adopt the dev-kit frameworks.
-
+_Generated by Release Workflow (RW) on 2025-12-09T02:33:35Z_

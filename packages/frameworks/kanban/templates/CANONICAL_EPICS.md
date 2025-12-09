@@ -142,6 +142,36 @@ This epic covers Bug Report (BR) implementation and management, including BR int
 
 ---
 
+### Epic 7: Codebase Maintenance and Review
+
+**Purpose:** Codebase maintenance, quality assurance, and continuous improvement.  
+**Scope:** Code review processes, maintenance tasks, quality standards, IDE-flagged issues, and codebase health monitoring.  
+**Status:** Canonical (part of framework structure)
+
+**Description:**
+This epic encompasses codebase maintenance and review activities, including addressing IDE-flagged issues (errors, warnings, info), code quality standards, maintenance workflows, and continuous codebase health monitoring. This epic provides the organizational structure for ongoing maintenance work that keeps the codebase healthy and maintainable.
+
+**Key Characteristics:**
+- IDE-flagged issue resolution (errors, warnings, info)
+- Code quality standards and enforcement
+- Maintenance workflows and processes
+- Codebase health monitoring and metrics
+- Continuous improvement practices
+
+**Typical Stories:**
+- Story 1: Codebase Maintenance Tasks
+- Story 2: Code Review Standards and Processes
+- Story 3: Code Quality Metrics and Monitoring
+- Story 4: Maintenance Automation and Tooling
+
+**Integration Points:**
+- **Epic 4 (Kanban Framework):** Uses Kanban for tracking maintenance tasks
+- **Epic 2 (Workflow Management):** May use workflows for maintenance automation
+- **Epic 3 (Versioning):** Tracks maintenance work with version markers
+- **Epic 6 (BR Implementation):** May convert IDE-flagged issues to Bug Reports when appropriate
+
+---
+
 ## Epic Ordering Rationale
 
 The canonical epics are ordered logically:
@@ -152,12 +182,15 @@ The canonical epics are ordered logically:
 4. **Epic 4: Kanban Framework** - Operational framework for Kanban
 5. **Epic 5: FR Implementation** - Implementation epic that supports Kanban (FRs come first)
 6. **Epic 6: BR Implementation** - Implementation epic that supports Kanban (BRs follow FRs)
+7. **Epic 7: Codebase Maintenance and Review** - Maintenance epic for ongoing codebase health
 
 **Ordering Principles:**
 - Foundational epics come first (Epic 1)
 - Operational frameworks follow (Epics 2-4)
-- Implementation epics that support frameworks come last (Epics 5-6)
+- Implementation epics that support frameworks come next (Epics 5-6)
+- Maintenance epics come last (Epic 7) as they represent ongoing operational work
 - FR Implementation (Epic 5) comes before BR Implementation (Epic 6) because Feature Requests typically precede Bug Reports in the intake flow
+- Codebase Maintenance (Epic 7) comes last as it represents continuous operational maintenance work
 
 ---
 
@@ -176,11 +209,11 @@ The canonical epics are ordered logically:
    - Maintain the logical ordering (foundational → operational → implementation)
 
 3. **Extend:** Add additional epics as needed for your project's specific domains
-   - Start numbering from Epic 7 (canonical epics are 1-6)
-   - Example: Epic 7 (Mobile App), Epic 8 (API Integration), Epic 9 (Analytics)
+   - Start numbering from Epic 8 (canonical epics are 1-7)
+   - Example: Epic 8 (Mobile App), Epic 9 (API Integration), Epic 10 (Analytics)
 
-4. **Maintain Order:** When adding new epics, continue numbering from Epic 6 (or your highest epic number)
-   - Don't reuse canonical epic numbers (1-6) for project-specific epics
+4. **Maintain Order:** When adding new epics, continue numbering from Epic 7 (or your highest epic number)
+   - Don't reuse canonical epic numbers (1-7) for project-specific epics
    - Keep canonical epics as the foundation
 
 ### Customization Examples
@@ -192,8 +225,9 @@ The canonical epics are ordered logically:
 - Epic 4: Kanban Framework → "Project Management"
 - Epic 5: FR Implementation → "Feature Development"
 - Epic 6: BR Implementation → "Bug Fixes"
-- Epic 7: Mobile App (project-specific)
-- Epic 8: API Integration (project-specific)
+- Epic 7: Codebase Maintenance and Review → "Code Quality & Maintenance"
+- Epic 8: Mobile App (project-specific)
+- Epic 9: API Integration (project-specific)
 
 **Example 2: Framework Package**
 - Epic 1: Framework Core → "Framework Foundation"
@@ -202,8 +236,9 @@ The canonical epics are ordered logically:
 - Epic 4: Kanban Framework → "Task Management"
 - Epic 5: FR Implementation → "Feature Requests"
 - Epic 6: BR Implementation → "Issue Resolution"
-- Epic 7: Documentation (project-specific)
-- Epic 8: Examples & Tutorials (project-specific)
+- Epic 7: Codebase Maintenance and Review → "Code Quality & Maintenance"
+- Epic 8: Documentation (project-specific)
+- Epic 9: Examples & Tutorials (project-specific)
 
 ---
 
@@ -217,7 +252,7 @@ When an epic pattern proves reusable across multiple projects, it should be adde
    - Pattern must be reusable across different domains
 
 2. **Document Pattern:** Create entry in this document with:
-   - Epic number (following canonical order, after Epic 6)
+   - Epic number (following canonical order, after Epic 7)
    - Purpose (clear, concise statement)
    - Scope (what's included/excluded)
    - Key characteristics (distinguishing features)
@@ -238,14 +273,14 @@ When an epic pattern proves reusable across multiple projects, it should be adde
    - `FR_BR_INTAKE_QUICK_REFERENCE.md`
    - Any other framework documentation
 
-### Example: Adding Epic 7 (Documentation Management)
+### Example: Adding Epic 8 (Documentation Management)
 
 If documentation management becomes a common pattern:
 
 1. **Identify:** Documentation management appears in 3+ projects
 2. **Document:**
    ```markdown
-   ### Epic 7: Documentation Management
+   ### Epic 8: Documentation Management
    
    **Purpose:** Documentation creation, maintenance, and quality assurance.
    **Scope:** Documentation workflows, quality standards, automation, and documentation tooling.
@@ -275,7 +310,7 @@ If documentation management becomes a common pattern:
 
 ---
 
-**Last Updated:** 2025-12-08  
-**Version:** 1.0  
+**Last Updated:** 2025-12-09  
+**Version:** 1.1  
 **Maintained By:** Kanban Framework Team
 

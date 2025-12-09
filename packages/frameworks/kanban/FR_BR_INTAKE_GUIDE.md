@@ -236,7 +236,7 @@ FR/BR Arrives
      - TASK: 1
      - BUILD: 1
 
-**Example:** If current Epics are 1-6, create Epic 7 → Story 1 → Task 1 → Version: `0.7.1.1+1`
+**Example:** If current Epics are 1-7, create Epic 8 → Story 1 → Task 1 → Version: `0.8.1.1+1`
 
 4. **Update Kanban Board:**
    - Add new Epic to board
@@ -436,35 +436,36 @@ VERSION_BUILD = 1  # ← Always 1 for new Tasks
   - Epic 4: Kanban Framework
   - Epic 5: FR Implementation
   - Epic 6: BR Implementation
+  - Epic 7: Codebase Maintenance and Review
 - Check: None match "Real-Time Collaboration" problem domain
 - **Decision:** No Epic match ❌
 
 **Step 4: Create Epic, Story, and Task**
-- Create Epic 7: "Real-Time Collaboration"
+- Create Epic 8: "Real-Time Collaboration"
   - Location: `KB/PM_and_Portfolio/kanban/epics/Epic-7/Epic-7.md`
   - Status: TODO
   - **CRITICAL:** Epic is broad and abstract: "Framework for real-time collaboration features"
   - Problem Domain: Real-Time Collaboration
-  - **Note:** Epic 7 because canonical epics are 1-6 (see `CANONICAL_EPICS.md`)
+  - **Note:** Epic 8 because canonical epics are 1-7 (see `CANONICAL_EPICS.md`)
 - Create Story 1: "Real-Time Collaboration Foundation"
   - Location: `KB/PM_and_Portfolio/kanban/epics/Epic-7/Story-001-real-time-collaboration-foundation.md`
   - Status: TODO
   - Goal: "Establish foundation for real-time collaboration features"
 - Create Task 1: "Add real-time collaboration features"
   - Add to Story's Task Checklist
-  - Assign version: `0.7.1.1+1`
+  - Assign version: `0.8.1.1+1`
 
 **Step 5: Update Documents**
 - Kanban Board:
-  - Add Epic 7
-  - Add Story 1 under Epic 7
+  - Add Epic 8
+  - Add Story 1 under Epic 8
 - FR Document:
   - Intake Status: ACCEPTED
-  - Decision Flow: New Epic Created (Epic 7, Story 1) → Task 1
-  - Version: `0.7.1.1+1`
-  - Kanban Links: Epic 7, Story 1, Task 1
+  - Decision Flow: New Epic Created (Epic 8, Story 1) → Task 1
+  - Version: `0.8.1.1+1`
+  - Kanban Links: Epic 8, Story 1, Task 1
 
-**Result:** FR converted to new Epic 7, Story 1, Task 1.
+**Result:** FR converted to new Epic 8, Story 1, Task 1.
 
 ---
 
