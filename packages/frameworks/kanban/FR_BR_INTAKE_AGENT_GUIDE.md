@@ -252,8 +252,9 @@ FR/BR Received
 
 **Step 4b.1: Determine Epic Number**
 - **Action:** Read `KB/PM_and_Portfolio/kanban/_index.md` or `kanban-board.md`
-- **Find:** Highest existing Epic number (e.g., Epic 1, Epic 2, Epic 3)
-- **Calculate:** Next Epic number = Highest + 1 (e.g., Epic 4)
+- **Find:** Highest existing Epic number (e.g., Epic 1, Epic 2, Epic 3, Epic 4, Epic 5, Epic 6)
+- **Calculate:** Next Epic number = Highest + 1 (e.g., Epic 7)
+- **Note:** Canonical epics are 1-6 (see `CANONICAL_EPICS.md`), so new project-specific epics start at Epic 7
 
 **Step 4b.2: Create Epic**
 - **Location:** `KB/PM_and_Portfolio/kanban/epics/Epic-X.md`

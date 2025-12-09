@@ -18,9 +18,9 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 """
 
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
-VERSION_EPIC = 3      # Epic number (Epic 3: Numbering & Versioning Framework)
-VERSION_STORY = 2     # Story number (Story 2: Versioning Cookbook & Examples)
-VERSION_TASK = 10     # Task number (Task 10: Integrate PVW into Release Workflow agent execution guide)
+VERSION_EPIC = 4      # Epic number (Epic 4: Kanban Framework)
+VERSION_STORY = 5     # Story number (Story 5: Canonical Epics for Kanban Framework)
+VERSION_TASK = 1      # Task number (Task 1: Add canonical epics to kanban framework package)
 VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema

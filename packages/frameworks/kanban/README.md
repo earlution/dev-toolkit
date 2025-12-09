@@ -139,6 +139,7 @@ structure:
     - EPIC_TEMPLATE.md                   # Epic document template
     - STORY_TEMPLATE.md                  # Story document template
     - CANONICAL_STORIES.md               # Reusable canonical story patterns
+    - CANONICAL_EPICS.md                 # Canonical epic definitions
 
   examples/:
     - Epic-4-Example.md                  # Real Epic (37 stories, 36 complete)
@@ -778,7 +779,7 @@ steps:
   1:
     action: "Create Epic document"
     template: "templates/EPIC_TEMPLATE.md"
-    output: "Epic-5-Mobile-App.md"
+    output: "Epic-7-Mobile-App.md"  # Note: Canonical epics are 1-6, so new epics start at 7
 
   2:
     action: "Define stories"
@@ -1407,6 +1408,8 @@ included_docs:
 
   - file: "templates/CANONICAL_STORIES.md"
     purpose: "Reusable canonical story patterns (Bug Reports, Feature Requests)"
+  - file: "templates/CANONICAL_EPICS.md"
+    purpose: "Canonical epic definitions (Epics 1-6: Core, Workflow, Versioning, Kanban, FR Implementation, BR Implementation)"
 
   - file: "examples/Epic-4-Example.md"
     purpose: "Real Epic with 37 stories"
