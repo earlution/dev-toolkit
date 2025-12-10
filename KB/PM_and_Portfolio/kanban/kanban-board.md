@@ -109,6 +109,30 @@ This board tracks all work on the `ai-dev-kit` repository and the **Head First A
 
 ---
 
+### Epic 21: Internationalization and Localization
+
+**Status:** TODO  
+**Priority:** MEDIUM  
+**Last Updated:** v0.21.0.0+0
+
+**Stories:**
+- [ ] **E21:S00 – Language Selection at Setup (UK/US English)** - TODO (v0.21.0.0+0)
+  - Story: [`epics/Epic-21/Story-000-language-selection-at-setup.md`](epics/Epic-21/Story-000-language-selection-at-setup.md)
+  - Tasks: T01-T07 TODO
+- [ ] **E21:S01 – Internationalization Infrastructure** - TODO (v0.21.0.0+0)
+  - Story: [`epics/Epic-21/Story-001-internationalization-infrastructure.md`](epics/Epic-21/Story-001-internationalization-infrastructure.md)
+  - Tasks: T01-T07 TODO
+- [ ] **E21:S02 – Translation and Localization** - TODO (v0.21.0.0+0)
+  - Story: [`epics/Epic-21/Story-002-translation-and-localization.md`](epics/Epic-21/Story-002-translation-and-localization.md)
+  - Tasks: T01-T07 TODO
+- [ ] **E21:S03 – Cultural Adaptation** - TODO (v0.21.0.0+0)
+  - Story: [`epics/Epic-21/Story-003-cultural-adaptation.md`](epics/Epic-21/Story-003-cultural-adaptation.md)
+  - Tasks: T01-T07 TODO
+
+**Epic Doc:** [`epics/Epic-21/Epic-21.md`](epics/Epic-21/Epic-21.md)
+
+---
+
 ### Epic 5: Documentation Management and Maintenance
 
 **Status:** IN PROGRESS  

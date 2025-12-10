@@ -871,40 +871,69 @@ These epics represent common patterns found in ambitious projects. Use as needed
 ### Epic 21: Internationalization and Localization
 
 **Purpose:** Multi-language support and localization.  
-**Scope:** Translation, locale management, cultural adaptation, RTL support.  
+**Scope:** Translation, locale management, cultural adaptation, RTL support, language selection at setup.  
 **Status:** Project-specific (canonical pattern)
+
+**Description:**
+This epic encompasses internationalization (i18n) and localization (l10n) activities, including language selection at setup, translation infrastructure, translation management, and cultural adaptation. This epic provides the organizational structure for making the framework accessible to users worldwide, supporting multiple languages and cultural preferences.
+
+**Key Characteristics:**
+- Language selection at setup (UK/US English + international)
+- Translation infrastructure and file structure
+- Translation workflow and management
+- Cultural adaptation (date/time/number formatting)
+- RTL (Right-to-Left) support for Arabic/Hebrew
+- Locale detection and switching
 
 **Typical Stories:**
 
-#### Story 1: Internationalization Infrastructure
-**Purpose:** Set up i18n infrastructure and framework.
+#### Story 0: Language Selection at Setup (MVP - UK/US English)
+**Purpose:** Add language selection prompt at the very beginning of setup processes, starting with UK and US English variants.
 
 **Typical Tasks:**
-- T01: Choose i18n framework/library
-- T02: Set up translation file structure
-- T03: Implement locale detection
+- T01: Add language selection prompt to template setup (GitHub template)
+- T02: Add language selection prompt to CLI tool (`ai-dev-kit init`)
+- T03: Add language selection prompt to RW Installer (`install_release_workflow.py`)
+- T04: Create UK/US English content variants (documentation, templates)
+- T05: Implement configuration persistence (`ai-dev-kit-config.yaml`)
+- T06: Update content generation to use language preference (RW, templates)
+- T07: Test UK/US English selection and content generation
+
+#### Story 1: Internationalization Infrastructure
+**Purpose:** Set up i18n infrastructure and framework for broader language support.
+
+**Typical Tasks:**
+- T01: Choose i18n framework/library (e.g., gettext, i18next, or custom)
+- T02: Set up translation file structure (`locales/{lang}/`)
+- T03: Implement locale detection (browser/system locale)
 - T04: Add language switching functionality
-- T05: Configure date/time/number formatting
+- T05: Configure date/time/number formatting per locale
+- T06: Implement translation key system
+- T07: Set up translation fallback chain (selected → English → US English)
 
 #### Story 2: Translation and Localization
-**Purpose:** Implement translations and localization.
+**Purpose:** Implement translations and localization for major languages.
 
 **Typical Tasks:**
-- T01: Identify translatable content
-- T02: Create translation files
-- T03: Implement translation workflow
-- T04: Add translation management tools
-- T05: Test translations and locale support
+- T01: Identify and extract all translatable content
+- T02: Create translation files for major languages (Spanish, French, German, Chinese, Japanese, Portuguese, Russian, Arabic)
+- T03: Implement translation lookup and rendering
+- T04: Create translation workflow and review process
+- T05: Add translation management tools
+- T06: Implement translation completeness tracking
+- T07: Test translations and locale support
 
 #### Story 3: Cultural Adaptation
-**Purpose:** Adapt content and features for different cultures.
+**Purpose:** Adapt content and features for different cultures and regions.
 
 **Typical Tasks:**
-- T01: Research cultural requirements
-- T02: Adapt UI/UX for different cultures
-- T03: Implement RTL support (if needed)
-- T04: Adapt content and imagery
-- T05: Test cultural adaptations
+- T01: Research cultural requirements for target locales
+- T02: Adapt UI/UX for different cultures (examples, imagery)
+- T03: Implement RTL support (Right-to-Left) for Arabic/Hebrew
+- T04: Adapt content and examples for cultural context
+- T05: Configure locale-specific formatting (dates, times, numbers, currency)
+- T06: Test cultural adaptations
+- T07: Document cultural considerations and guidelines
 
 ---
 

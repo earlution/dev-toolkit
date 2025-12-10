@@ -39,6 +39,7 @@ Quick reference board for all Kanban work. For detailed views, see [`kanban-boar
 | 7    | Examples and Adoption              | TODO           | 3       | 0/3      |
 | 8    | Tooling and Automation             | TODO           | 3       | 0/3      |
 | 9    | Book Content Development          | IN PROGRESS    | 3       | 0/3      |
+| 21   | Internationalization and Localization | TODO        | 4       | 0/4      |
 
 **Epic Docs:** 
 - [`epics/Epic-1/Epic-1.md`](epics/Epic-1/Epic-1.md)
