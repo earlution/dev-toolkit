@@ -33,7 +33,7 @@ Quick reference board for all Kanban work. For detailed views, see [`kanban-boar
 | 1    | AI Dev Kit Core                 | COMPLETE ✅     | 3       | 3/3      |
 | 2    | Workflow Management Framework      | COMPLETE ✅     | 4       | 4/4      |
 | 3    | Numbering & Versioning Framework   | COMPLETE ✅     | 3       | 3/3      |
-| 4    | Kanban Framework                   | COMPLETE ✅     | 4       | 4/4      |
+| 4    | Kanban Framework                   | IN PROGRESS    | 6       | 5/6      |
 | 5    | Documentation Management          | IN PROGRESS    | 3       | 1/3      |
 | 6    | Framework Management               | COMPLETE ✅     | 3       | 3/3      |
 | 7    | Examples and Adoption              | TODO           | 3       | 0/3      |

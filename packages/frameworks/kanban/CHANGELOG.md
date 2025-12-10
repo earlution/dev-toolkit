@@ -5,6 +5,32 @@ All notable changes to the Kanban System Implementation Package will be document
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.4.0] - 2025-12-09
+
+**Package Version:** 1.4.0
+**Project Version:** 0.4.6.0+1
+**Bump Type:** MINOR
+
+### Added
+- **Comprehensive Canonical E/S/T Structure:** Complete template system for canonical epics, stories, and tasks
+  - `packages/frameworks/kanban/templates/COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md` - Complete canonical structure (Epics 1-21+)
+  - Epic 7: User Experience Research (UXR) added as canonical epic
+  - ~50+ stories and ~300+ tasks defined
+  - Scalability guidance (tiny → ambitious projects)
+  - Contextualization system with placeholders
+- **Design Documentation:** Comprehensive canonical structure design document
+  - `KB/Documentation/Engineering_and_Platform/comprehensive-canonical-est-structure-design.md`
+  - Rationale for Epic 7 (UXR) as canonical
+  - Epic ordering rationale
+  - Implementation requirements
+
+### Changed
+- Epic 7 changed from "Codebase Maintenance" to "User Experience Research (UXR)"
+- Codebase Maintenance moved to Epic 8 (project-specific canonical pattern)
+- All project-specific epics renumbered (8→9, 9→10, etc.)
+
+---
+
 ## [1.3.0] - 2025-12-09
 
 **Package Version:** 1.3.0

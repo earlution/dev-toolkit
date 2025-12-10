@@ -17,6 +17,34 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.6.0+1] - 2025-12-09
+
+✨ Feature: Comprehensive Canonical Epics/Stories/Tasks Template System (FR-005)
+
+### Added
+
+- **Comprehensive Canonical Structure:** Complete E/S/T template system
+  - Framework epics (1-7) with Epic 7 as User Experience Research (UXR)
+  - Project-specific canonical epics (8-21+)
+  - ~50+ stories and ~300+ tasks defined
+  - Scalability guidance (tiny → ambitious projects)
+  - Contextualization system with placeholders
+- **Design Documentation:** Comprehensive canonical structure design
+  - Rationale for Epic 7 (UXR) as canonical epic
+  - Epic ordering rationale
+  - Implementation requirements
+- **Story 6:** Comprehensive Canonical E/S/T Template System
+  - 8 implementation tasks defined
+  - Foundation for BR-004 fix
+
+### Changed
+
+- Epic 7 changed from "Codebase Maintenance" to "User Experience Research (UXR)"
+- Codebase Maintenance moved to Epic 8 (project-specific canonical pattern)
+- All project-specific epics renumbered (8→9, 9→10, etc.)
+
+---
+
 ## [0.4.2.6+2] - 2025-12-09
 
 📚 Documentation: Improved discoverability of GitHub submission process

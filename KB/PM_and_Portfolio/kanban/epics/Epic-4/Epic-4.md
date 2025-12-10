@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-09 (v0.4.2.6+2 – Story 2, T06 build 2: Documentation improvements - CONTRIBUTING.md and enhanced discoverability)  
+**Last updated:** 2025-12-09 (v0.4.6.0+1 – Story 6, T00 complete: Story creation and comprehensive structure documentation)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -31,7 +31,10 @@ housekeeping_policy: keep
 - [x] **E4:S04 – Kanban Structure Refactoring** - COMPLETE ✅ (v0.4.4.1+1)
   - Story: [`Story-004-kanban-structure-refactoring.md`](Story-004-kanban-structure-refactoring.md)
 - [x] **E4:S05 – Canonical Epics for Kanban Framework** - COMPLETE ✅ (v0.4.5.1+1)
-  - Story: [`Story-005-canonical-epics-for-kanban-framework.md`](Story-005-canonical-epics-for-kanban-framework.md)  
+  - Story: [`Story-005-canonical-epics-for-kanban-framework.md`](Story-005-canonical-epics-for-kanban-framework.md)
+- [ ] **E4:S06 – Comprehensive Canonical Epics/Stories/Tasks Template System** - IN PROGRESS (v0.4.6.0+1 – Task 0 complete: Story creation and comprehensive structure documentation)
+  - Story: [`Story-006-comprehensive-canonical-est-template-system.md`](Story-006-comprehensive-canonical-est-template-system.md)
+  - Tasks: T00 ✅ COMPLETE, T01-T08 TODO (Comprehensive template system implementation)  
 
 ---
 
