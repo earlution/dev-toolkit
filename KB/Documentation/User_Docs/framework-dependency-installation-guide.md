@@ -841,6 +841,35 @@ ai-dev-kit install workflow-mgmt@2.0.0
 
 ---
 
+## Uninstalling Frameworks
+
+If you need to remove a framework:
+
+**Using Uninstall Script (Recommended):**
+```bash
+# Uninstall with auto-detected backend
+python3 packages/frameworks/workflow\ mgt/scripts/uninstall_package.py <framework-name>
+
+# Recovery mode (for failed installations)
+python3 packages/frameworks/workflow\ mgt/scripts/uninstall_package.py <framework-name> --recover
+
+# Rollback mode (for breaking changes)
+python3 packages/frameworks/workflow\ mgt/scripts/uninstall_package.py <framework-name> --rollback
+
+# Dry run (preview changes)
+python3 packages/frameworks/workflow\ mgt/scripts/uninstall_package.py <framework-name> --dry-run
+```
+
+**Safety Features:**
+- Creates backup before removal
+- Validates dependencies
+- Confirmation prompts
+- Verifies cleanup
+
+See the [Troubleshooting Guide](framework-dependency-troubleshooting-guide.md#uninstall-issues) for detailed uninstall documentation.
+
+---
+
 ## Next Steps
 
 After installation:

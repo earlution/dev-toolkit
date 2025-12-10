@@ -11,8 +11,9 @@ housekeeping_policy: keep
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-10 (v0.2.6.2+1 – Task 2 complete: Recovery and rollback flows implemented)  
-**Version:** v0.2.6.2+1  
+**Last updated:** 2025-12-10 (v0.2.6.3+1 – Task 3 complete: Documentation and verification)  
+**Version:** v0.2.6.3+1  
+**Status:** COMPLETE ✅  
 **Code:** E2S06
 
 ---
@@ -39,10 +40,13 @@ Provide safe uninstall, cleanup, recovery, and rollback capabilities for ai-dev-
   - **Linked FR:** FR-008 (AC-6..AC-8).  
   - **Acceptance:** ✅ Recovery/rollback implemented and verified; ready for testing across backends.
 
-- [ ] **E2:S06:T03 – Documentation and verification**  
-  - Update install/update/troubleshooting guides with uninstall/recovery steps; add examples and test matrix.  
+- [x] **E2:S06:T03 – Documentation and verification** ✅ COMPLETE (v0.2.6.3+1)
+  - Updated troubleshooting guide with comprehensive uninstall section (uninstall issues, orphaned files, dependency conflicts)
+  - Updated update guide with uninstall methods, safety features, and backup restoration
+  - Updated installation guide with uninstall quick reference
+  - Added examples for standard uninstall, recovery mode, rollback mode, and manual uninstall
   - **Linked FR:** FR-008 (AC-9..AC-10).  
-  - **Acceptance:** Docs updated; scenarios tested and recorded.
+  - **Acceptance:** ✅ Docs updated; uninstall scenarios documented with examples.
 
 ---
 

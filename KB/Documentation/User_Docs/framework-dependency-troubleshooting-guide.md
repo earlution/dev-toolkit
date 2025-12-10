@@ -24,6 +24,7 @@ This guide provides solutions to common issues when installing, updating, and us
 **Quick Navigation:**
 - [Installation Issues](#installation-issues)
 - [Update Issues](#update-issues)
+- [Uninstall Issues](#uninstall-issues)
 - [Configuration Issues](#configuration-issues)
 - [Path Issues](#path-issues)
 - [Version Issues](#version-issues)

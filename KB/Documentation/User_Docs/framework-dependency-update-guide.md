@@ -794,6 +794,98 @@ See the [Troubleshooting Guide](framework-dependency-troubleshooting-guide.md) f
 
 ---
 
+## Uninstalling Frameworks
+
+### When to Uninstall
+
+You may need to uninstall a framework in these scenarios:
+
+- **Framework no longer needed:** Project no longer uses the framework
+- **Switching backends:** Moving from Git submodule to npm, or vice versa
+- **Recovering from errors:** Failed installation left project in broken state
+- **Handling breaking changes:** Update introduced breaking changes, need to rollback
+- **Cleaning up:** Removing unused frameworks to reduce project size
+
+### Uninstall Methods
+
+#### Method 1: Using Uninstall Script (Recommended)
+
+**Standard Uninstall:**
+```bash
+# Auto-detect backend and uninstall
+python3 packages/frameworks/workflow\ mgt/scripts/uninstall_package.py workflow-mgmt
+
+# Specify backend
+python3 packages/frameworks/workflow\ mgt/scripts/uninstall_package.py workflow-mgmt --backend git-submodule
+
+# Preview changes first (dry run)
+python3 packages/frameworks/workflow\ mgt/scripts/uninstall_package.py workflow-mgmt --dry-run
+```
+
+**Recovery Mode:**
+```bash
+# Clean up failed installation
+python3 packages/frameworks/workflow\ mgt/scripts/uninstall_package.py workflow-mgmt --recover
+```
+
+**Rollback Mode:**
+```bash
+# Restore from backup or remove entirely
+python3 packages/frameworks/workflow\ mgt/scripts/uninstall_package.py workflow-mgmt --rollback
+```
+
+#### Method 2: Manual Uninstall
+
+**Git Submodule:**
+```bash
+# Remove submodule
+git submodule deinit -f packages/frameworks/workflow-mgmt
+git rm -f packages/frameworks/workflow-mgmt
+rm -rf .git/modules/packages/frameworks/workflow-mgmt
+
+# Update .gitmodules
+vim .gitmodules  # Remove submodule entry
+git add .gitmodules
+git commit -m "Remove workflow-mgmt submodule"
+```
+
+**npm Package:**
+```bash
+npm uninstall @ai-dev-kit/workflow-mgmt
+```
+
+**pip Package:**
+```bash
+pip uninstall ai-dev-kit-workflow-mgmt
+```
+
+### Uninstall Safety Features
+
+The uninstall script includes several safety features:
+
+1. **Backup Creation:** Creates timestamped backup before removal
+2. **Dependency Validation:** Checks for dependencies before removal
+3. **Confirmation Prompts:** Asks for confirmation before removing files
+4. **Dry-Run Mode:** Preview changes without modifying files
+5. **Verification:** Verifies cleanup after uninstall
+
+### Restoring from Backup
+
+If you need to restore a package from backup:
+
+```bash
+# List available backups
+ls -la .backup-workflow-mgmt-*
+
+# Restore from backup
+cp -r .backup-workflow-mgmt-20251210-120000/* packages/frameworks/
+
+# Or use rollback mode
+python3 packages/frameworks/workflow\ mgt/scripts/uninstall_package.py workflow-mgmt --rollback
+```
+
+---
+
 ## Next Steps
 
 After understanding update mechanisms:
