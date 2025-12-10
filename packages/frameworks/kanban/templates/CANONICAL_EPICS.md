@@ -12,6 +12,8 @@ housekeeping_policy: keep
 
 **Usage:** When adopting the Kanban framework, these canonical epics provide the foundation for organizing work. Projects can add additional epics as needed, but these represent the core framework structure.
 
+> **Note:** For the complete canonical structure including all epics (1-23+), stories, and tasks, see [`COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md`](COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md). This document focuses on the core framework epics (1-7).
+
 ---
 
 ## Canonical Epics
@@ -142,33 +144,35 @@ This epic covers Bug Report (BR) implementation and management, including BR int
 
 ---
 
-### Epic 7: Codebase Maintenance and Review
+### Epic 7: UXR (User Experience Research)
 
-**Purpose:** Codebase maintenance, quality assurance, and continuous improvement.  
-**Scope:** Code review processes, maintenance tasks, quality standards, IDE-flagged issues, and codebase health monitoring.  
+**Purpose:** User experience research, user feedback, and user-centered design.  
+**Scope:** User research, usability testing, user feedback collection, persona development, user journey mapping, and UX insights.  
 **Status:** Canonical (part of framework structure)
 
 **Description:**
-This epic encompasses codebase maintenance and review activities, including addressing IDE-flagged issues (errors, warnings, info), code quality standards, maintenance workflows, and continuous codebase health monitoring. This epic provides the organizational structure for ongoing maintenance work that keeps the codebase healthy and maintainable.
+This epic encompasses user experience research activities, including user research, usability testing, user feedback collection, persona development, user journey mapping, and UX insights. This epic provides the organizational structure for understanding users and ensuring products meet user needs effectively.
 
 **Key Characteristics:**
-- IDE-flagged issue resolution (errors, warnings, info)
-- Code quality standards and enforcement
-- Maintenance workflows and processes
-- Codebase health monitoring and metrics
-- Continuous improvement practices
+- User research and interviews
+- Usability testing and user testing
+- User feedback collection and analysis
+- Persona development and user modeling
+- User journey mapping
+- UX insights and recommendations
 
 **Typical Stories:**
-- Story 1: Codebase Maintenance Tasks
-- Story 2: Code Review Standards and Processes
-- Story 3: Code Quality Metrics and Monitoring
-- Story 4: Maintenance Automation and Tooling
+- Story 1: User Research and Discovery
+- Story 2: Usability Testing and Validation
+- Story 3: User Feedback Collection and Analysis
+- Story 4: User Journey Mapping and Experience Design
+- Story 5: UX Insights and Recommendations
 
 **Integration Points:**
-- **Epic 4 (Kanban Framework):** Uses Kanban for tracking maintenance tasks
-- **Epic 2 (Workflow Management):** May use workflows for maintenance automation
-- **Epic 3 (Versioning):** Tracks maintenance work with version markers
-- **Epic 6 (BR Implementation):** May convert IDE-flagged issues to Bug Reports when appropriate
+- **Epic 4 (Kanban Framework):** Uses Kanban for tracking UXR tasks and research activities
+- **Epic 5 (FR Implementation):** UXR insights inform Feature Requests
+- **Epic 6 (BR Implementation):** UXR findings may identify usability issues tracked as Bug Reports
+- **Epic 2 (Workflow Management):** May use workflows for UXR process automation
 
 ---
 
@@ -182,15 +186,15 @@ The canonical epics are ordered logically:
 4. **Epic 4: Kanban Framework** - Operational framework for Kanban
 5. **Epic 5: FR Implementation** - Implementation epic that supports Kanban (FRs come first)
 6. **Epic 6: BR Implementation** - Implementation epic that supports Kanban (BRs follow FRs)
-7. **Epic 7: Codebase Maintenance and Review** - Maintenance epic for ongoing codebase health
+7. **Epic 7: UXR (User Experience Research)** - User research epic that bridges framework and project work
 
 **Ordering Principles:**
 - Foundational epics come first (Epic 1)
 - Operational frameworks follow (Epics 2-4)
 - Implementation epics that support frameworks come next (Epics 5-6)
-- Maintenance epics come last (Epic 7) as they represent ongoing operational work
+- User research epic (Epic 7) bridges framework and project work, making it canonical
 - FR Implementation (Epic 5) comes before BR Implementation (Epic 6) because Feature Requests typically precede Bug Reports in the intake flow
-- Codebase Maintenance (Epic 7) comes last as it represents continuous operational maintenance work
+- UXR (Epic 7) bridges framework infrastructure and project-specific user research needs
 
 ---
 
@@ -212,7 +216,7 @@ The canonical epics are ordered logically:
    - Start numbering from Epic 8 (canonical epics are 1-7)
    - Example: Epic 8 (Mobile App), Epic 9 (API Integration), Epic 10 (Analytics)
 
-4. **Maintain Order:** When adding new epics, continue numbering from Epic 7 (or your highest epic number)
+4. **Maintain Order:** When adding new epics, continue numbering from Epic 7 (or your highest epic number). Note: Codebase Maintenance is now Epic 8 in the comprehensive structure.
    - Don't reuse canonical epic numbers (1-7) for project-specific epics
    - Keep canonical epics as the foundation
 
@@ -225,7 +229,7 @@ The canonical epics are ordered logically:
 - Epic 4: Kanban Framework → "Project Management"
 - Epic 5: FR Implementation → "Feature Development"
 - Epic 6: BR Implementation → "Bug Fixes"
-- Epic 7: Codebase Maintenance and Review → "Code Quality & Maintenance"
+- Epic 7: UXR (User Experience Research) → "User Research & UX"
 - Epic 8: Mobile App (project-specific)
 - Epic 9: API Integration (project-specific)
 
@@ -236,7 +240,7 @@ The canonical epics are ordered logically:
 - Epic 4: Kanban Framework → "Task Management"
 - Epic 5: FR Implementation → "Feature Requests"
 - Epic 6: BR Implementation → "Issue Resolution"
-- Epic 7: Codebase Maintenance and Review → "Code Quality & Maintenance"
+- Epic 7: UXR (User Experience Research) → "User Research & UX"
 - Epic 8: Documentation (project-specific)
 - Epic 9: Examples & Tutorials (project-specific)
 
@@ -252,7 +256,7 @@ When an epic pattern proves reusable across multiple projects, it should be adde
    - Pattern must be reusable across different domains
 
 2. **Document Pattern:** Create entry in this document with:
-   - Epic number (following canonical order, after Epic 7)
+   - Epic number (following canonical order, after Epic 7). See comprehensive structure for Epics 8+.
    - Purpose (clear, concise statement)
    - Scope (what's included/excluded)
    - Key characteristics (distinguishing features)

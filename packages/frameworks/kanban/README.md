@@ -11,8 +11,8 @@ housekeeping_policy: keep
 ```yaml
 package:
   name: "Kanban System Implementation Package"
-  version: "1.4.0"
-  last_updated: "2025-12-09"
+  version: "2.0.0"
+  last_updated: "2025-12-10"
   source_project: "Example project (Confidentia, Epic 4)"
   compatibility:
     numbering_versioning: "v2.0.0"
@@ -140,6 +140,7 @@ structure:
     - STORY_TEMPLATE.md                  # Story document template
     - CANONICAL_STORIES.md               # Reusable canonical story patterns
     - CANONICAL_EPICS.md                 # Canonical epic definitions
+    - COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md  # Complete canonical E/S/T structure (Epics 1-23+)
 
   examples/:
     - Epic-4-Example.md                  # Real Epic (37 stories, 36 complete)
@@ -1409,7 +1410,7 @@ included_docs:
   - file: "templates/CANONICAL_STORIES.md"
     purpose: "Reusable canonical story patterns (Bug Reports, Feature Requests)"
   - file: "templates/CANONICAL_EPICS.md"
-    purpose: "Canonical epic definitions (Epics 1-7: Core, Workflow, Versioning, Kanban, FR Implementation, BR Implementation, Codebase Maintenance)"
+    purpose: "Canonical epic definitions (Epics 1-7: Core, Workflow, Versioning, Kanban, FR Implementation, BR Implementation, UXR)"
   - file: "templates/CANONICAL_STORIES_FR_BR.md"
     purpose: "Canonical story patterns for Epic 5 (FR Implementation) and Epic 6 (BR Implementation)"
   - file: "templates/UXR_TEMPLATE.md"
@@ -1428,7 +1429,7 @@ included_docs:
     purpose: "Example Epic 6 (BR Implementation) demonstrating canonical epic structure"
 
   - file: "examples/Epic-7-Codebase-Maintenance-Example.md"
-    purpose: "Example Epic 7 (Codebase Maintenance and Review) demonstrating canonical epic structure"
+    purpose: "Example Epic 7 (UXR - User Experience Research) demonstrating canonical epic structure (Note: Epic 7 is now UXR, Codebase Maintenance moved to Epic 8)"
 
   - file: "guides/portfolio-kanban-alignment-playbook.md"
     purpose: "Alignment guide"

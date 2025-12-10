@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-09  
-**Last updated:** 2025-12-10 (v0.4.6.0+4 – Task 0 build 4: Epic ordering finalized chronologically, Epic 7 renamed to UXR, book content task added)  
-**Version:** v0.4.6.0+4  
+**Last updated:** 2025-12-10 (v0.4.6.0+5 – Task 0 build 5: Kanban package version bumped to 2.0.0 MAJOR)  
+**Version:** v0.4.6.0+5  
 **Code:** E4S06
 
 ---
