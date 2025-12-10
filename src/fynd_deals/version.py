@@ -20,7 +20,7 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
 VERSION_EPIC = 2      # Epic number (Epic 2: Workflow Management Framework)
 VERSION_STORY = 6     # Story number (Story 6: Package Uninstall and Recovery)
-VERSION_TASK = 1      # Task number (Task 1: FR-008 - Uninstall command and safety rails)
+VERSION_TASK = 2      # Task number (Task 2: Recovery and rollback flows)
 VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema

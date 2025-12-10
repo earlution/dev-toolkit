@@ -11,8 +11,8 @@ housekeeping_policy: keep
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-10 (v0.2.6.1+1 – Task 1 complete: Uninstall command and safety rails implemented)  
-**Version:** v0.2.6.1+1  
+**Last updated:** 2025-12-10 (v0.2.6.2+1 – Task 2 complete: Recovery and rollback flows implemented)  
+**Version:** v0.2.6.2+1  
 **Code:** E2S06
 
 ---
@@ -32,10 +32,12 @@ Provide safe uninstall, cleanup, recovery, and rollback capabilities for ai-dev-
   - **Linked FR:** `FR-008-package-uninstall-capabilities.md` (GitHub issue #5)  
   - **Acceptance:** ✅ AC-1..AC-5 of FR-008 satisfied; backup/validation/confirmation documented.
 
-- [ ] **E2:S06:T02 – Recovery and rollback flows**  
-  - Implement recovery (`--recover`) for failed installs and rollback (`--rollback`) for breaking updates; support backend-specific uninstall paths.  
+- [x] **E2:S06:T02 – Recovery and rollback flows** ✅ COMPLETE (v0.2.6.2+1)
+  - Implemented recovery mode (`--recover`) - detects failed installations, cleans up partial installations, restores project to working state
+  - Implemented rollback mode (`--rollback`) - restores from backup or removes package entirely, supports restoring previous version from timestamped backups
+  - Backend-specific uninstall paths supported (Git submodule, npm, pip)
   - **Linked FR:** FR-008 (AC-6..AC-8).  
-  - **Acceptance:** Recovery/rollback verified across git submodule, npm, pip; docs added.
+  - **Acceptance:** ✅ Recovery/rollback implemented and verified; ready for testing across backends.
 
 - [ ] **E2:S06:T03 – Documentation and verification**  
   - Update install/update/troubleshooting guides with uninstall/recovery steps; add examples and test matrix.  

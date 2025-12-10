@@ -447,8 +447,111 @@ class PackageUninstaller:
             print("  🔍 [DRY RUN] Would rollback package...")
             return {"status": "dry_run"}
         
-        # Implementation would restore from backup or remove entirely
-        return {"status": "success", "mode": "rollback"}
+        # Look for backup directories
+        backup_dirs = sorted(
+            self.project_root.glob(f".backup-{self.package_name}-*"),
+            key=lambda p: p.stat().st_mtime if p.exists() else 0,
+            reverse=True
+        )
+        
+        if backup_dirs:
+            latest_backup = backup_dirs[0]
+            print(f"  📦 Found backup: {latest_backup}")
+            
+            response = input("Restore from backup? (y/N): ")
+            if response.lower() == 'y':
+                # Restore from backup
+                return self._restore_from_backup(latest_backup, package_info)
+            else:
+                print("  Removing package entirely...")
+                return self._uninstall_package(package_info)
+        else:
+            print("  ⚠️  No backup found. Removing package entirely...")
+            response = input("Continue with removal? (y/N): ")
+            if response.lower() == 'y':
+                return self._uninstall_package(package_info)
+            else:
+                return {
+                    "status": "cancelled",
+                    "message": "Rollback cancelled by user."
+                }
+    
+    def _restore_from_backup(self, backup_path: Path, package_info: Dict) -> Dict:
+        """Restore package from backup."""
+        print(f"  🔄 Restoring from backup: {backup_path}")
+        
+        try:
+            # Restore package files
+            for item in backup_path.iterdir():
+                if item.name == ".ai-dev-kit.yaml":
+                    continue  # Handle config separately
+                
+                # Find original location
+                for package_path in package_info.get("paths", []):
+                    target = Path(package_path)
+                    if target.name == item.name or target.parent.name == item.name:
+                        if target.exists():
+                            if target.is_dir():
+                                shutil.rmtree(target)
+                            else:
+                                target.unlink()
+                        
+                        if item.is_dir():
+                            shutil.copytree(item, target)
+                        else:
+                            shutil.copy2(item, target)
+                        
+                        self.uninstall_log.append({
+                            "type": "rollback",
+                            "action": "restored",
+                            "path": str(target),
+                            "from_backup": str(item)
+                        })
+            
+            # Restore config if it exists in backup
+            backup_config = backup_path / ".ai-dev-kit.yaml"
+            if backup_config.exists():
+                # Merge backup config with current config
+                try:
+                    with open(backup_config, 'r', encoding='utf-8') as f:
+                        backup_config_data = yaml.safe_load(f) or {}
+                    
+                    if self.config_file.exists():
+                        with open(self.config_file, 'r', encoding='utf-8') as f:
+                            current_config = yaml.safe_load(f) or {}
+                    else:
+                        current_config = {}
+                    
+                    # Restore package entry from backup
+                    backup_frameworks = backup_config_data.get("frameworks", {})
+                    if self.package_name in backup_frameworks:
+                        if "frameworks" not in current_config:
+                            current_config["frameworks"] = {}
+                        current_config["frameworks"][self.package_name] = backup_frameworks[self.package_name]
+                        
+                        with open(self.config_file, 'w', encoding='utf-8') as f:
+                            yaml.dump(current_config, f, default_flow_style=False, sort_keys=False)
+                        
+                        self.uninstall_log.append({
+                            "type": "rollback",
+                            "action": "config_restored",
+                            "file": ".ai-dev-kit.yaml"
+                        })
+                except Exception as e:
+                    print(f"  ⚠️  Error restoring config: {e}")
+            
+            print("  ✅ Package restored from backup")
+            return {
+                "status": "success",
+                "mode": "rollback",
+                "restored_from": str(backup_path)
+            }
+        except Exception as e:
+            print(f"  ❌ Error restoring from backup: {e}")
+            return {
+                "status": "error",
+                "message": f"Failed to restore from backup: {e}"
+            }
     
     def _verify_cleanup(self, package_info: Dict) -> Dict:
         """Verify package has been completely removed."""
