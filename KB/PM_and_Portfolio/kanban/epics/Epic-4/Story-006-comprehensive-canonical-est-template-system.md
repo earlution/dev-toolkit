@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-09  
-**Last updated:** 2025-12-10 (v0.4.6.0+5 – Task 0 build 5: Kanban package version bumped to 2.0.0 MAJOR)  
-**Version:** v0.4.6.0+5  
+**Last updated:** 2025-12-10 (v0.4.6.6+0 – Task 6 started: BR-005 intake and task assignment)  
+**Version:** v0.4.6.6+0  
 **Code:** E4S06
 
 ---
@@ -45,7 +45,7 @@ This enables projects to adopt ai-dev-kit with zero cognitive load for E/S/T str
 - [ ] **E4:S06:T03 – Create story template files for each typical story** - TODO
 - [ ] **E4:S06:T04 – Create task template files for each typical task** - TODO
 - [ ] **E4:S06:T05 – Create contextualization guide and examples** - TODO
-- [ ] **E4:S06:T06 – Update CANONICAL_EPICS.md to reference comprehensive structure** - TODO
+- [ ] **E4:S06:T06 – Update CANONICAL_EPICS.md to reference comprehensive structure (BR-005)** - IN PROGRESS (v0.4.6.6+0)
 - [ ] **E4:S06:T07 – Integrate with template setup guide and installation workflow** - TODO
 - [ ] **E4:S06:T08 – Validate structure with test projects (tiny, small, ambitious)** - TODO
 
@@ -265,40 +265,76 @@ This enables projects to adopt ai-dev-kit with zero cognitive load for E/S/T str
 
 ---
 
-### E4:S06:T06 – Update CANONICAL_EPICS.md to reference comprehensive structure
+### E4:S06:T06 – Update CANONICAL_EPICS.md to reference comprehensive structure (BR-005)
 
 **Status:** TODO  
 **Priority:** HIGH  
-**Dependencies:** E4:S06:T01, E4:S06:T02  
+**Dependencies:** E4:S06:T01, E4:S06:T02, BR-005  
 **Blocker:** None
 
 **Input:**
-- `CANONICAL_EPICS.md` - Existing canonical epics documentation
-- Comprehensive structure document
+- `CANONICAL_EPICS.md` - Existing canonical epics documentation (currently only Epics 1-7)
+- `COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md` - Complete canonical structure (Epics 1-23+)
 - Epic templates from T01 and T02
+- BR-005: Kanban Framework Epic Structure Gap (UAT Finding)
 
 **Deliverable:**
 - Updated `CANONICAL_EPICS.md` that:
-  - References `COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md`
+  - **Addresses BR-005:** Includes all core epics (1-8) and ancillary epics (9-21)
+  - Epic 7 (UXR) added with complete description
+  - Epic 7 (Codebase Maintenance) renumbered to Epic 8
+  - Epics 9-21 added with complete descriptions
+  - Clearly distinguishes core epics (1-8) vs ancillary epics (9-21)
+  - References `COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md` as authoritative source
   - Links to individual epic templates
-  - Documents Epic 7 (UXR) addition
-  - Updates epic ordering rationale
+  - Updates epic ordering rationale with chronological adoption sequence
   - Includes contextualization guidance
 
 **Approach:**
-1. Update Epic 7 section to include UXR
-2. Add reference to comprehensive structure document
-3. Add links to individual epic templates
-4. Update ordering rationale
-5. Add contextualization section
-6. Update usage instructions
+1. **Fix Epic 7:** Update Epic 7 section to UXR (User Experience Research) with complete description
+2. **Fix Epic 8:** Renumber Codebase Maintenance from Epic 7 to Epic 8
+3. **Add Core Epics:** Ensure all core epics (1-8) are documented:
+   - Epic 1: Project Core
+   - Epic 2: Workflow Management
+   - Epic 3: Versioning
+   - Epic 4: Kanban Framework
+   - Epic 5: FR Implementation
+   - Epic 6: BR Implementation
+   - Epic 7: UXR (User Experience Research)
+   - Epic 8: Codebase Maintenance and Review
+4. **Add Ancillary Epics:** Add Epics 9-21 with complete descriptions:
+   - Epic 9: User Management and Authentication
+   - Epic 10: Data Management and Database
+   - Epic 11: API and Backend Services
+   - Epic 12: Frontend Application
+   - Epic 13: Testing and Quality Engineering
+   - Epic 14: Deployment and Release Engineering
+   - Epic 15: Security and Compliance
+   - Epic 16: Performance and Scalability
+   - Epic 17: Integration and Interoperability
+   - Epic 18: Documentation
+   - Epic 19: Analytics and Monitoring
+   - Epic 20: Mobile Application
+   - Epic 21: Internationalization and Localization
+5. **Add Core vs Ancillary Distinction:** Clearly document which epics are core (always installed) vs ancillary (users pick and choose)
+6. **Reference Comprehensive Structure:** Add prominent reference to `COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md` as the complete authoritative source
+7. **Add Links:** Link to individual epic templates (when created in T01-T02)
+8. **Update Ordering:** Update ordering rationale to reflect chronological adoption sequence
+9. **Add Contextualization:** Include contextualization guidance section
+10. **Update Usage Instructions:** Update usage instructions to explain core vs ancillary epic selection
 
-**Acceptance Criteria:**
-- [ ] CANONICAL_EPICS.md updated with Epic 7 (UXR)
-- [ ] References comprehensive structure document
-- [ ] Links to individual epic templates
-- [ ] Updated ordering rationale
+**Acceptance Criteria (BR-005 Requirements):**
+- [ ] **Criterion 1:** Epic 7 (UXR) added to CANONICAL_EPICS.md with complete description ✅
+- [ ] **Criterion 2:** Epic 7 (Codebase Maintenance) renumbered to Epic 8 ✅
+- [ ] **Criterion 3:** Epics 9-21 added to CANONICAL_EPICS.md with complete descriptions ✅
+- [ ] **Criterion 4:** Documentation clearly distinguishes core epics (1-8) vs ancillary epics (9-21) ✅
+- [ ] **Criterion 5:** All epic descriptions include purpose, scope, key characteristics, typical stories, and integration points ✅
+- [ ] **Criterion 6:** CANONICAL_EPICS.md references COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md as authoritative source ✅
+- [ ] References comprehensive structure document prominently
+- [ ] Links to individual epic templates (when available)
+- [ ] Updated ordering rationale with chronological adoption sequence
 - [ ] Contextualization guidance included
+- [ ] Usage instructions updated for core vs ancillary epic selection
 
 ---
 

@@ -17,6 +17,26 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.6.6+0] - 2025-12-10
+
+🐛 Bug Fix: BR-005 Intake and Task Assignment
+
+### Added
+
+- **BR-005:** Kanban Framework Epic Structure Gap (UAT Finding)
+  - Identified gap: CANONICAL_EPICS.md only documents Epics 1-7, missing Epic 7 (UXR) and Epics 9-21
+  - BR-005 accepted and assigned to Epic 4, Story 6, Task 6
+  - Task 6 enhanced to address all BR-005 requirements
+
+### Changed
+
+- **Task 6 Enhanced:** E4:S06:T06 updated to address BR-005
+  - Will update CANONICAL_EPICS.md with all 21 epics
+  - Will fix Epic 7/8 numbering (UXR vs Codebase Maintenance)
+  - Will add clear core vs ancillary epic distinction
+  - Will reference comprehensive structure document
+
+---
 ## [0.4.6.0+5] - 2025-12-10
 
 📦 Package Release: Kanban Package v2.0.0 (MAJOR)

@@ -32,9 +32,9 @@ housekeeping_policy: keep
   - Story: [`Story-004-kanban-structure-refactoring.md`](Story-004-kanban-structure-refactoring.md)
 - [x] **E4:S05 – Canonical Epics for Kanban Framework** - COMPLETE ✅ (v0.4.5.1+1)
   - Story: [`Story-005-canonical-epics-for-kanban-framework.md`](Story-005-canonical-epics-for-kanban-framework.md)
-- [ ] **E4:S06 – Comprehensive Canonical Epics/Stories/Tasks Template System** - IN PROGRESS (v0.4.6.0+4 – Task 0 build 4: Epic ordering finalized chronologically, Epic 7 renamed to UXR, book content task added)
+- [ ] **E4:S06 – Comprehensive Canonical Epics/Stories/Tasks Template System** - IN PROGRESS (v0.4.6.0+5 – Task 0 build 5: Kanban package version bumped to 2.0.0 MAJOR, BR-005 accepted and assigned to T06)
   - Story: [`Story-006-comprehensive-canonical-est-template-system.md`](Story-006-comprehensive-canonical-est-template-system.md)
-  - Tasks: T00 ✅ COMPLETE (build 4), T01-T08 TODO (Comprehensive template system implementation)  
+  - Tasks: T00 ✅ COMPLETE (build 5), T01-T08 TODO (T06 enhanced to address BR-005)  
 
 ---
 
