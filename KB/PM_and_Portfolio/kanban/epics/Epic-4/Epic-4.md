@@ -35,9 +35,9 @@ housekeeping_policy: keep
 - [ ] **E4:S06 – Comprehensive Canonical Epics/Stories/Tasks Template System** - IN PROGRESS (v0.4.6.0+5 – Task 0 build 5: Kanban package version bumped to 2.0.0 MAJOR, BR-005 accepted and assigned to T06)
   - Story: [`Story-006-comprehensive-canonical-est-template-system.md`](Story-006-comprehensive-canonical-est-template-system.md)
   - Tasks: T00 ✅ COMPLETE (build 5), T01-T08 TODO (T06 enhanced to address BR-005)  
-- [ ] **E4:S07 – Migration Support and Installation Modes** - TODO (v0.4.7.0+0 – Story created for BR-006/FR-007)
+- [x] **E4:S07 – Migration Support and Installation Modes** - COMPLETE ✅ (v0.4.7.3+1 – All tasks complete)
   - Story: [`Story-007-migration-support-and-installation-modes.md`](Story-007-migration-support-and-installation-modes.md)
-  - Tasks: T01-T03 TODO (BR-006 detection/analysis, FR-007 migration utilities/modes, docs)
+  - Tasks: T00 ✅ COMPLETE, T01 ✅ COMPLETE, T02 ✅ COMPLETE, T03 ✅ COMPLETE (Documentation and guides updated)
 
 ---
 
