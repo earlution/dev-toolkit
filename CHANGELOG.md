@@ -17,6 +17,44 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.7.1+1] - 2025-12-10
+
+🔧 Feature: E4:S07:T01 Complete - Detection and Analysis Utilities for Migration Support
+
+### Added
+
+- **Detection Utility (`detect_existing_structure.py`):**
+  - Scans project directory for existing Kanban structures
+  - Detects epic directories and documents (Epic-X pattern)
+  - Detects story documents (Story-XXX pattern)
+  - Identifies tasks from story content and task files
+  - Generates detection report in JSON format
+  - Identifies conflicts with canonical framework epics
+  - Command-line interface with verbose mode
+
+- **Analysis Utility (`analyze_structure.py`):**
+  - Analyzes detected Kanban structures
+  - Maps existing epics/stories/tasks to canonical E/S/T format
+  - Identifies conflicts with canonical core epics (1-8)
+  - Identifies gaps (missing canonical epics, missing documents)
+  - Generates migration plan with recommended installation mode
+  - Assesses migration complexity (low/medium/high)
+  - Provides warnings and recommendations
+
+- **Scripts Documentation (`scripts/README.md`):**
+  - Usage instructions for detection and analysis utilities
+  - Workflow documentation (detect → analyze → migrate)
+  - Report format documentation
+  - Installation mode explanations (fresh/migration/update/hybrid)
+
+### Changed
+
+- **Epic 4, Story 7:** Task 1 marked complete
+  - Detection and analysis utilities implemented and tested
+  - BR-006 Criteria 1-4 satisfied
+  - Tested on current project (10 epics, 46 stories, 335 tasks detected)
+
+---
 ## [0.4.7.0+1] - 2025-12-10
 
 📋 Intake: Migration Support and Package Uninstall - GitHub Issues #2-5 Processed
