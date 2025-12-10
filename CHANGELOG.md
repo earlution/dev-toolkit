@@ -17,6 +17,45 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.7.2+1] - 2025-12-10
+
+🔄 Feature: E4:S07:T02 Complete - Migration Utilities and Installation Modes
+
+### Added
+
+- **Migration Utility (`migrate_structure.py`):**
+  - Migrates existing Kanban structures to canonical format
+  - Creates timestamped backups before migration
+  - Preserves all work items and forensic markers
+  - Supports all installation modes (Fresh, Migration, Update, Hybrid)
+  - Renumbers conflicting epics automatically
+  - Updates epic/story/task references throughout structure
+  - Validates migrated structure
+  - Dry-run mode for previewing changes
+
+- **Installation Script (`install_kanban_framework.py`):**
+  - Interactive installation with mode selection
+  - Integrates detection, analysis, and migration utilities
+  - Auto-detects recommended installation mode from analysis
+  - Supports all installation modes with clear prompts
+  - Dry-run mode for safe testing
+  - Force mode to skip confirmations
+
+- **Scripts Documentation Updates:**
+  - Added migration utility documentation
+  - Added installation script documentation
+  - Updated workflow to show integrated installation path
+  - Added examples for all installation modes
+
+### Changed
+
+- **Epic 4, Story 7:** Task 2 marked complete
+  - Migration utilities implemented and tested
+  - Installation modes fully supported
+  - FR-007 AC-1..AC-8 satisfied
+  - Backup functionality implemented
+
+---
 ## [0.4.7.1+1] - 2025-12-10
 
 🔧 Feature: E4:S07:T01 Complete - Detection and Analysis Utilities for Migration Support
