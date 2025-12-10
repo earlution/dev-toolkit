@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-09  
-**Last updated:** 2025-12-10 (v0.4.6.6+1 – Task 6 complete: CANONICAL_EPICS.md updated with all 21 epics, BR-005 fixed)  
-**Version:** v0.4.6.6+1  
+**Last updated:** 2025-12-10 (v0.4.6.6+2 – Task 6 build 2: GitHub issue #1 commented with BR-005 and task references)  
+**Version:** v0.4.6.6+2  
 **Code:** E4S06
 
 ---

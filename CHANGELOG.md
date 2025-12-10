@@ -17,6 +17,19 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.6.6+2] - 2025-12-10
+
+🔗 Integration: GitHub Issue Comment Added for BR-005
+
+### Changed
+
+- **GitHub Issue #1:** Added detailed comment referencing internal Kanban tracking
+  - Comment includes links to BR-005, Epic 4, Story 6, Task 6
+  - Provides full traceability from GitHub issue to internal Kanban system
+  - Documents fix completion and verification status
+  - Issue closed as resolved
+
+---
 ## [0.4.6.6+1] - 2025-12-10
 
 🐛 Bug Fix: BR-005 - CANONICAL_EPICS.md Updated with All 21 Epics
