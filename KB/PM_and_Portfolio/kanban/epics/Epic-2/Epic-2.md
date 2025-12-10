@@ -31,6 +31,9 @@ housekeeping_policy: keep
   - Story: [`Story-004-rw-installer-and-plug-and-play-adoption.md`](Story-004-rw-installer-and-plug-and-play-adoption.md)  
 - [ ] **E2:S05 – Post-Implementation Review (PIR) Workflow** - TODO
   - Story: [`Story-005-post-implementation-review-workflow.md`](Story-005-post-implementation-review-workflow.md)
+- [ ] **E2:S06 – Package Uninstall and Recovery** - IN PROGRESS (v0.2.6.1+1 – Task 1 complete: Uninstall command and safety rails)
+  - Story: [`Story-006-package-uninstall-and-recovery.md`](Story-006-package-uninstall-and-recovery.md)
+  - Tasks: T01 ✅ COMPLETE (Uninstall command and safety rails), T02-T03 TODO
 - [ ] **E2:S06 – Package Uninstall and Recovery** - TODO (v0.2.6.0+0 – Story created for FR-008)
   - Story: [`Story-006-package-uninstall-and-recovery.md`](Story-006-package-uninstall-and-recovery.md)
   - Tasks: T01-T03 TODO (FR-008 uninstall command, recovery/rollback, docs)
