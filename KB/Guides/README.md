@@ -1,0 +1,28 @@
+---
+lifecycle: evergreen
+ttl_days: null
+created_at: 2025-12-04T12:01:54Z
+expires_at: null
+housekeeping_policy: keep
+---
+
+# Guides
+
+This section contains **user-facing documentation** and **how-to guides** for the `ai-dev-kit` repository.
+
+## Structure
+
+- `Getting_Started/` – Quick start guides, onboarding materials
+- `Framework_Consumption/` – Guides for adopting dev-kit frameworks
+
+## Key Documents
+
+- **Getting Started:** `Getting_Started/README.md` (coming soon)
+- **Framework Consumption:** `Framework_Consumption/README.md` (coming soon)
+
+## Navigation
+
+- **Architecture:** `../Architecture/`
+- **PM & Portfolio:** `../PM_and_Portfolio/`
+- **Changelog:** `../Changelog_and_Release_Notes/`
+
