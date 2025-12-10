@@ -4,6 +4,42 @@ This directory contains utilities for detecting, analyzing, and migrating existi
 
 ## Scripts
 
+### `install_kanban_framework.py`
+
+Main installation script with interactive mode selection. Integrates detection, analysis, and migration utilities.
+
+**Usage:**
+```bash
+python3 install_kanban_framework.py [--mode MODE] [--kanban-path PATH] [--dry-run] [--force]
+```
+
+**Arguments:**
+- `--mode MODE` - Installation mode: fresh, migration, update, hybrid, auto (default: auto)
+- `--kanban-path PATH` - Path to Kanban directory (default: `KB/PM_and_Portfolio/kanban`)
+- `--dry-run` - Preview changes without modifying files
+- `--force` - Skip confirmation prompts
+- `--skip-detection` - Skip detection step (use existing detection_report.json)
+- `--skip-analysis` - Skip analysis step (use existing analysis_report.json)
+
+**Example:**
+```bash
+# Interactive installation (recommended)
+python3 install_kanban_framework.py
+
+# Migration install with existing structure
+python3 install_kanban_framework.py --mode migration
+
+# Dry run to preview changes
+python3 install_kanban_framework.py --mode migration --dry-run
+```
+
+**Workflow:**
+1. Detects existing Kanban structure (if not fresh mode)
+2. Analyzes structure and generates migration plan
+3. Prompts for installation mode selection (or uses recommended mode)
+4. Migrates structure based on selected mode
+5. Validates migration
+
 ### `detect_existing_structure.py`
 
 Scans a project directory to detect existing Kanban (Epic/Story/Task) structures and generates a detection report.
@@ -29,6 +65,38 @@ python3 detect_existing_structure.py \
 **Output:**
 - JSON report containing detected epics, stories, tasks, and conflicts
 - Summary printed to stdout
+
+### `migrate_structure.py`
+
+Migrates existing Kanban structures to canonical format, preserving all work items and forensic markers.
+
+**Usage:**
+```bash
+python3 migrate_structure.py [--analysis-report REPORT] [--mode MODE] [--dry-run] [--backup-dir DIR]
+```
+
+**Arguments:**
+- `--analysis-report REPORT` - Path to analysis report JSON (default: `analysis_report.json`)
+- `--mode MODE` - Installation mode: fresh, migration, update, hybrid, auto (default: auto-detect)
+- `--dry-run` - Preview changes without modifying files
+- `--backup-dir DIR` - Directory for backups (default: auto-generated)
+- `--kanban-path PATH` - Path to Kanban directory (default: `KB/PM_and_Portfolio/kanban`)
+- `--force` - Skip confirmation prompts
+
+**Example:**
+```bash
+python3 migrate_structure.py \
+  --analysis-report analysis_report.json \
+  --mode hybrid \
+  --dry-run
+```
+
+**Output:**
+- Creates backup of existing structure
+- Migrates epics/stories/tasks to canonical format
+- Updates epic/story/task references
+- Validates migrated structure
+- Generates migration report
 
 ### `analyze_structure.py`
 
@@ -58,6 +126,24 @@ python3 analyze_structure.py \
 
 ## Workflow
 
+### Recommended: Use Installation Script
+
+The easiest way is to use the integrated installation script:
+
+```bash
+python3 install_kanban_framework.py
+```
+
+This will:
+1. Detect existing structure
+2. Analyze and generate migration plan
+3. Prompt for installation mode
+4. Migrate structure
+
+### Manual Workflow
+
+If you prefer to run utilities individually:
+
 1. **Detect existing structure:**
    ```bash
    python3 detect_existing_structure.py --kanban-path KB/PM_and_Portfolio/kanban --output detection_report.json
@@ -74,8 +160,9 @@ python3 analyze_structure.py \
    - Review recommended installation mode (fresh, migration, update, hybrid)
 
 4. **Proceed with migration:**
-   - Use migration utility (to be implemented in Task 2)
-   - Follow migration plan steps from analysis report
+   ```bash
+   python3 migrate_structure.py --analysis-report analysis_report.json --mode migration
+   ```
 
 ## Report Formats
 

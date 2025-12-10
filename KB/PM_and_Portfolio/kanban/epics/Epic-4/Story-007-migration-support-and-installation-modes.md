@@ -11,8 +11,8 @@ housekeeping_policy: keep
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-10 (v0.4.7.1+1 – Task 1 complete: Detection and analysis utilities implemented)  
-**Version:** v0.4.7.1+1  
+**Last updated:** 2025-12-10 (v0.4.7.2+1 – Task 2 complete: Migration utilities and installation modes implemented)  
+**Version:** v0.4.7.2+1  
 **Code:** E4S07
 
 ---
@@ -33,10 +33,14 @@ Provide safe adoption paths for projects with pre-existing Kanban/Sprint/Issue s
   - **Linked BR:** `BR-006-missing-migration-support-pre-existing-kanban.md` (GitHub issue #2)  
   - **Acceptance:** ✅ Criteria 1-4 of BR-006 satisfied and documented.
 
-- [ ] **E4:S07:T02 – FR-007: Migration utilities and installation modes**  
-  - Implement migration utility (`migrate_structure.py`), backups, and installation modes (Fresh, Migration, Update, Hybrid) with documentation and examples.  
+- [x] **E4:S07:T02 – FR-007: Migration utilities and installation modes** ✅ COMPLETE (v0.4.7.2+1)
+  - Implemented migration utility (`migrate_structure.py`) - creates backups, migrates epics/stories/tasks, preserves forensic markers, supports all installation modes
+  - Implemented installation script (`install_kanban_framework.py`) - interactive mode selection, integrates detection/analysis/migration, supports Fresh/Migration/Update/Hybrid modes
+  - Updated scripts README with migration utility documentation and integrated workflow
+  - All installation modes implemented: Fresh (clean install), Migration (migrate existing), Update (update framework), Hybrid (preserve project epics, install framework epics)
+  - Backup functionality implemented with timestamp-based directories
   - **Linked FR:** `FR-007-migration-utilities-and-installation-modes.md` (GitHub issue #3)  
-  - **Acceptance:** AC-1..AC-8 of FR-007 satisfied and documented.
+  - **Acceptance:** ✅ AC-1..AC-8 of FR-007 satisfied and documented.
 
 - [ ] **E4:S07:T03 – Documentation and guides update**  
   - Update `packages/frameworks/kanban/README.md` and user guides to cover detection, migration paths, and mode selection; add examples.  
