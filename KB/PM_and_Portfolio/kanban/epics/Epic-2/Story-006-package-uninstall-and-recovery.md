@@ -8,11 +8,11 @@ housekeeping_policy: keep
 
 # Story 6: Package Uninstall and Recovery
 
-**Status:** TODO  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-10 (v0.2.6.0+0 – Story created for FR-008)  
-**Version:** v0.2.6.0+0  
+**Last updated:** 2025-12-10 (v0.2.6.1+1 – Task 1 complete: Uninstall command and safety rails implemented)  
+**Version:** v0.2.6.1+1  
 **Code:** E2S06
 
 ---
@@ -25,10 +25,12 @@ Provide safe uninstall, cleanup, recovery, and rollback capabilities for ai-dev-
 
 ## Tasks
 
-- [ ] **E2:S06:T01 – FR-008 uninstall command and safety rails**  
-  - Design and implement uninstall command with backups, dependency validation, and confirmation flows.  
+- [x] **E2:S06:T01 – FR-008 uninstall command and safety rails** ✅ COMPLETE (v0.2.6.1+1)
+  - Implemented uninstall command (`uninstall_package.py`) with backup creation, dependency validation, confirmation flows, and backend detection
+  - Supports all backends: Git submodule, npm, pip (auto-detect or manual selection)
+  - Safety features: backup before removal, dependency checking, confirmation prompts, dry-run mode
   - **Linked FR:** `FR-008-package-uninstall-capabilities.md` (GitHub issue #5)  
-  - **Acceptance:** AC-1..AC-5 of FR-008 satisfied; backup/validation/confirmation documented.
+  - **Acceptance:** ✅ AC-1..AC-5 of FR-008 satisfied; backup/validation/confirmation documented.
 
 - [ ] **E2:S06:T02 – Recovery and rollback flows**  
   - Implement recovery (`--recover`) for failed installs and rollback (`--rollback`) for breaking updates; support backend-specific uninstall paths.  

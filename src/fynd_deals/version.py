@@ -18,9 +18,9 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 """
 
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
-VERSION_EPIC = 4      # Epic number (Epic 4: Kanban Framework)
-VERSION_STORY = 7     # Story number (Story 7: Migration Support and Installation Modes)
-VERSION_TASK = 3      # Task number (Task 3: Documentation and guides update)
+VERSION_EPIC = 2      # Epic number (Epic 2: Workflow Management Framework)
+VERSION_STORY = 6     # Story number (Story 6: Package Uninstall and Recovery)
+VERSION_TASK = 1      # Task number (Task 1: FR-008 - Uninstall command and safety rails)
 VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
