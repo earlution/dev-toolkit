@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-09  
-**Last updated:** 2025-12-09 (v0.4.6.0+1 – Task 0 complete: Story creation and comprehensive structure documentation)  
-**Version:** v0.4.6.0+1  
+**Last updated:** 2025-12-10 (v0.4.6.0+4 – Task 0 build 4: Epic ordering finalized chronologically, Epic 7 renamed to UXR, book content task added)  
+**Version:** v0.4.6.0+4  
 **Code:** E4S06
 
 ---

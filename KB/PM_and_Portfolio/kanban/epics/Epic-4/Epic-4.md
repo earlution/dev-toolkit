@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-09 (v0.4.6.0+1 – Story 6, T00 complete: Story creation and comprehensive structure documentation)  
+**Last updated:** 2025-12-10 (v0.4.6.0+4 – Story 6, T00 build 4: Epic ordering finalized chronologically, Epic 7 renamed to UXR, book content task added)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -32,9 +32,9 @@ housekeeping_policy: keep
   - Story: [`Story-004-kanban-structure-refactoring.md`](Story-004-kanban-structure-refactoring.md)
 - [x] **E4:S05 – Canonical Epics for Kanban Framework** - COMPLETE ✅ (v0.4.5.1+1)
   - Story: [`Story-005-canonical-epics-for-kanban-framework.md`](Story-005-canonical-epics-for-kanban-framework.md)
-- [ ] **E4:S06 – Comprehensive Canonical Epics/Stories/Tasks Template System** - IN PROGRESS (v0.4.6.0+1 – Task 0 complete: Story creation and comprehensive structure documentation)
+- [ ] **E4:S06 – Comprehensive Canonical Epics/Stories/Tasks Template System** - IN PROGRESS (v0.4.6.0+4 – Task 0 build 4: Epic ordering finalized chronologically, Epic 7 renamed to UXR, book content task added)
   - Story: [`Story-006-comprehensive-canonical-est-template-system.md`](Story-006-comprehensive-canonical-est-template-system.md)
-  - Tasks: T00 ✅ COMPLETE, T01-T08 TODO (Comprehensive template system implementation)  
+  - Tasks: T00 ✅ COMPLETE (build 4), T01-T08 TODO (Comprehensive template system implementation)  
 
 ---
 

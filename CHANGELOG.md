@@ -17,6 +17,28 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.6.0+4] - 2025-12-10
+
+🔧 Refinement: Canonical Epic Ordering and Naming
+
+### Changed
+
+- **Epic Ordering:** Reordered canonical epics chronologically following SOP-driven development flow
+  - Core Framework Epics: 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 10 → 18 → 22 → 23
+  - Project-Specific Epics: 9 → 11 → 12 → 13 → 14 → 15 → 16 → 17 → 19 → 20 → 21 → 24*
+  - Ordering reflects most-likely chronological adoption sequence
+- **Epic 7 Naming:** Renamed to "UXR (User Experience Research)" for consistency
+  - Updated comprehensive canonical structure document
+  - Updated all canonical epic references
+
+### Added
+
+- **Book Content Task:** Added task to align PM/Kanban chapter with canonical epic structure
+  - Task E9:S01:T04: Align PM/Kanban chapter with ai-dev-kit canonical epics
+  - Includes instructions for mirroring Kanban package structure
+  - Specifies epic-by-epic coverage with need, scope, and first stories
+
+---
 ## [0.4.6.0+2] - 2025-12-09
 
 📊 Analysis: Canonical Epic Pattern Analysis

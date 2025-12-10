@@ -13,18 +13,26 @@ housekeeping_policy: keep
 **Usage:** When adopting ai-dev-kit as a template, use this structure as the foundation. Contextualize placeholders (e.g., `{PROJECT_NAME}`, `{DOMAIN}`) to match your project, then add project-specific epics as needed.
 
 **Scalability:** This structure is designed to scale:
-- **Tiny projects:** Use Epics 1-7 only (framework epics)
-- **Small projects:** Add 1-3 project-specific epics (Epics 8-10)
-- **Medium projects:** Add 3-5 project-specific epics (Epics 8-12)
-- **Ambitious projects:** Use full structure (Epics 1-20+) as needed
+- **Tiny projects:** Use Core Epics 1-7, 8, 10, 18, 22, 23 (all core framework epics)
+- **Small projects:** Add 1-3 project-specific epics (Epics 9, 11-17, 19-21+)
+- **Medium projects:** Add 3-5 project-specific epics (Epics 9, 11-17, 19-21+)
+- **Ambitious projects:** Use full structure (Core Epics + Epics 9, 11-21+) as needed
 
 ---
 
-## Canonical Epics (1-7): Framework Epics
+## Canonical Epics (1-7, 8, 10, 18, 22, 23): Core Framework Epics
 
-These epics are part of the ai-dev-kit framework and should be included in all projects.
+These epics are part of the ai-dev-kit framework and should be included in all projects. They represent universal needs that almost any category of prospective user will require.
 
-**Note:** Epics 1-6 are framework infrastructure epics. Epic 7 (UXR) bridges framework and project work, making it canonical.
+**Core Framework Epics:**
+- **Epics 1-7:** Framework infrastructure and user research
+- **Epic 8:** Codebase Maintenance and Review (universal need)
+- **Epic 10:** Data Management and Database (universal need)
+- **Epic 18:** Documentation (universal need)
+- **Epic 22:** Architecture Refactoring and Code Quality (universal need)
+- **Epic 23:** Process Automation and CI/CD (universal need)
+
+**Note:** Epics 1-6 are framework infrastructure epics. Epic 7: UXR (User Experience Research) bridges framework and project work. Epics 8, 10, 18, 22, and 23 are universal project needs and are therefore part of the core set.
 
 ### Epic 1: {PROJECT_NAME} Core
 
@@ -237,7 +245,7 @@ This epic encompasses the core foundational work for the {PROJECT_NAME} project,
 
 ---
 
-### Epic 7: User Experience Research (UXR)
+### Epic 7: UXR (User Experience Research)
 
 **Purpose:** User experience research, user feedback, and user-centered design.  
 **Scope:** User research, usability testing, user feedback collection, persona development, user journey mapping, and UX insights.  
@@ -322,7 +330,7 @@ This epic encompasses user experience research activities, including user resear
 
 **Purpose:** Codebase maintenance, quality assurance, and continuous improvement.  
 **Scope:** Code review processes, maintenance tasks, quality standards, IDE-flagged issues, and codebase health monitoring.  
-**Status:** Project-specific (canonical pattern)
+**Status:** Core Framework Epic (universal need)
 
 **Description:**
 This epic encompasses codebase maintenance and review activities, including addressing IDE-flagged issues (errors, warnings, info), code quality standards, maintenance workflows, and continuous codebase health monitoring. This epic provides the organizational structure for ongoing maintenance work that keeps the codebase healthy and maintainable.
@@ -365,9 +373,9 @@ This epic encompasses codebase maintenance and review activities, including addr
 
 ---
 
-## Project-Specific Canonical Epics (9-21+)
+## Project-Specific Canonical Epics (9, 11-17, 19-21+)
 
-These epics represent common patterns found in ambitious projects. Use as needed based on project scope.
+These epics represent common patterns found in ambitious projects. Use as needed based on project scope, and when possible follow the chronological order from the adoption guide: 9 → 11 → 12 → 13 → 14 → 15 → 16 → 17 → 19 → 20 → 21 → 24* (with 24 only if multi-role access is core early).
 
 ### Epic 9: User Management and Authentication
 
@@ -418,7 +426,7 @@ These epics represent common patterns found in ambitious projects. Use as needed
 
 **Purpose:** Data management, database design, and data operations.  
 **Scope:** Database schema, migrations, data access layer, data validation, data integrity.  
-**Status:** Project-specific (canonical pattern)
+**Status:** Core Framework Epic (universal need)
 
 **Typical Stories:**
 
@@ -748,7 +756,7 @@ These epics represent common patterns found in ambitious projects. Use as needed
 
 **Purpose:** Project documentation, user guides, and developer documentation.  
 **Scope:** API documentation, user manuals, developer guides, architecture documentation.  
-**Status:** Project-specific (canonical pattern)
+**Status:** Core Framework Epic (universal need)
 
 **Typical Stories:**
 
@@ -937,6 +945,116 @@ This epic encompasses internationalization (i18n) and localization (l10n) activi
 
 ---
 
+### Epic 22: Architecture Refactoring and Code Quality
+
+**Purpose:** Systematic refactoring to improve architecture, maintainability, and code quality.  
+**Scope:** Repository pattern, service-layer refactoring, contract enforcement, SRP, code quality improvements.  
+**Status:** Core Framework Epic (universal need)
+
+**Typical Stories:**
+
+#### Story 1: Define Core Contracts (Protocols/Interfaces)
+**Purpose:** Establish contracts for repositories/services to decouple components.
+
+**Typical Tasks:**
+- T01: Identify domains needing contracts
+- T02: Define repository/service interfaces
+- T03: Add contract tests
+- T04: Document contract coverage
+
+#### Story 2: Repository Pattern Implementation
+**Purpose:** Introduce repositories to abstract data access.
+
+**Typical Tasks:**
+- T01: Implement repositories per domain
+- T02: Migrate data access to repositories
+- T03: Add repository tests (unit/integration)
+- T04: Deprecate legacy data access helpers
+
+#### Story 3: Service Layer Refactoring
+**Purpose:** Enforce SRP in services using repositories and validators.
+
+**Typical Tasks:**
+- T01: Split validation from services
+- T02: Move business logic to services
+- T03: Ensure services depend on interfaces
+- T04: Add service-layer tests
+
+#### Story 4: Contract Enforcement System
+**Purpose:** Enforce contracts across components.
+
+**Typical Tasks:**
+- T01: Add contract decorators/checks
+- T02: Integrate contract checks into CI
+- T03: Add contract violation reporting
+- T04: Document enforcement rules
+
+#### Story 5: Code Quality Improvements
+**Purpose:** Improve readability, maintainability, and consistency.
+
+**Typical Tasks:**
+- T01: Static analysis and linting coverage
+- T02: Dead-code and duplication removal
+- T03: Refine error-handling patterns
+- T04: Update architecture docs
+
+---
+
+### Epic 23: Process Automation and CI/CD
+
+**Purpose:** Establish automated, robust development workflows.  
+**Scope:** CI/CD pipelines, pre-commit hooks, automated rule enforcement, testing infrastructure, quality gates.  
+**Status:** Core Framework Epic (universal need)
+
+**Typical Stories:**
+
+#### Story 1: CI/CD Pipeline Setup
+**Purpose:** Stand up pipelines and quality gates.
+
+**Typical Tasks:**
+- T01: Configure build/test pipelines
+- T02: Add artifact publishing
+- T03: Add quality gate enforcement
+- T04: Document pipeline operations
+
+#### Story 2: Automated Rule Enforcement (Pre-commit Hooks)
+**Purpose:** Enforce standards before code reaches CI.
+
+**Typical Tasks:**
+- T01: Add formatters/linters to hooks
+- T02: Add changelog/version checks
+- T03: Add policy checks (commit msg, branch rules)
+- T04: Document hook usage
+
+#### Story 3: Testing Infrastructure
+**Purpose:** Ensure reliable, fast tests.
+
+**Typical Tasks:**
+- T01: Define coverage thresholds
+- T02: Add test fixtures and factories
+- T03: Parallelize tests
+- T04: Add flaky-test detection
+
+#### Story 4: Quality Gates and Branch Protection
+**Purpose:** Prevent non-compliant changes from merging.
+
+**Typical Tasks:**
+- T01: Define protected files and rules
+- T02: Require status checks and reviews
+- T03: Enforce changelog/version checks
+- T04: Monitor gate effectiveness
+
+#### Story 5: Automated Dependency Management
+**Purpose:** Keep dependencies secure and current.
+
+**Typical Tasks:**
+- T01: Add dependency scanning
+- T02: Automate upgrade PRs
+- T03: Add vulnerability monitoring
+- T04: Document upgrade playbooks
+
+---
+
 ## Contextualization Guide
 
 ### Placeholder Replacement
@@ -951,48 +1069,44 @@ Replace these placeholders when contextualizing templates:
 ### Scalability Guidelines
 
 **Tiny Projects (Solo Developer, MVP):**
-- Use Epics 1-7 only (framework epics including UXR)
+- Use Core Epics 1-7, 8, 10, 18, 22, 23 (all core framework epics)
 - Skip or simplify stories/tasks as needed
 - Focus on core functionality
 
 **Small Projects (1-3 Developers, Early Stage):**
-- Use Epics 1-7 + 1-3 project-specific epics (Epics 8-10)
+- Use all Core Epics (1-7, 8, 10, 18, 22, 23) + 1-3 project-specific epics (Epics 9, 11-17, 19-21+)
 - Include essential stories only
 - Focus on core features and basic infrastructure
 
 **Medium Projects (3-5 Developers, Growing):**
-- Use Epics 1-7 + 3-5 project-specific epics (Epics 8-13)
+- Use all Core Epics + 3-5 project-specific epics (Epics 9, 11-17, 19-21+)
 - Include most stories
-- Add testing, deployment, and documentation
+- Add testing, deployment, and other project-specific needs
 
 **Ambitious Projects (5+ Developers, Enterprise Scale):**
-- Use full structure (Epics 1-21+)
+- Use full structure (Core Epics + Epics 9, 11-21+)
 - Include all relevant stories and tasks
 - Add advanced epics (Security, Performance, Analytics, etc.)
 
 ### Customization Examples
 
 **Example 1: E-commerce Project**
-- Epic 1: "E-Commerce Core"
-- Epic 7: "User Experience Research" (customer research, usability testing)
+- Core Epics: 1-7, 8, 10, 18, 22, 23 (all included)
 - Epic 9: "User Management and Authentication" (customers, vendors)
-- Epic 10: "Product Catalog and Inventory"
 - Epic 11: "Order Management and Fulfillment"
 - Epic 12: "Payment Processing"
 - Epic 13: "Shopping Cart and Checkout"
 
 **Example 2: SaaS Platform**
-- Epic 1: "SaaS Platform Core"
-- Epic 7: "User Experience Research" (user research, feedback)
+- Core Epics: 1-7, 8, 10, 18, 22, 23 (all included)
 - Epic 9: "Multi-tenant Architecture"
-- Epic 10: "Subscription Management"
 - Epic 11: "API and Integration Platform"
 - Epic 12: "Admin Dashboard"
 - Epic 13: "Billing and Invoicing"
 
 **Example 3: Mobile-First App**
-- Epic 1: "Mobile App Core"
-- Epic 7: "User Experience Research" (mobile UX research, testing)
+- Core Epics: 1-7, 8, 10, 18, 22, 23 (all included)
+- Epic 9: "User Management" (if multi-user)
 - Epic 12: "Mobile UI/UX" (prioritize)
 - Epic 20: "Mobile Application" (full implementation)
 - Epic 11: "Backend API" (support mobile)
@@ -1002,30 +1116,48 @@ Replace these placeholders when contextualizing templates:
 
 ## Usage Instructions
 
-1. **Start with Framework Epics (1-7):** Always include these
+1. **Start with Core Framework Epics:** Always include these (Epics 1-7, 8, 10, 18, 22, 23)
    - Epics 1-6: Framework infrastructure
-   - Epic 7: User Experience Research (UXR) - bridges framework and project work
-2. **Add Project-Specific Epics (8+):** Add based on project needs
-   - Epic 8: Codebase Maintenance (recommended for all projects)
-   - Epics 9-21+: Add based on project requirements
-3. **Contextualize Placeholders:** Replace `{PROJECT_NAME}`, `{DOMAIN}`, etc.
-4. **Customize Stories/Tasks:** Remove irrelevant ones, add project-specific ones
-5. **Scale as Needed:** Start minimal, expand as project grows
+   - Epic 7: UXR (User Experience Research) - bridges framework and project work
+   - Epic 8: Codebase Maintenance and Review (universal need)
+   - Epic 10: Data Management and Database (universal need)
+   - Epic 18: Documentation (universal need)
+   - Epic 22: Architecture Refactoring and Code Quality (universal need)
+   - Epic 23: Process Automation and CI/CD (universal need)
+2. **Add Project-Specific Epics (9, 11-17, 19-21+):** Add based on project needs
+   - Epic 9: User Management and Authentication (if multi-user app)
+   - Epics 11-17: API, Frontend, Testing, Deployment, Security, Performance, Integration
+   - Epics 19-21+: Analytics, Mobile, Internationalization, etc.
+4. **Contextualize Placeholders:** Replace `{PROJECT_NAME}`, `{DOMAIN}`, etc.
+5. **Customize Stories/Tasks:** Remove irrelevant ones, add project-specific ones
+6. **Scale as Needed:** Start minimal, expand as project grows
 
 ## Epic Ordering Rationale
 
-**Framework Epics (1-7):**
+**Core Framework Epics (1-7, 8, 10, 18, 22, 23):**
 1. Epic 1: Project Core - Foundational epic
 2. Epic 2: Workflow Management - Operational framework
 3. Epic 3: Versioning - Operational framework
 4. Epic 4: Kanban - Operational framework
 5. Epic 5: FR Implementation - Implementation epic (FRs first)
 6. Epic 6: BR Implementation - Implementation epic (BRs follow)
-7. Epic 7: UXR - User research epic (bridges framework and project work)
+7. Epic 7: UXR (User Experience Research) - User research epic (bridges framework and project work)
+8. Epic 8: Codebase Maintenance - Universal maintenance need
+9. Epic 10: Data Management - Universal data need (Epic 9 reserved for User Management)
+10. Epic 18: Documentation - Universal documentation need
+11. Epic 22: Architecture Refactoring - Universal code quality need
+12. Epic 23: Process Automation & CI/CD - Universal development process need
 
-**Project-Specific Epics (8+):**
-- Epic 8: Codebase Maintenance - Maintenance epic (recommended for all projects)
-- Epics 9-21+: Domain-specific epics (add as needed)
+**Project-Specific Epics (9, 11-17, 19-21+):**
+- Epic 9: User Management and Authentication (if multi-user app)
+- Epics 11-17: API, Frontend, Testing, Deployment, Security, Performance, Integration
+- Epics 19-21+: Analytics, Mobile, Internationalization, etc.
+- Epic 24+ (if added later): Conditional (e.g., Permissions) based on product needs
+
+**Suggested Adoption Order (Probable Chronology):**
+1) Core Framework (always): 1 → 2 → 3 → 4 → 5 → 6 → 7 → 8 → 10 → 18 → 22 → 23  
+2) Project-Specific (chronological): 9 → 11 → 12 → 13 → 14 → 15 → 16 → 17 → 19 → 20 → 21 → 24*  
+   *24 (Permissions) only if multi-role access is core early
 
 ---
 

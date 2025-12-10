@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** MEDIUM  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-05  
-**Last updated:** 2025-12-05 (v0.9.1.1+1 – Epic 9 created)  
-**Version:** v0.9.1.1+1  
+**Last updated:** 2025-12-10 (v0.9.1.1+2 – Added Kanban chapter alignment task)  
+**Version:** v0.9.1.1+2  
 **Code:** E9S01
 
 ---
@@ -23,6 +23,7 @@ housekeeping_policy: keep
 - [ ] **E9:S01:T01 – Create book chapter structure** - TODO
 - [ ] **E9:S01:T02 – Develop chapter content** - TODO
 - [ ] **E9:S01:T03 – Build examples and exercises** - TODO
+- [ ] **E9:S01:T04 – Align PM/Kanban chapter with ai-dev-kit canonical epics** - TODO
 
 ---
 
@@ -82,6 +83,21 @@ Develop comprehensive book content for "Vibe Coding For Dummies".
 2. Create examples and exercises
 3. Link examples to frameworks
 4. Publish examples
+
+---
+
+### E9:S01:T04 – Align PM/Kanban chapter with ai-dev-kit canonical epics
+
+**Input:** Latest `COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md` (core epics now 1-7, 8, 10, 18, 22, 23 and ordered chronologically); Kanban package docs.  
+**Deliverable:** PM/Kanban chapter draft that mirrors the ai-dev-kit Kanban package: sections per epic in the canonical order, each describing the need, responsibility/scope, and (where helpful) the first few stories.  
+**Dependencies:** E9:S01:T01 (chapter structure)  
+**Blocker:** None
+
+**Approach:**
+1. Mirror the canonical epic order for the chapter narrative: Core Framework epics `1→2→3→4→5→6→7→8→10→18→22→23`, then ancillary epics `9→11→12→13→14→15→16→17→19→20→21→24*` (*24 only if permissions are an early need).
+2. For each epic: summarize why it exists (need/pain), its responsibility and scope, and list the first few canonical stories if they add clarity.
+3. Cross-reference the Kanban package where appropriate so the book points readers to the living templates.
+4. Highlight the SOP: adopt in chronological order, contextualize placeholders, and prune epics not relevant to the product.
 
 ---
 
