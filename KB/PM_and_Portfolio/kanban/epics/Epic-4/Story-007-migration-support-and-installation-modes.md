@@ -8,11 +8,11 @@ housekeeping_policy: keep
 
 # Story 7: Migration Support and Installation Modes
 
-**Status:** TODO  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-10 (v0.4.6.6+2 – Story created for migration support)  
-**Version:** v0.4.7.0+0  
+**Last updated:** 2025-12-10 (v0.4.7.1+1 – Task 1 complete: Detection and analysis utilities implemented)  
+**Version:** v0.4.7.1+1  
 **Code:** E4S07
 
 ---
@@ -25,10 +25,13 @@ Provide safe adoption paths for projects with pre-existing Kanban/Sprint/Issue s
 
 ## Tasks
 
-- [ ] **E4:S07:T01 – BR-006: Detection/analysis utilities for existing structures**  
-  - Implement detection and analysis utilities (`detect_existing_structure.py`, `analyze_structure.py`) to identify existing epics/stories/tasks and produce reports.  
+- [x] **E4:S07:T01 – BR-006: Detection/analysis utilities for existing structures** ✅ COMPLETE (v0.4.7.1+1)
+  - Implemented detection utility (`detect_existing_structure.py`) - scans for epic directories, detects epic/story documents, identifies tasks, generates detection report
+  - Implemented analysis utility (`analyze_structure.py`) - maps existing items to E/S/T format, identifies conflicts and gaps, generates migration plan
+  - Created scripts README with usage documentation
+  - Tested on current project structure (10 epics, 46 stories, 335 tasks detected)
   - **Linked BR:** `BR-006-missing-migration-support-pre-existing-kanban.md` (GitHub issue #2)  
-  - **Acceptance:** Criteria 1-4 of BR-006 satisfied and documented.
+  - **Acceptance:** ✅ Criteria 1-4 of BR-006 satisfied and documented.
 
 - [ ] **E4:S07:T02 – FR-007: Migration utilities and installation modes**  
   - Implement migration utility (`migrate_structure.py`), backups, and installation modes (Fresh, Migration, Update, Hybrid) with documentation and examples.  
