@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-09  
-**Last updated:** 2025-12-09 (v0.7.1.1+1 – Story 1, Task 1 created: PERPETUAL task for IDE-flagged issues)  
+**Last updated:** 2025-12-10 (v0.7.5.0+0 – Story 5 created for UXR-001 migration research)  
 **Branch:** `epic/7-codebase-maintenance`  
 **Version Schema:** `0.7.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -25,6 +25,7 @@ housekeeping_policy: keep
 - [ ] **E7:S02 – Code Review Standards and Processes** - TODO
 - [ ] **E7:S03 – Code Quality Metrics and Monitoring** - TODO
 - [ ] **E7:S04 – Maintenance Automation and Tooling** - TODO
+- [ ] **E7:S05 – Migration UXR – Pre-Existing Kanban Structures** - TODO (v0.7.5.0+0)
 
 > **CRITICAL:** This Story Checklist is the **SINGLE SOURCE OF TRUTH** for story status and version markers.  
 > **Forensic Marker Format:** `✅ COMPLETE (vRC.E.S.T+B)` (e.g., `✅ COMPLETE (v0.7.1.3+1)`)  
@@ -179,6 +180,25 @@ This epic works in conjunction with Epic 4 (Kanban Framework) to provide a compl
 - *Parallel Development Candidacy:* Safe (can develop independently)
 
 > Full story: `KB/PM_and_Portfolio/kanban/epics/Epic-7/Story-004-maintenance-automation-and-tooling.md`
+
+---
+
+### Story 5: Migration UXR – Pre-Existing Kanban Structures
+
+**Status:** TODO  
+**Priority:** MEDIUM  
+**Estimated Effort:** [TBD]  
+**Last updated:** 2025-12-10 (v0.7.5.0+0 – Story created for UXR-001)
+
+**Goal:** Capture and operationalize user experience research for migrating pre-existing Kanban/Sprint/Issue structures to the ai-dev-kit Kanban framework.
+
+**Tasks:**
+- [ ] **E7:S05:T01 – UXR-001 intake and synthesis**  
+  - Intake UXR-001 findings, extract user pain points, and summarize migration UX requirements.  
+  - **Linked UXR:** `KB/PM_and_Portfolio/kanban/fr-br/UXR-001-migration-user-experience-research.md` (GitHub issue #4).  
+  - **Acceptance:** Findings synthesized; UX requirements fed into Epic 4 Story 7 tasks; recap documented in this story.
+
+> Full story: `KB/PM_and_Portfolio/kanban/epics/Epic-7/Story-005-migration-uxr-research.md`
 
 ---
 

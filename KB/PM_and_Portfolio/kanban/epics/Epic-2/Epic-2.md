@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-09 (v0.2.1.7+1 – Story 1, T07 completed: Added support for update/maintenance branch patterns in branch validation)  
+**Last updated:** 2025-12-10 (v0.2.6.0+0 – Story 6 created for FR-008 package uninstall)  
 **Branch:** `epic/2-workflow-management-framework`  
 **Version Schema:** `0.2.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -31,6 +31,9 @@ housekeeping_policy: keep
   - Story: [`Story-004-rw-installer-and-plug-and-play-adoption.md`](Story-004-rw-installer-and-plug-and-play-adoption.md)  
 - [ ] **E2:S05 – Post-Implementation Review (PIR) Workflow** - TODO
   - Story: [`Story-005-post-implementation-review-workflow.md`](Story-005-post-implementation-review-workflow.md)
+- [ ] **E2:S06 – Package Uninstall and Recovery** - TODO (v0.2.6.0+0 – Story created for FR-008)
+  - Story: [`Story-006-package-uninstall-and-recovery.md`](Story-006-package-uninstall-and-recovery.md)
+  - Tasks: T01-T03 TODO (FR-008 uninstall command, recovery/rollback, docs)
 
 ---
 

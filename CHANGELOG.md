@@ -17,6 +17,42 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.7.0+1] - 2025-12-10
+
+📋 Intake: Migration Support and Package Uninstall - GitHub Issues #2-5 Processed
+
+### Added
+
+- **Epic 4, Story 7:** Migration Support and Installation Modes
+  - Created Story 7 for handling pre-existing Kanban structures
+  - Task 1: BR-006 - Detection and analysis utilities for existing Kanban structures
+  - Task 2: FR-007 - Migration utilities and installation modes implementation
+  - Task 3: Documentation updates for migration scenarios
+
+- **Epic 7, Story 5:** Migration UXR Research
+  - Created Story 5 for migration user experience research
+  - Task 1: UXR-001 - Migration user experience research intake and synthesis
+
+- **Epic 2, Story 6:** Package Uninstall and Recovery
+  - Created Story 6 for package uninstall capabilities
+  - Task 1: FR-008 - Uninstall command implementation
+  - Task 2: Recovery and rollback support
+  - Task 3: Documentation and testing
+
+### Changed
+
+- **BR/FR/UXR Documents Created:**
+  - BR-006: Missing Migration Support for Pre-Existing Kanban Structures (GitHub #2)
+  - FR-007: Migration Utilities and Installation Modes (GitHub #3)
+  - UXR-001: Migration User Experience Research (GitHub #4)
+  - FR-008: Package Uninstall Capabilities (GitHub #5)
+
+- **GitHub Issues #2-5:** Added detailed comments with full traceability to internal Kanban system
+  - All issues linked to their respective BR/FR/UXR documents
+  - All issues linked to Epic/Story/Task assignments
+  - Full bidirectional linking established
+
+---
 ## [0.4.6.6+2] - 2025-12-10
 
 🔗 Integration: GitHub Issue Comment Added for BR-005
