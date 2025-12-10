@@ -153,6 +153,13 @@ structure:
     - numbering-versioning-integration.md     # Integration with versioning
     - workflow-management-integration.md      # Integration with workflows
 
+  scripts/:
+    - detect_existing_structure.py            # Detection utility for existing structures
+    - analyze_structure.py                    # Analysis utility for migration planning
+    - migrate_structure.py                    # Migration utility for canonical format conversion
+    - install_kanban_framework.py             # Integrated installation script with mode selection
+    - README.md                               # Scripts documentation and usage guide
+
   README.md                              # This file
 ```
 
