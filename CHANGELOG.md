@@ -17,6 +17,19 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.2.6+3] - 2025-12-09
+
+📝 Feature Request: Localization and Language Selection (FR-006)
+
+### Added
+
+- **FR-006:** Localization and Language Selection feature request
+  - Phase 1: UK/US English selection (MVP)
+  - Phase 2: International localization (extended)
+  - Maps to Epic 21: Internationalization and Localization
+
+---
+
 ## [0.4.6.0+1] - 2025-12-09
 
 ✨ Feature: Comprehensive Canonical Epics/Stories/Tasks Template System (FR-005)
