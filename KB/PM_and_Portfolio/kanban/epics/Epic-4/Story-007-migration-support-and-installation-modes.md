@@ -11,8 +11,9 @@ housekeeping_policy: keep
 **Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
-**Last updated:** 2025-12-10 (v0.4.7.2+1 – Task 2 complete: Migration utilities and installation modes implemented)  
-**Version:** v0.4.7.2+1  
+**Last updated:** 2025-12-10 (v0.4.7.3+1 – Task 3 complete: Documentation and guides updated)  
+**Version:** v0.4.7.3+1  
+**Status:** COMPLETE ✅  
 **Code:** E4S07
 
 ---
@@ -42,10 +43,14 @@ Provide safe adoption paths for projects with pre-existing Kanban/Sprint/Issue s
   - **Linked FR:** `FR-007-migration-utilities-and-installation-modes.md` (GitHub issue #3)  
   - **Acceptance:** ✅ AC-1..AC-8 of FR-007 satisfied and documented.
 
-- [ ] **E4:S07:T03 – Documentation and guides update**  
-  - Update `packages/frameworks/kanban/README.md` and user guides to cover detection, migration paths, and mode selection; add examples.  
+- [x] **E4:S07:T03 – Documentation and guides update** ✅ COMPLETE (v0.4.7.3+1)
+  - Updated `packages/frameworks/kanban/README.md` with migration support section, installation options (interactive vs manual), migration workflow documentation, and package contents update
+  - Added migration support section covering pre-existing Kanban, Sprint-based systems, issue trackers, and older framework versions
+  - Updated Quick Start section with Option 1 (Interactive Installation) and Option 2 (Manual Installation)
+  - Added migration workflow examples and quick start commands
+  - Updated package contents to include scripts directory and utilities
   - **Linked BR/FR:** BR-006 / FR-007.  
-  - **Acceptance:** BR-006 criteria 9-12 and FR-007 AC-6..AC-8 addressed in docs.
+  - **Acceptance:** ✅ BR-006 criteria 9-12 and FR-007 AC-6..AC-8 addressed in docs.
 
 ---
 

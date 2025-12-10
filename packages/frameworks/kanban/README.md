@@ -166,6 +166,7 @@ structure:
 required:
   - Project with version control (Git)
   - Documentation directory structure
+  - Python 3.6+ (for migration utilities)
 
 recommended:
   - Numbering & Versioning package (temp/numbering & versioning/)
@@ -173,7 +174,37 @@ recommended:
   - Markdown-based documentation system
 ```
 
-### Installation Steps
+### Installation Options
+
+#### Option 1: Interactive Installation (Recommended)
+
+**For projects with existing Kanban structures:**
+
+```bash
+# 1. Copy Kanban framework package to your project
+cp -r packages/frameworks/kanban/* /path/to/your/project/
+
+# 2. Run interactive installation script
+cd /path/to/your/project
+python3 scripts/install_kanban_framework.py
+```
+
+The installer will:
+- Detect existing Kanban structures
+- Analyze and generate migration plan
+- Prompt for installation mode selection
+- Migrate existing structure to canonical format
+- Install canonical core epics
+
+**Installation Modes:**
+- **Fresh** - Clean install (no existing structure)
+- **Migration** - Migrate existing structure to canonical format
+- **Update** - Update existing framework installation
+- **Hybrid** - Preserve project epics, install framework epics (recommended when conflicts detected)
+
+#### Option 2: Manual Installation
+
+**For new projects or manual setup:**
 
 ```yaml
 step_1:
@@ -212,6 +243,38 @@ step_6:
   required_if: "Using Release Workflow"
   see: "integration/workflow-management-integration.md"
 ```
+
+### Migration Support
+
+If you have an existing Kanban structure (from another system or older framework version), the framework provides migration utilities:
+
+**Migration Workflow:**
+
+1. **Detect existing structure:**
+   ```bash
+   python3 scripts/detect_existing_structure.py --kanban-path KB/PM_and_Portfolio/kanban
+   ```
+
+2. **Analyze structure:**
+   ```bash
+   python3 scripts/analyze_structure.py --detection-report detection_report.json
+   ```
+
+3. **Review migration plan:**
+   - Check `analysis_report.json` for conflicts, gaps, and recommended mode
+   - Review epic/story/task mappings
+
+4. **Migrate structure:**
+   ```bash
+   python3 scripts/migrate_structure.py --analysis-report analysis_report.json --mode migration
+   ```
+
+**Or use the integrated installer:**
+```bash
+python3 scripts/install_kanban_framework.py --mode migration
+```
+
+See [`scripts/README.md`](scripts/README.md) for detailed migration documentation.
 
 ---
 
