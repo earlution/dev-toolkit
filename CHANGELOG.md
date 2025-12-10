@@ -17,6 +17,32 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.6.6+1] - 2025-12-10
+
+🐛 Bug Fix: BR-005 - CANONICAL_EPICS.md Updated with All 21 Epics
+
+### Fixed
+
+- **BR-005:** Kanban Framework Epic Structure Gap resolved
+  - Updated `CANONICAL_EPICS.md` to include all 21 epics (core 1-8 + ancillary 9-21)
+  - Added Epic 7 (UXR) with complete description
+  - Renumbered Codebase Maintenance from Epic 7 to Epic 8
+  - Added all ancillary epics (9-21) with complete descriptions
+  - Added Core+ epics (22-23): Architecture Refactoring and CI/CD
+  - Added clear distinction between core (1-8), core+ (10, 18, 22, 23), and ancillary (9, 11-17, 19-21) epics
+  - Added prominent reference to `COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md` as authoritative source
+  - Updated ordering rationale with chronological adoption sequence
+  - Updated usage instructions for core vs ancillary epic selection
+
+### Changed
+
+- **CANONICAL_EPICS.md:** Complete rewrite to address BR-005
+  - Now documents all 21 epics plus Core+ epics (22-23)
+  - Clear core vs ancillary distinction
+  - References comprehensive structure document
+  - Updated ordering and usage guidance
+
+---
 ## [0.4.6.6+0] - 2025-12-10
 
 🐛 Bug Fix: BR-005 Intake and Task Assignment

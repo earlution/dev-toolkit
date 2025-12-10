@@ -12,8 +12,8 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-09  
-**Last updated:** 2025-12-10 (v0.4.6.6+0 – Task 6 started: BR-005 intake and task assignment)  
-**Version:** v0.4.6.6+0  
+**Last updated:** 2025-12-10 (v0.4.6.6+1 – Task 6 complete: CANONICAL_EPICS.md updated with all 21 epics, BR-005 fixed)  
+**Version:** v0.4.6.6+1  
 **Code:** E4S06
 
 ---
@@ -45,7 +45,7 @@ This enables projects to adopt ai-dev-kit with zero cognitive load for E/S/T str
 - [ ] **E4:S06:T03 – Create story template files for each typical story** - TODO
 - [ ] **E4:S06:T04 – Create task template files for each typical task** - TODO
 - [ ] **E4:S06:T05 – Create contextualization guide and examples** - TODO
-- [ ] **E4:S06:T06 – Update CANONICAL_EPICS.md to reference comprehensive structure (BR-005)** - IN PROGRESS (v0.4.6.6+0)
+- [x] **E4:S06:T06 – Update CANONICAL_EPICS.md to reference comprehensive structure (BR-005)** ✅ COMPLETE (v0.4.6.6+1)
 - [ ] **E4:S06:T07 – Integrate with template setup guide and installation workflow** - TODO
 - [ ] **E4:S06:T08 – Validate structure with test projects (tiny, small, ambitious)** - TODO
 

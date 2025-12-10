@@ -12,7 +12,7 @@ housekeeping_policy: keep
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-10 (v0.4.6.0+5 – Story 6, T00 build 5: Kanban package version bumped to 2.0.0 MAJOR)  
+**Last updated:** 2025-12-10 (v0.4.6.6+1 – Story 6, T06 complete: CANONICAL_EPICS.md updated with all 21 epics, BR-005 fixed)  
 **Branch:** `epic/4-kanban-framework`  
 **Version Schema:** `0.4.S.T+B`  
 **Production URL:** [N/A for this repo]
