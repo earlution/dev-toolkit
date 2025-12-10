@@ -1,0 +1,10 @@
+# Python dependencies for GitHub Badges tool
+# No external dependencies required - uses standard library only
+
+# Optional: For enhanced JSON handling (if not using jq)
+# json5>=0.9.0
+
+# Note: This tool relies on external commands:
+# - jq (for JSON parsing)
+# - gh (GitHub CLI) or curl (for API calls)
+
