@@ -8,12 +8,12 @@ housekeeping_policy: keep
 
 # Story 002 – FR/BR Intake to Tasks
 
-**Status:** IN PROGRESS  
+**Status:** COMPLETE  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-02  
-**Last updated:** 2025-12-09 (v0.4.2.6+2 – Task 6 build 2: Documentation improvements - CONTRIBUTING.md and enhanced discoverability)  
-**Version:** v0.4.2.6+2
+**Last updated:** 2025-12-11 (v0.4.2.6+3 – Task 6 build 3: RW alignment and traceability)  
+**Version:** v0.4.2.6+3
 **Code:** E4S02
 
 ---
@@ -42,7 +42,7 @@ This story operationalizes the FR/BR → Task → Story → Epic rule defined in
 - [x] **E4:S02:T03 – Create FR/BR intake templates and forms** ✅ COMPLETE
 - [x] **E4:S02:T04 – Document the intake process with examples** ✅ COMPLETE
 - [x] **E4:S02:T05 – Create intake workflow guide for agents/users** ✅ COMPLETE
-- [x] **E4:S02:T06 – GitHub submission integration for FR, BR, and UXR** ✅ COMPLETE (v0.4.2.6+1)
+- [x] **E4:S02:T06 – GitHub submission integration for FR, BR, and UXR** ✅ COMPLETE (v0.4.2.6+3)
 
 ---
 

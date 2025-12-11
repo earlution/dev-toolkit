@@ -1,0 +1,2403 @@
+{
+  "status": "detected",
+  "detection_date": "2025-12-10T15:45:10.080122",
+  "kanban_path": "/Users/rms/Documents/projects/dev-toolkit/KB/PM_and_Portfolio/kanban-refactored",
+  "epics": [
+    {
+      "epic_number": 2,
+      "directory": "epics/Epic-2",
+      "epic_document": "epics/Epic-2/Epic-2.md",
+      "stories_found": 5,
+      "tasks_found": 0
+    },
+    {
+      "epic_number": 5,
+      "directory": "epics/Epic-5",
+      "epic_document": "epics/Epic-5/Epic-5.md",
+      "stories_found": 5,
+      "tasks_found": 0
+    },
+    {
+      "epic_number": 4,
+      "directory": "epics/Epic-4",
+      "epic_document": "epics/Epic-4/Epic-4.md",
+      "stories_found": 5,
+      "tasks_found": 0
+    },
+    {
+      "epic_number": 3,
+      "directory": "epics/Epic-3",
+      "epic_document": "epics/Epic-3/Epic-3.md",
+      "stories_found": 3,
+      "tasks_found": 0
+    },
+    {
+      "epic_number": 6,
+      "directory": "epics/Epic-6",
+      "epic_document": "epics/Epic-6/Epic-6.md",
+      "stories_found": 5,
+      "tasks_found": 0
+    },
+    {
+      "epic_number": 1,
+      "directory": "epics/Epic-1",
+      "epic_document": "epics/Epic-1/Epic-1.md",
+      "stories_found": 6,
+      "tasks_found": 0
+    },
+    {
+      "epic_number": 8,
+      "directory": "epics/Epic-8",
+      "epic_document": "epics/Epic-8/Epic-8.md",
+      "stories_found": 3,
+      "tasks_found": 0
+    },
+    {
+      "epic_number": 9,
+      "directory": "epics/Epic-9",
+      "epic_document": "epics/Epic-9/Epic-9.md",
+      "stories_found": 3,
+      "tasks_found": 0
+    },
+    {
+      "epic_number": 7,
+      "directory": "epics/Epic-7",
+      "epic_document": "epics/Epic-7/Epic-7.md",
+      "stories_found": 5,
+      "tasks_found": 0
+    }
+  ],
+  "stories": [
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md",
+      "tasks_found": 10
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md",
+      "tasks_found": 16
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "file": "epics/Epic-2/Story-001-rw-agent-execution-and-docs.md",
+      "tasks_found": 9
+    },
+    {
+      "epic_number": 2,
+      "story_number": 2,
+      "file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md",
+      "tasks_found": 9
+    },
+    {
+      "epic_number": 2,
+      "story_number": 3,
+      "file": "epics/Epic-2/Story-003-additional-workflows-and-examples.md",
+      "tasks_found": 9
+    },
+    {
+      "epic_number": 5,
+      "story_number": 3,
+      "file": "epics/Epic-5/Story-003-documentation-automation.md",
+      "tasks_found": 6
+    },
+    {
+      "epic_number": 5,
+      "story_number": 1,
+      "file": "epics/Epic-5/Story-001-documentation-maintenance-framework.md",
+      "tasks_found": 6
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "file": "epics/Epic-5/Story-004-framework-documentation-management.md",
+      "tasks_found": 10
+    },
+    {
+      "epic_number": 5,
+      "story_number": 2,
+      "file": "epics/Epic-5/Story-002-documentation-quality-assurance.md",
+      "tasks_found": 5
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md",
+      "tasks_found": 26
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "file": "epics/Epic-4/Story-001-dev-kit-kanban-implementation.md",
+      "tasks_found": 8
+    },
+    {
+      "epic_number": 4,
+      "story_number": 4,
+      "file": "epics/Epic-4/Story-004-kanban-structure-refactoring.md",
+      "tasks_found": 7
+    },
+    {
+      "epic_number": 4,
+      "story_number": 3,
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md",
+      "tasks_found": 12
+    },
+    {
+      "epic_number": 4,
+      "story_number": 2,
+      "file": "epics/Epic-4/Story-002-fr-br-intake-to-tasks.md",
+      "tasks_found": 8
+    },
+    {
+      "epic_number": 4,
+      "story_number": 5,
+      "file": "epics/Epic-4/Story-005-canonical-epics-for-kanban-framework.md",
+      "tasks_found": 7
+    },
+    {
+      "epic_number": 3,
+      "story_number": 3,
+      "file": "epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md",
+      "tasks_found": 8
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md",
+      "tasks_found": 11
+    },
+    {
+      "epic_number": 3,
+      "story_number": 1,
+      "file": "epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md",
+      "tasks_found": 8
+    },
+    {
+      "epic_number": 6,
+      "story_number": 5,
+      "file": "epics/Epic-6/Story-005-feature-requests.md",
+      "tasks_found": 1
+    },
+    {
+      "epic_number": 6,
+      "story_number": 4,
+      "file": "epics/Epic-6/Story-004-bug-reports.md",
+      "tasks_found": 5
+    },
+    {
+      "epic_number": 6,
+      "story_number": 1,
+      "file": "epics/Epic-6/Story-001-framework-version-management.md",
+      "tasks_found": 6
+    },
+    {
+      "epic_number": 6,
+      "story_number": 3,
+      "file": "epics/Epic-6/Story-003-framework-health-monitoring.md",
+      "tasks_found": 4
+    },
+    {
+      "epic_number": 6,
+      "story_number": 2,
+      "file": "epics/Epic-6/Story-002-framework-update-and-migration.md",
+      "tasks_found": 7
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "file": "epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md",
+      "tasks_found": 8
+    },
+    {
+      "epic_number": 1,
+      "story_number": 4,
+      "file": "epics/Epic-1/Story-004-repository-branding-and-renaming.md",
+      "tasks_found": 6
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "file": "epics/Epic-1/Story-002-tool-distribution-strategy.md",
+      "tasks_found": 9
+    },
+    {
+      "epic_number": 1,
+      "story_number": 3,
+      "file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit.md",
+      "tasks_found": 7
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "file": "epics/Epic-1/Story-002-package-and-repo-architecture.md",
+      "tasks_found": 7
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "file": "epics/Epic-1/Story-001-tool-management-system.md",
+      "tasks_found": 8
+    },
+    {
+      "epic_number": 8,
+      "story_number": 1,
+      "file": "epics/Epic-8/Story-001-code-generators.md",
+      "tasks_found": 4
+    },
+    {
+      "epic_number": 8,
+      "story_number": 2,
+      "file": "epics/Epic-8/Story-002-additional-validators.md",
+      "tasks_found": 4
+    },
+    {
+      "epic_number": 8,
+      "story_number": 3,
+      "file": "epics/Epic-8/Story-003-automation-scripts.md",
+      "tasks_found": 4
+    },
+    {
+      "epic_number": 9,
+      "story_number": 1,
+      "file": "epics/Epic-9/Story-001-book-content-development.md",
+      "tasks_found": 4
+    },
+    {
+      "epic_number": 9,
+      "story_number": 3,
+      "file": "epics/Epic-9/Story-003-book-publishing-support.md",
+      "tasks_found": 4
+    },
+    {
+      "epic_number": 9,
+      "story_number": 2,
+      "file": "epics/Epic-9/Story-002-book-integration-with-dev-kit.md",
+      "tasks_found": 4
+    },
+    {
+      "epic_number": 7,
+      "story_number": 3,
+      "file": "epics/Epic-7/Story-003-user-onboarding-materials.md",
+      "tasks_found": 4
+    },
+    {
+      "epic_number": 7,
+      "story_number": 1,
+      "file": "epics/Epic-7/Story-001-codebase-maintenance-tasks.md",
+      "tasks_found": 4
+    },
+    {
+      "epic_number": 7,
+      "story_number": 4,
+      "file": "epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md",
+      "tasks_found": 8
+    },
+    {
+      "epic_number": 7,
+      "story_number": 2,
+      "file": "epics/Epic-7/Story-002-migration-guides.md",
+      "tasks_found": 4
+    },
+    {
+      "epic_number": 7,
+      "story_number": 1,
+      "file": "epics/Epic-7/Story-001-real-world-adoption-examples.md",
+      "tasks_found": 4
+    }
+  ],
+  "tasks": [
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 9,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 7,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 8,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-2/Story-004-rw-installer-and-plug-and-play-adoption.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 7,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 8,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 9,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 10,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 11,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 12,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 13,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 14,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 15,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 5,
+      "task_number": 17,
+      "format": "short",
+      "story_file": "epics/Epic-2/Story-005-post-implementation-review-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-001-rw-agent-execution-and-docs.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-001-rw-agent-execution-and-docs.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-001-rw-agent-execution-and-docs.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-001-rw-agent-execution-and-docs.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-001-rw-agent-execution-and-docs.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-001-rw-agent-execution-and-docs.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 7,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-001-rw-agent-execution-and-docs.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-2/Story-001-rw-agent-execution-and-docs.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 8,
+      "format": "file",
+      "file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow/T008-update-kanban-docs-to-txx-standard.md",
+      "story_file": "epics/Epic-2/Story-001-rw-agent-execution-and-docs.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 2,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 2,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 2,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 2,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 2,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 2,
+      "task_number": 7,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 2,
+      "task_number": 8,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 2,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 3,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-003-additional-workflows-and-examples.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 3,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-003-additional-workflows-and-examples.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 3,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-003-additional-workflows-and-examples.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 3,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-003-additional-workflows-and-examples.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 3,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-003-additional-workflows-and-examples.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 3,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-2/Story-003-additional-workflows-and-examples.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 3,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-2/Story-003-additional-workflows-and-examples.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 3,
+      "task_number": 8,
+      "format": "file",
+      "file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow/T008-update-kanban-docs-to-txx-standard.md",
+      "story_file": "epics/Epic-2/Story-003-additional-workflows-and-examples.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 3,
+      "task_number": 7,
+      "format": "file",
+      "file": "epics/Epic-2/Story-002-pdca-integration-into-release-workflow/T007-implement-task-naming-change.md",
+      "story_file": "epics/Epic-2/Story-003-additional-workflows-and-examples.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 3,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-003-documentation-automation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 3,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-003-documentation-automation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 3,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-003-documentation-automation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-003-documentation-automation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-003-documentation-automation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 3,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-5/Story-003-documentation-automation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-001-documentation-maintenance-framework.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-001-documentation-maintenance-framework.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-001-documentation-maintenance-framework.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 1,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-001-documentation-maintenance-framework.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 1,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-001-documentation-maintenance-framework.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 1,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-5/Story-001-documentation-maintenance-framework.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-004-framework-documentation-management.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-004-framework-documentation-management.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-004-framework-documentation-management.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-004-framework-documentation-management.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-004-framework-documentation-management.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-004-framework-documentation-management.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 7,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-004-framework-documentation-management.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 8,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-004-framework-documentation-management.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 1,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-004-framework-documentation-management.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 17,
+      "format": "short",
+      "story_file": "epics/Epic-5/Story-004-framework-documentation-management.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 2,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-002-documentation-quality-assurance.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 2,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-002-documentation-quality-assurance.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-002-documentation-quality-assurance.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-002-documentation-quality-assurance.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 2,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-5/Story-002-documentation-quality-assurance.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 7,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 8,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 9,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 10,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 11,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 12,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 13,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 14,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 15,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 16,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 17,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 18,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 19,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 20,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 21,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 22,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 23,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 24,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 5,
+      "task_number": 25,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 7,
+      "format": "full",
+      "story_file": "epics/Epic-5/Story-005-legacy-repository-incorporation.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-001-dev-kit-kanban-implementation.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-001-dev-kit-kanban-implementation.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-001-dev-kit-kanban-implementation.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-001-dev-kit-kanban-implementation.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-001-dev-kit-kanban-implementation.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-4/Story-001-dev-kit-kanban-implementation.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "task_number": 6,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T006-integration-examples.md",
+      "story_file": "epics/Epic-4/Story-001-dev-kit-kanban-implementation.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "task_number": 7,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T007-gap-resolution-summary.md",
+      "story_file": "epics/Epic-4/Story-001-dev-kit-kanban-implementation.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 4,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-004-kanban-structure-refactoring.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 4,
+      "task_number": 13,
+      "format": "short",
+      "story_file": "epics/Epic-4/Story-004-kanban-structure-refactoring.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 4,
+      "task_number": 2,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T002-root-cause-analysis.md",
+      "story_file": "epics/Epic-4/Story-004-kanban-structure-refactoring.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 4,
+      "task_number": 3,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T003-versioning-rw-validation.md",
+      "story_file": "epics/Epic-4/Story-004-kanban-structure-refactoring.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 4,
+      "task_number": 6,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T006-integration-examples.md",
+      "story_file": "epics/Epic-4/Story-004-kanban-structure-refactoring.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 4,
+      "task_number": 7,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T007-gap-resolution-summary.md",
+      "story_file": "epics/Epic-4/Story-004-kanban-structure-refactoring.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 4,
+      "task_number": 4,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md",
+      "story_file": "epics/Epic-4/Story-004-kanban-structure-refactoring.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 3,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 3,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 3,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 3,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 3,
+      "task_number": 7,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 3,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 3,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 3,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 2,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-002-fr-br-intake-to-tasks.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 2,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-002-fr-br-intake-to-tasks.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-002-fr-br-intake-to-tasks.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 2,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-002-fr-br-intake-to-tasks.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 2,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-002-fr-br-intake-to-tasks.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 2,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-002-fr-br-intake-to-tasks.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 2,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-4/Story-002-fr-br-intake-to-tasks.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 2,
+      "task_number": 7,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T007-gap-resolution-summary.md",
+      "story_file": "epics/Epic-4/Story-002-fr-br-intake-to-tasks.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 5,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-4/Story-005-canonical-epics-for-kanban-framework.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 5,
+      "task_number": 23,
+      "format": "short",
+      "story_file": "epics/Epic-4/Story-005-canonical-epics-for-kanban-framework.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 5,
+      "task_number": 2,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T002-root-cause-analysis.md",
+      "story_file": "epics/Epic-4/Story-005-canonical-epics-for-kanban-framework.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 5,
+      "task_number": 3,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T003-versioning-rw-validation.md",
+      "story_file": "epics/Epic-4/Story-005-canonical-epics-for-kanban-framework.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 5,
+      "task_number": 6,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T006-integration-examples.md",
+      "story_file": "epics/Epic-4/Story-005-canonical-epics-for-kanban-framework.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 5,
+      "task_number": 7,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T007-gap-resolution-summary.md",
+      "story_file": "epics/Epic-4/Story-005-canonical-epics-for-kanban-framework.md"
+    },
+    {
+      "epic_number": 4,
+      "story_number": 5,
+      "task_number": 4,
+      "format": "file",
+      "file": "epics/Epic-4/Story-003-kanban-versioning-rw-integration/T004-rw-kanban-validation.md",
+      "story_file": "epics/Epic-4/Story-005-canonical-epics-for-kanban-framework.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 3,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 3,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 3,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 3,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 3,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 3,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 3,
+      "task_number": 18,
+      "format": "short",
+      "story_file": "epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 3,
+      "task_number": 8,
+      "format": "file",
+      "file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples/T008-package-versioning-guardrails-discussion.md",
+      "story_file": "epics/Epic-3/Story-003-versioning-integration-with-kanban-and-rw.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 7,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 8,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 9,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 10,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 2,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 1,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 1,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 1,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 1,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md"
+    },
+    {
+      "epic_number": 3,
+      "story_number": 1,
+      "task_number": 8,
+      "format": "file",
+      "file": "epics/Epic-3/Story-002-versioning-cookbook-and-examples/T008-package-versioning-guardrails-discussion.md",
+      "story_file": "epics/Epic-3/Story-001-dev-kit-alignment-with-versioning-framework.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 5,
+      "task_number": 23,
+      "format": "short",
+      "story_file": "epics/Epic-6/Story-005-feature-requests.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 4,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-004-bug-reports.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 4,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-004-bug-reports.md"
+    },
+    {
+      "epic_number": 5,
+      "story_number": 4,
+      "task_number": 8,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-004-bug-reports.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 4,
+      "task_number": 23,
+      "format": "short",
+      "story_file": "epics/Epic-6/Story-004-bug-reports.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 4,
+      "task_number": 8,
+      "format": "short",
+      "story_file": "epics/Epic-6/Story-004-bug-reports.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-001-framework-version-management.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-001-framework-version-management.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-001-framework-version-management.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 1,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-001-framework-version-management.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 1,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-001-framework-version-management.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 1,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-6/Story-001-framework-version-management.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 3,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-003-framework-health-monitoring.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 3,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-003-framework-health-monitoring.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 3,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-003-framework-health-monitoring.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 3,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-6/Story-003-framework-health-monitoring.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 2,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-002-framework-update-and-migration.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 2,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-002-framework-update-and-migration.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-002-framework-update-and-migration.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 2,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-002-framework-update-and-migration.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 2,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-002-framework-update-and-migration.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 1,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-6/Story-002-framework-update-and-migration.md"
+    },
+    {
+      "epic_number": 6,
+      "story_number": 2,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-6/Story-002-framework-update-and-migration.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 4,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 6,
+      "format": "file",
+      "file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T006-scalable-kb-pattern.md",
+      "story_file": "epics/Epic-1/Story-001-vibe-dev-kit-kanban-and-versioning.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 4,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-004-repository-branding-and-renaming.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 4,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-004-repository-branding-and-renaming.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 4,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-004-repository-branding-and-renaming.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 4,
+      "task_number": 3,
+      "format": "file",
+      "file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T003-canonical-kb-structure-research.md",
+      "story_file": "epics/Epic-1/Story-004-repository-branding-and-renaming.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 4,
+      "task_number": 6,
+      "format": "file",
+      "file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T006-scalable-kb-pattern.md",
+      "story_file": "epics/Epic-1/Story-004-repository-branding-and-renaming.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 4,
+      "task_number": 4,
+      "format": "file",
+      "file": "epics/Epic-1/Story-002-package-and-repo-architecture/T004-consumption-patterns.md",
+      "story_file": "epics/Epic-1/Story-004-repository-branding-and-renaming.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-002-tool-distribution-strategy.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-002-tool-distribution-strategy.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-002-tool-distribution-strategy.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-002-tool-distribution-strategy.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-002-tool-distribution-strategy.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 0,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-002-tool-distribution-strategy.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 5,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-002-tool-distribution-strategy.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 6,
+      "format": "file",
+      "file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T006-scalable-kb-pattern.md",
+      "story_file": "epics/Epic-1/Story-002-tool-distribution-strategy.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 4,
+      "format": "file",
+      "file": "epics/Epic-1/Story-002-package-and-repo-architecture/T004-consumption-patterns.md",
+      "story_file": "epics/Epic-1/Story-002-tool-distribution-strategy.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 3,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 3,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 3,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 3,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 3,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 3,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 3,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-002-package-and-repo-architecture.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-002-package-and-repo-architecture.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-002-package-and-repo-architecture.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-002-package-and-repo-architecture.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-002-package-and-repo-architecture.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 12,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-002-package-and-repo-architecture.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 2,
+      "task_number": 6,
+      "format": "file",
+      "file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T006-scalable-kb-pattern.md",
+      "story_file": "epics/Epic-1/Story-002-package-and-repo-architecture.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-001-tool-management-system.md"
+    },
+    {
+      "epic_number": 2,
+      "story_number": 4,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-1/Story-001-tool-management-system.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 0,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-001-tool-management-system.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 5,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-001-tool-management-system.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "short",
+      "story_file": "epics/Epic-1/Story-001-tool-management-system.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "file",
+      "file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T003-canonical-kb-structure-research.md",
+      "story_file": "epics/Epic-1/Story-001-tool-management-system.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 6,
+      "format": "file",
+      "file": "epics/Epic-1/Story-003-core-kb-structure-for-dev-kit/T006-scalable-kb-pattern.md",
+      "story_file": "epics/Epic-1/Story-001-tool-management-system.md"
+    },
+    {
+      "epic_number": 1,
+      "story_number": 1,
+      "task_number": 4,
+      "format": "file",
+      "file": "epics/Epic-1/Story-002-package-and-repo-architecture/T004-consumption-patterns.md",
+      "story_file": "epics/Epic-1/Story-001-tool-management-system.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-8/Story-001-code-generators.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-8/Story-001-code-generators.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-8/Story-001-code-generators.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 1,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-8/Story-001-code-generators.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 2,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-8/Story-002-additional-validators.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 2,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-8/Story-002-additional-validators.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-8/Story-002-additional-validators.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 2,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-8/Story-002-additional-validators.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 3,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-8/Story-003-automation-scripts.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 3,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-8/Story-003-automation-scripts.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 3,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-8/Story-003-automation-scripts.md"
+    },
+    {
+      "epic_number": 8,
+      "story_number": 3,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-8/Story-003-automation-scripts.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-9/Story-001-book-content-development.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-9/Story-001-book-content-development.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-9/Story-001-book-content-development.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 1,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-9/Story-001-book-content-development.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 3,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-9/Story-003-book-publishing-support.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 3,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-9/Story-003-book-publishing-support.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 3,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-9/Story-003-book-publishing-support.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 3,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-9/Story-003-book-publishing-support.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 2,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-9/Story-002-book-integration-with-dev-kit.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 2,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-9/Story-002-book-integration-with-dev-kit.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-9/Story-002-book-integration-with-dev-kit.md"
+    },
+    {
+      "epic_number": 9,
+      "story_number": 2,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-9/Story-002-book-integration-with-dev-kit.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 3,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-003-user-onboarding-materials.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 3,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-003-user-onboarding-materials.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 3,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-003-user-onboarding-materials.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 3,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-7/Story-003-user-onboarding-materials.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-001-codebase-maintenance-tasks.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-001-codebase-maintenance-tasks.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-001-codebase-maintenance-tasks.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 1,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-001-codebase-maintenance-tasks.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 4,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 4,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 4,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 4,
+      "task_number": 4,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 4,
+      "task_number": 5,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 4,
+      "task_number": 6,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 4,
+      "task_number": 7,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 4,
+      "task_number": 0,
+      "format": "short",
+      "story_file": "epics/Epic-7/Story-04-readme-template-based-on-best-readme-template.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 2,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-002-migration-guides.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 2,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-002-migration-guides.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 2,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-002-migration-guides.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 2,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-7/Story-002-migration-guides.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 1,
+      "task_number": 1,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-001-real-world-adoption-examples.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 1,
+      "task_number": 2,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-001-real-world-adoption-examples.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 1,
+      "task_number": 3,
+      "format": "full",
+      "story_file": "epics/Epic-7/Story-001-real-world-adoption-examples.md"
+    },
+    {
+      "epic_number": 7,
+      "story_number": 1,
+      "task_number": 14,
+      "format": "short",
+      "story_file": "epics/Epic-7/Story-001-real-world-adoption-examples.md"
+    }
+  ],
+  "conflicts": [
+    {
+      "type": "core_epic_conflict",
+      "severity": "high",
+      "message": "Detected epics conflict with canonical core epics: [1, 2, 3, 4, 5, 6, 7, 8]",
+      "epic_numbers": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "recommendation": "Consider renumbering project epics or using hybrid installation mode"
+    }
+  ],
+  "summary": {
+    "epic_count": 9,
+    "story_count": 40,
+    "task_count": 291,
+    "conflict_count": 1
+  }
+}

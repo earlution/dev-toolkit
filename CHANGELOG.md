@@ -17,103 +17,6 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
-## [0.4.2.6+2] - 2025-12-09
-
-📚 Documentation: Improved discoverability of GitHub submission process
-
-### Added
-
-- **CONTRIBUTING.md:** Client-focused guide for submitting feedback via GitHub Issues
-  - Quick start instructions
-  - Links to all issue templates
-  - Code contribution guidelines
-
-### Changed
-
-- **README.md:** Enhanced Contributing section with quick links to issue templates
-- **GitHub Issue Templates:** Added help links to detailed submission guide in all templates
-
----
-
-## [0.4.2.6+1] - 2025-12-09
-
-✨ Feature: GitHub Issue integration for FR, BR, and UXR submissions (FR-004)
-
-### Added
-
-- **GitHub Issue Templates:** Bug Report, Feature Request, and UXR templates for GitHub Issues
-  - Structured forms aligned with Kanban templates
-  - Automatic conversion to FR/BR/UXR documents
-- **GitHub Action:** Automatic conversion from GitHub Issues to Kanban documents
-  - `.github/workflows/fr-br-intake.yml` - Converts Issues to documents
-  - Bidirectional linking between GitHub Issues and Kanban documents
-- **UXR Template:** User Experience Research template (`UXR_TEMPLATE.md`)
-- **GitHub Submission Guide:** Comprehensive guide for external contributors
-- **Kanban Package v1.3.0:** GitHub integration feature (MINOR bump)
-
-### Changed
-
-- Updated Kanban package README with new templates and guides
-- Enhanced FR/BR intake workflow with GitHub integration
-
----
-
-## [0.2.1.7+1] - 2025-12-09
-
-🐛 Bug Fix: Added support for update/maintenance branch patterns in RW branch validation (BR-003)
-
-### Fixed
-
-- **BR-003:** Added support for `update/*`, `maintenance/*`, and `upgrade/*` branch patterns in branch validation
-  - Maintenance/update branches now skip epic/version validation (similar to `main` branch)
-  - Eliminates false warnings when running RW on framework update branches like `update/ai-dev-kit`
-- **Workflow Management Package v2.1.1:** Updated branch validator to recognize maintenance branch patterns
-
----
-
-## [0.7.1.1+1] - 2025-12-09
-
-📦 New Canonical Epic: Added Epic 7 (Codebase Maintenance and Review) with perpetual task for IDE-flagged issues
-
-### Added
-
-- **Epic 7: Codebase Maintenance and Review** - New canonical epic for codebase maintenance and review work
-  - Story 1: Codebase Maintenance Tasks with perpetual task for IDE-flagged issues (errors, warnings, info)
-  - Example Epic 7 document demonstrating structure and content
-  - Integration with Epic 4 (Kanban Framework) and Epic 6 (BR Implementation)
-- **Kanban Package v1.2.0:** Updated canonical epic count from 1-6 to 1-7, updated intake guides
-
-### Changed
-
-- Updated canonical epic count from 1-6 to 1-7 (new project-specific epics now start at Epic 8)
-- Updated intake guides to reference Epic 7
-- Updated README and documentation to include Epic 7
-
----
-
-## [0.2.1.6+2] - 2025-12-09
-
-📦 Package Enhancements: Enhanced canonical epics documentation and added GitHub submission FR
-
-### Added
-
-- **Epic 4 Story 2 Task 6:** Created Feature Request FR-004 for GitHub submission integration (FR, BR, UXR via GitHub Issues/Discussions)
-- **Epic 4 Story 5 Enhancements:** Enhanced canonical epics documentation with detailed descriptions, typical stories, and integration points
-- **New Examples:** Added Epic 5 (FR Implementation) and Epic 6 (BR Implementation) example documents
-- **New Template:** Added CANONICAL_STORIES_FR_BR.md guide for FR/BR Implementation epic stories
-
-### Changed
-
-- **Kanban Package:** Version bumped from 1.0.0 to 1.1.0 (MINOR) - new examples and enhanced documentation
-- **CANONICAL_EPICS.md:** Enhanced with comprehensive usage guidance, customization examples, and detailed epic descriptions
-- **Kanban README:** Updated with references to new examples and templates
-
-### Notes
-
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.6+2.md` for full details.
-
----
-
 ## [0.1.1.1+1] - 02-12-25
 
 🏗️ Foundation: First proper release with Epic 1–4 structure, dev-kit versioning policy, and Kanban FR/BR → Task flow
@@ -552,6 +455,66 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.1+5.md` for full details
 - Cursorrules section now fully aligned with dev-kit versioning policy
 - Template remains ready for other projects while including dev-kit examples
+
+---
+
+## [0.2.1.6+1] - 09-12-25
+
+🐛 Bug Report: Created BR-002 and Kanban task for changelog validator ordering bug
+
+### Added
+- **Bug Report BR-002:** Created bug report for changelog validator ordering issue
+  - Validator expects canonical ordering (lowest first) but Keep a Changelog format uses newest first
+  - Identified by been-there project when syncing workflow management framework
+- **Task E2:S01:T06:** Added task to fix changelog validator ordering bug
+  - Support both Keep a Changelog format (newest first) and canonical ordering (lowest first)
+  - Add configuration option to choose format preference
+  - Default to Keep a Changelog format (industry standard)
+
+### Changed
+- **Story 1 Status:** Changed from COMPLETE to IN PROGRESS (new task added)
+- **Epic 2/Story 1 Docs:** Updated with Task 6 and version markers
+
+### Notes
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.6+1.md` for full details
+- Bug was identified by been-there project during framework sync
+- Fix will support both formats to maintain compatibility
+
+---
+
+## [0.2.1.6+2] - 2025-12-09
+
+📦 Package Enhancements: Enhanced canonical epics documentation and added GitHub submission FR
+
+### Added
+
+- **Epic 4 Story 2 Task 6:** Created Feature Request FR-004 for GitHub submission integration (FR, BR, UXR via GitHub Issues/Discussions)
+- **Epic 4 Story 5 Enhancements:** Enhanced canonical epics documentation with detailed descriptions, typical stories, and integration points
+- **New Examples:** Added Epic 5 (FR Implementation) and Epic 6 (BR Implementation) example documents
+- **New Template:** Added CANONICAL_STORIES_FR_BR.md guide for FR/BR Implementation epic stories
+
+### Changed
+
+- **Kanban Package:** Version bumped from 1.0.0 to 1.1.0 (MINOR) - new examples and enhanced documentation
+- **CANONICAL_EPICS.md:** Enhanced with comprehensive usage guidance, customization examples, and detailed epic descriptions
+- **Kanban README:** Updated with references to new examples and templates
+
+### Notes
+
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.6+2.md` for full details.
+
+---
+
+## [0.2.1.7+1] - 2025-12-09
+
+🐛 Bug Fix: Added support for update/maintenance branch patterns in RW branch validation (BR-003)
+
+### Fixed
+
+- **BR-003:** Added support for `update/*`, `maintenance/*`, and `upgrade/*` branch patterns in branch validation
+  - Maintenance/update branches now skip epic/version validation (similar to `main` branch)
+  - Eliminates false warnings when running RW on framework update branches like `update/ai-dev-kit`
+- **Workflow Management Package v2.1.1:** Updated branch validator to recognize maintenance branch patterns
 
 ---
 
@@ -1550,7 +1513,6 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.4+1.md` for full details
 - Each entry includes symptom, root cause, corrective pattern, and preventive guidance
-- References to related documentation (error reference guide, root cause analysis)
 - Versioning cookbook now complete with all major scenarios including edge cases
 
 ---
@@ -1701,25 +1663,18 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
-## [0.3.2.10+1] - 08-12-25
+## [0.3.2.8+1] - 07-12-25
 
-📋 Task: Created Kanban task to integrate PVW into Release Workflow agent execution guide
+📊 Analysis: Created task to audit dual-versioning application across packages
 
 ### Added
-- **Task E3:S02:T10:** Created task to integrate PVW into RW agent execution guide
-  - Task definition with complete deliverables and requirements
-  - Identified need to update RW guide from 14 to 15 steps
-  - Documented step-2.5 execution requirements
-
-### Changed
-- **Story 2:** Added T10 to task checklist
-- **Epic 3:** Added T10 to task checklist
-- **Version:** Bumped to 0.3.2.10+1
+- **Task T08:** Created E3:S02:T08 to audit dual-versioning application across all packages
+- **Task Scope:** Investigate current package versioning state, analyze dual-versioning strategy applicability, propose solution
 
 ### Notes
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.10+1.md` for full details
-- Release Workflow YAML already includes PVW as step-2.5
-- Agent execution guide needs to be updated to document step-2.5 execution
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.8+1.md` for full details
+- Task addresses concerns about SemVer continuity and mapping strategy appropriateness for package management
+- Will investigate Workflow Management package versioning pattern (1.0, 1.1, 1.2) mentioned by user
 
 ---
 
@@ -1751,71 +1706,25 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
-## [0.2.1.6+1] - 09-12-25
+## [0.3.2.10+1] - 08-12-25
 
-🐛 Bug Report: Created BR-002 and Kanban task for changelog validator ordering bug
+📋 Task: Created Kanban task to integrate PVW into Release Workflow agent execution guide
 
 ### Added
-- **Bug Report BR-002:** Created bug report for changelog validator ordering issue
-  - Validator expects canonical ordering (lowest first) but Keep a Changelog format uses newest first
-  - Identified by been-there project when syncing workflow management framework
-- **Task E2:S01:T06:** Added task to fix changelog validator ordering bug
-  - Support both Keep a Changelog format (newest first) and canonical ordering (lowest first)
-  - Add configuration option to choose format preference
-  - Default to Keep a Changelog format (industry standard)
+- **Task E3:S02:T10:** Created task to integrate PVW into RW agent execution guide
+  - Task definition with complete deliverables and requirements
+  - Identified need to update RW guide from 14 to 15 steps
+  - Documented step-2.5 execution requirements
 
 ### Changed
-- **Story 1 Status:** Changed from COMPLETE to IN PROGRESS (new task added)
-- **Epic 2/Story 1 Docs:** Updated with Task 6 and version markers
+- **Story 2:** Added T10 to task checklist
+- **Epic 3:** Added T10 to task checklist
+- **Version:** Bumped to 0.3.2.10+1
 
 ### Notes
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.2.1.6+1.md` for full details
-- Bug was identified by been-there project during framework sync
-- Fix will support both formats to maintain compatibility
-
----
-
-## [0.4.5.1+1] - 08-12-25
-
-📚 Framework: Added canonical epics to Kanban framework package
-
-### Added
-- **Canonical Epics:** Added Epic 5 (FR Implementation) and Epic 6 (BR Implementation) to canonical set
-  - Created `CANONICAL_EPICS.md` with complete documentation of all 6 canonical epics
-  - Documented epic ordering rationale (foundational → operational → implementation)
-  - FR Implementation (Epic 5) comes before BR Implementation (Epic 6)
-- **Epic Ordering:** Established logical ordering for canonical epics:
-  1. AI Dev Kit Core (foundational)
-  2. Workflow Management Framework (operational)
-  3. Numbering & Versioning Framework (operational)
-  4. Kanban Framework (operational)
-  5. FR Implementation (implementation - supports Kanban)
-  6. BR Implementation (implementation - supports Kanban)
-
-### Changed
-- **Intake Guides:** Updated all FR/BR intake guides to reflect canonical epics 1-6
-- **Examples:** Updated examples to use Epic 7 for new project-specific epics (canonical epics are 1-6)
-- **README:** Added reference to CANONICAL_EPICS.md in package contents
-
-### Notes
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.5.1+1.md` for full details
-- Canonical epics provide standard organizational structure for projects using Kanban framework
-- New project-specific epics should start at Epic 7
-
----
-
-## [0.3.2.8+1] - 07-12-25
-
-📊 Analysis: Created task to audit dual-versioning application across packages
-
-### Added
-- **Task T08:** Created E3:S02:T08 to audit dual-versioning application across all packages
-- **Task Scope:** Investigate current package versioning state, analyze dual-versioning strategy applicability, propose solution
-
-### Notes
-- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.8+1.md` for full details
-- Task addresses concerns about SemVer continuity and mapping strategy appropriateness for package management
-- Will investigate Workflow Management package versioning pattern (1.0, 1.1, 1.2) mentioned by user
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.2.10+1.md` for full details
+- Release Workflow YAML already includes PVW as step-2.5
+- Agent execution guide needs to be updated to document step-2.5 execution
 
 ---
 
@@ -1846,17 +1755,13 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 - Created comprehensive framework-level integration guide
 - Documented three-way integration architecture (Kanban ↔ Versioning ↔ RW)
-- Explained integration points and data flow
-- Provided framework-level examples (portable, template-ready)
-- Documented integration patterns and best practices
-- Included troubleshooting section and quick reference
+- Added examples and edge cases for framework consumers
+- Updated Epic 3 and Story 3 docs with new content
 
 ### Notes
 
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.3.3.2+1.md` for full details
-- Guide located at: `packages/frameworks/numbering & versioning/integration/kanban-workflow-integration.md`
-- Framework-level documentation (portable, template-ready)
-- Distinct from dev-kit implementation validation (E4:S03)
+- Provides a portable integration guide for external projects
 
 ---
 
@@ -2210,6 +2115,58 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 
 ---
 
+## [0.4.2.6+1] - 2025-12-09
+
+✨ Feature: GitHub Issue integration for FR, BR, and UXR submissions (FR-004)
+
+### Added
+
+- **GitHub Issue Templates:** Bug Report, Feature Request, and UXR templates for GitHub Issues
+  - Structured forms aligned with Kanban templates
+  - Automatic conversion to FR/BR/UXR documents
+- **GitHub Action:** Automatic conversion from GitHub Issues to Kanban documents
+  - `.github/workflows/fr-br-intake.yml` - Converts Issues to documents
+  - Bidirectional linking between GitHub Issues and Kanban documents
+- **UXR Template:** User Experience Research template (`UXR_TEMPLATE.md`)
+- **GitHub Submission Guide:** Comprehensive guide for external contributors
+- **Kanban Package v1.3.0:** GitHub integration feature (MINOR bump)
+
+### Changed
+
+- Updated Kanban package README with new templates and guides
+- Enhanced FR/BR intake workflow with GitHub integration
+
+---
+
+## [0.4.2.6+2] - 2025-12-09
+
+📚 Documentation: Improved discoverability of GitHub submission process
+
+### Added
+
+- **CONTRIBUTING.md:** Client-focused guide for submitting feedback via GitHub Issues
+  - Quick start instructions
+  - Links to all issue templates
+  - Code contribution guidelines
+
+### Changed
+
+- **README.md:** Enhanced Contributing section with quick links to issue templates
+- **GitHub Issue Templates:** Added help links to detailed submission guide in all templates
+
+---
+
+## [0.4.2.6+3] - 2025-12-11
+
+🔧 Maintenance: Build increment for FR/BR intake story (E4:S02:T06) to align documentation and workflow state.
+
+### Changed
+
+- Bumped version to `v0.4.2.6+3` (same task, new build) for traceability of FR/BR intake documentation updates.
+- See detailed changelog: `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.2.6+3.md`.
+
+---
+
 ## [0.4.3.1+1] - 02-12-25
 
 📚 Documentation: Task 1 complete - Review existing integration documentation (Story 3 started)
@@ -2434,6 +2391,35 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.4.1+2.md` for full details
 - Corrects documentation inconsistencies where board views showed incomplete status
 - All 4 Epics now correctly shown as COMPLETE ✅ across all documentation
+
+---
+
+## [0.4.5.1+1] - 08-12-25
+
+📚 Framework: Added canonical epics to Kanban framework package
+
+### Added
+- **Canonical Epics:** Added Epic 5 (FR Implementation) and Epic 6 (BR Implementation) to canonical set
+  - Created `CANONICAL_EPICS.md` with complete documentation of all 6 canonical epics
+  - Documented epic ordering rationale (foundational → operational → implementation)
+  - FR Implementation (Epic 5) comes before BR Implementation (Epic 6)
+- **Epic Ordering:** Established logical ordering for canonical epics:
+  1. AI Dev Kit Core (foundational)
+  2. Workflow Management Framework (operational)
+  3. Numbering & Versioning Framework (operational)
+  4. Kanban Framework (operational)
+  5. FR Implementation (implementation - supports Kanban)
+  6. BR Implementation (implementation - supports Kanban)
+
+### Changed
+- **Intake Guides:** Updated all FR/BR intake guides to reflect canonical epics 1-6
+- **Examples:** Updated examples to use Epic 7 for new project-specific epics (canonical epics are 1-6)
+- **README:** Added reference to CANONICAL_EPICS.md in package contents
+
+### Notes
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.5.1+1.md` for full details
+- Canonical epics provide standard organizational structure for projects using Kanban framework
+- New project-specific epics should start at Epic 7
 
 ---
 
@@ -2773,6 +2759,26 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - **Framework Documentation:** Added canonical stories reference to Kanban framework README
 
 **Details:** [CHANGELOG_v0.6.4.2+1.md](KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.6.4.2+1.md)
+
+---
+
+## [0.7.1.1+1] - 2025-12-09
+
+📦 New Canonical Epic: Added Epic 7 (Codebase Maintenance and Review) with perpetual task for IDE-flagged issues
+
+### Added
+
+- **Epic 7: Codebase Maintenance and Review** - New canonical epic for codebase maintenance and review work
+  - Story 1: Codebase Maintenance Tasks with perpetual task for IDE-flagged issues (errors, warnings, info)
+  - Example Epic 7 document demonstrating structure and content
+  - Integration with Epic 4 (Kanban Framework) and Epic 6 (BR Implementation)
+- **Kanban Package v1.2.0:** Updated canonical epic count from 1-6 to 1-7, updated intake guides
+
+### Changed
+
+- Updated canonical epic count from 1-6 to 1-7 (new project-specific epics now start at Epic 8)
+- Updated intake guides to reference Epic 7
+- Updated README and documentation to include Epic 7
 
 ---
 

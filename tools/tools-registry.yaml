@@ -1,0 +1,80 @@
+# Tools Registry
+# This file catalogs all tools in the dev-toolkit repository.
+# Each tool is completely independent and self-contained.
+#
+# Purpose: Enable discovery, validation, and maintenance without coupling tools together.
+# Format: YAML for human readability and easy parsing
+
+registry_version: "1.0.0"
+last_updated: "2025-01-27"
+
+tools:
+  github-badges:
+    name: "GitHub Badges"
+    description: "Dynamic badge selection based on repository visibility"
+    directory: "tools/github-badges"
+    tech_stack:
+      - "Python 3.7+"
+      - "jq"
+    entry_point: "update_badges.py"
+    dependencies_file: "requirements.txt"
+    status: "active"
+    maintainer: "earlution"
+    added: "2025-01-27"
+    last_validated: "2025-01-27"
+    metadata:
+      use_cases:
+        - "Eliminate REPO NOT FOUND errors on GitHub README badges"
+      tags:
+        - "github"
+        - "badges"
+        - "automation"
+      documentation: "tools/github-badges/README.md"
+    distribution:
+      # Primary: Git-based installation (always available)
+      git:
+        url: "https://github.com/earlution/dev-toolkit/tree/main/tools/github-badges"
+        method: "clone"
+      # Optional: Package registries (for future distribution)
+      # pypi: "dev-toolkit-github-badges"  # Uncomment when published
+      # npm: "@dev-toolkit/github-badges"  # Uncomment when published
+      # docker: "ghcr.io/earlution/dev-toolkit/github-badges"  # Uncomment when published
+    requirements:
+      external:
+        - name: "jq"
+          purpose: "JSON parsing"
+          install: "brew install jq"
+      authentication:
+        - type: "github-cli"
+          purpose: "Repository visibility detection"
+        - type: "github-token"
+          purpose: "Repository visibility detection (alternative)"
+    validation:
+      required_files:
+        - "README.md"
+        - "update_badges.py"
+        - "requirements.txt"
+      optional_files:
+        - ".gitignore"
+        - "examples/"
+      health_checks:
+        - "python3 update_badges.py --help"
+        - "requirements.txt exists and is parseable"
+
+# Template tool (not a real tool, but documented for reference)
+_template:
+  name: "Tool Template"
+  description: "Template structure for creating new tools"
+  directory: "tools/_template"
+  tech_stack:
+    - "Python 3.7+"
+  entry_point: "tool_name.py"
+  dependencies_file: "requirements.txt"
+  status: "template"
+  maintainer: "earlution"
+  metadata:
+    tags:
+      - "template"
+      - "scaffolding"
+    documentation: "tools/_template/TEMPLATE_GUIDE.md"
+

@@ -1,6 +1,6 @@
-# Contributing to AI Dev Kit
+# Contributing to Dev Toolkit
 
-Thank you for your interest in contributing to AI Dev Kit! We welcome contributions from the community.
+Thank you for your interest in contributing to Dev Toolkit! We welcome contributions from the community.
 
 ## How to Submit Feedback
 
@@ -34,22 +34,71 @@ For more detailed information on submitting reports, see:
 - **[Feature Request Guide](.github/ISSUE_TEMPLATE/feature_request.yml)** - How to write effective feature requests
 - **[UX Research Guide](.github/ISSUE_TEMPLATE/ux_research.yml)** - Submitting UX research findings
 
+## Contributing Tools
+
+### Adding a New Tool
+
+1. **Use the template:**
+   ```bash
+   cp -r tools/_template tools/your-tool-name
+   cd tools/your-tool-name
+   ```
+
+2. **Implement your tool:**
+   - Follow the [Template Guide](tools/_template/TEMPLATE_GUIDE.md)
+   - Keep your tool completely self-contained (no dependencies on other tools)
+   - Document everything in README.md
+
+3. **Register your tool:**
+   ```bash
+   python3 tools/manage_tools.py update-registry
+   ```
+
+4. **Validate:**
+   ```bash
+   python3 tools/manage_tools.py validate
+   ```
+
+5. **Update main README.md** with your tool entry
+
+6. **Commit and push:**
+   ```bash
+   git add tools/your-tool-name tools/tools-registry.yaml README.md
+   git commit -m "Add your-tool-name tool"
+   git push origin your-branch
+   ```
+
+### Tool Management
+
+See [Tool Management Guide](tools/TOOL_MANAGEMENT.md) for:
+- Management principles and philosophy
+- Registry system
+- Validation workflows
+- Separation of concerns
+
+**Key Principle:** Each tool is completely independent. No shared code, dependencies, or runtime interactions between tools.
+
 ## Code Contributions
 
-If you'd like to contribute code:
+If you'd like to contribute code to existing tools:
 
 1. **Fork the repository**
 2. **Create a feature branch** (`git checkout -b feature/AmazingFeature`)
 3. **Make your changes**
-4. **Test thoroughly**
-5. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
-6. **Push to the branch** (`git push origin feature/AmazingFeature`)
-7. **Open a Pull Request**
+4. **Test thoroughly** (test the specific tool independently)
+5. **Validate tool structure:**
+   ```bash
+   python3 tools/manage_tools.py validate
+   ```
+6. **Commit your changes** (`git commit -m 'Add some AmazingFeature'`)
+7. **Push to the branch** (`git push origin feature/AmazingFeature`)
+8. **Open a Pull Request**
 
 ## Questions?
 
-- **Documentation:** See [KB/Documentation](KB/Documentation) for comprehensive guides
-- **Issues:** Check existing [GitHub Issues](https://github.com/earlution/ai-dev-kit/issues) or create a new one
+- **Tool Management:** See [Tool Management Guide](tools/TOOL_MANAGEMENT.md)
+- **Tool Template:** See [Template Guide](tools/_template/TEMPLATE_GUIDE.md)
+- **Issues:** Check existing [GitHub Issues](https://github.com/earlution/dev-toolkit/issues) or create a new one
 - **Discussions:** Use GitHub Discussions for questions and community discussions
 
 ## Code of Conduct
@@ -58,5 +107,5 @@ We are committed to providing a welcoming and inclusive environment. Please be r
 
 ---
 
-**Thank you for contributing to AI Dev Kit!** 🎉
+**Thank you for contributing to Dev Toolkit!** 🎉
 

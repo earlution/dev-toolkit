@@ -11,8 +11,8 @@ housekeeping_policy: keep
 ```yaml
 package:
   name: "Kanban System Implementation Package"
-  version: "1.3.0"
-  last_updated: "2025-12-09"
+  version: "2.1.0"
+  last_updated: "2025-12-10"
   source_project: "Example project (Confidentia, Epic 4)"
   compatibility:
     numbering_versioning: "v2.0.0"
@@ -140,6 +140,9 @@ structure:
     - STORY_TEMPLATE.md                  # Story document template
     - CANONICAL_STORIES.md               # Reusable canonical story patterns
     - CANONICAL_EPICS.md                 # Canonical epic definitions
+    - COMPREHENSIVE_CANONICAL_EST_STRUCTURE.md  # Complete canonical E/S/T structure (Epics 1-23+)
+    - UXR_TEMPLATE.md                    # User Experience Research template
+    - FB_TEMPLATE.md                     # User Acceptance Testing (UAT) Report template (requires empirical evidence)
 
   examples/:
     - Epic-4-Example.md                  # Real Epic (37 stories, 36 complete)
@@ -151,6 +154,13 @@ structure:
   integration/:
     - numbering-versioning-integration.md     # Integration with versioning
     - workflow-management-integration.md      # Integration with workflows
+
+  scripts/:
+    - detect_existing_structure.py            # Detection utility for existing structures
+    - analyze_structure.py                    # Analysis utility for migration planning
+    - migrate_structure.py                    # Migration utility for canonical format conversion
+    - install_kanban_framework.py             # Integrated installation script with mode selection
+    - README.md                               # Scripts documentation and usage guide
 
   README.md                              # This file
 ```
@@ -165,6 +175,7 @@ structure:
 required:
   - Project with version control (Git)
   - Documentation directory structure
+  - Python 3.6+ (for migration utilities)
 
 recommended:
   - Numbering & Versioning package (temp/numbering & versioning/)
@@ -172,7 +183,37 @@ recommended:
   - Markdown-based documentation system
 ```
 
-### Installation Steps
+### Installation Options
+
+#### Option 1: Interactive Installation (Recommended)
+
+**For projects with existing Kanban structures:**
+
+```bash
+# 1. Copy Kanban framework package to your project
+cp -r packages/frameworks/kanban/* /path/to/your/project/
+
+# 2. Run interactive installation script
+cd /path/to/your/project
+python3 scripts/install_kanban_framework.py
+```
+
+The installer will:
+- Detect existing Kanban structures
+- Analyze and generate migration plan
+- Prompt for installation mode selection
+- Migrate existing structure to canonical format
+- Install canonical core epics
+
+**Installation Modes:**
+- **Fresh** - Clean install (no existing structure)
+- **Migration** - Migrate existing structure to canonical format
+- **Update** - Update existing framework installation
+- **Hybrid** - Preserve project epics, install framework epics (recommended when conflicts detected)
+
+#### Option 2: Manual Installation
+
+**For new projects or manual setup:**
 
 ```yaml
 step_1:
@@ -211,6 +252,38 @@ step_6:
   required_if: "Using Release Workflow"
   see: "integration/workflow-management-integration.md"
 ```
+
+### Migration Support
+
+If you have an existing Kanban structure (from another system or older framework version), the framework provides migration utilities:
+
+**Migration Workflow:**
+
+1. **Detect existing structure:**
+   ```bash
+   python3 scripts/detect_existing_structure.py --kanban-path KB/PM_and_Portfolio/kanban
+   ```
+
+2. **Analyze structure:**
+   ```bash
+   python3 scripts/analyze_structure.py --detection-report detection_report.json
+   ```
+
+3. **Review migration plan:**
+   - Check `analysis_report.json` for conflicts, gaps, and recommended mode
+   - Review epic/story/task mappings
+
+4. **Migrate structure:**
+   ```bash
+   python3 scripts/migrate_structure.py --analysis-report analysis_report.json --mode migration
+   ```
+
+**Or use the integrated installer:**
+```bash
+python3 scripts/install_kanban_framework.py --mode migration
+```
+
+See [`scripts/README.md`](scripts/README.md) for detailed migration documentation.
 
 ---
 
@@ -1409,7 +1482,7 @@ included_docs:
   - file: "templates/CANONICAL_STORIES.md"
     purpose: "Reusable canonical story patterns (Bug Reports, Feature Requests)"
   - file: "templates/CANONICAL_EPICS.md"
-    purpose: "Canonical epic definitions (Epics 1-7: Core, Workflow, Versioning, Kanban, FR Implementation, BR Implementation, Codebase Maintenance)"
+    purpose: "Canonical epic definitions (Epics 1-7: Core, Workflow, Versioning, Kanban, FR Implementation, BR Implementation, UXR)"
   - file: "templates/CANONICAL_STORIES_FR_BR.md"
     purpose: "Canonical story patterns for Epic 5 (FR Implementation) and Epic 6 (BR Implementation)"
   - file: "templates/UXR_TEMPLATE.md"
@@ -1428,12 +1501,12 @@ included_docs:
     purpose: "Example Epic 6 (BR Implementation) demonstrating canonical epic structure"
 
   - file: "examples/Epic-7-Codebase-Maintenance-Example.md"
-    purpose: "Example Epic 7 (Codebase Maintenance and Review) demonstrating canonical epic structure"
+    purpose: "Example Epic 7 (UXR - User Experience Research) demonstrating canonical epic structure (Note: Epic 7 is now UXR, Codebase Maintenance moved to Epic 8)"
 
   - file: "guides/portfolio-kanban-alignment-playbook.md"
     purpose: "Alignment guide"
-  - file: "FR_BR_UXR_GITHUB_SUBMISSION_GUIDE.md"
-    purpose: "Guide for submitting FR, BR, and UXR via GitHub Issues"
+  - file: "FR_BR_UXR_FB_GITHUB_SUBMISSION_GUIDE.md"
+    purpose: "Guide for submitting FR, BR, UXR, and UAT Reports via GitHub Issues (UAT requires empirical evidence)"
 
   - file: "integration/numbering-versioning-integration.md"
     purpose: "Version integration guide"

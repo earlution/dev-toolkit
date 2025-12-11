@@ -1,0 +1,5 @@
+# Requirements for tool management scripts
+# These are only needed for the management utilities, not for individual tools
+
+PyYAML>=6.0
+
