@@ -2798,3 +2798,27 @@ and this project adheres to the **`RC.EPIC.STORY.TASK+BUILD`** versioning scheme
 - Starting with `v0.1.1.1+1`, all releases use **dev-kit-specific Epic numbers**.
 - See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.9.21.3+2.md` for full details.
 
+---
+
+## [0.10.3.3+1] - 11-12-25
+
+🎨 Design Decision: E10:S03:T03: UI framework selection (Codex/Vue.js) with comprehensive analysis and formal ADR documentation
+
+### Added
+
+- **UI Framework Selection:** Selected Codex (Vue.js) as UI framework for Problem-Solution KB Service
+- **UI Design Discussion:** Comprehensive analysis of Wikipedia-style UI patterns and component composition
+- **Design Decision Analysis:** Detailed comparison of Codex vs. alternatives (React, SvelteKit, OOUI) with development effort estimates
+- **Formal ADR:** Architecture Decision Record with full traceability, rationale, and accountability
+
+### Changed
+
+- **Epic 10 Story 3 Task 3:** Completed UI framework selection and design decision work
+
+### Notes
+
+- Decision based on path of least resistance: 6-7 weeks time savings vs. alternatives
+- Codex provides Wikipedia-familiar patterns, built-in accessibility, and ready-to-use components
+- See `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.10.3.3+1.md` for full details
+- See `KB/Architecture/Standards_and_ADRs/adr-e10-ui-framework-codex-selection.md` for formal ADR
+

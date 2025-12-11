@@ -8,7 +8,7 @@ This toolkit contains practical, well-documented utilities that have proven usef
 
 Unlike frameworks (which go in [ai-dev-kit](https://github.com/earlution/ai-dev-kit)), this repository focuses on **standalone tools** that can be used independently or integrated into existing workflows.
 
-**Latest release:** v0.4.2.6+3 — see `CHANGELOG.md` and `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.4.2.6+3.md`.
+**Latest release:** v0.10.3.3+1 — see `CHANGELOG.md` and `KB/Changelog_and_Release_Notes/Changelog_Archive/CHANGELOG_v0.10.3.3+1.md`.
 
 ## 🛠️ Tools
 

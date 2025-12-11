@@ -18,10 +18,10 @@ Framework: packages/frameworks/numbering & versioning/versioning-policy.md
 """
 
 VERSION_RC = 0        # Release candidate (0 = development, 1+ = release candidate)
-VERSION_EPIC = 4      # Epic number (Epic 4: Kanban Framework)
-VERSION_STORY = 2     # Story number (Story 2: FR/BR Intake to Tasks)
-VERSION_TASK = 6      # Task number (Task 6: GitHub submission integration for FR, BR, and UXR)
-VERSION_BUILD = 3     # Build number (increments per release within task, bumped by RW)
+VERSION_EPIC = 10     # Epic number (Epic 10: Knowledge Services Platform)
+VERSION_STORY = 3     # Story number (Story 3: API, UI, and Embeddings Design)
+VERSION_TASK = 3      # Task number (Task 3: UI flows - UI framework selection and design decision)
+VERSION_BUILD = 1     # Build number (increments per release within task, bumped by RW)
 
 # Composite version string using RC.EPIC.STORY.TASK+BUILD schema
 # Format: RC.EPIC.STORY.TASK+BUILD

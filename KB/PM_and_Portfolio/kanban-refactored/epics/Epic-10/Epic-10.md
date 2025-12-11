@@ -8,11 +8,11 @@ housekeeping_policy: keep
 
 # Epic 10: Knowledge Services Platform (Problem-Solution KB)
 
-**Status:** TODO  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
 **Estimated Effort:** [TBD]  
 **Created:** 2025-12-10  
-**Last updated:** 2025-12-10 (v0.10.1.1+1 – Epic created)  
+**Last updated:** 2025-12-11 (v0.10.3.3+1 – Story 3 Task 3 complete: UI framework selection)  
 **Branch:** `epic/10-knowledge-services`  
 **Version Schema:** `0.10.S.T+B`  
 **Production URL:** [N/A for this repo]
@@ -25,8 +25,9 @@ housekeeping_policy: keep
   - Story: [`Story-001-problem-solution-kb-foundation.md`](Story-001-problem-solution-kb-foundation.md)
 - [ ] **E10:S02 – Architecture & SOLID Design** - TODO  
   - Story: [`Story-002-architecture-and-solid-design.md`](Story-002-architecture-and-solid-design.md)
-- [ ] **E10:S03 – API, UI, and Embeddings Design** - TODO  
+- [ ] **E10:S03 – API, UI, and Embeddings Design** - IN PROGRESS  
   - Story: [`Story-003-api-ui-and-embeddings.md`](Story-003-api-ui-and-embeddings.md)
+  - Tasks: T03 ✅ (v0.10.3.3+1)
 - [ ] **E10:S04 – Governance, Moderation, and Quality Model** - TODO  
   - Story: [`Story-004-governance-and-quality.md`](Story-004-governance-and-quality.md)
 - [ ] **E10:S05 – MVP Implementation Plan** - TODO  
@@ -73,8 +74,9 @@ Build a dual-mode (web UI + API) problem-solution knowledge base with curated so
 
 ### Story 3: API, UI, and Embeddings Design
 
-**Status:** TODO  
+**Status:** IN PROGRESS  
 **Priority:** HIGH  
+**Last updated:** 2025-12-11 (v0.10.3.3+1 – Task 3 complete: UI framework selection)  
 **Goal:** Define REST/GraphQL + embeddings API, UI flows (search/browse/detail/submission), and data contracts.  
 **Story:** [`Story-003-api-ui-and-embeddings.md`](Story-003-api-ui-and-embeddings.md)
 
